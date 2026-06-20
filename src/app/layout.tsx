@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   keywords: siteConfig.keywords,
   authors: [{ name: "mypixelogs" }],
   creator: "mypixelogs",
+  verification: {
+    google: "5UjKcH6E_Gl3gfIo6e1Ip3xzBvGxlE5KL3kLNkz0jqs",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
