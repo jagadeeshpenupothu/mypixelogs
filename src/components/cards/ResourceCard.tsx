@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 import type { Resource } from "@/types/resource";
@@ -10,18 +11,17 @@ type ResourceCardProps = {
 export function ResourceCard({ resource }: ResourceCardProps) {
   return (
     <Link
-      href={`/resources/${resource.id}`}
+      href={`/resources/${resource.slug}`}
       className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft"
     >
-      <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-blue-50 via-white to-sky-100 px-8">
-        <div className="w-full rounded-md border border-blue-100 bg-white p-5 shadow-sm">
-          <div className="h-3 w-20 rounded-full bg-blue-200" />
-          <div className="mt-5 grid grid-cols-3 gap-2">
-            <div className="h-14 rounded-md bg-blue-100" />
-            <div className="h-14 rounded-md bg-sky-100" />
-            <div className="h-14 rounded-md bg-slate-100" />
-          </div>
-        </div>
+      <div className="overflow-hidden bg-slate-50">
+        <Image
+          src={resource.thumbnail}
+          alt={`${resource.title} preview`}
+          width={720}
+          height={510}
+          className="aspect-[4/3] h-auto w-full object-cover transition duration-200 group-hover:scale-[1.02]"
+        />
       </div>
       <div className="p-5">
         <div className="flex items-start justify-between gap-4">

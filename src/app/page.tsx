@@ -6,10 +6,40 @@ import { PopularTemplatesSection } from "@/components/homepage/PopularTemplatesS
 import { ResourcesSection } from "@/components/homepage/ResourcesSection";
 import { StatsSection } from "@/components/homepage/StatsSection";
 import { ToolsSection } from "@/components/homepage/ToolsSection";
+import { siteConfig } from "@/constants/site";
 
 export default function Home() {
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+    },
+  };
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/logo.svg`,
+    description: siteConfig.description,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       <HeroSection />
       <CategoriesSection />
       <PopularTemplatesSection />
