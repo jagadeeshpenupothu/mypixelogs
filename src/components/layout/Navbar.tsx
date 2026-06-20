@@ -13,10 +13,10 @@ const navItems = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 shadow-[0_1px_0_rgba(255,255,255,0.02)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/80 shadow-[0_1px_0_rgba(255,255,255,0.02)] backdrop-blur-xl dark:bg-black/78 dark:supports-[backdrop-filter]:bg-black/70">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold text-foreground">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-sm text-white shadow-[0_10px_24px_rgba(37,99,235,0.28)]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-sm text-white shadow-[0_10px_24px_rgba(37,99,235,0.18)] dark:shadow-none">
             mp
           </span>
           mypixelogs
@@ -27,7 +27,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition duration-200 hover:bg-muted hover:text-foreground"
+              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition duration-200 hover:bg-muted hover:text-foreground dark:hover:bg-white/[0.06]"
             >
               {item.label}
             </Link>

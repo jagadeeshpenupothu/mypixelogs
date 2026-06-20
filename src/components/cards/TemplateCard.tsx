@@ -16,9 +16,9 @@ export function TemplateCard({ template }: TemplateCardProps) {
   return (
     <Link
       href={`/templates/${template.slug}`}
-      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft dark:ring-1 dark:ring-white/[0.02] dark:hover:ring-primary/20"
+      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-soft dark:hover:border-neutral-500 dark:hover:shadow-soft"
     >
-      <div className="overflow-hidden bg-slate-50">
+      <div className="overflow-hidden bg-slate-50 dark:border-b dark:border-border">
         <Image
           src={template.thumbnail}
           alt={`${template.title} thumbnail`}

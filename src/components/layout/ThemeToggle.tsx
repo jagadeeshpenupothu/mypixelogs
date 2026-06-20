@@ -85,7 +85,7 @@ export function ThemeToggle() {
                 className={cn(
                   "flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition",
                   isActive
-                    ? "bg-blue-50 text-primary dark:bg-blue-500/10"
+                    ? "bg-blue-50 text-primary dark:bg-white/[0.06]"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
