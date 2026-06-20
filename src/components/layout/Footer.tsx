@@ -11,11 +11,19 @@ const columns = [
     ],
   },
   {
-    title: "Resources",
+    title: "Company",
     links: [
+      { href: "/about", label: "About" },
+      { href: "/contact", label: "Contact" },
       { href: "/blog", label: "Blog" },
-      { href: "/resources", label: "Design files" },
-      { href: "/templates", label: "Business documents" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { href: "/privacy-policy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms" },
+      { href: "/disclaimer", label: "Disclaimer" },
     ],
   },
 ];
@@ -23,7 +31,7 @@ const columns = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-slate-50">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr_1fr] lg:px-8">
         <div>
           <Link href="/" className="flex items-center gap-2 text-lg font-bold text-foreground">
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-sm text-white">
@@ -66,11 +74,14 @@ export function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>Copyright {new Date().getFullYear()} mypixelogs. All rights reserved.</p>
           <div className="flex gap-5">
-            <Link href="#" className="hover:text-primary">
+            <Link href="/privacy-policy" className="hover:text-primary">
               Privacy
             </Link>
-            <Link href="#" className="hover:text-primary">
+            <Link href="/terms" className="hover:text-primary">
               Terms
+            </Link>
+            <Link href="/disclaimer" className="hover:text-primary">
+              Disclaimer
             </Link>
           </div>
         </div>

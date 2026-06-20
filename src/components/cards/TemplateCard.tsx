@@ -16,7 +16,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
   return (
     <Link
       href={`/templates/${template.slug}`}
-      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft"
+      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft dark:ring-1 dark:ring-white/[0.02] dark:hover:ring-primary/20"
     >
       <div className="overflow-hidden bg-slate-50">
         <Image
@@ -27,11 +27,11 @@ export function TemplateCard({ template }: TemplateCardProps) {
           className="aspect-[4/3] h-auto w-full object-cover transition duration-200 group-hover:scale-[1.02]"
         />
       </div>
-      <div className="p-5">
+      <div className="p-5 sm:p-6">
         <Badge variant="secondary" className="bg-blue-50 text-primary">
           {categoryLabel}
         </Badge>
-        <h3 className="mt-3 text-base font-semibold text-foreground">{template.title}</h3>
+        <h3 className="mt-3 text-base font-semibold tracking-tight text-foreground">{template.title}</h3>
         <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">
           {template.description}
         </p>

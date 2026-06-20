@@ -2,6 +2,27 @@ import type { Tool } from "@/types/tool";
 
 export const tools: Tool[] = [
   {
+    id: "converter",
+    name: "Universal File Converter",
+    slug: "converter",
+    description: "Detect a file format and convert it to valid export formats in your browser.",
+    icon: "Wand2",
+  },
+  {
+    id: "image-compressor",
+    name: "Image Compressor",
+    slug: "image-compressor",
+    description: "Compress JPG, PNG, and WEBP images locally with live preview and quality controls.",
+    icon: "ImageDown",
+  },
+  {
+    id: "qr-generator",
+    name: "Universal QR Generator",
+    slug: "qr-generator",
+    description: "Create direct QR codes for URLs, text, contacts, WiFi, events, social links, and more.",
+    icon: "QrCode",
+  },
+  {
     id: "merge-pdf",
     name: "Merge PDF",
     slug: "merge-pdf",
