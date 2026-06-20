@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/constants/site";
 import "./globals.css";
+
+const googleAnalyticsId = "G-KBP6GF6R4C";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -52,6 +55,9 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        {process.env.NODE_ENV === "production" ? (
+          <GoogleAnalytics gaId={googleAnalyticsId} />
+        ) : null}
       </body>
     </html>
   );
