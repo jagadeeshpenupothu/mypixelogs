@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
 
 import { UniversalConverter } from "@/components/tools/UniversalConverter";
+import { createSocialMetadata } from "@/lib/metadata";
+import { getToolBySlug } from "@/lib/tools";
+
+const tool = getToolBySlug("converter");
+const title = tool?.name ?? "Universal File Converter";
+const description =
+  tool?.description ??
+  "Convert images and files in your browser with automatic format detection and valid export options.";
 
 export const metadata: Metadata = {
-  title: "Universal File Converter",
-  description:
-    "Convert images and files in your browser with automatic format detection and valid export options.",
+  title,
+  description,
+  ...createSocialMetadata({
+    title: `${title} | mypixelogs`,
+    description,
+    path: "/tools/converter",
+  }),
 };
 
 export default function ConverterPage() {

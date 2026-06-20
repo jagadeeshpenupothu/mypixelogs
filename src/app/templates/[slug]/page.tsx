@@ -9,6 +9,7 @@ import { TemplateHero } from "@/components/templates/TemplateHero";
 import { TemplatePreview } from "@/components/templates/TemplatePreview";
 import { getTemplateCategory } from "@/data/template-categories";
 import { siteConfig } from "@/constants/site";
+import { createSocialMetadata } from "@/lib/metadata";
 import {
   getRelatedTemplates,
   getTemplateBySlug,
@@ -42,29 +43,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title,
       description,
-      alternates: {
-        canonical: url,
-      },
-      openGraph: {
+      ...createSocialMetadata({
         title: socialTitle,
         description,
-        url,
-        siteName: siteConfig.name,
-        images: [
-          {
-            url: template.previewImage,
-            width: 1200,
-            height: 850,
-            alt: `${template.title} preview`,
-          },
-        ],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: socialTitle,
-        description,
-        images: [template.previewImage],
-      },
+        path: url,
+        image: template.previewImage,
+        imageAlt: `${template.title} preview`,
+      }),
     };
   }
 
@@ -72,20 +57,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: category.title,
       description: category.description,
-      alternates: {
-        canonical: `/templates/${category.slug}`,
-      },
-      openGraph: {
+      ...createSocialMetadata({
         title: `${category.title} | mypixelogs`,
         description: category.description,
-        url: `/templates/${category.slug}`,
-        siteName: siteConfig.name,
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: `${category.title} | mypixelogs`,
-        description: category.description,
-      },
+        path: `/templates/${category.slug}`,
+      }),
     };
   }
 

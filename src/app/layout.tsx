@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/constants/site";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 import "./globals.css";
 
 const googleAnalyticsId = "G-KBP6GF6R4C";
@@ -29,11 +30,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "mypixelogs | Free Templates, Tools & Design Resources",
     description: siteConfig.description,
+    images: [defaultOpenGraphImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "mypixelogs | Free Templates, Tools & Design Resources",
     description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
 };
 

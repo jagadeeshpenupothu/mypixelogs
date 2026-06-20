@@ -1,15 +1,27 @@
-import { CategoriesSection } from "@/components/homepage/CategoriesSection";
+import type { Metadata } from "next";
+
+import { BrowseCategoriesSection } from "@/components/homepage/BrowseCategoriesSection";
 import { CTASection } from "@/components/homepage/CTASection";
-import { FAQSection } from "@/components/homepage/FAQSection";
 import { HeroSection } from "@/components/homepage/HeroSection";
-import { LatestTemplatesSection } from "@/components/homepage/LatestTemplatesSection";
-import { PopularCategoriesSection } from "@/components/homepage/PopularCategoriesSection";
 import { PopularTemplatesSection } from "@/components/homepage/PopularTemplatesSection";
 import { ResourcesSection } from "@/components/homepage/ResourcesSection";
 import { StatsSection } from "@/components/homepage/StatsSection";
 import { ToolsSection } from "@/components/homepage/ToolsSection";
-import { WhyMypixelogsSection } from "@/components/homepage/WhyMypixelogsSection";
 import { siteConfig } from "@/constants/site";
+import { createSocialMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "mypixelogs | Free Templates, Resources & Tools",
+  },
+  description: siteConfig.description,
+  ...createSocialMetadata({
+    title: "mypixelogs | Free Templates, Resources & Tools",
+    description: siteConfig.description,
+    path: "/",
+    image: siteConfig.ogImage,
+  }),
+};
 
 export default function Home() {
   const websiteJsonLd = {
@@ -44,15 +56,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <HeroSection />
-      <CategoriesSection />
       <PopularTemplatesSection />
-      <ResourcesSection />
       <ToolsSection />
+      <ResourcesSection />
+      <BrowseCategoriesSection />
       <StatsSection />
-      <PopularCategoriesSection />
-      <WhyMypixelogsSection />
-      <LatestTemplatesSection />
-      <FAQSection />
       <CTASection />
     </>
   );

@@ -6,9 +6,14 @@ import { Button } from "@/components/ui/button";
 import { tools } from "@/data/tools";
 
 export function ToolsSection() {
-  const featuredTools = tools.filter((tool) =>
-    ["converter", "image-compressor", "qr-generator"].includes(tool.slug),
-  );
+  const prioritySlugs = ["converter", "image-compressor", "qr-generator"];
+  const priorityTools = prioritySlugs
+    .map((slug) => tools.find((tool) => tool.slug === slug))
+    .filter((tool): tool is (typeof tools)[number] => Boolean(tool));
+  const additionalTools = tools
+    .filter((tool) => !prioritySlugs.includes(tool.slug))
+    .slice(0, 3);
+  const featuredTools = [...priorityTools, ...additionalTools];
 
   return (
     <section className="border-y border-border bg-slate-50 py-16 sm:py-20">
@@ -16,7 +21,7 @@ export function ToolsSection() {
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Featured tools
+              Popular Tools
             </p>
             <h2 className="mt-3 text-3xl font-bold text-foreground">
               Browser-first tools for everyday files
@@ -28,7 +33,7 @@ export function ToolsSection() {
           </div>
           <Button asChild variant="outline">
             <Link href="/tools">
-              Explore All Tools
+              Explore all tools
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>

@@ -7,6 +7,7 @@ import { ResourceCard } from "@/components/cards/ResourceCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/constants/site";
+import { createSocialMetadata } from "@/lib/metadata";
 import {
   getRelatedResources,
   getResourceFiles,
@@ -39,29 +40,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description: resource.description,
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
+    ...createSocialMetadata({
       title: socialTitle,
       description: resource.description,
-      url,
-      siteName: siteConfig.name,
-      images: [
-        {
-          url: resource.previewImage,
-          width: 1200,
-          height: 850,
-          alt: `${resource.title} preview`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: socialTitle,
-      description: resource.description,
-      images: [resource.previewImage],
-    },
+      path: url,
+      image: resource.previewImage,
+      imageAlt: `${resource.title} preview`,
+    }),
   };
 }
 

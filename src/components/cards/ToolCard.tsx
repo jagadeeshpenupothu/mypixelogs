@@ -1,10 +1,13 @@
 import Link from "next/link";
 import {
   Archive,
+  Crop,
   FileImage,
   Files,
+  Gauge,
   ImageDown,
   ImagePlus,
+  Maximize2,
   QrCode,
   SplitSquareHorizontal,
   Wand2,
@@ -14,10 +17,13 @@ import type { Tool } from "@/types/tool";
 
 const icons = {
   Archive,
+  Crop,
   FileImage,
   Files,
+  Gauge,
   ImageDown,
   ImagePlus,
+  Maximize2,
   QrCode,
   SplitSquareHorizontal,
   Wand2,

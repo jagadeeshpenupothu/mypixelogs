@@ -14,7 +14,7 @@ export function PopularTemplatesSection() {
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Featured templates
+              Featured Templates
             </p>
             <h2 className="mt-3 text-3xl font-bold text-foreground">
               Professional files ready to customize
@@ -26,7 +26,7 @@ export function PopularTemplatesSection() {
           </div>
           <Button asChild variant="outline">
             <Link href="/templates">
-              View All Templates
+              View all templates
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>

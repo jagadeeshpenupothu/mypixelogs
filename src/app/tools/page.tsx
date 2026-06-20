@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 
 import { ToolCard } from "@/components/cards/ToolCard";
 import { tools } from "@/data/tools";
+import { createSocialMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Free PDF Tools",
   description: "Explore free PDF tools including merge, split, compress, JPG to PDF, and PDF to JPG.",
+  ...createSocialMetadata({
+    title: "Free PDF and Image Tools | mypixelogs",
+    description: "Explore free PDF tools including merge, split, compress, JPG to PDF, and PDF to JPG.",
+    path: "/tools",
+  }),
 };
 
 export default function ToolsPage() {

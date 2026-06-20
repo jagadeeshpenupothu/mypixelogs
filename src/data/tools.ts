@@ -16,11 +16,32 @@ export const tools: Tool[] = [
     icon: "ImageDown",
   },
   {
+    id: "image-resizer",
+    name: "Image Resizer",
+    slug: "image-resizer",
+    description: "Resize images by dimensions or percentage while preserving quality.",
+    icon: "Maximize2",
+  },
+  {
+    id: "image-cropper",
+    name: "Image Cropper",
+    slug: "image-cropper",
+    description: "Crop images using freeform selection or popular social-media aspect ratios.",
+    icon: "Crop",
+  },
+  {
     id: "qr-generator",
     name: "Universal QR Generator",
     slug: "qr-generator",
     description: "Create direct QR codes for URLs, text, contacts, WiFi, events, social links, and more.",
     icon: "QrCode",
+  },
+  {
+    id: "speed-test",
+    name: "Internet Speed Test",
+    slug: "speed-test",
+    description: "Run a LibreSpeed-powered test for download, upload, ping, jitter, and connection quality.",
+    icon: "Gauge",
   },
   {
     id: "merge-pdf",

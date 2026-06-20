@@ -2,11 +2,23 @@ import type { Metadata } from "next";
 
 import { UniversalQrGenerator } from "@/components/tools/UniversalQrGenerator";
 import { siteConfig } from "@/constants/site";
+import { createSocialMetadata } from "@/lib/metadata";
+import { getToolBySlug } from "@/lib/tools";
+
+const tool = getToolBySlug("qr-generator");
+const title = tool?.name ?? "Universal QR Code Generator";
+const description =
+  tool?.description ??
+  "Create website, text, email, phone, SMS, WhatsApp, vCard, WiFi, Maps, Event, PDF, and social media QR codes in your browser.";
 
 export const metadata: Metadata = {
-  title: "Universal QR Code Generator",
-  description:
-    "Create website, text, email, phone, SMS, WhatsApp, vCard, WiFi, Maps, Event, PDF, and social media QR codes in your browser.",
+  title,
+  description,
+  ...createSocialMetadata({
+    title: `${title} | mypixelogs`,
+    description,
+    path: "/tools/qr-generator",
+  }),
 };
 
 export default function QrGeneratorPage() {
@@ -17,7 +29,7 @@ export default function QrGeneratorPage() {
     url: `${siteConfig.url}/tools/qr-generator`,
     applicationCategory: "UtilityApplication",
     operatingSystem: "Web",
-    description: metadata.description,
+    description,
   };
 
   return (

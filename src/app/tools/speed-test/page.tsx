@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
-import { ImageCompressor } from "@/components/tools/ImageCompressor";
+import { SpeedTest } from "@/components/tools/SpeedTest";
 import { createSocialMetadata } from "@/lib/metadata";
 import { getToolBySlug } from "@/lib/tools";
 
-const tool = getToolBySlug("image-compressor");
-const title = tool?.name ?? "Image Compressor";
+const tool = getToolBySlug("speed-test");
+const title = tool?.name ?? "Internet Speed Test";
 const description =
   tool?.description ??
-  "Compress JPG, PNG, and WEBP images in your browser with live preview, quality controls, and instant download.";
+  "Run a real LibreSpeed-powered internet speed test for download, upload, ping, jitter, and connection quality.";
 
 export const metadata: Metadata = {
   title,
@@ -16,29 +16,29 @@ export const metadata: Metadata = {
   ...createSocialMetadata({
     title: `${title} | mypixelogs`,
     description,
-    path: "/tools/image-compressor",
+    path: "/tools/speed-test",
   }),
 };
 
-export default function ImageCompressorPage() {
+export default function SpeedTestPage() {
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Image compressor
+            Internet speed test
           </p>
           <h1 className="mt-3 text-4xl font-bold tracking-normal text-foreground sm:text-5xl">
-            Compress images privately in your browser
+            Test your connection in the browser
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Reduce JPG, PNG, and WEBP file sizes with live quality controls,
-            side-by-side previews, and instant downloads without server uploads.
+            Measure real download speed, upload speed, ping, jitter, network type,
+            and connection suitability against your configured LibreSpeed backend.
           </p>
         </div>
 
         <div className="mt-10">
-          <ImageCompressor />
+          <SpeedTest />
         </div>
       </div>
     </section>
