@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact mypixelogs for questions about free templates, downloadable resources, and online tools.",
+    "Contact MyPixelogs for questions about free templates, downloadable resources, and online tools.",
 };
 
 export default function ContactPage() {
@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Contact</p>
           <h1 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
-            Get in touch with mypixelogs.
+            Get in touch with MyPixelogs.
           </h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground">
             Have a question about templates, resources, tools, or future
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 id="message"
                 name="message"
                 rows={6}
-                className="mt-2 flex w-full rounded-md border border-input bg-background px-3 py-2 text-base text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:text-sm"
+                className="mt-2 flex w-full rounded-md border border-input bg-background px-3 py-2 text-base text-foreground shadow-sm transition-[color,background-color,border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 hover:border-foreground/20 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20 md:text-sm"
                 placeholder="Tell us what you need."
               />
             </div>

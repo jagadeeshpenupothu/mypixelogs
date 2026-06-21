@@ -12,7 +12,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
   return (
     <Link
       href={`/resources/${resource.slug}`}
-      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-soft dark:hover:border-neutral-500 dark:hover:shadow-soft"
+      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20 dark:hover:shadow-soft"
     >
       <div className="overflow-hidden bg-slate-50 dark:border-b dark:border-border">
         <Image
@@ -20,7 +20,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
           alt={`${resource.title} preview`}
           width={720}
           height={510}
-          className="aspect-[4/3] h-auto w-full object-cover transition duration-200 group-hover:scale-[1.02]"
+          className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-200 group-hover:scale-[1.015]"
         />
       </div>
       <div className="p-5 sm:p-6">

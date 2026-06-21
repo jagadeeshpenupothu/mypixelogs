@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   ...createSocialMetadata({
-    title: `${title} | mypixelogs`,
+    title: `${title} | MyPixelogs`,
     description,
     path: "/tools/image-resizer",
   }),

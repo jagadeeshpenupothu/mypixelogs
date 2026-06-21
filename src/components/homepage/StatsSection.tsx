@@ -1,27 +1,27 @@
-import { resources } from "@/data/resources";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
 
 export function StatsSection() {
-  const totalDownloads = templates.reduce((total, template) => total + template.downloads, 0);
+  const calculatorTools = tools.filter((tool) => tool.category === "Calculator Tools");
+  const liveTools = tools.filter((tool) => !tool.comingSoon);
 
   const stats = [
-    { value: templates.length.toLocaleString(), label: "Templates Available" },
-    { value: resources.length.toLocaleString(), label: "Resources Available" },
-    { value: tools.length.toLocaleString(), label: "Tools Available" },
-    { value: `${totalDownloads.toLocaleString()}+`, label: "Downloads" },
+    { value: `${liveTools.length.toLocaleString()}+`, label: "Tools" },
+    { value: `${calculatorTools.length.toLocaleString()}+`, label: "Calculators" },
+    { value: `${templates.length.toLocaleString()}+`, label: "Templates" },
+    { value: "100%", label: "Free" },
   ];
 
   return (
-    <section className="bg-primary py-12 text-white dark:border-y dark:border-border dark:bg-[#0A0A0A]">
+    <section className="border-b border-border bg-white py-8 dark:bg-black">
       <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="rounded-lg border border-white/20 p-6 dark:border-border dark:bg-[#111111] dark:shadow-sm"
+            className="rounded-lg border border-border bg-card p-5 shadow-sm"
           >
-            <p className="text-4xl font-bold tracking-normal">{stat.value}</p>
-            <p className="mt-2 text-sm font-medium text-blue-100 dark:text-muted-foreground">{stat.label}</p>
+            <p className="text-3xl font-bold tracking-normal text-foreground">{stat.value}</p>
+            <p className="mt-2 text-sm font-medium text-muted-foreground">{stat.label}</p>
           </div>
         ))}
       </div>

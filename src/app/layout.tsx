@@ -9,17 +9,29 @@ import { defaultOpenGraphImage } from "@/lib/metadata";
 import "./globals.css";
 
 const googleAnalyticsId = "G-KBP6GF6R4C";
+const homepageTitle = "MyPixelogs — Free PDF Tools, Templates, Calculators & Resources";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "mypixelogs | Free Templates, Tools & Design Resources",
-    template: "%s | mypixelogs",
+    default: homepageTitle,
+    template: "%s | MyPixelogs",
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: "mypixelogs" }],
-  creator: "mypixelogs",
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   verification: {
     google: "5UjKcH6E_Gl3gfIo6e1Ip3xzBvGxlE5KL3kLNkz0jqs",
   },
@@ -28,13 +40,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "mypixelogs | Free Templates, Tools & Design Resources",
+    title: homepageTitle,
     description: siteConfig.description,
     images: [defaultOpenGraphImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "mypixelogs | Free Templates, Tools & Design Resources",
+    title: homepageTitle,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },

@@ -37,7 +37,7 @@ export function Footer() {
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-sm text-white">
               mp
             </span>
-            mypixelogs
+            MyPixelogs
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-6 text-muted-foreground">
             Free templates, PDF tools, and design resources for business teams,
@@ -72,7 +72,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p>Copyright {new Date().getFullYear()} mypixelogs. All rights reserved.</p>
+          <p>Copyright {new Date().getFullYear()} MyPixelogs. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="/privacy-policy" className="hover:text-primary">
               Privacy

@@ -19,7 +19,7 @@ export function Navbar() {
           <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-sm text-white shadow-[0_10px_24px_rgba(37,99,235,0.18)] dark:shadow-none">
             mp
           </span>
-          mypixelogs
+          MyPixelogs
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
@@ -27,7 +27,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition duration-200 hover:bg-muted hover:text-foreground dark:hover:bg-white/[0.06]"
+              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 dark:hover:bg-white/[0.06]"
             >
               {item.label}
             </Link>

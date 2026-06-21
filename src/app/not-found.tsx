@@ -16,7 +16,7 @@ export default function NotFound() {
       <div className="mx-auto flex min-h-[60vh] max-w-5xl items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="w-full text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            mypixelogs
+            MyPixelogs
           </p>
           <h1 className="mt-4 text-7xl font-bold tracking-normal text-foreground sm:text-8xl">
             404
@@ -58,7 +58,7 @@ export default function NotFound() {
                 </p>
                 <Link
                   href="/search"
-                  className="mt-3 inline-flex text-sm font-semibold text-primary transition hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="mt-3 inline-flex rounded-md text-sm font-semibold text-primary transition-colors duration-200 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   Open search
                 </Link>

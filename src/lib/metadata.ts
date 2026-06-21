@@ -14,7 +14,7 @@ export const defaultOpenGraphImage = {
   url: siteConfig.ogImage,
   width: 1200,
   height: 630,
-  alt: "mypixelogs - Free templates, resources and tools for creators",
+  alt: "MyPixelogs - Free PDF tools, templates, calculators and resources",
 };
 
 export function getAbsoluteUrl(path: string) {

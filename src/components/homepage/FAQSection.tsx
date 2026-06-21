@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     question: "Are all templates free?",
-    answer: "Yes. The templates listed on mypixelogs are free to browse and download.",
+    answer: "Yes. The templates listed on MyPixelogs are free to browse and download.",
   },
   {
     question: "Can I use templates commercially?",

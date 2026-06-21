@@ -25,8 +25,8 @@ export const resources: Resource[] = [
   {
     "id": "mypixelogs-promise",
     "slug": "mypixelogs-promise",
-    "title": "Mypixelogs Promise PSD",
-    "description": "Download a free mypixelogs promise psd as a editable Photoshop design resource for professional projects.",
+    "title": "MyPixelogs Promise PSD",
+    "description": "Download a free MyPixelogs promise PSD as an editable Photoshop design resource for professional projects.",
     "category": "PSD",
     "thumbnail": "/resources/mypixelogs-promise/mypixelogs_promise.jpg",
     "previewImage": "/resources/mypixelogs-promise/mypixelogs_promise.jpg",

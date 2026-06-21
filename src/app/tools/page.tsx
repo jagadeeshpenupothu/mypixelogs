@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
-import { ToolCard } from "@/components/cards/ToolCard";
-import { tools } from "@/data/tools";
+import { ToolsDirectory } from "@/components/tools/ToolsDirectory";
 import { createSocialMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Free PDF Tools",
-  description: "Explore free PDF tools including merge, split, compress, JPG to PDF, and PDF to JPG.",
+  title: "Free Online Tools",
+  description:
+    "Browse free image, PDF, developer, calculator, language, business, design, and utility tools.",
   ...createSocialMetadata({
-    title: "Free PDF and Image Tools | mypixelogs",
-    description: "Explore free PDF tools including merge, split, compress, JPG to PDF, and PDF to JPG.",
+    title: "Free Online Tools | MyPixelogs",
+    description:
+      "Browse free image, PDF, developer, calculator, language, business, design, and utility tools.",
     path: "/tools",
   }),
 };
@@ -20,16 +21,14 @@ export default function ToolsPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Tools</p>
-          <h1 className="mt-3 text-4xl font-bold text-foreground">Free PDF and image tools</h1>
+          <h1 className="mt-3 text-4xl font-bold text-foreground">Free online tools</h1>
           <p className="mt-4 text-base leading-7 text-muted-foreground">
-            A clean foundation for browser-first file utilities, ready for future
-            PDF processing and storage integrations.
+            Browse browser-first utilities by category, from image and PDF tools to
+            developer helpers, calculators, language tools, and everyday utilities.
           </p>
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
-          ))}
+        <div className="mt-10">
+          <ToolsDirectory />
         </div>
       </div>
     </section>

@@ -21,9 +21,9 @@ export function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/templates/${category.slug}`}
-      className="group rounded-lg border border-border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-soft dark:hover:border-neutral-500 dark:hover:shadow-soft"
+      className="group rounded-lg border border-border bg-card p-6 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20 dark:hover:shadow-soft"
     >
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-blue-50 text-primary shadow-sm transition duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_12px_28px_rgba(37,99,235,0.18)] dark:bg-[#171717] dark:shadow-none dark:group-hover:bg-primary">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-blue-50 text-primary shadow-sm transition-[color,background-color,box-shadow] duration-200 group-hover:bg-blue-100 dark:bg-[#171717] dark:shadow-none dark:group-hover:bg-[#1F1F1F]">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </div>
       <h3 className="text-base font-semibold tracking-tight text-foreground">{category.name}</h3>

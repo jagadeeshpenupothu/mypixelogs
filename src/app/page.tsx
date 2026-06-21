@@ -4,19 +4,23 @@ import { BrowseCategoriesSection } from "@/components/homepage/BrowseCategoriesS
 import { CTASection } from "@/components/homepage/CTASection";
 import { HeroSection } from "@/components/homepage/HeroSection";
 import { PopularTemplatesSection } from "@/components/homepage/PopularTemplatesSection";
+import { PopularNowSection } from "@/components/homepage/PopularNowSection";
+import { RecentlyAddedSection } from "@/components/homepage/RecentlyAddedSection";
 import { ResourcesSection } from "@/components/homepage/ResourcesSection";
 import { StatsSection } from "@/components/homepage/StatsSection";
 import { ToolsSection } from "@/components/homepage/ToolsSection";
 import { siteConfig } from "@/constants/site";
 import { createSocialMetadata } from "@/lib/metadata";
 
+const homepageTitle = "MyPixelogs — Free PDF Tools, Templates, Calculators & Resources";
+
 export const metadata: Metadata = {
   title: {
-    absolute: "mypixelogs | Free Templates, Resources & Tools",
+    absolute: homepageTitle,
   },
   description: siteConfig.description,
   ...createSocialMetadata({
-    title: "mypixelogs | Free Templates, Resources & Tools",
+    title: homepageTitle,
     description: siteConfig.description,
     path: "/",
     image: siteConfig.ogImage,
@@ -41,7 +45,7 @@ export default function Home() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.svg`,
+    logo: `${siteConfig.url}${siteConfig.logo}`,
     description: siteConfig.description,
   };
 
@@ -56,11 +60,13 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <HeroSection />
+      <StatsSection />
+      <PopularNowSection />
+      <BrowseCategoriesSection />
+      <RecentlyAddedSection />
       <PopularTemplatesSection />
       <ToolsSection />
       <ResourcesSection />
-      <BrowseCategoriesSection />
-      <StatsSection />
       <CTASection />
     </>
   );

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const title = template.title;
     const description = template.description;
     const url = `/templates/${template.slug}`;
-    const socialTitle = `${template.title} | mypixelogs`;
+    const socialTitle = `${template.title} | MyPixelogs`;
 
     return {
       title,
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: category.title,
       description: category.description,
       ...createSocialMetadata({
-        title: `${category.title} | mypixelogs`,
+        title: `${category.title} | MyPixelogs`,
         description: category.description,
         path: `/templates/${category.slug}`,
       }),

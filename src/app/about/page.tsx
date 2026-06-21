@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about mypixelogs, a free platform for professional templates, design resources, and browser-based online tools.",
+    "Learn about MyPixelogs, a free platform for professional templates, design resources, and browser-based online tools.",
 };
 
 const highlights = [
@@ -37,7 +37,7 @@ export default function AboutPage() {
             Free business templates, resources, and tools for modern work.
           </h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
-            mypixelogs helps creators, freelancers, students, and small teams
+            MyPixelogs helps creators, freelancers, students, and small teams
             find practical digital assets faster. The platform brings together
             professional templates, editable design resources, and simple online
             tools in one clean, searchable place.
@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className="mt-12 rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
           <h2 className="text-2xl font-bold text-foreground">What we are building</h2>
           <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
-            The goal of mypixelogs is to make everyday documents and digital
+            The goal of MyPixelogs is to make everyday documents and digital
             utilities easier to access. Every template and resource is organized
             with descriptive pages, categories, and related content so visitors
             can discover useful files without friction.

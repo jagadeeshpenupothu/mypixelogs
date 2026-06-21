@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = resource.title;
-  const socialTitle = `${resource.title} | mypixelogs`;
+  const socialTitle = `${resource.title} | MyPixelogs`;
   const url = `/resources/${resource.slug}`;
 
   return {

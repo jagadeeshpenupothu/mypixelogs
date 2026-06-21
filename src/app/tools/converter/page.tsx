@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   ...createSocialMetadata({
-    title: `${title} | mypixelogs`,
+    title: `${title} | MyPixelogs`,
     description,
     path: "/tools/converter",
   }),
@@ -32,7 +32,7 @@ export default function ConverterPage() {
             Convert files by detected format
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Upload a file and mypixelogs will detect its source format, show valid
+            Upload a file and MyPixelogs will detect its source format, show valid
             export options, and convert supported image formats directly in your browser.
           </p>
         </div>

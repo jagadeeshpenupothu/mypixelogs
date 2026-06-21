@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
-    "Review the terms and conditions for using mypixelogs templates, resources, and online tools.",
+    "Review the terms and conditions for using MyPixelogs templates, resources, and online tools.",
 };
 
 const sections = [
   {
     title: "Use of the website",
-    body: "By using mypixelogs, you agree to use the website, templates, resources, and tools for lawful purposes and in a way that does not disrupt the platform or other users.",
+    body: "By using MyPixelogs, you agree to use the website, templates, resources, and tools for lawful purposes and in a way that does not disrupt the platform or other users.",
   },
   {
     title: "Templates and resources",
@@ -21,11 +21,11 @@ const sections = [
   },
   {
     title: "Intellectual property",
-    body: "The mypixelogs brand, website design, written content, and platform structure belong to mypixelogs. Third-party names, formats, and trademarks remain the property of their respective owners.",
+    body: "The MyPixelogs brand, website design, written content, and platform structure belong to MyPixelogs. Third-party names, formats, and trademarks remain the property of their respective owners.",
   },
   {
     title: "Changes to terms",
-    body: "We may update these terms as the website evolves. Continued use of mypixelogs after updates means you accept the revised terms.",
+    body: "We may update these terms as the website evolves. Continued use of MyPixelogs after updates means you accept the revised terms.",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function TermsPage() {
           Terms and Conditions
         </h1>
         <p className="mt-5 text-base leading-7 text-muted-foreground">
-          These terms describe the basic rules for using mypixelogs and the
+          These terms describe the basic rules for using MyPixelogs and the
           free content available on the platform.
         </p>
 

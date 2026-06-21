@@ -85,7 +85,7 @@ export function SearchBar() {
 
   return (
     <div>
-      <div className="rounded-lg border border-border bg-card p-2 shadow-soft">
+      <div className="rounded-lg border border-border bg-card p-2 shadow-sm transition-[border-color,box-shadow] duration-200 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 dark:focus-within:ring-primary/25">
         <div className="flex items-center gap-3">
           <Search className="ml-3 h-5 w-5 text-muted-foreground" />
           <input
@@ -93,7 +93,7 @@ export function SearchBar() {
             onChange={(event) => setQuery(event.target.value)}
             autoFocus
             placeholder="Search invoices, resumes, PDF tools..."
-            className="h-12 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground"
+              className="h-12 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground/80"
           />
         </div>
       </div>
@@ -106,7 +106,7 @@ export function SearchBar() {
               key={item}
               type="button"
               onClick={() => applyQuery(item)}
-              className="rounded-md border border-border bg-background px-3 py-1.5 text-sm font-semibold text-muted-foreground transition hover:border-primary/40 hover:text-primary"
+              className="rounded-md border border-border bg-background px-3 py-1.5 text-sm font-semibold text-muted-foreground transition-colors duration-200 hover:border-foreground/20 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 dark:bg-[#0A0A0A] dark:hover:border-white/20"
             >
               {item}
             </button>

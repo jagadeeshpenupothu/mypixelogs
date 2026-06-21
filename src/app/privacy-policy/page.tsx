@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Read the mypixelogs privacy policy for our free templates, resources, and browser-based online tools.",
+    "Read the MyPixelogs privacy policy for our free templates, resources, and browser-based online tools.",
 };
 
 const sections = [
   {
     title: "Information we collect",
-    body: "mypixelogs is designed as a free content and tools website. We may collect basic usage information such as pages visited, browser type, referring pages, and general device information to understand site performance and improve content.",
+    body: "MyPixelogs is designed as a free content and tools website. We may collect basic usage information such as pages visited, browser type, referring pages, and general device information to understand site performance and improve content.",
   },
   {
     title: "Browser-based tools",
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
           Privacy Policy
         </h1>
         <p className="mt-5 text-base leading-7 text-muted-foreground">
-          This policy explains how mypixelogs approaches privacy for visitors
+          This policy explains how MyPixelogs approaches privacy for visitors
           using our free templates, resources, and online tools.
         </p>
 

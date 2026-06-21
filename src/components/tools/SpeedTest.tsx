@@ -266,7 +266,7 @@ function getSuitability(results: SpeedResults | null) {
 
 function buildResultText(results: SpeedResults, rating: string) {
   return [
-    "mypixelogs Internet Speed Test",
+    "MyPixelogs Internet Speed Test",
     `Download: ${results.downloadMbps.toFixed(1)} Mbps`,
     `Upload: ${results.uploadMbps.toFixed(1)} Mbps`,
     `Ping: ${results.pingMs.toFixed(0)} ms`,
@@ -297,7 +297,7 @@ function downloadResultsImage(results: SpeedResults, rating: string) {
   context.font = "700 30px Arial";
   context.fillText("mp", 130, 160);
   context.font = "700 34px Arial";
-  context.fillText("mypixelogs speed test", 215, 157);
+  context.fillText("MyPixelogs speed test", 215, 157);
   context.font = "800 76px Arial";
   context.fillText(`${results.downloadMbps.toFixed(1)} Mbps`, 110, 290);
   context.font = "500 28px Arial";

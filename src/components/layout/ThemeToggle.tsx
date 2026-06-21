@@ -55,7 +55,7 @@ export function ThemeToggle() {
       <button
         type="button"
         onClick={() => setIsOpen((current) => !current)}
-        className="inline-flex h-10 items-center gap-2 rounded-md border border-border bg-background px-3 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="inline-flex h-10 items-center gap-2 rounded-md border border-border bg-background px-3 text-sm font-semibold text-foreground shadow-sm transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 dark:bg-[#0A0A0A] dark:hover:border-white/20"
         aria-haspopup="menu"
         aria-expanded={isOpen}
       >
@@ -85,7 +85,7 @@ export function ThemeToggle() {
                 className={cn(
                   "flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition",
                   isActive
-                    ? "bg-blue-50 text-primary dark:bg-white/[0.06]"
+                    ? "bg-muted text-foreground"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >

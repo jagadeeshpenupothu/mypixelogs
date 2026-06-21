@@ -13,6 +13,7 @@ export type SearchItem = {
   slug: string;
   description: string;
   category: string;
+  keywords?: string;
   type: SearchResultType;
   href: string;
 };
@@ -36,15 +37,18 @@ export const searchIndex: SearchItem[] = [
     type: "Resource" as const,
     href: `/resources/${resource.slug}`,
   })),
-  ...tools.map((tool) => ({
-    id: tool.id,
-    title: tool.name,
-    slug: tool.slug,
-    description: tool.description,
-    category: "Tools",
-    type: "Tool" as const,
-    href: `/tools/${tool.slug}`,
-  })),
+  ...tools
+    .filter((tool) => !tool.comingSoon)
+    .map((tool) => ({
+      id: tool.id,
+      title: tool.name,
+      slug: tool.slug,
+      description: tool.description,
+      category: tool.category,
+      keywords: tool.tags.join(" "),
+      type: "Tool" as const,
+      href: `/tools/${tool.slug}`,
+    })),
 ];
 
 export const fuseOptions = {
@@ -52,7 +56,8 @@ export const fuseOptions = {
     { name: "title", weight: 0.42 },
     { name: "slug", weight: 0.24 },
     { name: "description", weight: 0.22 },
-    { name: "category", weight: 0.12 },
+    { name: "category", weight: 0.08 },
+    { name: "keywords", weight: 0.04 },
   ],
   threshold: 0.36,
   distance: 120,

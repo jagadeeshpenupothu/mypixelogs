@@ -14,7 +14,7 @@ export function WhyMypixelogsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Why mypixelogs
+            Why MyPixelogs
           </p>
           <h2 className="mt-3 text-3xl font-bold text-foreground">
             Built for fast, practical creation
@@ -29,7 +29,7 @@ export function WhyMypixelogsSection() {
           {reasons.map((reason) => (
             <div
               key={reason}
-              className="rounded-lg border border-border bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft"
+              className="rounded-lg border border-border bg-card p-5 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20 dark:hover:shadow-soft"
             >
               <CheckCircle2 className="h-5 w-5 text-primary" />
               <h3 className="mt-4 text-base font-semibold text-foreground">{reason}</h3>

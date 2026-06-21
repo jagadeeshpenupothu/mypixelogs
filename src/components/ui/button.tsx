@@ -5,16 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-[color,background-color,border-color,box-shadow,transform] duration-200 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:translate-y-0 disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-[0_10px_24px_rgba(37,99,235,0.20)] hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[0_14px_30px_rgba(37,99,235,0.24)] dark:shadow-none",
-        secondary: "bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:bg-secondary/80 dark:border dark:border-border",
+          "bg-primary text-primary-foreground shadow-[0_8px_18px_rgba(37,99,235,0.18)] hover:-translate-y-0.5 hover:bg-primary/95 hover:shadow-[0_10px_22px_rgba(37,99,235,0.20)] active:bg-primary/90 dark:shadow-none dark:hover:bg-primary/90",
+        secondary:
+          "border border-border bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-muted active:bg-muted/80 dark:bg-[#111111] dark:hover:border-white/20 dark:hover:bg-[#171717]",
         outline:
-          "border border-border bg-background/70 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-muted hover:text-foreground dark:bg-[#111111] dark:hover:border-neutral-500 dark:hover:bg-[#171717]",
-        ghost: "hover:bg-muted hover:text-foreground dark:hover:bg-white/[0.06]",
+          "border border-border bg-background/70 hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-muted hover:text-foreground active:bg-muted/80 dark:bg-[#0A0A0A] dark:hover:border-white/20 dark:hover:bg-[#171717]",
+        ghost:
+          "hover:bg-muted hover:text-foreground active:bg-muted/80 dark:hover:bg-white/[0.06]",
       },
       size: {
         default: "h-10 px-4 py-2",
