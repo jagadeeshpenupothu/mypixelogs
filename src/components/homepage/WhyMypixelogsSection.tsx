@@ -4,7 +4,7 @@ const reasons = [
   "Free Downloads",
   "No Registration Required",
   "SEO-Friendly Templates",
-  "Professional Resources",
+  "Professional Assets",
   "Fast Online Tools",
 ];
 

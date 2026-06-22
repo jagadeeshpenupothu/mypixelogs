@@ -3,17 +3,17 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
-    "Review the terms and conditions for using MyPixelogs templates, resources, and online tools.",
+    "Review the terms and conditions for using MyPixelogs templates, assets, and online tools.",
 };
 
 const sections = [
   {
     title: "Use of the website",
-    body: "By using MyPixelogs, you agree to use the website, templates, resources, and tools for lawful purposes and in a way that does not disrupt the platform or other users.",
+    body: "By using MyPixelogs, you agree to use the website, templates, assets, and tools for lawful purposes and in a way that does not disrupt the platform or other users.",
   },
   {
-    title: "Templates and resources",
-    body: "Free templates and resources are provided to help with common business, creative, and personal workflows. You are responsible for reviewing and adapting any downloaded file before using it in a professional setting.",
+    title: "Templates and assets",
+    body: "Free templates and assets are provided to help with common business, creative, and personal workflows. You are responsible for reviewing and adapting any downloaded file before using it in a professional setting.",
   },
   {
     title: "Online tools",

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Guides for templates, document workflows, PDF tools, and business resources.",
+  description: "Guides for templates, document workflows, PDF tools, and business assets.",
 };
 
 const posts = [

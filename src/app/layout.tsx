@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/constants/site";
@@ -9,7 +8,7 @@ import { defaultOpenGraphImage } from "@/lib/metadata";
 import "./globals.css";
 
 const googleAnalyticsId = "G-KBP6GF6R4C";
-const homepageTitle = "MyPixelogs — Free PDF Tools, Templates, Calculators & Resources";
+const homepageTitle = "MyPixelogs — Free PDF Tools, Templates, Calculators & Assets";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -68,7 +67,6 @@ export default function RootLayout({
         >
           <Navbar />
           <main>{children}</main>
-          <Footer />
         </ThemeProvider>
         {process.env.NODE_ENV === "production" ? (
           <GoogleAnalytics gaId={googleAnalyticsId} />

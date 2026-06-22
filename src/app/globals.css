@@ -61,6 +61,14 @@ body {
 }
 
 @layer utilities {
+  .explorer-sidebar-expanded {
+    width: 320px;
+  }
+
+  .explorer-sidebar-collapsed {
+    width: 64px;
+  }
+
   .dark .shadow-sm {
     box-shadow: 0 1px 0 hsl(0 0% 100% / 0.03), 0 10px 28px hsl(0 0% 0% / 0.28);
   }

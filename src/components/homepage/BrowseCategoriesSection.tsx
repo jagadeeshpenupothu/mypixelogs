@@ -27,9 +27,9 @@ const browseCategories = [
     icon: FileText,
   },
   {
-    title: "Resources",
+    title: "Assets",
     description: "PSD files, Canva-style assets, logos, and icon packs.",
-    href: "/resources",
+    href: "/assets",
     icon: FolderOpen,
   },
 ];

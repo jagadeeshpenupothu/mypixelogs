@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact MyPixelogs for questions about free templates, downloadable resources, and online tools.",
+    "Contact MyPixelogs for questions about free templates, downloadable assets, and online tools.",
 };
 
 export default function ContactPage() {
@@ -19,7 +19,7 @@ export default function ContactPage() {
             Get in touch with MyPixelogs.
           </h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground">
-            Have a question about templates, resources, tools, or future
+            Have a question about templates, assets, tools, or future
             content? Use the form UI below as a placeholder for your production
             contact workflow.
           </p>

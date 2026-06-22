@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { UniversalQrGenerator } from "@/components/tools/UniversalQrGenerator";
-import { siteConfig } from "@/constants/site";
 import { createSocialMetadata } from "@/lib/metadata";
 import { getToolBySlug } from "@/lib/tools";
 
@@ -22,22 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function QrGeneratorPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: "Universal QR Code Generator",
-    url: `${siteConfig.url}/tools/qr-generator`,
-    applicationCategory: "UtilityApplication",
-    operatingSystem: "Web",
-    description,
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

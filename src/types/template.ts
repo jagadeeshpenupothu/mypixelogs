@@ -1,4 +1,19 @@
-export type TemplateCategory = "invoice" | "receipt" | "resume" | "letterhead" | "certificate";
+export type TemplateCategory =
+  | "canva"
+  | "word"
+  | "excel"
+  | "google-docs"
+  | "pdf"
+  | "psd"
+  | "illustrator"
+  | "invoice"
+  | "receipt"
+  | "resume"
+  | "letterhead"
+  | "certificate"
+  | "flyer"
+  | "poster"
+  | "social-media";
 
 export type Template = {
   id: string;

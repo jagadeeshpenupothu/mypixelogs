@@ -20,7 +20,7 @@ const quickAccess = [
   { label: "Image Tools", icon: "🖼️", href: "/tools/image-tools" },
   { label: "Text Tools", icon: "📝", href: "/tools/text-tools" },
   { label: "Templates", icon: "📁", href: "/templates" },
-  { label: "Resources", icon: "📚", href: "/resources" },
+  { label: "Assets", icon: "📚", href: "/assets" },
 ];
 
 export function HeroSection() {
@@ -32,11 +32,11 @@ export function HeroSection() {
             Free business-ready assets
           </p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-normal text-foreground sm:text-5xl lg:text-6xl lg:leading-[1.05]">
-            Free Templates, Tools & Design Resources
+            Free Templates, Tools & Design Assets
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
             Download professional templates, business documents, PDF tools, Canva
-            resources, logos, PSD files and more.
+            templates, logos, icon packs and more.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
@@ -55,8 +55,8 @@ export function HeroSection() {
                 <Search className="h-5 w-5 shrink-0 text-muted-foreground" />
                 <input
                   name="q"
-                  aria-label="Search templates, tools and resources"
-                  placeholder="Search templates, PDF tools, calculators, developer tools and resources..."
+                  aria-label="Search templates, tools and assets"
+                  placeholder="Search templates, PDF tools, calculators, developer tools and assets..."
                   className="h-12 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground/80"
                 />
               </div>

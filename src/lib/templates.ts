@@ -7,6 +7,27 @@ export function getTemplateBySlug(slug: string): Template | undefined {
 }
 
 export function getTemplatesByCategory(category: TemplateCategory): Template[] {
+  if (category === "word") {
+    return templates.filter((template) => template.formats.includes("Word"));
+  }
+
+  if (category === "excel") {
+    return templates.filter((template) => template.formats.includes("Excel"));
+  }
+
+  if (category === "pdf") {
+    return templates.filter((template) => template.formats.includes("PDF"));
+  }
+
+  if (category === "google-docs") {
+    return templates.filter((template) => template.formats.includes("Google Docs"));
+  }
+
+  if (category === "canva" || category === "psd" || category === "illustrator") {
+    const formatLabel = category === "psd" ? "PSD" : category === "illustrator" ? "Illustrator" : "Canva";
+    return templates.filter((template) => template.formats.includes(formatLabel));
+  }
+
   return templates.filter((template) => template.category === category);
 }
 

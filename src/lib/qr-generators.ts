@@ -74,7 +74,7 @@ export const qrTypeOptions: { label: string; value: QrType }[] = [
 
 export const initialQrFormState: QrFormState = {
   websiteUrl: "https://mypixelogs.com",
-  text: "Free templates, tools, and design resources.",
+  text: "Free templates, tools, and design assets.",
   emailAddress: "",
   emailSubject: "",
   emailBody: "",

@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Disclaimer",
   description:
-    "Read the MyPixelogs disclaimer for free templates, downloadable resources, and browser-based tools.",
+    "Read the MyPixelogs disclaimer for free templates, downloadable assets, and browser-based tools.",
 };
 
 const sections = [
   {
     title: "Provided as-is",
-    body: "Templates, resources, examples, and tools on MyPixelogs are provided as-is for general use. We do not guarantee that every file will fit every business, legal, financial, or creative requirement.",
+    body: "Templates, assets, examples, and tools on MyPixelogs are provided as-is for general use. We do not guarantee that every file will fit every business, legal, financial, or creative requirement.",
   },
   {
     title: "No professional advice",
@@ -32,7 +32,7 @@ export default function DisclaimerPage() {
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">Disclaimer</p>
         <h1 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">Disclaimer</h1>
         <p className="mt-5 text-base leading-7 text-muted-foreground">
-          This disclaimer explains the limits of the free templates, resources,
+          This disclaimer explains the limits of the free templates, assets,
           and browser-based tools available on MyPixelogs.
         </p>
 

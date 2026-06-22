@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { TemplateCard } from "@/components/cards/TemplateCard";
+import { CollectionPage } from "@/components/collections/CollectionPage";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { RelatedTemplates } from "@/components/templates/RelatedTemplates";
 import { TemplateActions } from "@/components/templates/TemplateActions";
 import { TemplateHero } from "@/components/templates/TemplateHero";
 import { TemplatePreview } from "@/components/templates/TemplatePreview";
 import { getTemplateCategory } from "@/data/template-categories";
-import { siteConfig } from "@/constants/site";
 import { createSocialMetadata } from "@/lib/metadata";
 import {
   getRelatedTemplates,
@@ -77,43 +76,23 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
     const categoryTemplates = getTemplatesByCategory(category.slug as TemplateCategory);
 
     return (
-      <section className="bg-white py-10 sm:py-14">
+      <section className="bg-white py-1 sm:py-2 dark:bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs
-            items={[
+          <CollectionPage
+            kind="template"
+            title={category.label}
+            items={categoryTemplates}
+            searchPlaceholder={`Search ${category.label.toLowerCase()}...`}
+            breadcrumbs={[
               { label: "Home", href: "/" },
               { label: "Templates", href: "/templates" },
               { label: category.label },
             ]}
           />
-
-          <header className="mt-10 max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Template category
-            </p>
-            <h1 className="mt-3 text-4xl font-bold tracking-normal text-foreground sm:text-5xl">
-              {category.title}
-            </h1>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              {category.description}
-            </p>
-          </header>
-
-          <div className="mt-10 flex flex-col justify-between gap-4 border-y border-border py-5 sm:flex-row sm:items-center">
-            <p className="text-sm font-medium text-muted-foreground">
-              Showing {categoryTemplates.length} templates
-            </p>
-            <p className="text-sm text-muted-foreground">Pagination-ready collection layout</p>
-          </div>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {categoryTemplates.map((item) => (
-              <TemplateCard key={item.id} template={item} />
-            ))}
-          </div>
         </div>
       </section>
     );
+
   }
 
   if (!template) {
@@ -122,21 +101,9 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
 
   const categoryLabel = getTemplateCategoryLabel(template.category);
   const relatedTemplates = getRelatedTemplates(template, 4);
-  const templateJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: template.title,
-    description: template.description,
-    category: categoryLabel,
-    url: `${siteConfig.url}/templates/${template.slug}`,
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(templateJsonLd) }}
-      />
       <section className="bg-white py-10 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs

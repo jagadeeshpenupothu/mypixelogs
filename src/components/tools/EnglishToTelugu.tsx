@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Sanscript from "@indic-transliteration/sanscript";
 import { Check, Clipboard, Download, Eraser, Languages, Repeat2 } from "lucide-react";
 
@@ -35,14 +35,6 @@ const wordNormalizations = new Map<string, string>([
   ["meeru", "mIru"],
   ["unnaru", "unnAru"],
 ]);
-
-function getInitialEnglishText() {
-  if (typeof window === "undefined") {
-    return "";
-  }
-
-  return window.localStorage.getItem(storageKey) ?? "";
-}
 
 function normalizeRomanInput(input: string) {
   return input
@@ -81,9 +73,19 @@ function downloadTxt(text: string) {
 }
 
 export function EnglishToTelugu() {
-  const [englishText, setEnglishText] = useState(getInitialEnglishText);
-  const [teluguText, setTeluguText] = useState(() => transliterateToTelugu(getInitialEnglishText()));
+  const [englishText, setEnglishText] = useState("");
+  const [teluguText, setTeluguText] = useState("");
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      const savedText = window.localStorage.getItem(storageKey) ?? "";
+      setEnglishText(savedText);
+      setTeluguText(transliterateToTelugu(savedText));
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   const counts = useMemo(
     () => ({

@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { ResourceCard } from "@/components/cards/ResourceCard";
+import { AssetCard } from "@/components/cards/AssetCard";
 import { Button } from "@/components/ui/button";
-import { resources } from "@/data/resources";
+import { assets } from "@/data/assets";
 
 export function ResourcesSection() {
-  const featuredResources = resources.slice(0, 6);
+  const featuredAssets = assets.slice(0, 6);
 
   return (
     <section className="bg-white py-16 sm:py-20">
@@ -14,26 +14,26 @@ export function ResourcesSection() {
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Latest Resources
+              Latest Assets
             </p>
             <h2 className="mt-3 text-3xl font-bold text-foreground">
               Assets for polished business work
             </h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground">
-              PSD resources, Canva-style packs, logo assets, and icon collections
+              Logo packs, icon packs, and raw creative assets
               for faster creative workflows.
             </p>
           </div>
           <Button asChild variant="outline">
-            <Link href="/resources">
-              View all resources
+            <Link href="/assets">
+              View all assets
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredResources.map((resource) => (
-            <ResourceCard key={resource.id} resource={resource} />
+          {featuredAssets.map((asset) => (
+            <AssetCard key={asset.id} asset={asset} />
           ))}
         </div>
       </div>

@@ -3,11 +3,11 @@ import { ArrowUpRight, FileText, Palette } from "lucide-react";
 
 import { categories } from "@/data/categories";
 
-const resourceCategories = [
-  { label: "PSD", href: "/resources?category=PSD" },
-  { label: "Canva", href: "/resources?category=Canva" },
-  { label: "Logos", href: "/resources?category=Logos" },
-  { label: "Icons", href: "/resources?category=Icons" },
+const assetCategories = [
+  { label: "Logos", href: "/assets?category=LOGO" },
+  { label: "Icons", href: "/assets?category=ICON" },
+  { label: "Mockups", href: "/assets?category=MOCKUP" },
+  { label: "Backgrounds", href: "/assets?category=BACKGROUND" },
 ];
 
 export function PopularCategoriesSection() {
@@ -22,7 +22,7 @@ export function PopularCategoriesSection() {
             Browse by what you need next
           </h2>
           <p className="mt-4 text-base leading-7 text-muted-foreground">
-            Jump into template and resource categories that match common business,
+            Jump into template and asset categories that match common business,
             design, and document workflows.
           </p>
         </div>
@@ -54,10 +54,10 @@ export function PopularCategoriesSection() {
               <div className="flex h-11 w-11 items-center justify-center rounded-md bg-blue-50 text-primary">
                 <Palette className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">Resources</h3>
+              <h3 className="text-lg font-semibold text-foreground">Assets</h3>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {resourceCategories.map((category) => (
+              {assetCategories.map((category) => (
                 <Link
                   key={category.label}
                   href={category.href}

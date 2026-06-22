@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about MyPixelogs, a free platform for professional templates, design resources, and browser-based online tools.",
+    "Learn about MyPixelogs, a free platform for editable templates, raw design assets, and browser-based online tools.",
 };
 
 const highlights = [
@@ -16,9 +16,9 @@ const highlights = [
       "Ready-to-use invoices, receipts, resumes, certificates, and letterheads for business and personal workflows.",
   },
   {
-    title: "Design Resources",
+    title: "Design Assets",
     description:
-      "Downloadable PSD, Canva, logo, and icon resources built for fast creative work.",
+      "Downloadable templates, logo packs, and icon assets built for fast creative work.",
   },
   {
     title: "Online Tools",
@@ -34,12 +34,12 @@ export default function AboutPage() {
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">About</p>
           <h1 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
-            Free business templates, resources, and tools for modern work.
+            Free business templates, assets, and tools for modern work.
           </h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
             MyPixelogs helps creators, freelancers, students, and small teams
             find practical digital assets faster. The platform brings together
-            professional templates, editable design resources, and simple online
+            professional templates, raw design assets, and simple online
             tools in one clean, searchable place.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-foreground">What we are building</h2>
           <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
             The goal of MyPixelogs is to make everyday documents and digital
-            utilities easier to access. Every template and resource is organized
+            utilities easier to access. Every template and asset is organized
             with descriptive pages, categories, and related content so visitors
             can discover useful files without friction.
           </p>

@@ -4,15 +4,21 @@ import { ArrowUpRight } from "lucide-react";
 import type { SearchItem, SearchResultType } from "@/lib/search";
 import { searchSuggestions } from "@/lib/search";
 
-const resultOrder: SearchResultType[] = ["Template", "Resource", "Tool"];
+const resultOrder: SearchResultType[] = ["Template", "Asset", "Tool"];
 
 type SearchResultsProps = {
   query: string;
   results: SearchItem[];
   onSuggestionClick: (query: string) => void;
+  categoryLabel?: string;
 };
 
-export function SearchResults({ query, results, onSuggestionClick }: SearchResultsProps) {
+export function SearchResults({
+  query,
+  results,
+  onSuggestionClick,
+  categoryLabel = "Everything",
+}: SearchResultsProps) {
   const groupedResults = resultOrder.map((type) => ({
     type,
     items: results.filter((item) => item.type === type),
@@ -23,7 +29,7 @@ export function SearchResults({ query, results, onSuggestionClick }: SearchResul
       <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
         <p className="text-sm font-semibold text-foreground">Start searching</p>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          Search templates, resources, and tools from one place.
+          Search {categoryLabel.toLowerCase()} from one place.
         </p>
       </div>
     );
@@ -34,6 +40,9 @@ export function SearchResults({ query, results, onSuggestionClick }: SearchResul
       <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
         <p className="text-sm font-semibold text-foreground">No results found for:</p>
         <p className="mt-2 text-lg font-bold text-foreground">&quot;{query}&quot;</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          No matches in {categoryLabel.toLowerCase()}.
+        </p>
         <p className="mt-5 text-sm text-muted-foreground">Try searching for:</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {searchSuggestions.map((suggestion) => (

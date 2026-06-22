@@ -17,16 +17,16 @@ const faqs = [
   },
   {
     question: "Do I need an account?",
-    answer: "No account is required to use the current templates, resources, or browser tools.",
+    answer: "No account is required to use the current templates, assets, or browser tools.",
   },
   {
     question: "Are the online tools free?",
     answer: "Yes. Tools such as the converter, image compressor, and QR generator run in your browser for free.",
   },
   {
-    question: "How often are resources updated?",
+    question: "How often are assets updated?",
     answer:
-      "The library is structured for ongoing updates as new templates, design resources, and tools are added.",
+      "The library is structured for ongoing updates as new templates, design assets, and tools are added.",
   },
 ];
 

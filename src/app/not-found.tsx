@@ -7,7 +7,7 @@ const quickLinks = [
   { href: "/", label: "Go Home", icon: Home, variant: "default" as const },
   { href: "/templates", label: "Browse Templates", icon: ArrowRight, variant: "outline" as const },
   { href: "/tools", label: "Explore Tools", icon: ArrowRight, variant: "outline" as const },
-  { href: "/resources", label: "View Resources", icon: ArrowRight, variant: "outline" as const },
+  { href: "/assets", label: "View Assets", icon: ArrowRight, variant: "outline" as const },
 ];
 
 export default function NotFound() {
@@ -54,7 +54,7 @@ export default function NotFound() {
               <div>
                 <h3 className="text-base font-semibold text-foreground">Try searching</h3>
                 <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                  Try searching for templates, tools, or resources.
+                  Try searching for templates, tools, or assets.
                 </p>
                 <Link
                   href="/search"

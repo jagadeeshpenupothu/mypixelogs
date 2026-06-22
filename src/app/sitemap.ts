@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 
+import { assetCategories } from "@/data/asset-categories";
 import { templateCategories } from "@/data/template-categories";
-import { resources } from "@/data/resources";
+import { assets } from "@/data/assets";
 import { templates } from "@/data/templates";
 import { toolCategories, tools } from "@/data/tools";
 import { siteConfig } from "@/constants/site";
@@ -9,7 +10,7 @@ import { siteConfig } from "@/constants/site";
 const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/templates", "/tools", "/resources", "/blog"].map((route) => ({
+  const staticRoutes = ["", "/templates", "/tools", "/assets", "/blog"].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -30,11 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const resourceRoutes = resources.map((resource) => ({
-    url: `${BASE_URL}/resources/${resource.slug}`,
+  const assetRoutes = assets.map((asset) => ({
+    url: `${BASE_URL}/assets/${asset.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.6,
+  }));
+
+  const assetCategoryRoutes = assetCategories.map((category) => ({
+    url: `${BASE_URL}/assets/${category.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
   }));
 
   const toolCategoryRoutes = toolCategories.map((category) => ({
@@ -57,7 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...categoryRoutes,
     ...templateRoutes,
-    ...resourceRoutes,
+    ...assetCategoryRoutes,
+    ...assetRoutes,
     ...toolCategoryRoutes,
     ...toolRoutes,
   ];

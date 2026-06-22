@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 
-import { ToolsDirectory } from "@/components/tools/ToolsDirectory";
+import {
+  RootCollectionBrowser,
+  type RootCollectionItem,
+  type RootCollectionSection,
+} from "@/components/collections/RootCollectionBrowser";
+import { toolCategories, tools } from "@/data/tools";
 import { createSocialMetadata } from "@/lib/metadata";
+import { isToolInCategory } from "@/lib/tools";
+import type { Tool } from "@/types/tool";
 
 export const metadata: Metadata = {
   title: "Free Online Tools",
@@ -15,21 +22,69 @@ export const metadata: Metadata = {
   }),
 };
 
+function toolItem(tool: Tool): RootCollectionItem {
+  return {
+    id: tool.id,
+    title: tool.name,
+    description: tool.description,
+    href: `/tools/${tool.slug}`,
+    badge: tool.subcategory ?? tool.category.replace(" Tools", ""),
+    comingSoon: tool.comingSoon,
+    filters: {
+      category: [tool.category, ...(tool.secondaryCategories ?? [])],
+      status: [tool.comingSoon ? "Coming Soon" : "Available"],
+    },
+    searchText: [
+      tool.name,
+      tool.slug,
+      tool.description,
+      tool.category,
+      tool.subcategory,
+      ...(tool.secondaryCategories ?? []),
+      ...tool.tags,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase(),
+  };
+}
+
 export default function ToolsPage() {
+  const sections: RootCollectionSection[] = toolCategories
+    .map((category) => ({
+      id: category.slug,
+      title: category.name,
+      href: `/tools/${category.slug}`,
+      items: tools.filter((tool) => isToolInCategory(tool, category.name)).map(toolItem),
+    }))
+    .filter((section) => section.items.length > 0);
+
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-white py-1 sm:py-2 dark:bg-black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">Tools</p>
-          <h1 className="mt-3 text-4xl font-bold text-foreground">Free online tools</h1>
-          <p className="mt-4 text-base leading-7 text-muted-foreground">
-            Browse browser-first utilities by category, from image and PDF tools to
-            developer helpers, calculators, language tools, and everyday utilities.
-          </p>
-        </div>
-        <div className="mt-10">
-          <ToolsDirectory />
-        </div>
+        <RootCollectionBrowser
+          kind="tool"
+          title="Tools"
+          totalLabel={`${tools.length.toLocaleString()} Tools`}
+          searchPlaceholder="Search tools..."
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Tools" },
+          ]}
+          sections={sections}
+          filterSections={[
+            {
+              id: "category",
+              title: "Category",
+              options: toolCategories.map((category) => category.name),
+            },
+            {
+              id: "status",
+              title: "Status",
+              options: ["Available", "Coming Soon"],
+            },
+          ]}
+        />
       </div>
     </section>
   );

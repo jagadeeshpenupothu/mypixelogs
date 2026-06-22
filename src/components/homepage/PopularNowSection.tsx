@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { ResourceCard } from "@/components/cards/ResourceCard";
+import { AssetCard } from "@/components/cards/AssetCard";
 import { ToolCard } from "@/components/cards/ToolCard";
 import { Button } from "@/components/ui/button";
-import { resources } from "@/data/resources";
+import { assets } from "@/data/assets";
 import { tools } from "@/data/tools";
 
 export function PopularNowSection() {
@@ -21,7 +21,7 @@ export function PopularNowSection() {
     .map((slug) => tools.find((tool) => tool.slug === slug))
     .filter((tool): tool is (typeof tools)[number] => Boolean(tool));
 
-  const popularResources = resources.slice(0, 2);
+  const popularAssets = assets.slice(0, 2);
 
   return (
     <section className="bg-white py-12 sm:py-14 dark:bg-black">
@@ -32,7 +32,7 @@ export function PopularNowSection() {
               Popular Right Now
             </p>
             <h2 className="mt-3 text-3xl font-bold text-foreground">
-              Frequently used tools and resources
+              Frequently used tools and assets
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
               Fast links to the tools and assets visitors are most likely to need first.
@@ -50,8 +50,8 @@ export function PopularNowSection() {
           {popularTools.map((tool) => (
             <ToolCard key={tool.id} tool={tool} />
           ))}
-          {popularResources.map((resource) => (
-            <ResourceCard key={resource.id} resource={resource} />
+          {popularAssets.map((asset) => (
+            <AssetCard key={asset.id} asset={asset} />
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "MyPixelogs",
   url: "https://mypixelogs.com",
   description:
-    "Free online PDF tools, calculators, developer utilities, business templates and digital resources. No signup required.",
+    "Free online PDF tools, calculators, developer utilities, editable templates, and raw design assets. No signup required.",
   ogImage: "/og-image.png",
   logo: "/icon.png",
   keywords: [
@@ -18,8 +18,8 @@ export const siteConfig = {
     "Word templates",
     "Excel templates",
     "Canva templates",
-    "Canva resources",
+    "Canva templates",
     "PSD files",
-    "digital resources",
+    "design assets",
   ],
 };

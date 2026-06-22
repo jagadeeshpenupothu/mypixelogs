@@ -5,7 +5,7 @@ import { SearchBar } from "@/components/search/SearchBar";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search templates, resources, and tools on MyPixelogs.",
+  description: "Search templates, assets, and tools on MyPixelogs.",
   robots: {
     index: false,
     follow: true,
@@ -22,7 +22,7 @@ export default function SearchPage() {
             Search MyPixelogs
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            Find templates, resources, and tools from one fast browser-side search.
+            Find templates, assets, and tools from one fast browser-side search.
           </p>
         </div>
 
