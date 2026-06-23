@@ -2,15 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { createSocialMetadata } from "@/lib/metadata";
+
 export const metadata: Metadata = {
   title: "Blog",
   description: "Guides for templates, document workflows, PDF tools, and business assets.",
+  ...createSocialMetadata({
+    title: "Document Workflow Guides",
+    description: "Guides for templates, document workflows, PDF tools, and business assets.",
+    path: "/blog",
+  }),
 };
 
 const posts = [
-  "How to choose the right invoice template",
-  "A practical checklist for business document design",
-  "PDF workflow ideas for small teams",
+  {
+    title: "How to choose the right invoice template",
+    description:
+      "Compare invoice formats, business use cases, and editable file types before downloading.",
+    href: "/templates/invoice",
+  },
+  {
+    title: "A practical checklist for business document design",
+    description:
+      "Browse templates that keep invoices, resumes, certificates, and letterheads consistent.",
+    href: "/templates",
+  },
+  {
+    title: "PDF workflow ideas for small teams",
+    description:
+      "Explore browser-based PDF tools for rotating, extracting, compressing, and converting documents.",
+    href: "/tools/pdf-tools",
+  },
 ];
 
 export default function BlogPage() {
@@ -28,14 +50,13 @@ export default function BlogPage() {
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {posts.map((post) => (
             <Link
-              key={post}
-              href="#"
+              key={post.title}
+              href={post.href}
               className="group rounded-lg border border-border bg-card p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft"
             >
-              <h2 className="text-lg font-semibold text-foreground">{post}</h2>
+              <h2 className="text-lg font-semibold text-foreground">{post.title}</h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                A placeholder article card ready to connect to a CMS or markdown
-                content source in a later phase.
+                {post.description}
               </p>
               <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
                 Read guide

@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { createSocialMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about MyPixelogs, a free platform for editable templates, raw design assets, and browser-based online tools.",
+  ...createSocialMetadata({
+    title: "About MyPixelogs",
+    description:
+      "Learn about MyPixelogs, a free platform for editable templates, raw design assets, and browser-based online tools.",
+    path: "/about",
+  }),
 };
 
 const highlights = [

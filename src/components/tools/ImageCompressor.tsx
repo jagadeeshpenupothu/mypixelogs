@@ -125,14 +125,6 @@ async function compressImage(
   context.drawImage(image, 0, 0);
 
   const blob = await canvasToBlob(canvas, outputMimeType, quality / 100);
-  console.info("[ImageCompressor]", {
-    originalSize: file.size,
-    currentQuality: quality,
-    compressedBlobSize: blob.size,
-    inputMimeType: file.type,
-    outputMimeType: blob.type || outputMimeType,
-    strategy,
-  });
 
   return {
     url: URL.createObjectURL(blob),

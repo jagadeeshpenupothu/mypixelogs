@@ -13,6 +13,7 @@ export type Tool = {
   name: string;
   slug: string;
   description: string;
+  image?: string;
   icon: string;
   category: ToolCategory;
   tags: string[];

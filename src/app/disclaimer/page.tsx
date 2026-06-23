@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 
+import { createSocialMetadata } from "@/lib/metadata";
+
 export const metadata: Metadata = {
   title: "Disclaimer",
   description:
     "Read the MyPixelogs disclaimer for free templates, downloadable assets, and browser-based tools.",
+  ...createSocialMetadata({
+    title: "Disclaimer",
+    description:
+      "Read the MyPixelogs disclaimer for free templates, downloadable assets, and browser-based tools.",
+    path: "/disclaimer",
+  }),
 };
 
 const sections = [

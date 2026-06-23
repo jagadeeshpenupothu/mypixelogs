@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 
 import { SearchBar } from "@/components/search/SearchBar";
+import { createSocialMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Search",
   description: "Search templates, assets, and tools on MyPixelogs.",
+  ...createSocialMetadata({
+    title: "Search MyPixelogs",
+    description: "Search templates, assets, and tools on MyPixelogs.",
+    path: "/search",
+  }),
   robots: {
     index: false,
     follow: true,

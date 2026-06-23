@@ -8,11 +8,17 @@ import {
 import { assetCategories } from "@/data/asset-categories";
 import { assets } from "@/data/assets";
 import { getAssetsByCategorySlug } from "@/lib/assets";
+import { createSocialMetadata } from "@/lib/metadata";
 import type { Asset } from "@/types/asset";
 
 export const metadata: Metadata = {
   title: "Free Design Assets",
   description: "Discover free logo packs, icon packs, and raw design assets for creative projects.",
+  ...createSocialMetadata({
+    title: "Free Design Assets",
+    description: "Discover free logo packs, icon packs, and raw design assets for creative projects.",
+    path: "/assets",
+  }),
 };
 
 function assetTypeLabel(asset: Asset) {

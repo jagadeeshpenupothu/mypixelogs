@@ -4,11 +4,32 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/constants/site";
-import { defaultOpenGraphImage } from "@/lib/metadata";
+import { defaultOpenGraphImage, getAbsoluteUrl } from "@/lib/metadata";
 import "./globals.css";
 
 const googleAnalyticsId = "G-KBP6GF6R4C";
 const homepageTitle = "MyPixelogs — Free PDF Tools, Templates, Calculators & Assets";
+const siteJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: getAbsoluteUrl(siteConfig.logo),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteConfig.url}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  },
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -66,6 +87,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+          />
           <main>{children}</main>
         </ThemeProvider>
         {process.env.NODE_ENV === "production" ? (

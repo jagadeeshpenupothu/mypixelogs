@@ -7,12 +7,18 @@ import {
 } from "@/components/collections/RootCollectionBrowser";
 import { templateCategories } from "@/data/template-categories";
 import { templates } from "@/data/templates";
+import { createSocialMetadata } from "@/lib/metadata";
 import { getTemplateCategoryLabel, getTemplatesByCategory } from "@/lib/templates";
 import type { Template, TemplateCategory } from "@/types/template";
 
 export const metadata: Metadata = {
   title: "Free Templates",
   description: "Browse free invoice, resume, letterhead, and business document templates.",
+  ...createSocialMetadata({
+    title: "Free Templates",
+    description: "Browse free invoice, resume, letterhead, and business document templates.",
+    path: "/templates",
+  }),
 };
 
 const rootTemplateSections: { slug: TemplateCategory; title: string; href: string }[] = [

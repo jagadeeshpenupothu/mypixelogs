@@ -18,7 +18,6 @@ export const siteConfig = {
     "Word templates",
     "Excel templates",
     "Canva templates",
-    "Canva templates",
     "PSD files",
     "design assets",
   ],

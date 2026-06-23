@@ -37,8 +37,8 @@ export function TemplateActions({ template }: TemplateActionsProps) {
         </Button>
       </div>
       <p className="mt-4 text-sm leading-6 text-muted-foreground">
-        Downloads are mocked with placeholder files and can be connected to storage
-        or analytics in a later phase.
+        Download the editable file and review the layout before using it in a
+        client-facing or business document.
       </p>
     </aside>
   );

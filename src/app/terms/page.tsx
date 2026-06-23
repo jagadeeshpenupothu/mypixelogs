@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 
+import { createSocialMetadata } from "@/lib/metadata";
+
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
     "Review the terms and conditions for using MyPixelogs templates, assets, and online tools.",
+  ...createSocialMetadata({
+    title: "Terms and Conditions",
+    description:
+      "Review the terms and conditions for using MyPixelogs templates, assets, and online tools.",
+    path: "/terms",
+  }),
 };
 
 const sections = [

@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { createSocialMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact MyPixelogs for questions about free templates, downloadable assets, and online tools.",
+  ...createSocialMetadata({
+    title: "Contact MyPixelogs",
+    description:
+      "Contact MyPixelogs for questions about free templates, downloadable assets, and online tools.",
+    path: "/contact",
+  }),
 };
 
 export default function ContactPage() {
@@ -19,9 +26,8 @@ export default function ContactPage() {
             Get in touch with MyPixelogs.
           </h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground">
-            Have a question about templates, assets, tools, or future
-            content? Use the form UI below as a placeholder for your production
-            contact workflow.
+            Have a question about templates, assets, or tools? Send a message
+            and the MyPixelogs team will review it.
           </p>
           <div className="mt-8 rounded-lg border border-border bg-card p-6 shadow-sm">
             <h2 className="text-lg font-semibold text-foreground">Email</h2>
@@ -29,7 +35,12 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <form className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
+        <form
+          action="mailto:support@mypixelogs.com"
+          method="post"
+          encType="text/plain"
+          className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8"
+        >
           <div className="grid gap-5">
             <div>
               <label htmlFor="name" className="text-sm font-medium text-foreground">
@@ -72,12 +83,12 @@ export default function ContactPage() {
                 placeholder="Tell us what you need."
               />
             </div>
-            <Button type="button" className="w-full sm:w-fit">
+            <Button type="submit" className="w-full sm:w-fit">
               Send Message
             </Button>
             <p className="text-xs leading-5 text-muted-foreground">
-              This contact form is a front-end placeholder and does not submit
-              messages yet.
+              Submitting opens your email app so you can send the message
+              directly to support@mypixelogs.com.
             </p>
           </div>
         </form>

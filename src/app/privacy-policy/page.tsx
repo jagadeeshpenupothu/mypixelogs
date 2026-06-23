@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 
+import { createSocialMetadata } from "@/lib/metadata";
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Read the MyPixelogs privacy policy for our free templates, assets, and browser-based online tools.",
+  ...createSocialMetadata({
+    title: "Privacy Policy",
+    description:
+      "Read the MyPixelogs privacy policy for our free templates, assets, and browser-based online tools.",
+    path: "/privacy-policy",
+  }),
 };
 
 const sections = [
