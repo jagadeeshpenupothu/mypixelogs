@@ -3,6 +3,8 @@ import Link from "next/link";
 const links = [
   { href: "/templates", label: "Templates" },
   { href: "/tools", label: "Tools" },
+  { href: "/ai", label: "AI Hub" },
+  { href: "/resources", label: "Resources" },
   { href: "/assets", label: "Assets" },
   { href: "/privacy-policy", label: "Privacy" },
   { href: "/terms", label: "Terms" },

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Folder, LayoutGrid, Wrench } from "lucide-react";
+import { Folder, LayoutGrid, Sparkles, Wrench } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { ExplorerGroup } from "@/components/explorer/ExplorerGroup";
@@ -20,14 +20,23 @@ const expandedGroupsStorageKey = "mypixelogs:explorer-expanded-groups";
 const groupIcons = {
   templates: Folder,
   tools: Wrench,
+  "ai-hub": Sparkles,
   assets: LayoutGrid,
 };
 
+function isActiveHref(pathname: string, href: string) {
+  return pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+}
+
 function hasActiveItem(items: ExplorerItemData[], pathname: string): boolean {
   return items.some((item) => {
-    if (pathname === item.href) return true;
+    if (isActiveHref(pathname, item.href)) return true;
     return item.children ? hasActiveItem(item.children, pathname) : false;
   });
+}
+
+function getActiveGroupId(groups: ExplorerGroupData[], pathname: string) {
+  return groups.find((group) => isActiveHref(pathname, group.href) || hasActiveItem(group.items, pathname))?.id;
 }
 
 export function ExplorerSidebar({
@@ -70,6 +79,19 @@ export function ExplorerSidebar({
     }
   }, [expandedGroups, mounted]);
 
+  const visibleExpandedGroups = useMemo(() => {
+    const activeGroupId = getActiveGroupId(groups, pathname);
+
+    if (!mounted || !activeGroupId || expandedGroups.includes(activeGroupId)) {
+      return expandedGroups;
+    }
+
+    const topLevelIds = groups.map((group) => group.id);
+    const withoutTopLevelSiblings = expandedGroups.filter((id) => !topLevelIds.includes(id));
+
+    return [...withoutTopLevelSiblings, activeGroupId];
+  }, [expandedGroups, groups, mounted, pathname]);
+
   function toggleGroup(groupId: string, siblingIds: string[] = groups.map((group) => group.id), forceOpen = false) {
     setExpandedGroups((currentGroups) => {
       const isOpen = currentGroups.includes(groupId);
@@ -90,7 +112,7 @@ export function ExplorerSidebar({
           {groups.map((group) => {
             const Icon = groupIcons[group.id as keyof typeof groupIcons] ?? Folder;
             const isActive =
-              pathname === group.href || hasActiveItem(group.items, pathname);
+              isActiveHref(pathname, group.href) || hasActiveItem(group.items, pathname);
 
             return (
               <Link
@@ -115,7 +137,7 @@ export function ExplorerSidebar({
           <ExplorerGroup
             key={group.id}
             group={group}
-            expandedIds={expandedGroups}
+            expandedIds={visibleExpandedGroups}
             onToggle={toggleGroup}
             onNavigate={onNavigate}
             siblingIds={groups.map((sibling) => sibling.id)}

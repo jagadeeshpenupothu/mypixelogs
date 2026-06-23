@@ -1,14 +1,19 @@
 import Fuse from "fuse.js";
 
 import { assets } from "@/data/assets";
+import { aiContentItems } from "@/content";
 import { resources } from "@/data/resources";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
 import { getTemplateCategoryLabel } from "@/lib/templates";
 
-export type SearchResultType = "Template" | "Asset" | "Tool";
+export type SearchResultType = "Template" | "Asset" | "Tool" | "AI Prompt" | "AI Image Prompt" | "AI Image";
 export type SearchCategoryId =
   | "everything"
+  | "ai-hub"
+  | "ai-prompts"
+  | "ai-image-prompts"
+  | "ai-images"
   | "templates"
   | "canva-templates"
   | "psd-templates"
@@ -106,6 +111,15 @@ export const searchCategoryTree: SearchCategoryOption[] = [
           { id: "social-media-templates", label: "Social Media Templates", icon: "📄" },
         ],
       },
+    ],
+  },
+  {
+    id: "ai-hub",
+    label: "AI Hub",
+    children: [
+      { id: "ai-prompts", label: "AI Prompts" },
+      { id: "ai-image-prompts", label: "AI Image Prompts" },
+      { id: "ai-images", label: "AI Images" },
     ],
   },
   {
@@ -240,6 +254,28 @@ function getAssetSearchCategories(category: string): SearchCategoryId[] {
   return categories;
 }
 
+function getAiSearchCategories(kind: string): SearchCategoryId[] {
+  const categories: SearchCategoryId[] = ["ai-hub"];
+
+  if (kind === "ai-prompt") categories.push("ai-prompts");
+  if (kind === "ai-image-prompt") categories.push("ai-image-prompts");
+  if (kind === "ai-image") categories.push("ai-images");
+
+  return categories;
+}
+
+function getAiHref(kind: string, slug: string) {
+  if (kind === "ai-prompt") return `/ai/prompts/${slug}`;
+  if (kind === "ai-image-prompt") return `/ai/image-prompts/${slug}`;
+  return `/ai/images/${slug}`;
+}
+
+function getAiType(kind: string): SearchResultType {
+  if (kind === "ai-prompt") return "AI Prompt";
+  if (kind === "ai-image-prompt") return "AI Image Prompt";
+  return "AI Image";
+}
+
 export const searchIndex: SearchItem[] = [
   ...templates.map((template) => ({
     id: template.id,
@@ -288,6 +324,17 @@ export const searchIndex: SearchItem[] = [
       href: `/tools/${tool.slug}`,
       searchCategories: getToolSearchCategories(tool),
     })),
+  ...aiContentItems.map((item) => ({
+    id: item.slug,
+    title: item.title,
+    slug: item.slug,
+    description: item.description,
+    category: item.category,
+    keywords: item.tags.join(" "),
+    type: getAiType(item.kind),
+    href: getAiHref(item.kind, item.slug),
+    searchCategories: getAiSearchCategories(item.kind),
+  })),
 ];
 
 export const fuseOptions = {
@@ -305,7 +352,7 @@ export const fuseOptions = {
   includeScore: true,
 };
 
-export const searchSuggestions = ["invoice", "receipt", "resume", "certificate"];
+export const searchSuggestions = ["invoice", "resume", "pdf", "business prompt", "image prompt"];
 
 export function createSearchEngine() {
   return new Fuse(searchIndex, fuseOptions);

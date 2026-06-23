@@ -17,7 +17,7 @@ type ExplorerGroupProps = {
 
 function hasActiveChild(items: ExplorerItemData[], pathname: string): boolean {
   return items.some((item) => {
-    if (pathname === item.href) return true;
+    if (pathname === item.href || (item.href !== "/" && pathname.startsWith(`${item.href}/`))) return true;
     return item.children ? hasActiveChild(item.children, pathname) : false;
   });
 }
@@ -40,7 +40,10 @@ function ExplorerTreeItem({
   const pathname = usePathname();
   const hasChildren = Boolean(item.children?.length);
   const isOpen = expandedIds.includes(item.id);
-  const isActive = pathname === item.href || (item.children ? hasActiveChild(item.children, pathname) : false);
+  const isActive =
+    pathname === item.href ||
+    (item.href !== "/" && pathname.startsWith(`${item.href}/`)) ||
+    (item.children ? hasActiveChild(item.children, pathname) : false);
   const Icon = hasChildren ? Folder : FileText;
   const isTopLevel = level === 0;
   const paddingLeft = level === 0 ? 10 : level === 1 ? 16 : 28;

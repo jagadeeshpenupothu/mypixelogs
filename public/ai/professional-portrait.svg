@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Professional portrait</title>
+  <desc id="desc">A professional portrait with studio lighting and a soft neutral backdrop.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#eaf2ff"/>
+      <stop offset="62%" stop-color="#c7d2fe"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <ellipse cx="600" cy="760" rx="245" ry="70" fill="#0f172a" opacity=".22"/>
+  <path d="M395 795c18-148 94-226 205-226s187 78 205 226H395Z" fill="#111827"/>
+  <path d="M475 794c10-96 52-150 125-150s115 54 125 150H475Z" fill="#1d4ed8"/>
+  <circle cx="600" cy="390" r="142" fill="#d7a178"/>
+  <path d="M458 390c14-122 75-190 151-190 88 0 143 72 148 190-63-58-147-70-299 0Z" fill="#1f2937"/>
+  <path d="M505 430c38 40 153 40 190 0" fill="none" stroke="#8a4b32" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="548" cy="388" r="10" fill="#111827"/>
+  <circle cx="652" cy="388" r="10" fill="#111827"/>
+  <path d="M560 580h80l-40 62-40-62Z" fill="#f8fafc"/>
+  <rect x="430" y="610" width="340" height="210" rx="90" fill="#0f172a"/>
+  <path d="M421 622c88 56 147 84 179 84s91-28 179-84" fill="none" stroke="#334155" stroke-width="18"/>
+</svg>

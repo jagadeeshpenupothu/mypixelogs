@@ -1,4 +1,7 @@
 import { assets } from "@/data/assets";
+import { aiImagePrompts } from "@/content/ai-image-prompts";
+import { aiImages } from "@/content/ai-images";
+import { aiPrompts } from "@/content/ai-prompts";
 import { resources } from "@/data/resources";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
@@ -8,7 +11,7 @@ export type ExplorerItemData = {
   label: string;
   href: string;
   count?: number;
-  type: "template" | "tool" | "asset" | "link";
+  type: "template" | "tool" | "asset" | "ai" | "link";
   children?: ExplorerItemData[];
 };
 
@@ -132,6 +135,18 @@ export function getExplorerGroups(): ExplorerGroupData[] {
     { id: "backgrounds", label: "Backgrounds", href: "/assets/backgrounds", count: 0, type: "asset" },
   ];
 
+  const aiItems: ExplorerItemData[] = [
+    { id: "ai-prompts", label: "AI Prompts", href: "/ai/prompts", count: aiPrompts.length, type: "ai" },
+    {
+      id: "ai-image-prompts",
+      label: "AI Image Prompts",
+      href: "/ai/image-prompts",
+      count: aiImagePrompts.length,
+      type: "ai",
+    },
+    { id: "ai-images", label: "AI Images", href: "/ai/images", count: aiImages.length, type: "ai" },
+  ];
+
   return [
     {
       id: "templates",
@@ -146,6 +161,13 @@ export function getExplorerGroups(): ExplorerGroupData[] {
       href: "/tools",
       count: tools.length,
       items: toolItems,
+    },
+    {
+      id: "ai-hub",
+      label: "AI Hub",
+      href: "/ai",
+      count: aiPrompts.length + aiImagePrompts.length + aiImages.length,
+      items: aiItems,
     },
     {
       id: "assets",

@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
 import { assetCategories } from "@/data/asset-categories";
+import { aiRouteConfigs } from "@/app/ai/content-config";
+import { getContentByKind, getContentCategories } from "@/content";
 import { templateCategories } from "@/data/template-categories";
 import { assets } from "@/data/assets";
 import { templates } from "@/data/templates";
@@ -10,7 +12,7 @@ import { siteConfig } from "@/constants/site";
 const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/templates", "/tools", "/assets", "/blog"].map((route) => ({
+  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets", "/blog"].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -61,6 +63,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }));
 
+  const aiCollectionRoutes = Object.values(aiRouteConfigs).flatMap((config) => [
+    {
+      url: `${BASE_URL}${config.baseHref}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    ...getContentCategories(config.kind).map((category) => ({
+      url: `${BASE_URL}${config.baseHref}/${category}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+  ]);
+
+  const aiDetailRoutes = Object.values(aiRouteConfigs).flatMap((config) =>
+    getContentByKind(config.kind).map((item) => ({
+      url: `${BASE_URL}${config.baseHref}/${item.slug}`,
+      lastModified: new Date(item.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  );
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
@@ -69,5 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...assetRoutes,
     ...toolCategoryRoutes,
     ...toolRoutes,
+    ...aiCollectionRoutes,
+    ...aiDetailRoutes,
   ];
 }

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Luxury watch product photo</title>
+  <desc id="desc">A luxury wristwatch on a dark studio background with gold accents.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#34302a"/>
+      <stop offset="55%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#020202"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0b8"/>
+      <stop offset="48%" stop-color="#c89b3c"/>
+      <stop offset="100%" stop-color="#6d4a12"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <ellipse cx="600" cy="680" rx="300" ry="58" fill="#000" opacity=".45"/>
+  <rect x="545" y="188" width="110" height="524" rx="55" fill="#171717" stroke="url(#gold)" stroke-width="12"/>
+  <circle cx="600" cy="450" r="188" fill="#090909" stroke="url(#gold)" stroke-width="22"/>
+  <circle cx="600" cy="450" r="145" fill="#111" stroke="#302516" stroke-width="3"/>
+  <line x1="600" y1="320" x2="600" y2="346" stroke="#c89b3c" stroke-width="8" stroke-linecap="round"/>
+  <line x1="600" y1="554" x2="600" y2="580" stroke="#c89b3c" stroke-width="8" stroke-linecap="round"/>
+  <line x1="470" y1="450" x2="496" y2="450" stroke="#c89b3c" stroke-width="8" stroke-linecap="round"/>
+  <line x1="704" y1="450" x2="730" y2="450" stroke="#c89b3c" stroke-width="8" stroke-linecap="round"/>
+  <line x1="600" y1="450" x2="600" y2="365" stroke="#f3d27a" stroke-width="9" stroke-linecap="round"/>
+  <line x1="600" y1="450" x2="680" y2="485" stroke="#f3d27a" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="600" cy="450" r="13" fill="url(#gold)"/>
+  <circle cx="735" cy="450" r="24" fill="url(#gold)"/>
+  <path d="M250 170c116-72 232-92 348-60" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="26" stroke-linecap="round"/>
+</svg>

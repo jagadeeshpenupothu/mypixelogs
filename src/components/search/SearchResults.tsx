@@ -4,7 +4,14 @@ import { ArrowUpRight } from "lucide-react";
 import type { SearchItem, SearchResultType } from "@/lib/search";
 import { searchSuggestions } from "@/lib/search";
 
-const resultOrder: SearchResultType[] = ["Template", "Asset", "Tool"];
+const resultOrder: SearchResultType[] = [
+  "Template",
+  "Tool",
+  "AI Prompt",
+  "AI Image Prompt",
+  "AI Image",
+  "Asset",
+];
 
 type SearchResultsProps = {
   query: string;
