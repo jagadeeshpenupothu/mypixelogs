@@ -30,10 +30,12 @@ export function TemplateCard({ template }: TemplateCardProps) {
         <h3 className="line-clamp-1 text-sm font-semibold text-foreground">{template.title}</h3>
         <div className="mt-2 flex items-center justify-between gap-3 text-xs text-muted-foreground">
           <span className="truncate font-medium">{categoryLabel}</span>
-          <span className="flex shrink-0 items-center gap-1">
-            <Download className="h-3.5 w-3.5" aria-hidden="true" />
-            {template.downloads.toLocaleString()}
-          </span>
+          {template.downloads > 0 ? (
+            <span className="flex shrink-0 items-center gap-1">
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
+              {template.downloads.toLocaleString()}
+            </span>
+          ) : null}
         </div>
       </div>
     </Link>

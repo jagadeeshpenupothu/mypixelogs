@@ -23,13 +23,15 @@ export function TemplateHero({ template, categoryLabel }: TemplateHeroProps) {
         </p>
       </div>
       <div className="grid gap-3 rounded-lg border border-border bg-slate-50 p-5">
-        <div className="flex items-center justify-between gap-4">
-          <span className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-            <Download className="h-4 w-4" />
-            Downloads
-          </span>
-          <strong className="text-xl text-foreground">{template.downloads.toLocaleString()}</strong>
-        </div>
+        {template.downloads > 0 ? (
+          <div className="flex items-center justify-between gap-4">
+            <span className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <Download className="h-4 w-4" />
+              Downloads
+            </span>
+            <strong className="text-xl text-foreground">{template.downloads.toLocaleString()}</strong>
+          </div>
+        ) : null}
         <div className="flex items-center justify-between gap-4">
           <span className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
             <FileCheck2 className="h-4 w-4" />

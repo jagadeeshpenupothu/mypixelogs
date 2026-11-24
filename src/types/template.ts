@@ -23,6 +23,8 @@ export type Template = {
   category: TemplateCategory;
   thumbnail: string;
   downloads: number;
+  /** Real, finished file: listed first on the homepage. */
+  featured?: boolean;
   previewImage: string;
   downloadPath: string;
   formats: string[];

@@ -233,12 +233,20 @@ function itemSortValue(item: CollectionItem) {
   return isTemplate(item) ? item.downloads : 0;
 }
 
+function isFeatured(item: CollectionItem) {
+  return isTemplate(item) && Boolean(item.featured);
+}
+
 function sortItems(items: CollectionItem[], sort: SortOption, source: CollectionItem[]) {
   return [...items].sort((a, b) => {
     if (sort === "az") return a.title.localeCompare(b.title);
     if (sort === "za") return b.title.localeCompare(a.title);
     if (sort === "oldest") return source.indexOf(a) - source.indexOf(b);
     if (sort === "newest") return source.indexOf(b) - source.indexOf(a);
+    if (sort === "popular") {
+      const featuredOrder = Number(isFeatured(b)) - Number(isFeatured(a));
+      if (featuredOrder !== 0) return featuredOrder;
+    }
     return itemSortValue(b) - itemSortValue(a);
   });
 }

@@ -110,10 +110,12 @@ function HomeTemplateCard({ template }: { template: Template }) {
         <h3 className="line-clamp-1 text-sm font-semibold text-foreground">{template.title}</h3>
         <div className="mt-2 flex items-center justify-between gap-3 text-xs text-muted-foreground">
           <span className="truncate font-medium">{getTemplateCategoryLabel(template.category)}</span>
-          <span className="flex shrink-0 items-center gap-1">
-            <Download className="h-3.5 w-3.5" aria-hidden="true" />
-            {template.downloads.toLocaleString()}
-          </span>
+          {template.downloads > 0 ? (
+            <span className="flex shrink-0 items-center gap-1">
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
+              {template.downloads.toLocaleString()}
+            </span>
+          ) : null}
         </div>
       </div>
     </Link>
@@ -227,7 +229,7 @@ export default function Home() {
   const popularTools = popularToolSlugs
     .map((slug) => tools.find((tool) => tool.slug === slug))
     .filter((tool): tool is (typeof tools)[number] => Boolean(tool));
-  const popularTemplates = [...templates].sort((a, b) => b.downloads - a.downloads).slice(0, 9);
+  const popularTemplates = [...templates].sort((a, b) => Number(b.featured ?? false) - Number(a.featured ?? false) || b.downloads - a.downloads).slice(0, 9);
   const popularAssets = assets.slice(0, 9);
 
   return (

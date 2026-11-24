@@ -27,6 +27,21 @@ const makeTemplate = (
   useCases,
 });
 
+/** A finished Word template with a real .docx file and preview image. */
+const makeWordTemplate = (...args: Parameters<typeof makeTemplate>): Template => {
+  const template = makeTemplate(...args);
+  const preview = `/previews/${template.slug}.png`;
+
+  return {
+    ...template,
+    thumbnail: preview,
+    previewImage: preview,
+    downloadPath: `/downloads/${template.slug}.docx`,
+    formats: ["Word"],
+    featured: true,
+  };
+};
+
 const invoiceFeatures = ["Editable billing, tax, and itemized service sections", "Professional layout for client-facing invoices", "Print-ready structure with clear totals and payment notes"];
 const receiptFeatures = ["Clean payment confirmation layout", "Fields for payer, date, amount, and purpose", "Compact format suitable for print or digital sharing"];
 const resumeFeatures = ["Recruiter-friendly section hierarchy", "Editable skills, education, and experience blocks", "ATS-conscious structure with clean typography"];
@@ -36,8 +51,8 @@ const certificateFeatures = ["Formal award layout with signature areas", "Editab
 export const templates: Template[] = [
   makeTemplate("hotel-invoice", "Hotel Invoice Template", "hotel-invoice-template", "Hotel Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 10133, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
   makeTemplate("restaurant-invoice", "Restaurant Invoice Template", "restaurant-invoice-template", "Restaurant Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 10864, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
-  makeTemplate("gst-invoice", "GST Invoice Template", "gst-invoice-template", "GST Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 11595, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
-  makeTemplate("freelancer-invoice", "Freelancer Invoice Template", "freelancer-invoice-template", "Freelancer Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 12326, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
+  makeWordTemplate("gst-invoice", "GST Invoice Template", "gst-invoice-template", "Free GST tax invoice template for Microsoft Word. Editable A4 layout with GSTIN, HSN/SAC, place of supply, CGST, SGST and IGST fields.", "invoice", 0, ["Fields for GSTIN, HSN/SAC, place of supply and reverse charge", "Separate CGST, SGST/UTGST and IGST totals", "One-page A4 layout with bank, UPI and signature areas"], ["Sales by GST-registered businesses", "Service billing", "Sales within or between states"]),
+  makeWordTemplate("freelancer-invoice", "Freelancer Invoice Template", "freelancer-invoice-template", "Free freelancer invoice template for Microsoft Word. Clean, editable A4 layout with project, hours, advance paid and UPI or bank details.", "invoice", 0, ["Project, hours, rate and amount columns", "Discount, tax and advance paid lines", "Bank, UPI and payment terms sections"], ["Design and development work", "Hourly or fixed-price projects", "Indian and international clients"]),
   makeTemplate("retail-invoice", "Retail Invoice Template", "retail-invoice-template", "Retail Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 13057, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
   makeTemplate("medical-invoice", "Medical Invoice Template", "medical-invoice-template", "Medical Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 13788, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
   makeTemplate("taxi-invoice", "Taxi Invoice Template", "taxi-invoice-template", "Taxi Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 14519, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
