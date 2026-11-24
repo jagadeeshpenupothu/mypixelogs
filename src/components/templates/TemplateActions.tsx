@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, Eye, Share2 } from "lucide-react";
+import { Download, Eye, Pencil, Share2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import type { Template } from "@/types/template";
@@ -17,7 +17,15 @@ export function TemplateActions({ template }: TemplateActionsProps) {
     <aside className="rounded-lg border border-border bg-white p-5 shadow-sm">
       <h2 className="text-lg font-semibold text-foreground">Template actions</h2>
       <div className="mt-5 grid gap-3">
-        <Button asChild size="lg">
+        {template.editor ? (
+          <Button asChild size="lg">
+            <Link href={`/templates/${template.slug}/edit`}>
+              <Pencil className="h-4 w-4" />
+              Edit online
+            </Link>
+          </Button>
+        ) : null}
+        <Button asChild size="lg" variant={template.editor ? "outline" : "default"}>
           <a href={template.downloadPath} download>
             <Download className="h-4 w-4" />
             Download

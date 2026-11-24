@@ -1,0 +1,39 @@
+.invoice-preview {
+  container-type: inline-size;
+  background: #fff;
+}
+
+.invoice-preview-page {
+  min-height: 141.4cqw;
+  padding: 5.5cqw 7cqw;
+  font: 1.6cqw / 1.45 Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+.invoice-print {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 13mm 15mm;
+  }
+
+  body:has(> .invoice-print) {
+    background: #fff;
+  }
+
+  body:has(> .invoice-print) > *:not(.invoice-print) {
+    display: none !important;
+  }
+
+  .invoice-print {
+    display: block;
+    font: 9.5pt / 1.45 Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    color-scheme: light;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

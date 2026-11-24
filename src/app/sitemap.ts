@@ -33,6 +33,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const editorRoutes = templates
+    .filter((template) => template.editor)
+    .map((template) => ({
+      url: `${BASE_URL}/templates/${template.slug}/edit`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
+
   const assetRoutes = assets.map((asset) => ({
     url: `${BASE_URL}/assets/${asset.slug}`,
     lastModified: new Date(),
@@ -91,6 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...categoryRoutes,
     ...templateRoutes,
+    ...editorRoutes,
     ...assetCategoryRoutes,
     ...assetRoutes,
     ...toolCategoryRoutes,
