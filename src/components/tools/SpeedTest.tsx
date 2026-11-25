@@ -363,9 +363,8 @@ export function SpeedTest() {
       },
       { label: "Browser", value: getBrowserName() },
       { label: "Platform", value: getPlatformName() },
-      { label: "LibreSpeed Server", value: serverUrl || "Not configured" },
     ],
-    [networkInfo?.downlink, networkInfo?.effectiveType, networkInfo?.type, serverUrl],
+    [networkInfo?.downlink, networkInfo?.effectiveType, networkInfo?.type],
   );
 
   async function runTest() {
@@ -430,15 +429,11 @@ export function SpeedTest() {
       <div className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
           <div>
-            <Badge variant="secondary" className="bg-blue-50 text-primary">
-              LibreSpeed powered
-            </Badge>
-            <h2 className="mt-4 text-2xl font-bold tracking-normal text-foreground">
+            <h2 className="text-2xl font-bold tracking-normal text-foreground">
               Real connection performance
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-              Download, upload, ping, and jitter are measured against your configured
-              LibreSpeed backend. No paid APIs or user accounts are required.
+              Measures download, upload, ping and jitter.
             </p>
           </div>
           <Button onClick={runTest} disabled={isRunning}>
@@ -579,8 +574,7 @@ export function SpeedTest() {
           <div className="flex gap-3">
             <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
             <p className="text-sm leading-6 text-muted-foreground">
-              Results depend on the configured LibreSpeed backend, CORS settings,
-              WiFi signal, VPN, device power mode, and background activity.
+              Results change with Wi-Fi signal, VPN and other devices using your network.
             </p>
           </div>
         </div>

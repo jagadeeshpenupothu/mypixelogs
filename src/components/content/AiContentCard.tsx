@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 import type { ContentItem } from "@/content/types";
 
 type AiContentCardProps = {
   item: ContentItem;
   href: string;
-  label: string;
+  /** Kept for callers; the card no longer prints it. */
+  label?: string;
 };
 
-export function AiContentCard({ item, href, label }: AiContentCardProps) {
+export function AiContentCard({ item, href }: AiContentCardProps) {
   return (
     <Link
       href={href}
@@ -26,24 +26,12 @@ export function AiContentCard({ item, href, label }: AiContentCardProps) {
         />
       </div>
       <div className="flex flex-1 flex-col p-3">
-        <div className="flex items-center justify-between gap-3">
-          <span className="rounded-md bg-blue-50 px-2 py-1 text-[11px] font-bold text-primary">
-            {label}
-          </span>
-          <span className="text-[11px] font-semibold uppercase text-muted-foreground">
-            {item.category}
-          </span>
-        </div>
-        <h3 className="mt-3 line-clamp-2 text-sm font-semibold leading-5 text-foreground">
+        <h3 className="line-clamp-2 text-sm font-semibold leading-5 text-foreground">
           {item.title}
         </h3>
         <p className="mt-2 line-clamp-2 text-xs leading-5 text-muted-foreground">
           {item.description}
         </p>
-        <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-primary">
-          Open
-          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-        </span>
       </div>
     </Link>
   );

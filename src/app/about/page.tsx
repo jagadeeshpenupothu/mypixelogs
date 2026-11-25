@@ -1,84 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import { createSocialMetadata } from "@/lib/metadata";
+
+const description =
+  "MyPixelogs is a free set of simple tools for videos, photos and PDFs, plus ready-made templates. No sign-up, and files stay on your device.";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "Learn about MyPixelogs, a free platform for editable templates, raw design assets, and browser-based online tools.",
-  ...createSocialMetadata({
-    title: "About MyPixelogs",
-    description:
-      "Learn about MyPixelogs, a free platform for editable templates, raw design assets, and browser-based online tools.",
-    path: "/about",
-  }),
+  description,
+  ...createSocialMetadata({ title: "About MyPixelogs", description, path: "/about" }),
 };
-
-const highlights = [
-  {
-    title: "Free Templates",
-    description:
-      "Ready-to-use invoices, receipts, resumes, certificates, and letterheads for business and personal workflows.",
-  },
-  {
-    title: "Design Assets",
-    description:
-      "Downloadable templates, logo packs, and icon assets built for fast creative work.",
-  },
-  {
-    title: "Online Tools",
-    description:
-      "Browser-first utilities for converting, compressing, and generating files without complicated setup.",
-  },
-];
 
 export default function AboutPage() {
   return (
     <section className="py-8 sm:py-14">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">About</p>
-          <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
-            Free business templates, assets, and tools for modern work.
-          </h1>
-          <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
-            MyPixelogs helps creators, freelancers, students, and small teams
-            find practical digital assets faster. The platform brings together
-            professional templates, raw design assets, and simple online
-            tools in one clean, searchable place.
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold text-foreground sm:text-4xl">About MyPixelogs</h1>
+        <div className="mt-5 space-y-4 text-base leading-7 text-muted-foreground">
+          <p>
+            MyPixelogs is a set of free, simple tools for everyday jobs: making a video or PDF smaller, joining PDFs,
+            resizing a photo, working out a loan EMI, and more. There are also ready-made templates you can fill in and
+            download.
           </p>
-        </div>
-
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {highlights.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-lg border border-border bg-card p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
-            >
-              <h2 className="text-lg font-semibold text-foreground">{item.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-foreground">What we are building</h2>
-          <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
-            The goal of MyPixelogs is to make everyday documents and digital
-            utilities easier to access. Every template and asset is organized
-            with descriptive pages, categories, and related content so visitors
-            can discover useful files without friction.
+          <p>
+            There is no sign-up and nothing to install. Most tools run inside your browser, so your files stay on your own
+            phone or computer.
           </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Button asChild>
-              <Link href="/templates">Browse templates</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/tools">Explore tools</Link>
-            </Button>
-          </div>
+          <p>
+            <Link href="/tools" className="font-semibold text-primary hover:underline">
+              See all tools
+            </Link>{" "}
+            or{" "}
+            <Link href="/templates" className="font-semibold text-primary hover:underline">
+              browse templates
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </section>

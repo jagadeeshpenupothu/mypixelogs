@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download, MousePointerClick, ShieldCheck, Upload } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 
 import { IconBadge, PictureCard, TaskCard } from "@/components/cards/ItemCard";
 import { Footer } from "@/components/layout/Footer";
@@ -23,11 +23,6 @@ export const metadata: Metadata = {
   ...createSocialMetadata({ title: homepageTitle, description: siteConfig.description, path: "/", image: siteConfig.ogImage }),
 };
 
-const steps = [
-  { Icon: MousePointerClick, title: "Pick what you need", text: "Search, or choose from the list." },
-  { Icon: Upload, title: "Add your file or words", text: "The page shows you what to do." },
-  { Icon: Download, title: "Download the result", text: "It is free, with no sign-up." },
-];
 
 const heading = "text-xl font-bold tracking-tight text-foreground sm:text-2xl";
 
@@ -83,9 +78,6 @@ export default function Home() {
               <div className="mt-5 flex flex-wrap gap-2">
                 <Button asChild size="lg">
                   <Link href={`/templates/${video.slug}/edit`}>Start editing</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href={`/templates/${video.slug}`}>Watch it first</Link>
                 </Button>
               </div>
             </div>
@@ -145,22 +137,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section aria-labelledby="how-title" className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-          <h2 id="how-title" className={heading}>How it works</h2>
-          <ol className="mt-5 grid gap-6 sm:grid-cols-3">
-            {steps.map(({ Icon, title, text }, place) => (
-              <li key={title} className="flex gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
-                </span>
-                <span>
-                  <span className="block text-base font-semibold text-foreground">{place + 1}. {title}</span>
-                  <span className="block text-base leading-6 text-muted-foreground">{text}</span>
-                </span>
-              </li>
-            ))}
-          </ol>
-        </section>
       </div>
       <Footer />
     </div>

@@ -8,7 +8,7 @@ const tool = getToolBySlug("speed-test");
 const title = tool?.name ?? "Internet Speed Test";
 const description =
   tool?.description ??
-  "Run a real LibreSpeed-powered internet speed test for download, upload, ping, jitter, and connection quality.";
+  "Free internet speed test. Check your download and upload speed, ping and jitter in your browser.";
 
 export const metadata: Metadata = {
   title,
@@ -29,8 +29,7 @@ export default function SpeedTestPage() {
             Test your connection in the browser
           </h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">
-            Measure real download speed, upload speed, ping, jitter, network type,
-            and connection suitability against your configured LibreSpeed backend.
+            See your download and upload speed, ping and jitter.
           </p>
         </div>
 

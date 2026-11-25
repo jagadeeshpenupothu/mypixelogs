@@ -15,7 +15,7 @@ import { siteConfig } from "@/constants/site";
 const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets", "/blog"].map((route) => ({
+  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets"].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

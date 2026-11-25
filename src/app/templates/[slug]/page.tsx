@@ -127,36 +127,16 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
             <TemplatePreview template={template} />
           </div>
 
-          <section className="mt-12 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-bold text-foreground">Template details</h2>
-              <p className="mt-4 leading-7 text-muted-foreground">{template.description}</p>
-              <h3 className="mt-8 text-lg font-semibold text-foreground">Features</h3>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
+          {template.features.length > 0 ? (
+            <section className="mt-10 max-w-3xl">
+              <h2 className="text-xl font-bold text-foreground">What&apos;s included</h2>
+              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-7 text-muted-foreground">
                 {template.features.map((feature) => (
-                  <li key={feature} className="rounded-md bg-slate-50 px-4 py-3">
-                    {feature}
-                  </li>
+                  <li key={feature}>{feature}</li>
                 ))}
               </ul>
-            </div>
-
-            <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-bold text-foreground">Use cases</h2>
-              <p className="mt-4 leading-7 text-muted-foreground">
-                {template.previewVideo
-                  ? "Make a video invitation without any editing software."
-                  : "Use this file as a fast starting point for common business and document workflows."}
-              </p>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
-                {template.useCases.map((useCase) => (
-                  <li key={useCase} className="rounded-md bg-slate-50 px-4 py-3">
-                    {useCase}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
+            </section>
+          ) : null}
 
           <div className="mt-12">
             <RelatedTemplates templates={relatedTemplates} />

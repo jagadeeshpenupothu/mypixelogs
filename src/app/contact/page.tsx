@@ -22,8 +22,7 @@ export default function ContactPage() {
     <section className="py-8 sm:py-14">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">Contact</p>
-          <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
+          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
             Get in touch with MyPixelogs.
           </h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground">

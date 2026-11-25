@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Download, Eye, FileText, Pencil } from "lucide-react";
+import { Download, FileText, Pencil } from "lucide-react";
 
-import { ShareButton } from "@/components/templates/ShareButton";
 import { Button } from "@/components/ui/button";
 import type { Template } from "@/types/template";
 
@@ -11,9 +10,8 @@ type TemplateActionsProps = {
 
 export function TemplateActions({ template }: TemplateActionsProps) {
   return (
-    <aside className="rounded-lg border border-border bg-white p-5 shadow-sm">
-      <h2 className="text-lg font-semibold text-foreground">Use this template</h2>
-      <div className="mt-5 grid gap-3">
+    <aside className="rounded-xl border border-border bg-card p-5">
+      <div className="grid gap-3">
         {template.editor ? (
           <Button asChild size="lg">
             <Link href={`/templates/${template.slug}/edit`}>
@@ -37,21 +35,12 @@ export function TemplateActions({ template }: TemplateActionsProps) {
             </a>
           </Button>
         )}
-        <Button asChild variant="outline" size="lg">
-          <a href={template.previewImage} target="_blank" rel="noopener">
-            <Eye className="h-4 w-4" />
-            View full size
-          </a>
-        </Button>
-        <ShareButton title={template.title} />
       </div>
-      <p className="mt-4 text-sm leading-6 text-muted-foreground">
-        {template.googleDocId
-          ? "Google asks you to make a copy. You edit your copy, and the original stays unchanged. A Google account is needed."
-          : template.previewVideo
-            ? "No video editing skills needed. Type your words, add your photos and download the finished video. Nothing is uploaded."
-            : "Download the editable file and review the layout before using it in a client-facing or business document."}
-      </p>
+      {template.googleDocId ? (
+        <p className="mt-4 text-sm leading-6 text-muted-foreground">
+          Google asks you to make a copy. You edit your copy; the original stays unchanged.
+        </p>
+      ) : null}
     </aside>
   );
 }
