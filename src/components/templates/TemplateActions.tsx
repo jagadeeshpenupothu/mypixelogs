@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, Eye, Pencil } from "lucide-react";
+import { Download, Eye, FileText, Pencil } from "lucide-react";
 
 import { ShareButton } from "@/components/templates/ShareButton";
 import { Button } from "@/components/ui/button";
@@ -22,12 +22,21 @@ export function TemplateActions({ template }: TemplateActionsProps) {
             </Link>
           </Button>
         ) : null}
-        <Button asChild size="lg" variant={template.editor ? "outline" : "default"}>
-          <a href={template.downloadPath} download>
-            <Download className="h-4 w-4" />
-            Download {template.formats[0]}
-          </a>
-        </Button>
+        {template.googleDocId ? (
+          <Button asChild size="lg">
+            <a href={template.downloadPath} target="_blank" rel="noopener">
+              <FileText className="h-4 w-4" aria-hidden="true" />
+              Edit in Google Docs
+            </a>
+          </Button>
+        ) : (
+          <Button asChild size="lg" variant={template.editor ? "outline" : "default"}>
+            <a href={template.downloadPath} download>
+              <Download className="h-4 w-4" />
+              Download {template.formats[0]}
+            </a>
+          </Button>
+        )}
         <Button asChild variant="outline" size="lg">
           <a href={template.previewImage} target="_blank" rel="noopener">
             <Eye className="h-4 w-4" />
@@ -37,8 +46,9 @@ export function TemplateActions({ template }: TemplateActionsProps) {
         <ShareButton title={template.title} />
       </div>
       <p className="mt-4 text-sm leading-6 text-muted-foreground">
-        Download the editable file and review the layout before using it in a
-        client-facing or business document.
+        {template.googleDocId
+          ? "Google asks you to make a copy. You edit your copy, and the original stays unchanged. A Google account is needed."
+          : "Download the editable file and review the layout before using it in a client-facing or business document."}
       </p>
     </aside>
   );

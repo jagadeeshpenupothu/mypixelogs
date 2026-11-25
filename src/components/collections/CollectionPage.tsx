@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ChevronDown, Download, Search, SlidersHorizontal, X } from "lucide-react";
+import { Check, ChevronDown, Copy, Download, Search, SlidersHorizontal, X } from "lucide-react";
 
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import type { Asset } from "@/types/asset";
@@ -233,6 +233,10 @@ function itemSortValue(item: CollectionItem) {
   return isTemplate(item) ? item.downloads : 0;
 }
 
+function isGoogleDoc(item: CollectionItem) {
+  return isTemplate(item) && Boolean(item.googleDocId);
+}
+
 function isFeatured(item: CollectionItem) {
   return isTemplate(item) && Boolean(item.featured);
 }
@@ -349,11 +353,15 @@ function CollectionCard({ item, kind }: { item: CollectionItem; kind: Collection
           </span>
           <a
             href={itemDownloadUrl(item)}
-            download
+            {...(isGoogleDoc(item) ? { target: "_blank", rel: "noopener" } : { download: true })}
             className="relative z-20 inline-flex h-9 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
           >
-            <Download className="h-3.5 w-3.5" aria-hidden="true" />
-            Download
+            {isGoogleDoc(item) ? (
+              <Copy className="h-3.5 w-3.5" aria-hidden="true" />
+            ) : (
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
+            )}
+            {isGoogleDoc(item) ? "Copy" : "Download"}
           </a>
         </div>
       </div>

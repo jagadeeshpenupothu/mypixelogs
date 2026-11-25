@@ -56,6 +56,7 @@ function templateItem(template: Template): RootCollectionItem {
     badge: templateBadge(template),
     thumbnail: template.thumbnail,
     downloadUrl: template.downloadPath,
+    opensCopy: Boolean(template.googleDocId),
     filters: templateFilters(template),
     searchText: `${template.title} ${template.slug} ${template.description} ${template.category} ${template.formats.join(" ")}`.toLowerCase(),
   };

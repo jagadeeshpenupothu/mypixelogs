@@ -47,6 +47,26 @@ const makeWordTemplate = (
   };
 };
 
+/** A locked Google Docs original that visitors copy and edit. */
+const makeGoogleDocTemplate = (
+  googleDocId: string,
+  ...args: Parameters<typeof makeTemplate>
+): Template => {
+  const template = makeTemplate(...args);
+  const preview = `/previews/${template.slug}.png`;
+
+  return {
+    ...template,
+    thumbnail: preview,
+    previewImage: preview,
+    downloadPath: `https://docs.google.com/document/d/${googleDocId}/copy`,
+    formats: ["Google Docs"],
+    featured: true,
+    ready: true,
+    googleDocId,
+  };
+};
+
 const invoiceFeatures = ["Editable billing, tax, and itemized service sections", "Professional layout for client-facing invoices", "Print-ready structure with clear totals and payment notes"];
 const receiptFeatures = ["Clean payment confirmation layout", "Fields for payer, date, amount, and purpose", "Compact format suitable for print or digital sharing"];
 const resumeFeatures = ["Recruiter-friendly section hierarchy", "Editable skills, education, and experience blocks", "ATS-conscious structure with clean typography"];
@@ -54,6 +74,10 @@ const letterheadFeatures = ["Business-ready header and footer placement", "Space
 const certificateFeatures = ["Formal award layout with signature areas", "Editable recipient, date, issuer, and program details", "Presentation-ready design for print and PDF export"];
 
 export const allTemplates: Template[] = [
+  makeGoogleDocTemplate("1uOhsZf21PtejXSGra1pRPBsm0T2xjB9QaBA9Z9BjZoc", "indigo-invoice", "Indigo Invoice Template", "indigo-invoice-template", "Free Google Docs invoice template in indigo, with item descriptions, tax, discount and payment details on one A4 page.", "invoice", 0, ["Opens as your own copy in Google Docs", "One-page A4 layout with clear placeholders", "Space for logo, bank or UPI details and terms"], ["Product sales", "Small businesses", "Freelance work"]),
+  makeGoogleDocTemplate("10LTQaRqkbsXL-ceyDfrUWGdFyFTAE72Kb7GUgAo1uB0", "crimson-invoice", "Crimson Invoice Template", "crimson-invoice-template", "Free Google Docs invoice template with a centred logo space, numbered items and a bold red total on one A4 page.", "invoice", 0, ["Opens as your own copy in Google Docs", "One-page A4 layout with clear placeholders", "Space for logo, bank or UPI details and terms"], ["Design studios", "Service billing", "Freelance work"]),
+  makeGoogleDocTemplate("15Qpq_D-9ADYRE_TY1C2_lldlf2UMqZuiDV_6qEh6kk8", "teal-split-invoice", "Teal Split Invoice Template", "teal-split-invoice-template", "Free Google Docs invoice template with a two-colour header, payment method and signature line on one A4 page.", "invoice", 0, ["Opens as your own copy in Google Docs", "One-page A4 layout with clear placeholders", "Space for logo, bank or UPI details and terms"], ["Agencies", "Project billing", "Freelance work"]),
+  makeGoogleDocTemplate("1O2v1DC-kcV5x8aJdzKGgp4oRM5HF4Lxoh4yp-Na5fL0", "charcoal-invoice", "Charcoal Invoice Template", "charcoal-invoice-template", "Free Google Docs invoice template with a dark header and the total due at the top, on one A4 page.", "invoice", 0, ["Opens as your own copy in Google Docs", "One-page A4 layout with clear placeholders", "Space for logo, bank or UPI details and terms"], ["Consultants", "Monthly billing", "Freelance work"]),
   makeTemplate("hotel-invoice", "Hotel Invoice Template", "hotel-invoice-template", "Hotel Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 10133, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
   makeTemplate("restaurant-invoice", "Restaurant Invoice Template", "restaurant-invoice-template", "Restaurant Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 10864, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
   makeWordTemplate("gst", "gst-invoice", "GST Invoice Template", "gst-invoice-template", "Free GST tax invoice template for Microsoft Word. Editable A4 layout with GSTIN, HSN/SAC, place of supply, CGST, SGST and IGST fields.", "invoice", 0, ["Fields for GSTIN, HSN/SAC, place of supply and reverse charge", "Separate CGST, SGST/UTGST and IGST totals", "One-page A4 layout with bank, UPI and signature areas"], ["Sales by GST-registered businesses", "Service billing", "Sales within or between states"]),

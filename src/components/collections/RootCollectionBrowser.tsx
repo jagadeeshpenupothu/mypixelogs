@@ -6,6 +6,7 @@ import Link from "next/link";
 import {
   Check,
   ChevronDown,
+  Copy,
   Download,
   FolderOpen,
   Search,
@@ -28,6 +29,8 @@ export type RootCollectionItem = {
   thumbnail?: string;
   icon?: string;
   downloadUrl?: string;
+  /** The link opens a copy page instead of downloading a file. */
+  opensCopy?: boolean;
   comingSoon?: boolean;
   filters: Record<string, string[]>;
   searchText: string;
@@ -181,11 +184,15 @@ function MarketplaceMiniCard({
           {item.downloadUrl ? (
             <a
               href={item.downloadUrl}
-              download
+              {...(item.opensCopy ? { target: "_blank", rel: "noopener" } : { download: true })}
               className="relative z-20 inline-flex h-9 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
             >
-              <Download className="h-3.5 w-3.5" aria-hidden="true" />
-              Download
+              {item.opensCopy ? (
+                <Copy className="h-3.5 w-3.5" aria-hidden="true" />
+              ) : (
+                <Download className="h-3.5 w-3.5" aria-hidden="true" />
+              )}
+              {item.opensCopy ? "Copy" : "Download"}
             </a>
           ) : null}
         </div>
