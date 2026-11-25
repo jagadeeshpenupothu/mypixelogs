@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Archive,
   Braces,
   Calculator,
   CalendarDays,
@@ -16,6 +17,7 @@ import {
   Maximize2,
   QrCode,
   RotateCw,
+  Scissors,
   Wand2,
 } from "lucide-react";
 
@@ -48,6 +50,7 @@ export const metadata: Metadata = {
 };
 
 const toolIcons = {
+  Archive,
   Braces,
   Calculator,
   CalendarDays,
@@ -57,6 +60,7 @@ const toolIcons = {
   Maximize2,
   QrCode,
   RotateCw,
+  Scissors,
   Wand2,
 };
 
@@ -221,6 +225,7 @@ function DiscoveryMoreCard({
 export default function Home() {
   const explorerGroups = getExplorerGroups();
   const popularToolSlugs = [
+    "video-trimmer",
     "video-compressor",
     "video-rotator",
     "image-compressor",

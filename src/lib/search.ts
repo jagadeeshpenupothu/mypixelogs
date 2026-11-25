@@ -62,7 +62,14 @@ export type SearchCategoryId =
   | "psd-files"
   | "video-tools"
   | "video-rotator"
-  | "video-compressor";
+  | "video-compressor"
+  | "video-trimmer"
+  | "video-cropper"
+  | "video-resizer"
+  | "video-flipper"
+  | "video-converter"
+  | "video-to-gif"
+  | "gif-to-video";
 
 export type SearchItem = {
   id: string;
@@ -133,6 +140,13 @@ const fullCategoryTree: SearchCategoryOption[] = [
         id: "video-tools",
         label: "Video Tools",
         children: [
+          { id: "video-trimmer", label: "Video Trimmer" },
+          { id: "video-cropper", label: "Video Cropper" },
+          { id: "video-resizer", label: "Video Resizer" },
+          { id: "video-flipper", label: "Video Flipper" },
+          { id: "video-converter", label: "Video Converter" },
+          { id: "video-to-gif", label: "Video to GIF" },
+          { id: "gif-to-video", label: "GIF to Video" },
           { id: "video-compressor", label: "Video Compressor" },
           { id: "video-rotator", label: "Video Rotator" },
         ],

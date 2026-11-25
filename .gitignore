@@ -27,3 +27,6 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# copied from node_modules at build time
+/public/ffmpeg/
