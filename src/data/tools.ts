@@ -17,8 +17,8 @@ export const toolCategories: ToolCategoryMeta[] = [
   {
     name: "Video Tools",
     slug: "video-tools",
-    description: "Rotate videos directly in your browser without losing quality.",
-    seoDescription: "Rotate videos online for free without losing quality or changing the file size.",
+    description: "Compress and rotate videos directly in your browser.",
+    seoDescription: "Compress and rotate videos online for free, right in your browser.",
   },
   {
     name: "PDF Tools",
@@ -65,6 +65,16 @@ export const toolCategories: ToolCategoryMeta[] = [
 ];
 
 export const allTools: Tool[] = [
+  {
+    id: "video-compressor",
+    name: "Video Compressor",
+    slug: "video-compressor",
+    description: "Make videos smaller and check the picture still matches the original.",
+    icon: "Archive",
+    category: "Video Tools",
+    tags: ["video", "compress", "reduce", "size", "smaller", "mp4", "mov", "mkv", "webm"],
+    featured: true,
+  },
   {
     id: "video-rotator",
     name: "Video Rotator",

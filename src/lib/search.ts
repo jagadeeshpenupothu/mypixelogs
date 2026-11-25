@@ -61,7 +61,8 @@ export type SearchCategoryId =
   | "backgrounds"
   | "psd-files"
   | "video-tools"
-  | "video-rotator";
+  | "video-rotator"
+  | "video-compressor";
 
 export type SearchItem = {
   id: string;
@@ -131,7 +132,10 @@ const fullCategoryTree: SearchCategoryOption[] = [
       {
         id: "video-tools",
         label: "Video Tools",
-        children: [{ id: "video-rotator", label: "Video Rotator" }],
+        children: [
+          { id: "video-compressor", label: "Video Compressor" },
+          { id: "video-rotator", label: "Video Rotator" },
+        ],
       },
       {
         id: "pdf-tools",
