@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Folder, LayoutGrid, Sparkles, Wrench } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -14,8 +14,6 @@ type ExplorerSidebarProps = {
   collapsed?: boolean;
   onNavigate?: () => void;
 };
-
-const expandedGroupsStorageKey = "mypixelogs:explorer-expanded-groups";
 
 const groupIcons = {
   templates: Folder,
@@ -35,8 +33,14 @@ function hasActiveItem(items: ExplorerItemData[], pathname: string): boolean {
   });
 }
 
-function getActiveGroupId(groups: ExplorerGroupData[], pathname: string) {
-  return groups.find((group) => isActiveHref(pathname, group.href) || hasActiveItem(group.items, pathname))?.id;
+/** The current section (and sub-section), so the sidebar never jumps after loading. */
+function getOpenIds(groups: ExplorerGroupData[], pathname: string) {
+  const group = groups.find((item) => isActiveHref(pathname, item.href) || hasActiveItem(item.items, pathname));
+  if (!group) return groups[0] ? [groups[0].id] : [];
+  const item = group.items.find(
+    (child) => isActiveHref(pathname, child.href) || (child.children ? hasActiveItem(child.children, pathname) : false),
+  );
+  return item ? [group.id, item.id] : [group.id];
 }
 
 export function ExplorerSidebar({
@@ -45,52 +49,13 @@ export function ExplorerSidebar({
   onNavigate,
 }: ExplorerSidebarProps) {
   const pathname = usePathname();
-  const defaultExpandedGroups = useMemo(() => (groups[0] ? [groups[0].id] : []), [groups]);
-  const [mounted, setMounted] = useState(false);
-  const [expandedGroups, setExpandedGroups] = useState<string[]>(defaultExpandedGroups);
+  const [expandedGroups, setExpandedGroups] = useState(() => getOpenIds(groups, pathname));
+  const [previousPathname, setPreviousPathname] = useState(pathname);
 
-  useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      setMounted(true);
-
-      try {
-        const storedValue = window.localStorage.getItem(expandedGroupsStorageKey);
-        if (storedValue) {
-          const parsedValue: unknown = JSON.parse(storedValue);
-          if (Array.isArray(parsedValue) && parsedValue.every((item) => typeof item === "string")) {
-            setExpandedGroups(parsedValue);
-          }
-        }
-      } catch {
-        setExpandedGroups(defaultExpandedGroups);
-      }
-    }, 0);
-
-    return () => window.clearTimeout(timeoutId);
-  }, [defaultExpandedGroups]);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    try {
-      window.localStorage.setItem(expandedGroupsStorageKey, JSON.stringify(expandedGroups));
-    } catch {
-      // Ignore storage errors; the current state still updates.
-    }
-  }, [expandedGroups, mounted]);
-
-  const visibleExpandedGroups = useMemo(() => {
-    const activeGroupId = getActiveGroupId(groups, pathname);
-
-    if (!mounted || !activeGroupId || expandedGroups.includes(activeGroupId)) {
-      return expandedGroups;
-    }
-
-    const topLevelIds = groups.map((group) => group.id);
-    const withoutTopLevelSiblings = expandedGroups.filter((id) => !topLevelIds.includes(id));
-
-    return [...withoutTopLevelSiblings, activeGroupId];
-  }, [expandedGroups, groups, mounted, pathname]);
+  if (pathname !== previousPathname) {
+    setPreviousPathname(pathname);
+    setExpandedGroups((current) => [...new Set([...current, ...getOpenIds(groups, pathname)])]);
+  }
 
   function toggleGroup(groupId: string, siblingIds: string[] = groups.map((group) => group.id), forceOpen = false) {
     setExpandedGroups((currentGroups) => {
@@ -106,7 +71,7 @@ export function ExplorerSidebar({
   }
 
   return (
-    <aside className="h-full w-full overflow-y-auto border-r border-border bg-slate-50/80 dark:bg-[#050505]">
+    <aside aria-label="Library" className="h-full w-full overflow-y-auto border-r border-border bg-slate-50/80 dark:bg-[#050505]">
       {collapsed ? (
         <div className="space-y-2 px-2 py-4">
           {groups.map((group) => {
@@ -137,7 +102,7 @@ export function ExplorerSidebar({
           <ExplorerGroup
             key={group.id}
             group={group}
-            expandedIds={visibleExpandedGroups}
+            expandedIds={expandedGroups}
             onToggle={toggleGroup}
             onNavigate={onNavigate}
             siblingIds={groups.map((sibling) => sibling.id)}

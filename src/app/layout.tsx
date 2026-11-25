@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { Navbar } from "@/components/layout/Navbar";
+import { PageFooter } from "@/components/layout/PageFooter";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/constants/site";
 import { defaultOpenGraphImage, getAbsoluteUrl } from "@/lib/metadata";
@@ -78,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="min-h-screen font-sans antialiased">
         <ThemeProvider
           attribute="class"
@@ -86,12 +87,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a href="#content" className="skip-link">
+            Skip to content
+          </a>
           <Navbar />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
           />
-          <main>{children}</main>
+          <main id="content" tabIndex={-1} className="outline-none">
+            {children}
+            <PageFooter />
+          </main>
         </ThemeProvider>
         {process.env.NODE_ENV === "production" ? (
           <GoogleAnalytics gaId={googleAnalyticsId} />

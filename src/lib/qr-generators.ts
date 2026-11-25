@@ -73,7 +73,7 @@ export const qrTypeOptions: { label: string; value: QrType }[] = [
 ];
 
 export const initialQrFormState: QrFormState = {
-  websiteUrl: "https://mypixelogs.com",
+  websiteUrl: "https://mypixelogs.netlify.app",
   text: "Free templates, tools, and design assets.",
   emailAddress: "",
   emailSubject: "",

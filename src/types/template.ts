@@ -25,6 +25,8 @@ export type Template = {
   downloads: number;
   /** Real, finished file: listed first on the homepage. */
   featured?: boolean;
+  /** Only templates with a finished file are shown on the site. */
+  ready?: boolean;
   /** Online editor for this template, if it has one. */
   editor?: "gst" | "freelancer";
   previewImage: string;

@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 export default function SearchPage() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="py-8 sm:py-14">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Search</p>
-          <h1 className="mt-3 text-4xl font-bold tracking-normal text-foreground sm:text-5xl">
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Search MyPixelogs
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">

@@ -1,6 +1,6 @@
 import type { Resource } from "@/types/resource";
 
-export const resources: Resource[] = [
+export const allResources: Resource[] = [
   {
     "id": "business-card-psd",
     "slug": "business-card-psd",
@@ -1094,3 +1094,8 @@ export const resources: Resource[] = [
     ]
   }
 ];
+
+/** Add a resource id here once its download is a real, finished file. */
+const readyResourceIds = new Set(["mypixelogs-promise"]);
+
+export const resources: Resource[] = allResources.filter((resource) => readyResourceIds.has(resource.id));

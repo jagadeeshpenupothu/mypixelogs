@@ -278,7 +278,7 @@ export function ImageCompressor() {
   }, [file, quality, strategy]);
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
+    <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_360px]">
       <div className="space-y-6">
         <div
           role="button"

@@ -270,7 +270,7 @@ export function AgeCalculator() {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[380px_1fr]">
+    <div className="grid grid-cols-1 gap-6 xl:grid-cols-[380px_minmax(0,1fr)]">
       <aside className="space-y-6">
         <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
           <div className="flex items-center gap-2">

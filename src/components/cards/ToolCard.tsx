@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   Archive,
   Binary,
@@ -42,7 +41,7 @@ import {
 
 import type { Tool } from "@/types/tool";
 
-const icons = {
+export const toolIcons = {
   Archive,
   Binary,
   BriefcaseBusiness,
@@ -87,29 +86,16 @@ type ToolCardProps = {
 };
 
 export function ToolCard({ tool }: ToolCardProps) {
-  const Icon = icons[tool.icon as keyof typeof icons] ?? Files;
+  const Icon = toolIcons[tool.icon as keyof typeof toolIcons] ?? Files;
 
   const cardContent = (
   <>
-    <div className="relative aspect-[5/4] w-full overflow-hidden rounded-lg border border-border bg-card">
-      {tool.image ? (
-        <Image
-          src={tool.image}
-          alt={tool.name}
-          fill
-          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-        />
-      ) : (
-        <div className="flex h-full w-full items-center justify-center">
-          <Icon className="h-12 w-12 text-primary" />
-        </div>
-      )}
+    <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-50 text-primary dark:bg-[#171717]">
+      <Icon className="h-5 w-5" aria-hidden="true" />
     </div>
 
-    <div className="mt-4 min-w-0">
-      <h3 className="text-lg font-semibold text-red-500">
-  TEST CARD
-</h3>
+    <div className="mt-3 min-w-0">
+      <h3 className="text-base font-semibold text-foreground">{tool.name}</h3>
 
       <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
         {tool.description}

@@ -2,28 +2,21 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
-  Archive,
   Check,
   ChevronDown,
-  Crop,
-  FileImage,
-  FileText,
-  Files,
   Search,
   SlidersHorizontal,
-  SplitSquareHorizontal,
   Wrench,
   X,
 } from "lucide-react";
 
+import { toolIcons } from "@/components/cards/ToolCard";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import type { Tool } from "@/types/tool";
 
 type ToolCategoryMarketplaceProps = {
   title: string;
-  categorySlug: string;
   tools: Tool[];
 };
 
@@ -37,7 +30,6 @@ const toolTypeOptions = [
   "Extract",
   "Edit",
 ];
-const statusOptions = ["Available", "Coming Soon"];
 
 function toggleValue(values: string[], value: string) {
   return values.includes(value)
@@ -63,37 +55,7 @@ function toolTypes(tool: Tool) {
   return Array.from(new Set(matches.length > 0 ? matches : ["Edit"]));
 }
 
-function toolStatus(tool: Tool) {
-  return tool.comingSoon ? "Coming Soon" : "Available";
-}
-
-function toolHref(tool: Tool, categorySlug: string) {
-  return tool.comingSoon ? `/tools/${categorySlug}` : `/tools/${tool.slug}`;
-}
-
-const previewIcons = {
-  Archive,
-  Crop,
-  FileImage,
-  FileText,
-  Files,
-  SplitSquareHorizontal,
-  Wrench,
-};
-
-function previewIconKey(tool: Tool): keyof typeof previewIcons {
-  const types = toolTypes(tool);
-  const haystack = `${tool.name} ${tool.slug}`.toLowerCase();
-
-  if (types.includes("Compress")) return "Archive";
-  if (types.includes("Split")) return "SplitSquareHorizontal";
-  if (types.includes("Merge")) return "Files";
-  if (types.includes("Extract")) return "FileText";
-  if (haystack.includes("jpg") || haystack.includes("image"))
-    return "FileImage";
-  if (haystack.includes("rotate") || haystack.includes("crop")) return "Crop";
-  return "Wrench";
-}
+const toolHref = (tool: Tool) => `/tools/${tool.slug}`;
 
 function sortTools(items: Tool[], sort: SortOption, source: Tool[]) {
   return [...items].sort((a, b) => {
@@ -151,38 +113,23 @@ function ActiveFilterChip({
 
 function ToolMarketplaceCard({
   tool,
-  categorySlug,
 }: {
   tool: Tool;
-  categorySlug: string;
 }) {
-  const iconKey = previewIconKey(tool);
-  const Icon = previewIcons[iconKey];
+  const Icon = toolIcons[tool.icon as keyof typeof toolIcons] ?? Wrench;
 
   return (
     <Link
-      href={toolHref(tool, categorySlug)}
+      href={toolHref(tool)}
       className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-1 hover:border-primary/45 hover:shadow-md dark:hover:border-primary/50"
     >
-      <div className="overflow-hidden bg-slate-50 p-1.5 dark:bg-[#111111]">
-        <div className="relative aspect-[5/4] overflow-hidden rounded-sm border border-border bg-background">
-          {tool.image ? (
-            <Image
-              src={tool.image}
-              alt={`${tool.name} preview`}
-              fill
-              sizes="(min-width: 1280px) 20vw, (min-width: 768px) 33vw, 50vw"
-              className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center">
-              <Icon className="h-10 w-10 text-primary" aria-hidden="true" />
-            </div>
-          )}
+      <div className="p-3 pb-0">
+        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-50 text-primary dark:bg-white/[0.06]">
+          <Icon className="h-5 w-5" aria-hidden="true" />
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-2.5">
+      <div className="flex flex-1 flex-col p-3">
         <h3 className="line-clamp-2 text-sm font-semibold leading-[18px] text-foreground">
           {tool.name}
         </h3>
@@ -196,23 +143,20 @@ function ToolMarketplaceCard({
 
 export function ToolCategoryMarketplace({
   title,
-  categorySlug,
   tools,
 }: ToolCategoryMarketplaceProps) {
   const [query, setQuery] = useState("");
-  const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [filterSearch, setFilterSearch] = useState("");
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [sort, setSort] = useState<SortOption>("popular");
   const filtersRef = useRef<HTMLDivElement>(null);
 
-  const activeFilterCount = selectedStatuses.length + selectedTypes.length;
+  const activeFilterCount = selectedTypes.length;
   const normalizedFilterSearch = filterSearch.trim().toLowerCase();
-  const visibleStatuses = statusOptions.filter((status) =>
-    status.toLowerCase().includes(normalizedFilterSearch),
-  );
-  const visibleTypes = toolTypeOptions.filter((type) =>
+  const availableTypes = toolTypeOptions.filter((type) => tools.some((tool) => toolTypes(tool).includes(type)));
+  const showControls = tools.length > 6;
+  const visibleTypes = availableTypes.filter((type) =>
     type.toLowerCase().includes(normalizedFilterSearch),
   );
 
@@ -224,22 +168,18 @@ export function ToolCategoryMarketplace({
         `${tool.name} ${tool.slug} ${tool.description} ${tool.tags.join(" ")}`.toLowerCase();
       const matchesQuery =
         !normalizedQuery || searchText.includes(normalizedQuery);
-      const matchesStatus =
-        selectedStatuses.length === 0 ||
-        selectedStatuses.includes(toolStatus(tool));
       const types = toolTypes(tool);
       const matchesType =
         selectedTypes.length === 0 ||
         selectedTypes.some((type) => types.includes(type));
 
-      return matchesQuery && matchesStatus && matchesType;
+      return matchesQuery && matchesType;
     });
 
     return sortTools(filtered, sort, tools);
-  }, [query, selectedStatuses, selectedTypes, sort, tools]);
+  }, [query, selectedTypes, sort, tools]);
 
   function clearFilters() {
-    setSelectedStatuses([]);
     setSelectedTypes([]);
   }
 
@@ -271,7 +211,7 @@ export function ToolCategoryMarketplace({
 
   return (
     <div>
-      <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:bg-black/90">
+      <div className="top-16 z-30 -mx-4 -mt-2 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:sticky lg:-mx-8 lg:px-8 dark:bg-black/90">
         <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between">
           <Breadcrumbs
             items={[
@@ -281,7 +221,7 @@ export function ToolCategoryMarketplace({
             ]}
           />
           <p className="text-sm font-semibold text-foreground">
-            {filteredTools.length.toLocaleString()} Tools
+            {filteredTools.length.toLocaleString()} {filteredTools.length === 1 ? "tool" : "tools"}
           </p>
         </div>
 
@@ -298,11 +238,11 @@ export function ToolCategoryMarketplace({
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder={`Search ${title.toLowerCase()}...`}
-                className="h-9 w-full rounded-lg border border-input bg-card pl-10 pr-3 text-sm font-medium text-foreground outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="h-10 w-full rounded-lg border border-input bg-card pl-10 pr-3 text-sm font-medium text-foreground outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
             </label>
 
-            <div className="flex shrink-0 gap-2">
+            <div className={showControls ? "flex shrink-0 gap-2" : "hidden"}>
               <div className="relative" ref={filtersRef}>
                 <button
                   type="button"
@@ -310,7 +250,7 @@ export function ToolCategoryMarketplace({
                     setFilterSearch("");
                     setFiltersOpen((current) => !current);
                   }}
-                  className="inline-flex h-9 items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted"
+                  className="inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted"
                   aria-expanded={filtersOpen}
                 >
                   <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
@@ -329,7 +269,7 @@ export function ToolCategoryMarketplace({
                 </button>
 
                 {filtersOpen ? (
-                  <div className="absolute right-0 z-40 mt-2 w-[min(720px,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+                  <div className="fixed inset-x-4 top-20 z-40 max-h-[calc(100dvh-6rem)] overflow-y-auto sm:absolute sm:inset-x-auto sm:right-0 sm:top-auto sm:mt-2 sm:w-[min(720px,calc(100vw-4rem))] rounded-xl border border-border bg-card shadow-soft">
                     <div className="flex items-center justify-between gap-4 border-b border-border px-4 py-3">
                       <div>
                         <h2 className="text-sm font-bold text-foreground">
@@ -365,39 +305,7 @@ export function ToolCategoryMarketplace({
                         />
                       </label>
 
-                      <div className="mt-4 grid gap-5 lg:grid-cols-2">
-                        <div className="rounded-lg border border-border bg-background p-3">
-                          <div className="mb-3 flex items-center justify-between gap-3">
-                            <p className="text-sm font-bold text-foreground">
-                              Tool Status{" "}
-                              <span className="font-semibold text-muted-foreground">
-                                ({selectedStatuses.length})
-                              </span>
-                            </p>
-                            <button
-                              type="button"
-                              onClick={() => setSelectedStatuses([])}
-                              className="text-xs font-semibold text-primary transition-colors duration-200 hover:text-primary/80"
-                            >
-                              Clear
-                            </button>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {visibleStatuses.map((status) => (
-                              <FilterChip
-                                key={status}
-                                label={status}
-                                active={selectedStatuses.includes(status)}
-                                onClick={() =>
-                                  setSelectedStatuses((current) =>
-                                    toggleValue(current, status),
-                                  )
-                                }
-                              />
-                            ))}
-                          </div>
-                        </div>
-
+                      <div className="mt-4 grid gap-5">
                         <div className="rounded-lg border border-border bg-background p-3">
                           <div className="mb-3 flex items-center justify-between gap-3">
                             <p className="text-sm font-bold text-foreground">
@@ -465,7 +373,7 @@ export function ToolCategoryMarketplace({
                   onChange={(event) =>
                     setSort(event.target.value as SortOption)
                   }
-                  className="h-9 rounded-lg border border-input bg-card px-3 pr-8 text-sm font-semibold text-foreground outline-none transition-[border-color,box-shadow] duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="h-10 rounded-lg border border-input bg-card px-3 pr-8 text-sm font-semibold text-foreground outline-none transition-[border-color,box-shadow] duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="popular">Most Popular</option>
                   <option value="newest">Newest</option>
@@ -481,17 +389,6 @@ export function ToolCategoryMarketplace({
 
       {activeFilterCount > 0 ? (
         <div className="mt-2 flex flex-wrap gap-2">
-          {selectedStatuses.map((status) => (
-            <ActiveFilterChip
-              key={status}
-              label={status}
-              onRemove={() =>
-                setSelectedStatuses((current) =>
-                  current.filter((item) => item !== status),
-                )
-              }
-            />
-          ))}
           {selectedTypes.map((type) => (
             <ActiveFilterChip
               key={type}
@@ -518,7 +415,6 @@ export function ToolCategoryMarketplace({
           <ToolMarketplaceCard
             key={tool.id}
             tool={tool}
-            categorySlug={categorySlug}
           />
         ))}
       </div>

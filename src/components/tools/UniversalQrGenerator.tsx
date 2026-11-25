@@ -375,7 +375,7 @@ export function UniversalQrGenerator() {
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_380px]">
+    <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_380px]">
       <div className="rounded-lg border border-border bg-white p-5 shadow-sm sm:p-6">
         <div className="grid gap-6">
           <label className="block">

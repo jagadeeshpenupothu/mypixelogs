@@ -68,6 +68,7 @@ function ExplorerTreeItem({
             }
             onNavigate?.();
           }}
+          aria-current={pathname === item.href ? "page" : undefined}
           className={cn(
             "flex min-w-0 flex-1 items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30",
             isTopLevel ? "gap-2.5" : "gap-2",
@@ -97,7 +98,7 @@ function ExplorerTreeItem({
             aria-expanded={isOpen}
             aria-controls={`${item.id}-items`}
             onClick={() => onToggle(item.id, siblingIds)}
-            className="ml-2.5 shrink-0 rounded p-0.5 text-muted-foreground transition-colors duration-150 hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
+            className="-mr-1.5 ml-1 shrink-0 rounded p-2 text-muted-foreground transition-colors duration-150 hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
           >
             <ChevronRight
               className={cn("h-3.5 w-3.5 transition-transform duration-200", isOpen && "rotate-90")}
@@ -113,8 +114,8 @@ function ExplorerTreeItem({
         <div
           id={`${item.id}-items`}
           className={cn(
-            "grid overflow-hidden transition-[grid-template-rows,opacity] duration-200 ease-out",
-            isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+            "grid overflow-hidden transition-[grid-template-rows,opacity,visibility] duration-200 ease-out",
+            isOpen ? "grid-rows-[1fr] opacity-100" : "invisible grid-rows-[0fr] opacity-0",
           )}
         >
           <div className="min-h-0 overflow-hidden">

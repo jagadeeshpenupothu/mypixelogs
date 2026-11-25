@@ -1,7 +1,7 @@
 import { resources } from "@/data/resources";
 import type { Asset } from "@/types/asset";
 
-const assetCategories = new Set(["Logos", "Icons"]);
+const assetCategories = new Set(["Logos", "Icons", "PSD"]);
 
 function getAssetCategoryLabel(category: string) {
   if (category.toLowerCase().includes("logo")) return "LOGO";

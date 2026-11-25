@@ -7,6 +7,9 @@ import { templateCategories } from "@/data/template-categories";
 import { assets } from "@/data/assets";
 import { templates } from "@/data/templates";
 import { toolCategories, tools } from "@/data/tools";
+import { getAssetsByCategorySlug } from "@/lib/assets";
+import { getTemplatesByCategory } from "@/lib/templates";
+import { getToolsByCategory } from "@/lib/tools";
 import { siteConfig } from "@/constants/site";
 
 const BASE_URL = siteConfig.url;
@@ -19,7 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.8,
   }));
 
-  const categoryRoutes = templateCategories.map((category) => ({
+  const categoryRoutes = templateCategories
+    .filter((category) => getTemplatesByCategory(category.slug).length > 0)
+    .map((category) => ({
     url: `${BASE_URL}/templates/${category.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -49,14 +54,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const assetCategoryRoutes = assetCategories.map((category) => ({
+  const assetCategoryRoutes = assetCategories
+    .filter((category) => getAssetsByCategorySlug(category.slug).length > 0)
+    .map((category) => ({
     url: `${BASE_URL}/assets/${category.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
 
-  const toolCategoryRoutes = toolCategories.map((category) => ({
+  const toolCategoryRoutes = toolCategories
+    .filter((category) => getToolsByCategory(category.name).length > 0)
+    .map((category) => ({
     url: `${BASE_URL}/tools/${category.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

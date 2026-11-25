@@ -58,7 +58,7 @@ export const toolCategories: ToolCategoryMeta[] = [
   },
 ];
 
-export const tools: Tool[] = [
+export const allTools: Tool[] = [
   {
     id: "converter",
     name: "Universal File Converter",
@@ -488,5 +488,10 @@ export const tools: Tool[] = [
     icon: "Gauge",
     category: "Utility Tools",
     tags: ["speed", "internet", "network", "utility", "test"],
+    // Needs a LibreSpeed server; hidden until one is configured.
+    comingSoon: !process.env.NEXT_PUBLIC_SPEEDTEST_SERVER,
   },
 ];
+
+/** Planned tools stay in allTools and are hidden until they work. */
+export const tools: Tool[] = allTools.filter((tool) => !tool.comingSoon);

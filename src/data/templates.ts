@@ -42,6 +42,7 @@ const makeWordTemplate = (
     downloadPath: `/downloads/${template.slug}.docx`,
     formats: ["Word"],
     featured: true,
+    ready: true,
     editor,
   };
 };
@@ -52,7 +53,7 @@ const resumeFeatures = ["Recruiter-friendly section hierarchy", "Editable skills
 const letterheadFeatures = ["Business-ready header and footer placement", "Space for contact, address, logo, and document reference", "Polished layout for official communication"];
 const certificateFeatures = ["Formal award layout with signature areas", "Editable recipient, date, issuer, and program details", "Presentation-ready design for print and PDF export"];
 
-export const templates: Template[] = [
+export const allTemplates: Template[] = [
   makeTemplate("hotel-invoice", "Hotel Invoice Template", "hotel-invoice-template", "Hotel Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 10133, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
   makeTemplate("restaurant-invoice", "Restaurant Invoice Template", "restaurant-invoice-template", "Restaurant Invoice Template: Download a free editable invoice template in Word, Excel and PDF formats for professional billing.", "invoice", 10864, invoiceFeatures, ["Client billing","Business records","Payment documentation"]),
   makeWordTemplate("gst", "gst-invoice", "GST Invoice Template", "gst-invoice-template", "Free GST tax invoice template for Microsoft Word. Editable A4 layout with GSTIN, HSN/SAC, place of supply, CGST, SGST and IGST fields.", "invoice", 0, ["Fields for GSTIN, HSN/SAC, place of supply and reverse charge", "Separate CGST, SGST/UTGST and IGST totals", "One-page A4 layout with bank, UPI and signature areas"], ["Sales by GST-registered businesses", "Service billing", "Sales within or between states"]),
@@ -164,3 +165,6 @@ export const templates: Template[] = [
   makeTemplate("event-company-letterhead", "Event Company Letterhead Template", "event-company-letterhead-template", "Event Company Letterhead Template: Prepare official business communication with a polished editable letterhead layout.", "letterhead", 24548, letterheadFeatures, ["Official letters","Business notices","Proposal documents"]),
   makeTemplate("it-company-letterhead", "IT Company Letterhead Template", "it-company-letterhead-template", "IT Company Letterhead Template: Prepare official business communication with a polished editable letterhead layout.", "letterhead", 25279, letterheadFeatures, ["Official letters","Business notices","Proposal documents"]),
 ];
+
+/** Unfinished templates stay in allTemplates and are hidden until they are ready. */
+export const templates: Template[] = allTemplates.filter((template) => template.ready);

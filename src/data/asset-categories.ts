@@ -8,6 +8,13 @@ export type AssetCategoryMeta = {
 
 export const assetCategories: AssetCategoryMeta[] = [
   {
+    slug: "psd",
+    title: "Free PSD Files",
+    label: "PSD Files",
+    description: "Download editable Photoshop files for design projects.",
+    aliases: ["PSD"],
+  },
+  {
     slug: "images",
     title: "Free Images",
     label: "Images",

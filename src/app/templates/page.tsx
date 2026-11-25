@@ -22,9 +22,6 @@ export const metadata: Metadata = {
 };
 
 const rootTemplateSections: { slug: TemplateCategory; title: string; href: string }[] = [
-  { slug: "word", title: "MS Word Templates", href: "/templates/word" },
-  { slug: "excel", title: "Excel Templates", href: "/templates/excel" },
-  { slug: "pdf", title: "PDF Templates", href: "/templates/pdf" },
   { slug: "invoice", title: "Invoice Templates", href: "/templates/invoice" },
   { slug: "resume", title: "Resume Templates", href: "/templates/resume" },
   { slug: "certificate", title: "Certificate Templates", href: "/templates/certificate" },
@@ -32,6 +29,9 @@ const rootTemplateSections: { slug: TemplateCategory; title: string; href: strin
   { slug: "receipt", title: "Receipt Templates", href: "/templates/receipt" },
   { slug: "canva", title: "Canva Templates", href: "/templates/canva" },
   { slug: "psd", title: "PSD Templates", href: "/templates/psd" },
+  { slug: "word", title: "MS Word Templates", href: "/templates/word" },
+  { slug: "excel", title: "Excel Templates", href: "/templates/excel" },
+  { slug: "pdf", title: "PDF Templates", href: "/templates/pdf" },
   { slug: "google-docs", title: "Google Docs Templates", href: "/templates/google-docs" },
 ];
 
@@ -69,17 +69,22 @@ export default function TemplatesPage() {
       href: section.href,
       items: getTemplatesByCategory(section.slug).map(templateItem),
     }))
-    .filter((section) => section.items.length > 0);
+    .filter((section) => section.items.length > 0)
+    // Skip a section that would repeat exactly the same templates.
+    .filter(
+      (section, index, all) =>
+        all.findIndex((other) => other.items.map(({ id }) => id).join() === section.items.map(({ id }) => id).join()) === index,
+    );
 
   const templateTypeOptions = templateCategories.map((category) => category.label);
 
   return (
-    <section className="bg-white py-1 sm:py-2 dark:bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="pb-2">
+      <div className="mx-auto max-w-7xl">
         <RootCollectionBrowser
           kind="template"
           title="Templates"
-          totalLabel={`${templates.length.toLocaleString()} Templates`}
+          totalLabel={`${templates.length.toLocaleString()} templates`}
           searchPlaceholder="Search templates..."
           breadcrumbs={[
             { label: "Home", href: "/" },

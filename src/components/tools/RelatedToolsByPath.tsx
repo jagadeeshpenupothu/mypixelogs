@@ -26,8 +26,8 @@ export function RelatedToolsByPath() {
   }
 
   return (
-    <section className="bg-white pb-14">
-      <div className="mx-auto max-w-7xl border-t border-border px-4 pt-10 sm:px-6 lg:px-8">
+    <section className="pb-4 pt-12">
+      <div className="mx-auto max-w-7xl border-t border-border pt-8">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">
           Related tools
         </p>

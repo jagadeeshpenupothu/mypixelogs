@@ -33,8 +33,8 @@ export default async function EditTemplatePage({ params }: PageProps) {
   if (!template?.editor) notFound();
 
   return (
-    <section className="bg-background py-6">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="pb-2">
+      <div className="mx-auto max-w-7xl">
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Templates", href: "/templates" }, { label: template.title, href: `/templates/${slug}` }, { label: "Edit online" }]} />
         <div className="mt-6"><InvoiceEditor key={slug} kind={template.editor} title={pageTitle(template.title)} /></div>
       </div>

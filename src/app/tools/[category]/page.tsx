@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { ToolCategoryMarketplace } from "@/components/tools/ToolCategoryMarketplace";
 import { toolCategories } from "@/data/tools";
@@ -13,7 +13,9 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return toolCategories.map((category) => ({ category: category.slug }));
+  return toolCategories
+    .filter((category) => getToolsByCategory(category.name).length > 0)
+    .map((category) => ({ category: category.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -45,12 +47,13 @@ export default async function ToolCategoryPage({ params }: PageProps) {
     notFound();
   }
 
+  if (getToolsByCategory(category.name).length === 0) redirect("/tools");
+
   return (
-    <section className="bg-white py-1 sm:py-2 dark:bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="pb-2">
+      <div className="mx-auto max-w-7xl">
         <ToolCategoryMarketplace
           title={category.name}
-          categorySlug={category.slug}
           tools={getToolsByCategory(category.name)}
         />
       </div>

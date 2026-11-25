@@ -45,7 +45,9 @@ export function getAssetFiles(asset: Asset): AssetFile[] {
 
 export function getAssetRouteSlugs(): string[] {
   return Array.from(new Set([
-    ...assetCategories.map((category) => category.slug),
+    ...assetCategories
+      .filter((category) => getAssetsByCategorySlug(category.slug).length > 0)
+      .map((category) => category.slug),
     ...assets.map((asset) => asset.slug),
   ]));
 }

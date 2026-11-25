@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { siteConfig } from "@/constants/site";
 import { createSocialMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -18,25 +19,29 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="py-8 sm:py-14">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Contact</p>
-          <h1 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
+          <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
             Get in touch with MyPixelogs.
           </h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground">
-            Have a question about templates, assets, or tools? Send a message
-            and the MyPixelogs team will review it.
+            Questions about templates, assets, or tools.
           </p>
-          <div className="mt-8 rounded-lg border border-border bg-card p-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-foreground">Email</h2>
-            <p className="mt-2 text-sm text-muted-foreground">support@mypixelogs.com</p>
-          </div>
+          {siteConfig.contactEmail ? (
+            <div className="mt-8 rounded-lg border border-border bg-card p-6 shadow-sm">
+              <h2 className="text-lg font-semibold text-foreground">Email</h2>
+              <a className="mt-2 inline-block text-sm text-primary" href={`mailto:${siteConfig.contactEmail}`}>
+                {siteConfig.contactEmail}
+              </a>
+            </div>
+          ) : null}
         </div>
 
+        {siteConfig.contactEmail ? (
         <form
-          action="mailto:support@mypixelogs.com"
+          action={`mailto:${siteConfig.contactEmail}`}
           method="post"
           encType="text/plain"
           className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8"
@@ -88,10 +93,19 @@ export default function ContactPage() {
             </Button>
             <p className="text-xs leading-5 text-muted-foreground">
               Submitting opens your email app so you can send the message
-              directly to support@mypixelogs.com.
+              directly to us.
             </p>
           </div>
         </form>
+        ) : (
+          <div className="h-fit rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
+            <h2 className="text-lg font-semibold text-foreground">Messages are not open yet</h2>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              We are setting up a support address. The tools and templates work without an account, so you can keep
+              using them in the meantime.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import { templateCategories } from "@/data/template-categories";
-import { templates } from "@/data/templates";
+import { allTemplates, templates } from "@/data/templates";
 import type { Template, TemplateCategory } from "@/types/template";
 
 export function getTemplateBySlug(slug: string): Template | undefined {
@@ -43,7 +43,14 @@ export function getTemplateCategoryLabel(category: TemplateCategory): string {
 
 export function getTemplateRouteSlugs(): string[] {
   return [
-    ...templateCategories.map((category) => category.slug),
+    ...templateCategories
+      .filter((category) => getTemplatesByCategory(category.slug).length > 0)
+      .map((category) => category.slug),
     ...templates.map((template) => template.slug),
   ];
+}
+
+/** A template that exists in the code but is not finished yet. */
+export function isHiddenTemplate(slug: string): boolean {
+  return allTemplates.some((template) => template.slug === slug && !template.ready);
 }

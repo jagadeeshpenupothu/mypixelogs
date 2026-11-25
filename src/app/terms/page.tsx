@@ -39,10 +39,10 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="py-8 sm:py-14">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">Terms</p>
-        <h1 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
+        <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
           Terms and Conditions
         </h1>
         <p className="mt-5 text-base leading-7 text-muted-foreground">

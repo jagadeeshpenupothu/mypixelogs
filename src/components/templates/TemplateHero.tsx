@@ -10,15 +10,15 @@ type TemplateHeroProps = {
 
 export function TemplateHero({ template, categoryLabel }: TemplateHeroProps) {
   return (
-    <header className="grid gap-6 lg:grid-cols-[1fr_320px] lg:items-end">
+    <header className="grid gap-4 lg:grid-cols-[1fr_280px] lg:items-end">
       <div>
         <Badge variant="secondary" className="bg-blue-50 text-primary">
           {categoryLabel}
         </Badge>
-        <h1 className="mt-4 max-w-4xl text-4xl font-bold tracking-normal text-foreground sm:text-5xl">
+        <h1 className="mt-4 max-w-4xl text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
           {template.title}
         </h1>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
+        <p className="mt-3 max-w-3xl text-base leading-7 text-muted-foreground">
           {template.description}
         </p>
       </div>

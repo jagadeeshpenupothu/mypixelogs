@@ -11,7 +11,7 @@ import type { Template } from "@/types/template";
 
 type CollectionKind = "template" | "asset";
 type CollectionItem = Template | Asset;
-type SortOption = "popular" | "downloads" | "newest" | "oldest" | "az" | "za";
+type SortOption = "popular" | "newest" | "oldest" | "az" | "za";
 
 type BreadcrumbItem = {
   label: string;
@@ -321,7 +321,7 @@ function CollectionCard({ item, kind }: { item: CollectionItem; kind: Collection
   const href = itemHref(item, kind);
   const thumbnailClass =
     kind === "template"
-      ? "aspect-[1/1.414] object-cover"
+      ? "aspect-[1/1.414] object-contain bg-white"
       : "aspect-square object-cover";
 
   return (
@@ -339,18 +339,18 @@ function CollectionCard({ item, kind }: { item: CollectionItem; kind: Collection
       </div>
 
       <div className="flex flex-1 flex-col p-2">
-        <h3 className="line-clamp-2 min-h-9 text-sm font-semibold leading-[18px] text-foreground">
+        <h3 className="line-clamp-2 text-sm font-semibold leading-[18px] text-foreground">
           {item.title}
         </h3>
 
-        <div className="mt-2 flex items-center justify-between gap-2">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-2">
           <span className="rounded-md bg-blue-50 px-2 py-1 text-[11px] font-bold text-primary">
             {itemBadge(item)}
           </span>
           <a
             href={itemDownloadUrl(item)}
             download
-            className="relative z-20 inline-flex h-8 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
+            className="relative z-20 inline-flex h-9 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
           >
             <Download className="h-3.5 w-3.5" aria-hidden="true" />
             Download
@@ -376,7 +376,19 @@ export function CollectionPage({
   const [visibleCount, setVisibleCount] = useState(pageSize);
   const filtersRef = useRef<HTMLDivElement>(null);
 
-  const sections = useMemo(() => filterSections(kind), [kind]);
+  const sections = useMemo(
+    () =>
+      filterSections(kind)
+        .map((section) => ({
+          ...section,
+          options: section.options.filter((option) =>
+            items.some((item) => getSectionValues(item, section.id).includes(option)),
+          ),
+        }))
+        .filter((section) => section.options.length > 1),
+    [items, kind],
+  );
+  const showControls = items.length > 6;
   const activeFilterCount = Object.values(selectedFilters).reduce((total, values) => total + values.length, 0);
   const normalizedFilterSearch = filterSearch.trim().toLowerCase();
 
@@ -455,11 +467,11 @@ export function CollectionPage({
 
   return (
     <div>
-      <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:bg-black/90">
+      <div className="top-16 z-30 -mx-4 -mt-2 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:sticky lg:-mx-8 lg:px-8 dark:bg-black/90">
         <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between">
           <Breadcrumbs items={breadcrumbs} />
           <p className="text-sm font-semibold text-foreground">
-            {filteredItems.length.toLocaleString()} {kind === "template" ? "Templates" : "Assets"} Found
+            {filteredItems.length.toLocaleString()} {kind === "template" ? (filteredItems.length === 1 ? "template" : "templates") : filteredItems.length === 1 ? "asset" : "assets"}
           </p>
         </div>
 
@@ -477,19 +489,19 @@ export function CollectionPage({
                   resetVisibleCount();
                 }}
                 placeholder={searchPlaceholder ?? `Search ${title.toLowerCase()}...`}
-                className="h-9 w-full rounded-lg border border-input bg-card pl-10 pr-3 text-sm font-medium text-foreground outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="h-10 w-full rounded-lg border border-input bg-card pl-10 pr-3 text-sm font-medium text-foreground outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
             </label>
 
-            <div className="flex shrink-0 gap-2">
-              <div className="relative" ref={filtersRef}>
+            <div className={showControls ? "flex shrink-0 gap-2" : "hidden"}>
+              <div className={sections.length > 0 ? "relative" : "hidden"} ref={filtersRef}>
                 <button
                   type="button"
                   onClick={() => {
                     setFilterSearch("");
                     setFiltersOpen((current) => !current);
                   }}
-                  className="inline-flex h-9 items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted"
+                  className="inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted"
                   aria-expanded={filtersOpen}
                 >
                   <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
@@ -508,7 +520,7 @@ export function CollectionPage({
                 </button>
 
                 {filtersOpen ? (
-                  <div className="absolute right-0 z-40 mt-2 w-[min(900px,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+                  <div className="fixed inset-x-4 top-20 z-40 max-h-[calc(100dvh-6rem)] overflow-y-auto sm:absolute sm:inset-x-auto sm:right-0 sm:top-auto sm:mt-2 sm:w-[min(720px,calc(100vw-4rem))] rounded-xl border border-border bg-card shadow-soft">
                     <div className="flex items-center justify-between gap-4 border-b border-border px-4 py-3">
                       <div>
                         <h2 className="text-sm font-bold text-foreground">
@@ -614,10 +626,9 @@ export function CollectionPage({
                     setSort(event.target.value as SortOption);
                     resetVisibleCount();
                   }}
-                  className="h-9 rounded-lg border border-input bg-card px-3 pr-8 text-sm font-semibold text-foreground outline-none transition-[border-color,box-shadow] duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="h-10 rounded-lg border border-input bg-card px-3 pr-8 text-sm font-semibold text-foreground outline-none transition-[border-color,box-shadow] duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="popular">Most Popular</option>
-                  <option value="downloads">Most Downloaded</option>
                   <option value="newest">Newest</option>
                   <option value="oldest">Oldest</option>
                   <option value="az">A-Z</option>

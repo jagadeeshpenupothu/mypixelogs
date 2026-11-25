@@ -29,7 +29,7 @@ export function SearchResults({
   const groupedResults = resultOrder.map((type) => ({
     type,
     items: results.filter((item) => item.type === type),
-  }));
+  })).filter((group) => group.items.length > 0);
 
   if (!query.trim()) {
     return (
@@ -76,7 +76,6 @@ export function SearchResults({
               {type}s ({items.length})
             </h2>
           </div>
-          {items.length > 0 ? (
             <div className="mt-4 grid gap-3">
               {items.map((item) => (
                 <Link
@@ -104,11 +103,6 @@ export function SearchResults({
                 </Link>
               ))}
             </div>
-          ) : (
-            <p className="mt-4 rounded-lg border border-border bg-card p-5 text-sm text-muted-foreground">
-              No {type.toLowerCase()} results.
-            </p>
-          )}
         </section>
       ))}
     </div>

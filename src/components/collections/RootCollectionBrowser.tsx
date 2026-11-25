@@ -4,11 +4,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Calculator,
   Check,
   ChevronDown,
   Download,
-  FileText,
   FolderOpen,
   Search,
   SlidersHorizontal,
@@ -16,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 
+import { toolIcons } from "@/components/cards/ToolCard";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 
 type RootCollectionKind = "template" | "tool" | "asset";
@@ -27,6 +26,7 @@ export type RootCollectionItem = {
   href: string;
   badge: string;
   thumbnail?: string;
+  icon?: string;
   downloadUrl?: string;
   comingSoon?: boolean;
   filters: Record<string, string[]>;
@@ -106,11 +106,7 @@ function MarketplaceMiniCard({
   kind: RootCollectionKind;
 }) {
   if (kind === "tool") {
-    const Icon = item.badge.toLowerCase().includes("calculator")
-      ? Calculator
-      : item.badge.toLowerCase().includes("pdf")
-        ? FileText
-        : Wrench;
+    const Icon = toolIcons[item.icon as keyof typeof toolIcons] ?? Wrench;
 
     const content = (
       <>
@@ -166,7 +162,7 @@ function MarketplaceMiniCard({
             alt={`${item.title} thumbnail`}
             width={420}
             height={kind === "template" ? 594 : 420}
-            className={`${aspectClass} h-auto w-full rounded-sm object-cover shadow-sm transition-transform duration-200 group-hover:scale-[1.02]`}
+            className={`${aspectClass} h-auto w-full rounded-sm bg-white object-contain shadow-sm transition-transform duration-200 group-hover:scale-[1.02]`}
           />
         ) : (
           <div className={`${aspectClass} flex w-full items-center justify-center rounded-sm bg-muted`}>
@@ -175,10 +171,10 @@ function MarketplaceMiniCard({
         )}
       </div>
       <div className="flex flex-1 flex-col p-2">
-        <h3 className="line-clamp-2 min-h-9 text-sm font-semibold leading-[18px] text-foreground">
+        <h3 className="line-clamp-2 text-sm font-semibold leading-[18px] text-foreground">
           {item.title}
         </h3>
-        <div className="mt-2 flex items-center justify-between gap-2">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-2">
           <span className="rounded-md bg-blue-50 px-2 py-1 text-[11px] font-bold text-primary">
             {item.badge}
           </span>
@@ -186,7 +182,7 @@ function MarketplaceMiniCard({
             <a
               href={item.downloadUrl}
               download
-              className="relative z-20 inline-flex h-8 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
+              className="relative z-20 inline-flex h-9 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-xs font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
             >
               <Download className="h-3.5 w-3.5" aria-hidden="true" />
               Download
@@ -228,8 +224,21 @@ export function RootCollectionBrowser({
   searchPlaceholder,
   breadcrumbs,
   sections,
-  filterSections,
+  filterSections: allFilterSections,
 }: RootCollectionBrowserProps) {
+  const filterSections = useMemo(
+    () =>
+      allFilterSections
+        .map((section) => ({
+          ...section,
+          options: section.options.filter((option) =>
+            sections.some((group) => group.items.some((item) => item.filters[section.id]?.includes(option))),
+          ),
+        }))
+        .filter((section) => section.options.length > 1),
+    [allFilterSections, sections],
+  );
+  const showFilters = filterSections.length > 0 && sections.reduce((total, section) => total + section.items.length, 0) > 6;
   const [query, setQuery] = useState("");
   const [selectedFilters, setSelectedFilters] = useState<Record<string, string[]>>({});
   const [filterSearch, setFilterSearch] = useState("");
@@ -302,7 +311,7 @@ export function RootCollectionBrowser({
 
   return (
     <div>
-      <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:bg-black/90">
+      <div className="top-16 z-30 -mx-4 -mt-2 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:sticky lg:-mx-8 lg:px-8 dark:bg-black/90">
         <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between">
           <Breadcrumbs items={breadcrumbs} />
           <p className="text-sm font-semibold text-foreground">{totalLabel}</p>
@@ -319,18 +328,18 @@ export function RootCollectionBrowser({
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder={searchPlaceholder}
-                className="h-9 w-full rounded-lg border border-input bg-card pl-10 pr-3 text-sm font-medium text-foreground outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="h-10 w-full rounded-lg border border-input bg-card pl-10 pr-3 text-sm font-medium text-foreground outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
             </label>
 
-            <div className="relative shrink-0" ref={filtersRef}>
+            <div className={showFilters ? "relative shrink-0" : "hidden"} ref={filtersRef}>
               <button
                 type="button"
                 onClick={() => {
                   setFilterSearch("");
                   setFiltersOpen((current) => !current);
                 }}
-                className="inline-flex h-9 w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted sm:w-auto"
+                className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted sm:w-auto"
                 aria-expanded={filtersOpen}
               >
                 <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
@@ -349,7 +358,7 @@ export function RootCollectionBrowser({
               </button>
 
               {filtersOpen ? (
-                <div className="absolute right-0 z-40 mt-2 w-[min(900px,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+                <div className="fixed inset-x-4 top-20 z-40 max-h-[calc(100dvh-6rem)] overflow-y-auto sm:absolute sm:inset-x-auto sm:right-0 sm:top-auto sm:mt-2 sm:w-[min(720px,calc(100vw-4rem))] rounded-xl border border-border bg-card shadow-soft">
                   <div className="flex items-center justify-between gap-4 border-b border-border px-4 py-3">
                     <div>
                       <h2 className="text-sm font-bold text-foreground">
@@ -477,7 +486,7 @@ export function RootCollectionBrowser({
 
       <div className="mt-3 space-y-8">
         {filteredSections.map((section) => {
-          const previewItems = section.items.slice(0, 4);
+          const previewItems = section.items.length > 5 ? section.items.slice(0, 4) : section.items;
 
           return (
             <section key={section.id} className="scroll-mt-28">
@@ -494,11 +503,11 @@ export function RootCollectionBrowser({
                 {previewItems.map((item) => (
                   <MarketplaceMiniCard key={item.id} item={item} kind={kind} />
                 ))}
-                <SeeMoreCard
+                {section.items.length > previewItems.length ? <SeeMoreCard
                   href={section.href}
                   count={section.items.length - previewItems.length}
                   label={kind === "tool" ? "More Tools" : kind === "asset" ? "More Assets" : "More Templates"}
-                />
+                /> : null}
               </div>
             </section>
           );

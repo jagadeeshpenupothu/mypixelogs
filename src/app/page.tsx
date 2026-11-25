@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Braces,
+  Calculator,
+  CalendarDays,
   Crop,
   Download,
   ArrowRight,
@@ -18,6 +20,7 @@ import {
 } from "lucide-react";
 
 import { ExplorerLayout } from "@/components/explorer/ExplorerLayout";
+import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/constants/site";
 import { assets } from "@/data/assets";
 import { templates } from "@/data/templates";
@@ -46,6 +49,8 @@ export const metadata: Metadata = {
 
 const toolIcons = {
   Braces,
+  Calculator,
+  CalendarDays,
   Crop,
   Files,
   ImageDown,
@@ -67,15 +72,15 @@ function HomeToolCard({ tool }: { tool: Tool }) {
         <Icon className="h-4 w-4" aria-hidden="true" />
       </div>
       <div className="min-w-0">
-        <h3 className="truncate text-sm font-semibold text-foreground">{tool.name}</h3>
-        <p className="mt-1 line-clamp-1 text-xs leading-5 text-muted-foreground">{tool.description}</p>
+        <h3 className="text-sm font-semibold text-foreground">{tool.name}</h3>
+        <p className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{tool.description}</p>
       </div>
     </>
   );
 
   if (tool.comingSoon) {
     return (
-      <article className="flex min-h-[92px] gap-3 rounded-lg border border-border bg-card p-4 opacity-90 shadow-sm">
+      <article className="flex gap-3 rounded-lg border border-border bg-card p-4 opacity-90 shadow-sm">
         {content}
       </article>
     );
@@ -84,7 +89,7 @@ function HomeToolCard({ tool }: { tool: Tool }) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className="group flex min-h-[92px] gap-3 rounded-lg border border-border bg-card p-4 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20"
+      className="group flex gap-3 rounded-lg border border-border bg-card p-4 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20"
     >
       {content}
     </Link>
@@ -138,8 +143,8 @@ function HomeAssetCard({ asset }: { asset: Asset }) {
         />
       </div>
       <div className="p-3.5">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="line-clamp-2 min-h-10 text-sm font-semibold leading-5 text-foreground">
+        <div className="flex flex-wrap items-start justify-between gap-2">
+          <h3 className="line-clamp-2 text-sm font-semibold leading-5 text-foreground">
             {asset.title}
           </h3>
           <span className="shrink-0 rounded-md border border-border bg-muted px-2 py-1 text-[11px] font-bold uppercase text-muted-foreground">
@@ -165,7 +170,7 @@ function MoreCard({
   return (
     <Link
       href={href}
-      className="group flex min-h-[92px] flex-col justify-between rounded-lg border border-dashed border-border bg-card p-4 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20"
+      className="group flex flex-col justify-between rounded-lg border border-dashed border-border bg-card p-4 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20"
     >
       <div className="flex items-center justify-between gap-3">
         <span className="flex h-9 w-9 items-center justify-center rounded-md bg-blue-50 text-primary dark:bg-[#171717]">
@@ -235,10 +240,27 @@ export default function Home() {
   return (
     <>
       <ExplorerLayout groups={explorerGroups}>
-        <div className="space-y-10">
+        <div className="space-y-9">
+          <header className="rounded-xl border border-border bg-card p-5 sm:p-7">
+            <h1 className="max-w-2xl text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Free templates and tools, right in your browser
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base">
+              Make an invoice, resize an image or work out an EMI. No sign-up needed.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Button asChild>
+                <Link href="/templates/gst-invoice-template/edit">Create a GST invoice</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/tools">See all tools</Link>
+              </Button>
+            </div>
+          </header>
+
           <section>
             {sectionTitle("Popular Tools")}
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {popularTools.map((tool) => (
                 <HomeToolCard key={tool.id} tool={tool} />
               ))}
@@ -247,34 +269,38 @@ export default function Home() {
           </section>
 
           <section>
-            {sectionTitle("Popular Templates")}
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {sectionTitle("Templates")}
+            <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
               {popularTemplates.map((template) => (
                 <HomeTemplateCard key={template.id} template={template} />
               ))}
-              <DiscoveryMoreCard
+              {templates.length > 9 ? (
+                <DiscoveryMoreCard
                 href="/templates"
                 count={templates.length}
                 noun="Templates"
                 action="Browse Full Library"
                 icon={Grid3X3}
-              />
+                />
+              ) : null}
             </div>
           </section>
 
           <section>
-            {sectionTitle("Popular Assets")}
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {sectionTitle("Assets")}
+            <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
               {popularAssets.map((asset) => (
                 <HomeAssetCard key={asset.id} asset={asset} />
               ))}
-              <DiscoveryMoreCard
+              {assets.length > 9 ? (
+                <DiscoveryMoreCard
                 href="/assets"
                 count={assets.length}
                 noun="Assets"
                 action="Explore Collection"
                 icon={Layers3}
-              />
+                />
+              ) : null}
             </div>
           </section>
         </div>

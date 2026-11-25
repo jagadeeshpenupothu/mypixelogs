@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Download } from "lucide-react";
 
 import { AssetCard } from "@/components/cards/AssetCard";
@@ -8,6 +8,7 @@ import { CollectionPage } from "@/components/collections/CollectionPage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getAssetCategory } from "@/data/asset-categories";
+import { allResources } from "@/data/resources";
 import { createSocialMetadata } from "@/lib/metadata";
 import {
   getAssetBySlug,
@@ -70,10 +71,11 @@ export default async function AssetPage({ params }: PageProps) {
 
   if (category) {
     const categoryAssets = getAssetsByCategorySlug(category.slug);
+    if (categoryAssets.length === 0) redirect("/assets");
 
     return (
-      <section className="bg-white py-1 sm:py-2 dark:bg-black">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="pb-2">
+        <div className="mx-auto max-w-7xl">
           <CollectionPage
             kind="asset"
             title={category.label}
@@ -91,6 +93,7 @@ export default async function AssetPage({ params }: PageProps) {
   }
 
   if (!asset) {
+    if (allResources.some((resource) => resource.slug === slug)) redirect("/assets");
     notFound();
   }
 
@@ -98,17 +101,17 @@ export default async function AssetPage({ params }: PageProps) {
   const assetFiles = getAssetFiles(asset);
 
   return (
-    <section className="bg-white py-10 sm:py-14 dark:bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="pb-2">
+      <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">
               {asset.category} Asset
             </p>
-            <h1 className="mt-3 text-4xl font-bold tracking-normal text-foreground sm:text-5xl">
+            <h1 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
               {asset.title}
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
+            <p className="mt-3 max-w-3xl text-base leading-7 text-muted-foreground">
               {asset.description}
             </p>
 

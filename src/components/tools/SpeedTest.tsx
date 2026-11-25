@@ -377,7 +377,7 @@ export function SpeedTest() {
     if (!serverUrl) {
       setPhase("error");
       setProgress(0);
-      setError("NEXT_PUBLIC_SPEEDTEST_SERVER is not configured.");
+      setError("The speed test is not available right now. Please try again later.");
       return;
     }
 
@@ -426,7 +426,7 @@ export function SpeedTest() {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
+    <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
       <div className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
           <div>
@@ -451,7 +451,7 @@ export function SpeedTest() {
           </Button>
         </div>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[280px_1fr] lg:items-center">
+        <div className="mt-8 grid grid-cols-1 gap-8 xl:grid-cols-[280px_minmax(0,1fr)] lg:items-center">
           <div className="mx-auto flex flex-col items-center">
             <div
               className="relative flex h-60 w-60 items-center justify-center rounded-full transition duration-300"

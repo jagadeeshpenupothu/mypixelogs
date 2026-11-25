@@ -39,7 +39,11 @@ function saveRecentSearch(query: string) {
     ...readRecentSearches().filter((item) => item.toLowerCase() !== normalizedQuery.toLowerCase()),
   ].slice(0, 5);
 
-  window.localStorage.setItem(recentSearchesKey, JSON.stringify(nextSearches));
+  try {
+    window.localStorage.setItem(recentSearchesKey, JSON.stringify(nextSearches));
+  } catch {
+    // Recent searches are optional.
+  }
 }
 
 export function SearchBar() {
@@ -47,12 +51,24 @@ export function SearchBar() {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q") ?? "";
   const initialCategory = (searchParams.get("category") ?? "everything") as SearchCategoryId;
+  const [syncedParams, setSyncedParams] = useState(`${initialQuery}|${initialCategory}`);
   const [query, setQuery] = useState(initialQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
   const [selectedCategory, setSelectedCategory] = useState<SearchCategoryId>(initialCategory);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
   const searchEngine = useMemo(() => createSearchEngine(), []);
+
+  // A search from the header changes the URL while this page is already open.
+  const currentParams = `${initialQuery}|${initialCategory}`;
+  if (currentParams !== syncedParams) {
+    setSyncedParams(currentParams);
+    if (initialQuery !== query.trim() && initialQuery !== debouncedQuery.trim()) {
+      setQuery(initialQuery);
+      setDebouncedQuery(initialQuery);
+    }
+    if (initialCategory !== selectedCategory) setSelectedCategory(initialCategory);
+  }
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => setRecentSearches(readRecentSearches()));
@@ -77,9 +93,13 @@ export function SearchBar() {
       return;
     }
 
-    saveRecentSearch(debouncedQuery);
-    const frame = requestAnimationFrame(() => setRecentSearches(readRecentSearches()));
-    return () => cancelAnimationFrame(frame);
+    // Wait for a pause, so half-typed words are not saved.
+    const timer = window.setTimeout(() => {
+      if (debouncedQuery.trim().length < 3) return;
+      saveRecentSearch(debouncedQuery);
+      setRecentSearches(readRecentSearches());
+    }, 1500);
+    return () => window.clearTimeout(timer);
   }, [debouncedQuery]);
 
   const results: SearchItem[] = useMemo(() => {
@@ -107,7 +127,7 @@ export function SearchBar() {
             <button
               type="button"
               onClick={() => setIsCategoryOpen((current) => !current)}
-              className="flex h-12 max-w-[180px] items-center gap-2 rounded-md border border-border bg-background px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 dark:bg-[#0A0A0A]"
+              className="hidden h-12 max-w-[180px] items-center gap-2 rounded-md border border-border bg-background px-3 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 dark:bg-[#0A0A0A] sm:flex"
               aria-label="Choose search category"
               aria-haspopup="listbox"
               aria-expanded={isCategoryOpen}
@@ -130,12 +150,14 @@ export function SearchBar() {
               </div>
             ) : null}
           </div>
-          <Search className="ml-3 h-5 w-5 text-muted-foreground" />
+          <Search className="ml-2 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             autoFocus
-            placeholder="Search templates, tools, assets..."
+            aria-label="Search MyPixelogs"
+            type="search"
+            placeholder="Search tools and templates"
             className="h-12 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground/80"
           />
         </div>

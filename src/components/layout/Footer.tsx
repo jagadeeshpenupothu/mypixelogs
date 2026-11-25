@@ -4,8 +4,9 @@ const links = [
   { href: "/templates", label: "Templates" },
   { href: "/tools", label: "Tools" },
   { href: "/ai", label: "AI Hub" },
-  { href: "/resources", label: "Resources" },
   { href: "/assets", label: "Assets" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
   { href: "/privacy-policy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
 ];
@@ -18,13 +19,13 @@ export function Footer() {
           <span>© {new Date().getFullYear()} MyPixelogs</span>
           <nav aria-label="Footer navigation" className="flex flex-wrap items-center gap-x-4 gap-y-2">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className="transition hover:text-foreground">
+              <Link key={link.href} href={link.href} className="inline-block py-1.5 transition hover:text-foreground">
                 {link.label}
               </Link>
             ))}
           </nav>
         </div>
-        <p className="text-[11px] text-muted-foreground/80">Built for creators & businesses</p>
+        <p className="text-[11px] text-muted-foreground">Built for creators & businesses</p>
       </div>
     </footer>
   );

@@ -2,7 +2,6 @@ import Fuse from "fuse.js";
 
 import { assets } from "@/data/assets";
 import { aiContentItems } from "@/content";
-import { resources } from "@/data/resources";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
 import { getTemplateCategoryLabel } from "@/lib/templates";
@@ -59,7 +58,8 @@ export type SearchCategoryId =
   | "png-assets"
   | "svg-assets"
   | "illustrations"
-  | "backgrounds";
+  | "backgrounds"
+  | "psd-files";
 
 export type SearchItem = {
   id: string;
@@ -80,7 +80,7 @@ export type SearchCategoryOption = {
   children?: SearchCategoryOption[];
 };
 
-export const searchCategoryTree: SearchCategoryOption[] = [
+const fullCategoryTree: SearchCategoryOption[] = [
   {
     id: "everything",
     label: "Everything",
@@ -175,6 +175,7 @@ export const searchCategoryTree: SearchCategoryOption[] = [
     id: "assets",
     label: "Assets",
     children: [
+      { id: "psd-files", label: "PSD Files" },
       { id: "logos", label: "Logos" },
       { id: "icons", label: "Icons" },
       { id: "mockups", label: "Mockups" },
@@ -193,7 +194,7 @@ function flattenSearchCategories(items: SearchCategoryOption[]): SearchCategoryO
 
 export function getSearchCategoryLabel(category: SearchCategoryId) {
   return (
-    flattenSearchCategories(searchCategoryTree).find((item) => item.id === category)?.label ?? "Everything"
+    flattenSearchCategories(fullCategoryTree).find((item) => item.id === category)?.label ?? "Everything"
   );
 }
 
@@ -208,29 +209,6 @@ function getTemplateSearchCategories(category: string): SearchCategoryId[] {
   return categories;
 }
 
-function getDesignTemplateCategories(resource: (typeof resources)[number]): SearchCategoryId[] {
-  const categories: SearchCategoryId[] = ["templates"];
-  const normalizedTitle = resource.title.toLowerCase();
-
-  if (resource.category === "Canva") categories.push("canva-templates");
-  if (resource.category === "PSD") categories.push("psd-templates");
-  if (normalizedTitle.includes("flyer")) categories.push("flyer-templates");
-  if (normalizedTitle.includes("poster")) categories.push("poster-templates");
-  if (
-    normalizedTitle.includes("social") ||
-    normalizedTitle.includes("instagram") ||
-    normalizedTitle.includes("banner") ||
-    normalizedTitle.includes("thumbnail")
-  ) {
-    categories.push("social-media-templates");
-  }
-  if (categories.some((category) => ["flyer-templates", "poster-templates", "social-media-templates"].includes(category))) {
-    categories.push("marketing-templates");
-  }
-
-  return categories;
-}
-
 function getToolSearchCategories(tool: (typeof tools)[number]): SearchCategoryId[] {
   const categories: SearchCategoryId[] = ["tools"];
 
@@ -238,7 +216,7 @@ function getToolSearchCategories(tool: (typeof tools)[number]): SearchCategoryId
   if (tool.category === "Image Tools") categories.push("image-tools");
   if (tool.category === "Developer Tools") categories.push("developer-tools");
   if (tool.category === "Calculator Tools") categories.push("calculators");
-  if (flattenSearchCategories(searchCategoryTree).some((category) => category.id === tool.slug)) {
+  if (flattenSearchCategories(fullCategoryTree).some((category) => category.id === tool.slug)) {
     categories.push(tool.slug as SearchCategoryId);
   }
 
@@ -248,6 +226,7 @@ function getToolSearchCategories(tool: (typeof tools)[number]): SearchCategoryId
 function getAssetSearchCategories(category: string): SearchCategoryId[] {
   const categories: SearchCategoryId[] = ["assets"];
 
+  if (category === "PSD") categories.push("psd-files");
   if (category === "LOGO") categories.push("logos");
   if (category === "ICON") categories.push("icons");
 
@@ -287,20 +266,6 @@ export const searchIndex: SearchItem[] = [
     href: `/templates/${template.slug}`,
     searchCategories: getTemplateSearchCategories(template.category),
   })),
-  ...resources
-    .filter((resource) => resource.category === "Canva" || resource.category === "PSD")
-    .map((resource) => ({
-      id: `design-template-${resource.id}`,
-      title: resource.title,
-      slug: resource.slug,
-      description: resource.description
-        .replaceAll("design resource", "editable template")
-        .replaceAll("resource", "template"),
-      category: resource.category === "Canva" ? "Canva Templates" : "PSD Templates",
-      type: "Template" as const,
-      href: "/templates",
-      searchCategories: getDesignTemplateCategories(resource),
-  })),
   ...assets.map((asset) => ({
     id: asset.id,
     title: asset.title,
@@ -337,6 +302,20 @@ export const searchIndex: SearchItem[] = [
   })),
 ];
 
+const usedCategories = new Set<SearchCategoryId>(searchIndex.flatMap((item) => item.searchCategories));
+
+function keepUsedCategories(items: SearchCategoryOption[]): SearchCategoryOption[] {
+  return items.flatMap((item) => {
+    if (item.id !== "everything" && !usedCategories.has(item.id)) return [];
+    if (!item.children) return [item];
+    const children = keepUsedCategories(item.children);
+    return [{ ...item, children: children.length > 0 ? children : undefined }];
+  });
+}
+
+/** Categories without any results are left out of the search menu. */
+export const searchCategoryTree = keepUsedCategories(fullCategoryTree);
+
 export const fuseOptions = {
   keys: [
     { name: "title", weight: 0.42 },
@@ -345,14 +324,14 @@ export const fuseOptions = {
     { name: "category", weight: 0.08 },
     { name: "keywords", weight: 0.04 },
   ],
-  threshold: 0.36,
+  threshold: 0.2,
   distance: 120,
   minMatchCharLength: 2,
   ignoreLocation: true,
   includeScore: true,
 };
 
-export const searchSuggestions = ["invoice", "resume", "pdf", "business prompt", "image prompt"];
+export const searchSuggestions = ["invoice", "compress image", "pdf", "GST", "business prompt"];
 
 export function createSearchEngine() {
   return new Fuse(searchIndex, fuseOptions);

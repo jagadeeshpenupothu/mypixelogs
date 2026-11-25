@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { CollectionPage } from "@/components/collections/CollectionPage";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
@@ -15,6 +15,7 @@ import {
   getTemplateCategoryLabel,
   getTemplateRouteSlugs,
   getTemplatesByCategory,
+  isHiddenTemplate,
 } from "@/lib/templates";
 import type { TemplateCategory } from "@/types/template";
 
@@ -74,10 +75,11 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
 
   if (category) {
     const categoryTemplates = getTemplatesByCategory(category.slug as TemplateCategory);
+    if (categoryTemplates.length === 0) redirect("/templates");
 
     return (
-      <section className="bg-white py-1 sm:py-2 dark:bg-black">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="pb-2">
+        <div className="mx-auto max-w-7xl">
           <CollectionPage
             kind="template"
             title={category.label}
@@ -96,6 +98,7 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
   }
 
   if (!template) {
+    if (isHiddenTemplate(slug)) redirect("/templates");
     notFound();
   }
 
@@ -104,8 +107,8 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="bg-white py-10 sm:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="pb-2">
+        <div className="mx-auto max-w-7xl">
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
@@ -115,13 +118,15 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
             ]}
           />
 
-          <div className="mt-10">
+          <div className="mt-5">
             <TemplateHero template={template} categoryLabel={categoryLabel} />
           </div>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_340px] lg:items-start">
+          <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+            <div className="lg:order-2 lg:sticky lg:top-20">
+              <TemplateActions template={template} />
+            </div>
             <TemplatePreview template={template} />
-            <TemplateActions template={template} />
           </div>
 
           <section className="mt-12 grid gap-8 lg:grid-cols-2">

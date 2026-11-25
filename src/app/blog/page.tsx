@@ -24,27 +24,26 @@ const posts = [
   {
     title: "A practical checklist for business document design",
     description:
-      "Browse templates that keep invoices, resumes, certificates, and letterheads consistent.",
+      "Browse templates that keep your business documents consistent.",
     href: "/templates",
   },
   {
     title: "PDF workflow ideas for small teams",
     description:
-      "Explore browser-based PDF tools for rotating, extracting, compressing, and converting documents.",
+      "Explore browser-based PDF tools for rotating pages and extracting the ones you need.",
     href: "/tools/pdf-tools",
   },
 ];
 
 export default function BlogPage() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="py-8 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Blog</p>
           <h1 className="mt-3 text-4xl font-bold text-foreground">Document workflow guides</h1>
           <p className="mt-4 text-base leading-7 text-muted-foreground">
-            Editorial infrastructure for SEO guides, template roundups, and tool
-            explainers when the content engine is ready.
+            Quick starting points for invoices, documents and PDF files.
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -59,7 +58,7 @@ export default function BlogPage() {
                 {post.description}
               </p>
               <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                Read guide
+                Open
                 <ArrowRight className="h-4 w-4" />
               </span>
             </Link>

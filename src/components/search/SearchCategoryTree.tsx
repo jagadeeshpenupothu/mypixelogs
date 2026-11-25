@@ -95,8 +95,8 @@ function TreeNode({
       {hasChildren ? (
         <div
           className={cn(
-            "grid overflow-hidden transition-[grid-template-rows,opacity] duration-200 ease-out",
-            isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+            "grid overflow-hidden transition-[grid-template-rows,opacity,visibility] duration-200 ease-out",
+            isExpanded ? "grid-rows-[1fr] opacity-100" : "invisible grid-rows-[0fr] opacity-0",
           )}
         >
           <div className="min-h-0 overflow-hidden">

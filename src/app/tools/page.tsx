@@ -29,10 +29,9 @@ function toolItem(tool: Tool): RootCollectionItem {
     description: tool.description,
     href: `/tools/${tool.slug}`,
     badge: tool.subcategory ?? tool.category.replace(" Tools", ""),
-    comingSoon: tool.comingSoon,
+    icon: tool.icon,
     filters: {
       category: [tool.category, ...(tool.secondaryCategories ?? [])],
-      status: [tool.comingSoon ? "Coming Soon" : "Available"],
     },
     searchText: [
       tool.name,
@@ -60,12 +59,12 @@ export default function ToolsPage() {
     .filter((section) => section.items.length > 0);
 
   return (
-    <section className="bg-white py-1 sm:py-2 dark:bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="pb-2">
+      <div className="mx-auto max-w-7xl">
         <RootCollectionBrowser
           kind="tool"
           title="Tools"
-          totalLabel={`${tools.length.toLocaleString()} Tools`}
+          totalLabel={`${tools.length.toLocaleString()} tools`}
           searchPlaceholder="Search tools..."
           breadcrumbs={[
             { label: "Home", href: "/" },
@@ -77,11 +76,6 @@ export default function ToolsPage() {
               id: "category",
               title: "Category",
               options: toolCategories.map((category) => category.name),
-            },
-            {
-              id: "status",
-              title: "Status",
-              options: ["Available", "Coming Soon"],
             },
           ]}
         />

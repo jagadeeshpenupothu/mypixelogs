@@ -70,12 +70,12 @@ export default function AssetsPage() {
     .filter((section) => section.items.length > 0);
 
   return (
-    <section className="bg-white py-1 sm:py-2 dark:bg-black">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="pb-2">
+      <div className="mx-auto max-w-7xl">
         <RootCollectionBrowser
           kind="asset"
           title="Assets"
-          totalLabel={`${assets.length.toLocaleString()} Assets`}
+          totalLabel={`${assets.length.toLocaleString()} ${assets.length === 1 ? "asset" : "assets"}`}
           searchPlaceholder="Search assets..."
           breadcrumbs={[
             { label: "Home", href: "/" },

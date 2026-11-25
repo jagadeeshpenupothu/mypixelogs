@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChevronDown, Search } from "lucide-react";
 
 import { SearchCategoryTree } from "@/components/search/SearchCategoryTree";
@@ -21,6 +22,7 @@ function getSuggestionIcon(item: SearchItem) {
 }
 
 export function CommandSearch() {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
@@ -33,6 +35,7 @@ export function CommandSearch() {
     function handlePointerDown(event: MouseEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
+        setIsCategoryOpen(false);
       }
     }
 
@@ -77,19 +80,37 @@ export function CommandSearch() {
     if (trimmedQuery) params.set("q", trimmedQuery);
     if (selectedCategory !== "everything") params.set("category", selectedCategory);
 
-    window.location.href = params.toString() ? `/search?${params.toString()}` : "/search";
+    setIsOpen(false);
+    setIsCategoryOpen(false);
+    inputRef.current?.blur();
+    router.push(params.toString() ? `/search?${params.toString()}` : "/search");
   }
 
   return (
-    <div ref={containerRef} className="relative w-full min-w-0">
+    <div
+      ref={containerRef}
+      role="search"
+      className="relative w-full min-w-0"
+      onKeyDown={(event) => {
+        if (event.key !== "Escape") return;
+        setIsOpen(false);
+        setIsCategoryOpen(false);
+      }}
+      onBlur={(event) => {
+        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) {
+          setIsOpen(false);
+          setIsCategoryOpen(false);
+        }
+      }}
+    >
       <div className="flex h-11 min-w-0 items-center rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow] duration-200 focus-within:border-primary/60 focus-within:shadow-[0_12px_30px_rgba(15,23,42,0.08)] focus-within:ring-2 focus-within:ring-primary/10 dark:bg-[#0A0A0A] dark:focus-within:shadow-none">
         <button
           type="button"
           onClick={() => {
             setIsCategoryOpen((current) => !current);
-            setIsOpen(true);
+            setIsOpen(false);
           }}
-          className="flex h-full max-w-[150px] shrink-0 items-center gap-1.5 rounded-l-lg border-r border-border px-3 text-xs font-semibold text-foreground transition-colors duration-200 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 sm:max-w-[190px]"
+          className="hidden h-full max-w-[150px] shrink-0 items-center gap-1.5 rounded-l-lg border-r border-border px-3 text-xs font-semibold text-foreground transition-colors duration-200 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 sm:flex sm:max-w-[190px]"
           aria-label="Choose search category"
           aria-haspopup="listbox"
           aria-expanded={isCategoryOpen}
@@ -105,17 +126,24 @@ export function CommandSearch() {
             setQuery(event.target.value);
             setIsOpen(true);
           }}
-          onFocus={() => setIsOpen(true)}
+          onFocus={() => {
+            setIsCategoryOpen(false);
+            setIsOpen(true);
+          }}
+          aria-label="Search MyPixelogs"
+          type="search"
+          enterKeyHint="search"
+          autoComplete="off"
           onKeyDown={(event) => {
             if (event.key === "Enter") {
               event.preventDefault();
               submitSearch();
             }
           }}
-          placeholder="Search templates, tools, assets..."
+          placeholder="Search everything"
           className="h-full min-w-0 flex-1 bg-transparent px-3 text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground/80"
         />
-        <kbd className="mr-3 hidden rounded-md border border-border bg-muted px-2 py-1 text-[11px] font-bold text-muted-foreground sm:inline-flex">
+        <kbd className="mr-3 hidden rounded-md border border-border bg-muted px-2 py-1 text-[11px] font-bold text-muted-foreground lg:inline-flex" aria-hidden="true">
           ⌘ K
         </kbd>
       </div>
@@ -128,8 +156,8 @@ export function CommandSearch() {
             selectedCategory={selectedCategory}
             onSelect={(category, hasChildren) => {
               setSelectedCategory(category);
-              setIsOpen(true);
-              if (!hasChildren) setIsCategoryOpen(false);
+              if (hasChildren) return;
+              setIsCategoryOpen(false);
               inputRef.current?.focus();
             }}
           />
@@ -137,7 +165,7 @@ export function CommandSearch() {
       ) : null}
 
       {isOpen ? (
-        <div className="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[70] max-h-[min(540px,calc(100vh-6rem))] overflow-auto rounded-xl border border-border bg-card p-2 shadow-soft">
+        <div className="absolute -left-11 right-0 top-[calc(100%+0.5rem)] z-[70] max-h-[min(540px,calc(100vh-6rem))] overflow-auto rounded-xl border border-border bg-card p-2 shadow-soft sm:left-0">
           {hasQuery ? (
             hasResults ? (
               <div className="space-y-1">
@@ -162,7 +190,7 @@ export function CommandSearch() {
                           </span>
                         </span>
                       </span>
-                      <span className="shrink-0 rounded-full border border-border bg-background px-2 py-0.5 text-[11px] font-bold text-muted-foreground">
+                      <span className="hidden shrink-0 rounded-full border border-border bg-background px-2 py-0.5 text-[11px] font-bold text-muted-foreground sm:block">
                         {item.category}
                       </span>
                     </span>
