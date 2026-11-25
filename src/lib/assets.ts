@@ -20,8 +20,9 @@ export function getAssetsByCategorySlug(categorySlug: string): Asset[] {
   }
 
   return assets.filter((asset) => {
-    const haystack = `${asset.category} ${asset.title} ${asset.slug} ${asset.description}`.toUpperCase();
-    return category.aliases.some((alias) => haystack.includes(alias.toUpperCase()));
+    // Match on the category only: words in descriptions (like "Photoshop") would put files in the wrong group.
+    const assetCategory = asset.category.toUpperCase();
+    return category.aliases.some((alias) => assetCategory === alias.toUpperCase());
   });
 }
 

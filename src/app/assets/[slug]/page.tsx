@@ -103,10 +103,7 @@ export default async function AssetPage({ params }: PageProps) {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              {asset.category} Asset
-            </p>
-            <h1 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
               {asset.title}
             </h1>
             <p className="mt-3 max-w-3xl text-base leading-7 text-muted-foreground">
@@ -156,10 +153,7 @@ export default async function AssetPage({ params }: PageProps) {
 
         {relatedAssets.length > 0 ? (
           <section className="mt-14 border-t border-border pt-12">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Related assets
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-foreground">More raw assets</h2>
+            <h2 className="text-2xl font-bold text-foreground">More like this</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {relatedAssets.map((item) => (
                 <AssetCard key={item.id} asset={item} />

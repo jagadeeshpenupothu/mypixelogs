@@ -427,7 +427,7 @@ export function ExtractPDFPages() {
         <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-foreground">Download</h2>
           <p className="mt-3 text-sm leading-6 text-muted-foreground">
-            The new PDF is generated locally with pdf-lib and contains only the selected pages.
+            Your file stays on your device. Nothing is uploaded.
           </p>
           {downloadUrl ? (
             <Button asChild className="mt-6 w-full">

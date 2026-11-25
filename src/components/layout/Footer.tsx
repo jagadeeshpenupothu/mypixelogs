@@ -1,41 +1,31 @@
 import Link from "next/link";
 
-import { mainNav } from "@/data/navigation";
+import { siteConfig } from "@/constants/site";
 
-const groups = [
-  { title: "Make and edit", links: mainNav },
-  { title: "More", links: [{ href: "/tools", label: "All tools" }, { href: "/assets", label: "Design files" }] },
-  {
-    title: "MyPixelogs",
-    links: [
-      { href: "/about", label: "About" },
-      { href: "/contact", label: "Contact" },
-      { href: "/privacy-policy", label: "Privacy" },
-      { href: "/terms", label: "Terms" },
-    ],
-  },
+const links = [
+  { href: "/tools", label: "All tools" },
+  { href: "/about", label: "About" },
+  // Shown only once there is an email address to write to.
+  ...(siteConfig.contactEmail ? [{ href: "/contact", label: "Contact" }] : []),
+  { href: "/privacy-policy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
 ];
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-border py-8 text-sm text-muted-foreground">
-      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-        {groups.map((group) => (
-          <nav key={group.title} aria-label={group.title}>
-            <p className="font-semibold text-foreground">{group.title}</p>
-            <ul className="mt-2">
-              {group.links.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="inline-block py-1.5 transition-colors hover:text-foreground">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        ))}
-      </div>
-      <p className="mt-8">© {new Date().getFullYear()} MyPixelogs. Free to use, no sign-up.</p>
+    <footer className="mt-16 flex flex-col gap-3 border-t border-border py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <p>© {new Date().getFullYear()} MyPixelogs</p>
+      <nav aria-label="Footer">
+        <ul className="flex flex-wrap gap-x-5 gap-y-1">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href} className="inline-block py-1.5 transition-colors hover:text-foreground">
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </footer>
   );
 }
