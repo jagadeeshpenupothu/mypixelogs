@@ -27,6 +27,7 @@ export type ExplorerGroupData = {
 };
 
 const templateGroups: { slug: TemplateCategory; label: string }[] = [
+  { slug: "video", label: "Video Templates" },
   { slug: "canva", label: "Canva Templates" },
   { slug: "psd", label: "PSD Templates" },
   { slug: "illustrator", label: "Illustrator Templates" },

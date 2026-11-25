@@ -146,8 +146,9 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
             <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
               <h2 className="text-2xl font-bold text-foreground">Use cases</h2>
               <p className="mt-4 leading-7 text-muted-foreground">
-                Use this file as a fast starting point for common business and
-                document workflows.
+                {template.previewVideo
+                  ? "Make a video invitation without any editing software."
+                  : "Use this file as a fast starting point for common business and document workflows."}
               </p>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
                 {template.useCases.map((useCase) => (

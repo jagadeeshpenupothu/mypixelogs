@@ -6,6 +6,7 @@ export type TemplateCategory =
   | "pdf"
   | "psd"
   | "illustrator"
+  | "video"
   | "invoice"
   | "receipt"
   | "resume"
@@ -30,7 +31,9 @@ export type Template = {
   /** Google Docs file id: visitors get their own copy, the original stays locked. */
   googleDocId?: string;
   /** Online editor for this template, if it has one. */
-  editor?: "gst" | "freelancer";
+  editor?: "gst" | "freelancer" | "wedding-video";
+  /** A short silent clip of a video template. */
+  previewVideo?: string;
   previewImage: string;
   downloadPath: string;
   formats: string[];

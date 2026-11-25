@@ -13,6 +13,12 @@
   "dependencies": {
     "@ffmpeg/core": "^0.12.10",
     "@ffmpeg/ffmpeg": "^0.12.15",
+    "@fontsource/mallanna": "^5.3.0",
+    "@fontsource/noto-sans-telugu": "^5.3.0",
+    "@fontsource/noto-serif-telugu": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@fontsource/ramaraja": "^5.3.0",
+    "@fontsource/tiro-telugu": "^5.3.0",
     "@indic-transliteration/sanscript": "^1.3.3",
     "@next/third-parties": "^16.2.9",
     "@radix-ui/react-slot": "^1.2.3",

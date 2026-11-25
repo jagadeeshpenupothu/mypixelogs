@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { InvoiceEditor } from "@/components/invoice/InvoiceEditor";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
+import { VideoTemplateEditor } from "@/components/video-template/VideoTemplateEditor";
 import { templates } from "@/data/templates";
 import { createSocialMetadata } from "@/lib/metadata";
 import { getTemplateBySlug } from "@/lib/templates";
@@ -23,7 +24,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const template = getTemplateBySlug(slug);
   if (!template?.editor) return {};
   const title = pageTitle(template.title);
-  const description = `Fill in the ${template.title.toLowerCase()} in your browser with automatic totals, then download it as Word or PDF for free.`;
+  const description = template.previewVideo
+    ? `Edit the ${template.title.toLowerCase()} in your browser: change the words and photos, add music and download an MP4 for free.`
+    : `Fill in the ${template.title.toLowerCase()} in your browser with automatic totals, then download it as Word or PDF for free.`;
   return { title, description, ...createSocialMetadata({ title: `${title} | MyPixelogs`, description, path: `/templates/${slug}/edit`, image: template.previewImage }) };
 }
 
@@ -36,7 +39,13 @@ export default async function EditTemplatePage({ params }: PageProps) {
     <section className="pb-2">
       <div className="mx-auto max-w-7xl">
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Templates", href: "/templates" }, { label: template.title, href: `/templates/${slug}` }, { label: "Edit online" }]} />
-        <div className="mt-6"><InvoiceEditor key={slug} kind={template.editor} title={pageTitle(template.title)} /></div>
+        <div className="mt-6">
+          {template.editor === "wedding-video" ? (
+            <VideoTemplateEditor title={pageTitle(template.title)} />
+          ) : (
+            <InvoiceEditor key={slug} kind={template.editor} title={pageTitle(template.title)} />
+          )}
+        </div>
       </div>
     </section>
   );

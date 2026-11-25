@@ -51,6 +51,12 @@ export const templateCategories: TemplateCategoryMeta[] = [
     description: "Browse editable Illustrator templates for vector-based design workflows.",
   },
   {
+    slug: "video",
+    title: "Free Video Templates",
+    label: "Video Templates",
+    description: "Edit video invitations in your browser: change the words and photos, then download an MP4.",
+  },
+  {
     slug: "invoice",
     title: "Free Invoice Templates",
     label: "Invoice Templates",

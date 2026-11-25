@@ -67,6 +67,24 @@ const makeGoogleDocTemplate = (
   };
 };
 
+/** A video that visitors edit and export in the browser. */
+const makeVideoTemplate = (...args: Parameters<typeof makeTemplate>): Template => {
+  const template = makeTemplate(...args);
+  const preview = `/previews/${template.slug}.jpg`;
+
+  return {
+    ...template,
+    thumbnail: preview,
+    previewImage: preview,
+    previewVideo: `/previews/${template.slug}.mp4`,
+    downloadPath: "",
+    formats: ["MP4 video"],
+    featured: true,
+    ready: true,
+    editor: "wedding-video",
+  };
+};
+
 const invoiceFeatures = ["Editable billing, tax, and itemized service sections", "Professional layout for client-facing invoices", "Print-ready structure with clear totals and payment notes"];
 const receiptFeatures = ["Clean payment confirmation layout", "Fields for payer, date, amount, and purpose", "Compact format suitable for print or digital sharing"];
 const resumeFeatures = ["Recruiter-friendly section hierarchy", "Editable skills, education, and experience blocks", "ATS-conscious structure with clean typography"];
@@ -74,6 +92,7 @@ const letterheadFeatures = ["Business-ready header and footer placement", "Space
 const certificateFeatures = ["Formal award layout with signature areas", "Editable recipient, date, issuer, and program details", "Presentation-ready design for print and PDF export"];
 
 export const allTemplates: Template[] = [
+  makeVideoTemplate("watercolor-wedding-video", "Watercolor Wedding Invitation Video", "watercolor-wedding-invitation-video", "Free wedding invitation video with watercolor flowers and gold lettering. Add your names, photos and music in the browser and download an MP4.", "video", 0, ["Change every line of text in Telugu or English", "Add three photos with zoom, move, turn and brightness", "Two colour styles, 50 seconds, with your own music"], ["Wedding invitations", "WhatsApp sharing", "Screens at the venue"]),
   makeGoogleDocTemplate("1uOhsZf21PtejXSGra1pRPBsm0T2xjB9QaBA9Z9BjZoc", "indigo-invoice", "Indigo Invoice Template", "indigo-invoice-template", "Free Google Docs invoice template in indigo, with item descriptions, tax, discount and payment details on one A4 page.", "invoice", 0, ["Opens as your own copy in Google Docs", "One-page A4 layout with clear placeholders", "Space for logo, bank or UPI details and terms"], ["Product sales", "Small businesses", "Freelance work"]),
   makeGoogleDocTemplate("10LTQaRqkbsXL-ceyDfrUWGdFyFTAE72Kb7GUgAo1uB0", "crimson-invoice", "Crimson Invoice Template", "crimson-invoice-template", "Free Google Docs invoice template with a centred logo space, numbered items and a bold red total on one A4 page.", "invoice", 0, ["Opens as your own copy in Google Docs", "One-page A4 layout with clear placeholders", "Space for logo, bank or UPI details and terms"], ["Design studios", "Service billing", "Freelance work"]),
   makeGoogleDocTemplate("15Qpq_D-9ADYRE_TY1C2_lldlf2UMqZuiDV_6qEh6kk8", "teal-split-invoice", "Teal Split Invoice Template", "teal-split-invoice-template", "Free Google Docs invoice template with a two-colour header, payment method and signature line on one A4 page.", "invoice", 0, ["Opens as your own copy in Google Docs", "One-page A4 layout with clear placeholders", "Space for logo, bank or UPI details and terms"], ["Agencies", "Project billing", "Freelance work"]),

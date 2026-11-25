@@ -18,7 +18,7 @@ export function TemplateActions({ template }: TemplateActionsProps) {
           <Button asChild size="lg">
             <Link href={`/templates/${template.slug}/edit`}>
               <Pencil className="h-4 w-4" />
-              Edit online
+              {template.previewVideo ? "Edit this video" : "Edit online"}
             </Link>
           </Button>
         ) : null}
@@ -29,7 +29,7 @@ export function TemplateActions({ template }: TemplateActionsProps) {
               Edit in Google Docs
             </a>
           </Button>
-        ) : (
+        ) : template.previewVideo ? null : (
           <Button asChild size="lg" variant={template.editor ? "outline" : "default"}>
             <a href={template.downloadPath} download>
               <Download className="h-4 w-4" />
@@ -48,7 +48,9 @@ export function TemplateActions({ template }: TemplateActionsProps) {
       <p className="mt-4 text-sm leading-6 text-muted-foreground">
         {template.googleDocId
           ? "Google asks you to make a copy. You edit your copy, and the original stays unchanged. A Google account is needed."
-          : "Download the editable file and review the layout before using it in a client-facing or business document."}
+          : template.previewVideo
+            ? "No video editing skills needed. Type your words, add your photos and download the finished video. Nothing is uploaded."
+            : "Download the editable file and review the layout before using it in a client-facing or business document."}
       </p>
     </aside>
   );

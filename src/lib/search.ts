@@ -17,6 +17,7 @@ export type SearchCategoryId =
   | "canva-templates"
   | "psd-templates"
   | "illustrator-templates"
+  | "video-templates"
   | "document-templates"
   | "invoice-templates"
   | "resume-templates"
@@ -99,6 +100,7 @@ const fullCategoryTree: SearchCategoryOption[] = [
     id: "templates",
     label: "Templates",
     children: [
+      { id: "video-templates", label: "Video Templates", icon: "📄" },
       { id: "canva-templates", label: "Canva Templates", icon: "📄" },
       { id: "psd-templates", label: "PSD Templates", icon: "📄" },
       { id: "illustrator-templates", label: "Illustrator Templates", icon: "📄" },
@@ -224,7 +226,7 @@ export function getSearchCategoryLabel(category: SearchCategoryId) {
 }
 
 function getTemplateSearchCategories(category: string): SearchCategoryId[] {
-  const categories: SearchCategoryId[] = ["templates", "document-templates"];
+  const categories: SearchCategoryId[] = ["templates", category === "video" ? "video-templates" : "document-templates"];
 
   if (category === "invoice") categories.push("invoice-templates");
   if (category === "resume") categories.push("resume-templates");
