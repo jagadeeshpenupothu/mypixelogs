@@ -221,6 +221,7 @@ function DiscoveryMoreCard({
 export default function Home() {
   const explorerGroups = getExplorerGroups();
   const popularToolSlugs = [
+    "video-rotator",
     "image-compressor",
     "converter",
     "qr-generator",

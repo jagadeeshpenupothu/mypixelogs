@@ -15,6 +15,12 @@ export const toolCategories: ToolCategoryMeta[] = [
     seoDescription: "Compress, convert, crop and resize images online for free.",
   },
   {
+    name: "Video Tools",
+    slug: "video-tools",
+    description: "Rotate videos directly in your browser without losing quality.",
+    seoDescription: "Rotate videos online for free without losing quality or changing the file size.",
+  },
+  {
     name: "PDF Tools",
     slug: "pdf-tools",
     description: "Organize, rotate, split, extract, and convert PDF documents with simple utilities.",
@@ -59,6 +65,16 @@ export const toolCategories: ToolCategoryMeta[] = [
 ];
 
 export const allTools: Tool[] = [
+  {
+    id: "video-rotator",
+    name: "Video Rotator",
+    slug: "video-rotator",
+    description: "Rotate MP4 and MOV videos without losing quality or changing the file size.",
+    icon: "RotateCw",
+    category: "Video Tools",
+    tags: ["video", "rotate", "mp4", "mov", "turn", "sideways", "orientation"],
+    featured: true,
+  },
   {
     id: "converter",
     name: "Universal File Converter",

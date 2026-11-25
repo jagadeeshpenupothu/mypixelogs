@@ -1,5 +1,6 @@
 export type ToolCategory =
   | "Image Tools"
+  | "Video Tools"
   | "PDF Tools"
   | "Developer Tools"
   | "Calculator Tools"

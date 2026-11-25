@@ -59,7 +59,9 @@ export type SearchCategoryId =
   | "svg-assets"
   | "illustrations"
   | "backgrounds"
-  | "psd-files";
+  | "psd-files"
+  | "video-tools"
+  | "video-rotator";
 
 export type SearchItem = {
   id: string;
@@ -126,6 +128,11 @@ const fullCategoryTree: SearchCategoryOption[] = [
     id: "tools",
     label: "Tools",
     children: [
+      {
+        id: "video-tools",
+        label: "Video Tools",
+        children: [{ id: "video-rotator", label: "Video Rotator" }],
+      },
       {
         id: "pdf-tools",
         label: "PDF Tools",
@@ -212,6 +219,7 @@ function getTemplateSearchCategories(category: string): SearchCategoryId[] {
 function getToolSearchCategories(tool: (typeof tools)[number]): SearchCategoryId[] {
   const categories: SearchCategoryId[] = ["tools"];
 
+  if (tool.category === "Video Tools") categories.push("video-tools");
   if (tool.category === "PDF Tools") categories.push("pdf-tools");
   if (tool.category === "Image Tools") categories.push("image-tools");
   if (tool.category === "Developer Tools") categories.push("developer-tools");
