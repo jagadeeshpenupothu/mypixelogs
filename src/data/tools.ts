@@ -23,8 +23,8 @@ export const toolCategories: ToolCategoryMeta[] = [
   {
     name: "PDF Tools",
     slug: "pdf-tools",
-    description: "Organize, rotate, split, extract, and convert PDF documents with simple utilities.",
-    seoDescription: "Rotate, split, extract and convert PDF files online for free.",
+    description: "Join, split, compress, rotate and convert PDFs right in your browser. Your files never leave your device.",
+    seoDescription: "Merge, split, compress, rotate and convert PDF files online for free. Works in your browser; files are never uploaded.",
   },
   {
     name: "Developer Tools",
@@ -224,7 +224,6 @@ export const allTools: Tool[] = [
     icon: "Files",
     category: "PDF Tools",
     tags: ["pdf", "merge", "combine", "documents", "pages"],
-    comingSoon: true,
   },
   {
     id: "split-pdf",
@@ -235,7 +234,6 @@ export const allTools: Tool[] = [
     icon: "SplitSquareHorizontal",
     category: "PDF Tools",
     tags: ["pdf", "split", "extract", "pages", "documents"],
-    comingSoon: true,
   },
   {
     id: "jpg-to-pdf",
@@ -246,7 +244,6 @@ export const allTools: Tool[] = [
     icon: "ImagePlus",
     category: "PDF Tools",
     tags: ["pdf", "jpg", "image", "convert", "documents"],
-    comingSoon: true,
   },
   {
     id: "pdf-to-jpg",
@@ -257,7 +254,6 @@ export const allTools: Tool[] = [
     icon: "FileImage",
     category: "PDF Tools",
     tags: ["pdf", "jpg", "image", "convert", "export"],
-    comingSoon: true,
   },
   {
     id: "rotate-pdf",
@@ -288,7 +284,6 @@ export const allTools: Tool[] = [
     icon: "FileX2",
     category: "PDF Tools",
     tags: ["pdf", "delete", "remove", "pages", "documents"],
-    comingSoon: true,
   },
   {
     id: "compress-pdf",
@@ -299,7 +294,6 @@ export const allTools: Tool[] = [
     icon: "Archive",
     category: "PDF Tools",
     tags: ["pdf", "compress", "optimize", "reduce", "documents"],
-    comingSoon: true,
   },
   {
     id: "json-formatter",

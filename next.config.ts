@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     return [
       {
         // The folder name holds the version, so these files never change.
-        source: "/ffmpeg/:path*",
+        source: "/(ffmpeg|pdfjs)/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
