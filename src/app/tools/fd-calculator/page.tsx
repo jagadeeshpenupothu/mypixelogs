@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 
 import { FDCalculator } from "@/components/tools/FDCalculator";
 import { createSocialMetadata } from "@/lib/metadata";
-import { getToolBySlug } from "@/lib/tools";
 
-const tool = getToolBySlug("fd-calculator");
 const title = "FD Calculator Online Free";
 const description =
   "Calculate FD maturity amount, interest earned and investment growth using our free FD calculator.";
@@ -24,10 +22,7 @@ export default function FDCalculatorPage() {
     <section className="pb-2">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            {tool?.name ?? "FD Calculator"}
-          </p>
-          <h1 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Calculate FD maturity and interest
           </h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">

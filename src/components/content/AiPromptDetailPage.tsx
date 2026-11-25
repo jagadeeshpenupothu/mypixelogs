@@ -26,7 +26,7 @@ export function AiPromptDetailPage({ item, relatedItems }: AiPromptDetailPagePro
         />
 
         <section className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
-          <div className="overflow-hidden rounded-xl border border-border bg-slate-50 p-2 dark:bg-[#111111]">
+          <div className="overflow-hidden rounded-xl border border-border bg-slate-50 p-2 dark:bg-muted/60">
             <Image
               src={item.coverImage}
               alt={`${item.title} preview`}
@@ -94,7 +94,7 @@ export function AiPromptDetailPage({ item, relatedItems }: AiPromptDetailPagePro
 
         <section className="mt-6 rounded-xl border border-border bg-card p-4">
           <h2 className="text-lg font-bold text-foreground">Output Example</h2>
-          <div className="mt-4 overflow-hidden rounded-lg border border-border bg-slate-50 p-2 dark:bg-[#111111]">
+          <div className="mt-4 overflow-hidden rounded-lg border border-border bg-slate-50 p-2 dark:bg-muted/60">
             <Image
               src={item.outputExampleImage}
               alt={`${item.title} output example`}
@@ -121,7 +121,7 @@ export function AiPromptDetailPage({ item, relatedItems }: AiPromptDetailPagePro
                   href={`/ai/prompts/${related.slug}`}
                   className="group overflow-hidden rounded-lg border border-border bg-card transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/40"
                 >
-                  <div className="overflow-hidden bg-slate-50 p-1.5 dark:bg-[#111111]">
+                  <div className="overflow-hidden bg-slate-50 p-1.5 dark:bg-muted/60">
                     <Image
                       src={related.coverImage}
                       alt={`${related.title} preview`}

@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 
 import { RotatePDF } from "@/components/tools/RotatePDF";
 import { createSocialMetadata } from "@/lib/metadata";
-import { getToolBySlug } from "@/lib/tools";
 
-const tool = getToolBySlug("rotate-pdf");
 const title = "Rotate PDF Online Free";
 const description =
   "Rotate PDF pages online for free. Rotate all pages or selected pages and download instantly.";
@@ -24,10 +22,7 @@ export default function RotatePDFPage() {
     <section className="pb-2">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            {tool?.name ?? "Rotate PDF"}
-          </p>
-          <h1 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Rotate PDF pages online
           </h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">

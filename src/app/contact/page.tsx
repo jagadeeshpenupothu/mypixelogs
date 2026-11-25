@@ -84,7 +84,7 @@ export default function ContactPage() {
                 id="message"
                 name="message"
                 rows={6}
-                className="mt-2 flex w-full rounded-md border border-input bg-background px-3 py-2 text-base text-foreground shadow-sm transition-[color,background-color,border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 hover:border-foreground/20 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20 md:text-sm"
+                className="mt-2 flex w-full rounded-md border border-input bg-background px-3 py-2 text-base text-foreground shadow-sm transition-[color,background-color,border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 hover:border-foreground/20 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-card dark:hover:border-white/20 md:text-sm"
                 placeholder="Tell us what you need."
               />
             </div>

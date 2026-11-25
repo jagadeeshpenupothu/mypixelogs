@@ -1,317 +1,168 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Archive,
-  Braces,
-  Calculator,
-  CalendarDays,
-  Crop,
-  Download,
-  ArrowRight,
-  Files,
-  FolderOpen,
-  Grid3X3,
-  ImageDown,
-  Layers3,
-  Maximize2,
-  QrCode,
-  RotateCw,
-  Scissors,
-  Wand2,
-} from "lucide-react";
+import { ArrowRight, Download, MousePointerClick, ShieldCheck, Upload } from "lucide-react";
 
-import { ExplorerLayout } from "@/components/explorer/ExplorerLayout";
+import { IconBadge, PictureCard, TaskCard } from "@/components/cards/ItemCard";
+import { Footer } from "@/components/layout/Footer";
+import { SiteSearch } from "@/components/layout/SiteSearch";
+import { RecentTools } from "@/components/tools/RecentTools";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/constants/site";
-import { assets } from "@/data/assets";
+import { categoryLooks, popularTasks } from "@/data/navigation";
 import { templates } from "@/data/templates";
-import { tools } from "@/data/tools";
-import { getExplorerGroups } from "@/lib/explorer";
+import { toolCategories, tools } from "@/data/tools";
 import { createSocialMetadata } from "@/lib/metadata";
-import { getTemplateCategoryLabel } from "@/lib/templates";
-import type { Asset } from "@/types/asset";
-import type { Template } from "@/types/template";
-import type { Tool } from "@/types/tool";
+import { isToolInCategory } from "@/lib/tools";
 
-const homepageTitle = "MyPixelogs — Free PDF Tools, Templates, Calculators & Assets";
+const homepageTitle = "MyPixelogs — Free Video, Image and PDF Tools and Templates";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: homepageTitle,
-  },
+  title: { absolute: homepageTitle },
   description: siteConfig.description,
-  ...createSocialMetadata({
-    title: homepageTitle,
-    description: siteConfig.description,
-    path: "/",
-    image: siteConfig.ogImage,
-  }),
+  ...createSocialMetadata({ title: homepageTitle, description: siteConfig.description, path: "/", image: siteConfig.ogImage }),
 };
 
-const toolIcons = {
-  Archive,
-  Braces,
-  Calculator,
-  CalendarDays,
-  Crop,
-  Files,
-  ImageDown,
-  Maximize2,
-  QrCode,
-  RotateCw,
-  Scissors,
-  Wand2,
-};
+const steps = [
+  { Icon: MousePointerClick, title: "Pick what you need", text: "Search, or choose from the list." },
+  { Icon: Upload, title: "Add your file or words", text: "The page shows you what to do." },
+  { Icon: Download, title: "Download the result", text: "It is free, with no sign-up." },
+];
 
-function sectionTitle(title: string) {
-  return <h2 className="text-sm font-bold uppercase tracking-wide text-foreground">{title}</h2>;
-}
-
-function HomeToolCard({ tool }: { tool: Tool }) {
-  const Icon = toolIcons[tool.icon as keyof typeof toolIcons] ?? Files;
-  const content = (
-    <>
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-blue-50 text-primary dark:bg-[#171717]">
-        <Icon className="h-4 w-4" aria-hidden="true" />
-      </div>
-      <div className="min-w-0">
-        <h3 className="text-sm font-semibold text-foreground">{tool.name}</h3>
-        <p className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{tool.description}</p>
-      </div>
-    </>
-  );
-
-  if (tool.comingSoon) {
-    return (
-      <article className="flex gap-3 rounded-lg border border-border bg-card p-4 opacity-90 shadow-sm">
-        {content}
-      </article>
-    );
-  }
-
-  return (
-    <Link
-      href={`/tools/${tool.slug}`}
-      className="group flex gap-3 rounded-lg border border-border bg-card p-4 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20"
-    >
-      {content}
-    </Link>
-  );
-}
-
-function HomeTemplateCard({ template }: { template: Template }) {
-  return (
-    <Link
-      href={`/templates/${template.slug}`}
-      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:scale-[1.02] hover:border-primary/45 hover:shadow-md dark:hover:border-primary/50"
-    >
-      <div className="aspect-[4/5] overflow-hidden bg-slate-50 p-3 dark:border-b dark:border-border dark:bg-[#111111]">
-        <Image
-          src={template.thumbnail}
-          alt={`${template.title} thumbnail`}
-          width={640}
-          height={800}
-          className="h-full w-full rounded-sm object-contain shadow-sm transition-transform duration-200 group-hover:scale-[1.02]"
-        />
-      </div>
-      <div className="p-3.5">
-        <h3 className="line-clamp-1 text-sm font-semibold text-foreground">{template.title}</h3>
-        <div className="mt-2 flex items-center justify-between gap-3 text-xs text-muted-foreground">
-          <span className="truncate font-medium">{getTemplateCategoryLabel(template.category)}</span>
-          {template.downloads > 0 ? (
-            <span className="flex shrink-0 items-center gap-1">
-              <Download className="h-3.5 w-3.5" aria-hidden="true" />
-              {template.downloads.toLocaleString()}
-            </span>
-          ) : null}
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-function HomeAssetCard({ asset }: { asset: Asset }) {
-  return (
-    <Link
-      href={`/assets/${asset.slug}`}
-      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:scale-[1.02] hover:border-primary/45 hover:shadow-md dark:hover:border-primary/50"
-    >
-      <div className="aspect-[4/5] overflow-hidden bg-slate-50 p-3 dark:border-b dark:border-border dark:bg-[#111111]">
-        <Image
-          src={asset.thumbnail}
-          alt={`${asset.title} preview`}
-          width={640}
-          height={800}
-          className="h-full w-full rounded-sm object-cover shadow-sm transition-transform duration-200 group-hover:scale-[1.02]"
-        />
-      </div>
-      <div className="p-3.5">
-        <div className="flex flex-wrap items-start justify-between gap-2">
-          <h3 className="line-clamp-2 text-sm font-semibold leading-5 text-foreground">
-            {asset.title}
-          </h3>
-          <span className="shrink-0 rounded-md border border-border bg-muted px-2 py-1 text-[11px] font-bold uppercase text-muted-foreground">
-            {asset.category}
-          </span>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-function MoreCard({
-  href,
-  label,
-  count,
-  icon: Icon,
-}: {
-  href: string;
-  label: string;
-  count: number;
-  icon: typeof Grid3X3;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group flex flex-col justify-between rounded-lg border border-dashed border-border bg-card p-4 shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:hover:border-white/20"
-    >
-      <div className="flex items-center justify-between gap-3">
-        <span className="flex h-9 w-9 items-center justify-center rounded-md bg-blue-50 text-primary dark:bg-[#171717]">
-          <Icon className="h-4 w-4" aria-hidden="true" />
-        </span>
-        <span className="text-xs font-semibold text-muted-foreground">{count.toLocaleString()} total</span>
-      </div>
-      <span className="mt-4 text-sm font-semibold text-foreground">{label} &rarr;</span>
-    </Link>
-  );
-}
-
-function DiscoveryMoreCard({
-  href,
-  count,
-  noun,
-  action,
-  icon: Icon,
-}: {
-  href: string;
-  count: number;
-  noun: string;
-  action: string;
-  icon: typeof Grid3X3;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group flex h-full min-h-full flex-col overflow-hidden rounded-lg border border-primary/25 bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:scale-[1.02] hover:border-primary/60 hover:shadow-md dark:hover:border-primary/70"
-    >
-      <div className="flex aspect-[4/5] flex-col items-center justify-center gap-4 bg-blue-50/70 p-5 text-center dark:bg-[#111111]">
-        <span className="flex h-12 w-12 items-center justify-center rounded-lg border border-primary/15 bg-background text-primary shadow-sm dark:bg-[#171717]">
-          <Icon className="h-5 w-5" aria-hidden="true" />
-        </span>
-        <div>
-          <div className="text-3xl font-bold tracking-tight text-foreground">+{count.toLocaleString()}</div>
-          <div className="mt-1 text-sm font-semibold text-muted-foreground">{noun}</div>
-        </div>
-      </div>
-      <div className="flex items-center justify-between gap-3 p-3.5 text-sm font-semibold text-foreground">
-        <span>{action}</span>
-        <ArrowRight className="h-4 w-4 shrink-0 text-primary transition-transform duration-200 group-hover:translate-x-1" />
-      </div>
-    </Link>
-  );
-}
+const heading = "text-xl font-bold tracking-tight text-foreground sm:text-2xl";
 
 export default function Home() {
-  const explorerGroups = getExplorerGroups();
-  const popularToolSlugs = [
-    "video-trimmer",
-    "video-compressor",
-    "video-rotator",
-    "image-compressor",
-    "converter",
-    "qr-generator",
-    "age-calculator",
-    "json-validator",
-    "image-resizer",
-    "image-cropper",
-    "rotate-pdf",
-    "extract-pdf-pages",
-  ];
-  const popularTools = popularToolSlugs
-    .map((slug) => tools.find((tool) => tool.slug === slug))
-    .filter((tool): tool is (typeof tools)[number] => Boolean(tool));
-  const popularTemplates = [...templates].sort((a, b) => Number(b.featured ?? false) - Number(a.featured ?? false) || b.downloads - a.downloads).slice(0, 9);
-  const popularAssets = assets.slice(0, 9);
+  const categories = toolCategories
+    .map((category) => ({ ...category, count: tools.filter((tool) => isToolInCategory(tool, category.name)).length }))
+    .filter((category) => category.count > 0)
+    .sort((a, b) => b.count - a.count);
+  const video = templates.find((template) => template.previewVideo);
+  const documents = templates.filter((template) => template !== video).sort((a, b) => Number(Boolean(b.editor)) - Number(Boolean(a.editor))).slice(0, 3);
 
   return (
-    <>
-      <ExplorerLayout groups={explorerGroups}>
-        <div className="space-y-9">
-          <header className="rounded-xl border border-border bg-card p-5 sm:p-7">
-            <h1 className="max-w-2xl text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Free templates and tools, right in your browser
-            </h1>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base">
-              Make an invoice, resize an image or work out an EMI. No sign-up needed.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Button asChild>
-                <Link href="/templates/gst-invoice-template/edit">Create a GST invoice</Link>
-              </Button>
-              <Button asChild variant="outline">
-                <Link href="/tools">See all tools</Link>
-              </Button>
-            </div>
-          </header>
-
-          <section>
-            {sectionTitle("Popular Tools")}
-            <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              {popularTools.map((tool) => (
-                <HomeToolCard key={tool.id} tool={tool} />
-              ))}
-              <MoreCard href="/tools" label="More Tools" count={tools.length} icon={FolderOpen} />
-            </div>
-          </section>
-
-          <section>
-            {sectionTitle("Templates")}
-            <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
-              {popularTemplates.map((template) => (
-                <HomeTemplateCard key={template.id} template={template} />
-              ))}
-              {templates.length > 9 ? (
-                <DiscoveryMoreCard
-                href="/templates"
-                count={templates.length}
-                noun="Templates"
-                action="Browse Full Library"
-                icon={Grid3X3}
-                />
-              ) : null}
-            </div>
-          </section>
-
-          <section>
-            {sectionTitle("Assets")}
-            <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
-              {popularAssets.map((asset) => (
-                <HomeAssetCard key={asset.id} asset={asset} />
-              ))}
-              {assets.length > 9 ? (
-                <DiscoveryMoreCard
-                href="/assets"
-                count={assets.length}
-                noun="Assets"
-                action="Explore Collection"
-                icon={Layers3}
-                />
-              ) : null}
-            </div>
-          </section>
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <header className="mx-auto max-w-3xl pb-10 pt-10 text-center sm:pb-14 sm:pt-16">
+        <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
+          Free tools for videos, photos and documents
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-muted-foreground">
+          Easy for anyone. No sign-up, nothing to install.
+        </p>
+        <div className="mt-7">
+          <SiteSearch large />
         </div>
-      </ExplorerLayout>
-    </>
+        <p className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <ShieldCheck className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+          Our tools work on your own device. Files are not uploaded.
+        </p>
+      </header>
+
+      <div className="grid gap-14">
+        <RecentTools />
+
+        <section aria-labelledby="popular-title">
+          <h2 id="popular-title" className={heading}>Start here</h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {popularTasks.map((task) => (
+              <TaskCard key={task.href} href={task.href} title={task.title} note={task.note} icon={task.icon} tone={categoryLooks[task.category].tone} />
+            ))}
+          </div>
+        </section>
+
+        {video ? (
+          <section aria-labelledby="video-title" className="grid overflow-hidden rounded-2xl border border-border bg-card lg:grid-cols-[1.35fr_1fr]">
+            <Link href={`/templates/${video.slug}`} className="block" tabIndex={-1} aria-hidden="true">
+              <Image src={video.previewImage} alt="" width={1600} height={676} className="h-full min-h-40 w-full object-cover" priority />
+            </Link>
+            <div className="flex flex-col justify-center p-6 sm:p-8">
+              <p className="text-sm font-semibold text-primary">New</p>
+              <h2 id="video-title" className={`mt-1 ${heading}`}>Make a wedding invitation video</h2>
+              <p className="mt-2 text-base leading-7 text-muted-foreground">
+                Type your names, add three photos and download. No editing skills needed.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                <Button asChild size="lg">
+                  <Link href={`/templates/${video.slug}/edit`}>Start editing</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href={`/templates/${video.slug}`}>Watch it first</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <section aria-labelledby="kinds-title">
+          <div className="flex items-end justify-between gap-4">
+            <h2 id="kinds-title" className={heading}>All tools by type</h2>
+            <Link href="/tools" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-base font-semibold text-primary hover:underline">
+              See all {tools.length}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {categories.map((category) => {
+              const look = categoryLooks[category.name];
+              return (
+                <Link
+                  key={category.slug}
+                  href={`/tools/${category.slug}`}
+                  className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 transition-[border-color,box-shadow] duration-200 hover:border-primary/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 sm:flex-row sm:items-center"
+                >
+                  <IconBadge icon={look.icon} tone={look.tone} />
+                  <span>
+                    <span className="block text-base font-semibold text-foreground">{look.short}</span>
+                    <span className="block text-sm text-muted-foreground">{category.count === 1 ? "1 tool" : `${category.count} tools`}</span>
+                  </span>
+                </Link>
+              );
+            })}
+            <Link
+              href="/ai"
+              className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 transition-[border-color,box-shadow] duration-200 hover:border-primary/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 sm:flex-row sm:items-center"
+            >
+              <IconBadge icon="Wand2" tone="bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-300" />
+              <span>
+                <span className="block text-base font-semibold text-foreground">AI prompts</span>
+                <span className="block text-sm text-muted-foreground">Ideas to copy</span>
+              </span>
+            </Link>
+          </div>
+        </section>
+
+        <section aria-labelledby="templates-title">
+          <div className="flex items-end justify-between gap-4">
+            <h2 id="templates-title" className={heading}>Ready-made templates</h2>
+            <Link href="/templates" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-base font-semibold text-primary hover:underline">
+              See all {templates.length}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {documents.map((template) => (
+              <PictureCard key={template.id} href={`/templates/${template.slug}`} title={template.title} note={template.editor ? "Fill in online, then download" : template.formats.join(", ")} image={template.thumbnail} />
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="how-title" className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 id="how-title" className={heading}>How it works</h2>
+          <ol className="mt-5 grid gap-6 sm:grid-cols-3">
+            {steps.map(({ Icon, title, text }, place) => (
+              <li key={title} className="flex gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-base font-semibold text-foreground">{place + 1}. {title}</span>
+                  <span className="block text-base leading-6 text-muted-foreground">{text}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+      <Footer />
+    </div>
   );
 }

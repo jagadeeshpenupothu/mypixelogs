@@ -26,7 +26,7 @@ export function AiImageDetailPage({ item, relatedItems }: AiImageDetailPageProps
         />
 
         <section className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)]">
-          <div className="overflow-hidden rounded-xl border border-border bg-slate-50 p-2 dark:bg-[#111111]">
+          <div className="overflow-hidden rounded-xl border border-border bg-slate-50 p-2 dark:bg-muted/60">
             <Image
               src={item.previewImage}
               alt={`${item.title} preview`}

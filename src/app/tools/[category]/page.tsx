@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 
-import { ToolCategoryMarketplace } from "@/components/tools/ToolCategoryMarketplace";
+import { LibraryPage } from "@/components/collections/LibraryPage";
 import { toolCategories } from "@/data/tools";
+import { toolGroups, toolSections } from "@/lib/library";
 import { createSocialMetadata } from "@/lib/metadata";
 import { getToolCategoryBySlug, getToolsByCategory } from "@/lib/tools";
 
@@ -50,13 +51,13 @@ export default async function ToolCategoryPage({ params }: PageProps) {
   if (getToolsByCategory(category.name).length === 0) redirect("/tools");
 
   return (
-    <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
-        <ToolCategoryMarketplace
-          title={category.name}
-          tools={getToolsByCategory(category.name)}
-        />
-      </div>
-    </section>
+    <LibraryPage
+      title={category.name}
+      intro={category.description}
+      noun="tools"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/tools" }, { label: category.name }]}
+      groups={toolGroups(category.slug)}
+      sections={toolSections(category.slug)}
+    />
   );
 }

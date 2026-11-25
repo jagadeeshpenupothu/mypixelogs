@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 
 import { ImageCropper } from "@/components/tools/ImageCropper";
 import { createSocialMetadata } from "@/lib/metadata";
-import { getToolBySlug } from "@/lib/tools";
 
-const tool = getToolBySlug("image-cropper");
 const title = "Free Image Cropper Online";
 const description =
   "Crop PNG, JPG and WEBP images online using freeform and social-media aspect ratios.";
@@ -24,10 +22,7 @@ export default function ImageCropperPage() {
     <section className="pb-2">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            {tool?.name ?? "Image Cropper"}
-          </p>
-          <h1 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Crop images for social media and documents
           </h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">

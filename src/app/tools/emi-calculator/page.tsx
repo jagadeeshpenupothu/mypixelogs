@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 
 import { EMICalculator } from "@/components/tools/EMICalculator";
 import { createSocialMetadata } from "@/lib/metadata";
-import { getToolBySlug } from "@/lib/tools";
 
-const tool = getToolBySlug("emi-calculator");
 const title = "EMI Calculator Online Free";
 const description =
   "Calculate monthly EMI, total interest and loan repayment instantly using our free EMI calculator.";
@@ -24,10 +22,7 @@ export default function EMICalculatorPage() {
     <section className="pb-2">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            {tool?.name ?? "EMI Calculator"}
-          </p>
-          <h1 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Calculate loan EMI instantly
           </h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">

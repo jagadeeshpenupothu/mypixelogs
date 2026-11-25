@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 
-import { ToolCard } from "@/components/cards/ToolCard";
+import { ToolTaskCard } from "@/components/cards/ItemCard";
 import { getRelatedTools, getToolBySlug } from "@/lib/tools";
 
 export function RelatedToolsByPath() {
@@ -26,19 +26,12 @@ export function RelatedToolsByPath() {
   }
 
   return (
-    <section className="pb-4 pt-12">
-      <div className="mx-auto max-w-7xl border-t border-border pt-8">
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-          Related tools
-        </p>
-        <h2 className="mt-2 text-2xl font-bold text-foreground">
-          More {currentTool.category.toLowerCase()}
-        </h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {relatedTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
-          ))}
-        </div>
+    <section aria-labelledby="related-title" className="mx-auto max-w-7xl pt-14">
+      <h2 id="related-title" className="text-xl font-bold text-foreground sm:text-2xl">You may also need</h2>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {relatedTools.map((tool) => (
+          <ToolTaskCard key={tool.id} tool={tool} />
+        ))}
       </div>
     </section>
   );

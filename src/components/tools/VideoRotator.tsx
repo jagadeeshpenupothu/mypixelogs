@@ -194,7 +194,7 @@ export function VideoRotator() {
           </>
         ) : (
           <div className="flex min-h-[260px] flex-col items-center justify-center text-center">
-            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
               <Video className="h-6 w-6" aria-hidden="true" />
             </span>
             <p className="mt-4 text-lg font-semibold text-foreground">Drag a video here</p>

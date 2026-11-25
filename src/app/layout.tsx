@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import { Navbar } from "@/components/layout/Navbar";
+import { Navbar, TabBar } from "@/components/layout/Navbar";
 import { PageFooter } from "@/components/layout/PageFooter";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/constants/site";
@@ -99,6 +99,7 @@ export default function RootLayout({
             {children}
             <PageFooter />
           </main>
+          <TabBar />
         </ThemeProvider>
         {process.env.NODE_ENV === "production" ? (
           <GoogleAnalytics gaId={googleAnalyticsId} />

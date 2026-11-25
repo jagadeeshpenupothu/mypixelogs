@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 
-import { CollectionPage } from "@/components/collections/CollectionPage";
+import { LibraryPage } from "@/components/collections/LibraryPage";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { RelatedTemplates } from "@/components/templates/RelatedTemplates";
 import { TemplateActions } from "@/components/templates/TemplateActions";
 import { TemplateHero } from "@/components/templates/TemplateHero";
 import { TemplatePreview } from "@/components/templates/TemplatePreview";
 import { getTemplateCategory } from "@/data/template-categories";
+import { templateGroups, templateSections } from "@/lib/library";
 import { createSocialMetadata } from "@/lib/metadata";
 import {
   getRelatedTemplates,
@@ -78,21 +79,18 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
     if (categoryTemplates.length === 0) redirect("/templates");
 
     return (
-      <section className="pb-2">
-        <div className="mx-auto max-w-7xl">
-          <CollectionPage
-            kind="template"
-            title={category.label}
-            items={categoryTemplates}
-            searchPlaceholder={`Search ${category.label.toLowerCase()}...`}
-            breadcrumbs={[
-              { label: "Home", href: "/" },
-              { label: "Templates", href: "/templates" },
-              { label: category.label },
-            ]}
-          />
-        </div>
-      </section>
+      <LibraryPage
+        title={category.label}
+        intro={category.description}
+        noun="templates"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Templates", href: "/templates" },
+          { label: category.label },
+        ]}
+        groups={templateGroups(category.slug)}
+        sections={templateSections(category.slug)}
+      />
     );
 
   }

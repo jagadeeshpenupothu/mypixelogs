@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 
-import {
-  RootCollectionBrowser,
-  type RootCollectionItem,
-  type RootCollectionSection,
-} from "@/components/collections/RootCollectionBrowser";
-import { toolCategories, tools } from "@/data/tools";
+import { LibraryPage } from "@/components/collections/LibraryPage";
+import { toolGroups, toolSections } from "@/lib/library";
 import { createSocialMetadata } from "@/lib/metadata";
-import { isToolInCategory } from "@/lib/tools";
-import type { Tool } from "@/types/tool";
 
 export const metadata: Metadata = {
   title: "Free Online Tools",
@@ -22,64 +16,15 @@ export const metadata: Metadata = {
   }),
 };
 
-function toolItem(tool: Tool): RootCollectionItem {
-  return {
-    id: tool.id,
-    title: tool.name,
-    description: tool.description,
-    href: `/tools/${tool.slug}`,
-    badge: tool.subcategory ?? tool.category.replace(" Tools", ""),
-    icon: tool.icon,
-    filters: {
-      category: [tool.category, ...(tool.secondaryCategories ?? [])],
-    },
-    searchText: [
-      tool.name,
-      tool.slug,
-      tool.description,
-      tool.category,
-      tool.subcategory,
-      ...(tool.secondaryCategories ?? []),
-      ...tool.tags,
-    ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase(),
-  };
-}
-
 export default function ToolsPage() {
-  const sections: RootCollectionSection[] = toolCategories
-    .map((category) => ({
-      id: category.slug,
-      title: category.name,
-      href: `/tools/${category.slug}`,
-      items: tools.filter((tool) => isToolInCategory(tool, category.name)).map(toolItem),
-    }))
-    .filter((section) => section.items.length > 0);
-
   return (
-    <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
-        <RootCollectionBrowser
-          kind="tool"
-          title="Tools"
-          totalLabel={`${tools.length.toLocaleString()} tools`}
-          searchPlaceholder="Search tools..."
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Tools" },
-          ]}
-          sections={sections}
-          filterSections={[
-            {
-              id: "category",
-              title: "Category",
-              options: toolCategories.map((category) => category.name),
-            },
-          ]}
-        />
-      </div>
-    </section>
+    <LibraryPage
+      title="All tools"
+      intro="Free to use. Your files stay on your device."
+      noun="tools"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools" }]}
+      groups={toolGroups("")}
+      sections={toolSections()}
+    />
   );
 }

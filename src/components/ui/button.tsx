@@ -12,9 +12,9 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground shadow-[0_8px_18px_rgba(37,99,235,0.18)] hover:-translate-y-0.5 hover:bg-primary/95 hover:shadow-[0_10px_22px_rgba(37,99,235,0.20)] active:bg-primary/90 dark:shadow-none dark:hover:bg-primary/90",
         secondary:
-          "border border-border bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-muted active:bg-muted/80 dark:bg-[#111111] dark:hover:border-white/20 dark:hover:bg-[#171717]",
+          "border border-border bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-muted active:bg-muted/80 dark:bg-muted/60 dark:hover:border-white/20 dark:hover:bg-muted",
         outline:
-          "border border-border bg-background/70 hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-muted hover:text-foreground active:bg-muted/80 dark:bg-[#0A0A0A] dark:hover:border-white/20 dark:hover:bg-[#171717]",
+          "border border-border bg-background/70 hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-muted hover:text-foreground active:bg-muted/80 dark:bg-card dark:hover:border-white/20 dark:hover:bg-muted",
         ghost:
           "hover:bg-muted hover:text-foreground active:bg-muted/80 dark:hover:bg-white/[0.06]",
       },

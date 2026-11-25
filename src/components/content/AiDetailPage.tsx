@@ -60,7 +60,7 @@ export function AiDetailPage({
               {item.description}
             </p>
 
-            <div className="mt-8 overflow-hidden rounded-lg border border-border bg-slate-50 p-3 shadow-sm dark:bg-[#111111]">
+            <div className="mt-8 overflow-hidden rounded-lg border border-border bg-slate-50 p-3 shadow-sm dark:bg-muted/60">
               <Image
                 src={item.coverImage}
                 alt={`${item.title} cover`}

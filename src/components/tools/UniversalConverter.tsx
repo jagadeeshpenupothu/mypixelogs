@@ -239,7 +239,7 @@ export function UniversalConverter() {
           accept=".png,.jpg,.jpeg,.webp,.svg,.ico,.avif,.bmp,.tiff,.pdf"
           onChange={handleInputChange}
         />
-        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary text-white">
+        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary text-primary-foreground">
           <FileUp className="h-6 w-6" />
         </div>
         <h2 className="mt-5 text-2xl font-bold text-foreground">Drop a file to convert</h2>

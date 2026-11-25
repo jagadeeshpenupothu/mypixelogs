@@ -91,7 +91,7 @@ export function FileStage({
         </>
       ) : (
         <div className="flex min-h-[280px] flex-col items-center justify-center text-center">
-          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">
+          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Film className="h-6 w-6" aria-hidden="true" />
           </span>
           <p className="mt-4 text-lg font-semibold text-foreground">{opening ? `Opening ${noun}...` : `Drag a ${noun} here`}</p>

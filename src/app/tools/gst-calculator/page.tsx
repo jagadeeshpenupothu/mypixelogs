@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 
 import { GSTCalculator } from "@/components/tools/GSTCalculator";
 import { createSocialMetadata } from "@/lib/metadata";
-import { getToolBySlug } from "@/lib/tools";
 
-const tool = getToolBySlug("gst-calculator");
 const title = "GST Calculator Online Free";
 const description =
   "Calculate GST, CGST and SGST instantly. Add or remove GST from any amount using our free GST calculator.";
@@ -24,10 +22,7 @@ export default function GSTCalculatorPage() {
     <section className="pb-2">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            {tool?.name ?? "GST Calculator"}
-          </p>
-          <h1 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Calculate GST, CGST and SGST instantly
           </h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">

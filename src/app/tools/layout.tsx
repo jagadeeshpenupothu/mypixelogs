@@ -1,16 +1,15 @@
 import type { ReactNode } from "react";
 
-import { ExplorerLayout } from "@/components/explorer/ExplorerLayout";
+import { LibraryLayout } from "@/components/layout/LibraryLayout";
 import { RelatedToolsByPath } from "@/components/tools/RelatedToolsByPath";
-import { getExplorerGroups } from "@/lib/explorer";
+import { ToolTrail } from "@/components/tools/ToolTrail";
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {
-  const explorerGroups = getExplorerGroups();
-
   return (
-    <ExplorerLayout groups={explorerGroups}>
+    <LibraryLayout>
+      <ToolTrail />
       {children}
       <RelatedToolsByPath />
-    </ExplorerLayout>
+    </LibraryLayout>
   );
 }

@@ -16,7 +16,7 @@ export function AiContentCard({ item, href, label }: AiContentCardProps) {
       href={href}
       className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-1 hover:border-primary/45 hover:shadow-md dark:hover:border-primary/50"
     >
-      <div className="overflow-hidden bg-slate-50 p-1.5 dark:bg-[#111111]">
+      <div className="overflow-hidden bg-slate-50 p-1.5 dark:bg-muted/60">
         <Image
           src={item.coverImage}
           alt={`${item.title} cover`}

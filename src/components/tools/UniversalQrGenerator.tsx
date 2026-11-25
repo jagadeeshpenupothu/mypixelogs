@@ -48,7 +48,7 @@ function TextInput({ label, value, onChange, placeholder, type = "text" }: TextI
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+        className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-card dark:hover:border-white/20"
       />
     </label>
   );
@@ -70,7 +70,7 @@ function TextareaInput({ label, value, onChange, placeholder }: TextareaInputPro
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
         rows={4}
-        className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+        className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-card dark:hover:border-white/20"
       />
     </label>
   );
@@ -287,7 +287,7 @@ export function UniversalQrGenerator() {
               <select
                 value={form.wifiSecurity}
                 onChange={(event) => updateField("wifiSecurity", event.target.value as WifiSecurity)}
-                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-card dark:hover:border-white/20"
               >
                 {wifiSecurityOptions.map((option) => (
                   <option key={option} value={option}>
@@ -351,7 +351,7 @@ export function UniversalQrGenerator() {
               <select
                 value={form.socialPlatform}
                 onChange={(event) => updateField("socialPlatform", event.target.value as SocialPlatform)}
-                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-card dark:hover:border-white/20"
               >
                 {socialPlatforms.map((platform) => (
                   <option key={platform} value={platform}>
@@ -383,7 +383,7 @@ export function UniversalQrGenerator() {
             <select
               value={qrType}
               onChange={(event) => setQrType(event.target.value as QrType)}
-              className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+              className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-card dark:hover:border-white/20"
             >
               {qrTypeOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -404,7 +404,7 @@ export function UniversalQrGenerator() {
               <select
                 value={size}
                 onChange={(event) => setSize(Number(event.target.value))}
-                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-card dark:hover:border-white/20"
               >
                 {qrSizes.map((option) => (
                   <option key={option} value={option}>
@@ -419,7 +419,7 @@ export function UniversalQrGenerator() {
               <select
                 value={errorCorrectionLevel}
                 onChange={(event) => setErrorCorrectionLevel(event.target.value as ErrorCorrectionLevel)}
-                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+                className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 text-sm shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-ring/25 dark:bg-card dark:hover:border-white/20"
               >
                 {errorCorrectionLevels.map((level) => (
                   <option key={level} value={level}>
@@ -459,7 +459,7 @@ export function UniversalQrGenerator() {
               type="file"
               accept="image/*"
               onChange={handleLogoUpload}
-              className="mt-3 block w-full text-sm text-muted-foreground file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white"
+              className="mt-3 block w-full text-sm text-muted-foreground file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary-foreground"
             />
             <p className="mt-2 text-xs leading-5 text-muted-foreground">
               Logo overlay uses high error correction and is kept small to preserve scan reliability.

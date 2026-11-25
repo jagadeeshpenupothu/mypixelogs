@@ -269,7 +269,7 @@ function EditorPanel({
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
         spellCheck={false}
-        className="mt-5 min-h-[320px] w-full resize-y rounded-lg border border-input bg-background p-4 text-base leading-8 text-foreground shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 hover:border-foreground/20 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-[#0A0A0A] dark:hover:border-white/20"
+        className="mt-5 min-h-[320px] w-full resize-y rounded-lg border border-input bg-background p-4 text-base leading-8 text-foreground shadow-sm outline-none transition-[color,background-color,border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 hover:border-foreground/20 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-card dark:hover:border-white/20"
         lang={telugu ? "te" : "en"}
       />
     </div>

@@ -100,7 +100,7 @@ export function ToolCard({ tool }: ToolCardProps) {
 
   const cardContent = (
   <>
-    <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-50 text-primary dark:bg-[#171717]">
+    <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-50 text-primary dark:bg-muted">
       <Icon className="h-5 w-5" aria-hidden="true" />
     </div>
 

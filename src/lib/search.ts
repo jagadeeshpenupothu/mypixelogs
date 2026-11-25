@@ -2,76 +2,13 @@ import Fuse from "fuse.js";
 
 import { assets } from "@/data/assets";
 import { aiContentItems } from "@/content";
+import { toolTasks } from "@/data/navigation";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
+import { matchScore, searchWords } from "@/lib/plain-search";
 import { getTemplateCategoryLabel } from "@/lib/templates";
 
 export type SearchResultType = "Template" | "Asset" | "Tool" | "AI Prompt" | "AI Image Prompt" | "AI Image";
-export type SearchCategoryId =
-  | "everything"
-  | "ai-hub"
-  | "ai-prompts"
-  | "ai-image-prompts"
-  | "ai-images"
-  | "templates"
-  | "canva-templates"
-  | "psd-templates"
-  | "illustrator-templates"
-  | "video-templates"
-  | "document-templates"
-  | "invoice-templates"
-  | "resume-templates"
-  | "certificate-templates"
-  | "letterhead-templates"
-  | "marketing-templates"
-  | "flyer-templates"
-  | "poster-templates"
-  | "social-media-templates"
-  | "tools"
-  | "pdf-tools"
-  | "merge-pdf"
-  | "split-pdf"
-  | "compress-pdf"
-  | "pdf-to-jpg"
-  | "jpg-to-pdf"
-  | "image-tools"
-  | "image-compressor"
-  | "image-resizer"
-  | "color-picker"
-  | "converter"
-  | "background-remover"
-  | "developer-tools"
-  | "json-formatter"
-  | "json-validator"
-  | "base64-encoder"
-  | "base64-decoder"
-  | "url-encoder"
-  | "calculators"
-  | "age-calculator"
-  | "fd-calculator"
-  | "emi-calculator"
-  | "gst-calculator"
-  | "assets"
-  | "logos"
-  | "icons"
-  | "mockups"
-  | "fonts"
-  | "png-assets"
-  | "svg-assets"
-  | "illustrations"
-  | "backgrounds"
-  | "psd-files"
-  | "video-tools"
-  | "video-rotator"
-  | "video-compressor"
-  | "video-trimmer"
-  | "video-cropper"
-  | "video-resizer"
-  | "video-flipper"
-  | "video-converter"
-  | "video-to-gif"
-  | "gif-to-video";
-
 export type SearchItem = {
   id: string;
   title: string;
@@ -81,195 +18,7 @@ export type SearchItem = {
   keywords?: string;
   type: SearchResultType;
   href: string;
-  searchCategories: SearchCategoryId[];
 };
-
-export type SearchCategoryOption = {
-  id: SearchCategoryId;
-  label: string;
-  icon?: string;
-  children?: SearchCategoryOption[];
-};
-
-const fullCategoryTree: SearchCategoryOption[] = [
-  {
-    id: "everything",
-    label: "Everything",
-  },
-  {
-    id: "templates",
-    label: "Templates",
-    children: [
-      { id: "video-templates", label: "Video Templates", icon: "📄" },
-      { id: "canva-templates", label: "Canva Templates", icon: "📄" },
-      { id: "psd-templates", label: "PSD Templates", icon: "📄" },
-      { id: "illustrator-templates", label: "Illustrator Templates", icon: "📄" },
-      {
-        id: "document-templates",
-        label: "Document Templates",
-        children: [
-          { id: "invoice-templates", label: "Invoice Templates", icon: "📄" },
-          { id: "resume-templates", label: "Resume Templates", icon: "📄" },
-          { id: "certificate-templates", label: "Certificate Templates", icon: "📄" },
-          { id: "letterhead-templates", label: "Letterhead Templates", icon: "📄" },
-        ],
-      },
-      {
-        id: "marketing-templates",
-        label: "Marketing Templates",
-        children: [
-          { id: "flyer-templates", label: "Flyer Templates", icon: "📄" },
-          { id: "poster-templates", label: "Poster Templates", icon: "📄" },
-          { id: "social-media-templates", label: "Social Media Templates", icon: "📄" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "ai-hub",
-    label: "AI Hub",
-    children: [
-      { id: "ai-prompts", label: "AI Prompts" },
-      { id: "ai-image-prompts", label: "AI Image Prompts" },
-      { id: "ai-images", label: "AI Images" },
-    ],
-  },
-  {
-    id: "tools",
-    label: "Tools",
-    children: [
-      {
-        id: "video-tools",
-        label: "Video Tools",
-        children: [
-          { id: "video-trimmer", label: "Video Trimmer" },
-          { id: "video-cropper", label: "Video Cropper" },
-          { id: "video-resizer", label: "Video Resizer" },
-          { id: "video-flipper", label: "Video Flipper" },
-          { id: "video-converter", label: "Video Converter" },
-          { id: "video-to-gif", label: "Video to GIF" },
-          { id: "gif-to-video", label: "GIF to Video" },
-          { id: "video-compressor", label: "Video Compressor" },
-          { id: "video-rotator", label: "Video Rotator" },
-        ],
-      },
-      {
-        id: "pdf-tools",
-        label: "PDF Tools",
-        children: [
-          { id: "merge-pdf", label: "Merge PDF" },
-          { id: "split-pdf", label: "Split PDF" },
-          { id: "compress-pdf", label: "Compress PDF" },
-          { id: "pdf-to-jpg", label: "PDF to JPG" },
-          { id: "jpg-to-pdf", label: "JPG to PDF" },
-        ],
-      },
-      {
-        id: "image-tools",
-        label: "Image Tools",
-        children: [
-          { id: "image-compressor", label: "Image Compressor" },
-          { id: "image-resizer", label: "Image Resizer" },
-          { id: "color-picker", label: "Color Picker" },
-          { id: "converter", label: "Image Converter" },
-          { id: "background-remover", label: "Background Remover" },
-        ],
-      },
-      {
-        id: "developer-tools",
-        label: "Developer Tools",
-        children: [
-          { id: "json-formatter", label: "JSON Formatter" },
-          { id: "json-validator", label: "JSON Validator" },
-          { id: "base64-encoder", label: "Base64 Encoder" },
-          { id: "base64-decoder", label: "Base64 Decoder" },
-          { id: "url-encoder", label: "URL Encoder" },
-        ],
-      },
-      {
-        id: "calculators",
-        label: "Calculators",
-        children: [
-          { id: "age-calculator", label: "Age Calculator" },
-          { id: "fd-calculator", label: "FD Calculator" },
-          { id: "emi-calculator", label: "EMI Calculator" },
-          { id: "gst-calculator", label: "GST Calculator" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "assets",
-    label: "Assets",
-    children: [
-      { id: "psd-files", label: "PSD Files" },
-      { id: "logos", label: "Logos" },
-      { id: "icons", label: "Icons" },
-      { id: "mockups", label: "Mockups" },
-      { id: "fonts", label: "Fonts" },
-      { id: "png-assets", label: "PNG Assets" },
-      { id: "svg-assets", label: "SVG Assets" },
-      { id: "illustrations", label: "Illustrations" },
-      { id: "backgrounds", label: "Backgrounds" },
-    ],
-  },
-];
-
-function flattenSearchCategories(items: SearchCategoryOption[]): SearchCategoryOption[] {
-  return items.flatMap((item) => [item, ...(item.children ? flattenSearchCategories(item.children) : [])]);
-}
-
-export function getSearchCategoryLabel(category: SearchCategoryId) {
-  return (
-    flattenSearchCategories(fullCategoryTree).find((item) => item.id === category)?.label ?? "Everything"
-  );
-}
-
-function getTemplateSearchCategories(category: string): SearchCategoryId[] {
-  const categories: SearchCategoryId[] = ["templates", category === "video" ? "video-templates" : "document-templates"];
-
-  if (category === "invoice") categories.push("invoice-templates");
-  if (category === "resume") categories.push("resume-templates");
-  if (category === "certificate") categories.push("certificate-templates");
-  if (category === "letterhead") categories.push("letterhead-templates");
-
-  return categories;
-}
-
-function getToolSearchCategories(tool: (typeof tools)[number]): SearchCategoryId[] {
-  const categories: SearchCategoryId[] = ["tools"];
-
-  if (tool.category === "Video Tools") categories.push("video-tools");
-  if (tool.category === "PDF Tools") categories.push("pdf-tools");
-  if (tool.category === "Image Tools") categories.push("image-tools");
-  if (tool.category === "Developer Tools") categories.push("developer-tools");
-  if (tool.category === "Calculator Tools") categories.push("calculators");
-  if (flattenSearchCategories(fullCategoryTree).some((category) => category.id === tool.slug)) {
-    categories.push(tool.slug as SearchCategoryId);
-  }
-
-  return categories;
-}
-
-function getAssetSearchCategories(category: string): SearchCategoryId[] {
-  const categories: SearchCategoryId[] = ["assets"];
-
-  if (category === "PSD") categories.push("psd-files");
-  if (category === "LOGO") categories.push("logos");
-  if (category === "ICON") categories.push("icons");
-
-  return categories;
-}
-
-function getAiSearchCategories(kind: string): SearchCategoryId[] {
-  const categories: SearchCategoryId[] = ["ai-hub"];
-
-  if (kind === "ai-prompt") categories.push("ai-prompts");
-  if (kind === "ai-image-prompt") categories.push("ai-image-prompts");
-  if (kind === "ai-image") categories.push("ai-images");
-
-  return categories;
-}
 
 function getAiHref(kind: string, slug: string) {
   if (kind === "ai-prompt") return `/ai/prompts/${slug}`;
@@ -292,7 +41,6 @@ export const searchIndex: SearchItem[] = [
     category: getTemplateCategoryLabel(template.category),
     type: "Template" as const,
     href: `/templates/${template.slug}`,
-    searchCategories: getTemplateSearchCategories(template.category),
   })),
   ...assets.map((asset) => ({
     id: asset.id,
@@ -302,7 +50,6 @@ export const searchIndex: SearchItem[] = [
     category: asset.category,
     type: "Asset" as const,
     href: `/assets/${asset.slug}`,
-    searchCategories: getAssetSearchCategories(asset.category),
   })),
   ...tools
     .filter((tool) => !tool.comingSoon)
@@ -312,10 +59,9 @@ export const searchIndex: SearchItem[] = [
       slug: tool.slug,
       description: tool.description,
       category: tool.category,
-      keywords: tool.tags.join(" "),
+      keywords: `${toolTasks[tool.slug] ?? ""} ${tool.tags.join(" ")}`,
       type: "Tool" as const,
       href: `/tools/${tool.slug}`,
-      searchCategories: getToolSearchCategories(tool),
     })),
   ...aiContentItems.map((item) => ({
     id: item.slug,
@@ -326,49 +72,36 @@ export const searchIndex: SearchItem[] = [
     keywords: item.tags.join(" "),
     type: getAiType(item.kind),
     href: getAiHref(item.kind, item.slug),
-    searchCategories: getAiSearchCategories(item.kind),
   })),
 ];
 
-const usedCategories = new Set<SearchCategoryId>(searchIndex.flatMap((item) => item.searchCategories));
-
-function keepUsedCategories(items: SearchCategoryOption[]): SearchCategoryOption[] {
-  return items.flatMap((item) => {
-    if (item.id !== "everything" && !usedCategories.has(item.id)) return [];
-    if (!item.children) return [item];
-    const children = keepUsedCategories(item.children);
-    return [{ ...item, children: children.length > 0 ? children : undefined }];
-  });
-}
-
-/** Categories without any results are left out of the search menu. */
-export const searchCategoryTree = keepUsedCategories(fullCategoryTree);
-
-export const fuseOptions = {
+const fuse = new Fuse(searchIndex, {
   keys: [
-    { name: "title", weight: 0.42 },
-    { name: "slug", weight: 0.24 },
-    { name: "description", weight: 0.22 },
-    { name: "category", weight: 0.08 },
-    { name: "keywords", weight: 0.04 },
+    { name: "title", weight: 0.6 },
+    { name: "keywords", weight: 0.25 },
+    { name: "description", weight: 0.15 },
   ],
-  threshold: 0.2,
-  distance: 120,
+  threshold: 0.38,
   minMatchCharLength: 2,
   ignoreLocation: true,
-  includeScore: true,
-};
+});
 
-export const searchSuggestions = ["invoice", "compress image", "pdf", "GST", "business prompt"];
-
-export function createSearchEngine() {
-  return new Fuse(searchIndex, fuseOptions);
+function rank(words: string[], loose: boolean) {
+  return searchIndex
+    .map((item) => ({ item, score: matchScore(words, [item.title, item.keywords ?? "", item.category, item.description], loose) }))
+    .filter(({ score }) => score > 0)
+    .map(({ item, score }) => ({ item, score: score + (item.type === "Tool" || item.type === "Template" ? 1 : 0) }))
+    .sort((a, b) => b.score - a.score)
+    .map(({ item }) => item);
 }
 
-export function filterSearchItems(items: SearchItem[], category: SearchCategoryId) {
-  if (category === "everything") {
-    return items;
-  }
-
-  return items.filter((item) => item.searchCategories.includes(category));
+/** Finds things by everyday words first, then by some of the words, then allows spelling mistakes. */
+export function searchItems(query: string): SearchItem[] {
+  const words = searchWords(query);
+  if (words.length === 0) return [];
+  const found = rank(words, false);
+  if (found.some(({ type }) => type === "Tool" || type === "Template")) return found;
+  const close = rank(words, true).filter((item) => !found.includes(item)).slice(0, 6);
+  if (close.length > 0) return [...close, ...found];
+  return fuse.search(words.join(" ")).slice(0, 12).map((result) => result.item);
 }

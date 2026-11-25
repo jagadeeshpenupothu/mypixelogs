@@ -4,11 +4,12 @@ import { notFound, redirect } from "next/navigation";
 import { Download } from "lucide-react";
 
 import { AssetCard } from "@/components/cards/AssetCard";
-import { CollectionPage } from "@/components/collections/CollectionPage";
+import { LibraryPage } from "@/components/collections/LibraryPage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getAssetCategory } from "@/data/asset-categories";
 import { allResources } from "@/data/resources";
+import { assetGroups, assetSections } from "@/lib/library";
 import { createSocialMetadata } from "@/lib/metadata";
 import {
   getAssetBySlug,
@@ -74,21 +75,18 @@ export default async function AssetPage({ params }: PageProps) {
     if (categoryAssets.length === 0) redirect("/assets");
 
     return (
-      <section className="pb-2">
-        <div className="mx-auto max-w-7xl">
-          <CollectionPage
-            kind="asset"
-            title={category.label}
-            items={categoryAssets}
-            searchPlaceholder={`Search ${category.label.toLowerCase()}...`}
-            breadcrumbs={[
-              { label: "Home", href: "/" },
-              { label: "Assets", href: "/assets" },
-              { label: category.label },
-            ]}
-          />
-        </div>
-      </section>
+      <LibraryPage
+        title={category.label}
+        intro={category.description}
+        noun="design files"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Design files", href: "/assets" },
+          { label: category.label },
+        ]}
+        groups={assetGroups(category.slug)}
+        sections={assetSections(category.slug)}
+      />
     );
   }
 
@@ -115,7 +113,7 @@ export default async function AssetPage({ params }: PageProps) {
               {asset.description}
             </p>
 
-            <div className="mt-10 overflow-hidden rounded-lg border border-border bg-slate-50 p-4 shadow-sm sm:p-6 dark:bg-[#111111]">
+            <div className="mt-10 overflow-hidden rounded-lg border border-border bg-slate-50 p-4 shadow-sm sm:p-6 dark:bg-muted/60">
               <Image
                 src={asset.previewImage}
                 alt={`${asset.title} preview`}
@@ -127,7 +125,7 @@ export default async function AssetPage({ params }: PageProps) {
             </div>
           </div>
 
-          <aside className="rounded-lg border border-border bg-white p-5 shadow-sm dark:bg-[#0A0A0A]">
+          <aside className="rounded-lg border border-border bg-white p-5 shadow-sm dark:bg-card">
             <h2 className="text-lg font-semibold text-foreground">Available downloads</h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Download the raw design files and use them inside your own templates,
@@ -135,7 +133,7 @@ export default async function AssetPage({ params }: PageProps) {
             </p>
             <div className="mt-5 grid gap-3">
               {assetFiles.map((file) => (
-                <div key={`${file.type}-${file.url}`} className="rounded-lg border border-border bg-slate-50 p-4 dark:bg-[#111111]">
+                <div key={`${file.type}-${file.url}`} className="rounded-lg border border-border bg-slate-50 p-4 dark:bg-muted/60">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <Badge variant="secondary" className="bg-blue-50 text-primary">

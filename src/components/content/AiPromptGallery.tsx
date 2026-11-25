@@ -18,7 +18,7 @@ export function AiPromptGallery({ items, title, description, category }: AiPromp
   return (
     <section className="pb-2">
       <div className="mx-auto max-w-7xl">
-        <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:bg-black/90">
+        <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:bg-background/95">
           <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between">
             <Breadcrumbs
               items={[
@@ -56,7 +56,7 @@ export function AiPromptGallery({ items, title, description, category }: AiPromp
                 key={item.slug}
                 className="mb-4 break-inside-avoid overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
               >
-                <Link href={`/ai/prompts/${item.slug}`} className="block overflow-hidden bg-slate-50 p-1.5 dark:bg-[#111111]">
+                <Link href={`/ai/prompts/${item.slug}`} className="block overflow-hidden bg-slate-50 p-1.5 dark:bg-muted/60">
                   <Image
                     src={item.coverImage}
                     alt={`${item.title} preview`}

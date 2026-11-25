@@ -1,111 +1,28 @@
 import type { Metadata } from "next";
 
-import {
-  RootCollectionBrowser,
-  type RootCollectionItem,
-  type RootCollectionSection,
-} from "@/components/collections/RootCollectionBrowser";
-import { templateCategories } from "@/data/template-categories";
-import { templates } from "@/data/templates";
+import { LibraryPage } from "@/components/collections/LibraryPage";
+import { templateGroups, templateSections } from "@/lib/library";
 import { createSocialMetadata } from "@/lib/metadata";
-import { getTemplateCategoryLabel, getTemplatesByCategory } from "@/lib/templates";
-import type { Template, TemplateCategory } from "@/types/template";
 
 export const metadata: Metadata = {
   title: "Free Templates",
-  description: "Browse free invoice, resume, letterhead, and business document templates.",
+  description: "Free video invitation and invoice templates you can edit online or download.",
   ...createSocialMetadata({
     title: "Free Templates",
-    description: "Browse free invoice, resume, letterhead, and business document templates.",
+    description: "Free video invitation and invoice templates you can edit online or download.",
     path: "/templates",
   }),
 };
 
-const rootTemplateSections: { slug: TemplateCategory; title: string; href: string }[] = [
-  { slug: "invoice", title: "Invoice Templates", href: "/templates/invoice" },
-  { slug: "resume", title: "Resume Templates", href: "/templates/resume" },
-  { slug: "certificate", title: "Certificate Templates", href: "/templates/certificate" },
-  { slug: "letterhead", title: "Letterhead Templates", href: "/templates/letterhead" },
-  { slug: "receipt", title: "Receipt Templates", href: "/templates/receipt" },
-  { slug: "canva", title: "Canva Templates", href: "/templates/canva" },
-  { slug: "psd", title: "PSD Templates", href: "/templates/psd" },
-  { slug: "word", title: "MS Word Templates", href: "/templates/word" },
-  { slug: "excel", title: "Excel Templates", href: "/templates/excel" },
-  { slug: "pdf", title: "PDF Templates", href: "/templates/pdf" },
-  { slug: "google-docs", title: "Google Docs Templates", href: "/templates/google-docs" },
-];
-
-function templateBadge(template: Template) {
-  const format = template.formats[0] ?? "PDF";
-  return format === "Word" ? "MS Word" : format;
-}
-
-function templateFilters(template: Template) {
-  return {
-    platform: template.formats.map((format) => (format === "Word" ? "Word" : format)),
-    templateType: [getTemplateCategoryLabel(template.category)],
-  };
-}
-
-function templateItem(template: Template): RootCollectionItem {
-  return {
-    id: template.id,
-    title: template.title,
-    description: template.description,
-    href: `/templates/${template.slug}`,
-    badge: templateBadge(template),
-    thumbnail: template.thumbnail,
-    downloadUrl: template.downloadPath,
-    opensCopy: Boolean(template.googleDocId),
-    filters: templateFilters(template),
-    searchText: `${template.title} ${template.slug} ${template.description} ${template.category} ${template.formats.join(" ")}`.toLowerCase(),
-  };
-}
-
 export default function TemplatesPage() {
-  const sections: RootCollectionSection[] = rootTemplateSections
-    .map((section) => ({
-      id: section.slug,
-      title: section.title,
-      href: section.href,
-      items: getTemplatesByCategory(section.slug).map(templateItem),
-    }))
-    .filter((section) => section.items.length > 0)
-    // Skip a section that would repeat exactly the same templates.
-    .filter(
-      (section, index, all) =>
-        all.findIndex((other) => other.items.map(({ id }) => id).join() === section.items.map(({ id }) => id).join()) === index,
-    );
-
-  const templateTypeOptions = templateCategories.map((category) => category.label);
-
   return (
-    <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
-        <RootCollectionBrowser
-          kind="template"
-          title="Templates"
-          totalLabel={`${templates.length.toLocaleString()} templates`}
-          searchPlaceholder="Search templates..."
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Templates" },
-          ]}
-          sections={sections}
-          filterSections={[
-            {
-              id: "platform",
-              title: "Platform",
-              options: ["Canva", "PSD", "Illustrator", "Word", "Excel", "Google Docs", "PDF"],
-            },
-            {
-              id: "templateType",
-              title: "Template Type",
-              options: templateTypeOptions,
-            },
-          ]}
-        />
-      </div>
-    </section>
+    <LibraryPage
+      title="Templates"
+      intro="Pick a design, change the words and make it yours."
+      noun="templates"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Templates" }]}
+      groups={templateGroups("")}
+      sections={templateSections()}
+    />
   );
 }
