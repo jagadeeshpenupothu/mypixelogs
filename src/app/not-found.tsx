@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, Home, Search } from "lucide-react";
 
+import { NotFoundTracker } from "@/components/analytics/NotFoundTracker";
 import { Button } from "@/components/ui/button";
+
+export const metadata = { title: "Page not found" };
 
 const quickLinks = [
   { href: "/", label: "Go Home", icon: Home, variant: "default" as const },
@@ -13,6 +16,7 @@ const quickLinks = [
 export default function NotFound() {
   return (
     <section className="bg-white py-20 sm:py-24">
+      <NotFoundTracker />
       <div className="mx-auto flex min-h-[60vh] max-w-5xl items-center justify-center px-4 sm:px-6 lg:px-10 2xl:px-14">
         <div className="w-full text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">

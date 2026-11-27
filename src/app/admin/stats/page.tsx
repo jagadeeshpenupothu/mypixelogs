@@ -27,6 +27,7 @@ const EVENT_NAMES: Record<string, string> = {
   export_click: "Editor / tool exports",
   file_selected: "Files added to tools",
   search: "Searches",
+  not_found: "Broken links hit",
 };
 
 const countryName = (code: string) => {
@@ -55,6 +56,64 @@ const ago = (t: number, now: number) => {
   return h < 24 ? `${h} h ago` : dateIST(t);
 };
 const cap = (s?: string) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : "");
+
+const pct = (x: number) => `${Math.round(x * 100)}%`;
+const money = (n: number) => (n < 10 ? `$${n.toFixed(2)}` : `$${Math.round(n).toLocaleString("en-US")}`);
+
+function Change({ label, now, change, period }: { label: string; now: number; change: number | null; period: string }) {
+  const up = change !== null && change > 0;
+  const down = change !== null && change < 0;
+  return (
+    <div className="rounded-xl border border-border bg-card p-4">
+      <p className="text-xs font-medium text-muted-foreground">{label}</p>
+      <p className="mt-1 text-2xl font-bold tabular-nums text-foreground">{now.toLocaleString("en-IN")}</p>
+      <p className={cn("mt-0.5 text-xs font-medium", up ? "text-emerald-600 dark:text-emerald-400" : down ? "text-red-600 dark:text-red-400" : "text-muted-foreground")}>
+        {change === null ? "New this period" : `${up ? "▲" : down ? "▼" : "■"} ${Math.abs(Math.round(change * 100))}% ${up ? "up" : down ? "down" : "same"} vs ${period}`}
+      </p>
+    </div>
+  );
+}
+
+function Rate({ label, value, good, note }: { label: string; value: number; good: number; note: string }) {
+  const ok = value >= good;
+  return (
+    <div className="rounded-xl border border-border bg-card p-4">
+      <p className="text-xs font-medium text-muted-foreground">{label}</p>
+      <p className="mt-1 text-2xl font-bold tabular-nums text-foreground">{pct(value)}</p>
+      <p className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted">
+        <span className="block h-full rounded-full bg-primary" style={{ width: `${Math.min(100, value * 100)}%` }} />
+      </p>
+      <p className="mt-1.5 text-xs text-muted-foreground">
+        <span className={ok ? "text-emerald-600 dark:text-emerald-400" : "text-amber-600 dark:text-amber-400"}>{ok ? "✓ Healthy" : "! Below target"}</span> · {note}
+      </p>
+    </div>
+  );
+}
+
+/** Core Web Vitals thresholds from Google: good / needs improvement / poor. */
+function Vital({ label, value, unit, good, poor, note }: { label: string; value: number | null; unit: string; good: number; poor: number; note: string }) {
+  const status = value === null ? null : value <= good ? "Good" : value <= poor ? "Needs work" : "Poor";
+  const shown = value === null ? "–" : unit === "s" ? `${(value / 1000).toFixed(1)}s` : unit === "ms" ? `${Math.round(value)}ms` : value.toFixed(2);
+  return (
+    <div className="flex items-center justify-between gap-3 rounded-md px-2 py-1.5">
+      <span className="min-w-0">
+        <span className="block text-sm text-foreground">{label}</span>
+        <span className="block text-xs text-muted-foreground">{note}</span>
+      </span>
+      <span className="shrink-0 text-right">
+        <span className="block text-sm font-semibold tabular-nums text-foreground">{shown}</span>
+        {status ? (
+          <span className={cn("block text-xs font-medium", status === "Good" ? "text-emerald-600 dark:text-emerald-400" : status === "Poor" ? "text-red-600 dark:text-red-400" : "text-amber-600 dark:text-amber-400")}>
+            {status === "Good" ? "✓ " : "! "}
+            {status}
+          </span>
+        ) : (
+          <span className="block text-xs text-muted-foreground">no data yet</span>
+        )}
+      </span>
+    </div>
+  );
+}
 
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -154,6 +213,83 @@ export default async function StatsPage({ searchParams }: { searchParams: Promis
         <Tile label="Downloads" value={s.totals.downloads} />
         <Tile label="Actions" value={s.totals.actions} note="downloads, plays, copies…" />
       </div>
+
+      {(() => {
+        const g = s.growth;
+        const period = days === 1 ? "yesterday" : `previous ${days} days`;
+        return (
+          <section className="mt-8">
+            <h2 className="text-base font-bold text-foreground">Growth &amp; earnings</h2>
+            <div className="mt-3 rounded-xl border border-primary/30 bg-primary/5 p-4">
+              <p className="text-sm font-semibold text-foreground">What to work on next</p>
+              <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-foreground">
+                {g.tips.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+              <Change label="Visitors" now={g.compare.visitors.now} change={g.compare.visitors.change} period={period} />
+              <Change label="Page views" now={g.compare.pageViews.now} change={g.compare.pageViews.change} period={period} />
+              <Change label="Useful actions" now={g.compare.actions.now} change={g.compare.actions.change} period={period} />
+              <Rate label="Engaged visits" value={g.engagementRate} good={0.5} note="2+ pages, 10s+, or an action" />
+              <Rate label="Visits with a useful action" value={g.conversionRate} good={0.2} note="download, tool use, copy" />
+              <Rate label="Returning visitors" value={g.returningRate} good={0.15} note="target 15%+" />
+            </div>
+            <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+              <section className="min-w-0 rounded-xl border border-border bg-card p-4">
+                <h3 className="text-sm font-semibold text-foreground">Estimated ad income</h3>
+                <p className="mt-2 text-3xl font-bold tabular-nums text-foreground">
+                  {money(g.earnings.low)}–{money(g.earnings.high)}
+                  <span className="text-base font-medium text-muted-foreground"> / month</span>
+                </p>
+                <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                  If ads were on the site, at {g.monthly.pageViews.toLocaleString("en-IN")} page views a month{g.projected ? " (current pace)" : ""} and {pct(g.tier1Share)} visitors from high-paying countries. Uses public RPM benchmarks (${g.earnings.rpmLow.toFixed(2)}–${g.earnings.rpmHigh.toFixed(2)} per 1,000 views); real earnings vary.
+                </p>
+              </section>
+              <section className="min-w-0 rounded-xl border border-border bg-card p-4">
+                <h3 className="text-sm font-semibold text-foreground">Ad network readiness</h3>
+                <ul className="mt-2 space-y-2.5">
+                  {g.milestones.map((ms) => {
+                    const share = ms.target ? Math.min(1, ms.value / ms.target) : 1;
+                    return (
+                      <li key={ms.name}>
+                        <p className="flex justify-between gap-2 text-sm">
+                          <span className="font-medium text-foreground">{ms.name}</span>
+                          <span className="tabular-nums text-muted-foreground">{ms.target ? `${ms.value.toLocaleString("en-IN")} / ${ms.target.toLocaleString("en-IN")}` : "Apply any time"}</span>
+                        </p>
+                        <p className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted">
+                          <span className="block h-full rounded-full bg-primary" style={{ width: `${share * 100}%` }} />
+                        </p>
+                        <p className="mt-0.5 text-xs text-muted-foreground">{ms.need}</p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+              <section className="min-w-0 rounded-xl border border-border bg-card p-4">
+                <h3 className="text-sm font-semibold text-foreground">Page speed for real visitors</h3>
+                <p className="mt-0.5 text-xs text-muted-foreground">Google uses these for ranking. {g.vitals.samples ? `${g.vitals.samples} page loads measured (75% of visitors are at or below these).` : "Measured from new visits."}</p>
+                <div className="mt-2 space-y-1">
+                  <Vital label="Main content shows (LCP)" value={g.vitals.lcp} unit="s" good={2500} poor={4000} note="good under 2.5s" />
+                  <Vital label="Layout stays still (CLS)" value={g.vitals.cls} unit="" good={0.1} poor={0.25} note="good under 0.10" />
+                  <Vital label="Reacts to taps (INP)" value={g.vitals.inp} unit="ms" good={200} poor={500} note="good under 200ms" />
+                </div>
+              </section>
+            </div>
+            <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+              <Ranked title="Traffic channels" rows={g.channels.map(([k, n, share]) => [`${k}\u0000${pct(share)}`, n] as [string, number])} format={(k) => {
+                const [name, share] = k.split("\u0000");
+                return <>{name} <span className="text-muted-foreground">· {share}</span></>;
+              }} />
+              <Ranked title="Searches with no results (content ideas)" rows={g.zeroSearches} empty="None yet. These are things people want that the site doesn't have." />
+              <Ranked title="Broken links visitors hit (404)" rows={g.notFound} empty="None. Good!" />
+              <Ranked title="Pages that hold attention (avg. seconds)" rows={g.holdingPages} empty="Measured from new visits" />
+              <Ranked title="Pages that lead to downloads & tool use" rows={g.actionPages} />
+            </div>
+          </section>
+        );
+      })()}
 
       <section className="mt-5 rounded-xl border border-border bg-card p-4">
         {days > 1 ? (
