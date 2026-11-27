@@ -265,6 +265,7 @@ function EditorPanel({
         </div>
       </div>
       <textarea
+        aria-label={title}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}

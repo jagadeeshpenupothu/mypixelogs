@@ -194,6 +194,7 @@ export function JSONValidator() {
             <span>{characterCount.toLocaleString()} characters</span>
           </div>
           <textarea
+            aria-label="JSON to check"
             value={jsonText}
             onChange={(event) => updateJsonText(event.target.value)}
             placeholder={placeholderJson}

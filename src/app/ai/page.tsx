@@ -5,7 +5,7 @@ import { chatGptPrompts, PROMPT_CATEGORIES } from "@/lib/prompts";
 import { createSocialMetadata } from "@/lib/metadata";
 
 const title = "ChatGPT Prompts to Write Emails";
-const description = `${chatGptPrompts.length} ready ChatGPT prompts to write emails: job applications, leave requests, payment reminders, complaints, client follow-ups and more. Fill in your details, then copy or open in ChatGPT.`;
+const description = `${chatGptPrompts.length} free ChatGPT prompts to write emails: job applications, leave requests, payment reminders, complaints and more. Fill in, then copy.`;
 
 export const metadata: Metadata = { title, description, ...createSocialMetadata({ title, description, path: "/ai" }) };
 

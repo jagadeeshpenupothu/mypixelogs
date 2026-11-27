@@ -10,7 +10,7 @@ import { getTemplateCategory } from "@/data/template-categories";
 import { toGalleryItem, type FormatKey } from "@/lib/template-gallery";
 import { TemplateGallery } from "@/components/templates/TemplateGallery";
 import { templates } from "@/data/templates";
-import { createSocialMetadata } from "@/lib/metadata";
+import { createSocialMetadata, metaDescription } from "@/lib/metadata";
 import {
   getRelatedTemplates,
   getTemplateBySlug,
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (template) {
     const title = template.title;
-    const description = template.description;
+    const description = metaDescription(template.description);
     const url = `/templates/${template.slug}`;
     const socialTitle = `${template.title} | MyPixelogs`;
 

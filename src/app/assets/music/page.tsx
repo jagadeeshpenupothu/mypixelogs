@@ -5,7 +5,7 @@ import { musicItems } from "@/lib/audio-library";
 import { createSocialMetadata } from "@/lib/metadata";
 
 const title = "Free Background Music for Videos";
-const description = `${musicItems.length} free background music tracks for YouTube, Instagram Reels and video editing: happy, calm, epic, suspense, funny and groovy. Royalty-free music by Kevin MacLeod (CC BY 4.0).`;
+const description = `${musicItems.length} free background music tracks for YouTube, Reels and video editing: happy, calm, epic, suspense and funny. By Kevin MacLeod (CC BY 4.0).`;
 
 export const metadata: Metadata = { title, description, ...createSocialMetadata({ title, description, path: "/assets/music" }) };
 

@@ -181,7 +181,7 @@ export function TemplateGallery({
       {/* Card grid: as many columns as fit (two on phones), up to six, filled left to right so sorting reads naturally. */}
       {shown.length ? (
         <div className="mt-5 grid items-start gap-x-3 gap-y-6 [grid-template-columns:repeat(auto-fill,minmax(max(150px,calc((100%-5*0.75rem)/6)),1fr))] sm:gap-x-5 sm:gap-y-8 sm:[grid-template-columns:repeat(auto-fill,minmax(max(230px,calc((100%-5*1rem)/6)),1fr))]">
-          {shown.map((item) => {
+          {shown.map((item, index) => {
             const isNew = today !== null && daysSince(item.published, today) <= 7;
             return (
               <Link prefetch={false}
@@ -197,6 +197,8 @@ export function TemplateGallery({
                     width={item.width}
                     height={item.height}
                     sizes="(max-width: 640px) 50vw, (max-width: 1280px) 25vw, 18vw"
+                    // The first row is what people see first: load it straight away.
+                    priority={index < 6}
                     className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.03]"
                   />
                   <span className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-200 group-hover:bg-black/10" />
