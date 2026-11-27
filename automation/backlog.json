@@ -96,7 +96,8 @@
     "keyword": "proforma invoice format",
     "score": 85,
     "notes": "Proforma no, validity, buyer, items with HSN, GST, total, bank details, 'not a tax invoice' note",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-27"
   },
   {
     "slug": "cover-letter-template",

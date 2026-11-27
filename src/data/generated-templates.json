@@ -99,6 +99,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "proforma-invoice",
+    "title": "Proforma Invoice Template",
+    "slug": "proforma-invoice-template",
+    "description": "Free proforma invoice format for India with PI number, validity, buyer GSTIN, HSN codes, CGST/SGST, advance terms and bank details. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "invoice",
+    "features": [
+      "Itemised table with HSN, quantity, rate and GST split",
+      "Validity, advance payment and delivery terms",
+      "Clear 'not a tax invoice' declaration and bank details"
+    ],
+    "useCases": [
+      "Advance payment requests before dispatch",
+      "Import, export and LC documentation",
+      "Buyer budget approvals and purchase orders"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1qXHaJC9Mu6jdr2J2_2NwOQ0aUJDr-PPwaAe8Owt-ssk",
+      "googleSheetsId": "1NYyM3LEOYYsWD62ovpG3qETVHvzrj7RtNkm8YHbxb2M",
+      "excelPath": "/downloads/proforma-invoice-template.xlsx",
+      "latexPath": "/downloads/proforma-invoice-template.tex",
+      "pdfPath": "/downloads/proforma-invoice-template.pdf"
+    },
+    "published": "2026-11-27"
+  },
+  {
     "id": "quotation",
     "title": "Quotation Template",
     "slug": "quotation-template",
