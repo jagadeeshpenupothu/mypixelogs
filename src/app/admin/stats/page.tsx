@@ -4,7 +4,7 @@ import Link from "next/link";
 import { DailyChart } from "@/components/analytics/DailyChart";
 import { GoogleSignIn, SignOutButton } from "@/components/analytics/GoogleSignIn";
 import { StatsRefresher } from "@/components/analytics/StatsRefresher";
-import { adminEmail, GOOGLE_CLIENT_ID, isAdmin } from "@/lib/analytics/auth";
+import { adminEmail, adminPassword, GOOGLE_CLIENT_ID, isAdmin } from "@/lib/analytics/auth";
 import { getStats } from "@/lib/analytics/summary";
 import { cn } from "@/lib/utils";
 
@@ -72,21 +72,28 @@ function Ranked({ title, rows, empty = "Nothing yet", format = (s: string) => s 
   );
 }
 
-export default async function StatsPage({ searchParams }: { searchParams: Promise<{ range?: string }> }) {
-  const { range } = await searchParams;
+export default async function StatsPage({ searchParams }: { searchParams: Promise<{ range?: string; wrong?: string }> }) {
+  const { range, wrong } = await searchParams;
   if (!(await isAdmin())) {
-    const ready = Boolean(GOOGLE_CLIENT_ID && adminEmail());
+    const google = Boolean(GOOGLE_CLIENT_ID && adminEmail());
+    const password = Boolean(adminPassword());
     return (
       <div className="mx-auto mt-16 grid max-w-sm gap-4 rounded-xl border border-border bg-card p-6 text-center">
         <h1 className="text-lg font-bold text-foreground">Website stats</h1>
-        {ready ? (
-          <>
-            <p className="text-sm text-muted-foreground">Private page. Sign in with the owner&apos;s Google account.</p>
-            <GoogleSignIn clientId={GOOGLE_CLIENT_ID} />
-          </>
-        ) : (
-          <p className="text-sm leading-6 text-muted-foreground">Google sign-in isn&apos;t set up yet. It needs GOOGLE_CLIENT_ID and ADMIN_EMAIL in Netlify&apos;s environment variables.</p>
-        )}
+        <p className="text-sm text-muted-foreground">Private page for the site owner.</p>
+        {password ? (
+          <form action="/api/admin/password" method="post" className="grid gap-2 text-left">
+            <label className="grid gap-1 text-sm font-medium text-muted-foreground">
+              Password
+              <input type="password" name="password" required autoFocus autoComplete="current-password" className="h-10 rounded-lg border border-border bg-background px-3 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70" />
+            </label>
+            {wrong ? <p className="text-sm text-destructive">Wrong password.</p> : null}
+            <button className="h-10 rounded-lg bg-primary font-semibold text-primary-foreground">Open stats</button>
+          </form>
+        ) : null}
+        {password && google ? <p className="text-xs text-muted-foreground">or</p> : null}
+        {google ? <GoogleSignIn clientId={GOOGLE_CLIENT_ID} /> : null}
+        {!password && !google ? <p className="text-sm leading-6 text-muted-foreground">Sign-in isn&apos;t set up yet: add ADMIN_PASSWORD (or GOOGLE_CLIENT_ID and ADMIN_EMAIL) in Netlify&apos;s environment variables.</p> : null}
       </div>
     );
   }
