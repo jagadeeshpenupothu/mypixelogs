@@ -1,0 +1,16 @@
+import Script from "next/script";
+
+/**
+ * Microsoft Clarity: free heatmaps and anonymous session replays.
+ * Paste the project ID from clarity.microsoft.com (Settings → Overview). Empty = switched off.
+ */
+export const CLARITY_ID = "";
+
+export function Clarity() {
+  if (!CLARITY_ID) return null;
+  return (
+    <Script id="clarity" strategy="afterInteractive">
+      {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`}
+    </Script>
+  );
+}
