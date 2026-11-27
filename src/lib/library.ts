@@ -1,12 +1,9 @@
 import type { LibraryItem, LibrarySection } from "@/components/collections/LibraryPage";
 import { categoryLooks, toolTasks } from "@/data/navigation";
-import { assetCategories } from "@/data/asset-categories";
 import { templateCategories } from "@/data/template-categories";
 import { toolCategories, tools } from "@/data/tools";
-import { getAssetsByCategorySlug } from "@/lib/assets";
 import { getTemplatesByCategory } from "@/lib/templates";
 import { isToolInCategory } from "@/lib/tools";
-import type { Asset } from "@/types/asset";
 import type { Template, TemplateCategory } from "@/types/template";
 import type { Tool } from "@/types/tool";
 
@@ -28,15 +25,6 @@ const templateItem = (template: Template): LibraryItem => ({
   words: `${template.category} ${template.formats.join(" ")} ${template.description}`,
   image: template.thumbnail,
   video: Boolean(template.previewVideo),
-});
-
-const assetItem = (asset: Asset): LibraryItem => ({
-  id: asset.id,
-  href: `/assets/${asset.slug}`,
-  title: asset.title,
-  note: asset.category,
-  words: asset.description,
-  image: asset.thumbnail,
 });
 
 const toolKinds = toolCategories
@@ -74,17 +62,3 @@ export const templateSections = (slug?: string): LibrarySection[] =>
   templateKinds
     .filter((category) => (slug ? category.slug === slug : !fileTypes.includes(category.slug)))
     .map((category) => ({ id: category.slug, title: category.label, items: category.items.map(templateItem) }));
-
-const assetKinds = assetCategories
-  .map((category) => ({ ...category, items: getAssetsByCategorySlug(category.slug) }))
-  .filter((category) => category.items.length > 0);
-
-export const assetGroups = (active: string) => [
-  { label: "All", href: "/assets", active: active === "" },
-  ...assetKinds.map(({ label, slug }) => ({ label, href: `/assets/${slug}`, active: active === slug })),
-];
-
-export const assetSections = (slug?: string): LibrarySection[] =>
-  assetKinds
-    .filter((category) => !slug || category.slug === slug)
-    .map((category) => ({ id: category.slug, title: category.label, items: category.items.map(assetItem) }));

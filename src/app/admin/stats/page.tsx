@@ -192,6 +192,7 @@ export default async function StatsPage({ searchParams }: { searchParams: Promis
         <div className="flex items-center gap-3">
           <h1 className="text-xl font-bold text-foreground">Website stats</h1>
           <StatsRefresher updated={s.updated} />
+          <Link prefetch={false} href="/admin/messages" className="text-sm font-medium text-primary hover:underline">Messages</Link>
           <SignOutButton />
         </div>
         <nav aria-label="Time range" className="flex gap-1 rounded-full border border-border bg-card p-1">

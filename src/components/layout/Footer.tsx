@@ -1,14 +1,12 @@
 import Link from "next/link";
 
-import { siteConfig } from "@/constants/site";
-
 const links = [
   { href: "/tools", label: "All tools" },
   { href: "/about", label: "About" },
-  // Shown only once there is an email address to write to.
-  ...(siteConfig.contactEmail ? [{ href: "/contact", label: "Contact" }] : []),
+  { href: "/contact", label: "Contact" },
   { href: "/privacy-policy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
+  { href: "/disclaimer", label: "Disclaimer" },
 ];
 
 export function Footer() {

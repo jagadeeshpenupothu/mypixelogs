@@ -5,17 +5,15 @@ import { ArrowRight, Music, Volume2 } from "lucide-react";
 import { FontCard, fontGridClass } from "@/components/assets/FontCard";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { music, sfx } from "@/lib/audio-library";
-import { assetGroups } from "@/lib/library";
 import { fonts } from "@/lib/fonts";
 import { createSocialMetadata } from "@/lib/metadata";
 
 const title = "Free Design Assets";
-const description = `Free assets for flyers, posters and videos: ${fonts.length} fonts, 100 background music tracks and 100 sound effects, plus logo, icon and PSD packs.`;
+const description = `Free assets for flyers, posters and videos: ${fonts.length} fonts, 100 background music tracks and 100 sound effects.`;
 
 export const metadata: Metadata = { title, description, ...createSocialMetadata({ title, description, path: "/assets" }) };
 
 export default function AssetsPage() {
-  const others = assetGroups("").filter((g) => g.href !== "/assets");
   const telugu = fonts.filter((f) => f.scripts.includes("telugu") && !["Noto Sans", "Noto Serif"].includes(f.name));
   return (
     <section className="pb-2">
@@ -68,18 +66,6 @@ export default function AssetsPage() {
         ))}
       </div>
 
-      {others.length ? (
-        <div className="mt-12">
-          <h2 className="text-xl font-bold text-foreground">Design files</h2>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {others.map((g) => (
-              <Link prefetch={false} key={g.href} href={g.href} className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-primary/60">
-                {g.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      ) : null}
     </section>
   );
 }

@@ -1,6 +1,5 @@
 import Fuse from "fuse.js";
 
-import { assets } from "@/data/assets";
 import { toolTasks } from "@/data/navigation";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
@@ -29,15 +28,6 @@ export const searchIndex: SearchItem[] = [
     category: getTemplateCategoryLabel(template.category),
     type: "Template" as const,
     href: `/templates/${template.slug}`,
-  })),
-  ...assets.map((asset) => ({
-    id: asset.id,
-    title: asset.title,
-    slug: asset.slug,
-    description: asset.description,
-    category: asset.category,
-    type: "Asset" as const,
-    href: `/assets/${asset.slug}`,
   })),
   ...tools
     .filter((tool) => !tool.comingSoon)
