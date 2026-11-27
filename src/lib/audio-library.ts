@@ -16,9 +16,10 @@ export type Track = {
   size: number;
   /** Google Drive file id once the full track is uploaded to the shared folder. */
   driveId: string | null;
+  peaks: number[];
 };
 
-export type Sfx = { name: string; slug: string; category: string; seconds: number; file: string; size: number; source: string };
+export type Sfx = { name: string; slug: string; category: string; seconds: number; file: string; size: number; source: string; peaks: number[] };
 
 export const music = musicData as Track[];
 export const sfx = sfxData as Sfx[];
@@ -47,6 +48,12 @@ export type AudioItem = {
   direct: boolean;
   credit?: string;
   words: string;
+  /** Waveform bars, 0-100. */
+  peaks: number[];
+  /** Length shown when not playing (the full track for music). */
+  length: string;
+  /** Small tags under the title. */
+  tags: string[];
 };
 
 export const musicItems: AudioItem[] = music.map((t) => ({
@@ -59,6 +66,9 @@ export const musicItems: AudioItem[] = music.map((t) => ({
   direct: false,
   credit: musicCredit(t),
   words: `${t.feel} ${t.instruments} ${t.description}`,
+  peaks: t.peaks,
+  length: t.length,
+  tags: (t.feel ?? "").split(",").map((x) => x.trim()).filter(Boolean).slice(0, 3),
 }));
 
 export const sfxItems: AudioItem[] = sfx.map((s) => ({
@@ -70,4 +80,7 @@ export const sfxItems: AudioItem[] = sfx.map((s) => ({
   download: s.file,
   direct: true,
   words: s.source,
+  peaks: s.peaks,
+  length: `0:${String(Math.max(1, Math.round(s.seconds))).padStart(2, "0")}`,
+  tags: [],
 }));
