@@ -52,5 +52,5 @@ export function getTemplateRouteSlugs(): string[] {
 
 /** A template that exists in the code but is not finished yet. */
 export function isHiddenTemplate(slug: string): boolean {
-  return allTemplates.some((template) => template.slug === slug && !template.ready);
+  return !templates.some((template) => template.slug === slug) && allTemplates.some((template) => template.slug === slug);
 }

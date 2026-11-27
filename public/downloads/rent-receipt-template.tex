@@ -1,0 +1,73 @@
+% Rent Receipt Template - MyPixelogs (https://mypixelogs.netlify.app/templates/rent-receipt-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1B2F5B}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\color{accent}\fontsize{30}{34}\selectfont\bfseries RENT RECEIPT}\par\vspace{3pt}
+
+{\fontsize{13.5}{16}\selectfont Receipt No. \textbf{[RR-001]}   \textbar{}   Date: \textbf{[DD/MM/YYYY]}}\par\vspace{4pt}
+
+{\fontsize{8.8}{11}\selectfont Property: [Flat / House No., Building, Street, City, State, PIN]}\par
+
+\vspace{5pt}{\color{accent}\rule{\linewidth}{1.8pt}}\par
+
+\section{RECEIVED FROM}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Tenant name} & [Full name] & \textbf{Phone} & [+91 98765 43210] \\
+\textbf{Tenant PAN} & [ABCDE1234F] (optional) & \textbf{Email} & [name@email.com] \\
+\end{tabularx}\par\vspace{2pt}
+
+\section{PAYMENT DETAILS}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\raggedright\arraybackslash}p{0.427\linewidth}|>{\raggedright\arraybackslash}p{0.320\linewidth}|>{\raggedleft\arraybackslash}p{0.213\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{Description}} & \textcolor{white}{\textbf{Rent period}} & \textcolor{white}{\textbf{Amount (Rs.\,)}} \\ \hline
+Monthly house rent & [01/MM/YYYY] to [30/MM/YYYY] & [15,000.00] \\ \hline
+Maintenance charges (if any) & [Same period] & [0.00] \\ \hline
+\end{tabular}}\par
+
+\vspace{2pt}{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}\hfill\begin{tabular}{|p{0.22\linewidth}|>{\raggedleft\arraybackslash}p{0.14\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{Total received}} & \textcolor{white}{\textbf{[15,000.00]}} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+Amount in words: \textbf{[Rupees Fifteen Thousand Only]}\par\vspace{4pt}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Payment mode} & [UPI / Bank transfer / Cash / Cheque] & \textbf{Reference no.} & [Transaction or cheque no.] \\
+\end{tabularx}\par\vspace{2pt}
+
+\section{LANDLORD DETAILS}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Landlord name} & [Full name] & \textbf{Landlord PAN} & [ABCDE1234F] \\
+\textbf{Address} & [Landlord address] & \textbf{Phone} & [+91 98765 43210] \\
+\end{tabularx}\par\vspace{2pt}
+
+Landlord PAN is required for HRA claims when the yearly rent is more than Rs.\,1,00,000. Affix a revenue stamp if the rent is paid in cash and exceeds Rs.\,5,000.\par\vspace{4pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Tenant signature}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Revenue stamp}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Landlord signature}\par
+\end{document}

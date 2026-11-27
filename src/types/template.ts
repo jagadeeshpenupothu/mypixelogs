@@ -10,6 +10,8 @@ export type TemplateCategory =
   | "invoice"
   | "receipt"
   | "resume"
+  | "letter"
+  | "business"
   | "letterhead"
   | "certificate"
   | "flyer"

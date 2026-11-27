@@ -1,0 +1,26 @@
+{
+  "slug": "rent-receipt-template",
+  "title": "Rent Receipt Template",
+  "category": "receipt",
+  "accent": "1B2F5B",
+  "description": "Free monthly rent receipt template for India with tenant, landlord, rent period, payment mode, landlord PAN and a revenue stamp box, ready for HRA claims. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Landlord PAN and revenue stamp box for HRA claims", "Rent period, amount in words and payment mode", "One A4 page with tenant and landlord signature lines"],
+  "useCases": ["HRA tax exemption", "Monthly rent records", "Tenant and landlord proof of payment"],
+  "keywords": ["rent receipt format", "rent receipt for hra", "house rent receipt"],
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1bBVH3BlnXe1GrmQUw8lv6BJZH17Z_0J6E2BUaWdPrUY", "googleSheetsId": "1BKTqBkC6-80u4DQ2bYD6vITKRyPc40iHUb86dkNvlv0"},
+  "blocks": [
+    {"type": "title", "text": "RENT RECEIPT", "subtitle": "Receipt No. **[RR-001]**   |   Date: **[DD/MM/YYYY]**"},
+    {"type": "contact", "items": ["Property: [Flat / House No., Building, Street, City, State, PIN]"]},
+    {"type": "heading", "text": "RECEIVED FROM"},
+    {"type": "fields", "items": [["Tenant name", "[Full name]"], ["Phone", "[+91 98765 43210]"], ["Tenant PAN", "[ABCDE1234F] (optional)"], ["Email", "[name@email.com]"]]},
+    {"type": "heading", "text": "PAYMENT DETAILS"},
+    {"type": "table", "columns": [{"label": "Description", "width": 4}, {"label": "Rent period", "width": 3}, {"label": "Amount (₹)", "width": 2, "align": "right"}], "rows": [["Monthly house rent", "[01/MM/YYYY] to [30/MM/YYYY]", "[15,000.00]"], ["Maintenance charges (if any)", "[Same period]", "[0.00]"]], "totals": [["Total received", "[15,000.00]"]]},
+    {"type": "text", "text": "Amount in words: **[Rupees Fifteen Thousand Only]**"},
+    {"type": "fields", "items": [["Payment mode", "[UPI / Bank transfer / Cash / Cheque]"], ["Reference no.", "[Transaction or cheque no.]"]]},
+    {"type": "heading", "text": "LANDLORD DETAILS"},
+    {"type": "fields", "items": [["Landlord name", "[Full name]"], ["Landlord PAN", "[ABCDE1234F]"], ["Address", "[Landlord address]"], ["Phone", "[+91 98765 43210]"]]},
+    {"type": "text", "text": "Landlord PAN is required for HRA claims when the yearly rent is more than ₹1,00,000. Affix a revenue stamp if the rent is paid in cash and exceeds ₹5,000."},
+    {"type": "signature", "items": ["Tenant signature", "Revenue stamp", "Landlord signature"]}
+  ]
+}

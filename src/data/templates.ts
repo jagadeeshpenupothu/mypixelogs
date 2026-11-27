@@ -1,4 +1,5 @@
-import type { Template, TemplateCategory } from "@/types/template";
+import generated from "@/data/generated-templates.json";
+import type { Template, TemplateCategory, TemplatePlatforms } from "@/types/template";
 
 const previewPath = (slug: string) => `/previews/${slug}.svg`;
 const downloadPath = (slug: string) => `/downloads/${slug}.pdf`;
@@ -220,4 +221,23 @@ export const allTemplates: Template[] = [
 ];
 
 /** Unfinished templates stay in allTemplates and are hidden until they are ready. */
-export const templates: Template[] = allTemplates.filter((template) => template.ready);
+/** Templates made by the daily automation (automation/specs → scripts/templates/build.mjs). */
+type GeneratedTemplate = {
+  id: string; title: string; slug: string; description: string; category: TemplateCategory;
+  features: string[]; useCases: string[]; formats: string[]; platforms: TemplatePlatforms;
+};
+
+const generatedTemplates: Template[] = (generated as GeneratedTemplate[]).map((item) => ({
+  ...item,
+  thumbnail: `/previews/${item.slug}.png`,
+  previewImage: `/previews/${item.slug}.png`,
+  downloadPath: `/downloads/${item.slug}.docx`,
+  downloads: 0,
+  ready: true,
+}));
+
+// A generated template replaces the placeholder with the same address, so old links keep working.
+const generatedSlugs = new Set(generatedTemplates.map((template) => template.slug));
+const merged = [...allTemplates.filter((template) => !generatedSlugs.has(template.slug)), ...generatedTemplates];
+
+export const templates: Template[] = merged.filter((template) => template.ready);

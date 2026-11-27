@@ -1,0 +1,363 @@
+[
+  {
+    "slug": "rent-receipt-template",
+    "title": "Rent Receipt Template",
+    "category": "receipt",
+    "keyword": "rent receipt format",
+    "score": 95,
+    "notes": "HRA: landlord PAN, revenue stamp, rent period",
+    "status": "done",
+    "date": "2026-11-27"
+  },
+  {
+    "slug": "salary-slip-template",
+    "title": "Salary Slip Template",
+    "category": "business",
+    "keyword": "salary slip format",
+    "score": 94,
+    "notes": "Earnings (basic, HRA, allowances) vs deductions (PF, ESI, PT, TDS) table, net pay in words, employee/bank/PAN/UAN fields",
+    "status": "pending"
+  },
+  {
+    "slug": "leave-application-template",
+    "title": "Leave Application Template",
+    "category": "letter",
+    "keyword": "leave application format",
+    "score": 93,
+    "notes": "To/From, date, subject, body with dates of leave and reason, contact during leave, signature",
+    "status": "pending"
+  },
+  {
+    "slug": "resignation-letter-template",
+    "title": "Resignation Letter Template",
+    "category": "letter",
+    "keyword": "resignation letter format",
+    "score": 92,
+    "notes": "Last working day, notice period, handover offer, thanks, signature",
+    "status": "pending"
+  },
+  {
+    "slug": "experience-certificate-template",
+    "title": "Experience Certificate Template",
+    "category": "letter",
+    "keyword": "experience certificate format",
+    "score": 90,
+    "notes": "Issued by employer on letterhead: employee name, designation, dates, conduct line, HR signature and seal",
+    "status": "pending"
+  },
+  {
+    "slug": "offer-letter-template",
+    "title": "Offer Letter Template",
+    "category": "letter",
+    "keyword": "offer letter format",
+    "score": 89,
+    "notes": "Position, CTC table summary, joining date, location, acceptance section",
+    "status": "pending"
+  },
+  {
+    "slug": "quotation-template",
+    "title": "Quotation Template",
+    "category": "business",
+    "keyword": "quotation format",
+    "score": 88,
+    "notes": "Quote no, validity, items table with qty/rate/GST/amount, terms, signature",
+    "status": "pending"
+  },
+  {
+    "slug": "software-engineer-resume-template",
+    "title": "Software Engineer Resume Template",
+    "category": "resume",
+    "keyword": "software engineer resume",
+    "score": 87,
+    "notes": "Skills (languages, frameworks, tools), projects with tech + impact, GitHub, experience",
+    "status": "pending"
+  },
+  {
+    "slug": "relieving-letter-template",
+    "title": "Relieving Letter Template",
+    "category": "letter",
+    "keyword": "relieving letter format",
+    "score": 86,
+    "notes": "Resignation accepted, last working day, dues settled, good wishes, HR signature",
+    "status": "pending"
+  },
+  {
+    "slug": "proforma-invoice-template",
+    "title": "Proforma Invoice Template",
+    "category": "invoice",
+    "keyword": "proforma invoice format",
+    "score": 85,
+    "notes": "Proforma no, validity, buyer, items with HSN, GST, total, bank details, 'not a tax invoice' note",
+    "status": "pending"
+  },
+  {
+    "slug": "cover-letter-template",
+    "title": "Cover Letter Template",
+    "category": "letter",
+    "keyword": "cover letter for job",
+    "score": 85,
+    "notes": "Contact header, hiring manager, 3 short paragraphs, sign-off",
+    "status": "pending"
+  },
+  {
+    "slug": "internship-certificate-template",
+    "title": "Internship Certificate Template",
+    "category": "certificate",
+    "keyword": "internship certificate format",
+    "score": 84,
+    "notes": "Intern name, college, duration, project/department, performance line, signatures",
+    "status": "pending"
+  },
+  {
+    "slug": "noc-letter-template",
+    "title": "NOC Letter Template",
+    "category": "letter",
+    "keyword": "noc letter format",
+    "score": 83,
+    "notes": "No objection certificate from employer/landlord: purpose, details, validity, signature",
+    "status": "pending"
+  },
+  {
+    "slug": "appointment-letter-template",
+    "title": "Appointment Letter Template",
+    "category": "letter",
+    "keyword": "appointment letter format",
+    "score": 82,
+    "notes": "Designation, CTC, probation, working hours, terms list, acceptance",
+    "status": "pending"
+  },
+  {
+    "slug": "delivery-challan-template",
+    "title": "Delivery Challan Template",
+    "category": "business",
+    "keyword": "delivery challan format",
+    "score": 81,
+    "notes": "Challan no, consignor/consignee with GSTIN, items with qty/HSN, purpose (job work/supply on approval), signatures",
+    "status": "pending"
+  },
+  {
+    "slug": "purchase-order-template",
+    "title": "Purchase Order Template",
+    "category": "business",
+    "keyword": "purchase order format",
+    "score": 80,
+    "notes": "PO no, vendor, ship-to, items table, taxes, delivery date, terms, authorised signatory",
+    "status": "pending"
+  },
+  {
+    "slug": "teacher-resume-template",
+    "title": "Teacher Resume Template",
+    "category": "resume",
+    "keyword": "teacher resume format",
+    "score": 80,
+    "notes": "B.Ed/qualifications, subjects, classes taught, teaching experience, certifications (CTET/TET)",
+    "status": "pending"
+  },
+  {
+    "slug": "cash-receipt-template",
+    "title": "Cash Receipt Template",
+    "category": "receipt",
+    "keyword": "cash receipt format",
+    "score": 79,
+    "notes": "Receipt no, received from, amount in figures/words, purpose, revenue stamp above Rs 5000",
+    "status": "pending"
+  },
+  {
+    "slug": "bonafide-certificate-template",
+    "title": "Bonafide Certificate Template",
+    "category": "certificate",
+    "keyword": "bonafide certificate format",
+    "score": 78,
+    "notes": "Issued by school/college: student, class/course, roll no, academic year, purpose, principal signature",
+    "status": "pending"
+  },
+  {
+    "slug": "authority-letter-template",
+    "title": "Authority Letter Template",
+    "category": "letter",
+    "keyword": "authorization letter format",
+    "score": 77,
+    "notes": "Authorise a person to collect/act; ID details of both; validity; signatures",
+    "status": "pending"
+  },
+  {
+    "slug": "internship-resume-template",
+    "title": "Internship Resume Template",
+    "category": "resume",
+    "keyword": "resume for internship",
+    "score": 77,
+    "notes": "Education first, skills, projects, coursework, achievements",
+    "status": "pending"
+  },
+  {
+    "slug": "payment-receipt-template",
+    "title": "Payment Receipt Template",
+    "category": "receipt",
+    "keyword": "payment receipt format",
+    "score": 76,
+    "notes": "Receipt no, payer, mode, reference, items/amount, balance due",
+    "status": "pending"
+  },
+  {
+    "slug": "accountant-resume-template",
+    "title": "Accountant Resume Template",
+    "category": "resume",
+    "keyword": "accountant resume",
+    "score": 75,
+    "notes": "Tally/GST/TDS skills, reconciliation, experience with numbers",
+    "status": "pending"
+  },
+  {
+    "slug": "increment-letter-template",
+    "title": "Salary Increment Letter Template",
+    "category": "letter",
+    "keyword": "increment letter format",
+    "score": 74,
+    "notes": "Revised CTC table old vs new, effective date, appreciation",
+    "status": "pending"
+  },
+  {
+    "slug": "sales-invoice-template",
+    "title": "Sales Invoice Template",
+    "category": "invoice",
+    "keyword": "sales invoice format",
+    "score": 74,
+    "notes": "Seller/buyer GSTIN, invoice details, items with HSN, CGST/SGST/IGST, total in words",
+    "status": "pending"
+  },
+  {
+    "slug": "complaint-letter-template",
+    "title": "Complaint Letter Template",
+    "category": "letter",
+    "keyword": "complaint letter format",
+    "score": 72,
+    "notes": "To authority, subject, issue, dates, request for action, enclosures",
+    "status": "pending"
+  },
+  {
+    "slug": "school-fee-receipt-template",
+    "title": "School Fee Receipt Template",
+    "category": "receipt",
+    "keyword": "school fee receipt format",
+    "score": 72,
+    "notes": "Student, class, term, fee heads table (tuition, transport, exam), total, mode",
+    "status": "pending"
+  },
+  {
+    "slug": "service-invoice-template",
+    "title": "Service Invoice Template",
+    "category": "invoice",
+    "keyword": "service invoice format",
+    "score": 71,
+    "notes": "SAC codes, service period, GST, bank/UPI",
+    "status": "pending"
+  },
+  {
+    "slug": "joining-letter-template",
+    "title": "Joining Letter Template",
+    "category": "letter",
+    "keyword": "joining letter format",
+    "score": 70,
+    "notes": "Employee confirms joining: date, designation, reporting manager",
+    "status": "pending"
+  },
+  {
+    "slug": "bill-of-supply-template",
+    "title": "Bill of Supply Template",
+    "category": "invoice",
+    "keyword": "bill of supply format",
+    "score": 69,
+    "notes": "For composition/exempt sellers: no GST charged, 'composition taxable person' declaration",
+    "status": "pending"
+  },
+  {
+    "slug": "participation-certificate-template",
+    "title": "Participation Certificate Template",
+    "category": "certificate",
+    "keyword": "participation certificate",
+    "score": 68,
+    "notes": "Event name, date, participant, organiser signatures",
+    "status": "pending"
+  },
+  {
+    "slug": "data-analyst-resume-template",
+    "title": "Data Analyst Resume Template",
+    "category": "resume",
+    "keyword": "data analyst resume",
+    "score": 68,
+    "notes": "SQL, Excel, Python, Power BI/Tableau, dashboards with impact",
+    "status": "pending"
+  },
+  {
+    "slug": "travel-expense-report-template",
+    "title": "Travel Expense Report Template",
+    "category": "business",
+    "keyword": "expense report format",
+    "score": 66,
+    "notes": "Employee, trip, expense table with date/category/amount, advance, balance, approvals",
+    "status": "pending"
+  },
+  {
+    "slug": "work-from-home-request-template",
+    "title": "Work From Home Request Letter Template",
+    "category": "letter",
+    "keyword": "work from home application",
+    "score": 65,
+    "notes": "Reason, dates, availability, deliverables",
+    "status": "pending"
+  },
+  {
+    "slug": "character-certificate-template",
+    "title": "Character Certificate Template",
+    "category": "certificate",
+    "keyword": "character certificate format",
+    "score": 64,
+    "notes": "Issued by school/college/gazetted officer: known since, conduct statement, signature, seal",
+    "status": "pending"
+  },
+  {
+    "slug": "meeting-minutes-template",
+    "title": "Meeting Minutes Template",
+    "category": "business",
+    "keyword": "minutes of meeting format",
+    "score": 63,
+    "notes": "Date, attendees, agenda, discussion, decisions, action items table with owner/due",
+    "status": "pending"
+  },
+  {
+    "slug": "mba-resume-template",
+    "title": "MBA Resume Template",
+    "category": "resume",
+    "keyword": "mba fresher resume",
+    "score": 62,
+    "notes": "Summer internship, live projects, case competitions, positions of responsibility",
+    "status": "pending"
+  },
+  {
+    "slug": "donation-receipt-template",
+    "title": "Donation Receipt Template",
+    "category": "receipt",
+    "keyword": "donation receipt 80g",
+    "score": 61,
+    "notes": "NGO details, 80G registration no, donor PAN, amount, mode, purpose",
+    "status": "pending"
+  },
+  {
+    "slug": "training-certificate-template",
+    "title": "Training Certificate Template",
+    "category": "certificate",
+    "keyword": "training certificate format",
+    "score": 60,
+    "notes": "Course, hours, dates, trainer, organisation",
+    "status": "pending"
+  },
+  {
+    "slug": "employee-warning-letter-template",
+    "title": "Employee Warning Letter Template",
+    "category": "letter",
+    "keyword": "warning letter format",
+    "score": 58,
+    "notes": "Issue, dates, expected improvement, consequences, acknowledgement",
+    "status": "pending"
+  }
+]

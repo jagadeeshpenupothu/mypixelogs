@@ -1,0 +1,35 @@
+[
+  {
+    "id": "rent-receipt",
+    "title": "Rent Receipt Template",
+    "slug": "rent-receipt-template",
+    "description": "Free monthly rent receipt template for India with tenant, landlord, rent period, payment mode, landlord PAN and a revenue stamp box, ready for HRA claims. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "receipt",
+    "features": [
+      "Landlord PAN and revenue stamp box for HRA claims",
+      "Rent period, amount in words and payment mode",
+      "One A4 page with tenant and landlord signature lines"
+    ],
+    "useCases": [
+      "HRA tax exemption",
+      "Monthly rent records",
+      "Tenant and landlord proof of payment"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1bBVH3BlnXe1GrmQUw8lv6BJZH17Z_0J6E2BUaWdPrUY",
+      "googleSheetsId": "1BKTqBkC6-80u4DQ2bYD6vITKRyPc40iHUb86dkNvlv0",
+      "excelPath": "/downloads/rent-receipt-template.xlsx",
+      "latexPath": "/downloads/rent-receipt-template.tex",
+      "pdfPath": "/downloads/rent-receipt-template.pdf"
+    },
+    "published": "2026-11-27"
+  }
+]
