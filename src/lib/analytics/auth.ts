@@ -1,9 +1,8 @@
 import "server-only";
 
-import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
+import { createHmac, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 
-import { analyticsStore } from "@/lib/analytics/store";
 
 export const ADMIN_COOKIE = "mp_admin";
 const DAYS = 30;
@@ -29,16 +28,8 @@ export function passwordMatches(given: string) {
   return timingSafeEqual(a, b);
 }
 
-/** A random signing key made on first use and kept in the site's private storage. */
-async function secret() {
-  const store = await analyticsStore();
-  let s = (await store.get("auth/secret.json")) as { key?: string } | null;
-  if (!s?.key) {
-    s = { key: randomBytes(32).toString("hex") };
-    await store.set("auth/secret.json", s);
-  }
-  return s.key!;
-}
+/** The signing key comes from the server-only settings, so signing in never waits on storage. */
+const secret = async () => createHmac("sha256", "mypixelogs-admin-session").update(`${adminPassword()}|${adminEmail()}|${process.env.GOOGLE_CLIENT_ID ?? ""}`).digest("hex");
 
 const sign = async (payload: string) => createHmac("sha256", await secret()).update(payload).digest("hex");
 

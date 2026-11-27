@@ -37,19 +37,32 @@ const localStore: Store = {
 
 let cached: Store | null = null;
 
+/** Never let a slow storage call hang a page: give up after 8 seconds and use the fallback. */
+function limit<T>(work: Promise<T>, fallback: T, what: string): Promise<T> {
+  return Promise.race([
+    work,
+    new Promise<T>((resolve) =>
+      setTimeout(() => {
+        console.error(`[analytics] storage timed out: ${what}`);
+        resolve(fallback);
+      }, 8000),
+    ),
+  ]);
+}
+
 export async function analyticsStore(): Promise<Store> {
   if (cached) return cached;
   try {
     const { getStore } = await import("@netlify/blobs");
-    const blobs = getStore({ name: "analytics", consistency: "strong" });
+    const blobs = getStore({ name: "analytics" });
     // Throws outside Netlify, where no Blobs context exists.
-    await blobs.list({ prefix: "ping/" });
+    await limit(blobs.list({ prefix: "ping/" }), null, "probe");
     cached = {
-      get: (key) => blobs.get(key, { type: "json" }),
+      get: (key) => limit(blobs.get(key, { type: "json" }), null, `get ${key}`),
       set: async (key, value) => {
-        await blobs.setJSON(key, value);
+        await limit(blobs.setJSON(key, value), undefined, `set ${key}`);
       },
-      list: async (prefix) => (await blobs.list({ prefix })).blobs.map((b) => b.key),
+      list: async (prefix) => limit(blobs.list({ prefix }).then((r) => r.blobs.map((b) => b.key)), [] as string[], `list ${prefix}`),
     };
   } catch {
     cached = localStore;
