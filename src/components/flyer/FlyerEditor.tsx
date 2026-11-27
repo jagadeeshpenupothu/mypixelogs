@@ -4,24 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { Download, FileDown, ImagePlus, RotateCcw, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { FLYER_DEFAULTS, FLYER_THEMES, flyerSvg, type FlyerFields } from "@/lib/flyers/grand-opening";
+import { FLYER_DESIGNS } from "@/lib/flyers/registry";
 
-type ThemeKey = keyof typeof FLYER_THEMES;
-
-const FONT_FILES: Record<string, string> = {
-  "Inter|500|normal": "Inter-Medium.woff2",
-  "Inter|600|normal": "Inter-SemiBold.woff2",
-  "Inter|700|normal": "Inter-Bold.woff2",
-  "Inter|900|normal": "Inter-Black.woff2",
-  "Playfair Display|700|italic": "PlayfairDisplay-BoldItalic.woff2",
-};
-
-const SECTIONS: { title: string; fields: [keyof FlyerFields, string][]; row?: boolean }[] = [
-  { title: "Headline", fields: [["kicker", "Small line above"], ["h1", "Headline (script)"], ["h2", "Headline (bold)"], ["business", "Business name"]] },
-  { title: "Offer badge", row: true, fields: [["offerTop", "Top"], ["offerBig", "Offer"], ["offerBottom", "Bottom"]] },
-  { title: "Details", fields: [["date", "Date"], ["time", "Time"], ["place", "Venue"]] },
-  { title: "Footer", fields: [["footer1", "Line 1"], ["footer2", "Line 2"]] },
-];
 
 const inputClass =
   "h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70";
@@ -43,25 +27,30 @@ function save(blob: Blob, name: string) {
 }
 
 /** Fill in the flyer, pick colours, add a photo, and download a print-ready PNG or PDF. Everything stays in the browser. */
-export function FlyerEditor({ title }: { title: string }) {
-  const [fields, setFields] = useState<FlyerFields>({ ...FLYER_DEFAULTS });
-  const [theme, setTheme] = useState<ThemeKey>("teal");
+export function FlyerEditor({ title, design = "grand-opening" }: { title: string; design?: string }) {
+  const d = FLYER_DESIGNS[design] ?? FLYER_DESIGNS["grand-opening"];
+  const [fields, setFields] = useState<Record<string, string>>({ ...d.defaults });
+  const [theme, setTheme] = useState<string>(Object.keys(d.themes)[0]);
   const [photo, setPhoto] = useState<string | null>(null);
   const [fonts, setFonts] = useState<Record<string, string> | null>(null);
   const [busy, setBusy] = useState<"" | "png" | "pdf">("");
+  const [bg, setBg] = useState<string | null>(null);
 
   // Fonts are embedded in the drawing so downloads look exactly like the preview.
   useEffect(() => {
     let live = true;
     Promise.all(
-      Object.entries(FONT_FILES).map(async ([key, file]) => [key, await toDataUrl(await (await fetch(`/fonts/flyer/${file}`)).blob())] as const),
+      d.fonts.map(async ([key, file]) => [key, await toDataUrl(await (await fetch(`/fonts/flyer/${file}`)).blob())] as const),
     ).then((entries) => live && setFonts(Object.fromEntries(entries)));
+    // A background photo is embedded too, so the downloaded PNG/PDF includes it.
+    if (d.bg) void fetch(d.bg).then(async (r) => live && setBg(await toDataUrl(await r.blob())));
     return () => {
       live = false;
     };
-  }, []);
+  }, [d.bg, d.fonts]);
 
-  const svg = useMemo(() => flyerSvg(fields, FLYER_THEMES[theme], { fonts: fonts ?? undefined, photo }), [fields, theme, fonts, photo]);
+  const svg = useMemo(() => d.svg(fields, d.themes[theme], { fonts: fonts ?? undefined, photo, bg: bg ?? d.bg }), [d, fields, theme, fonts, photo, bg]);
+  const ready = Boolean(fonts) && (!d.bg || Boolean(bg));
 
   const render = () =>
     new Promise<HTMLCanvasElement>((resolve, reject) => {
@@ -102,7 +91,7 @@ export function FlyerEditor({ title }: { title: string }) {
     }
   };
 
-  const set = (key: keyof FlyerFields, value: string) => setFields((f) => ({ ...f, [key]: value }));
+  const set = (key: string, value: string) => setFields((f) => ({ ...f, [key]: value }));
 
   return (
     <div>
@@ -114,8 +103,9 @@ export function FlyerEditor({ title }: { title: string }) {
           <div>
             <p className="text-sm font-semibold text-foreground">Colours</p>
             <div className="mt-2 flex flex-wrap gap-2">
-              {(Object.keys(FLYER_THEMES) as ThemeKey[]).map((key) => {
-                const t = FLYER_THEMES[key];
+              {Object.keys(d.themes).map((key) => {
+                const t = d.themes[key];
+                const [c1, c2] = d.swatch(t);
                 return (
                   <button
                     key={key}
@@ -125,8 +115,8 @@ export function FlyerEditor({ title }: { title: string }) {
                     className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm ${theme === key ? "border-primary ring-2 ring-primary/30" : "border-border"}`}
                   >
                     <span className="flex">
-                      <span className="h-4 w-4 rounded-full" style={{ background: t.main }} />
-                      <span className="-ml-1.5 h-4 w-4 rounded-full ring-2 ring-card" style={{ background: t.accent }} />
+                      <span className="h-4 w-4 rounded-full" style={{ background: c1 }} />
+                      <span className="-ml-1.5 h-4 w-4 rounded-full ring-2 ring-card" style={{ background: c2 }} />
                     </span>
                     {t.name}
                   </button>
@@ -136,7 +126,7 @@ export function FlyerEditor({ title }: { title: string }) {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-foreground">Photo</p>
+            <p className="text-sm font-semibold text-foreground">{d.photoLabel}</p>
             <div className="mt-2 flex gap-2">
               <label className="flex h-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-border text-sm font-medium hover:border-primary">
                 <ImagePlus className="h-4 w-4" aria-hidden="true" />
@@ -160,7 +150,7 @@ export function FlyerEditor({ title }: { title: string }) {
             </div>
           </div>
 
-          {SECTIONS.map((section) => (
+          {d.sections.map((section) => (
             <fieldset key={section.title}>
               <legend className="text-sm font-semibold text-foreground">{section.title}</legend>
               <div className={section.row ? "mt-2 grid grid-cols-3 gap-2" : "mt-2 grid gap-2"}>
@@ -174,7 +164,7 @@ export function FlyerEditor({ title }: { title: string }) {
             </fieldset>
           ))}
 
-          <button type="button" onClick={() => setFields({ ...FLYER_DEFAULTS })} className="flex items-center gap-1.5 justify-self-start text-sm font-medium text-muted-foreground hover:text-foreground">
+          <button type="button" onClick={() => setFields({ ...d.defaults })} className="flex items-center gap-1.5 justify-self-start text-sm font-medium text-muted-foreground hover:text-foreground">
             <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
             Reset text
           </button>
@@ -183,11 +173,11 @@ export function FlyerEditor({ title }: { title: string }) {
         <div className="order-first lg:order-none lg:sticky lg:top-20">
           <div className="mx-auto max-w-[620px] overflow-hidden rounded-md shadow-lg ring-1 ring-border [&_svg]:block [&_svg]:h-auto [&_svg]:w-full" dangerouslySetInnerHTML={{ __html: svg }} />
           <div className="mx-auto mt-4 flex max-w-[620px] flex-wrap gap-3">
-            <Button size="lg" className="flex-1" onClick={downloadPng} disabled={!fonts || busy !== ""}>
+            <Button size="lg" className="flex-1" onClick={downloadPng} disabled={!ready || busy !== ""}>
               <Download className="h-4 w-4" />
               {busy === "png" ? "Preparing…" : "Download PNG"}
             </Button>
-            <Button size="lg" variant="outline" className="flex-1" onClick={downloadPdf} disabled={!fonts || busy !== ""}>
+            <Button size="lg" variant="outline" className="flex-1" onClick={downloadPdf} disabled={!ready || busy !== ""}>
               <FileDown className="h-4 w-4" />
               {busy === "pdf" ? "Preparing…" : "Download PDF"}
             </Button>

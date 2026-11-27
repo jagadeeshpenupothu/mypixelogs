@@ -34,6 +34,8 @@ export type Template = {
   googleDocId?: string;
   /** Online editor for this template, if it has one. */
   editor?: "gst" | "freelancer" | "wedding-video" | "resume" | "flyer";
+  /** Which flyer design the online editor opens (see src/lib/flyers/registry.ts). */
+  flyerDesign?: string;
   /** A short silent clip of a video template. */
   previewVideo?: string;
   /** Date added to the site (YYYY-MM-DD), when known. */

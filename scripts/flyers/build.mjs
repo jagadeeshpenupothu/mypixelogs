@@ -17,8 +17,11 @@ const { writePsdBuffer } = require("ag-psd");
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const name = process.argv[2];
 if (!name) { console.error("Usage: node scripts/flyers/build.mjs <design-name>"); process.exit(2); }
-const { flyerSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS, FLYER_FONTS } = await import(path.join(root, `src/lib/flyers/${name}.ts`));
+const { flyerSvg: designSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS, FLYER_FONTS, FLYER_BG } = await import(path.join(root, `src/lib/flyers/${name}.ts`));
 const slug = `${name}-flyer`;
+// Designs with a photo background get it embedded, so every export (PSD, PDF, PNG) contains it.
+const BG = FLYER_BG ? `data:image/jpeg;base64,${readFileSync(path.join(root, "public", FLYER_BG)).toString("base64")}` : undefined;
+const flyerSvg = (fields, t, opts = {}) => designSvg(fields, t, { ...(BG ? { bg: BG } : {}), ...opts });
 const theme = Object.values(FLYER_THEMES)[0];
 const fontDir = path.join(root, "public/fonts/flyer");
 const font = (f) => "data:font/woff2;base64," + readFileSync(path.join(fontDir, f)).toString("base64");
