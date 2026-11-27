@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function AiHubPage() {
   return (
     <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },

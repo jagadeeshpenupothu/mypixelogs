@@ -15,7 +15,7 @@ export function PageFooter() {
   if (isLibraryPage) return null;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-10 2xl:px-14">
       <Footer />
     </div>
   );

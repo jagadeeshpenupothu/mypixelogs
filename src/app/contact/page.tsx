@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="py-8 sm:py-14">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="mx-auto grid max-w-site gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
             Get in touch with MyPixelogs.

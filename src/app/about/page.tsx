@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="py-8 sm:py-14">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-10 2xl:px-14">
         <h1 className="text-3xl font-bold text-foreground sm:text-4xl">About MyPixelogs</h1>
         <div className="mt-5 space-y-4 text-base leading-7 text-muted-foreground">
           <p>

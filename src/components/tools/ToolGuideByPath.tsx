@@ -52,7 +52,7 @@ export function ToolGuideByPath() {
   ];
 
   return (
-    <section aria-labelledby="guide-title" className="mx-auto mt-14 grid max-w-7xl gap-8 lg:grid-cols-2">
+    <section aria-labelledby="guide-title" className="mx-auto mt-14 grid max-w-site gap-8 lg:grid-cols-2">
       <div>
         <h2 id="guide-title" className="text-xl font-bold text-foreground sm:text-2xl">
           How to {guide.task}

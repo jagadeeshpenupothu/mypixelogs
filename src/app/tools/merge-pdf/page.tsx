@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function MergePdfPage() {
   return (
     <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <div className="max-w-3xl">
           <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">Merge PDF files into one</h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">

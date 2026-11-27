@@ -22,7 +22,7 @@ export function ToolTrail() {
   const category = toolCategories.find((item) => item.name === tool.category);
 
   return (
-    <div className="mx-auto mb-4 max-w-7xl">
+    <div className="mx-auto mb-4 max-w-site">
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },

@@ -29,7 +29,7 @@ export function RelatedToolsByPath() {
   }
 
   return (
-    <section aria-labelledby="related-title" className="mx-auto max-w-7xl pt-14">
+    <section aria-labelledby="related-title" className="mx-auto max-w-site pt-14">
       <h2 id="related-title" className="text-xl font-bold text-foreground sm:text-2xl">Related tools</h2>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {relatedTools.map((tool) => (

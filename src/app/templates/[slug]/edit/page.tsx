@@ -40,7 +40,7 @@ export default async function EditTemplatePage({ params }: PageProps) {
 
   return (
     <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Templates", href: "/templates" }, { label: template.title, href: `/templates/${slug}` }, { label: "Edit online" }]} />
         <div className="mt-6">
           {template.editor === "wedding-video" ? (

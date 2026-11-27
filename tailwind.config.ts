@@ -10,6 +10,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // One page width for the whole site: wide screens use the space, with comfortable margins.
+      maxWidth: { site: "1600px" },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
