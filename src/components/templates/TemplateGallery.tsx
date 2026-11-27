@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Pencil, Play, Search, Sheet, SlidersHorizontal, X } from "lucide-react";
+import { FileText, Pencil, Play, Search, Sheet, X } from "lucide-react";
 
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { matchScore, searchWords } from "@/lib/plain-search";
@@ -45,12 +45,7 @@ type Sort = "newest" | "oldest" | "az";
 type Added = "any" | "7" | "30";
 
 const selectClass =
-  "h-10 rounded-lg border border-border bg-card px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70";
-const chipClass = (on: boolean) =>
-  cn(
-    "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70",
-    on ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-foreground hover:border-primary/60",
-  );
+  "h-9 shrink-0 rounded-full border border-border bg-card px-3 text-sm text-foreground hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70";
 
 function daysSince(date: string, today: number) {
   if (!date) return Infinity;
@@ -121,95 +116,68 @@ export function TemplateGallery({
     setFormats(initialFormats);
     setAdded("any");
   };
-  const toggleFormat = (key: FormatKey) =>
-    setFormats((current) => (current.includes(key) ? current.filter((f) => f !== key) : [...current, key]));
 
   return (
     <section className="pb-2">
-      <Breadcrumbs items={breadcrumbs} />
-      <div className="mt-4 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h1>
-          <p className="mt-2 max-w-2xl text-base leading-7 text-muted-foreground">{intro}</p>
-        </div>
-      </div>
+      {/* The heading stays for search engines and screen readers; the page itself starts with one slim toolbar. */}
+      <h1 className="sr-only">{title}</h1>
+      <p className="sr-only">{intro}</p>
 
-      {/* Filters */}
-      <div className="mt-6 grid gap-3 rounded-xl border border-border bg-card/60 p-3 sm:p-4">
-        <div className="flex flex-wrap items-center gap-2">
-          <label className="relative min-w-0 flex-1 basis-64">
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+        <Breadcrumbs items={breadcrumbs} />
+        <div className="flex w-full items-center gap-2 overflow-x-auto pb-1 sm:w-auto sm:overflow-visible sm:pb-0" role="group" aria-label="Filter templates">
+          <label className="relative w-44 shrink-0 sm:w-52">
             <span className="sr-only">Search templates</span>
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+            <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by name, like invoice, resume or GST"
-              className="h-10 w-full rounded-lg border border-border bg-card pl-9 pr-9 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
+              placeholder="Search"
+              className={cn(selectClass, "w-full pl-8 pr-7")}
             />
             {query ? (
-              <button type="button" onClick={() => setQuery("")} aria-label="Clear search" className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-muted-foreground hover:text-foreground">
-                <X className="h-4 w-4" />
+              <button type="button" onClick={() => setQuery("")} aria-label="Clear search" className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded p-0.5 text-muted-foreground hover:text-foreground">
+                <X className="h-3.5 w-3.5" />
               </button>
             ) : null}
           </label>
-          <div className="flex w-full gap-2 sm:w-auto">
-          <label className="flex min-w-0 flex-1 items-center gap-2 text-sm text-muted-foreground sm:flex-none">
-            
-            <select aria-label="Added" className={cn(selectClass, "w-full sm:w-auto")} value={added} onChange={(e) => setAdded(e.target.value as Added)}>
-              <option value="any">Added: any time</option>
-              <option value="7">Added: last 7 days</option>
-              <option value="30">Added: last 30 days</option>
-            </select>
-          </label>
-          <label className="flex min-w-0 flex-1 items-center gap-2 text-sm text-muted-foreground sm:flex-none">
-            <span className="sr-only sm:not-sr-only">Sort</span>
-            <select aria-label="Sort" className={cn(selectClass, "w-full sm:w-auto")} value={sort} onChange={(e) => setSort(e.target.value as Sort)}>
-              <option value="newest">Newest first</option>
-              <option value="oldest">Oldest first</option>
-              <option value="az">Name A–Z</option>
-            </select>
-          </label>
-          </div>
-        </div>
-
-        <div className="flex gap-2 overflow-x-auto pb-1" role="group" aria-label="Category">
-          <button type="button" className={chipClass(category === "all")} aria-pressed={category === "all"} onClick={() => setCategory("all")}>
-            All <span className="opacity-70">{items.length}</span>
-          </button>
-          {categories.map(([slug, { label, count }]) => (
-            <button key={slug} type="button" className={chipClass(category === slug)} aria-pressed={category === slug} onClick={() => setCategory(slug)}>
-              {label} <span className="opacity-70">{count}</span>
+          <select aria-label="Category" className={selectClass} value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="all">All types ({items.length})</option>
+            {categories.map(([slug, { label, count }]) => (
+              <option key={slug} value={slug}>{label} ({count})</option>
+            ))}
+          </select>
+          <select aria-label="Opens in" className={selectClass} value={formats[0] ?? ""} onChange={(e) => setFormats(e.target.value ? [e.target.value as FormatKey] : [])}>
+            <option value="">Any app</option>
+            {availableFormats.map(({ key, label }) => (
+              <option key={key} value={key}>{label}</option>
+            ))}
+          </select>
+          <select aria-label="Added" className={selectClass} value={added} onChange={(e) => setAdded(e.target.value as Added)}>
+            <option value="any">Any time</option>
+            <option value="7">Last 7 days</option>
+            <option value="30">Last 30 days</option>
+          </select>
+          <select aria-label="Sort" className={selectClass} value={sort} onChange={(e) => setSort(e.target.value as Sort)}>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="az">A–Z</option>
+          </select>
+          {filtered ? (
+            <button type="button" onClick={clear} className="shrink-0 px-1 text-sm font-semibold text-primary hover:underline">
+              Clear
             </button>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible" role="group" aria-label="Opens in">
-          <span className="inline-flex shrink-0 items-center gap-1.5 text-sm text-muted-foreground">
-            <SlidersHorizontal className="h-4 w-4" aria-hidden="true" /> Opens in
-          </span>
-          {availableFormats.map(({ key, label }) => (
-            <button key={key} type="button" className={chipClass(formats.includes(key))} aria-pressed={formats.includes(key)} onClick={() => toggleFormat(key)}>
-              <FormatIcon format={key} /> {label}
-            </button>
-          ))}
+          ) : null}
         </div>
       </div>
-
-      <div className="mt-4 flex items-center justify-between gap-3 text-sm text-muted-foreground">
-        <p role="status">
-          {shown.length} of {items.length} templates
-        </p>
-        {filtered ? (
-          <button type="button" onClick={clear} className="font-semibold text-primary hover:underline">
-            Clear filters
-          </button>
-        ) : null}
-      </div>
+      <p role="status" className="sr-only">
+        {shown.length} of {items.length} templates
+      </p>
 
       {/* Card grid: as many columns as fit (two on phones), up to six, filled left to right so sorting reads naturally. */}
       {shown.length ? (
-        <div className="mt-4 grid items-start gap-x-3 gap-y-6 [grid-template-columns:repeat(auto-fill,minmax(max(150px,calc((100%-5*0.75rem)/6)),1fr))] sm:gap-x-5 sm:gap-y-8 sm:[grid-template-columns:repeat(auto-fill,minmax(max(230px,calc((100%-5*1rem)/6)),1fr))]">
+        <div className="mt-5 grid items-start gap-x-3 gap-y-6 [grid-template-columns:repeat(auto-fill,minmax(max(150px,calc((100%-5*0.75rem)/6)),1fr))] sm:gap-x-5 sm:gap-y-8 sm:[grid-template-columns:repeat(auto-fill,minmax(max(230px,calc((100%-5*1rem)/6)),1fr))]">
           {shown.map((item) => {
             const isNew = today !== null && daysSince(item.published, today) <= 7;
             return (
