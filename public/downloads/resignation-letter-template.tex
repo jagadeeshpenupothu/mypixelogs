@@ -1,0 +1,51 @@
+% Resignation Letter Template - MyPixelogs (https://mypixelogs.netlify.app/templates/resignation-letter-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1B2F5B}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}X>{\raggedleft\arraybackslash}p{0.42\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}\begin{tabular}[t]{@{}l@{}}{\color{accent}\fontsize{14}{17}\selectfont\bfseries [Priya Nair]}\\ {\footnotesize [Flat 12B, Lake View Apartments, Koramangala, Bengaluru, Karnataka 560034]}\\ {\footnotesize [+91 98450 67890]  \textbar{}  [priya.nair@email.com]}\\ {\footnotesize Employee ID: [ACS-2047]  \textbar{}  [Senior Business Analyst, Finance Systems]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{accent}\fontsize{22}{26}\selectfont\bfseries RESIGNATION LETTER}\\[3pt] {\footnotesize Date~\textbf{[27/11/2026]}}\\ {\footnotesize Ref.~\textbf{[ACS/HR/RES/2026/2047]}}\end{tabular}\\[6pt]\end{tabularx}}}\par{\color{accent}\rule{\linewidth}{1.8pt}}\par\vspace{8pt}
+
+{\arrayrulecolor{rulegray}\renewcommand{\arraystretch}{1.3}\noindent\begin{tabularx}{\linewidth}{|X|X|}\hline
+{\color{accent}\footnotesize\bfseries TO}\newline \textbf{[Mr. Arjun Mehta]}\newline [Head of Finance Systems]\newline [Aravind Consulting Services Pvt. Ltd.]\newline [4th Floor, Prestige Tech Park, Outer Ring Road, Bengaluru 560103] & {\color{accent}\footnotesize\bfseries COPY TO}\newline \textbf{[Ms. Kavita Rao]}\newline [HR Business Partner]\newline [hr@aravindconsulting.in]\newline [Same address] \\ \hline
+\end{tabularx}}\par\vspace{6pt}
+
+\textbf{Subject: Resignation from the post of [Senior Business Analyst], Employee ID [ACS-2047]}\par\vspace{4pt}
+
+Dear [Mr. Mehta],\par\vspace{4pt}
+
+Please accept this letter as formal notice of my resignation from the position of [Senior Business Analyst] in the [Finance Systems] team at [Aravind Consulting Services Pvt. Ltd.], with effect from today, [27/11/2026].\par\vspace{4pt}
+
+As required by my appointment letter, I will serve a notice period of [30 days]. My last working day will therefore be \textbf{[26/12/2026]}. If the company would like to adjust this date or waive part of the notice period, I am happy to discuss it with you and HR.\par\vspace{4pt}
+
+During the notice period I will complete my open deliverables and prepare a written handover of the [GST reconciliation automation] and [vendor payments dashboard] projects, including documentation, credentials and pending items. I will also help train my replacement and return my laptop, ID card and access card to the Admin team before my last day.\par\vspace{4pt}
+
+I am sincerely grateful for the guidance and opportunities I have received over the past [3 years and 4 months]. Working with you and the team has helped me grow both professionally and personally.\par\vspace{4pt}
+
+I request you to process my full and final settlement and to issue my relieving letter and experience certificate after my last working day. Please let me know if anything else is needed from my side for a smooth exit.\par\vspace{4pt}
+
+Yours sincerely,\par\vspace{4pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ [Priya Nair], [Senior Business Analyst]}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Received by (Manager / HR), with date}\par
+\end{document}

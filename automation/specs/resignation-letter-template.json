@@ -1,0 +1,23 @@
+{
+  "slug": "resignation-letter-template",
+  "title": "Resignation Letter Template",
+  "category": "letter",
+  "accent": "1B2F5B",
+  "titleSize": 22,
+  "description": "Free resignation letter format for India with notice period, last working day, handover plan, thanks and signature. Edit it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Clear notice period and last working day", "Handover plan for projects, assets and access", "Polite, professional wording with acknowledgement lines"],
+  "useCases": ["Resigning with standard 30-90 day notice", "Requesting relieving and experience letters", "Formal email or printed resignation to HR"],
+  "keywords": ["resignation letter format", "resignation letter template", "resignation letter with notice period"],
+  "references": ["https://www.naukri.com/career-advice/resignation-letter-format", "https://www.keka.com/resignation-letter-format", "https://factohr.com/letter/resignation-letter-format/", "https://internshala.com/blog/resignation-letter-for-company/", "https://www.glassdoor.com/blog/write-resignation-letter-template/"],
+  "research": "All references share the sender's details and date, the manager's name and company, a clear subject, a direct resignation statement with role, notice period and last working day per the appointment letter, a handover offer, brief thanks, and a formal sign-off; Indian samples also request relieving and experience letters and full and final settlement.",
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1t5bAWvTJVQSLlVFA4EOcHx-Ofe0w-_c68AuePXmLY1E", "googleSheetsId": "1qd9CMlU1Nd6Y_EHQPuzyaWaUCCNe1uIFxefMaY7Fkho"},
+  "blocks": [
+    {"type": "header", "style": "plain", "logo": false, "org": "[Priya Nair]", "lines": ["[Flat 12B, Lake View Apartments, Koramangala, Bengaluru, Karnataka 560034]", "[+91 98450 67890]  |  [priya.nair@email.com]", "Employee ID: [ACS-2047]  |  [Senior Business Analyst, Finance Systems]"], "title": "RESIGNATION LETTER", "meta": [["Date", "[27/11/2026]"], ["Ref.", "[ACS/HR/RES/2026/2047]"]]},
+    {"type": "parties", "groups": [{"heading": "To", "lines": ["[Mr. Arjun Mehta]", "[Head of Finance Systems]", "[Aravind Consulting Services Pvt. Ltd.]", "[4th Floor, Prestige Tech Park, Outer Ring Road, Bengaluru 560103]"]}, {"heading": "Copy to", "lines": ["[Ms. Kavita Rao]", "[HR Business Partner]", "[hr@aravindconsulting.in]", "[Same address]"]}]},
+    {"type": "text", "text": "**Subject: Resignation from the post of [Senior Business Analyst], Employee ID [ACS-2047]**"},
+    {"type": "text", "text": ["Dear [Mr. Mehta],", "Please accept this letter as formal notice of my resignation from the position of [Senior Business Analyst] in the [Finance Systems] team at [Aravind Consulting Services Pvt. Ltd.], with effect from today, [27/11/2026].", "As required by my appointment letter, I will serve a notice period of [30 days]. My last working day will therefore be **[26/12/2026]**. If the company would like to adjust this date or waive part of the notice period, I am happy to discuss it with you and HR.", "During the notice period I will complete my open deliverables and prepare a written handover of the [GST reconciliation automation] and [vendor payments dashboard] projects, including documentation, credentials and pending items. I will also help train my replacement and return my laptop, ID card and access card to the Admin team before my last day.", "I am sincerely grateful for the guidance and opportunities I have received over the past [3 years and 4 months]. Working with you and the team has helped me grow both professionally and personally.", "I request you to process my full and final settlement and to issue my relieving letter and experience certificate after my last working day. Please let me know if anything else is needed from my side for a smooth exit."]},
+    {"type": "text", "text": ["Yours sincerely,"]},
+    {"type": "signature", "items": ["[Priya Nair], [Senior Business Analyst]", "Received by (Manager / HR), with date"]}
+  ]
+}
