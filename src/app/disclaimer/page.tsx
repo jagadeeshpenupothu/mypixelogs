@@ -36,7 +36,7 @@ const sections = [
 export default function DisclaimerPage() {
   return (
     <section className="py-8 sm:py-14">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-10 2xl:px-14">
         <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Disclaimer</h1>
         <p className="mt-5 text-base leading-7 text-muted-foreground">
           This disclaimer explains the limits of the free templates, assets,

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function JSONValidatorPage() {
   return (
     <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <div className="max-w-3xl">
           <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Validate, format, and minify JSON

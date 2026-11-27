@@ -15,7 +15,7 @@ export function AiImageDetailPage({ item, relatedItems }: AiImageDetailPageProps
 
   return (
     <article className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },

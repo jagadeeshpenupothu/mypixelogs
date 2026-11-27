@@ -100,7 +100,7 @@ export default async function AssetPage({ params }: PageProps) {
 
   return (
     <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-start">
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">

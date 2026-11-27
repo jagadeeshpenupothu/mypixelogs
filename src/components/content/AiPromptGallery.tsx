@@ -17,7 +17,7 @@ export function AiPromptGallery({ items, title, description, category }: AiPromp
 
   return (
     <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-white/95 px-4 py-2 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:bg-background/95">
           <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between">
             <Breadcrumbs

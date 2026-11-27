@@ -209,32 +209,33 @@ export function TemplateGallery({
 
       {/* Card grid: as many columns as fit (two on phones), up to six, filled left to right so sorting reads naturally. */}
       {shown.length ? (
-        <div className="mt-4 grid items-start gap-3 [grid-template-columns:repeat(auto-fill,minmax(max(150px,calc((100%-5*0.75rem)/6)),1fr))] sm:gap-4 sm:[grid-template-columns:repeat(auto-fill,minmax(max(230px,calc((100%-5*1rem)/6)),1fr))]">
+        <div className="mt-4 grid items-start gap-x-3 gap-y-6 [grid-template-columns:repeat(auto-fill,minmax(max(150px,calc((100%-5*0.75rem)/6)),1fr))] sm:gap-x-5 sm:gap-y-8 sm:[grid-template-columns:repeat(auto-fill,minmax(max(230px,calc((100%-5*1rem)/6)),1fr))]">
           {shown.map((item) => {
             const isNew = today !== null && daysSince(item.published, today) <= 7;
             return (
               <Link
                 key={item.slug}
                 href={`/templates/${item.slug}`}
-                className="group block overflow-hidden rounded-xl border border-border bg-card transition-[border-color,box-shadow] duration-200 hover:border-primary/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
+                className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                <span className="block overflow-hidden border-b border-border bg-white">
+                {/* Pinterest style: the picture is the card; name and icons sit underneath with no box. */}
+                <span className="relative block overflow-hidden rounded-xl bg-white ring-1 ring-border/70">
                   <Image
                     src={item.image}
                     alt={`${item.title} preview`}
                     width={item.width}
                     height={item.height}
                     sizes="(max-width: 640px) 50vw, (max-width: 1280px) 25vw, 18vw"
-                    className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.03]"
                   />
+                  <span className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-200 group-hover:bg-black/10" />
                 </span>
-                <span className="block p-3">
-                  <span className="block text-sm font-semibold leading-5 text-foreground">{item.title}</span>
-                  <span className="mt-0.5 flex items-center gap-2 text-xs text-muted-foreground">
-                    {item.categoryLabel}
-                    {isNew ? <span className="rounded-full bg-primary/15 px-2 py-px text-[11px] font-semibold text-primary">New</span> : null}
+                <span className="block px-1 pt-2">
+                  <span className="flex items-start justify-between gap-2">
+                    <span className="text-sm font-semibold leading-5 text-foreground group-hover:underline">{item.title}</span>
+                    {isNew ? <span className="mt-0.5 shrink-0 rounded-full bg-primary/15 px-2 py-px text-[11px] font-semibold text-primary">New</span> : null}
                   </span>
-                  <span className="mt-2 flex flex-wrap gap-1">
+                  <span className="mt-1.5 flex flex-wrap gap-1">
                     {item.formats.map((f) => (
                       <FormatIcon key={f} format={f} />
                     ))}

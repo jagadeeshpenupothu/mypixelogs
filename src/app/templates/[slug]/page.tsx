@@ -109,7 +109,7 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
   return (
     <>
       <section className="pb-2">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-site">
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },

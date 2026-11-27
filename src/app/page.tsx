@@ -35,7 +35,7 @@ export default function Home() {
   const documents = templates.filter((template) => template !== video).sort((a, b) => Number(Boolean(b.editor)) - Number(Boolean(a.editor))).slice(0, 3);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-10 2xl:px-14">
       <header className="mx-auto max-w-3xl pb-10 pt-10 text-center sm:pb-14 sm:pt-16">
         <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
           Free tools for videos, photos and documents

@@ -53,7 +53,7 @@ export function LibraryPage({
 
   return (
     <section className="pb-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-site">
         <Breadcrumbs items={breadcrumbs} />
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h1>
         <p className="mt-2 max-w-2xl text-base leading-7 text-muted-foreground">{intro}</p>
