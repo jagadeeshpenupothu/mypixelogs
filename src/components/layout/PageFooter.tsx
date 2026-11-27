@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 import { Footer } from "@/components/layout/Footer";
 
-const librarySections = ["/templates", "/tools", "/ai", "/assets", "/resources"];
+const librarySections = ["/templates", "/tools", "/ai", "/assets", "/resources", "/guides"];
 
 /** Library pages already show the footer beside the sidebar. */
 export function PageFooter() {
