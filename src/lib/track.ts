@@ -41,7 +41,15 @@ function enqueue(hit: Hit) {
 }
 
 export function trackPageView(path: string, referrer?: string) {
-  enqueue({ t: Date.now(), e: "page_view", p: path, r: referrer, ti: document.title.split(" | ")[0] });
+  const first = referrer !== undefined;
+  const x = first ? { sw: window.screen?.width ?? window.innerWidth, lang: (navigator.language || "").slice(0, 12), tz: Intl.DateTimeFormat().resolvedOptions().timeZone ?? "" } : undefined;
+  enqueue({ t: Date.now(), e: "page_view", p: path, r: referrer, ti: document.title.split(" | ")[0], ...(x ? { x } : {}) });
+}
+
+/** How long someone actually looked at a page (counted only while the tab is visible). */
+export function trackPageTime(path: string, seconds: number) {
+  if (seconds < 1) return;
+  enqueue({ t: Date.now(), e: "page_time", p: path, x: { seconds: Math.min(Math.round(seconds), 3600) } });
 }
 
 /** Send one event. Safe to call anywhere. */
