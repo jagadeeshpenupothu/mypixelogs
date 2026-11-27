@@ -1,0 +1,47 @@
+{
+  "slug": "experience-certificate-template",
+  "title": "Experience Certificate Template",
+  "category": "letter",
+  "accent": "1B2F5B",
+  "titleSize": 14,
+  "description": "Free experience certificate format for India on company letterhead with ref. no., employee ID, designation, tenure, conduct line, HR signature and seal. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": [
+    "Company letterhead with CIN, GSTIN and HR contact for verification",
+    "Employee ID, designation, department and exact joining and relieving dates",
+    "Formal conduct remark, HR signatory with designation and company seal"
+  ],
+  "useCases": [
+    "Relieving employees after resignation",
+    "Background verification for a new employer",
+    "Visa, higher-study and loan applications"
+  ],
+  "keywords": [
+    "experience certificate format",
+    "experience letter format",
+    "work experience certificate"
+  ],
+  "references": [
+    "https://www.keka.com/experience-letter-format",
+    "https://razorpay.com/x/hr-letters/experience-letter-generator/",
+    "https://www.naukri.com/blog/work-experience-certificate/amp",
+    "https://iisc.ac.in/wp-content/uploads/2023/10/Format-of-experience-certificate.pdf",
+    "https://www.indiafilings.com/learn/experience-certificate-format/"
+  ],
+  "research": "References agree on company letterhead, issue date and reference number, a 'To whom it may concern' / 'This is to certify' opening, employee name, designation, department and exact tenure, brief duties, a conduct remark and good wishes, signed by HR with the company seal; salary is usually left out.",
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1pwhLmkGxDR4HTKgVlxAR6nWMOt9oF93mCupWrFU-dTA", "googleSheetsId": "1WaR2QNVk-qnBINcvdcs0U0tXDxd2Upc59om_qMhD178"},
+  "blocks": [
+    {"type": "header", "style": "plain", "org": "[Sharma IT Solutions Pvt. Ltd.]", "lines": ["[Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]", "CIN: [U72200MH2014PTC254321]", "GSTIN: [27AAKCS1234R1Z5]  |  [+91 20 6712 3400]", "[hr@sharmait.in]  |  [www.sharmait.in]"], "title": "EXPERIENCE CERTIFICATE", "meta": [["Ref. No.", "[SITS/HR/EXP/2026-27/0087]"], ["Date", "[27/11/2026]"]]},
+    {"type": "heading", "text": "TO WHOM IT MAY CONCERN"},
+    {"type": "text", "text": ["This is to certify that **[Ms. Priya Deshmukh]** (Employee ID: **[SITS-1043]**) was employed with **[Sharma IT Solutions Pvt. Ltd.]**, Pune, from **[03/07/2021]** to **[21/11/2026]**. At the time of leaving the organisation she held the position of **[Senior Software Engineer]** in the **[Product Engineering]** department.", "She joined us as a [Software Engineer] and was promoted to her last role in [April 2024] in recognition of her work. During her tenure of [five years and four months], her main responsibilities were:"]},
+    {"type": "bullets", "items": ["[Designing and building web applications for enterprise clients in banking and retail]", "[Leading code reviews and mentoring a team of four developers]", "[Supporting the migration of customer systems to the cloud]", "[Preparing technical documentation and client handover reports]"]},
+    {"type": "text", "text": ["Throughout her employment, we found her to be sincere, hardworking and dependable. Her conduct and character were **good**, and she worked well with colleagues and clients alike. She has resigned of her own accord, and she has been relieved of her duties after completing the full handover. No dues are pending from her side.", "We thank her for her contribution and wish her every success in her future career."]},
+    {"type": "heading", "text": "Service record"},
+    {"type": "fields", "columns": 2, "items": [["Employee name", "[Ms. Priya Deshmukh]"], ["Employee ID", "[SITS-1043]"], ["Designation", "[Senior Software Engineer]"], ["Department", "[Product Engineering]"], ["Date of joining", "[03/07/2021]"], ["Date of relieving", "[21/11/2026]"], ["Employment type", "[Permanent, full-time]"], ["Reason for leaving", "[Resignation]"], ["Reporting manager", "[Mr. Rohit Sharma]"], ["Notice period", "[Served in full]"]]},
+    {"type": "spacer"},
+    {"type": "text", "text": "For [Sharma IT Solutions Pvt. Ltd.]"},
+    {"type": "spacer"},
+    {"type": "signature", "items": ["[Anita Kulkarni], Manager – Human Resources", "Company seal"]},
+    {"type": "note", "text": "For verification of this certificate, please write to [hr@sharmait.in] quoting the reference number above. This certificate is issued at the request of the employee and does not state salary details."}
+  ]
+}

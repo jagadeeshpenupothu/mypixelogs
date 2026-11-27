@@ -1,5 +1,38 @@
 [
   {
+    "id": "experience-certificate",
+    "title": "Experience Certificate Template",
+    "slug": "experience-certificate-template",
+    "description": "Free experience certificate format for India on company letterhead with ref. no., employee ID, designation, tenure, conduct line, HR signature and seal. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Company letterhead with CIN, GSTIN and HR contact for verification",
+      "Employee ID, designation, department and exact joining and relieving dates",
+      "Formal conduct remark, HR signatory with designation and company seal"
+    ],
+    "useCases": [
+      "Relieving employees after resignation",
+      "Background verification for a new employer",
+      "Visa, higher-study and loan applications"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1pwhLmkGxDR4HTKgVlxAR6nWMOt9oF93mCupWrFU-dTA",
+      "googleSheetsId": "1WaR2QNVk-qnBINcvdcs0U0tXDxd2Upc59om_qMhD178",
+      "excelPath": "/downloads/experience-certificate-template.xlsx",
+      "latexPath": "/downloads/experience-certificate-template.tex",
+      "pdfPath": "/downloads/experience-certificate-template.pdf"
+    },
+    "published": "2026-11-27"
+  },
+  {
     "id": "leave-application",
     "title": "Leave Application Template",
     "slug": "leave-application-template",
