@@ -1,28 +1,26 @@
 import type { Metadata } from "next";
 
-import { LibraryPage } from "@/components/collections/LibraryPage";
-import { templateGroups, templateSections } from "@/lib/library";
+import { TemplateGallery } from "@/components/templates/TemplateGallery";
+import { templates } from "@/data/templates";
 import { createSocialMetadata } from "@/lib/metadata";
+import { toGalleryItem } from "@/lib/template-gallery";
+
+const description =
+  "Free templates for invoices, quotations, receipts, letters, resumes and more. Edit online or open in Word, Google Docs, Google Sheets, Excel or Overleaf.";
 
 export const metadata: Metadata = {
   title: "Free Templates",
-  description: "Free video invitation and invoice templates you can edit online or download.",
-  ...createSocialMetadata({
-    title: "Free Templates",
-    description: "Free video invitation and invoice templates you can edit online or download.",
-    path: "/templates",
-  }),
+  description,
+  ...createSocialMetadata({ title: "Free Templates", description, path: "/templates" }),
 };
 
 export default function TemplatesPage() {
   return (
-    <LibraryPage
+    <TemplateGallery
+      items={templates.map(toGalleryItem)}
       title="Templates"
-      intro="Pick a design, change the words and make it yours."
-      noun="templates"
+      intro="Ready-made business documents. Pick one, then edit it online or open it in your favourite app."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Templates" }]}
-      groups={templateGroups("")}
-      sections={templateSections()}
     />
   );
 }
