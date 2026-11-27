@@ -1,0 +1,33 @@
+{
+  "slug": "software-engineer-resume-template",
+  "title": "Software Engineer Resume Template",
+  "category": "resume",
+  "accent": "1F3A5F",
+  "titleSize": 22,
+  "description": "Free one-page software engineer resume for India with summary, technical skills, experience with measurable impact, projects, GitHub and education. Edit it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["ATS-friendly one-page layout in reverse-chronological order", "Grouped technical skills: languages, frameworks, cloud and tools", "Projects with tech stack, links and measurable results"],
+  "useCases": ["Software engineers with 2-6 years of experience", "Campus placements and off-campus applications", "Applying on Naukri, LinkedIn and company career pages"],
+  "keywords": ["software engineer resume", "software engineer resume format", "software developer resume template"],
+  "references": ["https://www.interviewbit.com/blog/software-engineer-resume/", "https://www.naukri.com/career-advice/software-engineer-resume-sample-ffid", "https://www.coursera.org/in/articles/software-engineer-resume", "https://www.toptal.com/resume/career-center/how-to-write-a-tech-resume-for-software-engineering-roles", "https://www.monster.com/career-advice/resume/indian-resume-format"],
+  "research": "References agree on a one-page, reverse-chronological, ATS-friendly layout: contact with GitHub/LinkedIn, short summary, grouped technical skills, experience with measurable impact, projects with tech stack, education with CGPA and certifications.",
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1QkuKOeChuniaPmWEslvv8H1qev4Rb_hd1ji3CejAPRs", "googleSheetsId": "1SIhMoY1_dasbBpzMY8Rh2kSXifxU909_Gy08oOo0v9M"},
+  "blocks": [
+    {"type": "header", "style": "plain", "logo": false, "org": "[Arjun Mehta]", "lines": ["[Bengaluru, Karnataka]  |  [+91 98450 23176]", "[arjun.mehta.dev@gmail.com]", "[linkedin.com/in/arjunmehta-dev]  |  [github.com/arjunmehta]"], "title": "SOFTWARE ENGINEER", "meta": [["Experience", "[4 years]"], ["Notice period", "[30 days]"]]},
+    {"type": "heading", "text": "Professional Summary"},
+    {"type": "text", "text": "Backend-focused software engineer with [4 years] of experience building scalable APIs and microservices in [Java, Spring Boot and Go] on [AWS]. Shipped payment and order systems handling [2M+ requests a day], cut cloud costs by [28%] and mentored [3] junior engineers. Looking for a senior backend role in a product company."},
+    {"type": "heading", "text": "Technical Skills"},
+    {"type": "fields", "columns": 1, "items": [["Languages", "[Java, Go, Python, SQL, TypeScript]"], ["Frameworks", "[Spring Boot, gRPC, React, Node.js]"], ["Cloud & DevOps", "[AWS (EC2, Lambda, RDS, S3), Docker, Kubernetes, Terraform, GitHub Actions]"], ["Data & Tools", "[PostgreSQL, Redis, Kafka, Elasticsearch, Grafana, Git, Jira]"]]},
+    {"type": "heading", "text": "Work Experience"},
+    {"type": "entry", "title": "**[Software Engineer II]**, [Finedge Payments Pvt. Ltd.], [Bengaluru]", "right": "[07/2023 - Present]", "bullets": ["Designed a [Kafka]-based payment reconciliation service that processes [2M+ transactions a day] with [99.95%] uptime.", "Reduced p95 API latency from [420 ms to 140 ms] by adding [Redis] caching and query tuning on [PostgreSQL].", "Moved [12] services to [Kubernetes] with Terraform, saving [₹18 lakh a year] in cloud spend ([28%])."]},
+    {"type": "entry", "title": "**[Associate Software Engineer]**, [Brightcart Technologies], [Pune]", "right": "[06/2021 - 06/2023]", "bullets": ["Built [Spring Boot] REST APIs for order and inventory modules used by [1,500+] sellers.", "Wrote unit and integration tests that raised coverage from [45% to 82%] and halved production bugs.", "Set up [GitHub Actions] CI/CD pipelines, cutting release time from [2 days to 3 hours]."]},
+    {"type": "heading", "text": "Projects"},
+    {"type": "entry", "title": "**[QuickSplit]**, expense-sharing app  |  [Go, React, PostgreSQL]", "right": "[github.com/arjunmehta/quicksplit]", "bullets": ["UPI-style settlement engine that minimises transfers in a group; [1,200+] GitHub stars and [40] contributors."]},
+    {"type": "entry", "title": "**[LogLens]**, log search tool  |  [Python, Elasticsearch, Docker]", "right": "[github.com/arjunmehta/loglens]", "bullets": ["Indexes [5 GB] of application logs an hour with full-text search and alert rules for error spikes."]},
+    {"type": "heading", "text": "Education & Certifications"},
+    {"type": "entry", "title": "**[B.Tech, Computer Science and Engineering]**, [Vellore Institute of Technology], [Vellore]", "right": "[2017 - 2021]", "lines": ["CGPA: [8.6 / 10]"]},
+    {"type": "bullets", "items": ["[AWS Certified Developer - Associate] ([2024])", "[LeetCode]: [600+] problems solved; [Knight] badge ([1,950] rating)"]},
+    {"type": "spacer", "size": 8},
+    {"type": "text", "text": "I declare that the information above is true to the best of my knowledge. Place: [Bengaluru]  |  Date: [27/11/2026]"}
+  ]
+}

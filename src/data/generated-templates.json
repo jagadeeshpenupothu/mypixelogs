@@ -225,5 +225,38 @@
       "pdfPath": "/downloads/salary-slip-template.pdf"
     },
     "published": "2026-11-27"
+  },
+  {
+    "id": "software-engineer-resume",
+    "title": "Software Engineer Resume Template",
+    "slug": "software-engineer-resume-template",
+    "description": "Free one-page software engineer resume for India with summary, technical skills, experience with measurable impact, projects, GitHub and education. Edit it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "resume",
+    "features": [
+      "ATS-friendly one-page layout in reverse-chronological order",
+      "Grouped technical skills: languages, frameworks, cloud and tools",
+      "Projects with tech stack, links and measurable results"
+    ],
+    "useCases": [
+      "Software engineers with 2-6 years of experience",
+      "Campus placements and off-campus applications",
+      "Applying on Naukri, LinkedIn and company career pages"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1QkuKOeChuniaPmWEslvv8H1qev4Rb_hd1ji3CejAPRs",
+      "googleSheetsId": "1SIhMoY1_dasbBpzMY8Rh2kSXifxU909_Gy08oOo0v9M",
+      "excelPath": "/downloads/software-engineer-resume-template.xlsx",
+      "latexPath": "/downloads/software-engineer-resume-template.tex",
+      "pdfPath": "/downloads/software-engineer-resume-template.pdf"
+    },
+    "published": "2026-11-27"
   }
 ]
