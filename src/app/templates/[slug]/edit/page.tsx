@@ -49,7 +49,7 @@ export default async function EditTemplatePage({ params }: PageProps) {
           {template.editor === "wedding-video" ? (
             <VideoTemplateEditor title={pageTitle(template.title)} />
           ) : template.editor === "flyer" ? (
-            <FlyerEditor title={pageTitle(template.title)} />
+            <FlyerEditor title={pageTitle(template.title)} design={template.flyerDesign} />
           ) : template.editor === "resume" ? (
             <ResumeEditor title={pageTitle(template.title)} />
           ) : (
