@@ -17,15 +17,14 @@ const { writePsdBuffer } = require("ag-psd");
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const name = process.argv[2];
 if (!name) { console.error("Usage: node scripts/flyers/build.mjs <design-name>"); process.exit(2); }
-const { flyerSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS } = await import(path.join(root, `src/lib/flyers/${name}.ts`));
+const { flyerSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS, FLYER_FONTS } = await import(path.join(root, `src/lib/flyers/${name}.ts`));
 const slug = `${name}-flyer`;
 const theme = Object.values(FLYER_THEMES)[0];
 const fontDir = path.join(root, "public/fonts/flyer");
 const font = (f) => "data:font/woff2;base64," + readFileSync(path.join(fontDir, f)).toString("base64");
-export const FONT_FILES = { "Inter|500|normal": "Inter-Medium.woff2", "Inter|600|normal": "Inter-SemiBold.woff2", "Inter|700|normal": "Inter-Bold.woff2", "Inter|900|normal": "Inter-Black.woff2", "Playfair Display|700|italic": "PlayfairDisplay-BoldItalic.woff2" };
-const FONTS = Object.fromEntries(Object.entries(FONT_FILES).map(([k, f]) => [k, font(f)]));
-// PostScript names Photoshop and Photopea look for.
-const POSTSCRIPT = { "Inter|500": "Inter-Medium", "Inter|600": "Inter-SemiBold", "Inter|700": "Inter-Bold", "Inter|900": "Inter-Black", "Playfair Display|700": "PlayfairDisplay-BoldItalic" };
+const FONTS = Object.fromEntries(FLYER_FONTS.map(([key, file]) => [key, font(file)]));
+// PostScript names Photoshop and Photopea look for, by family|weight|style.
+const POSTSCRIPT = Object.fromEntries(FLYER_FONTS.map(([key, , ps]) => [key, ps]));
 
 const downloads = path.join(root, "public/downloads"), previews = path.join(root, "public/previews");
 [downloads, previews].forEach((d) => mkdirSync(d, { recursive: true }));
@@ -54,7 +53,8 @@ writeFileSync(out(".svg"), flyerSvg(F, theme, { width: "210mm", height: "297mm" 
 const groups = await page.evaluate(() => [...document.querySelectorAll("g[data-layer]")].map((g) => {
   const t = g.children.length === 1 && g.firstElementChild.tagName === "text" ? g.firstElementChild : null;
   const rot = /rotate\(([-\d.]+)/.exec(g.getAttribute("transform") || "");
-  return { id: g.dataset.layer, name: g.dataset.name, text: t && { value: t.textContent, family: t.getAttribute("font-family").split(",")[0].replace(/'/g, "").trim(), weight: t.getAttribute("font-weight"),
+  return { id: g.dataset.layer, name: g.dataset.name, text: t && { value: t.textContent, family: t.getAttribute("font-family").split(",")[0].replace(/'/g, "").trim(), weight: t.getAttribute("font-weight"), style: t.getAttribute("font-style") || "normal",
+    psdFill: t.dataset.psdFill, fx: t.dataset.psdFx && JSON.parse(t.dataset.psdFx),
     size: +t.getAttribute("font-size"), fill: t.getAttribute("fill"), ls: +(t.getAttribute("letter-spacing") || 0), x: +t.getAttribute("x"), y: +t.getAttribute("y"), rot: rot ? +rot[1] : 0 } };
 }));
 const rgb = (h) => ({ r: parseInt(h.slice(1, 3), 16), g: parseInt(h.slice(3, 5), 16), b: parseInt(h.slice(5, 7), 16) });
@@ -70,10 +70,11 @@ for (const { id, name: layerName, text } of groups) {
   const layer = { name: layerName, left: x0, top: y0, imageData: { width: w, height: h, data: new Uint8ClampedArray(data) } };
   if (text) {
     const r = (text.rot * Math.PI) / 180;
-    const fontName = POSTSCRIPT[`${text.family}|${text.weight}`];
-    if (!fontName) throw new Error(`No PostScript name for ${text.family} ${text.weight}`);
+    const fontName = POSTSCRIPT[`${text.family}|${text.weight}|${text.style}`];
+    if (!fontName) throw new Error(`No PostScript name for ${text.family} ${text.weight} ${text.style}`);
     layer.text = { text: text.value, transform: [Math.cos(r), Math.sin(r), -Math.sin(r), Math.cos(r), text.x * 2, text.y * 2],
-      style: { font: { name: fontName }, fontSize: text.size * 2, fillColor: rgb(text.fill), tracking: Math.round((text.ls / text.size) * 1000) }, paragraphStyle: { justification: "center" } };
+      style: { font: { name: fontName }, fontSize: text.size * 2, fillColor: rgb(text.psdFill || text.fill), tracking: Math.round((text.ls / text.size) * 1000) }, paragraphStyle: { justification: "center" } };
+    if (text.fx) layer.effects = text.fx;
   }
   layers.set(layerName, layer);
 }
@@ -85,6 +86,6 @@ const psd = {
 };
 const placed = psd.children.reduce((n, f) => n + f.children.length, 0);
 if (placed !== layers.size) throw new Error(`FLYER_GROUPS places ${placed} of ${layers.size} layers`);
-writeFileSync(out(".psd"), Buffer.from(writePsdBuffer(psd, { generateThumbnail: false })));
+writeFileSync(out(".psd"), Buffer.from(writePsdBuffer(psd, { generateThumbnail: false, compress: true })));
 await browser.close();
 console.log(`Built ${slug}: ${layers.size} layers, ${groups.filter((g) => g.text).length} editable text layers.`);

@@ -97,3 +97,12 @@ export const FLYER_GROUPS: [string, string[]][] = [
   ["Details", ["Dividers", "Date label", "Date", "Time label", "Time", "Venue label", "Venue"]],
   ["Footer", ["Footer band", "Footer line 1", "Footer line 2"]],
 ];
+
+/** Fonts this design uses: CSS family|weight|style, file in /public/fonts/flyer, and the PostScript name Photoshop expects. */
+export const FLYER_FONTS: [string, string, string][] = [
+  ["Inter|500|normal", "Inter-Medium.woff2", "Inter-Medium"],
+  ["Inter|600|normal", "Inter-SemiBold.woff2", "Inter-SemiBold"],
+  ["Inter|700|normal", "Inter-Bold.woff2", "Inter-Bold"],
+  ["Inter|900|normal", "Inter-Black.woff2", "Inter-Black"],
+  ["Playfair Display|700|italic", "PlayfairDisplay-BoldItalic.woff2", "PlayfairDisplay-BoldItalic"],
+];
