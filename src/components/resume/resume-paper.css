@@ -1,0 +1,178 @@
+/* The resume page. Sizes are in "--pt" so the same styles serve the scaled
+   preview (an A4 page fitted to its box) and real printing (1pt = 1pt). */
+
+.resume-preview {
+  container-type: inline-size;
+  background: #fff;
+}
+
+.resume-preview-page {
+  --pt: calc(100cqw / 595.3); /* A4 is 595.3pt wide */
+  min-height: 141.4cqw;
+  padding: calc(var(--pt) * 36) calc(var(--pt) * 38) calc(var(--pt) * 30);
+}
+
+.rp {
+  --navy: #1b2f5b;
+  font-family: Cambria, Caladea, Georgia, "Times New Roman", serif;
+  font-size: calc(var(--pt) * 10.5);
+  line-height: 1.32;
+  color: #1a1a1a;
+}
+
+.rp p,
+.rp ul,
+.rp h1,
+.rp h2 {
+  margin: 0;
+}
+
+.rp strong {
+  font-weight: 700;
+}
+
+.rp-name {
+  font-size: calc(var(--pt) * 34);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0;
+  margin-bottom: calc(var(--pt) * 3) !important;
+}
+
+.rp-tagline {
+  font-size: calc(var(--pt) * 14.5);
+  margin-bottom: calc(var(--pt) * 4.5) !important;
+}
+
+.rp-contact {
+  font-size: calc(var(--pt) * 9.5);
+  padding-bottom: calc(var(--pt) * 7);
+  border-bottom: calc(var(--pt) * 2.25) solid var(--navy);
+  overflow-wrap: anywhere;
+}
+
+.rp-sep {
+  white-space: pre;
+}
+
+.rp-heading {
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--pt) * 8);
+  margin-top: calc(var(--pt) * 12) !important;
+  margin-bottom: calc(var(--pt) * 4.5) !important;
+  font-size: calc(var(--pt) * 13);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.rp-heading::after {
+  content: "";
+  flex: 1;
+  border-bottom: calc(var(--pt) * 0.75) solid #8496b0;
+}
+
+.rp-head + section .rp-heading {
+  margin-top: calc(var(--pt) * 10) !important;
+}
+
+.rp-entry + .rp-entry {
+  margin-top: calc(var(--pt) * 7);
+}
+
+.rp-row {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--pt) * 12);
+}
+
+.rp-row > span:last-child {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.rp-bullets {
+  list-style: none;
+  padding-left: calc(var(--pt) * 25) !important;
+}
+
+.rp-bullets li {
+  position: relative;
+}
+
+.rp-bullets li::before {
+  content: "\2022";
+  position: absolute;
+  left: calc(var(--pt) * -13);
+  font-family: Arial, sans-serif;
+}
+
+.rp-skills {
+  display: grid;
+}
+
+.rp-skill {
+  min-width: 0;
+  padding: 0 calc(var(--pt) * 6) 0 calc(var(--pt) * 15);
+  border-left: calc(var(--pt) * 0.75) solid #a6a6a6;
+}
+
+.rp-skill:first-child {
+  border-left: 0;
+  padding-left: calc(var(--pt) * 8);
+}
+
+.rp-skill-head {
+  font-size: calc(var(--pt) * 11);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: calc(var(--pt) * 2) !important;
+}
+
+.rp-skill .rp-bullets {
+  padding-left: calc(var(--pt) * 15) !important;
+}
+
+.rp-skill .rp-bullets li::before {
+  left: calc(var(--pt) * -11);
+}
+
+/* Printing / Save as PDF: only the resume, at real size. */
+.resume-print {
+  display: none;
+}
+
+@media print {
+  @page resume {
+    size: A4;
+    margin: 12.7mm 13.4mm 10.6mm;
+  }
+
+  body:has(> .resume-print) {
+    background: #fff;
+  }
+
+  body:has(> .resume-print) > *:not(.resume-print) {
+    display: none !important;
+  }
+
+  .resume-print {
+    --pt: 1pt;
+    page: resume;
+    display: block;
+    color-scheme: light;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .resume-print .rp-entry,
+  .resume-print .rp-heading {
+    break-inside: avoid;
+  }
+
+  .resume-print .rp-heading {
+    break-after: avoid;
+  }
+}
