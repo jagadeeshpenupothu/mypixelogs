@@ -4,3 +4,13 @@
   for = "/downloads/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+# Full music tracks and sound effects: "Download" saves the file instead of opening a player tab.
+[[headers]]
+  for = "/audio/music/*"
+  [headers.values]
+    Content-Disposition = "attachment"
+[[headers]]
+  for = "/audio/sfx/*"
+  [headers.values]
+    Content-Disposition = "attachment"

@@ -14,8 +14,8 @@ export type Track = {
   preview: string;
   fileName: string;
   size: number;
-  /** Google Drive file id once the full track is uploaded to the shared folder. */
-  driveId: string | null;
+  /** Full track on our site (128 kbps MP3). */
+  file: string;
   peaks: number[];
 };
 
@@ -24,8 +24,6 @@ export type Sfx = { name: string; slug: string; category: string; seconds: numbe
 export const music = musicData as Track[];
 export const sfx = sfxData as Sfx[];
 
-/** Shared Google Drive folder that holds the full-quality music files. */
-export const MUSIC_FOLDER = "https://drive.google.com/drive/folders/1RmoPQBOG2PlILs1u40EiFujLBE_dSYSA";
 export const SFX_ZIP = "/downloads/mypixelogs-sound-effects.zip";
 
 /** The credit Kevin MacLeod's CC BY 4.0 licence asks for, ready to paste into a video description. */
@@ -33,9 +31,6 @@ export function musicCredit(t: Track) {
   return `"${t.title}" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/`;
 }
 
-export function musicDownload(t: Track) {
-  return t.driveId ? `https://drive.google.com/uc?export=download&id=${t.driveId}` : MUSIC_FOLDER;
-}
 
 export type AudioItem = {
   id: string;
@@ -44,8 +39,8 @@ export type AudioItem = {
   meta: string;
   preview: string;
   download: string;
-  /** True when the download is a file on our own site. */
-  direct: boolean;
+  /** File name the download is saved as. */
+  fileName: string;
   credit?: string;
   words: string;
   /** Waveform bars, 0-100. */
@@ -62,8 +57,8 @@ export const musicItems: AudioItem[] = music.map((t) => ({
   group: t.mood,
   meta: [t.length, t.bpm ? `${t.bpm} BPM` : ""].filter(Boolean).join(" · "),
   preview: t.preview,
-  download: musicDownload(t),
-  direct: false,
+  download: t.file,
+  fileName: `${t.title} - Kevin MacLeod.mp3`,
   credit: musicCredit(t),
   words: `${t.feel} ${t.instruments} ${t.description}`,
   peaks: t.peaks,
@@ -78,7 +73,7 @@ export const sfxItems: AudioItem[] = sfx.map((s) => ({
   meta: `${s.seconds < 1 ? s.seconds.toFixed(1) : Math.round(s.seconds)} s`,
   preview: s.file,
   download: s.file,
-  direct: true,
+  fileName: `${s.name}.mp3`,
   words: s.source,
   peaks: s.peaks,
   length: `0:${String(Math.max(1, Math.round(s.seconds))).padStart(2, "0")}`,
