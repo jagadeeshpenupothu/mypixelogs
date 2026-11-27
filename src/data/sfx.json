@@ -1,902 +1,102 @@
 [
- {
-  "name": "Click 1",
-  "slug": "click-1",
-  "category": "Clicks & UI",
-  "seconds": 0.13,
-  "file": "/audio/sfx/click-1.mp3",
-  "size": 3805,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Click 2",
-  "slug": "click-2",
-  "category": "Clicks & UI",
-  "seconds": 0.05,
-  "file": "/audio/sfx/click-2.mp3",
-  "size": 1924,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Click 3",
-  "slug": "click-3",
-  "category": "Clicks & UI",
-  "seconds": 0.05,
-  "file": "/audio/sfx/click-3.mp3",
-  "size": 1924,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Click 4",
-  "slug": "click-4",
-  "category": "Clicks & UI",
-  "seconds": 0.05,
-  "file": "/audio/sfx/click-4.mp3",
-  "size": 1924,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Click 5",
-  "slug": "click-5",
-  "category": "Clicks & UI",
-  "seconds": 0.05,
-  "file": "/audio/sfx/click-5.mp3",
-  "size": 1924,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Select 1",
-  "slug": "select-1",
-  "category": "Clicks & UI",
-  "seconds": 0.08,
-  "file": "/audio/sfx/select-1.mp3",
-  "size": 2551,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Select 2",
-  "slug": "select-2",
-  "category": "Clicks & UI",
-  "seconds": 0.08,
-  "file": "/audio/sfx/select-2.mp3",
-  "size": 2551,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Select 3",
-  "slug": "select-3",
-  "category": "Clicks & UI",
-  "seconds": 0.42,
-  "file": "/audio/sfx/select-3.mp3",
-  "size": 10702,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Switch 1",
-  "slug": "switch-1",
-  "category": "Clicks & UI",
-  "seconds": 0.65,
-  "file": "/audio/sfx/switch-1.mp3",
-  "size": 16344,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Switch 2",
-  "slug": "switch-2",
-  "category": "Clicks & UI",
-  "seconds": 0.65,
-  "file": "/audio/sfx/switch-2.mp3",
-  "size": 16344,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Switch 3",
-  "slug": "switch-3",
-  "category": "Clicks & UI",
-  "seconds": 0.55,
-  "file": "/audio/sfx/switch-3.mp3",
-  "size": 13836,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Toggle 1",
-  "slug": "toggle-1",
-  "category": "Clicks & UI",
-  "seconds": 0.18,
-  "file": "/audio/sfx/toggle-1.mp3",
-  "size": 5059,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Toggle 2",
-  "slug": "toggle-2",
-  "category": "Clicks & UI",
-  "seconds": 0.18,
-  "file": "/audio/sfx/toggle-2.mp3",
-  "size": 5059,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Tick",
-  "slug": "tick",
-  "category": "Clicks & UI",
-  "seconds": 0.08,
-  "file": "/audio/sfx/tick.mp3",
-  "size": 2551,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Scroll 1",
-  "slug": "scroll-1",
-  "category": "Clicks & UI",
-  "seconds": 1.04,
-  "file": "/audio/sfx/scroll-1.mp3",
-  "size": 25748,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Scroll 2",
-  "slug": "scroll-2",
-  "category": "Clicks & UI",
-  "seconds": 1.04,
-  "file": "/audio/sfx/scroll-2.mp3",
-  "size": 25748,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Hover 1",
-  "slug": "hover-1",
-  "category": "Clicks & UI",
-  "seconds": 0.26,
-  "file": "/audio/sfx/hover-1.mp3",
-  "size": 6940,
-  "source": "Kenney \u00b7 Ui Audio"
- },
- {
-  "name": "Hover 2",
-  "slug": "hover-2",
-  "category": "Clicks & UI",
-  "seconds": 0.1,
-  "file": "/audio/sfx/hover-2.mp3",
-  "size": 3178,
-  "source": "Kenney \u00b7 Ui Audio"
- },
- {
-  "name": "Swoosh in 1",
-  "slug": "swoosh-in-1",
-  "category": "Whooshes & transitions",
-  "seconds": 0.29,
-  "file": "/audio/sfx/swoosh-in-1.mp3",
-  "size": 7567,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh in 2",
-  "slug": "swoosh-in-2",
-  "category": "Whooshes & transitions",
-  "seconds": 0.29,
-  "file": "/audio/sfx/swoosh-in-2.mp3",
-  "size": 7567,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh in 3",
-  "slug": "swoosh-in-3",
-  "category": "Whooshes & transitions",
-  "seconds": 0.26,
-  "file": "/audio/sfx/swoosh-in-3.mp3",
-  "size": 6940,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh in 4",
-  "slug": "swoosh-in-4",
-  "category": "Whooshes & transitions",
-  "seconds": 0.44,
-  "file": "/audio/sfx/swoosh-in-4.mp3",
-  "size": 11329,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh in 5",
-  "slug": "swoosh-in-5",
-  "category": "Whooshes & transitions",
-  "seconds": 0.57,
-  "file": "/audio/sfx/swoosh-in-5.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh in 6",
-  "slug": "swoosh-in-6",
-  "category": "Whooshes & transitions",
-  "seconds": 0.42,
-  "file": "/audio/sfx/swoosh-in-6.mp3",
-  "size": 10702,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh out 1",
-  "slug": "swoosh-out-1",
-  "category": "Whooshes & transitions",
-  "seconds": 0.29,
-  "file": "/audio/sfx/swoosh-out-1.mp3",
-  "size": 7567,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh out 2",
-  "slug": "swoosh-out-2",
-  "category": "Whooshes & transitions",
-  "seconds": 0.29,
-  "file": "/audio/sfx/swoosh-out-2.mp3",
-  "size": 7567,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh out 3",
-  "slug": "swoosh-out-3",
-  "category": "Whooshes & transitions",
-  "seconds": 0.26,
-  "file": "/audio/sfx/swoosh-out-3.mp3",
-  "size": 6940,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh out 4",
-  "slug": "swoosh-out-4",
-  "category": "Whooshes & transitions",
-  "seconds": 0.44,
-  "file": "/audio/sfx/swoosh-out-4.mp3",
-  "size": 11329,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh out 5",
-  "slug": "swoosh-out-5",
-  "category": "Whooshes & transitions",
-  "seconds": 0.57,
-  "file": "/audio/sfx/swoosh-out-5.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Swoosh out 6",
-  "slug": "swoosh-out-6",
-  "category": "Whooshes & transitions",
-  "seconds": 0.42,
-  "file": "/audio/sfx/swoosh-out-6.mp3",
-  "size": 10702,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Scratch 1",
-  "slug": "scratch-1",
-  "category": "Whooshes & transitions",
-  "seconds": 0.18,
-  "file": "/audio/sfx/scratch-1.mp3",
-  "size": 5059,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Scratch 2",
-  "slug": "scratch-2",
-  "category": "Whooshes & transitions",
-  "seconds": 0.18,
-  "file": "/audio/sfx/scratch-2.mp3",
-  "size": 5059,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Success 1",
-  "slug": "success-1",
-  "category": "Notifications",
-  "seconds": 0.34,
-  "file": "/audio/sfx/success-1.mp3",
-  "size": 8821,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Success 2",
-  "slug": "success-2",
-  "category": "Notifications",
-  "seconds": 0.57,
-  "file": "/audio/sfx/success-2.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Success 3",
-  "slug": "success-3",
-  "category": "Notifications",
-  "seconds": 0.37,
-  "file": "/audio/sfx/success-3.mp3",
-  "size": 9448,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Success 4",
-  "slug": "success-4",
-  "category": "Notifications",
-  "seconds": 0.52,
-  "file": "/audio/sfx/success-4.mp3",
-  "size": 13209,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Error 1",
-  "slug": "error-1",
-  "category": "Notifications",
-  "seconds": 0.21,
-  "file": "/audio/sfx/error-1.mp3",
-  "size": 5686,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Error 2",
-  "slug": "error-2",
-  "category": "Notifications",
-  "seconds": 0.21,
-  "file": "/audio/sfx/error-2.mp3",
-  "size": 5686,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Error 3",
-  "slug": "error-3",
-  "category": "Notifications",
-  "seconds": 0.57,
-  "file": "/audio/sfx/error-3.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Error 4",
-  "slug": "error-4",
-  "category": "Notifications",
-  "seconds": 0.13,
-  "file": "/audio/sfx/error-4.mp3",
-  "size": 3805,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Question 1",
-  "slug": "question-1",
-  "category": "Notifications",
-  "seconds": 0.52,
-  "file": "/audio/sfx/question-1.mp3",
-  "size": 13209,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Question 2",
-  "slug": "question-2",
-  "category": "Notifications",
-  "seconds": 0.37,
-  "file": "/audio/sfx/question-2.mp3",
-  "size": 9448,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Bong",
-  "slug": "bong",
-  "category": "Notifications",
-  "seconds": 0.16,
-  "file": "/audio/sfx/bong.mp3",
-  "size": 4432,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Glass ding",
-  "slug": "glass-ding",
-  "category": "Notifications",
-  "seconds": 0.31,
-  "file": "/audio/sfx/glass-ding.mp3",
-  "size": 8194,
-  "source": "Kenney \u00b7 Interface Sounds"
- },
- {
-  "name": "Punch heavy 1",
-  "slug": "punch-heavy-1",
-  "category": "Impacts & hits",
-  "seconds": 0.68,
-  "file": "/audio/sfx/punch-heavy-1.mp3",
-  "size": 16971,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Punch heavy 2",
-  "slug": "punch-heavy-2",
-  "category": "Impacts & hits",
-  "seconds": 0.57,
-  "file": "/audio/sfx/punch-heavy-2.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Punch heavy 3",
-  "slug": "punch-heavy-3",
-  "category": "Impacts & hits",
-  "seconds": 0.5,
-  "file": "/audio/sfx/punch-heavy-3.mp3",
-  "size": 12582,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Punch 1",
-  "slug": "punch-1",
-  "category": "Impacts & hits",
-  "seconds": 0.47,
-  "file": "/audio/sfx/punch-1.mp3",
-  "size": 11955,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Punch 2",
-  "slug": "punch-2",
-  "category": "Impacts & hits",
-  "seconds": 0.44,
-  "file": "/audio/sfx/punch-2.mp3",
-  "size": 11329,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Wood hit 1",
-  "slug": "wood-hit-1",
-  "category": "Impacts & hits",
-  "seconds": 0.34,
-  "file": "/audio/sfx/wood-hit-1.mp3",
-  "size": 8821,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Wood hit 2",
-  "slug": "wood-hit-2",
-  "category": "Impacts & hits",
-  "seconds": 0.34,
-  "file": "/audio/sfx/wood-hit-2.mp3",
-  "size": 8821,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Metal hit 1",
-  "slug": "metal-hit-1",
-  "category": "Impacts & hits",
-  "seconds": 0.21,
-  "file": "/audio/sfx/metal-hit-1.mp3",
-  "size": 5686,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Metal hit 2",
-  "slug": "metal-hit-2",
-  "category": "Impacts & hits",
-  "seconds": 0.39,
-  "file": "/audio/sfx/metal-hit-2.mp3",
-  "size": 10075,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Glass hit 1",
-  "slug": "glass-hit-1",
-  "category": "Impacts & hits",
-  "seconds": 0.29,
-  "file": "/audio/sfx/glass-hit-1.mp3",
-  "size": 7567,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Glass hit 2",
-  "slug": "glass-hit-2",
-  "category": "Impacts & hits",
-  "seconds": 0.47,
-  "file": "/audio/sfx/glass-hit-2.mp3",
-  "size": 11955,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Bell hit 1",
-  "slug": "bell-hit-1",
-  "category": "Impacts & hits",
-  "seconds": 1.52,
-  "file": "/audio/sfx/bell-hit-1.mp3",
-  "size": 37033,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Bell hit 2",
-  "slug": "bell-hit-2",
-  "category": "Impacts & hits",
-  "seconds": 1.78,
-  "file": "/audio/sfx/bell-hit-2.mp3",
-  "size": 43302,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Plate hit",
-  "slug": "plate-hit",
-  "category": "Impacts & hits",
-  "seconds": 0.52,
-  "file": "/audio/sfx/plate-hit.mp3",
-  "size": 13209,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Soft thud 1",
-  "slug": "soft-thud-1",
-  "category": "Impacts & hits",
-  "seconds": 0.57,
-  "file": "/audio/sfx/soft-thud-1.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Soft thud 2",
-  "slug": "soft-thud-2",
-  "category": "Impacts & hits",
-  "seconds": 0.6,
-  "file": "/audio/sfx/soft-thud-2.mp3",
-  "size": 15090,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Light tap 1",
-  "slug": "light-tap-1",
-  "category": "Impacts & hits",
-  "seconds": 0.21,
-  "file": "/audio/sfx/light-tap-1.mp3",
-  "size": 5686,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Light tap 2",
-  "slug": "light-tap-2",
-  "category": "Impacts & hits",
-  "seconds": 0.16,
-  "file": "/audio/sfx/light-tap-2.mp3",
-  "size": 4432,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Pickaxe",
-  "slug": "pickaxe",
-  "category": "Impacts & hits",
-  "seconds": 0.97,
-  "file": "/audio/sfx/pickaxe.mp3",
-  "size": 23867,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Tin can",
-  "slug": "tin-can",
-  "category": "Impacts & hits",
-  "seconds": 0.18,
-  "file": "/audio/sfx/tin-can.mp3",
-  "size": 5059,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Footstep concrete",
-  "slug": "footstep-concrete",
-  "category": "Footsteps",
-  "seconds": 0.13,
-  "file": "/audio/sfx/footstep-concrete.mp3",
-  "size": 3805,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Footstep wood",
-  "slug": "footstep-wood",
-  "category": "Footsteps",
-  "seconds": 0.31,
-  "file": "/audio/sfx/footstep-wood.mp3",
-  "size": 8194,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Footstep grass",
-  "slug": "footstep-grass",
-  "category": "Footsteps",
-  "seconds": 0.81,
-  "file": "/audio/sfx/footstep-grass.mp3",
-  "size": 20106,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Footstep snow",
-  "slug": "footstep-snow",
-  "category": "Footsteps",
-  "seconds": 0.42,
-  "file": "/audio/sfx/footstep-snow.mp3",
-  "size": 10702,
-  "source": "Kenney \u00b7 Impact Sounds"
- },
- {
-  "name": "Laser big 1",
-  "slug": "laser-big-1",
-  "category": "Sci-fi & game",
-  "seconds": 0.71,
-  "file": "/audio/sfx/laser-big-1.mp3",
-  "size": 17598,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Laser big 2",
-  "slug": "laser-big-2",
-  "category": "Sci-fi & game",
-  "seconds": 0.76,
-  "file": "/audio/sfx/laser-big-2.mp3",
-  "size": 18852,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Laser retro 1",
-  "slug": "laser-retro-1",
-  "category": "Sci-fi & game",
-  "seconds": 0.29,
-  "file": "/audio/sfx/laser-retro-1.mp3",
-  "size": 7567,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Laser retro 2",
-  "slug": "laser-retro-2",
-  "category": "Sci-fi & game",
-  "seconds": 0.29,
-  "file": "/audio/sfx/laser-retro-2.mp3",
-  "size": 7567,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Explosion 1",
-  "slug": "explosion-1",
-  "category": "Sci-fi & game",
-  "seconds": 0.81,
-  "file": "/audio/sfx/explosion-1.mp3",
-  "size": 20106,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Explosion 2",
-  "slug": "explosion-2",
-  "category": "Sci-fi & game",
-  "seconds": 1.38,
-  "file": "/audio/sfx/explosion-2.mp3",
-  "size": 33898,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Explosion 3",
-  "slug": "explosion-3",
-  "category": "Sci-fi & game",
-  "seconds": 1.31,
-  "file": "/audio/sfx/explosion-3.mp3",
-  "size": 32017,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Deep boom 1",
-  "slug": "deep-boom-1",
-  "category": "Sci-fi & game",
-  "seconds": 2.04,
-  "file": "/audio/sfx/deep-boom-1.mp3",
-  "size": 49572,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Deep boom 2",
-  "slug": "deep-boom-2",
-  "category": "Sci-fi & game",
-  "seconds": 1.04,
-  "file": "/audio/sfx/deep-boom-2.mp3",
-  "size": 25748,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Force field",
-  "slug": "force-field",
-  "category": "Sci-fi & game",
-  "seconds": 0.99,
-  "file": "/audio/sfx/force-field.mp3",
-  "size": 24494,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Sci-fi door open",
-  "slug": "sci-fi-door-open",
-  "category": "Sci-fi & game",
-  "seconds": 0.57,
-  "file": "/audio/sfx/sci-fi-door-open.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Sci-fi door close",
-  "slug": "sci-fi-door-close",
-  "category": "Sci-fi & game",
-  "seconds": 0.57,
-  "file": "/audio/sfx/sci-fi-door-close.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Sci Fi Sounds"
- },
- {
-  "name": "Power up 1",
-  "slug": "power-up-1",
-  "category": "Sci-fi & game",
-  "seconds": 1.23,
-  "file": "/audio/sfx/power-up-1.mp3",
-  "size": 30137,
-  "source": "Kenney \u00b7 Digital Audio"
- },
- {
-  "name": "Power up 2",
-  "slug": "power-up-2",
-  "category": "Sci-fi & game",
-  "seconds": 0.5,
-  "file": "/audio/sfx/power-up-2.mp3",
-  "size": 12582,
-  "source": "Kenney \u00b7 Digital Audio"
- },
- {
-  "name": "Phaser rise",
-  "slug": "phaser-rise",
-  "category": "Sci-fi & game",
-  "seconds": 0.55,
-  "file": "/audio/sfx/phaser-rise.mp3",
-  "size": 13836,
-  "source": "Kenney \u00b7 Digital Audio"
- },
- {
-  "name": "Zap",
-  "slug": "zap",
-  "category": "Sci-fi & game",
-  "seconds": 1.04,
-  "file": "/audio/sfx/zap.mp3",
-  "size": 25748,
-  "source": "Kenney \u00b7 Digital Audio"
- },
- {
-  "name": "Stinger hit 1",
-  "slug": "stinger-hit-1",
-  "category": "Jingles & stingers",
-  "seconds": 0.31,
-  "file": "/audio/sfx/stinger-hit-1.mp3",
-  "size": 8194,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Stinger hit 2",
-  "slug": "stinger-hit-2",
-  "category": "Jingles & stingers",
-  "seconds": 0.55,
-  "file": "/audio/sfx/stinger-hit-2.mp3",
-  "size": 13836,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Stinger hit 3",
-  "slug": "stinger-hit-3",
-  "category": "Jingles & stingers",
-  "seconds": 0.57,
-  "file": "/audio/sfx/stinger-hit-3.mp3",
-  "size": 14463,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Stinger hit 4",
-  "slug": "stinger-hit-4",
-  "category": "Jingles & stingers",
-  "seconds": 0.78,
-  "file": "/audio/sfx/stinger-hit-4.mp3",
-  "size": 19479,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Sax jingle 1",
-  "slug": "sax-jingle-1",
-  "category": "Jingles & stingers",
-  "seconds": 0.42,
-  "file": "/audio/sfx/sax-jingle-1.mp3",
-  "size": 10702,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Sax jingle 2",
-  "slug": "sax-jingle-2",
-  "category": "Jingles & stingers",
-  "seconds": 0.91,
-  "file": "/audio/sfx/sax-jingle-2.mp3",
-  "size": 22613,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Sax jingle 3",
-  "slug": "sax-jingle-3",
-  "category": "Jingles & stingers",
-  "seconds": 0.91,
-  "file": "/audio/sfx/sax-jingle-3.mp3",
-  "size": 22613,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Pizzicato jingle 1",
-  "slug": "pizzicato-jingle-1",
-  "category": "Jingles & stingers",
-  "seconds": 0.52,
-  "file": "/audio/sfx/pizzicato-jingle-1.mp3",
-  "size": 13209,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Pizzicato jingle 2",
-  "slug": "pizzicato-jingle-2",
-  "category": "Jingles & stingers",
-  "seconds": 1.04,
-  "file": "/audio/sfx/pizzicato-jingle-2.mp3",
-  "size": 25748,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Pizzicato jingle 3",
-  "slug": "pizzicato-jingle-3",
-  "category": "Jingles & stingers",
-  "seconds": 0.99,
-  "file": "/audio/sfx/pizzicato-jingle-3.mp3",
-  "size": 24494,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Steel drum jingle 1",
-  "slug": "steel-drum-jingle-1",
-  "category": "Jingles & stingers",
-  "seconds": 0.97,
-  "file": "/audio/sfx/steel-drum-jingle-1.mp3",
-  "size": 23867,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Steel drum jingle 2",
-  "slug": "steel-drum-jingle-2",
-  "category": "Jingles & stingers",
-  "seconds": 1.41,
-  "file": "/audio/sfx/steel-drum-jingle-2.mp3",
-  "size": 34525,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "Steel drum jingle 3",
-  "slug": "steel-drum-jingle-3",
-  "category": "Jingles & stingers",
-  "seconds": 1.44,
-  "file": "/audio/sfx/steel-drum-jingle-3.mp3",
-  "size": 35152,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "8-bit jingle 1",
-  "slug": "8-bit-jingle-1",
-  "category": "Jingles & stingers",
-  "seconds": 1.8,
-  "file": "/audio/sfx/8-bit-jingle-1.mp3",
-  "size": 43929,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "8-bit jingle 2",
-  "slug": "8-bit-jingle-2",
-  "category": "Jingles & stingers",
-  "seconds": 0.44,
-  "file": "/audio/sfx/8-bit-jingle-2.mp3",
-  "size": 11329,
-  "source": "Kenney \u00b7 Music Jingles"
- },
- {
-  "name": "8-bit jingle 3",
-  "slug": "8-bit-jingle-3",
-  "category": "Jingles & stingers",
-  "seconds": 0.42,
-  "file": "/audio/sfx/8-bit-jingle-3.mp3",
-  "size": 10702,
-  "source": "Kenney \u00b7 Music Jingles"
- }
+{"name":"Click 1","slug":"click-1","category":"Clicks & UI","seconds":0.13,"file":"/audio/sfx/click-1.mp3","size":3805,"source":"Kenney · Interface Sounds","peaks":[100,91,34,39,21,27,44,18,17,13,17,15,12,7,6,6,5,5,5,4,4,4,4,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Click 2","slug":"click-2","category":"Clicks & UI","seconds":0.05,"file":"/audio/sfx/click-2.mp3","size":1924,"source":"Kenney · Interface Sounds","peaks":[75,100,59,45,96,11,68,44,76,21,58,5,59,45,29,44,27,27,43,37,11,28,35,31,17,18,30,33,26,4,22,25,24,25,25,22,15,6,5,6,10,13,14,12,10,9,6,4,4,7,9,10,11,12,13,14,15,15,16,16,16,16,16,16,16,16,16,16,16,16,15,15,15,15,15,15,14,14,14,14,14,13,4,7,9,7,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Click 3","slug":"click-3","category":"Clicks & UI","seconds":0.05,"file":"/audio/sfx/click-3.mp3","size":1924,"source":"Kenney · Interface Sounds","peaks":[65,100,39,55,92,23,64,61,54,58,26,59,36,32,50,19,41,25,38,28,24,34,16,31,4,28,12,25,11,18,16,19,4,8,8,16,16,5,5,16,18,9,4,11,16,15,11,8,11,14,16,14,11,11,13,15,15,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Click 4","slug":"click-4","category":"Clicks & UI","seconds":0.05,"file":"/audio/sfx/click-4.mp3","size":1924,"source":"Kenney · Interface Sounds","peaks":[35,85,100,73,20,61,55,23,42,45,46,33,25,42,50,34,28,42,26,20,22,20,6,4,8,7,10,5,20,10,12,4,14,10,18,10,4,11,15,17,11,8,4,8,14,4,9,9,10,8,4,4,4,8,6,7,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Click 5","slug":"click-5","category":"Clicks & UI","seconds":0.05,"file":"/audio/sfx/click-5.mp3","size":1924,"source":"Kenney · Interface Sounds","peaks":[7,14,11,11,10,27,65,75,84,89,100,66,20,12,44,59,64,49,50,50,52,55,48,40,36,33,27,31,41,45,52,53,54,45,41,39,34,31,28,27,24,20,19,17,15,13,11,9,6,4,4,6,8,9,10,12,13,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Select 1","slug":"select-1","category":"Clicks & UI","seconds":0.08,"file":"/audio/sfx/select-1.mp3","size":2551,"source":"Kenney · Interface Sounds","peaks":[80,48,81,72,69,100,88,82,65,62,82,62,72,41,62,41,39,60,20,55,47,29,50,29,35,40,15,36,22,25,28,14,27,19,22,23,19,21,20,18,20,18,20,12,10,10,13,6,14,19,14,11,14,14,12,16,11,10,7,12,10,16,12,17,8,5,9,9,5,6,7,7,8,5,9,8,9,8,10,7,4,8,8,9,5,7,5,4,4,6,5,5,5,4,5,4]},
+{"name":"Select 2","slug":"select-2","category":"Clicks & UI","seconds":0.08,"file":"/audio/sfx/select-2.mp3","size":2551,"source":"Kenney · Interface Sounds","peaks":[68,81,86,71,99,87,100,97,61,96,79,84,79,72,68,65,66,60,61,55,55,46,47,42,45,47,43,45,42,42,31,33,27,37,28,26,26,30,28,13,26,9,24,21,21,21,16,22,21,9,19,9,21,22,15,13,10,18,14,8,6,9,11,14,14,14,9,10,14,16,8,7,8,10,11,12,10,6,11,12,9,9,11,8,6,9,11,9,8,7,6,10,9,9,9,6]},
+{"name":"Select 3","slug":"select-3","category":"Clicks & UI","seconds":0.42,"file":"/audio/sfx/select-3.mp3","size":10702,"source":"Kenney · Interface Sounds","peaks":[4,4,4,44,72,92,100,83,77,63,58,50,37,31,26,22,20,14,16,16,15,15,14,13,11,10,11,12,12,11,12,11,12,15,11,11,10,9,9,9,9,9,9,9,9,13,13,8,7,7,5,6,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Switch 1","slug":"switch-1","category":"Clicks & UI","seconds":0.65,"file":"/audio/sfx/switch-1.mp3","size":16344,"source":"Kenney · Interface Sounds","peaks":[93,33,10,5,4,4,4,4,4,4,4,4,4,4,4,4,100,63,39,12,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Switch 2","slug":"switch-2","category":"Clicks & UI","seconds":0.65,"file":"/audio/sfx/switch-2.mp3","size":16344,"source":"Kenney · Interface Sounds","peaks":[100,66,43,16,6,4,4,4,4,4,4,4,4,4,4,4,4,93,48,37,18,8,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Switch 3","slug":"switch-3","category":"Clicks & UI","seconds":0.55,"file":"/audio/sfx/switch-3.mp3","size":13836,"source":"Kenney · Interface Sounds","peaks":[77,100,80,67,83,85,74,53,50,60,61,52,33,39,46,45,36,21,31,35,49,79,96,77,58,79,80,76,59,39,56,58,57,46,26,39,43,42,34,19,29,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Toggle 1","slug":"toggle-1","category":"Clicks & UI","seconds":0.18,"file":"/audio/sfx/toggle-1.mp3","size":5059,"source":"Kenney · Interface Sounds","peaks":[95,100,100,95,99,93,96,93,87,89,86,85,76,82,78,72,74,68,71,68,61,65,60,60,56,58,56,51,53,48,48,47,42,46,45,43,43,43,44,42,44,43,39,42,41,40,40,38,39,39,35,38,36,35,29,26,26,25,23,21,20,17,18,15,13,12,11,9,9,7,6,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Toggle 2","slug":"toggle-2","category":"Clicks & UI","seconds":0.18,"file":"/audio/sfx/toggle-2.mp3","size":5059,"source":"Kenney · Interface Sounds","peaks":[89,94,97,97,99,97,100,94,99,97,95,94,89,90,82,86,81,81,78,71,74,70,68,66,65,63,57,60,57,55,54,48,50,48,50,50,48,49,48,48,47,48,47,46,44,43,40,39,37,35,33,32,30,29,26,24,24,22,20,18,18,17,14,14,12,11,10,8,8,6,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Tick","slug":"tick","category":"Clicks & UI","seconds":0.08,"file":"/audio/sfx/tick.mp3","size":2551,"source":"Kenney · Interface Sounds","peaks":[100,31,65,44,62,42,29,45,32,23,31,13,23,16,23,16,12,17,12,10,11,6,8,6,8,6,4,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Scroll 1","slug":"scroll-1","category":"Clicks & UI","seconds":1.04,"file":"/audio/sfx/scroll-1.mp3","size":25748,"source":"Kenney · Interface Sounds","peaks":[100,4,4,4,98,30,5,4,4,98,21,4,4,4,98,10,4,4,4,97,5,4,4,4,98,4,4,4,98,50,4,4,4,98,21,4,4,4,98,10,4,4,4,98,7,4,4,4,98,4,4,4,7,98,4,4,4,98,30,4,4,4,98,21,4,4,4,98,10,4,4,4,98,4,4,4,4,98,4,4,4,98,51,4,4,4,98,30,4,4,4,98,10,4,4,4]},
+{"name":"Scroll 2","slug":"scroll-2","category":"Clicks & UI","seconds":1.04,"file":"/audio/sfx/scroll-2.mp3","size":25748,"source":"Kenney · Interface Sounds","peaks":[100,7,7,7,99,24,7,7,7,99,21,7,7,7,99,7,7,7,7,100,7,7,7,7,99,7,7,7,99,35,7,7,7,99,23,7,7,7,99,14,7,7,7,99,7,7,7,7,100,7,7,7,9,99,7,7,7,99,27,7,7,7,100,22,7,7,7,99,7,7,7,7,99,7,7,7,7,99,7,7,7,99,36,7,7,7,99,23,7,7,7,99,15,7,7,7]},
+{"name":"Hover 1","slug":"hover-1","category":"Clicks & UI","seconds":0.26,"file":"/audio/sfx/hover-1.mp3","size":6940,"source":"Kenney · Ui Audio","peaks":[19,18,18,19,22,18,18,16,14,12,13,12,10,10,10,12,12,10,10,10,12,19,16,15,20,22,100,63,50,36,48,41,30,32,26,27,36,34,38,26,23,26,19,26,23,20,20,25,19,18,13,16,16,17,13,13,13,10,12,13,11,10,9,9,9,10,9,9,11,9,5,8,6,6,6,5,7,6,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Hover 2","slug":"hover-2","category":"Clicks & UI","seconds":0.1,"file":"/audio/sfx/hover-2.mp3","size":3178,"source":"Kenney · Ui Audio","peaks":[4,4,4,4,4,4,4,4,6,7,7,6,7,6,8,4,4,4,4,5,5,6,7,6,8,6,7,7,4,6,4,4,5,5,4,5,6,5,6,7,7,5,13,22,13,19,100,51,70,65,45,40,35,42,34,20,21,25,22,29,34,25,23,23,21,18,26,29,19,28,29,25,22,14,27,23,16,20,20,14,12,18,21,14,11,14,15,11,10,14,12,12,14,10,12,10]},
+{"name":"Swoosh in 1","slug":"swoosh-in-1","category":"Whooshes & transitions","seconds":0.29,"file":"/audio/sfx/swoosh-in-1.mp3","size":7567,"source":"Kenney · Interface Sounds","peaks":[4,11,16,20,24,26,28,32,36,36,36,42,44,43,48,50,53,52,56,58,59,58,63,65,65,68,70,71,72,74,76,77,79,77,80,83,85,84,81,88,87,88,88,93,94,94,97,96,100,100,97,97,98,97,96,92,93,88,87,83,77,69,61,61,57,43,48,43,41,38,35,33,31,31,30,30,30,30,29,30,32,32,33,34,34,35,37,38,37,38,38,38,37,36,34,32]},
+{"name":"Swoosh in 2","slug":"swoosh-in-2","category":"Whooshes & transitions","seconds":0.29,"file":"/audio/sfx/swoosh-in-2.mp3","size":7567,"source":"Kenney · Interface Sounds","peaks":[4,10,16,19,23,26,28,31,33,36,39,41,43,44,45,46,50,52,53,56,58,59,60,62,63,63,59,55,43,29,12,4,72,77,79,80,81,82,84,85,88,88,90,91,92,93,91,96,97,97,99,100,100,99,98,96,93,90,82,76,68,67,46,24,21,38,38,29,23,19,16,13,8,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Swoosh in 3","slug":"swoosh-in-3","category":"Whooshes & transitions","seconds":0.26,"file":"/audio/sfx/swoosh-in-3.mp3","size":6940,"source":"Kenney · Interface Sounds","peaks":[4,4,8,14,21,23,27,33,31,33,36,38,38,43,39,29,34,32,23,25,24,25,33,28,28,27,28,32,28,33,34,42,37,31,28,23,19,27,18,22,22,22,19,15,20,27,20,19,23,16,31,31,34,34,35,36,38,43,59,73,87,86,81,64,66,66,59,43,48,41,58,53,69,76,62,62,59,61,62,62,66,64,62,70,46,56,54,49,52,44,69,64,86,86,90,100]},
+{"name":"Swoosh in 4","slug":"swoosh-in-4","category":"Whooshes & transitions","seconds":0.44,"file":"/audio/sfx/swoosh-in-4.mp3","size":11329,"source":"Kenney · Interface Sounds","peaks":[4,4,4,4,7,10,11,6,7,5,4,4,4,4,4,4,4,47,53,61,66,71,70,67,59,50,43,37,31,27,23,19,15,5,5,4,4,4,4,4,4,5,4,4,6,5,5,4,7,7,6,4,4,4,7,8,10,100,99,88,75,63,37,12,5,4,4,4,4,4,4,4,4,4,4,4,4,4,5,8,7,7,4,11,25,24,28,15,11,5,8,14,11,26,22,20]},
+{"name":"Swoosh in 5","slug":"swoosh-in-5","category":"Whooshes & transitions","seconds":0.57,"file":"/audio/sfx/swoosh-in-5.mp3","size":14463,"source":"Kenney · Interface Sounds","peaks":[7,13,17,20,24,25,29,31,33,35,38,41,43,45,48,50,52,54,56,58,60,61,62,65,67,67,69,71,72,73,76,77,79,80,80,83,84,86,86,87,87,85,85,83,82,80,79,79,79,81,81,83,82,84,84,84,86,88,89,89,91,91,91,93,94,94,96,97,97,98,99,99,100,99,100,99,96,89,84,71,43,42,38,30,31,32,33,29,26,30,22,22,37,34,22,16]},
+{"name":"Swoosh in 6","slug":"swoosh-in-6","category":"Whooshes & transitions","seconds":0.42,"file":"/audio/sfx/swoosh-in-6.mp3","size":10702,"source":"Kenney · Interface Sounds","peaks":[51,38,31,26,21,19,19,19,21,23,26,31,38,48,63,86,100,98,76,87,88,73,46,37,29,26,23,22,22,24,27,31,40,54,75,93,94,61,71,79,71,45,33,26,23,21,22,24,29,37,55,79,78,44,54,64,57,35,25,20,18,19,22,30,44,63,60,33,40,49,42,25,19,16,16,19,25,39,46,24,24,34,33,22,14,11,11,13,20,25,21,9,13,14,8,4]},
+{"name":"Swoosh out 1","slug":"swoosh-out-1","category":"Whooshes & transitions","seconds":0.29,"file":"/audio/sfx/swoosh-out-1.mp3","size":7567,"source":"Kenney · Interface Sounds","peaks":[91,30,32,35,35,36,37,37,39,38,37,37,36,35,34,33,33,32,31,30,30,30,30,31,31,31,33,34,36,38,42,47,42,55,61,64,59,78,73,81,86,94,94,96,96,99,98,97,97,100,98,97,96,96,91,93,87,87,87,87,81,85,83,82,81,78,78,76,74,72,73,71,69,65,65,64,58,57,58,56,55,53,51,49,48,44,43,36,35,36,33,31,28,26,20,16]},
+{"name":"Swoosh out 2","slug":"swoosh-out-2","category":"Whooshes & transitions","seconds":0.29,"file":"/audio/sfx/swoosh-out-2.mp3","size":7567,"source":"Kenney · Interface Sounds","peaks":[74,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,7,10,13,19,24,29,30,38,34,19,30,66,66,76,82,86,92,96,96,98,100,100,98,100,97,95,94,93,92,92,91,89,88,86,84,83,82,82,79,78,77,5,9,20,37,41,57,62,62,63,61,59,58,56,54,52,50,48,47,45,43,41,39,37,35,33,30,26,23,20,17]},
+{"name":"Swoosh out 3","slug":"swoosh-out-3","category":"Whooshes & transitions","seconds":0.26,"file":"/audio/sfx/swoosh-out-3.mp3","size":6940,"source":"Kenney · Interface Sounds","peaks":[100,71,74,59,68,58,57,46,41,43,33,42,27,34,31,34,42,43,42,40,40,33,42,42,39,45,48,43,38,30,25,31,38,39,45,43,46,54,58,57,49,32,28,25,23,22,21,23,20,21,16,12,12,14,18,11,11,12,14,15,15,17,17,15,14,18,25,14,28,23,20,19,19,16,16,19,20,17,19,24,25,23,20,22,24,24,24,27,25,23,22,21,18,19,16,12]},
+{"name":"Swoosh out 4","slug":"swoosh-out-4","category":"Whooshes & transitions","seconds":0.44,"file":"/audio/sfx/swoosh-out-4.mp3","size":11329,"source":"Kenney · Interface Sounds","peaks":[4,5,18,19,26,12,14,10,4,8,14,30,25,26,11,8,5,7,8,7,4,4,4,4,4,4,4,4,4,4,4,4,4,4,12,26,57,71,82,96,100,6,8,7,7,4,4,6,5,7,4,4,5,5,4,4,4,4,4,4,4,4,4,4,8,13,18,21,25,29,36,41,48,55,64,69,71,68,63,55,49,46,4,4,4,4,4,4,4,6,10,10,10,8,4,4]},
+{"name":"Swoosh out 5","slug":"swoosh-out-5","category":"Whooshes & transitions","seconds":0.57,"file":"/audio/sfx/swoosh-out-5.mp3","size":14463,"source":"Kenney · Interface Sounds","peaks":[4,11,17,25,33,34,20,26,25,25,31,32,33,32,32,36,53,56,71,83,89,96,99,100,100,99,99,100,99,98,97,96,96,94,94,93,92,87,89,88,88,88,86,85,84,84,83,83,81,80,79,79,81,83,84,87,87,87,87,86,85,85,83,82,81,79,77,75,74,73,72,71,68,67,64,64,61,59,58,56,54,53,51,49,46,44,40,39,35,33,31,29,26,24,20,16]},
+{"name":"Swoosh out 6","slug":"swoosh-out-6","category":"Whooshes & transitions","seconds":0.42,"file":"/audio/sfx/swoosh-out-6.mp3","size":10702,"source":"Kenney · Interface Sounds","peaks":[4,4,4,8,14,13,10,21,25,20,13,11,11,14,19,34,35,24,23,46,40,25,19,16,16,19,26,42,50,43,33,61,63,47,30,22,19,19,20,25,33,57,65,54,45,77,78,59,39,29,24,22,21,22,25,31,42,70,79,72,61,84,94,76,57,40,31,27,24,22,22,23,26,30,37,47,73,88,88,77,95,100,94,72,48,38,31,27,23,21,20,19,19,22,26,31]},
+{"name":"Scratch 1","slug":"scratch-1","category":"Whooshes & transitions","seconds":0.18,"file":"/audio/sfx/scratch-1.mp3","size":5059,"source":"Kenney · Interface Sounds","peaks":[64,67,45,73,74,53,60,53,64,68,82,79,100,96,96,94,87,82,81,62,63,46,48,49,47,46,54,64,71,74,74,80,73,58,48,50,51,54,48,56,39,59,53,60,48,45,44,41,60,59,66,67,65,47,30,16,48,45,42,39,45,35,46,46,46,47,45,61,61,56,65,49,51,54,67,41,48,48,51,44,48,60,54,52,48,48,38,43,31,4,4,4,4,4,4,4]},
+{"name":"Scratch 2","slug":"scratch-2","category":"Whooshes & transitions","seconds":0.18,"file":"/audio/sfx/scratch-2.mp3","size":5059,"source":"Kenney · Interface Sounds","peaks":[58,53,48,49,54,43,55,52,56,59,27,67,62,63,63,60,60,11,56,57,54,48,57,51,51,52,52,53,45,40,48,52,49,44,49,51,43,90,41,42,49,38,40,46,45,39,32,45,44,39,41,41,42,44,42,8,14,40,40,43,43,48,44,42,44,42,39,49,43,18,48,44,41,42,79,100,94,68,48,42,26,39,13,42,37,38,46,39,36,4,4,4,4,4,4,4]},
+{"name":"Success 1","slug":"success-1","category":"Notifications","seconds":0.34,"file":"/audio/sfx/success-1.mp3","size":8821,"source":"Kenney · Interface Sounds","peaks":[100,98,96,95,93,90,89,86,84,82,80,77,75,73,71,68,67,66,67,66,66,66,66,66,67,67,66,65,65,64,63,63,62,61,61,60,60,59,59,58,58,57,56,56,55,54,53,53,52,52,51,50,49,49,48,48,47,46,45,45,43,43,42,42,41,40,39,38,38,37,36,35,34,33,33,32,31,30,29,28,27,26,25,24,23,22,21,19,18,16,15,13,12,10,8,6]},
+{"name":"Success 2","slug":"success-2","category":"Notifications","seconds":0.57,"file":"/audio/sfx/success-2.mp3","size":14463,"source":"Kenney · Interface Sounds","peaks":[100,94,89,83,79,73,67,60,53,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,48,48,48,48,48,48,47,45,45,45,45,45,45,45,45,44,44,44,44,4,4,4,4,21,21,21,21,20,20,20,19,19,19,19,18,18,18,17,17,17,16,16,16,15,14,14,14,13,13,13,12,12,11,11,8,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Success 3","slug":"success-3","category":"Notifications","seconds":0.37,"file":"/audio/sfx/success-3.mp3","size":9448,"source":"Kenney · Interface Sounds","peaks":[100,98,94,90,87,83,81,76,71,68,63,58,53,48,42,40,39,39,39,39,38,38,38,37,37,37,37,36,36,36,35,35,35,34,34,34,33,33,33,32,33,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Success 4","slug":"success-4","category":"Notifications","seconds":0.52,"file":"/audio/sfx/success-4.mp3","size":13209,"source":"Kenney · Interface Sounds","peaks":[12,18,23,28,31,35,39,42,45,48,51,53,57,58,62,63,67,68,71,73,76,78,80,81,85,86,87,87,92,91,96,96,99,100,93,93,86,81,76,68,64,56,49,40,39,39,38,38,37,37,36,36,36,35,35,34,34,33,33,32,31,31,30,30,30,29,28,28,27,26,26,26,25,24,24,23,23,22,21,21,20,19,19,18,17,16,16,15,14,13,12,11,10,9,8,7]},
+{"name":"Error 1","slug":"error-1","category":"Notifications","seconds":0.21,"file":"/audio/sfx/error-1.mp3","size":5686,"source":"Kenney · Interface Sounds","peaks":[84,85,87,86,75,70,72,74,69,60,58,60,59,55,48,51,51,50,44,37,41,41,40,35,32,34,34,32,28,27,27,28,24,22,24,19,72,100,89,95,83,66,79,66,71,70,63,63,62,58,53,48,53,44,41,39,36,37,38,33,33,34,31,28,26,27,20,23,25,20,21,19,19,19,16,15,16,14,13,12,12,12,10,11,10,10,8,8,9,8,7,7,7,5,6,6]},
+{"name":"Error 2","slug":"error-2","category":"Notifications","seconds":0.21,"file":"/audio/sfx/error-2.mp3","size":5686,"source":"Kenney · Interface Sounds","peaks":[76,100,93,84,79,80,85,73,59,71,73,55,60,59,63,52,45,56,50,44,43,43,42,45,39,40,36,38,34,32,31,33,29,20,30,28,25,24,23,24,21,18,21,22,18,19,17,18,16,14,15,16,14,13,13,11,12,10,12,12,12,10,9,9,9,19,70,97,99,62,90,83,55,68,54,67,57,46,45,49,44,44,43,35,35,37,30,37,32,24,28,26,21,22,25,24]},
+{"name":"Error 3","slug":"error-3","category":"Notifications","seconds":0.57,"file":"/audio/sfx/error-3.mp3","size":14463,"source":"Kenney · Interface Sounds","peaks":[4,8,89,95,86,83,75,56,53,50,97,95,88,85,85,70,58,55,65,58,49,100,88,91,88,69,55,63,54,49,40,39,40,34,36,33,25,26,28,21,22,22,23,20,18,18,19,19,18,16,14,15,14,14,12,12,9,8,8,7,8,7,6,6,6,6,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Error 4","slug":"error-4","category":"Notifications","seconds":0.13,"file":"/audio/sfx/error-4.mp3","size":3805,"source":"Kenney · Interface Sounds","peaks":[100,82,80,70,79,66,72,70,60,63,63,62,63,51,55,55,54,51,46,48,42,50,39,38,45,31,38,29,37,35,35,22,32,35,16,27,25,23,31,26,20,19,22,10,21,25,22,23,6,12,17,54,82,67,64,62,61,55,56,42,49,41,41,42,34,37,32,29,29,31,27,24,26,26,17,24,20,22,21,12,17,17,11,15,15,17,14,10,9,5,6,6,4,4,4,4]},
+{"name":"Question 1","slug":"question-1","category":"Notifications","seconds":0.52,"file":"/audio/sfx/question-1.mp3","size":13209,"source":"Kenney · Interface Sounds","peaks":[11,18,23,28,32,35,39,42,45,48,51,54,56,59,61,64,67,68,71,73,75,77,79,82,84,85,88,89,92,94,95,97,99,100,97,93,88,81,76,69,64,56,49,39,39,38,38,37,37,37,36,36,35,35,33,34,33,33,33,31,32,31,30,30,30,29,28,28,27,27,26,26,25,24,24,23,22,22,21,21,20,19,19,18,17,16,16,15,14,13,12,11,10,9,8,7]},
+{"name":"Question 2","slug":"question-2","category":"Notifications","seconds":0.37,"file":"/audio/sfx/question-2.mp3","size":9448,"source":"Kenney · Interface Sounds","peaks":[19,29,39,47,53,61,65,71,75,82,85,91,96,100,99,100,98,98,96,96,94,93,91,90,89,88,87,85,85,83,83,81,80,78,78,77,74,74,72,70,70,69,67,65,65,63,61,60,59,56,55,54,52,51,49,48,45,44,42,40,38,36,34,32,30,29,28,28,27,27,26,25,25,24,23,23,22,22,21,21,20,19,18,18,17,17,15,15,14,13,12,11,10,9,8,7]},
+{"name":"Bong","slug":"bong","category":"Notifications","seconds":0.16,"file":"/audio/sfx/bong.mp3","size":4432,"source":"Kenney · Interface Sounds","peaks":[94,100,75,76,76,69,70,61,64,61,60,55,46,52,45,46,44,42,38,34,38,31,31,31,28,25,25,26,20,19,21,17,15,17,17,10,12,14,9,7,11,10,5,10,9,5,9,9,6,9,9,7,8,9,8,6,10,10,5,9,10,8,7,9,9,5,9,9,7,8,9,8,6,9,9,6,8,8,8,6,8,8,6,8,8,7,7,8,8,6,7,8,7,7,7,7]},
+{"name":"Glass ding","slug":"glass-ding","category":"Notifications","seconds":0.31,"file":"/audio/sfx/glass-ding.mp3","size":8194,"source":"Kenney · Interface Sounds","peaks":[100,81,59,64,72,70,55,36,50,53,56,42,32,27,32,37,34,32,21,30,38,38,36,26,28,31,35,30,26,25,31,30,29,20,19,22,22,22,14,12,16,16,14,13,8,9,12,13,13,10,11,12,13,13,12,9,12,13,12,9,9,11,11,10,8,6,7,7,6,4,4,6,6,6,5,4,5,6,6,5,4,6,6,6,5,4,5,5,5,4,4,4,4,4,4,4]},
+{"name":"Punch heavy 1","slug":"punch-heavy-1","category":"Impacts & hits","seconds":0.68,"file":"/audio/sfx/punch-heavy-1.mp3","size":16971,"source":"Kenney · Impact Sounds","peaks":[9,14,15,100,78,94,78,92,88,57,83,51,65,57,51,57,50,44,41,38,33,39,35,28,28,25,29,31,24,22,20,17,21,18,17,17,17,18,16,14,15,14,14,13,11,9,9,10,10,10,9,8,7,7,7,7,6,6,6,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Punch heavy 2","slug":"punch-heavy-2","category":"Impacts & hits","seconds":0.57,"file":"/audio/sfx/punch-heavy-2.mp3","size":14463,"source":"Kenney · Impact Sounds","peaks":[10,16,18,100,78,91,82,95,89,61,89,52,68,71,60,52,60,47,44,43,35,42,36,30,30,26,31,34,26,23,21,19,22,21,19,19,18,19,17,15,16,15,15,14,13,10,10,10,11,11,11,10,9,8,8,8,7,7,7,6,6,5,5,6,6,6,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Punch heavy 3","slug":"punch-heavy-3","category":"Impacts & hits","seconds":0.5,"file":"/audio/sfx/punch-heavy-3.mp3","size":12582,"source":"Kenney · Impact Sounds","peaks":[11,18,20,100,74,98,83,94,86,60,92,52,71,72,58,63,63,47,46,46,36,45,37,28,31,28,33,35,27,25,22,20,24,22,20,20,19,20,18,16,17,16,16,15,12,11,11,11,12,12,10,10,8,8,8,8,7,7,7,7,6,6,6,6,6,6,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Punch 1","slug":"punch-1","category":"Impacts & hits","seconds":0.47,"file":"/audio/sfx/punch-1.mp3","size":11955,"source":"Kenney · Impact Sounds","peaks":[18,27,34,34,88,81,92,100,94,86,58,65,84,77,75,65,39,39,61,54,50,42,28,42,42,31,23,25,28,23,22,13,20,22,15,13,13,15,13,10,10,11,9,7,11,9,8,5,9,6,5,6,5,4,4,4,4,4,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Punch 2","slug":"punch-2","category":"Impacts & hits","seconds":0.44,"file":"/audio/sfx/punch-2.mp3","size":11329,"source":"Kenney · Impact Sounds","peaks":[18,27,34,34,87,85,94,100,99,88,60,66,85,79,79,68,35,40,61,57,48,42,30,43,42,31,24,26,27,24,22,14,22,21,15,13,13,15,12,10,9,10,8,7,12,8,9,7,9,6,5,6,5,5,4,4,4,4,4,4,4,4,4,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Wood hit 1","slug":"wood-hit-1","category":"Impacts & hits","seconds":0.34,"file":"/audio/sfx/wood-hit-1.mp3","size":8821,"source":"Kenney · Impact Sounds","peaks":[96,100,68,28,38,53,49,44,30,19,21,23,20,18,26,29,30,29,20,16,6,15,14,6,7,9,13,11,6,8,5,12,12,7,10,12,10,9,12,7,9,8,9,9,9,10,5,8,6,11,11,4,7,7,6,6,6,6,6,6,5,6,7,6,7,7,5,6,6,6,6,6,6,6,6,6,6,6,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]},
+{"name":"Wood hit 2","slug":"wood-hit-2","category":"Impacts & hits","seconds":0.34,"file":"/audio/sfx/wood-hit-2.mp3","size":8821,"source":"Kenney · Impact Sounds","peaks":[96,100,70,31,48,51,50,35,21,14,21,21,21,22,27,30,32,25,16,14,12,10,9,9,12,9,11,11,6,8,7,11,12,8,9,13,9,11,11,8,9,9,9,7,10,6,9,5,11,10,7,7,6,6,6,6,6,5,6,6,6,5,7,7,6,7,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,6]},
+{"name":"Metal hit 1","slug":"metal-hit-1","category":"Impacts & hits","seconds":0.21,"file":"/audio/sfx/metal-hit-1.mp3","size":5686,"source":"Kenney · Impact Sounds","peaks":[89,100,65,54,39,35,38,24,34,32,21,28,29,20,24,26,16,21,22,17,20,20,16,19,14,14,17,13,13,14,12,12,13,11,12,12,10,12,11,11,11,10,10,10,10,10,10,9,9,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,8,9,9,8,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8]},
+{"name":"Metal hit 2","slug":"metal-hit-2","category":"Impacts & hits","seconds":0.39,"file":"/audio/sfx/metal-hit-2.mp3","size":10075,"source":"Kenney · Impact Sounds","peaks":[100,55,32,32,30,29,27,24,25,25,22,20,19,20,18,19,16,14,15,15,14,13,12,12,12,12,11,10,10,10,10,9,8,9,8,9,8,8,8,8,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]},
+{"name":"Glass hit 1","slug":"glass-hit-1","category":"Impacts & hits","seconds":0.29,"file":"/audio/sfx/glass-hit-1.mp3","size":7567,"source":"Kenney · Impact Sounds","peaks":[100,69,41,38,30,40,35,22,26,24,29,44,41,25,25,21,20,23,18,19,20,15,20,23,21,20,19,16,17,18,17,18,16,16,15,14,17,19,15,16,14,14,15,14,14,14,14,13,15,14,13,14,13,14,13,12,13,13,13,13,12,11,12,11,12,12,12,11,12,10,11,11,11,11,11,11,11,10,10,11,10,10,10,10,10,10,10,10,10,10,10,10,10,9,9,9]},
+{"name":"Glass hit 2","slug":"glass-hit-2","category":"Impacts & hits","seconds":0.47,"file":"/audio/sfx/glass-hit-2.mp3","size":11955,"source":"Kenney · Impact Sounds","peaks":[100,44,27,44,41,24,19,35,26,23,22,29,24,19,23,22,20,15,20,18,16,14,18,15,12,16,14,11,12,13,11,9,13,10,9,11,11,7,7,8,6,6,7,7,6,6,7,6,6,6,6,5,5,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5]},
+{"name":"Bell hit 1","slug":"bell-hit-1","category":"Impacts & hits","seconds":1.52,"file":"/audio/sfx/bell-hit-1.mp3","size":37033,"source":"Kenney · Impact Sounds","peaks":[100,48,54,56,47,48,38,35,35,41,40,31,32,35,33,32,30,33,28,31,27,24,26,28,27,24,21,26,23,24,21,22,21,21,24,19,18,20,21,18,19,17,20,17,20,17,15,17,18,16,15,14,17,14,14,12,11,12,11,11,9,8,9,8,7,6,7,7,6,6,5,5,6,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Bell hit 2","slug":"bell-hit-2","category":"Impacts & hits","seconds":1.78,"file":"/audio/sfx/bell-hit-2.mp3","size":43302,"source":"Kenney · Impact Sounds","peaks":[100,59,57,50,52,42,44,43,40,43,38,42,35,36,37,33,39,30,33,31,32,34,31,34,28,30,30,30,28,28,27,26,27,27,27,22,24,25,22,26,22,24,22,24,23,22,24,20,20,20,19,18,16,16,15,15,14,12,13,11,10,9,10,9,8,8,8,8,6,7,5,6,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Plate hit","slug":"plate-hit","category":"Impacts & hits","seconds":0.52,"file":"/audio/sfx/plate-hit.mp3","size":13209,"source":"Kenney · Impact Sounds","peaks":[100,65,76,59,70,50,41,45,41,29,32,41,29,28,26,26,30,25,19,28,26,13,23,23,16,17,14,15,7,13,17,19,7,15,20,17,12,13,11,8,13,12,11,8,7,9,6,12,15,9,6,9,12,7,11,13,12,9,5,8,7,7,5,4,4,4,4,4,6,7,4,4,4,4,5,6,5,4,4,4,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Soft thud 1","slug":"soft-thud-1","category":"Impacts & hits","seconds":0.57,"file":"/audio/sfx/soft-thud-1.mp3","size":14463,"source":"Kenney · Impact Sounds","peaks":[99,100,84,66,60,64,62,61,56,53,49,47,44,43,41,42,39,38,32,29,27,28,31,29,28,23,22,22,22,21,19,19,16,18,14,16,17,16,16,12,13,8,11,13,13,12,12,11,10,10,6,10,6,9,7,9,7,8,8,8,8,9,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,5,6,5,6,6,6,6,6,6,5,6,5,6,5,5,5,4]},
+{"name":"Soft thud 2","slug":"soft-thud-2","category":"Impacts & hits","seconds":0.6,"file":"/audio/sfx/soft-thud-2.mp3","size":15090,"source":"Kenney · Impact Sounds","peaks":[100,100,83,70,58,56,53,56,54,54,51,50,45,44,41,40,37,36,34,32,33,31,31,28,27,23,23,20,18,22,20,23,21,21,18,15,16,13,16,15,15,14,14,14,11,13,9,12,8,11,11,11,11,11,10,10,9,9,8,8,8,8,9,8,8,7,8,6,7,5,7,6,7,6,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5]},
+{"name":"Light tap 1","slug":"light-tap-1","category":"Impacts & hits","seconds":0.21,"file":"/audio/sfx/light-tap-1.mp3","size":5686,"source":"Kenney · Impact Sounds","peaks":[100,46,76,54,60,60,51,42,41,44,44,40,34,37,27,32,30,25,25,22,21,25,17,20,21,20,16,16,16,13,13,13,11,11,11,9,12,7,10,10,8,8,6,8,8,7,7,7,7,7,6,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Light tap 2","slug":"light-tap-2","category":"Impacts & hits","seconds":0.16,"file":"/audio/sfx/light-tap-2.mp3","size":4432,"source":"Kenney · Impact Sounds","peaks":[85,100,78,51,38,38,46,51,38,38,39,42,28,25,20,26,22,19,18,22,16,25,25,22,17,17,17,12,17,15,13,15,16,16,15,15,13,12,13,11,11,12,10,12,12,11,10,10,10,10,11,11,10,9,10,10,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]},
+{"name":"Pickaxe","slug":"pickaxe","category":"Impacts & hits","seconds":0.97,"file":"/audio/sfx/pickaxe.mp3","size":23867,"source":"Kenney · Impact Sounds","peaks":[98,100,81,49,66,52,57,43,45,40,35,33,32,27,19,23,19,23,24,24,21,22,17,16,10,7,9,9,9,9,10,11,13,13,15,18,16,22,23,27,21,23,17,18,13,13,11,10,9,11,10,8,8,6,7,6,6,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Tin can","slug":"tin-can","category":"Impacts & hits","seconds":0.18,"file":"/audio/sfx/tin-can.mp3","size":5059,"source":"Kenney · Impact Sounds","peaks":[100,88,51,67,60,50,28,54,47,42,36,31,36,30,25,24,32,34,27,25,26,18,24,25,24,23,21,22,19,20,18,20,19,19,18,19,16,12,14,15,17,18,18,16,15,13,13,14,15,15,16,15,15,15,14,14,13,13,13,13,14,13,13,12,12,11,12,11,12,11,10,10,10,10,10,9,9,9,9,9,8,8,8,8,8,8,8,8,7,7,7,8,7,7,7,7]},
+{"name":"Footstep concrete","slug":"footstep-concrete","category":"Footsteps","seconds":0.13,"file":"/audio/sfx/footstep-concrete.mp3","size":3805,"source":"Kenney · Impact Sounds","peaks":[93,100,43,34,25,24,34,35,38,31,31,21,20,10,11,14,15,12,8,13,14,6,13,12,6,10,9,7,11,11,6,10,10,5,10,10,6,7,8,6,10,8,7,8,8,8,8,7,7,8,8,7,8,8,7,7,7,8,8,7,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]},
+{"name":"Footstep wood","slug":"footstep-wood","category":"Footsteps","seconds":0.31,"file":"/audio/sfx/footstep-wood.mp3","size":8194,"source":"Kenney · Impact Sounds","peaks":[100,99,59,20,23,31,34,32,26,19,18,9,9,10,9,5,9,9,8,8,6,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,4,4,4,4]},
+{"name":"Footstep grass","slug":"footstep-grass","category":"Footsteps","seconds":0.81,"file":"/audio/sfx/footstep-grass.mp3","size":20106,"source":"Kenney · Impact Sounds","peaks":[100,31,24,18,15,10,7,9,7,7,5,7,6,6,6,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Footstep snow","slug":"footstep-snow","category":"Footsteps","seconds":0.42,"file":"/audio/sfx/footstep-snow.mp3","size":10702,"source":"Kenney · Impact Sounds","peaks":[54,47,24,96,40,68,78,56,46,100,52,31,21,20,32,36,37,39,57,26,46,34,61,33,51,63,38,28,25,58,44,38,46,19,20,14,19,15,16,21,27,17,13,9,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Laser big 1","slug":"laser-big-1","category":"Sci-fi & game","seconds":0.71,"file":"/audio/sfx/laser-big-1.mp3","size":17598,"source":"Kenney · Sci Fi Sounds","peaks":[97,100,93,90,92,89,80,81,81,75,74,74,72,69,69,64,64,62,61,57,52,51,42,44,37,38,40,36,34,38,32,36,35,32,32,32,31,29,29,26,25,25,21,23,29,26,24,27,22,23,22,23,20,21,17,17,17,16,16,13,16,6,4,4,5,4,5,4,5,4,4,4,4,4,4,5,4,5,4,4,4,5,4,5,4,5,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Laser big 2","slug":"laser-big-2","category":"Sci-fi & game","seconds":0.76,"file":"/audio/sfx/laser-big-2.mp3","size":18852,"source":"Kenney · Sci Fi Sounds","peaks":[98,100,97,92,85,88,84,84,75,74,81,76,76,71,71,65,65,62,60,56,56,53,53,48,47,45,44,42,40,42,40,39,31,31,29,24,28,26,23,29,24,23,20,17,21,17,16,18,14,16,16,17,17,16,14,16,11,14,14,14,13,15,18,5,4,4,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Laser retro 1","slug":"laser-retro-1","category":"Sci-fi & game","seconds":0.29,"file":"/audio/sfx/laser-retro-1.mp3","size":7567,"source":"Kenney · Sci Fi Sounds","peaks":[100,100,97,89,95,96,93,92,90,88,86,85,83,81,79,76,73,71,71,69,68,65,67,67,67,66,63,67,66,68,67,68,65,66,66,66,65,66,66,65,64,68,65,66,63,62,64,62,62,62,61,60,60,59,57,54,56,55,53,53,53,52,49,50,47,49,48,48,44,45,42,41,42,42,39,40,37,36,37,35,34,33,32,31,29,28,26,25,24,22,22,20,17,16,15,12]},
+{"name":"Laser retro 2","slug":"laser-retro-2","category":"Sci-fi & game","seconds":0.29,"file":"/audio/sfx/laser-retro-2.mp3","size":7567,"source":"Kenney · Sci Fi Sounds","peaks":[97,100,98,96,96,94,92,91,86,88,86,84,82,81,79,77,72,71,72,71,68,67,67,67,65,64,67,67,67,63,63,67,66,65,67,68,67,65,62,66,67,62,66,63,67,65,63,64,61,60,61,59,60,58,57,55,55,56,51,52,54,50,48,51,50,49,47,46,45,45,44,41,43,42,41,39,38,35,37,33,34,33,31,28,30,27,27,24,24,22,21,19,18,16,15,13]},
+{"name":"Explosion 1","slug":"explosion-1","category":"Sci-fi & game","seconds":0.81,"file":"/audio/sfx/explosion-1.mp3","size":20106,"source":"Kenney · Sci Fi Sounds","peaks":[100,85,74,67,67,62,67,66,70,67,65,65,64,63,66,63,64,59,64,65,64,65,64,63,63,63,65,64,63,59,62,58,60,57,62,57,61,63,60,60,57,55,59,60,60,58,59,58,59,58,55,56,52,56,51,47,55,48,55,52,53,55,51,54,53,53,21,22,22,21,24,19,21,17,17,20,21,19,17,19,18,17,17,12,12,12,12,12,10,10,10,9,9,8,5,4]},
+{"name":"Explosion 2","slug":"explosion-2","category":"Sci-fi & game","seconds":1.38,"file":"/audio/sfx/explosion-2.mp3","size":33898,"source":"Kenney · Sci Fi Sounds","peaks":[100,76,68,69,69,69,69,69,69,70,68,69,69,69,68,70,72,71,68,69,70,72,69,68,69,70,69,67,70,70,71,67,68,70,69,67,70,69,69,69,66,69,66,69,68,68,67,68,69,65,67,68,64,66,55,61,66,61,51,64,64,63,62,62,60,59,60,46,59,58,39,55,56,56,56,55,54,54,40,27,25,24,24,22,22,18,17,12,11,12,14,13,12,11,8,8]},
+{"name":"Explosion 3","slug":"explosion-3","category":"Sci-fi & game","seconds":1.31,"file":"/audio/sfx/explosion-3.mp3","size":32017,"source":"Kenney · Sci Fi Sounds","peaks":[100,82,69,68,86,81,54,73,49,72,70,86,82,77,71,69,92,92,92,76,95,91,78,68,79,66,76,87,69,73,54,62,67,71,78,90,74,63,62,76,67,52,45,79,76,65,48,87,68,56,72,65,69,65,66,68,53,73,81,50,51,51,59,56,64,57,71,53,73,66,65,55,50,60,44,61,51,35,31,21,19,20,21,17,20,16,14,15,15,9,12,10,8,6,6,4]},
+{"name":"Deep boom 1","slug":"deep-boom-1","category":"Sci-fi & game","seconds":2.04,"file":"/audio/sfx/deep-boom-1.mp3","size":49572,"source":"Kenney · Sci Fi Sounds","peaks":[8,16,21,42,50,55,65,60,78,74,100,99,66,99,50,59,67,64,57,53,56,52,55,47,52,45,49,44,55,45,44,34,30,24,31,35,30,37,29,24,15,24,11,18,18,16,10,13,11,10,9,9,8,9,7,7,8,7,6,7,6,7,5,5,4,6,6,6,6,4,5,4,5,4,4,4,4,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Deep boom 2","slug":"deep-boom-2","category":"Sci-fi & game","seconds":1.04,"file":"/audio/sfx/deep-boom-2.mp3","size":25748,"source":"Kenney · Sci Fi Sounds","peaks":[10,10,14,22,39,40,64,100,99,89,89,86,71,96,85,52,70,96,64,72,62,89,65,74,46,49,63,70,36,21,30,31,33,26,26,20,24,20,19,20,15,19,16,14,17,12,11,13,11,14,13,10,10,9,10,9,8,11,7,9,8,8,7,6,6,4,5,5,5,6,4,4,5,5,6,5,5,5,5,5,4,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Force field","slug":"force-field","category":"Sci-fi & game","seconds":0.99,"file":"/audio/sfx/force-field.mp3","size":24494,"source":"Kenney · Sci Fi Sounds","peaks":[19,27,37,46,55,66,75,81,86,91,95,97,98,100,100,99,97,96,95,92,90,88,84,82,79,75,72,69,66,63,60,57,55,52,49,46,44,42,39,38,36,33,31,30,28,27,25,24,23,21,20,19,18,17,16,15,14,13,13,12,11,11,10,9,9,8,8,7,7,7,6,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Sci-fi door open","slug":"sci-fi-door-open","category":"Sci-fi & game","seconds":0.57,"file":"/audio/sfx/sci-fi-door-open.mp3","size":14463,"source":"Kenney · Sci Fi Sounds","peaks":[100,96,80,78,75,66,64,47,56,60,55,59,58,61,59,56,59,57,58,59,23,56,55,53,53,57,56,51,53,53,51,54,51,51,50,52,56,53,58,55,55,56,56,54,53,51,57,55,53,58,56,44,33,32,32,30,30,27,28,28,29,28,27,26,26,27,25,25,22,23,23,22,22,22,20,19,19,20,18,18,17,17,15,14,13,12,12,11,10,9,9,8,8,6,5,4]},
+{"name":"Sci-fi door close","slug":"sci-fi-door-close","category":"Sci-fi & game","seconds":0.57,"file":"/audio/sfx/sci-fi-door-close.mp3","size":14463,"source":"Kenney · Sci Fi Sounds","peaks":[4,4,5,6,7,9,10,10,11,12,12,13,15,14,16,18,19,19,20,20,20,22,22,22,23,24,23,23,26,27,26,27,28,29,30,30,31,30,31,32,34,34,35,32,36,49,59,59,59,59,55,59,57,58,60,60,57,57,62,60,57,59,58,50,55,55,53,58,56,55,56,57,55,60,59,41,27,62,61,62,57,60,59,64,61,59,60,60,62,67,74,74,80,90,88,100]},
+{"name":"Power up 1","slug":"power-up-1","category":"Sci-fi & game","seconds":1.23,"file":"/audio/sfx/power-up-1.mp3","size":30137,"source":"Kenney · Digital Audio","peaks":[4,4,4,4,4,4,4,100,100,91,87,82,78,76,51,11,4,4,4,91,89,86,82,77,73,69,56,16,4,4,4,4,96,94,88,85,79,78,67,23,7,4,4,4,4,4,87,91,86,78,76,71,70,59,19,4,4,4,4,4,6,95,94,89,85,79,78,76,54,12,4,4,4,4,4,4,33,92,88,80,75,75,62,21,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Power up 2","slug":"power-up-2","category":"Sci-fi & game","seconds":0.5,"file":"/audio/sfx/power-up-2.mp3","size":12582,"source":"Kenney · Digital Audio","peaks":[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,80,77,78,80,76,72,71,71,68,65,68,67,62,62,62,62,76,100,72,99,73,80,68,68,65,62,62,61,59,58,57,57,58,57,49,35,22,11,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"Phaser rise","slug":"phaser-rise","category":"Sci-fi & game","seconds":0.55,"file":"/audio/sfx/phaser-rise.mp3","size":13836,"source":"Kenney · Digital Audio","peaks":[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,37,96,82,98,90,97,93,84,97,96,100,93,88,97,96,97,95,87,98,96,95,89,96,97,94,99,84,95,95,86,89,91,92,89,85,83,87,82,89,88,91,83,83,83,89,82,86,90,87,88,88,89,89,89,89,88,84,83,75,70,69,61,57,55,49,46,45,39,36,34,30,28,27,4,4,4,4,4,4]},
+{"name":"Zap","slug":"zap","category":"Sci-fi & game","seconds":1.04,"file":"/audio/sfx/zap.mp3","size":25748,"source":"Kenney · Digital Audio","peaks":[4,4,4,4,4,4,4,4,4,4,66,98,98,98,96,96,100,66,62,61,62,61,62,62,64,64,63,62,62,63,63,61,61,61,61,61,61,61,60,59,57,55,53,52,51,50,48,46,44,43,42,41,40,38,36,35,35,34,33,32,30,30,29,28,27,26,25,24,24,23,22,21,21,20,20,19,19,18,18,16,16,16,15,15,15,14,14,13,13,12,12,11,11,11,11,10]},
+{"name":"Stinger hit 1","slug":"stinger-hit-1","category":"Jingles & stingers","seconds":0.31,"file":"/audio/sfx/stinger-hit-1.mp3","size":8194,"source":"Kenney · Music Jingles","peaks":[4,4,4,4,4,4,37,62,95,95,97,75,71,77,59,76,92,53,52,41,64,64,65,68,66,67,86,64,53,50,63,62,68,76,47,60,53,67,61,70,72,62,53,59,62,48,42,46,60,95,100,85,74,65,76,76,78,89,89,58,50,40,68,58,57,65,66,70,93,79,59,57,59,56,63,71,67,73,44,66,52,65,65,65,69,69,52,33,4,4,4,4,4,4,4,4]},
+{"name":"Stinger hit 2","slug":"stinger-hit-2","category":"Jingles & stingers","seconds":0.55,"file":"/audio/sfx/stinger-hit-2.mp3","size":13836,"source":"Kenney · Music Jingles","peaks":[4,23,64,97,100,80,78,91,93,51,69,59,67,86,71,70,61,75,76,67,65,71,69,63,66,96,76,74,82,93,55,65,71,66,93,67,61,75,76,57,65,71,72,57,65,51,73,97,76,79,91,63,69,61,67,86,64,61,67,74,66,68,71,59,62,63,64,58,68,98,74,73,93,57,64,65,73,91,55,69,72,58,69,68,59,64,57,60,59,51,12,4,4,4,4,4]},
+{"name":"Stinger hit 3","slug":"stinger-hit-3","category":"Jingles & stingers","seconds":0.57,"file":"/audio/sfx/stinger-hit-3.mp3","size":14463,"source":"Kenney · Music Jingles","peaks":[4,4,4,4,6,97,98,76,82,92,58,67,66,86,58,67,72,75,66,70,59,64,65,65,61,53,66,98,97,75,81,88,53,72,75,83,66,61,68,73,58,68,71,61,63,53,63,59,63,94,97,79,80,94,57,64,64,65,94,70,62,74,77,62,66,70,74,66,63,46,62,100,88,79,79,92,66,71,66,65,74,88,66,64,63,78,71,69,68,72,66,26,4,4,4,4]},
+{"name":"Stinger hit 4","slug":"stinger-hit-4","category":"Jingles & stingers","seconds":0.78,"file":"/audio/sfx/stinger-hit-4.mp3","size":19479,"source":"Kenney · Music Jingles","peaks":[4,4,63,98,74,77,92,59,65,70,90,63,70,73,64,71,71,63,96,73,76,90,56,69,64,89,84,61,66,75,64,72,72,95,100,76,81,90,61,69,69,66,91,63,61,73,78,98,97,78,91,63,63,73,90,63,72,60,72,60,64,60,11,4,4,4,4,4,4,4,4,4,4,4,4,4,39,96,98,79,90,66,65,67,87,61,74,55,68,71,62,63,6,4,4,4]},
+{"name":"Sax jingle 1","slug":"sax-jingle-1","category":"Jingles & stingers","seconds":0.42,"file":"/audio/sfx/sax-jingle-1.mp3","size":10702,"source":"Kenney · Music Jingles","peaks":[4,4,4,4,4,4,4,4,14,14,13,15,20,43,75,86,91,90,91,83,87,84,86,89,92,94,96,95,94,90,94,96,95,93,96,100,100,96,89,82,72,69,61,56,54,49,37,52,42,65,75,75,84,89,89,93,92,94,96,94,94,95,92,94,92,90,84,75,73,67,59,54,49,45,39,35,34,31,27,25,24,21,19,17,16,15,14,12,11,10,9,8,8,7,7,6]},
+{"name":"Sax jingle 2","slug":"sax-jingle-2","category":"Jingles & stingers","seconds":0.91,"file":"/audio/sfx/sax-jingle-2.mp3","size":22613,"source":"Kenney · Music Jingles","peaks":[4,4,4,13,13,43,84,91,85,85,91,94,92,94,94,98,97,83,66,76,100,88,86,87,93,93,93,94,95,96,78,67,88,99,91,87,87,93,96,93,93,93,87,69,57,55,62,76,90,91,93,96,93,89,86,69,56,43,42,58,70,87,90,91,94,93,92,84,65,55,47,37,34,73,79,84,91,92,93,93,83,68,50,42,32,27,23,17,14,12,9,8,6,5,4,4]},
+{"name":"Sax jingle 3","slug":"sax-jingle-3","category":"Jingles & stingers","seconds":0.91,"file":"/audio/sfx/sax-jingle-3.mp3","size":22613,"source":"Kenney · Music Jingles","peaks":[4,4,4,5,11,11,14,16,31,53,68,83,89,90,92,94,93,83,62,51,42,45,69,81,91,90,93,94,94,90,71,59,50,44,65,84,88,93,95,94,93,89,84,71,60,79,93,100,91,86,88,95,95,92,93,87,73,83,89,90,95,87,94,93,93,93,94,96,89,74,92,91,94,87,94,97,93,94,93,97,96,90,70,59,47,38,29,23,18,16,13,10,8,7,6,4]},
+{"name":"Pizzicato jingle 1","slug":"pizzicato-jingle-1","category":"Jingles & stingers","seconds":0.52,"file":"/audio/sfx/pizzicato-jingle-1.mp3","size":13209,"source":"Kenney · Music Jingles","peaks":[5,57,73,91,88,85,90,80,89,88,70,70,70,76,81,67,65,58,55,45,42,41,45,42,72,95,98,87,78,98,100,81,83,93,92,84,90,92,91,88,89,73,69,69,66,65,57,55,53,48,46,41,38,36,35,36,30,27,25,21,22,20,17,16,14,14,13,13,11,9,11,11,10,10,11,11,10,10,11,10,10,11,10,10,10,10,10,9,9,9,9,9,8,8,8,8]},
+{"name":"Pizzicato jingle 2","slug":"pizzicato-jingle-2","category":"Jingles & stingers","seconds":1.04,"file":"/audio/sfx/pizzicato-jingle-2.mp3","size":25748,"source":"Kenney · Music Jingles","peaks":[4,69,83,82,82,82,65,74,75,56,42,38,50,96,85,92,83,86,84,67,64,52,49,48,93,81,90,84,83,86,82,68,62,56,49,83,90,85,82,88,81,87,84,66,66,55,67,100,82,91,86,85,83,87,82,74,66,85,100,69,94,100,81,80,87,86,82,77,63,58,53,45,39,35,33,30,26,21,17,18,11,11,14,8,10,12,8,10,10,8,10,10,8,9,8,8]},
+{"name":"Pizzicato jingle 3","slug":"pizzicato-jingle-3","category":"Jingles & stingers","seconds":0.99,"file":"/audio/sfx/pizzicato-jingle-3.mp3","size":24494,"source":"Kenney · Music Jingles","peaks":[4,76,85,78,84,84,80,78,78,79,81,76,62,100,99,73,80,82,81,78,86,77,66,63,67,95,86,73,84,86,80,85,79,62,62,53,91,94,78,86,77,81,82,74,61,58,49,46,79,81,91,76,77,79,77,59,53,50,42,43,71,84,79,80,65,69,69,54,50,39,39,41,42,28,28,22,21,20,16,15,15,13,14,11,11,9,10,8,9,8,8,7,8,5,7,5]},
+{"name":"Steel drum jingle 1","slug":"steel-drum-jingle-1","category":"Jingles & stingers","seconds":0.97,"file":"/audio/sfx/steel-drum-jingle-1.mp3","size":23867,"source":"Kenney · Music Jingles","peaks":[5,7,90,81,84,87,71,72,58,55,54,56,55,54,100,95,79,90,91,74,88,87,79,71,67,57,52,56,58,58,57,54,49,48,41,36,36,38,35,37,39,39,41,38,39,37,36,30,32,28,28,28,26,23,24,22,22,21,21,19,19,15,14,14,13,13,13,13,14,15,13,15,14,13,13,12,11,11,10,10,10,10,9,9,8,9,8,8,7,7,6,6,5,5,5,6]},
+{"name":"Steel drum jingle 2","slug":"steel-drum-jingle-2","category":"Jingles & stingers","seconds":1.41,"file":"/audio/sfx/steel-drum-jingle-2.mp3","size":34525,"source":"Kenney · Music Jingles","peaks":[74,80,70,66,65,50,48,51,78,94,78,71,71,70,56,62,54,100,85,76,76,72,53,57,64,95,89,85,63,73,62,64,57,95,75,83,69,75,67,68,54,90,86,90,74,86,63,73,57,58,55,51,57,47,54,54,48,42,37,41,38,38,28,37,31,35,30,31,27,27,23,25,25,21,25,19,23,18,19,13,15,13,15,14,13,15,13,15,13,13,11,11,12,10,9,9]},
+{"name":"Steel drum jingle 3","slug":"steel-drum-jingle-3","category":"Jingles & stingers","seconds":1.44,"file":"/audio/sfx/steel-drum-jingle-3.mp3","size":35152,"source":"Kenney · Music Jingles","peaks":[10,76,79,64,76,70,61,64,58,82,76,76,75,81,62,77,60,91,89,84,77,75,71,69,65,100,78,76,85,68,76,57,54,83,85,93,70,80,65,52,70,96,78,77,66,62,60,57,61,63,52,46,43,41,46,38,37,37,30,29,27,26,26,16,20,18,19,17,17,15,15,11,12,11,10,11,10,10,8,7,8,8,8,6,8,6,6,6,7,6,7,6,6,6,6,6]},
+{"name":"8-bit jingle 1","slug":"8-bit-jingle-1","category":"Jingles & stingers","seconds":1.8,"file":"/audio/sfx/8-bit-jingle-1.mp3","size":43929,"source":"Kenney · Music Jingles","peaks":[77,92,92,92,93,94,93,91,91,91,88,89,100,73,98,96,93,94,94,90,51,27,15,8,4,63,92,94,93,95,94,93,69,41,21,11,6,4,76,89,93,92,93,93,93,93,90,90,91,92,88,87,89,88,87,88,87,87,87,87,87,87,87,87,88,87,87,88,87,88,87,87,87,88,86,88,88,88,87,87,88,88,88,88,87,87,88,88,88,61,34,20,10,6,4,4]},
+{"name":"8-bit jingle 2","slug":"8-bit-jingle-2","category":"Jingles & stingers","seconds":0.44,"file":"/audio/sfx/8-bit-jingle-2.mp3","size":11329,"source":"Kenney · Music Jingles","peaks":[4,4,4,4,4,4,4,4,4,4,58,58,57,58,73,73,73,84,87,87,86,86,87,86,86,85,87,86,87,87,88,87,87,86,90,86,86,86,100,95,61,66,69,94,95,94,84,86,86,83,89,89,82,88,88,84,88,87,85,88,88,84,87,88,83,82,74,57,53,44,38,36,29,26,22,20,17,15,13,10,10,9,7,6,5,4,4,4,4,4,4,4,4,4,4,4]},
+{"name":"8-bit jingle 3","slug":"8-bit-jingle-3","category":"Jingles & stingers","seconds":0.42,"file":"/audio/sfx/8-bit-jingle-3.mp3","size":10702,"source":"Kenney · Music Jingles","peaks":[4,4,4,4,64,65,63,79,82,80,93,96,94,93,96,94,90,96,96,92,96,97,92,95,96,94,95,98,94,97,97,95,93,95,85,76,74,100,98,92,92,94,92,91,95,98,94,94,94,95,94,96,96,97,96,96,95,95,95,96,95,95,95,86,68,62,55,47,43,35,31,27,24,22,19,15,14,12,11,10,9,7,6,6,5,4,4,4,4,4,4,4,4,4,4,4]}
 ]
