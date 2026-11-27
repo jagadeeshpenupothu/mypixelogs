@@ -52,17 +52,29 @@ function limit<T>(work: Promise<T>, fallback: T, what: string): Promise<T> {
 
 export async function analyticsStore(): Promise<Store> {
   if (cached) return cached;
+  // On Netlify the Blobs context is provided through the environment; anywhere else use the local folder.
+  const g = globalThis as { netlifyBlobsContext?: unknown };
+  const onNetlify = Boolean(process.env.NETLIFY_BLOBS_CONTEXT || process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.LAMBDA_TASK_ROOT || g.netlifyBlobsContext);
+  if (!onNetlify) {
+    cached = localStore;
+    return cached;
+  }
   try {
     const { getStore } = await import("@netlify/blobs");
     const blobs = getStore({ name: "analytics" });
-    // Throws outside Netlify, where no Blobs context exists.
-    await limit(blobs.list({ prefix: "ping/" }), null, "probe");
+    const timed = async <T,>(what: string, work: Promise<T>, fallback: T) => {
+      const t0 = Date.now();
+      const out = await limit(work, fallback, what);
+      const ms = Date.now() - t0;
+      if (ms > 700) console.warn(`[analytics] slow storage ${what}: ${ms} ms`);
+      return out;
+    };
     cached = {
-      get: (key) => limit(blobs.get(key, { type: "json" }), null, `get ${key}`),
+      get: (key) => timed(`get ${key}`, blobs.get(key, { type: "json" }), null),
       set: async (key, value) => {
-        await limit(blobs.setJSON(key, value), undefined, `set ${key}`);
+        await timed(`set ${key}`, blobs.setJSON(key, value), undefined);
       },
-      list: async (prefix) => limit(blobs.list({ prefix }).then((r) => r.blobs.map((b) => b.key)), [] as string[], `list ${prefix}`),
+      list: (prefix) => timed(`list ${prefix}`, blobs.list({ prefix }).then((r) => r.blobs.map((b) => b.key)), [] as string[]),
     };
   } catch {
     cached = localStore;
