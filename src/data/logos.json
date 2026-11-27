@@ -38,5 +38,46 @@
       "coffee shop badge logo",
       "south indian cafe logo"
     ]
+  },
+  {
+    "slug": "sona-bakery-badge-logo",
+    "title": "Sona Bakery Badge Logo",
+    "name": "Sona Bakehouse",
+    "style": "badge",
+    "industry": "Bakery",
+    "description": "Vintage circular badge with a scored bread loaf, rising steam and arched lettering. Suits bakeries, bake shops and home bakers. Editable AI, SVG, PSD, EPS and PNG.",
+    "colors": [
+      {
+        "name": "Midnight Navy",
+        "hex": "#1F2A44"
+      },
+      {
+        "name": "Flour Cream",
+        "hex": "#FBF3E4"
+      },
+      {
+        "name": "Mustard Gold",
+        "hex": "#E0A526"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Oswald",
+        "weight": "700"
+      },
+      {
+        "family": "Oswald",
+        "weight": "500"
+      }
+    ],
+    "previewBg": "#F3E6CC",
+    "published": "2026-11-27",
+    "keywords": [
+      "bakery logo",
+      "vintage bakery badge",
+      "bread logo",
+      "bake shop logo",
+      "retro bakery emblem"
+    ]
   }
 ]
