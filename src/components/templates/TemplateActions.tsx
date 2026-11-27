@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, FileCode2, FileDown, FileSpreadsheet, FileText, Palette, Pencil, Sheet, type LucideIcon } from "lucide-react";
+import { Download, FileCode2, FileDown, FileImage, FileSpreadsheet, FileText, Layers, PenTool, Palette, Pencil, Sheet, type LucideIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { getAbsoluteUrl } from "@/lib/metadata";
@@ -20,6 +20,12 @@ function platformLinks(template: Template): PlatformLink[] {
   if (p.googleSheetsId) links.push({ label: "Google Sheets", note: "Makes your own copy", href: `https://docs.google.com/spreadsheets/d/${p.googleSheetsId}/copy`, Icon: Sheet });
   if (p.excelPath) links.push({ label: "Excel", note: "Download .xlsx", href: p.excelPath, Icon: FileSpreadsheet, download: true });
   if (p.canvaUrl) links.push({ label: "Canva", note: "Makes your own copy", href: p.canvaUrl, Icon: Palette });
+  if (p.psdPath) {
+    links.push({ label: "Photopea", note: "Free, opens in your browser", href: `https://www.photopea.com/#${encodeURIComponent(JSON.stringify({ files: [getAbsoluteUrl(p.psdPath)] }))}`, Icon: Layers });
+    if (p.psdPath !== template.downloadPath) links.push({ label: "Photoshop", note: "Download layered .psd", href: p.psdPath, Icon: FileImage, download: true });
+  }
+  if (p.aiPath) links.push({ label: "Illustrator", note: "Download .ai", href: p.aiPath, Icon: PenTool, download: true });
+  if (p.svgPath) links.push({ label: "SVG", note: "For Inkscape or Figma", href: p.svgPath, Icon: FileCode2, download: true });
   if (p.latexPath) {
     links.push({
       label: "Overleaf",

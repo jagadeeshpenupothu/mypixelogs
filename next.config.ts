@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
+        // Lets Photopea (photopea.com) open our PSD files straight from the site.
+        source: "/downloads/:path*",
+        headers: [{ key: "Access-Control-Allow-Origin", value: "*" }],
+      },
+      {
         source: "/(.*)",
         headers: [
           {

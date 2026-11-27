@@ -33,7 +33,7 @@ export type Template = {
   /** Google Docs file id: visitors get their own copy, the original stays locked. */
   googleDocId?: string;
   /** Online editor for this template, if it has one. */
-  editor?: "gst" | "freelancer" | "wedding-video" | "resume";
+  editor?: "gst" | "freelancer" | "wedding-video" | "resume" | "flyer";
   /** A short silent clip of a video template. */
   previewVideo?: string;
   /** Date added to the site (YYYY-MM-DD), when known. */
@@ -57,4 +57,9 @@ export type TemplatePlatforms = {
   excelPath?: string;
   latexPath?: string;
   pdfPath?: string;
+  /** Layered Photoshop file; also opens in Photopea, the free online editor. */
+  psdPath?: string;
+  /** Illustrator file and plain SVG. */
+  aiPath?: string;
+  svgPath?: string;
 };
