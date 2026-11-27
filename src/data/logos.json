@@ -79,5 +79,42 @@
       "bake shop logo",
       "retro bakery emblem"
     ]
+  },
+  {
+    "slug": "ravya-salon-wordmark-logo",
+    "title": "Ravya Salon Wordmark Logo",
+    "name": "Ravya",
+    "style": "wordmark",
+    "industry": "Salon",
+    "description": "An elegant serif wordmark spelling RAVYA with a rose-gold sparkle and a spaced Hair & Beauty tagline. Suits salons, spas and beauty studios. Editable AI, SVG, PSD, EPS and PNG.",
+    "colors": [
+      {
+        "name": "Deep Plum",
+        "hex": "#3A1F3D"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#C98B6B"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Cormorant Garamond",
+        "weight": "600"
+      },
+      {
+        "family": "Montserrat",
+        "weight": "500"
+      }
+    ],
+    "previewBg": "#F7EDE8",
+    "published": "2026-11-27",
+    "keywords": [
+      "salon logo",
+      "beauty salon wordmark",
+      "hair salon logo",
+      "elegant serif logo",
+      "beauty parlour logo"
+    ]
   }
 ]
