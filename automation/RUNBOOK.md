@@ -31,7 +31,17 @@ Be brief: don't read files this runbook doesn't name, don't explore the repo, ke
 8. Check the site still builds: `npx tsc --noEmit && npm run build 2>&1 | tail -3`. Fix only what you broke.
 9. Publish: commit everything (`git add -A`) with message `Add <title> (daily template)` plus the attribution lines from the system reminder,
    push the current branch, open a pull request into `main`, and merge it (merge method `merge`, pass `expectedHeadSha`). Netlify deploys `main` automatically.
-10. Reply with 3 lines: template name, page URL `https://mypixelogs.netlify.app/templates/<slug>`, and anything that failed.
+10. Archive for the owner's review (always do this, even if publishing failed), at https://claude.ai/artifact/LrxWoWrmWeRSDxFottH8Y8 :
+    - Upload with the Artifact tool: `action` publish, `url` = that link, `asset: true`,
+      `file_paths: ["public/previews/<slug>.png", "public/downloads/<slug>.pdf"]` (absolute paths). Note both returned ids.
+    - If the template did NOT reach `main`: `git format-patch -1 --stdout > automation/out/<slug>.patch.txt` and upload that file
+      the same way in a call of its own (`file_path`); note its id.
+    - Write one row with the ArtifactData tool: `action` set, same `url`, `collection` "runs", `doc_id` "<today>-<slug>", `data`:
+      {"date": "<today>", "slug": "<slug>", "title": "<title>", "category": "<Category>", "status": "live" | "waiting" | "failed",
+       "note": "<one short sentence: what happened>", "previewId": "<id>", "pdfId": "<id>", "patchId": "<id, only if uploaded>"}.
+      Use "live" only if it was merged into `main`; "waiting" if it was built but not published; "failed" if it could not be built.
+    - If these tools are unavailable, skip this step and say so in the reply.
+11. Reply with 3 lines: template name, page URL `https://mypixelogs.netlify.app/templates/<slug>`, and anything that failed.
 
 ## Refilling the backlog
 
