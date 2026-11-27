@@ -1,0 +1,61 @@
+% Quotation Template - MyPixelogs (https://mypixelogs.netlify.app/templates/quotation-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1B2F5B}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent\colorbox{accent}{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\color{white}\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{white}\fontsize{14}{17}\selectfont\bfseries [Sharma IT Solutions Pvt. Ltd.]}\\ {\color{white}\footnotesize [Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]}\\ {\color{white}\footnotesize GSTIN: [27AAKCS1234R1Z5]  \textbar{}  [+91 98220 12345]}\\ {\color{white}\footnotesize [sales@sharmait.in]  \textbar{}  [www.sharmait.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{white}\fontsize{24}{28}\selectfont\bfseries QUOTATION}\\[3pt] {\color{white}\footnotesize Quote No.~\textbf{[QT/2026-27/0142]}}\\ {\color{white}\footnotesize Date~\textbf{[27/11/2026]}}\\ {\color{white}\footnotesize Valid until~\textbf{[27/12/2026]}}\end{tabular}\\[6pt]\end{tabularx}}}\par\vspace{8pt}
+
+{\arrayrulecolor{rulegray}\renewcommand{\arraystretch}{1.3}\noindent\begin{tabularx}{\linewidth}{|X|X|}\hline
+{\color{accent}\footnotesize\bfseries QUOTATION FOR}\newline \textbf{[Kumar Textiles Pvt. Ltd.]}\newline Attn: [Mr. Ravi Kumar, Purchase Manager]\newline [14 Ring Road, Surat, Gujarat 395002]\newline GSTIN: [24AABCK5678M1Z2] & {\color{accent}\footnotesize\bfseries PROJECT DETAILS}\newline \textbf{[Office IT setup, 10 workstations]}\newline Site: [3rd Floor, Kumar House, Surat]\newline Your ref.: [Enquiry dated 20/11/2026]\newline Place of supply: [Gujarat (24)] \\ \hline
+\end{tabularx}}\par\vspace{6pt}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\centering\arraybackslash}p{0.044\linewidth}|>{\raggedright\arraybackslash}p{0.340\linewidth}|>{\centering\arraybackslash}p{0.113\linewidth}|>{\raggedleft\arraybackslash}p{0.079\linewidth}|>{\raggedleft\arraybackslash}p{0.140\linewidth}|>{\raggedleft\arraybackslash}p{0.096\linewidth}|>{\raggedleft\arraybackslash}p{0.148\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{\#}} & \textcolor{white}{\textbf{Description}} & \textcolor{white}{\textbf{HSN/SAC}} & \textcolor{white}{\textbf{Qty}} & \textcolor{white}{\textbf{Rate (Rs.\,)}} & \textcolor{white}{\textbf{GST}} & \textcolor{white}{\textbf{Amount (Rs.\,)}} \\ \hline
+1 & \textbf{[Business laptop, Core i5, 16 GB, 512 GB SSD]} & [8471] & [10] & [62,500.00] & [18\%] & [6,25,000.00] \\ \hline
+2 & \textbf{[24-inch IPS monitor]} & [8528] & [10] & [9,800.00] & [18\%] & [98,000.00] \\ \hline
+3 & [Network cabling, router setup and configuration] & [998316] & [1] & [35,000.00] & [18\%] & [35,000.00] \\ \hline
+4 & [Annual maintenance contract, 1 year] & [998713] & [1] & [24,000.00] & [18\%] & [24,000.00] \\ \hline
+\end{tabular}}\par
+
+\vspace{2pt}{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}\hfill\begin{tabular}{|p{0.22\linewidth}|>{\raggedleft\arraybackslash}p{0.14\linewidth}|}\hline
+Subtotal & [7,82,000.00] \\ \hline
+IGST @ 18\% & [1,40,760.00] \\ \hline
+\rowcolor{accent}\textcolor{white}{\textbf{Grand total}} & \textcolor{white}{\textbf{[9,22,760.00]}} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+Amount in words: \textbf{[Rupees Nine Lakh Twenty-Two Thousand Seven Hundred Sixty Only]}\par\vspace{4pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Terms and conditions}\\ 1. \textbf{Validity:} prices are valid until the date above; after that they may change with material costs.\\ 2. \textbf{Payment:} 50\% advance with the purchase order, 40\% on delivery, 10\% after installation.\\ 3. \textbf{Delivery:} within [3-4 weeks] of advance payment. Freight to site is included.\\ 4. \textbf{Warranty:} laptops and monitors [3 years onsite, manufacturer]; setup work [90 days].\\ 5. GST as applicable at the time of invoicing. Items not listed above are not included.}}\par\vspace{6pt}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Bank} & [HDFC Bank, Pune Main] & \textbf{Account no.} & [50200012345678] \\
+\textbf{IFSC} & [HDFC0000123] & \textbf{UPI} & [sharmait@hdfcbank] \\
+\end{tabularx}\par\vspace{2pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Customer acceptance (sign \& stamp)}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ For [Sharma IT Solutions Pvt. Ltd.]}\par
+\end{document}

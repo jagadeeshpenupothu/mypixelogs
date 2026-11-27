@@ -1,0 +1,26 @@
+{
+  "slug": "quotation-template",
+  "title": "Quotation Template",
+  "category": "business",
+  "accent": "1B2F5B",
+  "titleSize": 24,
+  "description": "Free GST quotation format for India with quote number, validity date, HSN/SAC, CGST/SGST/IGST, payment terms and customer acceptance. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Itemised table with HSN/SAC, GST rate and tax split", "Validity date, payment, delivery and warranty terms", "Customer acceptance and authorised signatory lines"],
+  "useCases": ["Price quotes for B2B clients", "Supply and installation orders", "Service contracts and AMCs"],
+  "keywords": ["quotation format", "gst quotation format", "quotation format in word"],
+  "references": ["https://busy.in/business-accounting-format/quotation-format/", "https://vyaparapp.in/quotation-formats/gst", "https://mybillbook.in/s/quotation-format/", "https://tallysolutions.com/business-guides/how-to-write-quotation/", "https://www.business.qld.gov.au/running-business/marketing-sales/sales/preparing-quote"],
+  "research": "All references show quote no., date and validity (7-30 days common), seller and buyer GSTIN, itemised lines with HSN/SAC and tax split, amount in words, payment/delivery/warranty terms and an acceptance signature.",
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1I-k-bt5qNaDTsPRl0dyTJqnMqkUzzMjWuhBeSM9B2wY", "googleSheetsId": "1gWkeb5ClTQirYAAyUQM_0QTt0-UgEASLgboCUeuSmK0"},
+  "blocks": [
+    {"type": "header", "org": "[Sharma IT Solutions Pvt. Ltd.]", "lines": ["[Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]", "GSTIN: [27AAKCS1234R1Z5]  |  [+91 98220 12345]", "[sales@sharmait.in]  |  [www.sharmait.in]"], "title": "QUOTATION", "meta": [["Quote No.", "[QT/2026-27/0142]"], ["Date", "[27/11/2026]"], ["Valid until", "[27/12/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "Quotation for", "lines": ["[Kumar Textiles Pvt. Ltd.]", "Attn: [Mr. Ravi Kumar, Purchase Manager]", "[14 Ring Road, Surat, Gujarat 395002]", "GSTIN: [24AABCK5678M1Z2]"]}, {"heading": "Project details", "lines": ["[Office IT setup, 10 workstations]", "Site: [3rd Floor, Kumar House, Surat]", "Your ref.: [Enquiry dated 20/11/2026]", "Place of supply: [Gujarat (24)]"]}]},
+    {"type": "table", "columns": [{"label": "#", "width": 0.5, "align": "center"}, {"label": "Description", "width": 3.9}, {"label": "HSN/SAC", "width": 1.3, "align": "center"}, {"label": "Qty", "width": 0.9, "align": "right"}, {"label": "Rate (₹)", "width": 1.6, "align": "right"}, {"label": "GST", "width": 1.1, "align": "right"}, {"label": "Amount (₹)", "width": 1.7, "align": "right"}],
+      "rows": [["1", "**[Business laptop, Core i5, 16 GB, 512 GB SSD]**", "[8471]", "[10]", "[62,500.00]", "[18%]", "[6,25,000.00]"], ["2", "**[24-inch IPS monitor]**", "[8528]", "[10]", "[9,800.00]", "[18%]", "[98,000.00]"], ["3", "[Network cabling, router setup and configuration]", "[998316]", "[1]", "[35,000.00]", "[18%]", "[35,000.00]"], ["4", "[Annual maintenance contract, 1 year]", "[998713]", "[1]", "[24,000.00]", "[18%]", "[24,000.00]"]],
+      "totals": [["Subtotal", "[7,82,000.00]"], ["IGST @ 18%", "[1,40,760.00]"], ["Grand total", "[9,22,760.00]"]]},
+    {"type": "text", "text": "Amount in words: **[Rupees Nine Lakh Twenty-Two Thousand Seven Hundred Sixty Only]**"},
+    {"type": "note", "heading": "Terms and conditions", "text": ["1. **Validity:** prices are valid until the date above; after that they may change with material costs.", "2. **Payment:** 50% advance with the purchase order, 40% on delivery, 10% after installation.", "3. **Delivery:** within [3-4 weeks] of advance payment. Freight to site is included.", "4. **Warranty:** laptops and monitors [3 years onsite, manufacturer]; setup work [90 days].", "5. GST as applicable at the time of invoicing. Items not listed above are not included."]},
+    {"type": "fields", "items": [["Bank", "[HDFC Bank, Pune Main]"], ["Account no.", "[50200012345678]"], ["IFSC", "[HDFC0000123]"], ["UPI", "[sharmait@hdfcbank]"]]},
+    {"type": "signature", "items": ["Customer acceptance (sign & stamp)", "For [Sharma IT Solutions Pvt. Ltd.]"]}
+  ]
+}

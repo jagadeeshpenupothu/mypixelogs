@@ -68,6 +68,55 @@ export async function renderDocx(spec, variant = "word") {
   const children = [];
   for (const block of spec.blocks) {
     switch (block.type) {
+      case "header": {
+        // Letterhead-style top: logo box, organisation details, and the document title with its numbers.
+        const band = block.style !== "plain";
+        const fg = band ? "FFFFFF" : undefined;
+        const widths = block.logo === false ? scale([5.6, 4.4]) : scale([1.3, 4.5, 4.2]);
+        const left = [
+          new Paragraph({ spacing: { after: 30 }, children: runs(block.org ?? "", { bold: true, size: pt(14), color: fg ?? ACCENT }) }),
+          ...(block.lines ?? []).map((l) => new Paragraph({ spacing: { after: 0 }, children: runs(l, { size: pt(9), color: fg }) })),
+        ];
+        const right = [
+          new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { before: 40, after: 60, line: Math.round((spec.titleSize ?? 22) * 26), lineRule: "atLeast" }, children: runs(block.title, { bold: true, size: pt(spec.titleSize ?? 22), color: fg ?? ACCENT }) }),
+          ...(block.meta ?? []).map(([l, v]) => new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { after: 0 }, children: [...runs(`${l}  `, { size: pt(9.5), color: fg }), ...runs(v, { bold: true, size: pt(9.5), color: fg })] })),
+        ];
+        const pad = { pad: 120, top: true, fill: band ? ACCENT : undefined };
+        const cells = [];
+        if (block.logo !== false) {
+          // The logo area is its own cell with a dashed outline, so it stays a clean box in Word and Google Docs.
+          const logoLine = { style: BorderStyle.DASHED, size: 8, color: band ? "FFFFFF" : "9AA5B8" };
+          cells.push(cell([
+            new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 0 }, children: runs("[YOUR LOGO]", { size: pt(8), color: fg ?? "6B7280" }) }),
+          ], widths[0], { fill: band ? ACCENT : undefined, borders: { top: logoLine, bottom: logoLine, left: logoLine, right: logoLine } }));
+        }
+        cells.push(cell(left, widths[block.logo === false ? 0 : 1], pad), cell(right, widths[block.logo === false ? 1 : 2], pad));
+        children.push(grid(widths, [new TableRow({ children: cells })]));
+        if (!band) children.push(new Paragraph({ spacing: { after: 120 }, border: { bottom: { style: BorderStyle.SINGLE, size: 18, color: ACCENT, space: 4 } }, children: [] }));
+        else children.push(new Paragraph({ style: "Gap", children: [] }));
+        break;
+      }
+      case "parties": {
+        const widths = scale(block.groups.map(() => 1));
+        const boxLine = { style: BorderStyle.SINGLE, size: 4, color: "C9D1DC" };
+        const boxed = { top: boxLine, bottom: boxLine, left: boxLine, right: boxLine };
+        const cells = block.groups.map((g, i) => cell([
+          new Paragraph({ spacing: { after: 50 }, children: runs(String(g.heading).toUpperCase(), { bold: true, size: pt(9), color: ACCENT }) }),
+          ...g.lines.map((l, k) => new Paragraph({ spacing: { after: 0 }, children: runs(l, k === 0 ? { bold: true } : {}) })),
+        ], widths[i], { top: true, pad: 90, borders: boxed, fill: "F7F9FC" }));
+        children.push(grid(widths, [new TableRow({ children: cells })]));
+        children.push(new Paragraph({ style: "Gap", children: [] }));
+        break;
+      }
+      case "note": {
+        const texts = [].concat(block.text);
+        children.push(grid([W], [new TableRow({ children: [cell([
+          ...(block.heading ? [new Paragraph({ spacing: { after: 40 }, children: runs(block.heading, { bold: true, color: ACCENT }) })] : []),
+          ...texts.map((t) => new Paragraph({ spacing: { after: 30 }, children: runs(t, { size: pt(9.5) }) })),
+        ], W, { pad: 100, fill: "F2F4F8", borders: { ...NO_BORDERS, left: { style: BorderStyle.SINGLE, size: 18, color: ACCENT } } })] })]));
+        children.push(new Paragraph({ style: "Gap", children: [] }));
+        break;
+      }
       case "title":
         children.push(new Paragraph({ style: "DocTitle", alignment: block.align === "center" ? AlignmentType.CENTER : undefined, children: [new TextRun(plain(block.text))] }));
         if (block.subtitle) children.push(new Paragraph({ style: "DocSubtitle", alignment: block.align === "center" ? AlignmentType.CENTER : undefined, children: runs(block.subtitle) }));
@@ -122,19 +171,20 @@ export async function renderDocx(spec, variant = "word") {
           children: block.columns.map((c, i) => cell([cellPara(c.label, { bold: true, color: "FFFFFF", align: align(c) })], widths[i], { boxed: true, fill: ACCENT })),
         });
         const body = block.rows.map((row) => new TableRow({ cantSplit: true, children: row.map((v, i) => cell([cellPara(v, { align: align(block.columns[i]) })], widths[i], { boxed: true })) }));
-        children.push(grid(widths, [header, ...body], { boxed: true }));
-        if (block.totals?.length) {
-          const tw = scale([6, 2.4, 1.6]);
-          const rows = block.totals.map(([label, value], i) => {
-            const last = i === block.totals.length - 1;
-            return new TableRow({ children: [
-              cell([cellPara("")], tw[0]),
-              cell([cellPara(label, { bold: last, color: last ? "FFFFFF" : undefined })], tw[1], { boxed: true, fill: last ? ACCENT : "F2F4F8" }),
-              cell([cellPara(value, { bold: last, color: last ? "FFFFFF" : undefined, align: AlignmentType.RIGHT })], tw[2], { boxed: true, fill: last ? ACCENT : undefined }),
-            ] });
-          });
-          children.push(grid(tw, rows));
-        }
+        // Totals sit in the same table as extra rows (label spanning the left columns), which every editor keeps aligned.
+        const n = block.columns.length;
+        const labelWidth = widths.slice(0, n - 1).reduce((a, b) => a + b, 0);
+        const totals = (block.totals ?? []).map(([label, value], i, all) => {
+          const last = i === all.length - 1;
+          const color = last ? "FFFFFF" : undefined;
+          const fill = last ? ACCENT : "F2F4F8";
+          return new TableRow({ cantSplit: true, children: [
+            new TableCell({ columnSpan: n - 1, width: { size: labelWidth, type: WidthType.DXA }, borders: BOX, shading: { type: ShadingType.CLEAR, color: "auto", fill },
+              margins: { top: 50, bottom: 50, left: 100, right: 100 }, children: [cellPara(label, { bold: last, color, align: AlignmentType.RIGHT })] }),
+            cell([cellPara(value, { bold: last, color, align: AlignmentType.RIGHT })], widths[n - 1], { boxed: true, fill: last ? ACCENT : undefined }),
+          ] });
+        });
+        children.push(grid(widths, [header, ...body, ...totals], { boxed: true }));
         children.push(new Paragraph({ style: "Gap", children: [] }));
         break;
       }
@@ -152,6 +202,16 @@ export async function renderDocx(spec, variant = "word") {
       }
       case "signature": {
         const items = block.items ?? ["Authorised Signatory"];
+        if (google) {
+          // Google Docs rearranges borderless layout tables, so signature lines use centred tab stops instead.
+          const n = items.length;
+          const centres = n === 1 ? [Math.round(W * 0.78)] : items.map((_, i) => Math.round((W * (2 * i + 1)) / (2 * n)));
+          const tabs = centres.map((position) => ({ type: TabStopType.CENTER, position }));
+          const lineText = "_".repeat(n === 1 ? 30 : Math.max(18, Math.round(60 / n)));
+          children.push(new Paragraph({ tabStops: tabs, spacing: { before: 520, after: 40 }, children: centres.map(() => new TextRun({ children: [new Tab(), lineText] })) }));
+          children.push(new Paragraph({ tabStops: tabs, spacing: { after: 0 }, children: items.flatMap((label) => [new TextRun({ children: [new Tab()] }), ...runs(label)]) }));
+          break;
+        }
         const widths = scale(items.length === 1 ? [6, 4] : Array(items.length).fill(1));
         const cells = items.length === 1 ? [cell([cellPara("")], widths[0])] : [];
         items.forEach((label, i) => cells.push(cell([
