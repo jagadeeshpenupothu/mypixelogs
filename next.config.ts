@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       // Old placeholder design-file pages were removed; their links go to the Assets page.
       { source: "/resources/:path*", destination: "/assets", permanent: true },
       { source: "/resources", destination: "/assets", permanent: true },
-      { source: "/assets/:slug((?!fonts$|music$|sound-effects$)[^/]+)", destination: "/assets", permanent: true },
+      { source: "/assets/:slug((?!fonts$|music$|sound-effects$|logos$)[^/]+)", destination: "/assets", permanent: true },
       // The old AI section (placeholder prompts and images) became one ChatGPT prompt library at /ai.
       { source: "/ai/prompts", destination: "/ai", permanent: true },
       { source: "/ai/images/:path*", destination: "/ai", permanent: true },

@@ -27,7 +27,7 @@ Keep the run lean: don't read files you don't need, and don't explore the codeba
    - If nothing is good enough after 3 searches: write a ChatGPT image prompt instead (see "No good photo" below) and stop.
 
 4. Add the settings to `src/data/flyer-specs.json` (append one object; keep the array valid JSON). Copy the shape of the
-   existing entry `sankranti-offer-flyer` exactly:
+   entry `sankranti-offer-flyer` in `automation/pending/flyer-specs.json` exactly:
    - `layout`: where the text goes, over the photo's calm area: "top" | "center" | "bottom".
    - `style`: "elegant" (decorative capitals + script; festivals, church, weddings) or "bold" (modern; sales, business, events).
    - `shade`: 0.25–0.6; more for busy photos.

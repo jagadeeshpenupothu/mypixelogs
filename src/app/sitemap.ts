@@ -5,6 +5,7 @@ import { chatGptPrompts } from "@/lib/prompts";
 import { templateCategories } from "@/data/template-categories";
 import { templates } from "@/data/templates";
 import { fonts } from "@/lib/fonts";
+import { logos } from "@/lib/logos";
 import { toolCategories, tools } from "@/data/tools";
 import { getTemplatesByCategory } from "@/lib/templates";
 import { getToolsByCategory } from "@/lib/tools";
@@ -13,7 +14,7 @@ import { siteConfig } from "@/constants/site";
 const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets", "/assets/fonts", "/assets/fonts/telugu", "/assets/music", "/assets/sound-effects", "/guides"].map((route) => ({
+  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets", "/assets/fonts", "/assets/fonts/telugu", "/assets/music", "/assets/sound-effects", "/assets/logos", "/guides"].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -84,8 +85,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const logoRoutes = logos.map((l) => ({ url: `${BASE_URL}/assets/logos/${l.slug}`, lastModified: new Date(`${l.published}T00:00:00`), changeFrequency: "monthly" as const, priority: 0.6 }));
+
   return [
     ...staticRoutes,
+    ...logoRoutes,
     ...guideRoutes,
     ...fontRoutes,
     ...categoryRoutes,
