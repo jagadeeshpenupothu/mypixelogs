@@ -1,0 +1,62 @@
+% Offer Letter Template - MyPixelogs (https://mypixelogs.netlify.app/templates/offer-letter-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1B2F5B}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{accent}\fontsize{14}{17}\selectfont\bfseries [Sharma IT Solutions Pvt. Ltd.]}\\ {\footnotesize [Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]}\\ {\footnotesize CIN: [U72200MH2015PTC123456]  \textbar{}  [+91 98220 12345]  \textbar{}  [hr@sharmait.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{accent}\fontsize{22}{26}\selectfont\bfseries OFFER LETTER}\\[3pt] {\footnotesize Ref. No.~\textbf{[SIS/HR/OL/2026-27/087]}}\\ {\footnotesize Date~\textbf{[27/11/2026]}}\end{tabular}\\[6pt]\end{tabularx}}}\par{\color{accent}\rule{\linewidth}{1.8pt}}\par\vspace{8pt}
+
+{\arrayrulecolor{rulegray}\renewcommand{\arraystretch}{1.3}\noindent\begin{tabularx}{\linewidth}{|X|X|}\hline
+{\color{accent}\footnotesize\bfseries TO}\newline \textbf{[Ms. Priya Nair]}\newline [Flat 7B, Lakeview Apartments, Kakkanad]\newline [Kochi, Kerala 682030]\newline [priya.nair@email.com] & {\color{accent}\footnotesize\bfseries POSITION DETAILS}\newline \textbf{Designation: [Senior Software Engineer]}\newline Department: [Product Engineering]\newline Location: [Pune (Hybrid)]\newline Date of joining: [05/01/2027] \\ \hline
+\end{tabularx}}\par\vspace{6pt}
+
+\textbf{Subject: Offer of employment for the position of [Senior Software Engineer]}\par\vspace{4pt}
+
+Dear [Priya],\par\vspace{4pt}
+
+Following our interviews, we are pleased to offer you the position of \textbf{[Senior Software Engineer]} in our [Product Engineering] team, reporting to [Mr. Arjun Mehta, Engineering Manager]. We were impressed by your experience and believe you will add real value to our clients and team.\par\vspace{4pt}
+
+Your annual Cost to Company (CTC) will be \textbf{Rs.\,[10,32,000] ([Rupees Ten Lakh Thirty-Two Thousand Only])}, paid monthly after statutory deductions. The breakup is given below. Income tax (TDS) will be deducted as per law.\par\vspace{4pt}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\raggedright\arraybackslash}p{0.480\linewidth}|>{\raggedleft\arraybackslash}p{0.240\linewidth}|>{\raggedleft\arraybackslash}p{0.240\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{Salary component}} & \textcolor{white}{\textbf{Monthly (Rs.\,)}} & \textcolor{white}{\textbf{Annual (Rs.\,)}} \\ \hline
+Basic salary & [40,000] & [4,80,000] \\ \hline
+House rent allowance (HRA) & [20,000] & [2,40,000] \\ \hline
+Special allowance & [22,276] & [2,67,312] \\ \hline
+Employer PF contribution & [1,800] & [21,600] \\ \hline
+Gratuity (4.81\% of basic) & [1,924] & [23,088] \\ \hline
+\textbf{Total cost to company (CTC)} & \textbf{[86,000]} & \textbf{[10,32,000]} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Key terms}\\ 1. \textbf{Probation:} [6 months] from your date of joining; confirmation is subject to satisfactory performance.\\ 2. \textbf{Notice period:} [30 days] during probation and [60 days] after confirmation, from either side.\\ 3. \textbf{Working hours and leave:} as per company policy and the applicable Shops and Establishments Act.\\ 4. \textbf{Documents:} please bring your relieving letter, last three salary slips, PAN, Aadhaar and educational certificates on joining.\\ 5. This offer is subject to satisfactory background and reference checks. A detailed appointment letter will be issued on joining.}}\par\vspace{6pt}
+
+Please sign and return a copy of this letter by \textbf{[04/12/2026]} to confirm your acceptance. If not accepted by this date, the offer will lapse. We look forward to welcoming you to [Sharma IT Solutions].\par\vspace{4pt}
+
+Yours sincerely,\par\vspace{4pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ [Neha Kulkarni], Head -- HR, for [Sharma IT Solutions Pvt. Ltd.]}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Accepted by [Priya Nair] (signature \& date)}\par
+\end{document}

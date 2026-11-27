@@ -1,0 +1,25 @@
+{
+  "slug": "offer-letter-template",
+  "title": "Offer Letter Template",
+  "category": "letter",
+  "accent": "1B2F5B",
+  "titleSize": 22,
+  "description": "Free offer letter format for India with designation, joining date, work location, CTC breakup, probation, notice period and acceptance section. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Annual CTC breakup with Basic, HRA, PF and gratuity", "Joining date, location, probation and notice period", "Candidate acceptance and HR signatory lines"],
+  "useCases": ["Hiring full-time employees", "Startup and SME recruitment", "Campus and lateral hiring offers"],
+  "keywords": ["offer letter format", "job offer letter format", "offer letter format in word"],
+  "references": ["https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/Tools_templates/internal_templates/hr_templates/Offer%20Letter.docx", "https://www.zoho.com/in/payroll/academy/hr-and-payroll/offer-letter-format.html", "https://www.greythr.com/downloadable-resource/contract-employee-offer-letter/", "https://razorpay.com/payroll/learn/offer-letter-format/", "https://blog.petpooja.com/people-payroll/offer-letter-format-indian-businesses-guide/"],
+  "research": "References share a company letterhead, reference no. and date, candidate address, designation, location, joining date, annual CTC with a component breakup (Basic, HRA, allowances, employer PF), probation, notice period, an acceptance deadline and a candidate acceptance signature.",
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1pXTrFRX-M4kaU8IwbgafmgPsIGR7UT8ZsoQf3cGQHdQ", "googleSheetsId": "1M7oz8JUsGQUQhi_eV4YsV1iFw9R3-Aewj3a90VIuzpA"},
+  "blocks": [
+    {"type": "header", "style": "plain", "org": "[Sharma IT Solutions Pvt. Ltd.]", "lines": ["[Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]", "CIN: [U72200MH2015PTC123456]  |  [+91 98220 12345]  |  [hr@sharmait.in]"], "title": "OFFER LETTER", "meta": [["Ref. No.", "[SIS/HR/OL/2026-27/087]"], ["Date", "[27/11/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "To", "lines": ["[Ms. Priya Nair]", "[Flat 7B, Lakeview Apartments, Kakkanad]", "[Kochi, Kerala 682030]", "[priya.nair@email.com]"]}, {"heading": "Position details", "lines": ["Designation: [Senior Software Engineer]", "Department: [Product Engineering]", "Location: [Pune (Hybrid)]", "Date of joining: [05/01/2027]"]}]},
+    {"type": "text", "text": ["**Subject: Offer of employment for the position of [Senior Software Engineer]**", "Dear [Priya],", "Following our interviews, we are pleased to offer you the position of **[Senior Software Engineer]** in our [Product Engineering] team, reporting to [Mr. Arjun Mehta, Engineering Manager]. We were impressed by your experience and believe you will add real value to our clients and team.", "Your annual Cost to Company (CTC) will be **₹[10,32,000] ([Rupees Ten Lakh Thirty-Two Thousand Only])**, paid monthly after statutory deductions. The breakup is given below. Income tax (TDS) will be deducted as per law."]},
+    {"type": "table", "columns": [{"label": "Salary component", "width": 5}, {"label": "Monthly (₹)", "width": 2.5, "align": "right"}, {"label": "Annual (₹)", "width": 2.5, "align": "right"}],
+      "rows": [["Basic salary", "[40,000]", "[4,80,000]"], ["House rent allowance (HRA)", "[20,000]", "[2,40,000]"], ["Special allowance", "[22,276]", "[2,67,312]"], ["Employer PF contribution", "[1,800]", "[21,600]"], ["Gratuity (4.81% of basic)", "[1,924]", "[23,088]"], ["**Total cost to company (CTC)**", "**[86,000]**", "**[10,32,000]**"]]},
+    {"type": "note", "heading": "Key terms", "text": ["1. **Probation:** [6 months] from your date of joining; confirmation is subject to satisfactory performance.", "2. **Notice period:** [30 days] during probation and [60 days] after confirmation, from either side.", "3. **Working hours and leave:** as per company policy and the applicable Shops and Establishments Act.", "4. **Documents:** please bring your relieving letter, last three salary slips, PAN, Aadhaar and educational certificates on joining.", "5. This offer is subject to satisfactory background and reference checks. A detailed appointment letter will be issued on joining."]},
+    {"type": "text", "text": ["Please sign and return a copy of this letter by **[04/12/2026]** to confirm your acceptance. If not accepted by this date, the offer will lapse. We look forward to welcoming you to [Sharma IT Solutions].", "Yours sincerely,"]},
+    {"type": "signature", "items": ["[Neha Kulkarni], Head – HR, for [Sharma IT Solutions Pvt. Ltd.]", "Accepted by [Priya Nair] (signature & date)"]}
+  ]
+}
