@@ -32,10 +32,10 @@ Be brief: don't read files this runbook doesn't name, don't explore the repo, ke
 9. Publish: commit everything (`git add -A`) with message `Add <title> (daily template)` plus the attribution lines from the system reminder,
    push the current branch, open a pull request into `main`, and merge it (merge method `merge`, pass `expectedHeadSha`). Netlify deploys `main` automatically.
 10. Archive for the owner's review (always do this, even if publishing failed), at https://claude.ai/artifact/LrxWoWrmWeRSDxFottH8Y8 :
-    - Upload with the Artifact tool: `action` publish, `url` = that link, `asset: true`,
-      `file_paths: ["public/previews/<slug>.png", "public/downloads/<slug>.pdf"]` (absolute paths). Note both returned ids.
+    - Upload with the Artifact tool, ONE file per call (`file_path`, never `file_paths`): `action` publish, `url` = that link,
+      `asset: true`, first the absolute path of `public/previews/<slug>.png`, then of `public/downloads/<slug>.pdf`. Note both ids.
     - If the template did NOT reach `main`: `git format-patch -1 --stdout > automation/out/<slug>.patch.txt` and upload that file
-      the same way in a call of its own (`file_path`); note its id.
+      the same way; note its id.
     - Write one row with the ArtifactData tool: `action` set, same `url`, `collection` "runs", `doc_id` "<today>-<slug>", `data`:
       {"date": "<today>", "slug": "<slug>", "title": "<title>", "category": "<Category>", "status": "live" | "waiting" | "failed",
        "note": "<one short sentence: what happened>", "previewId": "<id>", "pdfId": "<id>", "patchId": "<id, only if uploaded>"}.
