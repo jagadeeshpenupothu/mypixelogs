@@ -36,6 +36,8 @@ export type Template = {
   editor?: "gst" | "freelancer" | "wedding-video" | "resume";
   /** A short silent clip of a video template. */
   previewVideo?: string;
+  /** Date added to the site (YYYY-MM-DD), when known. */
+  published?: string;
   /** Other places the same template can be opened or downloaded. */
   platforms?: TemplatePlatforms;
   previewImage: string;

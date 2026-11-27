@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 
-import { LibraryPage } from "@/components/collections/LibraryPage";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { RelatedTemplates } from "@/components/templates/RelatedTemplates";
 import { TemplateActions } from "@/components/templates/TemplateActions";
 import { TemplateHero } from "@/components/templates/TemplateHero";
 import { TemplatePreview } from "@/components/templates/TemplatePreview";
 import { getTemplateCategory } from "@/data/template-categories";
-import { templateGroups, templateSections } from "@/lib/library";
+import { toGalleryItem, type FormatKey } from "@/lib/template-gallery";
+import { TemplateGallery } from "@/components/templates/TemplateGallery";
+import { templates } from "@/data/templates";
 import { createSocialMetadata } from "@/lib/metadata";
 import {
   getRelatedTemplates,
@@ -78,21 +79,23 @@ export default async function TemplateDynamicPage({ params }: PageProps) {
     const categoryTemplates = getTemplatesByCategory(category.slug as TemplateCategory);
     if (categoryTemplates.length === 0) redirect("/templates");
 
+    // Format pages (Word, Excel, Google Docs...) open the gallery filtered by that format; the rest by category.
+    const formatPages: Record<string, FormatKey> = { word: "word", excel: "excel", "google-docs": "gdocs", pdf: "pdf", canva: "canva" };
+    const format = formatPages[category.slug];
     return (
-      <LibraryPage
+      <TemplateGallery
+        items={templates.map(toGalleryItem)}
         title={category.label}
         intro={category.description}
-        noun="templates"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Templates", href: "/templates" },
           { label: category.label },
         ]}
-        groups={templateGroups(category.slug)}
-        sections={templateSections(category.slug)}
+        initialCategory={format ? "all" : category.slug}
+        initialFormats={format ? [format] : []}
       />
     );
-
   }
 
   if (!template) {

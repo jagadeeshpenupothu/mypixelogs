@@ -146,6 +146,7 @@ export const allTemplates: Template[] = [
   {
     ...makeWordTemplate("resume", "fresher-resume", "Fresher Resume Template", "fresher-resume-template", "Free one-page resume template for freshers and graduates. Edit it online, or use it in Word, Google Docs, Google Sheets, Excel or Overleaf. Clean A4 layout with education, skills, projects and internship sections that applicant tracking systems can read.", "resume", 0, ["One A4 page with education, skills, projects and internship", "Plain, selectable text that applicant tracking systems (ATS) can read", "Built with Word styles, so fonts and colours change in one place"], ["Campus placements", "First job applications", "Internship applications"]),
     formats: ["Word", "Google Docs", "Google Sheets", "Excel", "Overleaf (LaTeX)", "PDF"],
+    published: "2026-11-27",
     platforms: {
       googleDocsId: "1vyRdcIUnlK5aGLrhh5b_YyW0c3KGmMViOgN_5vkrSso",
       googleSheetsId: "12E6V99R4CEK_gXm-zJtAtJIN_eiR6DWOV151Ti3Vwc4",
@@ -224,11 +225,12 @@ export const allTemplates: Template[] = [
 /** Templates made by the daily automation (automation/specs → scripts/templates/build.mjs). */
 type GeneratedTemplate = {
   id: string; title: string; slug: string; description: string; category: TemplateCategory;
-  features: string[]; useCases: string[]; formats: string[]; platforms: TemplatePlatforms;
+  features: string[]; useCases: string[]; formats: string[]; platforms: TemplatePlatforms; published?: string | null;
 };
 
-const generatedTemplates: Template[] = (generated as GeneratedTemplate[]).map((item) => ({
+const generatedTemplates: Template[] = (generated as GeneratedTemplate[]).map(({ published, ...item }) => ({
   ...item,
+  published: published ?? undefined,
   thumbnail: `/previews/${item.slug}.png`,
   previewImage: `/previews/${item.slug}.png`,
   downloadPath: `/downloads/${item.slug}.docx`,
