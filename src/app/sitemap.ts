@@ -1,13 +1,10 @@
 import type { MetadataRoute } from "next";
 
-import { assetCategories } from "@/data/asset-categories";
 import { chatGptPrompts } from "@/lib/prompts";
 import { templateCategories } from "@/data/template-categories";
-import { assets } from "@/data/assets";
 import { templates } from "@/data/templates";
 import { fonts } from "@/lib/fonts";
 import { toolCategories, tools } from "@/data/tools";
-import { getAssetsByCategorySlug } from "@/lib/assets";
 import { getTemplatesByCategory } from "@/lib/templates";
 import { getToolsByCategory } from "@/lib/tools";
 import { siteConfig } from "@/constants/site";
@@ -47,22 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  const assetRoutes = assets.map((asset) => ({
-    url: `${BASE_URL}/assets/${asset.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
-  const assetCategoryRoutes = assetCategories
-    .filter((category) => getAssetsByCategorySlug(category.slug).length > 0)
-    .map((category) => ({
-    url: `${BASE_URL}/assets/${category.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }));
-
   const toolCategoryRoutes = toolCategories
     .filter((category) => getToolsByCategory(category.name).length > 0)
     .map((category) => ({
@@ -101,8 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryRoutes,
     ...templateRoutes,
     ...editorRoutes,
-    ...assetCategoryRoutes,
-    ...assetRoutes,
     ...toolCategoryRoutes,
     ...toolRoutes,
     ...aiDetailRoutes,

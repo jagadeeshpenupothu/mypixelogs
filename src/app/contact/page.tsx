@@ -1,110 +1,33 @@
 import type { Metadata } from "next";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { siteConfig } from "@/constants/site";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { createSocialMetadata } from "@/lib/metadata";
+
+const description = "Contact MyPixelogs: ask a question, request a template or tool, or report a problem. We read every message.";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Contact MyPixelogs for questions about free templates, downloadable assets, and online tools.",
-  ...createSocialMetadata({
-    title: "Contact MyPixelogs",
-    description:
-      "Contact MyPixelogs for questions about free templates, downloadable assets, and online tools.",
-    path: "/contact",
-  }),
+  description,
+  ...createSocialMetadata({ title: "Contact MyPixelogs", description, path: "/contact" }),
 };
 
 export default function ContactPage() {
   return (
     <section className="py-8 sm:py-14">
-      <div className="mx-auto grid max-w-site gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="mx-auto grid max-w-site gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 2xl:px-14">
         <div>
-          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
-            Get in touch with MyPixelogs.
-          </h1>
+          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Contact MyPixelogs</h1>
           <p className="mt-5 text-base leading-7 text-muted-foreground">
-            Questions about templates, assets, or tools.
+            Have a question, found a bug, or want a template or tool we don&apos;t have yet? Send us a message. We read every one and
+            usually reply within two working days.
           </p>
-          {siteConfig.contactEmail ? (
-            <div className="mt-8 rounded-lg border border-border bg-card p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-foreground">Email</h2>
-              <a className="mt-2 inline-block text-sm text-primary" href={`mailto:${siteConfig.contactEmail}`}>
-                {siteConfig.contactEmail}
-              </a>
-            </div>
-          ) : null}
+          <ul className="mt-6 space-y-2 text-sm leading-6 text-muted-foreground">
+            <li>• Template or tool requests are welcome; popular requests get built first.</li>
+            <li>• For a problem with a tool, tell us the page and what happened.</li>
+            <li>• Please don&apos;t send passwords, bank details or other private information.</li>
+          </ul>
         </div>
-
-        {siteConfig.contactEmail ? (
-        <form
-          action={`mailto:${siteConfig.contactEmail}`}
-          method="post"
-          encType="text/plain"
-          className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8"
-        >
-          <div className="grid gap-5">
-            <div>
-              <label htmlFor="name" className="text-sm font-medium text-foreground">
-                Name
-              </label>
-              <Input id="name" name="name" className="mt-2" placeholder="Your name" />
-            </div>
-            <div>
-              <label htmlFor="email" className="text-sm font-medium text-foreground">
-                Email
-              </label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                className="mt-2"
-                placeholder="you@example.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="subject" className="text-sm font-medium text-foreground">
-                Subject
-              </label>
-              <Input
-                id="subject"
-                name="subject"
-                className="mt-2"
-                placeholder="How can we help?"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="text-sm font-medium text-foreground">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                className="mt-2 flex w-full rounded-md border border-input bg-background px-3 py-2 text-base text-foreground shadow-sm transition-[color,background-color,border-color,box-shadow] duration-200 placeholder:text-muted-foreground/80 hover:border-foreground/20 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-card dark:hover:border-white/20 md:text-sm"
-                placeholder="Tell us what you need."
-              />
-            </div>
-            <Button type="submit" className="w-full sm:w-fit">
-              Send Message
-            </Button>
-            <p className="text-xs leading-5 text-muted-foreground">
-              Submitting opens your email app so you can send the message
-              directly to us.
-            </p>
-          </div>
-        </form>
-        ) : (
-          <div className="h-fit rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
-            <h2 className="text-lg font-semibold text-foreground">Messages are not open yet</h2>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              We are setting up a support address. The tools and templates work without an account, so you can keep
-              using them in the meantime.
-            </p>
-          </div>
-        )}
+        <ContactForm />
       </div>
     </section>
   );

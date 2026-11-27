@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 import { ActivityTracker } from "@/components/analytics/ActivityTracker";
 import { Clarity } from "@/components/analytics/Clarity";
+import { adsensePublisher } from "@/lib/adsense";
 
 import { Navbar, TabBar } from "@/components/layout/Navbar";
 import { PageFooter } from "@/components/layout/PageFooter";
@@ -59,6 +61,8 @@ export const metadata: Metadata = {
   verification: {
     google: "5UjKcH6E_Gl3gfIo6e1Ip3xzBvGxlE5KL3kLNkz0jqs",
   },
+  // Google AdSense site verification, once a publisher ID is set.
+  ...(adsensePublisher() ? { other: { "google-adsense-account": `ca-${adsensePublisher()}` } } : {}),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -109,6 +113,15 @@ export default function RootLayout({
             <GoogleAnalytics gaId={googleAnalyticsId} />
             <ActivityTracker />
             <Clarity />
+            {adsensePublisher() ? (
+              <Script
+                id="adsense"
+                async
+                strategy="afterInteractive"
+                crossOrigin="anonymous"
+                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${adsensePublisher()}`}
+              />
+            ) : null}
           </>
         ) : null}
       </body>
