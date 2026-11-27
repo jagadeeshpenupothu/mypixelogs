@@ -34,7 +34,7 @@ for (const f of order.map((name) => full.find((x) => x.name === name)).filter(Bo
   const url = "data:font/woff2;base64," + readFileSync(web).toString("base64");
   // Card image: the font's own name, as large as fits, in dark ink on a clear background.
   await page.setContent(`<style>@font-face{font-family:F;src:url(${url})}html,body{margin:0;background:transparent}
-    div{width:720px;height:240px;display:flex;align-items:center;justify-content:center;font-family:F;color:#18181b;white-space:nowrap}</style><div id="t">${f.name}</div>`);
+    div{width:720px;height:240px;display:flex;align-items:center;justify-content:center;font-family:F;color:#18181b;white-space:nowrap}</style><div id="t">${f.scripts.includes("telugu") ? "తెలుగు అక్షరాలు" : f.name}</div>`);
   await page.evaluate(async () => {
     await document.fonts.ready;
     const t = document.getElementById("t");

@@ -57,12 +57,14 @@ export function FontGallery({ items, title, intro, breadcrumbs }: { items: FontF
               return n ? <option key={c} value={c}>{c} ({n})</option> : null;
             })}
           </select>
+          {items.some((f) => !f.scripts.includes("telugu")) ? (
           <select aria-label="Language" className={control} value={script} onChange={(e) => setScript(e.target.value)}>
             <option value="any">Any language</option>
             {Object.entries(SCRIPT_LABELS).map(([key, label]) => (
               <option key={key} value={key}>{label}</option>
             ))}
           </select>
+          ) : null}
           <select aria-label="Sort" className={control} value={sort} onChange={(e) => setSort(e.target.value as typeof sort)}>
             <option value="popular">Popular</option>
             <option value="az">A–Z</option>

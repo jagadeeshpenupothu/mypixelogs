@@ -15,6 +15,7 @@ export const metadata: Metadata = { title, description, ...createSocialMetadata(
 
 export default function AssetsPage() {
   const others = assetGroups("").filter((g) => g.href !== "/assets");
+  const telugu = fonts.filter((f) => f.scripts.includes("telugu") && !["Noto Sans", "Noto Serif"].includes(f.name));
   return (
     <section className="pb-2">
       <h1 className="sr-only">{title}</h1>
@@ -30,6 +31,20 @@ export default function AssetsPage() {
       </div>
       <div className={`mt-4 ${fontGridClass}`}>
         {fonts.slice(0, 12).map((f) => (
+          <FontCard key={f.slug} font={f} />
+        ))}
+      </div>
+
+      <div className="mt-12 flex items-baseline justify-between gap-4">
+        <h2 className="text-xl font-bold text-foreground">
+          Telugu fonts <span className="text-base font-medium text-muted-foreground">· {telugu.length} free</span>
+        </h2>
+        <Link href="/assets/fonts/telugu" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+          See all Telugu fonts <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
+      <div className={`mt-4 ${fontGridClass}`}>
+        {telugu.slice(0, 8).map((f) => (
           <FontCard key={f.slug} font={f} />
         ))}
       </div>

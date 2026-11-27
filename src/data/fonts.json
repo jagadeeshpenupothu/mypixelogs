@@ -2345,5 +2345,492 @@
   "files": 1,
   "zip": "/downloads/fonts/fredoka.zip",
   "size": 104930
+ },
+ {
+  "name": "NTR",
+  "slug": "ntr",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/ntr.zip",
+  "size": 150113
+ },
+ {
+  "name": "NATS",
+  "slug": "nats",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/nats.zip",
+  "size": 139504
+ },
+ {
+  "name": "Gidugu",
+  "slug": "gidugu",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/gidugu.zip",
+  "size": 164147
+ },
+ {
+  "name": "Peddana",
+  "slug": "peddana",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/peddana.zip",
+  "size": 284424
+ },
+ {
+  "name": "Mandali",
+  "slug": "mandali",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/mandali.zip",
+  "size": 234269
+ },
+ {
+  "name": "Suranna",
+  "slug": "suranna",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/suranna.zip",
+  "size": 245776
+ },
+ {
+  "name": "Ponnala",
+  "slug": "ponnala",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/ponnala.zip",
+  "size": 196139
+ },
+ {
+  "name": "Timmana",
+  "slug": "timmana",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/timmana.zip",
+  "size": 312811
+ },
+ {
+  "name": "Dhurjati",
+  "slug": "dhurjati",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/dhurjati.zip",
+  "size": 333556
+ },
+ {
+  "name": "Gurajada",
+  "slug": "gurajada",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/gurajada.zip",
+  "size": 166272
+ },
+ {
+  "name": "Chathura",
+  "slug": "chathura",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   300,
+   400,
+   700,
+   800
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 5,
+  "zip": "/downloads/fonts/chathura.zip",
+  "size": 525022
+ },
+ {
+  "name": "Suravaram",
+  "slug": "suravaram",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/suravaram.zip",
+  "size": 122399
+ },
+ {
+  "name": "Hind Guntur",
+  "slug": "hind-guntur",
+  "designer": "Indian Type Foundry",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 5,
+  "zip": "/downloads/fonts/hind-guntur.zip",
+  "size": 629945
+ },
+ {
+  "name": "Anek Telugu",
+  "slug": "anek-telugu",
+  "designer": "Ek Type",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/anek-telugu.zip",
+  "size": 994289
+ },
+ {
+  "name": "Lakki Reddy",
+  "slug": "lakki-reddy",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/lakki-reddy.zip",
+  "size": 223795
+ },
+ {
+  "name": "Ramabhadra",
+  "slug": "ramabhadra",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/ramabhadra.zip",
+  "size": 254189
+ },
+ {
+  "name": "Sirivennela",
+  "slug": "sirivennela",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/sirivennela.zip",
+  "size": 507730
+ },
+ {
+  "name": "Ravi Prakash",
+  "slug": "ravi-prakash",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/ravi-prakash.zip",
+  "size": 131488
+ },
+ {
+  "name": "Baloo Tammudu 2",
+  "slug": "baloo-tammudu-2",
+  "designer": "Ek Type",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/baloo-tammudu-2.zip",
+  "size": 231691
+ },
+ {
+  "name": "Akaya Telivigala",
+  "slug": "akaya-telivigala",
+  "designer": "Vaishnavi Murthy, Juan Luis Blanco",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/akaya-telivigala.zip",
+  "size": 205839
+ },
+ {
+  "name": "Noto Serif Telugu",
+  "slug": "noto-serif-telugu",
+  "designer": "Google",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/noto-serif-telugu.zip",
+  "size": 188085
+ },
+ {
+  "name": "Tenali Ramakrishna",
+  "slug": "tenali-ramakrishna",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/tenali-ramakrishna.zip",
+  "size": 281652
+ },
+ {
+  "name": "Sree Krushnadevaraya",
+  "slug": "sree-krushnadevaraya",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/sree-krushnadevaraya.zip",
+  "size": 218374
  }
 ]
