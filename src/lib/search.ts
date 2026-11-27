@@ -4,10 +4,11 @@ import { toolTasks } from "@/data/navigation";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
 import { matchScore, searchWords } from "@/lib/plain-search";
+import { guides } from "@/data/guides";
 import { chatGptPrompts } from "@/lib/prompts";
 import { getTemplateCategoryLabel } from "@/lib/templates";
 
-export type SearchResultType = "Template" | "Asset" | "Tool" | "AI Prompt" | "AI Image Prompt" | "AI Image";
+export type SearchResultType = "Template" | "Asset" | "Tool" | "AI Prompt" | "AI Image Prompt" | "AI Image" | "Guide";
 export type SearchItem = {
   id: string;
   title: string;
@@ -41,6 +42,16 @@ export const searchIndex: SearchItem[] = [
       type: "Tool" as const,
       href: `/tools/${tool.slug}`,
     })),
+  ...guides.map((g) => ({
+    id: `guide-${g.slug}`,
+    title: g.title,
+    slug: g.slug,
+    description: g.description,
+    category: g.category,
+    keywords: `guide how to format sample ${g.category}`,
+    type: "Guide" as const,
+    href: `/guides/${g.slug}`,
+  })),
   ...chatGptPrompts.map((item) => ({
     id: `prompt-${item.slug}`,
     title: `${item.title} (ChatGPT prompt)`,

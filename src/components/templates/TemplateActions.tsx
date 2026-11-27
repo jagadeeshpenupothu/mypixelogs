@@ -3,6 +3,7 @@ import { Download, FileCode2, FileDown, FileImage, FileSpreadsheet, FileText, La
 
 import { Button } from "@/components/ui/button";
 import { getAbsoluteUrl } from "@/lib/metadata";
+import { guides } from "@/data/guides";
 import type { Template } from "@/types/template";
 
 type TemplateActionsProps = {
@@ -89,6 +90,16 @@ export function TemplateActions({ template }: TemplateActionsProps) {
           </ul>
         </div>
       ) : null}
+
+      {guides
+        .filter((g) => g.templates.includes(template.slug))
+        .slice(0, 1)
+        .map((g) => (
+          <Link prefetch={false} key={g.slug} href={`/guides/${g.slug}`} className="mt-4 block rounded-lg bg-muted/60 px-3 py-2.5 text-sm text-foreground hover:bg-muted">
+            <span className="text-xs text-muted-foreground">Guide · </span>
+            {g.title.replace(/ \(.*\)$/, "")}
+          </Link>
+        ))}
 
       {template.googleDocId || template.platforms?.googleDocsId ? (
         <p className="mt-4 text-xs leading-5 text-muted-foreground">

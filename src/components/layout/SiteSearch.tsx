@@ -16,6 +16,7 @@ const typeIcons: Record<SearchItem["type"], typeof Wrench> = {
   "AI Prompt": Sparkles,
   "AI Image Prompt": Sparkles,
   "AI Image": ImageIcon,
+  Guide: FileText,
 };
 
 /** Search that answers while typing. People can use the mouse or the arrow keys. */
