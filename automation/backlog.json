@@ -26,7 +26,8 @@
     "keyword": "leave application format",
     "score": 93,
     "notes": "To/From, date, subject, body with dates of leave and reason, contact during leave, signature",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-27"
   },
   {
     "slug": "resignation-letter-template",

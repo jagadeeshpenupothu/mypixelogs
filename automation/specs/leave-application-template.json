@@ -1,0 +1,26 @@
+{
+  "slug": "leave-application-template",
+  "title": "Leave Application Template",
+  "category": "letter",
+  "accent": "1F4E5F",
+  "description": "Free leave application format for office or school with To/From, date, subject, leave dates, reason and contact during leave, on one A4 page. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Ready To/From, date and subject lines", "Leave dates, number of days and reason in one table", "Contact details during leave and signature block"],
+  "useCases": ["Casual or sick leave from office", "School or college leave request", "Planned vacation or personal leave"],
+  "keywords": ["leave application format", "leave letter format", "leave application for office"],
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1Kker-YrLd23Q6cMQFqgbWRv3YJ0ETuR-IQriisyMOvE", "googleSheetsId": "1XBJY2FALHGqiJsgn7XtetPig8fkJfjmDQC31R6OW6vg"},
+  "blocks": [
+    {"type": "title", "text": "LEAVE APPLICATION", "subtitle": "Date: **[DD/MM/YYYY]**"},
+    {"type": "heading", "text": "TO"},
+    {"type": "text", "text": ["[Manager / Principal name]", "[Designation], [Department]", "[Company / School name], [City]"]},
+    {"type": "heading", "text": "FROM"},
+    {"type": "fields", "items": [["Name", "[Full name]"], ["Employee / Roll no.", "[EMP-1024]"], ["Designation / Class", "[Senior Executive]"], ["Department", "[Accounts]"]]},
+    {"type": "text", "text": "Subject: **Application for [casual / sick / earned] leave from [DD/MM/YYYY] to [DD/MM/YYYY]**"},
+    {"type": "text", "text": ["Respected [Sir / Madam],", "I request leave for **[3] days** from **[DD/MM/YYYY]** to **[DD/MM/YYYY]** because [state the reason briefly, e.g. a family function in my hometown].", "I have completed my pending work and **[colleague name]** has agreed to handle urgent tasks during my absence. I will rejoin on **[DD/MM/YYYY]**.", "Kindly grant me leave for the above period."]},
+    {"type": "table", "columns": [{"label": "Leave type", "width": 3}, {"label": "From", "width": 2}, {"label": "To", "width": 2}, {"label": "Days", "width": 1, "align": "right"}], "rows": [["[Casual leave]", "[DD/MM/YYYY]", "[DD/MM/YYYY]", "[3]"]]},
+    {"type": "heading", "text": "CONTACT DURING LEAVE"},
+    {"type": "fields", "items": [["Phone", "[+91 98765 43210]"], ["Email", "[name@email.com]"], ["Address", "[Address during leave]"]]},
+    {"type": "text", "text": ["Thanking you,", "Yours sincerely,"]},
+    {"type": "signature", "items": ["Applicant signature", "Approved by (signature and date)"]}
+  ]
+}

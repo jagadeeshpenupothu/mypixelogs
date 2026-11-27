@@ -1,5 +1,38 @@
 [
   {
+    "id": "leave-application",
+    "title": "Leave Application Template",
+    "slug": "leave-application-template",
+    "description": "Free leave application format for office or school with To/From, date, subject, leave dates, reason and contact during leave, on one A4 page. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Ready To/From, date and subject lines",
+      "Leave dates, number of days and reason in one table",
+      "Contact details during leave and signature block"
+    ],
+    "useCases": [
+      "Casual or sick leave from office",
+      "School or college leave request",
+      "Planned vacation or personal leave"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1Kker-YrLd23Q6cMQFqgbWRv3YJ0ETuR-IQriisyMOvE",
+      "googleSheetsId": "1XBJY2FALHGqiJsgn7XtetPig8fkJfjmDQC31R6OW6vg",
+      "excelPath": "/downloads/leave-application-template.xlsx",
+      "latexPath": "/downloads/leave-application-template.tex",
+      "pdfPath": "/downloads/leave-application-template.pdf"
+    },
+    "published": "2026-11-27"
+  },
+  {
     "id": "rent-receipt",
     "title": "Rent Receipt Template",
     "slug": "rent-receipt-template",
