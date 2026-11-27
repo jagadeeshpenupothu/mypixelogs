@@ -28,9 +28,15 @@ const bump = (m: Counts, k: string | number | undefined, n = 1) => {
   m[String(k)] = (m[String(k)] ?? 0) + n;
 };
 
-async function rawHits(date: string): Promise<Hit[]> {
+/** Every stored key, from one listing call, so we never ask storage for things that don't exist (slow on Netlify). */
+async function allKeys(): Promise<Set<string>> {
   const store = await analyticsStore();
-  const keys = await store.list(`raw/${date}/`);
+  return new Set(await store.list(""));
+}
+
+async function rawHits(date: string, keysNow?: Set<string>): Promise<Hit[]> {
+  const store = await analyticsStore();
+  const keys = keysNow ? [...keysNow].filter((k) => k.startsWith(`raw/${date}/`)) : await store.list(`raw/${date}/`);
   const batches = await Promise.all(keys.map((k) => store.get(k) as Promise<Hit[] | null>));
   return batches.flatMap((b) => b ?? []).sort((a, b) => a.t - b.t);
 }
@@ -67,13 +73,13 @@ function summarise(date: string, hits: Hit[]): DaySummary {
   return s;
 }
 
-async function day(date: string, today: string): Promise<{ summary: DaySummary; hits: Hit[] }> {
+async function day(date: string, today: string, keys: Set<string>): Promise<{ summary: DaySummary; hits: Hit[] }> {
   const store = await analyticsStore();
-  if (date !== today) {
+  if (date !== today && keys.has(`daily/${date}.json`)) {
     const saved = (await store.get(`daily/${date}.json`)) as DaySummary | null;
     if (saved) return { summary: saved, hits: [] };
   }
-  const hits = await rawHits(date);
+  const hits = await rawHits(date, keys);
   const summary = summarise(date, hits);
   if (date < today && hits.length) await store.set(`daily/${date}.json`, summary);
   return { summary, hits };
@@ -96,8 +102,9 @@ export async function getStats(days: number) {
   const now = Date.now();
   const today = dayKey(now);
   const dates = Array.from({ length: days }, (_, i) => dayKey(now - (days - 1 - i) * 86_400_000));
-  const results = await Promise.all(dates.map((d) => day(d, today)));
-  const todayHits = results.at(-1)?.summary.date === today ? results.at(-1)!.hits : await rawHits(today);
+  const keys = await allKeys();
+  const results = await Promise.all(dates.map((d) => day(d, today, keys)));
+  const todayHits = results.at(-1)?.summary.date === today ? results.at(-1)!.hits : await rawHits(today, keys);
 
   const visitors: Record<string, Visitor> = {};
   const merged = { pages: {} as Counts, titles: {} as Record<string, string>, events: {} as Counts, downloads: {} as Counts, plays: {} as Counts, searches: {} as Counts, apps: {} as Counts, exports: {} as Counts, uploads: {} as Counts, prompts: {} as Counts };
