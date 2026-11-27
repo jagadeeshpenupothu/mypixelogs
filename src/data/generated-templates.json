@@ -31,5 +31,34 @@
       "pdfPath": "/downloads/rent-receipt-template.pdf"
     },
     "published": "2026-11-27"
+  },
+  {
+    "id": "salary-slip",
+    "title": "Salary Slip Template",
+    "slug": "salary-slip-template",
+    "description": "Free salary slip format for India with earnings, PF, ESI, PT and TDS deductions, net pay in words, PAN, UAN and bank details. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "business",
+    "features": [
+      "Earnings vs deductions table with PF, ESI, PT and TDS",
+      "Employee PAN, UAN and bank account fields",
+      "Net pay in figures and words on one A4 page"
+    ],
+    "useCases": [
+      "Monthly payslips for small businesses",
+      "Proof of income for loans and rentals",
+      "Payroll records for HR"
+    ],
+    "formats": [
+      "Word",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "excelPath": "/downloads/salary-slip-template.xlsx",
+      "latexPath": "/downloads/salary-slip-template.tex",
+      "pdfPath": "/downloads/salary-slip-template.pdf"
+    },
+    "published": "2026-11-27"
   }
 ]

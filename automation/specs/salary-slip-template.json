@@ -1,0 +1,23 @@
+{
+  "slug": "salary-slip-template",
+  "title": "Salary Slip Template",
+  "category": "business",
+  "accent": "1F4E3D",
+  "description": "Free salary slip format for India with earnings, PF, ESI, PT and TDS deductions, net pay in words, PAN, UAN and bank details. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Earnings vs deductions table with PF, ESI, PT and TDS", "Employee PAN, UAN and bank account fields", "Net pay in figures and words on one A4 page"],
+  "useCases": ["Monthly payslips for small businesses", "Proof of income for loans and rentals", "Payroll records for HR"],
+  "keywords": ["salary slip format", "payslip template", "salary slip format in excel"],
+  "published": "2026-11-27",
+  "blocks": [
+    {"type": "title", "text": "SALARY SLIP", "subtitle": "Pay period: **[November 2026]**   |   Pay date: **[30/11/2026]**"},
+    {"type": "contact", "items": ["[Company Name Pvt. Ltd.]", "[Office address, City, State, PIN]", "GSTIN: [29ABCDE1234F1Z5]"]},
+    {"type": "heading", "text": "EMPLOYEE DETAILS"},
+    {"type": "fields", "columns": 2, "items": [["Employee name", "[Full name]"], ["Employee ID", "[EMP-001]"], ["Designation", "[Job title]"], ["Department", "[Department]"], ["Date of joining", "[DD/MM/YYYY]"], ["PAN", "[ABCDE1234F]"], ["UAN", "[100123456789]"], ["ESI no.", "[1234567890]"], ["Bank / A/c no.", "[Bank name, XXXX1234]"], ["Days paid / LOP", "[30] / [0]"]]},
+    {"type": "heading", "text": "EARNINGS AND DEDUCTIONS"},
+    {"type": "table", "columns": [{"label": "Earnings", "width": 3}, {"label": "Amount (₹)", "width": 2, "align": "right"}, {"label": "Deductions", "width": 3}, {"label": "Amount (₹)", "width": 2, "align": "right"}], "rows": [["Basic salary", "[25,000.00]", "Provident Fund (PF)", "[1,800.00]"], ["House Rent Allowance (HRA)", "[10,000.00]", "ESI", "[0.00]"], ["Conveyance allowance", "[1,600.00]", "Professional Tax (PT)", "[200.00]"], ["Special allowance", "[8,400.00]", "TDS (Income Tax)", "[1,500.00]"], ["Bonus / Overtime", "[0.00]", "Other deductions", "[0.00]"], ["**Gross earnings**", "**[45,000.00]**", "**Total deductions**", "**[3,500.00]**"]], "totals": [["Net pay (Gross − Deductions)", "[41,500.00]"]]},
+    {"type": "text", "text": "Net pay in words: **[Rupees Forty-One Thousand Five Hundred Only]**"},
+    {"type": "fields", "items": [["Payment mode", "[Bank transfer / Cheque]"], ["Transaction ref.", "[UTR or cheque no.]"]]},
+    {"type": "text", "text": "This is a computer-generated salary slip. Please report any discrepancy to HR within 7 days."},
+    {"type": "signature", "items": ["Employee signature", "Authorised signatory"]}
+  ]
+}
