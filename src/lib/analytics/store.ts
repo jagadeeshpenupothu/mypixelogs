@@ -5,6 +5,7 @@ import path from "node:path";
 
 /** A tiny key/value store: Netlify Blobs on the live site, a local folder in development. */
 type Store = {
+  kind?: string;
   get(key: string): Promise<unknown | null>;
   set(key: string, value: unknown): Promise<void>;
   list(prefix: string): Promise<string[]>;
@@ -13,6 +14,7 @@ type Store = {
 const LOCAL_DIR = path.join(process.cwd(), ".data", "analytics");
 
 const localStore: Store = {
+  kind: "local",
   async get(key) {
     try {
       return JSON.parse(await readFile(path.join(LOCAL_DIR, key), "utf8"));
@@ -70,6 +72,7 @@ export async function analyticsStore(): Promise<Store> {
       return out;
     };
     cached = {
+      kind: "netlify-blobs",
       get: (key) => timed(`get ${key}`, blobs.get(key, { type: "json" }), null),
       set: async (key, value) => {
         await timed(`set ${key}`, blobs.setJSON(key, value), undefined);
