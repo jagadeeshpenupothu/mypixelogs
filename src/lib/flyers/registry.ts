@@ -1,5 +1,7 @@
 import * as christmasPhoto from "@/lib/flyers/christmas-photo";
+import specs from "@/data/flyer-specs.json";
 import * as grandOpening from "@/lib/flyers/grand-opening";
+import { POSTER_FONTS, POSTER_SECTIONS, POSTER_THEMES, posterSvg, type PosterSpec } from "@/lib/flyers/photo-poster";
 
 type Fields = Record<string, string>;
 type Theme = { name: string };
@@ -54,4 +56,23 @@ export const FLYER_DESIGNS: Record<string, FlyerDesign> = {
     bg: christmasPhoto.FLYER_BG,
     photoLabel: "Background photo",
   },
+  // Photo flyers made from settings files (src/data/flyer-specs.json), one design each: "poster:<slug>".
+  ...Object.fromEntries(
+    (specs as PosterSpec[]).map((spec): [string, FlyerDesign] => [
+      `poster:${spec.slug}`,
+      {
+        defaults: spec.fields,
+        themes: POSTER_THEMES,
+        svg: loose((fields: PosterSpec["fields"], theme: (typeof POSTER_THEMES)[keyof typeof POSTER_THEMES], opts: object) => posterSvg(spec, fields, theme, opts)),
+        fonts: POSTER_FONTS,
+        sections: POSTER_SECTIONS,
+        swatch: (t) => {
+          const g = (t as unknown as { gold: readonly string[] }).gold;
+          return [g[1], g[2]];
+        },
+        bg: spec.bg,
+        photoLabel: "Background photo",
+      },
+    ]),
+  ),
 };

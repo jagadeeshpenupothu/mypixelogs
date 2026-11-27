@@ -16,9 +16,17 @@ const { writePsdBuffer } = require("ag-psd");
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const name = process.argv[2];
-if (!name) { console.error("Usage: node scripts/flyers/build.mjs <design-name>"); process.exit(2); }
-const { flyerSvg: designSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS, FLYER_FONTS, FLYER_BG } = await import(path.join(root, `src/lib/flyers/${name}.ts`));
-const slug = `${name}-flyer`;
+if (!name) { console.error("Usage: node scripts/flyers/build.mjs <design-name> | poster:<slug>"); process.exit(2); }
+// "poster:<slug>" builds a photo flyer from its settings in src/data/flyer-specs.json; anything else is a design module.
+async function loadDesign() {
+  if (!name.startsWith("poster:")) return { ...(await import(path.join(root, `src/lib/flyers/${name}.ts`))), slug: `${name}-flyer` };
+  const posterSlug = name.slice(7);
+  const spec = JSON.parse(readFileSync(path.join(root, "src/data/flyer-specs.json"), "utf8")).find((x) => x.slug === posterSlug);
+  if (!spec) throw new Error(`No flyer spec "${posterSlug}" in src/data/flyer-specs.json`);
+  const m = await import(path.join(root, "src/lib/flyers/photo-poster.ts"));
+  return { flyerSvg: (fields, t, opts) => m.posterSvg(spec, fields, t, opts), FLYER_DEFAULTS: spec.fields, FLYER_THEMES: m.POSTER_THEMES, FLYER_GROUPS: m.POSTER_GROUPS, FLYER_FONTS: m.POSTER_FONTS, FLYER_BG: spec.bg, slug: spec.slug };
+}
+const { flyerSvg: designSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS, FLYER_FONTS, FLYER_BG, slug } = await loadDesign();
 // Designs with a photo background get it embedded, so every export (PSD, PDF, PNG) contains it.
 const BG = FLYER_BG ? `data:image/jpeg;base64,${readFileSync(path.join(root, "public", FLYER_BG)).toString("base64")}` : undefined;
 const flyerSvg = (fields, t, opts = {}) => designSvg(fields, t, { ...(BG ? { bg: BG } : {}), ...opts });
@@ -87,6 +95,7 @@ const psd = {
   // Folders bottom to top, as Photoshop lists them reversed.
   children: FLYER_GROUPS.map(([folder, names]) => ({ name: folder, children: names.map((n) => layers.get(n)).filter(Boolean) })),
 };
+psd.children = psd.children.filter((f) => f.children.length);
 const placed = psd.children.reduce((n, f) => n + f.children.length, 0);
 if (placed !== layers.size) throw new Error(`FLYER_GROUPS places ${placed} of ${layers.size} layers`);
 writeFileSync(out(".psd"), Buffer.from(writePsdBuffer(psd, { generateThumbnail: false, compress: true })));

@@ -101,6 +101,20 @@ export function TemplateActions({ template }: TemplateActionsProps) {
           </Link>
         ))}
 
+      {template.photoCredit ? (
+        <p className="mt-4 text-xs leading-5 text-muted-foreground">
+          Photo:{" "}
+          {template.photoCredit.page ? (
+            <a href={template.photoCredit.page} target="_blank" rel="noopener" className="underline hover:text-foreground">
+              {template.photoCredit.creator || "source"}
+            </a>
+          ) : (
+            template.photoCredit.creator || "unknown"
+          )}{" "}
+          · {template.photoCredit.license} · {template.photoCredit.source}
+        </p>
+      ) : null}
+
       {template.googleDocId || template.platforms?.googleDocsId ? (
         <p className="mt-4 text-xs leading-5 text-muted-foreground">
           Google opens a page asking you to make a copy. You edit your copy; the original stays unchanged. A Google account is needed.

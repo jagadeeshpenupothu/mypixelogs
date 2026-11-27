@@ -1,0 +1,39 @@
+[
+ {
+  "slug": "sankranti-offer-flyer",
+  "title": "Sankranti Festive Offer Flyer",
+  "description": "Free Sankranti / Pongal offer flyer for shops and businesses: kite-festival sunset photo with festive gold lettering and space for your offer, dates and contact. Edit online or download the layered PSD.",
+  "published": "2026-11-28",
+  "bg": "/flyers/sankranti-offer-flyer.jpg",
+  "layout": "top",
+  "style": "elegant",
+  "shade": 0.35,
+  "fields": {
+   "kicker": "WISHING YOU A HAPPY",
+   "title": "SANKRANTI",
+   "script": "& Pongal",
+   "subtitle": "HARVEST · KITES · NEW BEGINNINGS",
+   "details": "Festive Offer: Flat 20% Off",
+   "details2": "10–16 JAN 2027 · SRI LAKSHMI TEXTILES, VIJAYAWADA",
+   "footer": "Call / WhatsApp  +91 98765 43210",
+   "logo": "YOUR SHOP NAME"
+  },
+  "features": [
+   "Kite-festival sunset photo (CC0) as its own layer",
+   "Every line is editable text with gold, glow and shadow effects",
+   "A4 at 300 dpi for print, or share on WhatsApp and Instagram"
+  ],
+  "useCases": [
+   "Sankranti and Pongal sales and offers",
+   "Festival greetings from shops and businesses",
+   "Kite festival events"
+  ],
+  "credit": {
+   "title": "Kite Festival at Sunset, with kites in the sky over buildings",
+   "creator": "Meet Makadia",
+   "license": "CC0",
+   "source": "Openverse · wordpress",
+   "page": "https://wordpress.org/photos/photo/79965f7de9/"
+  }
+ }
+]
