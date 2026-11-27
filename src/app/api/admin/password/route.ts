@@ -7,7 +7,8 @@ export const dynamic = "force-dynamic";
 /** Password sign-in for /admin (form post). */
 export async function POST(req: Request) {
   // Read the plain form body (formData() can stall on Netlify's server for form posts).
-  const body = await Promise.race([req.text(), new Promise<string>((r) => setTimeout(() => r(""), 5000))]);
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const body = await Promise.race([req.text(), new Promise<string>((r) => (timer = setTimeout(() => r(""), 5000)))]).finally(() => clearTimeout(timer));
   const ok = passwordMatches(new URLSearchParams(body).get("password") ?? "");
   if (!ok) {
     await new Promise((r) => setTimeout(r, 800)); // slow down guessing

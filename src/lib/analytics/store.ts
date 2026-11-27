@@ -39,15 +39,15 @@ let cached: Store | null = null;
 
 /** Never let a slow storage call hang a page: give up after 8 seconds and use the fallback. */
 function limit<T>(work: Promise<T>, fallback: T, what: string): Promise<T> {
-  return Promise.race([
-    work,
-    new Promise<T>((resolve) =>
-      setTimeout(() => {
-        console.error(`[analytics] storage timed out: ${what}`);
-        resolve(fallback);
-      }, 8000),
-    ),
-  ]);
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<T>((resolve) => {
+    timer = setTimeout(() => {
+      console.error(`[analytics] storage timed out: ${what}`);
+      resolve(fallback);
+    }, 8000);
+  });
+  // Cancel the timer as soon as the work is done, so nothing keeps the server busy.
+  return Promise.race([work, timeout]).finally(() => clearTimeout(timer));
 }
 
 export async function analyticsStore(): Promise<Store> {
