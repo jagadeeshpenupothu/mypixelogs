@@ -59,3 +59,51 @@ Append a new page to the Google Doc "MyPixelogs – Image prompts" (Google Docs 
 `1u75du_PmriErRYc7nn3Ko0uWkWLn87NC` if it doesn't exist) with: the date, the slug, and one ChatGPT prompt:
 photorealistic, the scene and mood, "keep the <top/bottom> 40% calm and dark for text", portrait 2:3,
 "No text, no letters, no logos, no watermark". The owner makes the image in ChatGPT and sends it; it is built later.
+
+# Layered flyer run (ChatGPT images from Google Drive)
+
+The owner makes images in ChatGPT from the prompts in the Google Doc "MyPixelogs – Image prompts"
+(ID `1cUckT8K0wHZimt2-gz977b4nJyy1szh50DqDFSSFBgw`) and uploads them to the Drive folder
+`199MFCpdMPzvtQHu6uCSInFvPE_Wk_jLc`, named `<NNN>-<k>.png` (NNN = prompt number, k = image number).
+Each run: first build every prompt whose images are all uploaded, then top up the prompts.
+
+## A. Build flyers from uploaded images
+
+1. Setup as in step 1 above, plus `pip install -q "rembg[cpu]"` (background remover; first use downloads its model).
+2. Read the Doc and list the prompt blocks with `Status: NEW`. For each, search the Drive folder for its files
+   (`title contains '<NNN>-'`). If any listed image is missing, skip that prompt.
+3. Download each file (Google Drive download tool) into `automation/in/` (git-ignored), keeping its name.
+   If a file is too big to download, add a line under its block in the Doc: "Please upload <file> as JPG".
+4. Look at every image (Read). Reject an image with visible text, watermarks, warped hands/faces, or the wrong
+   subject; write in the Doc which one to redo and why, and skip the prompt.
+5. Prepare: `python3 scripts/flyers/prepare_images.py <slug> --bg automation/in/<NNN>-1.png --hero automation/in/<NNN>-2.png
+   [--extra automation/in/<NNN>-3.png] [--overlay automation/in/<NNN>-4.png] [--focus top|center|bottom]`
+   (image roles are written in the block: background, hero, cut-out, overlay). Cut-outs on a plain background
+   are made transparent automatically. Check the cut-outs by compositing them on magenta and reading the result.
+6. Append one object to `src/data/flyer-composites.json` (the shape is `CompositeSpec` in
+   `src/lib/flyers/composite-poster.ts`):
+   - `layout`: "hero-right" (text column left, hero right: people, dishes, events) or "hero-center" (headline on
+     top, product below: sales, gadgets). Hero `kind`: "person" (bleeds off the bottom) or "object".
+   - `palette`: one strong brand accent from the images + a near-black tinted with it, e.g. orange #FF7A1A / #0B0704.
+   - `ghost`: one short word in CAPS for the giant background word (FEAST, SALE, 2027), or "" for none.
+   - `extras`: secondary cut-outs with a box {x, y, w, h} on the 1240 x 1754 page; `front: true` to sit over the hero.
+   - `fields`: realistic Indian placeholder business, a future date, a +91 98765 43210-style phone, an @handle;
+     headline1 + headline2 two to three words each; three short points; a 2–3 word button.
+   - `credit`: `{ "license": "Generated with ChatGPT for MyPixelogs", "source": "MyPixelogs" }`.
+   - description under 160 characters, 3 features, 3 useCases, published = today.
+7. Build `node scripts/flyers/build.mjs composite:<slug>` and Read `public/previews/<slug>.png`. Check like step 5
+   above: nothing covers text, the hero isn't cut off badly, no empty dead area, it looks like a professional
+   campaign poster. Adjust hero/extras boxes, `shade`, layout or words; at most 3 tries.
+8. Check the site, publish and archive as steps 6–8 above. In the Doc, change the block's `Status: NEW` to
+   `Status: DONE – https://mypixelogs.netlify.app/templates/<slug>`.
+
+## B. Top up the prompts
+
+Keep 3 to 5 prompts with `Status: NEW` in the Doc. If there are fewer, research upcoming occasions (step 2 above)
+and append new blocks at the end of the Doc, each on a new page, in exactly the format of the existing blocks:
+`PROMPT <next number>`, `Status: NEW`, `Created`, `Flyer`, `Look`, `Images needed`, then each image with
+"Save as", "Size" and "Prompt". Every flyer needs: 1 background plate (portrait 2:3, a calm area for text, no text)
+and 1 hero cut-out on a transparent background; add up to 2 more cut-outs or overlays only when they add value.
+Write prompts like a senior art director: subject, setting, lighting, lens, mood, palette, composition, and
+always "No text, no letters, no logos, no watermark". Aim for the level of premium Instagram campaign posters:
+real people or real products as heroes, one strong accent colour, high contrast, clean space for big headlines.

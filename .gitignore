@@ -34,4 +34,5 @@ next-env.d.ts
 
 # daily template run scratch files
 /automation/out/
+/automation/in/
 .data/

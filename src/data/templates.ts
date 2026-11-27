@@ -1,5 +1,7 @@
+import flyerComposites from "@/data/flyer-composites.json";
 import flyerSpecs from "@/data/flyer-specs.json";
 import generated from "@/data/generated-templates.json";
+import type { CompositeSpec } from "@/lib/flyers/composite-poster";
 import type { PosterSpec } from "@/lib/flyers/photo-poster";
 import type { Template, TemplateCategory, TemplatePlatforms } from "@/types/template";
 
@@ -288,20 +290,23 @@ const generatedTemplates: Template[] = (generated as GeneratedTemplate[]).map(({
 }));
 
 // A generated template replaces the placeholder with the same address, so old links keep working.
-/** Photo flyers made from settings files (src/data/flyer-specs.json). */
-const posterFlyers: Template[] = (flyerSpecs as PosterSpec[]).map((spec) => ({
+/** Photo flyers made from settings files: single-photo (flyer-specs.json) and layered (flyer-composites.json). */
+const posterFlyers: Template[] = [
+  ...(flyerSpecs as PosterSpec[]).map((spec) => ({ spec, design: `poster:${spec.slug}` })),
+  ...(flyerComposites as unknown as CompositeSpec[]).map((spec) => ({ spec, design: `composite:${spec.slug}` })),
+].map(({ spec, design }) => ({
   id: spec.slug,
   title: spec.title,
   slug: spec.slug,
   description: spec.description,
-  category: "flyer",
+  category: "flyer" as const,
   thumbnail: `/previews/${spec.slug}.png`,
   previewImage: `/previews/${spec.slug}.png`,
   downloadPath: `/downloads/${spec.slug}.psd`,
   downloads: 0,
   ready: true,
-  editor: "flyer",
-  flyerDesign: `poster:${spec.slug}`,
+  editor: "flyer" as const,
+  flyerDesign: design,
   published: spec.published,
   formats: ["PSD", "Photopea", "Illustrator", "SVG", "PDF"],
   platforms: { psdPath: `/downloads/${spec.slug}.psd`, aiPath: `/downloads/${spec.slug}.ai`, svgPath: `/downloads/${spec.slug}.svg`, pdfPath: `/downloads/${spec.slug}.pdf` },
