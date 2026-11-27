@@ -3,7 +3,7 @@
 import { readFileSync } from "node:fs";
 
 export const CATEGORIES = ["resume", "invoice", "receipt", "letter", "certificate", "business", "letterhead"];
-const BLOCKS = ["title", "contact", "heading", "text", "entry", "bullets", "fields", "table", "columns", "signature", "spacer"];
+const BLOCKS = ["header", "title", "contact", "heading", "text", "entry", "bullets", "fields", "table", "columns", "parties", "note", "signature", "spacer"];
 
 export function loadSpec(path) {
   const spec = JSON.parse(readFileSync(path, "utf8"));
@@ -23,6 +23,9 @@ export function loadSpec(path) {
       need(Array.isArray(block.columns) && block.columns.length >= 2 && block.columns.length <= 7, `block ${i}: table needs 2-7 columns`);
       (block.rows ?? []).forEach((row, r) => need(row.length === block.columns.length, `block ${i}: row ${r} has ${row.length} cells, expected ${block.columns.length}`));
     }
+    if (block.type === "header") need(typeof block.title === "string" && block.title.length > 1, `block ${i}: header needs a title`);
+    if (block.type === "parties") need(Array.isArray(block.groups) && block.groups.length >= 2 && block.groups.length <= 3 && block.groups.every((g) => g.heading && Array.isArray(g.lines)), `block ${i}: parties needs 2-3 groups of {heading, lines[]}`);
+    if (block.type === "note") need(typeof block.text === "string" || Array.isArray(block.text), `block ${i}: note needs text`);
     if (block.type === "columns") need(block.groups?.length >= 1 && block.groups.length <= 3, `block ${i}: columns needs 1-3 groups`);
     if (block.type === "fields") need(Array.isArray(block.items) && block.items.every((it) => Array.isArray(it) && it.length === 2), `block ${i}: fields items are [label, value] pairs`);
   });

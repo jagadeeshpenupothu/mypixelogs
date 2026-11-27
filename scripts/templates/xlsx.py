@@ -104,7 +104,68 @@ def spans(weights):
 for block in spec["blocks"]:
     t = block["type"]
     center = "center" if block.get("align") == "center" else "left"
-    if t == "title":
+    if t == "header":
+        band = block.get("style", "band") != "plain"
+        fg, fill = ("FFFFFF", A) if band else (A, None)
+        lines = block.get("lines", [])
+        meta = [f"{l}  **{v}**" for l, v in block.get("meta", [])]
+        depth = max(len(lines), len(meta)) + 1
+        logo = block.get("logo", True) is not False
+        org_c1 = 3 if logo else 1
+        for i in range(depth):
+            r = row + i
+            if fill:
+                for c in range(1, COLS + 1):
+                    ws.cell(row=r, column=c).fill = PatternFill("solid", fgColor=fill)
+            if i == 0:
+                put(r, org_c1, 7, plain(block.get("org", "")), 13, True, fg)
+                put(r, 8, COLS, plain(block["title"]), 18, True, fg, align="right")
+            else:
+                if i - 1 < len(lines):
+                    put(r, org_c1, 7, lines[i - 1], 8.5, color=fg if band else TEXT)
+                if i - 1 < len(meta):
+                    put(r, 8, COLS, meta[i - 1], 9, color=fg if band else TEXT, align="right")
+            ws.row_dimensions[r].height = 26 if i == 0 else 14
+        if logo:
+            last = row + min(2, depth - 1)
+            put(row, 1, 2, "[LOGO]", 8, color=fg, align="center")
+            ws.unmerge_cells(start_row=row, start_column=1, end_row=row, end_column=2)
+            ws.merge_cells(start_row=row, start_column=1, end_row=last, end_column=2)
+            dash = Side(style="dashed", color=fg)
+            for rr in range(row, last + 1):
+                for cc in (1, 2):
+                    ws.cell(row=rr, column=cc).border = Border(left=dash if cc == 1 else None, right=dash if cc == 2 else None,
+                                                             top=dash if rr == row else None, bottom=dash if rr == last else None)
+        row += depth
+        if not band:
+            underline(row - 1, A, "medium")
+        gap(8)
+    elif t == "parties":
+        groups = block["groups"]
+        sp = spans([1] * len(groups))
+        depth = 1 + max(len(g["lines"]) for g in groups)
+        box = Side(style="thin", color="C9D1DC")
+        for (c1, c2), g in zip(sp, groups):
+            for i in range(depth):
+                text = str(g["heading"]).upper() if i == 0 else (g["lines"][i - 1] if i - 1 < len(g["lines"]) else "")
+                put(row + i, c1, c2, text, 9 if i == 0 else 10.5, bold=i <= 1, color=A if i == 0 else TEXT, fill="F7F9FC", indent=1)
+                for c in range(c1, c2 + 1):
+                    ws.cell(row=row + i, column=c).border = Border(left=box if c == c1 else None, right=box if c == c2 else None,
+                                                                 top=box if i == 0 else None, bottom=box if i == depth - 1 else None)
+        for i in range(depth):
+            ws.row_dimensions[row + i].height = 15
+        row += depth
+        gap(6)
+    elif t == "note":
+        texts = block["text"] if isinstance(block["text"], list) else [block["text"]]
+        items = ([(block["heading"], True)] if block.get("heading") else []) + [(x, False) for x in texts]
+        for txt, head in items:
+            put(row, 1, COLS, txt, 10.5 if head else 9.5, bold=head, color=A if head else TEXT, wrap=not head, fill="F2F4F8")
+            ws.cell(row=row, column=1).border = Border(left=Side(style="thick", color=A))
+            ws.row_dimensions[row].height = 16 if head else 14 * lines_for(txt, COLS, 9.5)
+            row += 1
+        gap(6)
+    elif t == "title":
         size = spec.get("titleSize", 30) * 0.85
         line(plain(block["text"]), size, True, A, height=size * 1.45, wrap=False, align=center)
         if block.get("subtitle"):

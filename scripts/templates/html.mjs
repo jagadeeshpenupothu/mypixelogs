@@ -10,6 +10,17 @@ export function renderHtml(spec) {
   for (const block of spec.blocks) {
     const center = block.align === "center" ? ' style="text-align:center"' : "";
     switch (block.type) {
+      case "header": {
+        const band = block.style !== "plain";
+        out.push(`<div class="hdr${band ? " band" : " plain"}">${block.logo === false ? "" : '<div class="logo">[LOGO]</div>'}<div class="org"><p class="orgname">${rich(block.org ?? "")}</p>${(block.lines ?? []).map((l) => `<p class="small">${rich(l)}</p>`).join("")}</div><div class="doc"><p class="doctitle">${esc(plain(block.title))}</p>${(block.meta ?? []).map(([l, v]) => `<p class="small">${rich(l)}&nbsp; <span class="b">${rich(v)}</span></p>`).join("")}</div></div>`);
+        break;
+      }
+      case "parties":
+        out.push(`<div class="parties">${block.groups.map((g) => `<div class="party"><p class="ph">${esc(String(g.heading).toUpperCase())}</p>${g.lines.map((l, k) => `<p${k === 0 ? ' class="b"' : ""}>${rich(l)}</p>`).join("")}</div>`).join("")}</div><div class="gap"></div>`);
+        break;
+      case "note":
+        out.push(`<div class="note">${block.heading ? `<p class="nh">${rich(block.heading)}</p>` : ""}${[].concat(block.text).map((t) => `<p>${rich(t)}</p>`).join("")}</div><div class="gap"></div>`);
+        break;
       case "title":
         out.push(`<p class="title"${center}>${esc(plain(block.text))}</p>`);
         if (block.subtitle) out.push(`<p class="subtitle"${center}>${rich(block.subtitle)}</p>`);
@@ -83,6 +94,11 @@ table{border-collapse:collapse;width:100%;font-size:13px}
 .totals{width:40%;margin-left:auto}.totals td{padding:4px 7px;border:1px solid #c9d1dc}.totals td:first-child{background:#f2f4f8}.totals td:last-child{text-align:right}
 .totals tr.last td{background:${A};color:#fff;font-weight:700}
 .cols{display:flex}.col{flex:1;padding:0 8px 0 20px;border-left:1px solid #a6a6a6}.col:first-child{border:0;padding-left:11px}.gh{font-size:14.5px;font-weight:700;color:${A};margin-bottom:3px}
+.hdr{display:flex;align-items:flex-start;gap:16px;padding:16px;margin-bottom:10px}.hdr.band{background:${A};color:#fff}.hdr.plain{border-bottom:3px solid ${A};padding:0 0 12px}
+.logo{width:84px;min-height:48px;border:1px dashed currentColor;opacity:.85;display:flex;align-items:center;justify-content:center;font-size:11px}
+.org{flex:1}.orgname{font-size:19px;font-weight:700}.hdr.plain .orgname,.hdr.plain .doctitle{color:${A}}.doc{text-align:right}.doctitle{font-size:${Math.round((spec.titleSize ?? 22) * 1.333)}px;font-weight:700;margin-bottom:6px}.small{font-size:12px}
+.parties{display:flex;gap:10px}.party{flex:1;border:1px solid #c9d1dc;background:#f7f9fc;padding:9px 11px}.ph{font-size:12px;font-weight:700;color:${A};margin-bottom:4px}
+.note{background:#f2f4f8;border-left:4px solid ${A};padding:9px 12px;font-size:13px}.nh{font-weight:700;color:${A};margin-bottom:3px}
 .sig{display:flex;justify-content:space-around;gap:40px;margin-top:46px}.sig.one{justify-content:flex-end}.sig p{min-width:190px;border-top:1px solid #1a1a1a;padding-top:4px;text-align:center}
 </style></head>
 <body><div class="page" data-document-role="page" data-label="${esc(spec.title)}">

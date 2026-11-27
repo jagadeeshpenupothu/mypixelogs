@@ -63,7 +63,8 @@
     "keyword": "quotation format",
     "score": 88,
     "notes": "Quote no, validity, items table with qty/rate/GST/amount, terms, signature",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-27"
   },
   {
     "slug": "software-engineer-resume-template",

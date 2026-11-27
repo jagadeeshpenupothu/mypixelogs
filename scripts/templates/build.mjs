@@ -91,8 +91,16 @@ async function build(slug) {
   check(pages(toPdf(googleDocx, tmp)) === 1, "Google Docs version runs over 1 page. Shorten the spec.");
   check(pages(toPdf(file(".xlsx"), tmp)) === 1, "Excel version runs over 1 page. Shorten the spec.");
   const text = run("pdftotext", [file(".pdf"), "-"]);
-  check(text.includes(plain(spec.blocks.find((b) => b.type === "title")?.text ?? spec.title).slice(0, 12)), "Title text missing from the PDF.");
+  const titleBlock = spec.blocks.find((b) => b.type === "header" || b.type === "title");
+  check(text.includes(plain(titleBlock?.title ?? titleBlock?.text ?? spec.title).slice(0, 12)), "Title text missing from the PDF.");
   for (const bad of ["undefined", "NaN", "[object Object]", "**"]) check(!text.includes(bad), `Output contains "${bad}".`);
+  // Quality bar: researched against real examples, and a full, usable page rather than a starter file.
+  const refs = (spec.references ?? []).filter((u) => /^https:\/\/\S+$/.test(u));
+  check(refs.length >= 3, `Add "references": at least 3 https links to real examples you studied (found ${refs.length}).`);
+  check(typeof spec.research === "string" && spec.research.length >= 60, 'Add "research": 1-2 sentences on what the references have in common.');
+  const lines = text.split("\n").filter((l) => l.trim().length > 2).length;
+  check(lines >= 28, `The page looks thin (${lines} lines of text). Real versions have more: add the fields, terms and details the references show.`);
+  check(spec.blocks.some((b) => b.type === "header"), 'Start with a "header" block (logo area, organisation details, document title and numbers), as professional documents do.');
   const others = existsSync(specsDir) ? readdirSync(specsDir).filter((f) => f.endsWith(".json") && f !== `${spec.slug}.json`) : [];
   for (const f of others) {
     const words = (s) => new Set(JSON.stringify(s.blocks).toLowerCase().match(/[a-z]{4,}/g));

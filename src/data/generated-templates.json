@@ -33,6 +33,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "quotation",
+    "title": "Quotation Template",
+    "slug": "quotation-template",
+    "description": "Free GST quotation format for India with quote number, validity date, HSN/SAC, CGST/SGST/IGST, payment terms and customer acceptance. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "business",
+    "features": [
+      "Itemised table with HSN/SAC, GST rate and tax split",
+      "Validity date, payment, delivery and warranty terms",
+      "Customer acceptance and authorised signatory lines"
+    ],
+    "useCases": [
+      "Price quotes for B2B clients",
+      "Supply and installation orders",
+      "Service contracts and AMCs"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1I-k-bt5qNaDTsPRl0dyTJqnMqkUzzMjWuhBeSM9B2wY",
+      "googleSheetsId": "1gWkeb5ClTQirYAAyUQM_0QTt0-UgEASLgboCUeuSmK0",
+      "excelPath": "/downloads/quotation-template.xlsx",
+      "latexPath": "/downloads/quotation-template.tex",
+      "pdfPath": "/downloads/quotation-template.pdf"
+    },
+    "published": "2026-11-27"
+  },
+  {
     "id": "rent-receipt",
     "title": "Rent Receipt Template",
     "slug": "rent-receipt-template",

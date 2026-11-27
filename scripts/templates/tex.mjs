@@ -18,6 +18,26 @@ export function renderTex(spec) {
   for (const block of spec.blocks) {
     const center = block.align === "center";
     switch (block.type) {
+      case "header": {
+        const band = block.style !== "plain";
+        const fg = band ? "\\color{white}" : "";
+        const left = `{${fg}${band ? "" : "\\color{accent}"}\\fontsize{14}{17}\\selectfont\\bfseries ${rich(block.org ?? "")}}\\\\ ${(block.lines ?? []).map((l) => `{${fg}\\footnotesize ${rich(l)}}`).join("\\\\ ")}`;
+        const right = `{${fg}${band ? "" : "\\color{accent}"}\\fontsize{${spec.titleSize ?? 22}}{${(spec.titleSize ?? 22) + 4}}\\selectfont\\bfseries ${tex(plain(block.title))}}\\\\[3pt] ${(block.meta ?? []).map(([l, v]) => `{${fg}\\footnotesize ${rich(l)}~\\textbf{${rich(v)}}}`).join("\\\\ ")}`;
+        const logo = block.logo === false ? "" : `{${fg}\\fbox{\\parbox[c][1.1cm][c]{1.7cm}{\\centering\\scriptsize [LOGO]}}} & `;
+        const cols = block.logo === false ? "@{\\hspace{8pt}}X>{\\raggedleft\\arraybackslash}p{0.42\\linewidth}@{\\hspace{8pt}}" : "@{\\hspace{8pt}}l@{\\hspace{10pt}}X>{\\raggedleft\\arraybackslash}p{0.4\\linewidth}@{\\hspace{8pt}}";
+        out.push(`{\\setlength{\\fboxrule}{0.4pt}\\renewcommand{\\arraystretch}{1.1}\\noindent${band ? "\\colorbox{accent}{" : "{"}\\begin{tabularx}{\\dimexpr\\linewidth-2\\fboxsep}{${cols}}\\rule{0pt}{14pt}${logo}\\begin{tabular}[t]{@{}l@{}}${left}\\end{tabular} & \\begin{tabular}[t]{@{}r@{}}${right}\\end{tabular}\\\\[6pt]\\end{tabularx}}}\\par${band ? "" : "{\\color{accent}\\rule{\\linewidth}{1.8pt}}\\par"}\\vspace{8pt}`);
+        break;
+      }
+      case "parties": {
+        const n = block.groups.length;
+        const cols = Array(n).fill("X").join("|");
+        const cells = block.groups.map((g) => `{\\color{accent}\\footnotesize\\bfseries ${tex(String(g.heading).toUpperCase())}}\\newline ${g.lines.map((l, k) => (k === 0 ? `\\textbf{${rich(l)}}` : rich(l))).join("\\newline ")}`).join(" & ");
+        out.push(`{\\arrayrulecolor{rulegray}\\renewcommand{\\arraystretch}{1.3}\\noindent\\begin{tabularx}{\\linewidth}{|${cols}|}\\hline\n${cells} \\\\ \\hline\n\\end{tabularx}}\\par\\vspace{6pt}`);
+        break;
+      }
+      case "note":
+        out.push(`\\noindent\\colorbox{notebg}{\\parbox{\\dimexpr\\linewidth-2\\fboxsep}{\\footnotesize ${block.heading ? `{\\color{accent}\\bfseries ${rich(block.heading)}}\\\\ ` : ""}${[].concat(block.text).map(rich).join("\\\\ ")}}}\\par\\vspace{6pt}`);
+        break;
       case "title":
         out.push(`${center ? "\\begin{center}" : ""}{\\color{accent}\\fontsize{${spec.titleSize ?? 30}}{${(spec.titleSize ?? 30) + 4}}\\selectfont\\bfseries ${tex(plain(block.text))}}\\par\\vspace{3pt}`);
         if (block.subtitle) out.push(`{\\fontsize{13.5}{16}\\selectfont ${rich(block.subtitle)}}\\par\\vspace{4pt}`);
@@ -106,6 +126,7 @@ export function renderTex(spec) {
 \\definecolor{accent}{HTML}{${spec.accent}}
 \\definecolor{rulegray}{HTML}{8496B0}
 \\definecolor{divider}{HTML}{A6A6A6}
+\\definecolor{notebg}{HTML}{F2F4F8}
 \\pagestyle{empty}
 \\setlength{\\parindent}{0pt}
 \\titleformat{\\section}{\\color{accent}\\fontsize{13}{15}\\bfseries}{}{0pt}{#1\\hspace{8pt}{\\color{rulegray}\\leaders\\hrule height 0.6pt\\hfill\\kern0pt}}
