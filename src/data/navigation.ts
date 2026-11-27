@@ -9,6 +9,7 @@ export const mainNav = [
   { href: "/templates", label: "Templates" },
   { href: "/assets", label: "Assets" },
   { href: "/ai", label: "AI prompts" },
+  { href: "/guides", label: "Guides" },
 ];
 
 /** One colour per kind of tool, so people can recognise a group before reading it. */

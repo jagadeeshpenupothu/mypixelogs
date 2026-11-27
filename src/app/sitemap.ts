@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { guides } from "@/data/guides";
 import { chatGptPrompts } from "@/lib/prompts";
 import { templateCategories } from "@/data/template-categories";
 import { templates } from "@/data/templates";
@@ -12,7 +13,7 @@ import { siteConfig } from "@/constants/site";
 const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets", "/assets/fonts", "/assets/fonts/telugu", "/assets/music", "/assets/sound-effects"].map((route) => ({
+  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets", "/assets/fonts", "/assets/fonts/telugu", "/assets/music", "/assets/sound-effects", "/guides"].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -69,6 +70,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const guideRoutes = guides.map((g) => ({
+    url: `${BASE_URL}/guides/${g.slug}`,
+    lastModified: new Date(g.updated),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   const fontRoutes = fonts.map((font) => ({
     url: `${BASE_URL}/assets/fonts/${font.slug}`,
     lastModified: new Date("2026-11-27"),
@@ -78,6 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...guideRoutes,
     ...fontRoutes,
     ...categoryRoutes,
     ...templateRoutes,
