@@ -7,6 +7,7 @@ export const mainNav = [
   { href: "/tools/pdf-tools", label: "PDF" },
   { href: "/tools/calculator-tools", label: "Calculators" },
   { href: "/templates", label: "Templates" },
+  { href: "/assets", label: "Assets" },
   { href: "/ai", label: "AI prompts" },
 ];
 

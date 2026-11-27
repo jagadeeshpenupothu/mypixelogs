@@ -6,6 +6,7 @@ import { getContentByKind, getContentCategories } from "@/content";
 import { templateCategories } from "@/data/template-categories";
 import { assets } from "@/data/assets";
 import { templates } from "@/data/templates";
+import { fonts } from "@/lib/fonts";
 import { toolCategories, tools } from "@/data/tools";
 import { getAssetsByCategorySlug } from "@/lib/assets";
 import { getTemplatesByCategory } from "@/lib/templates";
@@ -15,7 +16,7 @@ import { siteConfig } from "@/constants/site";
 const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets"].map((route) => ({
+  const staticRoutes = ["", "/templates", "/tools", "/ai", "/assets", "/assets/fonts"].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -105,8 +106,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  const fontRoutes = fonts.map((font) => ({
+    url: `${BASE_URL}/assets/fonts/${font.slug}`,
+    lastModified: new Date("2026-11-27"),
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
+    ...fontRoutes,
     ...categoryRoutes,
     ...templateRoutes,
     ...editorRoutes,

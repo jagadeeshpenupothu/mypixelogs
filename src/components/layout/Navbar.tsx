@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, LayoutTemplate, Sparkles, Wrench } from "lucide-react";
+import { Home, LayoutTemplate, Shapes, Sparkles, Wrench } from "lucide-react";
 
 import { SiteSearch } from "@/components/layout/SiteSearch";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
@@ -55,6 +55,7 @@ const tabs = [
   { href: "/", label: "Home", Icon: Home },
   { href: "/tools", label: "Tools", Icon: Wrench },
   { href: "/templates", label: "Templates", Icon: LayoutTemplate },
+  { href: "/assets", label: "Assets", Icon: Shapes },
   { href: "/ai", label: "AI prompts", Icon: Sparkles },
 ];
 
@@ -68,7 +69,7 @@ export function TabBar() {
     <>
       <div className="h-16 lg:hidden" aria-hidden="true" />
       <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl lg:hidden">
-        <ul className="mx-auto grid h-16 max-w-lg grid-cols-4">
+        <ul className="mx-auto grid h-16 max-w-lg grid-cols-5">
           {tabs.map(({ href, label, Icon }) => {
             const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
             return (

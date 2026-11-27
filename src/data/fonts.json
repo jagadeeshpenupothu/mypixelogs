@@ -1,0 +1,2349 @@
+[
+ {
+  "name": "Inter",
+  "slug": "inter",
+  "designer": "Rasmus Andersson",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/inter.zip",
+  "size": 961900
+ },
+ {
+  "name": "Roboto",
+  "slug": "roboto",
+  "designer": "Christian Robertson, ParaType, Font Bureau",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin",
+   "math",
+   "symbols"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/roboto.zip",
+  "size": 608370
+ },
+ {
+  "name": "Open Sans",
+  "slug": "open-sans",
+  "designer": "Steve Matteson",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "hebrew",
+   "latin",
+   "math",
+   "symbols"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/open-sans.zip",
+  "size": 740701
+ },
+ {
+  "name": "Montserrat",
+  "slug": "montserrat",
+  "designer": "Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/montserrat.zip",
+  "size": 619953
+ },
+ {
+  "name": "Poppins",
+  "slug": "poppins",
+  "designer": "Indian Type Foundry, Jonny Pinhorn, Ninad Kale",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 18,
+  "zip": "/downloads/fonts/poppins.zip",
+  "size": 1373016
+ },
+ {
+  "name": "Lato",
+  "slug": "lato",
+  "designer": "Łukasz Dziedzic",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 18,
+  "zip": "/downloads/fonts/lato.zip",
+  "size": 6098157
+ },
+ {
+  "name": "Raleway",
+  "slug": "raleway",
+  "designer": "Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/raleway.zip",
+  "size": 345755
+ },
+ {
+  "name": "Nunito",
+  "slug": "nunito",
+  "designer": "Vernon Adams, Cyreal, Jacques Le Bailly",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/nunito.zip",
+  "size": 269616
+ },
+ {
+  "name": "Work Sans",
+  "slug": "work-sans",
+  "designer": "Wei Huang",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/work-sans.zip",
+  "size": 336831
+ },
+ {
+  "name": "DM Sans",
+  "slug": "dm-sans",
+  "designer": "Colophon Foundry",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/dm-sans.zip",
+  "size": 252685
+ },
+ {
+  "name": "Manrope",
+  "slug": "manrope",
+  "designer": "Mikhail Sharanda",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/manrope.zip",
+  "size": 70743
+ },
+ {
+  "name": "Rubik",
+  "slug": "rubik",
+  "designer": "Hubert and Fischer, Meir Sadan, Cyreal, Daniel Grumer, Omaima Dajani",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "arabic",
+   "cyrillic",
+   "hebrew",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/rubik.zip",
+  "size": 300111
+ },
+ {
+  "name": "Outfit",
+  "slug": "outfit",
+  "designer": "Smartsheet Inc, Rodrigo Fuenzalida",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/outfit.zip",
+  "size": 58855
+ },
+ {
+  "name": "Plus Jakarta Sans",
+  "slug": "plus-jakarta-sans",
+  "designer": "Tokotype",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/plus-jakarta-sans.zip",
+  "size": 168767
+ },
+ {
+  "name": "Mulish",
+  "slug": "mulish",
+  "designer": "Vernon Adams, Cyreal, Jacques Le Bailly",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/mulish.zip",
+  "size": 206521
+ },
+ {
+  "name": "Barlow",
+  "slug": "barlow",
+  "designer": "Jeremy Tribby",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 18,
+  "zip": "/downloads/fonts/barlow.zip",
+  "size": 966533
+ },
+ {
+  "name": "Kanit",
+  "slug": "kanit",
+  "designer": "Cadson Demak",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "thai"
+  ],
+  "sample": null,
+  "files": 18,
+  "zip": "/downloads/fonts/kanit.zip",
+  "size": 1279373
+ },
+ {
+  "name": "Josefin Sans",
+  "slug": "josefin-sans",
+  "designer": "Santiago Orozco",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/josefin-sans.zip",
+  "size": 129830
+ },
+ {
+  "name": "Quicksand",
+  "slug": "quicksand",
+  "designer": "Andrew Paglinawan",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/quicksand.zip",
+  "size": 68944
+ },
+ {
+  "name": "Figtree",
+  "slug": "figtree",
+  "designer": "Erik Kennedy",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/figtree.zip",
+  "size": 73877
+ },
+ {
+  "name": "Urbanist",
+  "slug": "urbanist",
+  "designer": "Corey Hu",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/urbanist.zip",
+  "size": 99339
+ },
+ {
+  "name": "Lexend",
+  "slug": "lexend",
+  "designer": "Bonnie Shaver-Troup, Thomas Jockin, Santiago Orozco, Héctor Gómez, Superunion",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/lexend.zip",
+  "size": 93050
+ },
+ {
+  "name": "Space Grotesk",
+  "slug": "space-grotesk",
+  "designer": "Florian Karsten",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/space-grotesk.zip",
+  "size": 66697
+ },
+ {
+  "name": "Sora",
+  "slug": "sora",
+  "designer": "Jonathan Barnbrook, Julián Moncada",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/sora.zip",
+  "size": 63232
+ },
+ {
+  "name": "Archivo",
+  "slug": "archivo",
+  "designer": "Omnibus-Type",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/archivo.zip",
+  "size": 544044
+ },
+ {
+  "name": "Karla",
+  "slug": "karla",
+  "designer": "Jonny Pinhorn",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/karla.zip",
+  "size": 121476
+ },
+ {
+  "name": "Cabin",
+  "slug": "cabin",
+  "designer": "Impallari Type, Rodrigo Fuenzalida",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/cabin.zip",
+  "size": 182278
+ },
+ {
+  "name": "Oswald",
+  "slug": "oswald",
+  "designer": "Vernon Adams, Kalapi Gajjar, Cyreal",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/oswald.zip",
+  "size": 93822
+ },
+ {
+  "name": "Bebas Neue",
+  "slug": "bebas-neue",
+  "designer": "Ryoichi Tsunekawa",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/bebas-neue.zip",
+  "size": 31254
+ },
+ {
+  "name": "Anton",
+  "slug": "anton",
+  "designer": "Vernon Adams",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/anton.zip",
+  "size": 82267
+ },
+ {
+  "name": "Fjalla One",
+  "slug": "fjalla-one",
+  "designer": "Sorkin Type, Irina Smirnova",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/fjalla-one.zip",
+  "size": 111736
+ },
+ {
+  "name": "League Spartan",
+  "slug": "league-spartan",
+  "designer": "Matt Bailey, Tyler Finck",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/league-spartan.zip",
+  "size": 53670
+ },
+ {
+  "name": "JetBrains Mono",
+  "slug": "jetbrains-mono",
+  "designer": "JetBrains, Philipp Nurullin, Konstantin Bulenkov",
+  "category": "Monospace",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/jetbrains-mono.zip",
+  "size": 191038
+ },
+ {
+  "name": "Titillium Web",
+  "slug": "titillium-web",
+  "designer": "Accademia di Belle Arti di Urbino",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   600,
+   700,
+   900
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 11,
+  "zip": "/downloads/fonts/titillium-web.zip",
+  "size": 370579
+ },
+ {
+  "name": "Heebo",
+  "slug": "heebo",
+  "designer": "Oded Ezer",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "hebrew",
+   "latin",
+   "math",
+   "symbols"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/heebo.zip",
+  "size": 79440
+ },
+ {
+  "name": "Hind",
+  "slug": "hind",
+  "designer": "Indian Type Foundry",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 5,
+  "zip": "/downloads/fonts/hind.zip",
+  "size": 646585
+ },
+ {
+  "name": "Mukta",
+  "slug": "mukta",
+  "designer": "Ek Type",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 7,
+  "zip": "/downloads/fonts/mukta.zip",
+  "size": 1373946
+ },
+ {
+  "name": "Baloo 2",
+  "slug": "baloo-2",
+  "designer": "Ek Type",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 1,
+  "zip": "/downloads/fonts/baloo-2.zip",
+  "size": 257281
+ },
+ {
+  "name": "Noto Sans",
+  "slug": "noto-sans",
+  "designer": "Google",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "devanagari",
+   "greek",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 2,
+  "zip": "/downloads/fonts/noto-sans.zip",
+  "size": 2588001
+ },
+ {
+  "name": "Source Sans 3",
+  "slug": "source-sans-3",
+  "designer": "Paul D. Hunt",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/source-sans-3.zip",
+  "size": 419186
+ },
+ {
+  "name": "PT Sans",
+  "slug": "pt-sans",
+  "designer": "ParaType",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   700
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 4,
+  "zip": "/downloads/fonts/pt-sans.zip",
+  "size": 888367
+ },
+ {
+  "name": "Ubuntu",
+  "slug": "ubuntu",
+  "designer": "Dalton Maag",
+  "category": "Sans serif",
+  "license": "Ubuntu Font Licence 1.0",
+  "weights": [
+   300,
+   400,
+   500,
+   700
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 8,
+  "zip": "/downloads/fonts/ubuntu.zip",
+  "size": 1432073
+ },
+ {
+  "name": "Fira Sans",
+  "slug": "fira-sans",
+  "designer": "Carrois Apostrophe",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 18,
+  "zip": "/downloads/fonts/fira-sans.zip",
+  "size": 3933580
+ },
+ {
+  "name": "Ramaraja",
+  "slug": "ramaraja",
+  "designer": "Appaji Ambarisha Darbha",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/ramaraja.zip",
+  "size": 275550
+ },
+ {
+  "name": "Jost",
+  "slug": "jost",
+  "designer": "Owen Earl",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/jost.zip",
+  "size": 142268
+ },
+ {
+  "name": "Mallanna",
+  "slug": "mallanna",
+  "designer": "Purushoth Kumar Guttula",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/mallanna.zip",
+  "size": 238335
+ },
+ {
+  "name": "Tiro Telugu",
+  "slug": "tiro-telugu",
+  "designer": "Tiro Typeworks, John Hudson, Fiona Ross, Kaja Słojewska",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 2,
+  "zip": "/downloads/fonts/tiro-telugu.zip",
+  "size": 455862
+ },
+ {
+  "name": "Teko",
+  "slug": "teko",
+  "designer": "Indian Type Foundry",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 1,
+  "zip": "/downloads/fonts/teko.zip",
+  "size": 121083
+ },
+ {
+  "name": "Rajdhani",
+  "slug": "rajdhani",
+  "designer": "Indian Type Foundry",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 5,
+  "zip": "/downloads/fonts/rajdhani.zip",
+  "size": 743529
+ },
+ {
+  "name": "Noto Sans Telugu",
+  "slug": "noto-sans-telugu",
+  "designer": "Google",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin",
+   "telugu"
+  ],
+  "sample": "తెలుగు అక్షరాలు అందంగా",
+  "files": 1,
+  "zip": "/downloads/fonts/noto-sans-telugu.zip",
+  "size": 426872
+ },
+ {
+  "name": "Playfair Display",
+  "slug": "playfair-display",
+  "designer": "Claus Eggers Sørensen",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/playfair-display.zip",
+  "size": 270918
+ },
+ {
+  "name": "Merriweather",
+  "slug": "merriweather",
+  "designer": "Sorkin Type",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/merriweather.zip",
+  "size": 6406906
+ },
+ {
+  "name": "Lora",
+  "slug": "lora",
+  "designer": "Cyreal",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin",
+   "math",
+   "symbols"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/lora.zip",
+  "size": 225105
+ },
+ {
+  "name": "Libre Baskerville",
+  "slug": "libre-baskerville",
+  "designer": "Impallari Type",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/libre-baskerville.zip",
+  "size": 165184
+ },
+ {
+  "name": "Cormorant Garamond",
+  "slug": "cormorant-garamond",
+  "designer": "Christian Thalmann",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/cormorant-garamond.zip",
+  "size": 541324
+ },
+ {
+  "name": "EB Garamond",
+  "slug": "eb-garamond",
+  "designer": "Georg Duffner, Octavio Pardo",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/eb-garamond.zip",
+  "size": 789900
+ },
+ {
+  "name": "Crimson Text",
+  "slug": "crimson-text",
+  "designer": "Sebastian Kosch",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   600,
+   700
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 6,
+  "zip": "/downloads/fonts/crimson-text.zip",
+  "size": 340985
+ },
+ {
+  "name": "PT Serif",
+  "slug": "pt-serif",
+  "designer": "ParaType",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   700
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 4,
+  "zip": "/downloads/fonts/pt-serif.zip",
+  "size": 707554
+ },
+ {
+  "name": "Noto Serif",
+  "slug": "noto-serif",
+  "designer": "Google",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin",
+   "math"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/noto-serif.zip",
+  "size": 2550661
+ },
+ {
+  "name": "Source Serif 4",
+  "slug": "source-serif-4",
+  "designer": "Frank Grießhammer",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/source-serif-4.zip",
+  "size": 1004644
+ },
+ {
+  "name": "DM Serif Display",
+  "slug": "dm-serif-display",
+  "designer": "Colophon Foundry",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/dm-serif-display.zip",
+  "size": 83912
+ },
+ {
+  "name": "Abril Fatface",
+  "slug": "abril-fatface",
+  "designer": "TypeTogether",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/abril-fatface.zip",
+  "size": 31957
+ },
+ {
+  "name": "Cinzel",
+  "slug": "cinzel",
+  "designer": "Natanael Gama",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/cinzel.zip",
+  "size": 62144
+ },
+ {
+  "name": "Cinzel Decorative",
+  "slug": "cinzel-decorative",
+  "designer": "Natanael Gama",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   700,
+   900
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 3,
+  "zip": "/downloads/fonts/cinzel-decorative.zip",
+  "size": 85680
+ },
+ {
+  "name": "Prata",
+  "slug": "prata",
+  "designer": "Cyreal",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/prata.zip",
+  "size": 52091
+ },
+ {
+  "name": "Bodoni Moda",
+  "slug": "bodoni-moda",
+  "designer": "Owen Earl",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin",
+   "math",
+   "symbols"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/bodoni-moda.zip",
+  "size": 193244
+ },
+ {
+  "name": "Spectral",
+  "slug": "spectral",
+  "designer": "Production Type",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 14,
+  "zip": "/downloads/fonts/spectral.zip",
+  "size": 1710092
+ },
+ {
+  "name": "Libre Caslon Text",
+  "slug": "libre-caslon-text",
+  "designer": "Pablo Impallari",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/libre-caslon-text.zip",
+  "size": 156621
+ },
+ {
+  "name": "Alegreya",
+  "slug": "alegreya",
+  "designer": "Juan Pablo del Peral, HT Fonts",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "italic": true,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "greek",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/alegreya.zip",
+  "size": 433679
+ },
+ {
+  "name": "Marcellus",
+  "slug": "marcellus",
+  "designer": "Astigmatic",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/marcellus.zip",
+  "size": 27011
+ },
+ {
+  "name": "Yeseva One",
+  "slug": "yeseva-one",
+  "designer": "Jovanny Lemonad",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/yeseva-one.zip",
+  "size": 51076
+ },
+ {
+  "name": "Rozha One",
+  "slug": "rozha-one",
+  "designer": "Indian Type Foundry",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 1,
+  "zip": "/downloads/fonts/rozha-one.zip",
+  "size": 144498
+ },
+ {
+  "name": "Tiro Devanagari Hindi",
+  "slug": "tiro-devanagari-hindi",
+  "designer": "Tiro Typeworks, John Hudson, Fiona Ross, Paul Hanslow",
+  "category": "Serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": true,
+  "variable": false,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 2,
+  "zip": "/downloads/fonts/tiro-devanagari-hindi.zip",
+  "size": 395328
+ },
+ {
+  "name": "Great Vibes",
+  "slug": "great-vibes",
+  "designer": "Robert Leuschke",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/great-vibes.zip",
+  "size": 219811
+ },
+ {
+  "name": "Dancing Script",
+  "slug": "dancing-script",
+  "designer": "Impallari Type",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/dancing-script.zip",
+  "size": 77253
+ },
+ {
+  "name": "Pacifico",
+  "slug": "pacifico",
+  "designer": "Vernon Adams, Jacques Le Bailly, Botjo Nikoltchev, Ani Petrova",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/pacifico.zip",
+  "size": 147606
+ },
+ {
+  "name": "Satisfy",
+  "slug": "satisfy",
+  "designer": "Sideshow",
+  "category": "Script",
+  "license": "Apache License 2.0",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/satisfy.zip",
+  "size": 33645
+ },
+ {
+  "name": "Sacramento",
+  "slug": "sacramento",
+  "designer": "Astigmatic",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/sacramento.zip",
+  "size": 44749
+ },
+ {
+  "name": "Allura",
+  "slug": "allura",
+  "designer": "Robert Leuschke",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/allura.zip",
+  "size": 116913
+ },
+ {
+  "name": "Parisienne",
+  "slug": "parisienne",
+  "designer": "Astigmatic",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/parisienne.zip",
+  "size": 37689
+ },
+ {
+  "name": "Pinyon Script",
+  "slug": "pinyon-script",
+  "designer": "Nicole Fally",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/pinyon-script.zip",
+  "size": 74712
+ },
+ {
+  "name": "Alex Brush",
+  "slug": "alex-brush",
+  "designer": "Robert Leuschke",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/alex-brush.zip",
+  "size": 66103
+ },
+ {
+  "name": "Tangerine",
+  "slug": "tangerine",
+  "designer": "Toshi Omagari",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   700
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/tangerine.zip",
+  "size": 69428
+ },
+ {
+  "name": "Caveat",
+  "slug": "caveat",
+  "designer": "Impallari Type",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/caveat.zip",
+  "size": 220412
+ },
+ {
+  "name": "Kalam",
+  "slug": "kalam",
+  "designer": "Indian Type Foundry",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   700
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "devanagari",
+   "latin"
+  ],
+  "sample": "सुंदर हिंदी अक्षर",
+  "files": 3,
+  "zip": "/downloads/fonts/kalam.zip",
+  "size": 570243
+ },
+ {
+  "name": "Shadows Into Light",
+  "slug": "shadows-into-light",
+  "designer": "Kimberly Geswein",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/shadows-into-light.zip",
+  "size": 31416
+ },
+ {
+  "name": "Amatic SC",
+  "slug": "amatic-sc",
+  "designer": "Vernon Adams, Ben Nathan, Thomas Jockin",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400,
+   700
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "hebrew",
+   "latin"
+  ],
+  "sample": null,
+  "files": 2,
+  "zip": "/downloads/fonts/amatic-sc.zip",
+  "size": 170541
+ },
+ {
+  "name": "Lobster",
+  "slug": "lobster",
+  "designer": "Impallari Type",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "cyrillic",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/lobster.zip",
+  "size": 150266
+ },
+ {
+  "name": "Kaushan Script",
+  "slug": "kaushan-script",
+  "designer": "Impallari Type",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/kaushan-script.zip",
+  "size": 82111
+ },
+ {
+  "name": "Yellowtail",
+  "slug": "yellowtail",
+  "designer": "Astigmatic",
+  "category": "Script",
+  "license": "Apache License 2.0",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/yellowtail.zip",
+  "size": 37029
+ },
+ {
+  "name": "Cookie",
+  "slug": "cookie",
+  "designer": "Ania Kruk",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/cookie.zip",
+  "size": 24251
+ },
+ {
+  "name": "Courgette",
+  "slug": "courgette",
+  "designer": "Karolina Lach",
+  "category": "Script",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/courgette.zip",
+  "size": 57917
+ },
+ {
+  "name": "Permanent Marker",
+  "slug": "permanent-marker",
+  "designer": "Font Diner",
+  "category": "Script",
+  "license": "Apache License 2.0",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/permanent-marker.zip",
+  "size": 46317
+ },
+ {
+  "name": "Righteous",
+  "slug": "righteous",
+  "designer": "Astigmatic",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/righteous.zip",
+  "size": 26212
+ },
+ {
+  "name": "Bungee",
+  "slug": "bungee",
+  "designer": "David Jonathan Ross",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/bungee.zip",
+  "size": 58096
+ },
+ {
+  "name": "Alfa Slab One",
+  "slug": "alfa-slab-one",
+  "designer": "JM Solé",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/alfa-slab-one.zip",
+  "size": 48437
+ },
+ {
+  "name": "Lilita One",
+  "slug": "lilita-one",
+  "designer": "Juan Montoreano",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/lilita-one.zip",
+  "size": 18020
+ },
+ {
+  "name": "Monoton",
+  "slug": "monoton",
+  "designer": "Vernon Adams",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/monoton.zip",
+  "size": 29226
+ },
+ {
+  "name": "Bangers",
+  "slug": "bangers",
+  "designer": "Vernon Adams",
+  "category": "Display",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   400
+  ],
+  "italic": false,
+  "variable": false,
+  "scripts": [
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/bangers.zip",
+  "size": 49385
+ },
+ {
+  "name": "Fredoka",
+  "slug": "fredoka",
+  "designer": "Milena Brandão, Hafontia",
+  "category": "Sans serif",
+  "license": "SIL Open Font License 1.1",
+  "weights": [
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "italic": false,
+  "variable": true,
+  "scripts": [
+   "hebrew",
+   "latin"
+  ],
+  "sample": null,
+  "files": 1,
+  "zip": "/downloads/fonts/fredoka.zip",
+  "size": 104930
+ }
+]
