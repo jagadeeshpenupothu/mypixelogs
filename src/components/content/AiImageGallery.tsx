@@ -38,7 +38,7 @@ export function AiImageGallery({ items, title, description, category }: AiImageG
         {!category ? (
           <div className="mt-3 flex flex-wrap gap-2">
             {categories.map((nextCategory) => (
-              <Link
+              <Link prefetch={false}
                 key={nextCategory}
                 href={`/ai/images/${nextCategory}`}
                 className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors duration-200 hover:border-primary/40 hover:text-primary"
@@ -56,7 +56,7 @@ export function AiImageGallery({ items, title, description, category }: AiImageG
                 key={item.slug}
                 className="group relative mb-3 block break-inside-avoid overflow-hidden rounded-xl bg-muted shadow-sm transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-within:shadow-xl"
               >
-                <Link href={`/ai/images/${item.slug}`} className="block" aria-label={`View ${item.title}`}>
+                <Link prefetch={false} href={`/ai/images/${item.slug}`} className="block" aria-label={`View ${item.title}`}>
                   <Image
                     src={item.previewImage}
                     alt={`${item.title} preview`}

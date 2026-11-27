@@ -130,7 +130,7 @@ export function SiteSearch({ large = false }: { large?: boolean }) {
                   const Icon = typeIcons[option.type];
                   return (
                     <li key={option.key} id={`${listId}-${place}`} role="option" aria-selected={marked === place}>
-                      <Link
+                      <Link prefetch={false}
                         href={option.href}
                         tabIndex={-1}
                         onClick={() => {

@@ -61,7 +61,7 @@ export function LibraryPage({
         {groups.length > 2 ? (
           <nav aria-label={`Kinds of ${noun}`} className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
             {groups.map((group) => (
-              <Link
+              <Link prefetch={false}
                 key={group.href}
                 href={group.href}
                 aria-current={group.active ? "page" : undefined}

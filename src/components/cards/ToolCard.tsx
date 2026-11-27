@@ -126,7 +126,7 @@ export function ToolCard({ tool }: ToolCardProps) {
   }
 
   return (
-    <Link
+    <Link prefetch={false}
       href={`/tools/${tool.slug}`}
       className="group flex h-full flex-col rounded-lg border border-border bg-card p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md"
     >

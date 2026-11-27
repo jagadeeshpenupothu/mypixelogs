@@ -63,7 +63,7 @@ export function SearchBar() {
           : popularTasks.map((task) => ({ key: task.href, href: task.href, title: task.title, note: task.note, type: "" }))
         ).map((item) => (
           <li key={item.key}>
-            <Link href={item.href} className="flex min-h-16 items-center gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70">
+            <Link prefetch={false} href={item.href} className="flex min-h-16 items-center gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70">
               <span className="min-w-0 flex-1">
                 <span className="block text-base font-semibold text-foreground">{item.title}</span>
                 <span className="line-clamp-2 text-sm text-muted-foreground">{item.note}</span>

@@ -13,7 +13,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
   const categoryLabel = getTemplateCategoryLabel(template.category);
 
   return (
-    <Link
+    <Link prefetch={false}
       href={`/templates/${template.slug}`}
       className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:scale-[1.02] hover:border-primary/45 hover:shadow-md dark:hover:border-primary/50 dark:hover:shadow-soft"
     >

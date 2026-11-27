@@ -184,7 +184,7 @@ export function TemplateGallery({
           {shown.map((item) => {
             const isNew = today !== null && daysSince(item.published, today) <= 7;
             return (
-              <Link
+              <Link prefetch={false}
                 key={item.slug}
                 href={`/templates/${item.slug}`}
                 className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"

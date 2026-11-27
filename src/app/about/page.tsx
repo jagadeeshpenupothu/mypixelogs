@@ -28,11 +28,11 @@ export default function AboutPage() {
             phone or computer.
           </p>
           <p>
-            <Link href="/tools" className="font-semibold text-primary hover:underline">
+            <Link prefetch={false} href="/tools" className="font-semibold text-primary hover:underline">
               See all tools
             </Link>{" "}
             or{" "}
-            <Link href="/templates" className="font-semibold text-primary hover:underline">
+            <Link prefetch={false} href="/templates" className="font-semibold text-primary hover:underline">
               browse templates
             </Link>
             .

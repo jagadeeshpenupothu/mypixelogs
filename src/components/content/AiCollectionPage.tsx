@@ -48,7 +48,7 @@ export function AiCollectionPage({
         {category ? null : (
           <div className="mt-3 flex flex-wrap gap-2">
             {categories.map((nextCategory) => (
-              <Link
+              <Link prefetch={false}
                 key={nextCategory}
                 href={`${baseHref}/${nextCategory}`}
                 className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors duration-200 hover:border-primary/40 hover:text-primary"

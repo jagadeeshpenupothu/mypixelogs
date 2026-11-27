@@ -38,7 +38,7 @@ export function AiPromptGallery({ items, title, description, category }: AiPromp
         {!category ? (
           <div className="mt-3 flex flex-wrap gap-2">
             {categories.map((nextCategory) => (
-              <Link
+              <Link prefetch={false}
                 key={nextCategory}
                 href={`/ai/prompts/${nextCategory}`}
                 className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors duration-200 hover:border-primary/40 hover:text-primary"
@@ -56,7 +56,7 @@ export function AiPromptGallery({ items, title, description, category }: AiPromp
                 key={item.slug}
                 className="mb-4 break-inside-avoid overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
               >
-                <Link href={`/ai/prompts/${item.slug}`} className="block overflow-hidden bg-slate-50 p-1.5 dark:bg-muted/60">
+                <Link prefetch={false} href={`/ai/prompts/${item.slug}`} className="block overflow-hidden bg-slate-50 p-1.5 dark:bg-muted/60">
                   <Image
                     src={item.coverImage}
                     alt={`${item.title} preview`}
@@ -71,7 +71,7 @@ export function AiPromptGallery({ items, title, description, category }: AiPromp
                       {item.category}
                     </span>
                   </div>
-                  <Link href={`/ai/prompts/${item.slug}`}>
+                  <Link prefetch={false} href={`/ai/prompts/${item.slug}`}>
                     <h2 className="mt-3 line-clamp-2 text-sm font-bold leading-5 text-foreground">
                       {item.title}
                     </h2>

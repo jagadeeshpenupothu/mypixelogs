@@ -69,14 +69,14 @@ export function AiImageDetailPage({ item, relatedItems }: AiImageDetailPageProps
         <section className="mt-6">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-lg font-bold text-foreground">Related Images</h2>
-            <Link href="/ai/images" className="text-sm font-semibold text-primary hover:underline">
+            <Link prefetch={false} href="/ai/images" className="text-sm font-semibold text-primary hover:underline">
               Browse all
             </Link>
           </div>
           {relatedImages.length > 0 ? (
             <div className="mt-4 columns-1 gap-3 sm:columns-2 xl:columns-3">
               {relatedImages.map((related) => (
-                <Link
+                <Link prefetch={false}
                   key={related.slug}
                   href={`/ai/images/${related.slug}`}
                   className="group relative mb-3 block break-inside-avoid overflow-hidden rounded-xl bg-muted shadow-sm transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-xl"

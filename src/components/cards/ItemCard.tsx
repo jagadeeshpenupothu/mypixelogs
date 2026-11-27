@@ -21,7 +21,7 @@ export function IconBadge({ icon, tone }: { icon: string; tone: string }) {
 /** One job: a coloured icon, a short name and what it does. */
 export function TaskCard({ href, title, note, icon, tone }: { href: string; title: string; note: string; icon: string; tone: string }) {
   return (
-    <Link href={href} className={`${frame} flex min-h-20 items-center gap-4 p-4`}>
+    <Link prefetch={false} href={href} className={`${frame} flex min-h-20 items-center gap-4 p-4`}>
       <IconBadge icon={icon} tone={tone} />
       <span className="min-w-0">
         <span className="block text-base font-semibold leading-6 text-foreground">{title}</span>
@@ -46,7 +46,7 @@ export function ToolTaskCard({ tool }: { tool: Tool }) {
 /** A template or download, shown by its picture. */
 export function PictureCard({ href, title, note, image, video = false }: { href: string; title: string; note: string; image: string; video?: boolean }) {
   return (
-    <Link href={href} className={`${frame} flex flex-col overflow-hidden`}>
+    <Link prefetch={false} href={href} className={`${frame} flex flex-col overflow-hidden`}>
       <span className="relative block aspect-[4/3] overflow-hidden border-b border-border bg-muted">
         <Image
           src={image}

@@ -46,7 +46,7 @@ export function TemplateActions({ template }: TemplateActionsProps) {
       <div className="grid gap-3">
         {template.editor ? (
           <Button asChild size="lg">
-            <Link href={`/templates/${template.slug}/edit`}>
+            <Link prefetch={false} href={`/templates/${template.slug}/edit`}>
               <Pencil className="h-4 w-4" />
               {template.previewVideo ? "Edit this video" : "Edit online"}
             </Link>
