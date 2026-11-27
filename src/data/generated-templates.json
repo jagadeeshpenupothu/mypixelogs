@@ -132,6 +132,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "relieving-letter",
+    "title": "Relieving Letter Template",
+    "slug": "relieving-letter-template",
+    "description": "Free relieving letter format for India on company letterhead: employee ID, joining and last working date, resignation accepted, dues settled, HR sign-off. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Ref. no., date and employee details block",
+      "Resignation acceptance, notice period and full and final settlement wording",
+      "Authorised HR signatory and employee acknowledgement lines"
+    ],
+    "useCases": [
+      "HR teams relieving employees after resignation",
+      "Startups and SMEs issuing exit documents",
+      "Employees showing a new employer they were properly relieved"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1nfVby4rvTKecHgN27qTSRsGSgwQHImlfjv44b_Fabys",
+      "googleSheetsId": "1SiUeNnK5Ugb0PX1ME607BXSUUJppnUyUZ4qdhTGJz6w",
+      "excelPath": "/downloads/relieving-letter-template.xlsx",
+      "latexPath": "/downloads/relieving-letter-template.tex",
+      "pdfPath": "/downloads/relieving-letter-template.pdf"
+    },
+    "published": "2026-11-27"
+  },
+  {
     "id": "rent-receipt",
     "title": "Rent Receipt Template",
     "slug": "rent-receipt-template",

@@ -1,0 +1,26 @@
+{
+  "slug": "relieving-letter-template",
+  "title": "Relieving Letter Template",
+  "category": "letter",
+  "accent": "1B2F5B",
+  "titleSize": 22,
+  "description": "Free relieving letter format for India on company letterhead: employee ID, joining and last working date, resignation accepted, dues settled, HR sign-off. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Ref. no., date and employee details block", "Resignation acceptance, notice period and full and final settlement wording", "Authorised HR signatory and employee acknowledgement lines"],
+  "useCases": ["HR teams relieving employees after resignation", "Startups and SMEs issuing exit documents", "Employees showing a new employer they were properly relieved"],
+  "keywords": ["relieving letter format", "relieving letter sample", "relieving letter format in word"],
+  "references": ["https://www.naukri.com/blog/relieving-letter-format-samples/", "https://in.indeed.com/hire/c/info/meaning-of-relieving-letter", "https://razorpay.com/payroll/learn/relieving-letter-format/", "https://taggd.in/blogs/relieving-letter-format-and-samples-templates/", "https://www.policybazaar.com/corporate-insurance/articles/relieving-letter"],
+  "research": "The references all use company letterhead, date, employee name, designation and ID, joining date and last working day, a line accepting the resignation after the notice period, clearance of dues, good wishes and an HR signature, often with seal and employee acknowledgement.",
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1nfVby4rvTKecHgN27qTSRsGSgwQHImlfjv44b_Fabys", "googleSheetsId": "1SiUeNnK5Ugb0PX1ME607BXSUUJppnUyUZ4qdhTGJz6w"},
+  "blocks": [
+    {"type": "header", "style": "plain", "org": "[Sharma IT Solutions Pvt. Ltd.]", "lines": ["[Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]", "CIN: [U72200MH2015PTC123456]  |  [+91 98220 12345]  |  [hr@sharmait.in]"], "title": "RELIEVING LETTER", "meta": [["Ref. No.", "[HR/REL/2026-27/0087]"], ["Date", "[27/11/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "To", "lines": ["[Ms. Priya Nair]", "[Flat 304, Green Meadows, Baner, Pune 411045]"]}, {"heading": "Employee details", "lines": ["Employee ID: [SIT-1042]", "Designation: [Senior Software Engineer]", "Department: [Product Engineering]", "Date of joining: [01/07/2022]"]}]},
+    {"type": "text", "text": "**Subject: Relieving from the services of [Sharma IT Solutions Pvt. Ltd.]**"},
+    {"type": "text", "text": ["Dear [Ms. Priya Nair],", "This refers to your resignation letter dated [28/10/2026]. We wish to inform you that your resignation has been accepted by the management, and you are relieved from your duties with [Sharma IT Solutions Pvt. Ltd.] with effect from the close of business hours on **[27/11/2026]**, which was your last working day.", "During your tenure from [01/07/2022] to [27/11/2026], you worked with us as [Senior Software Engineer] in the [Product Engineering] department. You have served your notice period of [30 days] and handed over all company assets, documents and responsibilities to your reporting manager.", "We confirm that you have no pending dues towards the company. Your full and final settlement, including salary up to the last working day, leave encashment and other benefits as per company policy, will be credited to your registered bank account by [15/12/2026]. Your Form 16 and PF transfer details will be shared separately.", "Please note that you remain bound by the confidentiality and non-disclosure terms of your appointment letter. We thank you for your contributions and wish you every success in your future endeavours."]},
+    {"type": "heading", "text": "Exit clearance summary"},
+    {"type": "fields", "columns": 2, "items": [["Resignation date", "[28/10/2026]"], ["Last working day", "[27/11/2026]"], ["Notice period", "[30 days, served in full]"], ["Assets returned", "[Laptop, ID card, access card]"], ["Exit interview", "[Completed on 25/11/2026]"], ["F&F settlement by", "[15/12/2026]"], ["PF UAN", "[100987654321]"], ["Reporting manager", "[Rahul Mehta]"]]},
+    {"type": "note", "heading": "Enclosures", "text": ["1. Experience certificate  2. Full and final settlement statement  3. Copy of no-dues clearance form"]},
+    {"type": "text", "text": ["Yours sincerely,", "For **[Sharma IT Solutions Pvt. Ltd.]**"]},
+    {"type": "signature", "items": ["[Anita Deshpande], HR Manager (sign & seal)", "Received by: [Priya Nair] (sign & date)"]}
+  ]
+}
