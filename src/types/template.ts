@@ -36,6 +36,8 @@ export type Template = {
   editor?: "gst" | "freelancer" | "wedding-video" | "resume" | "flyer";
   /** Which flyer design the online editor opens (see src/lib/flyers/registry.ts). */
   flyerDesign?: string;
+  /** Credit for a photo used in the template (required by CC BY photos). */
+  photoCredit?: { creator?: string; license: string; source: string; page?: string };
   /** A short silent clip of a video template. */
   previewVideo?: string;
   /** Date added to the site (YYYY-MM-DD), when known. */

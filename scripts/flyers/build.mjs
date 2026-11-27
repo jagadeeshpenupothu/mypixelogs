@@ -16,9 +16,29 @@ const { writePsdBuffer } = require("ag-psd");
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const name = process.argv[2];
-if (!name) { console.error("Usage: node scripts/flyers/build.mjs <design-name>"); process.exit(2); }
-const { flyerSvg: designSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS, FLYER_FONTS, FLYER_BG } = await import(path.join(root, `src/lib/flyers/${name}.ts`));
-const slug = `${name}-flyer`;
+if (!name) { console.error("Usage: node scripts/flyers/build.mjs <design-name> | poster:<slug> | composite:<slug>"); process.exit(2); }
+const mime = (f) => ({ ".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg" })[path.extname(f).toLowerCase()];
+const dataUri = (f) => `data:${mime(f)};base64,${readFileSync(path.join(root, "public", f)).toString("base64")}`;
+// "poster:<slug>" builds a photo flyer from its settings in src/data/flyer-specs.json; anything else is a design module.
+async function loadDesign() {
+  if (name.startsWith("composite:")) {
+    // A layered flyer (src/data/flyer-composites.json): every image it uses is embedded.
+    const s = name.slice(10);
+    const spec = JSON.parse(readFileSync(path.join(root, "src/data/flyer-composites.json"), "utf8")).find((x) => x.slug === s);
+    if (!spec) throw new Error(`No flyer "${s}" in src/data/flyer-composites.json`);
+    const m = await import(path.join(root, "src/lib/flyers/composite-poster.ts"));
+    const { bg, hero, extras = [], overlays = [] } = spec.images;
+    const assets = Object.fromEntries([bg, hero.src, ...extras.map((e) => e.src), ...overlays.map((o) => o.src)].map((f) => [f, dataUri(f)]));
+    return { flyerSvg: (fields, t, opts) => m.compositeSvg(spec, fields, t, { assets, ...opts }), FLYER_DEFAULTS: spec.fields, FLYER_THEMES: m.COMPOSITE_THEMES, FLYER_GROUPS: m.COMPOSITE_GROUPS, FLYER_FONTS: m.COMPOSITE_FONTS, slug: spec.slug };
+  }
+  if (!name.startsWith("poster:")) return { ...(await import(path.join(root, `src/lib/flyers/${name}.ts`))), slug: `${name}-flyer` };
+  const posterSlug = name.slice(7);
+  const spec = JSON.parse(readFileSync(path.join(root, "src/data/flyer-specs.json"), "utf8")).find((x) => x.slug === posterSlug);
+  if (!spec) throw new Error(`No flyer spec "${posterSlug}" in src/data/flyer-specs.json`);
+  const m = await import(path.join(root, "src/lib/flyers/photo-poster.ts"));
+  return { flyerSvg: (fields, t, opts) => m.posterSvg(spec, fields, t, opts), FLYER_DEFAULTS: spec.fields, FLYER_THEMES: m.POSTER_THEMES, FLYER_GROUPS: m.POSTER_GROUPS, FLYER_FONTS: m.POSTER_FONTS, FLYER_BG: spec.bg, slug: spec.slug };
+}
+const { flyerSvg: designSvg, FLYER_DEFAULTS: F, FLYER_THEMES, FLYER_GROUPS, FLYER_FONTS, FLYER_BG, slug } = await loadDesign();
 // Designs with a photo background get it embedded, so every export (PSD, PDF, PNG) contains it.
 const BG = FLYER_BG ? `data:image/jpeg;base64,${readFileSync(path.join(root, "public", FLYER_BG)).toString("base64")}` : undefined;
 const flyerSvg = (fields, t, opts = {}) => designSvg(fields, t, { ...(BG ? { bg: BG } : {}), ...opts });
@@ -57,7 +77,7 @@ const groups = await page.evaluate(() => [...document.querySelectorAll("g[data-l
   const t = g.children.length === 1 && g.firstElementChild.tagName === "text" ? g.firstElementChild : null;
   const rot = /rotate\(([-\d.]+)/.exec(g.getAttribute("transform") || "");
   return { id: g.dataset.layer, name: g.dataset.name, text: t && { value: t.textContent, family: t.getAttribute("font-family").split(",")[0].replace(/'/g, "").trim(), weight: t.getAttribute("font-weight"), style: t.getAttribute("font-style") || "normal",
-    psdFill: t.dataset.psdFill, fx: t.dataset.psdFx && JSON.parse(t.dataset.psdFx),
+    psdFill: t.dataset.psdFill, anchor: t.getAttribute("text-anchor") || "middle", fx: t.dataset.psdFx && JSON.parse(t.dataset.psdFx),
     size: +t.getAttribute("font-size"), fill: t.getAttribute("fill"), ls: +(t.getAttribute("letter-spacing") || 0), x: +t.getAttribute("x"), y: +t.getAttribute("y"), rot: rot ? +rot[1] : 0 } };
 }));
 const rgb = (h) => ({ r: parseInt(h.slice(1, 3), 16), g: parseInt(h.slice(3, 5), 16), b: parseInt(h.slice(5, 7), 16) });
@@ -76,7 +96,7 @@ for (const { id, name: layerName, text } of groups) {
     const fontName = POSTSCRIPT[`${text.family}|${text.weight}|${text.style}`];
     if (!fontName) throw new Error(`No PostScript name for ${text.family} ${text.weight} ${text.style}`);
     layer.text = { text: text.value, transform: [Math.cos(r), Math.sin(r), -Math.sin(r), Math.cos(r), text.x * 2, text.y * 2],
-      style: { font: { name: fontName }, fontSize: text.size * 2, fillColor: rgb(text.psdFill || text.fill), tracking: Math.round((text.ls / text.size) * 1000) }, paragraphStyle: { justification: "center" } };
+      style: { font: { name: fontName }, fontSize: text.size * 2, fillColor: rgb(text.psdFill || text.fill), tracking: Math.round((text.ls / text.size) * 1000) }, paragraphStyle: { justification: { start: "left", end: "right" }[text.anchor] ?? "center" } };
     if (text.fx) layer.effects = text.fx;
   }
   layers.set(layerName, layer);
@@ -87,6 +107,7 @@ const psd = {
   // Folders bottom to top, as Photoshop lists them reversed.
   children: FLYER_GROUPS.map(([folder, names]) => ({ name: folder, children: names.map((n) => layers.get(n)).filter(Boolean) })),
 };
+psd.children = psd.children.filter((f) => f.children.length);
 const placed = psd.children.reduce((n, f) => n + f.children.length, 0);
 if (placed !== layers.size) throw new Error(`FLYER_GROUPS places ${placed} of ${layers.size} layers`);
 writeFileSync(out(".psd"), Buffer.from(writePsdBuffer(psd, { generateThumbnail: false, compress: true })));

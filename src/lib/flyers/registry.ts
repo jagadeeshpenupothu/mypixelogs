@@ -1,5 +1,9 @@
 import * as christmasPhoto from "@/lib/flyers/christmas-photo";
+import composites from "@/data/flyer-composites.json";
+import specs from "@/data/flyer-specs.json";
+import { COMPOSITE_FONTS, COMPOSITE_SECTIONS, COMPOSITE_THEMES, compositeSvg, type CompositeSpec, type CompositeTheme } from "@/lib/flyers/composite-poster";
 import * as grandOpening from "@/lib/flyers/grand-opening";
+import { POSTER_FONTS, POSTER_SECTIONS, POSTER_THEMES, posterSvg, type PosterSpec } from "@/lib/flyers/photo-poster";
 
 type Fields = Record<string, string>;
 type Theme = { name: string };
@@ -8,7 +12,7 @@ type Theme = { name: string };
 export type FlyerDesign = {
   defaults: Fields;
   themes: Record<string, Theme>;
-  svg: (fields: Fields, theme: Theme, opts: { fonts?: Record<string, string>; photo?: string | null; bg?: string }) => string;
+  svg: (fields: Fields, theme: Theme, opts: { fonts?: Record<string, string>; photo?: string | null; bg?: string; assets?: Record<string, string> }) => string;
   fonts: [string, string, string][];
   /** Form sections: field key and label. */
   sections: { title: string; fields: [string, string][]; row?: boolean }[];
@@ -16,6 +20,8 @@ export type FlyerDesign = {
   swatch: (theme: Theme) => [string, string];
   /** Background photo (designs built on a photo); the visitor's own photo replaces it. */
   bg?: string;
+  /** Every image a layered design uses; the editor embeds them so downloads include them. */
+  assets?: string[];
   photoLabel: string;
 };
 
@@ -54,4 +60,42 @@ export const FLYER_DESIGNS: Record<string, FlyerDesign> = {
     bg: christmasPhoto.FLYER_BG,
     photoLabel: "Background photo",
   },
+  // Photo flyers made from settings files (src/data/flyer-specs.json), one design each: "poster:<slug>".
+  ...Object.fromEntries(
+    (specs as PosterSpec[]).map((spec): [string, FlyerDesign] => [
+      `poster:${spec.slug}`,
+      {
+        defaults: spec.fields,
+        themes: POSTER_THEMES,
+        svg: loose((fields: PosterSpec["fields"], theme: (typeof POSTER_THEMES)[keyof typeof POSTER_THEMES], opts: object) => posterSvg(spec, fields, theme, opts)),
+        fonts: POSTER_FONTS,
+        sections: POSTER_SECTIONS,
+        swatch: (t) => {
+          const g = (t as unknown as { gold: readonly string[] }).gold;
+          return [g[1], g[2]];
+        },
+        bg: spec.bg,
+        photoLabel: "Background photo",
+      },
+    ]),
+  ),
+  // Layered flyers (src/data/flyer-composites.json): "composite:<slug>". The visitor's photo replaces the main cut-out.
+  ...Object.fromEntries(
+    (composites as unknown as CompositeSpec[]).map((spec): [string, FlyerDesign] => [
+      `composite:${spec.slug}`,
+      {
+        defaults: spec.fields,
+        themes: COMPOSITE_THEMES,
+        svg: loose((fields: CompositeSpec["fields"], theme: CompositeTheme, opts: object) => compositeSvg(spec, fields, theme, opts)),
+        fonts: COMPOSITE_FONTS,
+        sections: COMPOSITE_SECTIONS,
+        swatch: (t) => {
+          const c = t as CompositeTheme;
+          return [c.accent ?? spec.palette.accent, c.dark ?? spec.palette.dark];
+        },
+        assets: [spec.images.bg, spec.images.hero.src, ...(spec.images.extras ?? []).map((e) => e.src), ...(spec.images.overlays ?? []).map((o) => o.src)],
+        photoLabel: "Main photo (a cut-out PNG looks best)",
+      },
+    ]),
+  ),
 };

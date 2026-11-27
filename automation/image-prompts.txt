@@ -1,0 +1,21 @@
+MyPixelogs – Image prompts
+==========================
+Claude adds new prompt blocks at the END of this file with "Status: NEW".
+For the newest NEW block: generate every IMAGE exactly as written (do not change the prompt wording),
+in the size given, with no text, letters, logos or watermarks. Then show the images with the PROMPT number.
+
+----------------------------------------
+
+PROMPT 001
+Status: NEW
+Created: 28 November 2026
+Flyer: New Year 2027 Celebration Flyer
+Images needed: 1
+
+IMAGE 1 of 1
+Save as: 001-1.png
+Size: portrait 2:3 (1024 x 1536), highest quality
+Prompt:
+Photorealistic, cinematic New Year's Eve celebration at night. Spectacular golden and warm-white fireworks burst high in a deep navy-to-black sky above a softly lit modern city skyline (no famous landmarks, no brand signs). In the lower foreground, two hands hold bright sparklers that throw golden sparks, with warm golden bokeh lights and gentle confetti in the air. Rich gold, champagne and deep blue colours, elegant and festive. Keep the top 45% of the image mostly dark sky with only soft, distant fireworks glow, so large text can be placed there later. Very high detail, film lighting, shallow depth of field on the sparklers. No text, no letters, no numbers, no logos, no watermark.
+
+----------------------------------------

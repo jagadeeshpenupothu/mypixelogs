@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Music, Volume2 } from "lucide-react";
+import { ArrowRight, Music, PenTool, Volume2 } from "lucide-react";
 
 import { FontCard, fontGridClass } from "@/components/assets/FontCard";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { music, sfx } from "@/lib/audio-library";
 import { fonts } from "@/lib/fonts";
+import { logos } from "@/lib/logos";
 import { createSocialMetadata } from "@/lib/metadata";
 
 const title = "Free Design Assets";
-const description = `Free assets for flyers, posters and videos: ${fonts.length} fonts, 100 background music tracks and 100 sound effects.`;
+const description = `Free assets for flyers, posters and videos: ${fonts.length} fonts, 100 background music tracks, 100 sound effects and editable logos.`;
 
 export const metadata: Metadata = { title, description, ...createSocialMetadata({ title, description, path: "/assets" }) };
 
@@ -24,6 +25,7 @@ export default function AssetsPage() {
         {[
           { href: "/assets/music", Icon: Music, title: "Background music", note: `${music.length} tracks for YouTube and reels · happy, calm, epic, suspense` },
           { href: "/assets/sound-effects", Icon: Volume2, title: "Sound effects", note: `${sfx.length} SFX · clicks, swooshes, impacts, sci-fi, jingles` },
+          { href: "/assets/logos", Icon: PenTool, title: "Logos", note: `${logos.length ? `${logos.length} free logos` : "New every day"} · AI, SVG, PSD, EPS (CorelDRAW), PNG` },
         ].map(({ href, Icon, title: label, note }) => (
           <Link prefetch={false} key={href} href={href} className="group flex min-w-0 items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/60">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">

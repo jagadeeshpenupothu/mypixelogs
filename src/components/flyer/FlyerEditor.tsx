@@ -35,6 +35,7 @@ export function FlyerEditor({ title, design = "grand-opening" }: { title: string
   const [fonts, setFonts] = useState<Record<string, string> | null>(null);
   const [busy, setBusy] = useState<"" | "png" | "pdf">("");
   const [bg, setBg] = useState<string | null>(null);
+  const [assets, setAssets] = useState<Record<string, string> | null>(null);
 
   // Fonts are embedded in the drawing so downloads look exactly like the preview.
   useEffect(() => {
@@ -44,13 +45,15 @@ export function FlyerEditor({ title, design = "grand-opening" }: { title: string
     ).then((entries) => live && setFonts(Object.fromEntries(entries)));
     // A background photo is embedded too, so the downloaded PNG/PDF includes it.
     if (d.bg) void fetch(d.bg).then(async (r) => live && setBg(await toDataUrl(await r.blob())));
+    if (d.assets)
+      void Promise.all(d.assets.map(async (a) => [a, await toDataUrl(await (await fetch(a)).blob())] as const)).then((entries) => live && setAssets(Object.fromEntries(entries)));
     return () => {
       live = false;
     };
-  }, [d.bg, d.fonts]);
+  }, [d.bg, d.fonts, d.assets]);
 
-  const svg = useMemo(() => d.svg(fields, d.themes[theme], { fonts: fonts ?? undefined, photo, bg: bg ?? d.bg }), [d, fields, theme, fonts, photo, bg]);
-  const ready = Boolean(fonts) && (!d.bg || Boolean(bg));
+  const svg = useMemo(() => d.svg(fields, d.themes[theme], { fonts: fonts ?? undefined, photo, bg: bg ?? d.bg, assets: assets ?? undefined }), [d, fields, theme, fonts, photo, bg, assets]);
+  const ready = Boolean(fonts) && (!d.bg || Boolean(bg)) && (!d.assets || Boolean(assets));
 
   const render = () =>
     new Promise<HTMLCanvasElement>((resolve, reject) => {
