@@ -99,6 +99,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "resignation-letter",
+    "title": "Resignation Letter Template",
+    "slug": "resignation-letter-template",
+    "description": "Free resignation letter format for India with notice period, last working day, handover plan, thanks and signature. Edit it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Clear notice period and last working day",
+      "Handover plan for projects, assets and access",
+      "Polite, professional wording with acknowledgement lines"
+    ],
+    "useCases": [
+      "Resigning with standard 30-90 day notice",
+      "Requesting relieving and experience letters",
+      "Formal email or printed resignation to HR"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1t5bAWvTJVQSLlVFA4EOcHx-Ofe0w-_c68AuePXmLY1E",
+      "googleSheetsId": "1qd9CMlU1Nd6Y_EHQPuzyaWaUCCNe1uIFxefMaY7Fkho",
+      "excelPath": "/downloads/resignation-letter-template.xlsx",
+      "latexPath": "/downloads/resignation-letter-template.tex",
+      "pdfPath": "/downloads/resignation-letter-template.pdf"
+    },
+    "published": "2026-11-27"
+  },
+  {
     "id": "salary-slip",
     "title": "Salary Slip Template",
     "slug": "salary-slip-template",
