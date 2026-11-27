@@ -5,7 +5,7 @@ Be brief: don't read files this runbook doesn't name, don't explore the repo, ke
 
 ## Steps
 
-1. Setup: `cd` to the repo, `git fetch -q origin main && git checkout -q -B "$(git branch --show-current)" origin/main`, then `npm ci --silent`.
+1. Setup: `cd` to the repo, `git fetch -q origin main && git checkout -q -B "$(git branch --show-current)" origin/main`, then `npm ci --silent && python3 -m pip install -q openpyxl`.
 2. Pick: `node automation/next.mjs`. It prints one idea as JSON (`slug`, `title`, `category`, `keyword`, `notes`).
    - If it prints `EMPTY` or `node automation/next.mjs --count` is below 5, first add 15 ideas (see "Refilling").
 3. Research (optional, at most 2 web searches): only if `notes` doesn't already say what the document must contain.
