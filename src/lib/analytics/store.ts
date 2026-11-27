@@ -28,9 +28,10 @@ const localStore: Store = {
     await writeFile(file, JSON.stringify(value));
   },
   async list(prefix) {
-    const dir = path.join(LOCAL_DIR, prefix);
+    // Like Netlify Blobs: every key (file) that starts with the prefix, in all folders below.
     try {
-      return (await readdir(dir)).map((f) => `${prefix}${f}`);
+      const files = (await readdir(LOCAL_DIR, { recursive: true, withFileTypes: true })).filter((f) => f.isFile());
+      return files.map((f) => path.relative(LOCAL_DIR, path.join(f.parentPath, f.name)).split(path.sep).join("/")).filter((k) => k.startsWith(prefix));
     } catch {
       return [];
     }

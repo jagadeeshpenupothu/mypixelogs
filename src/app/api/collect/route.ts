@@ -21,16 +21,29 @@ function browser(ua: string) {
   if (/safari/i.test(ua)) return "Safari";
   return "Other";
 }
-function country(req: Request) {
-  const direct = req.headers.get("x-country");
-  if (direct) return direct.toUpperCase();
-  const geo = req.headers.get("x-nf-geo");
-  if (geo) {
+function os(ua: string) {
+  if (/iphone|ipad|ipod/i.test(ua)) return "iOS";
+  if (/android/i.test(ua)) return "Android";
+  if (/windows/i.test(ua)) return "Windows";
+  if (/mac os x|macintosh/i.test(ua)) return "macOS";
+  if (/cros/i.test(ua)) return "ChromeOS";
+  if (/linux/i.test(ua)) return "Linux";
+  return "Other";
+}
+/** Country, region and city from Netlify's location headers (the IP address itself is never stored). */
+function geo(req: Request): { c?: string; rg?: string; ci?: string } {
+  const out: { c?: string; rg?: string; ci?: string } = {};
+  const raw = req.headers.get("x-nf-geo");
+  if (raw) {
     try {
-      return (JSON.parse(Buffer.from(geo, "base64").toString()).country?.code as string | undefined)?.toUpperCase();
+      const g = JSON.parse(Buffer.from(raw, "base64").toString()) as { country?: { code?: string }; subdivision?: { name?: string }; city?: string };
+      out.c = g.country?.code?.toUpperCase();
+      out.rg = g.subdivision?.name?.slice(0, 60);
+      out.ci = g.city?.slice(0, 60);
     } catch {}
   }
-  return undefined;
+  out.c ??= req.headers.get("x-country")?.toUpperCase() || undefined;
+  return out;
 }
 
 /** Receives batches of page views and actions from the site (sent with navigator.sendBeacon). */
@@ -48,7 +61,8 @@ export async function POST(req: Request) {
   if (!v || !s || !Array.isArray(body.hits)) return new NextResponse(null, { status: 400 });
 
   const now = Date.now();
-  const c = country(req);
+  const { c, rg, ci } = geo(req);
+  const o = os(ua);
   const d = device(ua);
   const b = browser(ua);
   const hits: Hit[] = body.hits.slice(0, 50).flatMap((raw: Record<string, unknown>) => {
@@ -63,7 +77,7 @@ export async function POST(req: Request) {
         if (cv) x[k.slice(0, 30)] = cv;
       }
     }
-    return [{ t, v, s, e, p, c, d, b, r: clean(raw.r, 80), ti: clean(raw.ti, 120), ...(Object.keys(x).length ? { x } : {}) }];
+    return [{ t, v, s, e, p, c, rg, ci, d, b, os: o, r: clean(raw.r, 80), ti: clean(raw.ti, 120), ...(Object.keys(x).length ? { x } : {}) }];
   });
   if (!hits.length) return new NextResponse(null, { status: 204 });
 

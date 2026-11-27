@@ -11,4 +11,7 @@ export type Hit = {
   /** referrer host or utm source (first page of a visit) */ r?: string;
   /** page title */ ti?: string;
   /** event details */ x?: Record<string, string | number>;
+  /** city and region (from Netlify's location lookup) */ ci?: string;
+  rg?: string;
+  /** operating system */ os?: string;
 };

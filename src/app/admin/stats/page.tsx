@@ -39,6 +39,32 @@ const countryName = (code: string) => {
 };
 const flag = (code: string) => (code.length === 2 ? String.fromCodePoint(...[...code.toUpperCase()].map((c) => 127397 + c.charCodeAt(0))) : "");
 
+const duration = (sec: number) => {
+  const s = Math.round(sec);
+  if (s < 60) return `${s}s`;
+  const m = Math.floor(s / 60);
+  return m < 60 ? `${m}m ${s % 60}s` : `${Math.floor(m / 60)}h ${m % 60}m`;
+};
+const timeIST = (t: number) => new Date(t).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Kolkata" });
+const dateIST = (t: number) => new Date(t).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" });
+const ago = (t: number, now: number) => {
+  const m = Math.round((now - t) / 60000);
+  if (m < 1) return "just now";
+  if (m < 60) return `${m} min ago`;
+  const h = Math.round(m / 60);
+  return h < 24 ? `${h} h ago` : dateIST(t);
+};
+const cap = (s?: string) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : "");
+
+function Group({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="mt-8">
+      <h2 className="text-base font-bold text-foreground">{title}</h2>
+      <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">{children}</div>
+    </section>
+  );
+}
+
 function Tile({ label, value, note }: { label: string; value: number | string; note?: string }) {
   return (
     <div className="rounded-xl border border-border bg-card p-4">
@@ -100,7 +126,6 @@ export default async function StatsPage({ searchParams }: { searchParams: Promis
 
   const days = RANGES.find((r) => String(r.days) === range)?.days ?? 7;
   const s = await getStats(days);
-  const pagesPerVisit = s.totals.sessions ? (s.totals.pageViews / s.totals.sessions).toFixed(1) : "0";
 
   return (
     <div className="pb-6">
@@ -119,41 +144,115 @@ export default async function StatsPage({ searchParams }: { searchParams: Promis
         </nav>
       </div>
 
-      <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+      <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
         <Tile label="On the site now" value={s.live} note="last 5 minutes" />
-        <Tile label="Visitors" value={s.totals.visitors} note="unique people" />
-        <Tile label="Visits" value={s.totals.sessions} note={`${pagesPerVisit} pages per visit`} />
+        <Tile label="Visitors" value={s.totals.visitors} note={`${s.totals.newVisitors} new · ${s.totals.returning} returning`} />
+        <Tile label="Visits" value={s.totals.sessions} note={`${s.totals.pagesPerVisit.toFixed(1)} pages per visit`} />
         <Tile label="Page views" value={s.totals.pageViews} />
+        <Tile label="Average visit" value={duration(s.totals.avgVisitSeconds)} note="time on the site" />
+        <Tile label="Bounce rate" value={`${Math.round(s.totals.bounceRate * 100)}%`} note="left after one page" />
         <Tile label="Downloads" value={s.totals.downloads} />
         <Tile label="Actions" value={s.totals.actions} note="downloads, plays, copies…" />
       </div>
 
-      {days > 1 ? (
-        <section className="mt-5 rounded-xl border border-border bg-card p-4">
-          <h2 className="mb-3 text-sm font-semibold text-foreground">Visitors per day</h2>
-          <DailyChart data={s.perDay} />
-        </section>
-      ) : null}
+      <section className="mt-5 rounded-xl border border-border bg-card p-4">
+        {days > 1 ? (
+          <>
+            <h2 className="mb-3 text-sm font-semibold text-foreground">Visitors per day</h2>
+            <DailyChart data={s.perDay.map((d) => ({ label: new Date(`${d.date}T00:00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short" }), visitors: d.visitors, pageViews: d.pageViews }))} />
+          </>
+        ) : (
+          <>
+            <h2 className="mb-3 text-sm font-semibold text-foreground">Visitors by hour today (IST)</h2>
+            <DailyChart data={s.perHour.map((h) => ({ label: `${String(h.hour).padStart(2, "0")}:00`, visitors: h.visitors, pageViews: h.pageViews }))} firstLabel="12 am" lastLabel="11 pm" />
+          </>
+        )}
+      </section>
 
-      <div className="mt-5 grid gap-3 lg:grid-cols-3">
+      <section className="mt-8">
+        <h2 className="text-base font-bold text-foreground">Visitors <span className="text-sm font-medium text-muted-foreground">· tap a visitor to see their path</span></h2>
+        {s.people.length ? (
+          <ul className="mt-3 divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
+            {s.people.map((v) => (
+              <li key={v.id}>
+                <details className="group">
+                  <summary className="grid cursor-pointer list-none grid-cols-[1fr_auto] gap-x-3 gap-y-0.5 px-4 py-3 hover:bg-muted/50 sm:grid-cols-[minmax(180px,1.3fr)_1.2fr_1fr_auto] [&::-webkit-details-marker]:hidden">
+                    <span className="min-w-0 truncate text-sm font-semibold text-foreground">
+                      {v.c ? `${flag(v.c)} ` : ""}
+                      {v.ci ? `${v.ci}${v.rg ? `, ${v.rg}` : ""}` : v.c ? countryName(v.c) : "Unknown place"}
+                    </span>
+                    <span className="text-right text-xs tabular-nums text-muted-foreground sm:order-last">{ago(v.last, s.updated)}</span>
+                    <span className="col-span-2 truncate text-xs text-muted-foreground sm:col-span-1 sm:text-sm">
+                      {[cap(v.d), v.os, v.b].filter(Boolean).join(" · ")}
+                    </span>
+                    <span className="col-span-2 text-xs text-muted-foreground sm:col-span-1 sm:text-sm">
+                      {v.pageViews} {v.pageViews === 1 ? "page" : "pages"}
+                      {v.actions ? ` · ${v.actions} ${v.actions === 1 ? "action" : "actions"}` : ""}
+                      {v.seconds ? ` · ${duration(v.seconds)}` : ""}
+                      {v.sessions.length > 1 ? ` · ${v.sessions.length} visits` : ""}
+                    </span>
+                  </summary>
+                  <div className="border-t border-border bg-muted/30 px-4 py-3 text-sm">
+                    <p className="text-xs text-muted-foreground">
+                      Came from <span className="text-foreground">{v.r ?? "unknown"}</span>
+                      {v.lang ? <> · Language <span className="text-foreground">{v.lang}</span></> : null}
+                      {v.sw ? <> · Screen <span className="text-foreground">{v.sw}px</span></> : null}
+                      {" "}· First seen <span className="text-foreground">{dateIST(v.first)} {timeIST(v.first)}</span>
+                    </p>
+                    <ol className="mt-2 space-y-1">
+                      {v.journey.map(([t, e, what], i) => (
+                        <li key={i} className="grid grid-cols-[3.5rem_1fr] gap-2">
+                          <span className="tabular-nums text-xs leading-5 text-muted-foreground">{timeIST(t)}</span>
+                          <span className="min-w-0 truncate text-foreground">
+                            <span className="mr-1.5 text-xs text-muted-foreground">{EVENT_NAMES[e]?.replace(/s$/, "") ?? e}</span>
+                            {what}
+                          </span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                </details>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-3 text-sm text-muted-foreground">No visitors yet in this period.</p>
+        )}
+      </section>
+
+      <Group title="Pages">
         <Ranked title="Top pages" rows={s.pages.map((p) => [`${p.title}\u0000${p.path}`, p.n] as [string, number])} format={(k) => {
           const [title, path] = k.split("\u0000");
           return <span title={path}>{title}</span>;
         }} />
+        <Ranked title="Where visitors land (entry pages)" rows={s.entries} />
+        <Ranked title="Where visitors leave (exit pages)" rows={s.exits} />
+        <Ranked title="Sections" rows={s.sections} />
         <Ranked title="Where visitors come from" rows={s.sources} />
+      </Group>
+
+      <Group title="Audience">
         <Ranked title="Countries" rows={s.countries} format={(c) => `${flag(c)} ${countryName(c)}`} />
-        <Ranked title="What visitors did" rows={s.events.map(([e, n]) => [EVENT_NAMES[e] ?? e, n] as [string, number])} />
-        <Ranked title="Devices" rows={s.devices} format={(d) => d.charAt(0).toUpperCase() + d.slice(1)} />
+        <Ranked title="Cities" rows={s.cities} empty="Shown once visitors arrive on the live site" />
+        <Ranked title="Devices" rows={s.devices} format={cap} />
+        <Ranked title="Operating systems" rows={s.os} />
         <Ranked title="Browsers" rows={s.browsers} />
+        <Ranked title="Screen sizes" rows={s.screens} empty="Recorded from new visits" />
+        <Ranked title="Languages" rows={s.languages} empty="Recorded from new visits" />
+      </Group>
+
+      <Group title="What visitors did">
+        <Ranked title="Actions" rows={s.events.map(([e, n]) => [EVENT_NAMES[e] ?? e, n] as [string, number])} />
         <Ranked title="Most downloaded" rows={s.downloads} />
         <Ranked title="Most played music & sounds" rows={s.plays} />
         <Ranked title="Opened in apps" rows={s.apps} />
         <Ranked title="Searches on the site" rows={s.searches} />
         <Ranked title="Editor & tool exports" rows={s.exports} />
         <Ranked title="Files added to tools" rows={s.uploads} />
-      </div>
+        <Ranked title="Prompts copied" rows={s.prompts} />
+      </Group>
 
-      <section className="mt-5 rounded-xl border border-border bg-card p-4">
+      <section className="mt-8 rounded-xl border border-border bg-card p-4">
         <h2 className="text-sm font-semibold text-foreground">Latest activity today</h2>
         {s.recent.length ? (
           <div className="mt-3 overflow-x-auto">
@@ -171,7 +270,7 @@ export default async function StatsPage({ searchParams }: { searchParams: Promis
                 {s.recent.map((r, i) => (
                   <tr key={i}>
                     <td className="py-1.5 pr-3 tabular-nums text-muted-foreground">{new Date(r.t).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Kolkata" })}</td>
-                    <td className="py-1.5 pr-3 text-muted-foreground">{r.c ? `${flag(r.c)} ` : ""}{r.d ?? ""}</td>
+                    <td className="py-1.5 pr-3 text-muted-foreground">{r.c ? `${flag(r.c)} ` : ""}{r.ci ? `${r.ci} · ` : ""}{r.d ?? ""}</td>
                     <td className="py-1.5 pr-3 text-foreground">{EVENT_NAMES[r.e] ?? r.e}</td>
                     <td className="max-w-[240px] truncate py-1.5 pr-3 text-muted-foreground">{r.p}</td>
                     <td className="max-w-[260px] truncate py-1.5 text-muted-foreground">{r.detail}</td>

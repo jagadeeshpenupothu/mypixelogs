@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-import { flush, track, trackPageView } from "@/lib/track";
+import { flush, track, trackPageTime, trackPageView } from "@/lib/track";
 
 /** Apps we send people to, by host. */
 const APPS: [RegExp, string][] = [
@@ -47,7 +47,28 @@ export function ActivityTracker() {
     }
     // Wait a moment so the new page's title is in place.
     const id = setTimeout(() => trackPageView(pathname, referrer), 300);
-    return () => clearTimeout(id);
+
+    // Time on this page: add up the visible time, report it when leaving the page or hiding the tab.
+    let visibleSince: number | null = document.visibilityState === "visible" ? Date.now() : null;
+    let total = 0;
+    const report = () => {
+      if (visibleSince !== null) total += (Date.now() - visibleSince) / 1000;
+      visibleSince = null;
+      if (total >= 1) trackPageTime(pathname, total);
+      total = 0;
+    };
+    const onVis = () => {
+      if (document.visibilityState === "hidden") {
+        report();
+        flush();
+      } else visibleSince = Date.now();
+    };
+    document.addEventListener("visibilitychange", onVis);
+    return () => {
+      clearTimeout(id);
+      document.removeEventListener("visibilitychange", onVis);
+      report();
+    };
   }, [pathname]);
 
   // Send what's queued when the visitor leaves or switches tabs.
