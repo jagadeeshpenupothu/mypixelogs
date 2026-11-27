@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "slug": "kaapi-kona-cafe-emblem-logo",
+    "title": "Kaapi Kona Cafe Emblem Logo",
+    "name": "Kaapi Kona",
+    "style": "emblem",
+    "industry": "Cafe",
+    "description": "A round cafe emblem with a South Indian filter coffee tumbler and davara, rising steam and curved lettering. Suits cafes and coffee houses. Editable AI, SVG, PSD, EPS and PNG.",
+    "colors": [
+      {
+        "name": "Espresso",
+        "hex": "#3B2416"
+      },
+      {
+        "name": "Cream",
+        "hex": "#F4E9D8"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#C8623A"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Playfair Display",
+        "weight": 700
+      },
+      {
+        "family": "Montserrat",
+        "weight": 600
+      }
+    ],
+    "previewBg": "#EADCC6",
+    "published": "2026-11-27",
+    "keywords": [
+      "cafe emblem logo",
+      "filter coffee logo",
+      "coffee shop badge logo",
+      "south indian cafe logo"
+    ]
+  }
+]
