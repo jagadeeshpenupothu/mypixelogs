@@ -1,75 +1,58 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { aiRouteConfigs } from "@/app/ai/content-config";
-import {
-  generateAiMetadata,
-  generateAiStaticParams,
-  type AiDynamicPageProps,
-} from "@/app/ai/route-pages";
-import { AiPromptDetailPage } from "@/components/content/AiPromptDetailPage";
-import { AiPromptGallery } from "@/components/content/AiPromptGallery";
-import { aiPrompts } from "@/content/ai-prompts";
-import { getRelatedContent } from "@/content";
-import { getAbsoluteUrl } from "@/lib/metadata";
+import { PromptBuilder } from "@/components/prompts/PromptBuilder";
+import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
+import { chatGptPrompts, getPromptBySlug, relatedPrompts } from "@/lib/prompts";
+import { createSocialMetadata } from "@/lib/metadata";
 
-const config = aiRouteConfigs.prompts;
+type PageProps = { params: Promise<{ slug: string }> };
 
-function formatCategoryTitle(slug: string) {
-  return slug
-    .split("-")
-    .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
-    .join(" ");
-}
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return generateAiStaticParams(config);
+  return chatGptPrompts.map(({ slug }) => ({ slug }));
 }
 
-export function generateMetadata(props: AiDynamicPageProps) {
-  return generateAiMetadata(config, props);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const p = getPromptBySlug((await params).slug);
+  if (!p) return {};
+  const title = `ChatGPT Prompt: ${p.title}`;
+  const description = `${p.summary} A ready ChatGPT prompt for a ${p.title.toLowerCase()}: fill in your details, then copy it or open it in ChatGPT. Free.`;
+  return { title, description, ...createSocialMetadata({ title, description, path: `/ai/prompts/${p.slug}` }) };
 }
 
-export default async function AiPromptDynamicPage({ params }: AiDynamicPageProps) {
-  const { slug } = await params;
-  const categoryItems = aiPrompts.filter((item) => item.category === slug);
-
-  if (categoryItems.length > 0) {
-    const categoryTitle = formatCategoryTitle(slug);
-
-    return (
-      <AiPromptGallery
-        title={`${categoryTitle} AI Prompts`}
-        description={`Browse practical ${categoryTitle.toLowerCase()} prompts for faster creative and business workflows.`}
-        items={categoryItems}
-        category={slug}
-      />
-    );
-  }
-
-  const item = aiPrompts.find((prompt) => prompt.slug === slug);
-
-  if (!item) {
-    notFound();
-  }
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: item.title,
-    description: item.description,
-    url: getAbsoluteUrl(`${config.baseHref}/${item.slug}`),
-    image: getAbsoluteUrl(item.coverImage),
-    datePublished: item.publishedAt,
-    keywords: item.tags.join(", "),
-  };
+export default async function PromptPage({ params }: PageProps) {
+  const p = getPromptBySlug((await params).slug);
+  if (!p) notFound();
+  const related = relatedPrompts(p);
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <AiPromptDetailPage item={item} relatedItems={getRelatedContent(item, 8)} />
-    </>
+    <section className="pb-2">
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "AI prompts", href: "/ai" }, { label: p.title }]} />
+      <h1 className="mt-5 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">{p.title}</h1>
+      <p className="mt-1 text-sm text-muted-foreground">
+        {p.category} · ChatGPT prompt · {p.summary}
+      </p>
+      <div className="mt-6">
+        <PromptBuilder prompt={p.prompt} />
+      </div>
+
+      {related.length ? (
+        <div className="mt-12">
+          <h2 className="text-lg font-bold text-foreground">More emails: {p.category}</h2>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {related.map((r) => (
+              <li key={r.slug}>
+                <Link prefetch={false} href={`/ai/prompts/${r.slug}`} className="block rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-primary/60">
+                  {r.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </section>
   );
 }

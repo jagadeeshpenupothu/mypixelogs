@@ -1,11 +1,11 @@
 import Fuse from "fuse.js";
 
 import { assets } from "@/data/assets";
-import { aiContentItems } from "@/content";
 import { toolTasks } from "@/data/navigation";
 import { templates } from "@/data/templates";
 import { tools } from "@/data/tools";
 import { matchScore, searchWords } from "@/lib/plain-search";
+import { chatGptPrompts } from "@/lib/prompts";
 import { getTemplateCategoryLabel } from "@/lib/templates";
 
 export type SearchResultType = "Template" | "Asset" | "Tool" | "AI Prompt" | "AI Image Prompt" | "AI Image";
@@ -19,18 +19,6 @@ export type SearchItem = {
   type: SearchResultType;
   href: string;
 };
-
-function getAiHref(kind: string, slug: string) {
-  if (kind === "ai-prompt") return `/ai/prompts/${slug}`;
-  if (kind === "ai-image-prompt") return `/ai/image-prompts/${slug}`;
-  return `/ai/images/${slug}`;
-}
-
-function getAiType(kind: string): SearchResultType {
-  if (kind === "ai-prompt") return "AI Prompt";
-  if (kind === "ai-image-prompt") return "AI Image Prompt";
-  return "AI Image";
-}
 
 export const searchIndex: SearchItem[] = [
   ...templates.map((template) => ({
@@ -63,15 +51,15 @@ export const searchIndex: SearchItem[] = [
       type: "Tool" as const,
       href: `/tools/${tool.slug}`,
     })),
-  ...aiContentItems.map((item) => ({
-    id: item.slug,
-    title: item.title,
+  ...chatGptPrompts.map((item) => ({
+    id: `prompt-${item.slug}`,
+    title: `${item.title} (ChatGPT prompt)`,
     slug: item.slug,
-    description: item.description,
+    description: item.summary,
     category: item.category,
-    keywords: item.tags.join(" "),
-    type: getAiType(item.kind),
-    href: getAiHref(item.kind, item.slug),
+    keywords: `chatgpt prompt email mail ${item.category}`,
+    type: "AI Prompt" as const,
+    href: `/ai/prompts/${item.slug}`,
   })),
 ];
 
