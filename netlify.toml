@@ -1,0 +1,6 @@
+# Build settings stay in the Netlify dashboard; this file only adds headers.
+# Lets Photopea (photopea.com) open our PSD files straight from the site.
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
