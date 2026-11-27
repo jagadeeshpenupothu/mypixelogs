@@ -205,6 +205,7 @@ export function AudioLibrary({
               <button
                 type="button"
                 onClick={() => playAt(item)}
+                {...(on ? {} : { "data-track": "audio_play", "data-track-title": item.title, "data-track-group": item.group, "data-track-kind": item.credit ? "music" : "sfx" })}
                 aria-label={`${on ? "Pause" : "Play"} ${item.title}`}
                 className={cn(
                   "flex h-11 w-11 items-center justify-center rounded-full transition-colors",
@@ -234,7 +235,7 @@ export function AudioLibrary({
 
               <div className="col-start-3 row-start-1 hidden items-center gap-1 md:col-start-auto md:row-start-auto md:flex">
                 {item.credit ? (
-                  <button type="button" onClick={() => copy(item)} title="Copy the credit line for your video description" aria-label={`Copy credit for ${item.title}`} className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground">
+                  <button type="button" onClick={() => copy(item)} data-track="credit_copy" data-track-title={item.title} title="Copy the credit line for your video description" aria-label={`Copy credit for ${item.title}`} className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground">
                     {copied === item.id ? <Check className="h-4 w-4 text-primary" /> : <Copy className="h-4 w-4" />}
                   </button>
                 ) : null}
@@ -250,7 +251,7 @@ export function AudioLibrary({
               {/* Phones: actions under the waveform. */}
               <div className="col-span-3 flex justify-end gap-1 md:hidden">
                 {item.credit ? (
-                  <button type="button" onClick={() => copy(item)} className="flex h-8 items-center gap-1.5 rounded-full px-3 text-xs text-muted-foreground hover:bg-muted">
+                  <button type="button" onClick={() => copy(item)} data-track="credit_copy" data-track-title={item.title} className="flex h-8 items-center gap-1.5 rounded-full px-3 text-xs text-muted-foreground hover:bg-muted">
                     {copied === item.id ? <Check className="h-3.5 w-3.5 text-primary" /> : <Copy className="h-3.5 w-3.5" />} Credit
                   </button>
                 ) : null}

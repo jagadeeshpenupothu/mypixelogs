@@ -70,7 +70,7 @@ export function PromptBuilder({ prompt }: { prompt: string }) {
               <ExternalLink className="h-4 w-4" /> Open in ChatGPT
             </a>
           </Button>
-          <Button size="lg" variant="outline" className="flex-1" onClick={copy}>
+          <Button size="lg" variant="outline" className="flex-1" onClick={copy} data-track="prompt_copy" data-track-filled={done}>
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             {copied ? "Copied" : "Copy prompt"}
           </Button>

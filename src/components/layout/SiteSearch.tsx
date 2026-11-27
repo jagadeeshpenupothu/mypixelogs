@@ -7,6 +7,7 @@ import { CornerDownLeft, FileText, Image as ImageIcon, Search, Sparkles, Wrench,
 
 import { popularTasks, searchExamples } from "@/data/navigation";
 import { searchItems, type SearchItem } from "@/lib/search";
+import { track } from "@/lib/track";
 
 const typeIcons: Record<SearchItem["type"], typeof Wrench> = {
   Tool: Wrench,
@@ -51,6 +52,7 @@ export function SiteSearch({ large = false }: { large?: boolean }) {
   }, []);
 
   function go(href: string) {
+    if (typed) track("search", { search_term: typed, result: href });
     setOpen(false);
     setMarked(-1);
     setQuery("");

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+import { ActivityTracker } from "@/components/analytics/ActivityTracker";
+import { Clarity } from "@/components/analytics/Clarity";
+
 import { Navbar, TabBar } from "@/components/layout/Navbar";
 import { PageFooter } from "@/components/layout/PageFooter";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -102,7 +105,11 @@ export default function RootLayout({
           <TabBar />
         </ThemeProvider>
         {process.env.NODE_ENV === "production" ? (
-          <GoogleAnalytics gaId={googleAnalyticsId} />
+          <>
+            <GoogleAnalytics gaId={googleAnalyticsId} />
+            <ActivityTracker />
+            <Clarity />
+          </>
         ) : null}
       </body>
     </html>
