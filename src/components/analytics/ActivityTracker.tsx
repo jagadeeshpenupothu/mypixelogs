@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
-import { track } from "@/lib/track";
+import { flush, track, trackPageView } from "@/lib/track";
 
 /** Apps we send people to, by host. */
 const APPS: [RegExp, string][] = [
@@ -27,6 +28,39 @@ const pageName = () => document.title.split(" | ")[0];
  * - a file chosen in any tool (file_selected)
  */
 export function ActivityTracker() {
+  const pathname = usePathname();
+  const first = useRef(true);
+
+  // A page view on every page, including moves inside the site. The first one says where the visitor came from.
+  useEffect(() => {
+    if (pathname.startsWith("/admin")) return;
+    let referrer: string | undefined;
+    if (first.current) {
+      first.current = false;
+      const utm = new URLSearchParams(window.location.search).get("utm_source");
+      try {
+        const host = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, "") : "";
+        referrer = utm || (host && host !== window.location.hostname ? host : "direct");
+      } catch {
+        referrer = utm || "direct";
+      }
+    }
+    // Wait a moment so the new page's title is in place.
+    const id = setTimeout(() => trackPageView(pathname, referrer), 300);
+    return () => clearTimeout(id);
+  }, [pathname]);
+
+  // Send what's queued when the visitor leaves or switches tabs.
+  useEffect(() => {
+    const onHide = () => document.visibilityState === "hidden" && flush();
+    document.addEventListener("visibilitychange", onHide);
+    window.addEventListener("pagehide", flush);
+    return () => {
+      document.removeEventListener("visibilitychange", onHide);
+      window.removeEventListener("pagehide", flush);
+    };
+  }, []);
+
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const el = (e.target as Element | null)?.closest?.("a, button, [data-track]") as HTMLElement | null;

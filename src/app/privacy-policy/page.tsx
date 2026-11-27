@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Information we collect",
-    body: "MyPixelogs is designed as a free content and tools website. We may collect basic usage information such as pages visited, browser type, referring pages, and general device information to understand site performance and improve content.",
+    body: "MyPixelogs is a free content and tools website. To understand what people find useful, we count visits and actions: pages visited, downloads, music and sound plays, prompt copies, searches on the site, the site you came from, browser, device type and country. We use Google Analytics and our own simple counter, which gives each browser an anonymous random ID kept in browser storage. We do not collect names, email addresses or IP addresses in our own counter, and files you open in our tools are never uploaded.",
   },
   {
     title: "Browser-based tools",
