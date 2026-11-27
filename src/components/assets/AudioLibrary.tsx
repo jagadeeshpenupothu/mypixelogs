@@ -240,7 +240,7 @@ export function AudioLibrary({
                 ) : null}
                 <a
                   href={item.download}
-                  {...(item.direct ? { download: `${item.title}.mp3` } : { target: "_blank", rel: "noopener" })}
+                  download={item.fileName}
                   className="flex h-9 items-center gap-1.5 rounded-full border border-border px-3 text-sm font-medium text-foreground hover:border-primary/60"
                 >
                   <Download className="h-4 w-4" /> Download
@@ -254,7 +254,7 @@ export function AudioLibrary({
                     {copied === item.id ? <Check className="h-3.5 w-3.5 text-primary" /> : <Copy className="h-3.5 w-3.5" />} Credit
                   </button>
                 ) : null}
-                <a href={item.download} {...(item.direct ? { download: `${item.title}.mp3` } : { target: "_blank", rel: "noopener" })} className="flex h-8 items-center gap-1.5 rounded-full border border-border px-3 text-xs font-medium text-foreground">
+                <a href={item.download} download={item.fileName} className="flex h-8 items-center gap-1.5 rounded-full border border-border px-3 text-xs font-medium text-foreground">
                   <Download className="h-3.5 w-3.5" /> Download
                 </a>
               </div>
