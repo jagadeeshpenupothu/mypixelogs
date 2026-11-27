@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
         destination: "/assets",
         permanent: true,
       },
+      // The old AI section (placeholder prompts and images) became one ChatGPT prompt library at /ai.
+      { source: "/ai/prompts", destination: "/ai", permanent: true },
+      { source: "/ai/images/:path*", destination: "/ai", permanent: true },
+      { source: "/ai/images", destination: "/ai", permanent: true },
+      { source: "/ai/image-prompts/:path*", destination: "/ai", permanent: true },
+      { source: "/ai/image-prompts", destination: "/ai", permanent: true },
       {
         source: "/blog",
         destination: "/",

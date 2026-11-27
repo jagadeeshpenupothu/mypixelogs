@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { assetCategories } from "@/data/asset-categories";
-import { aiRouteConfigs } from "@/app/ai/content-config";
-import { getContentByKind, getContentCategories } from "@/content";
+import { chatGptPrompts } from "@/lib/prompts";
 import { templateCategories } from "@/data/template-categories";
 import { assets } from "@/data/assets";
 import { templates } from "@/data/templates";
@@ -82,29 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }));
 
-  const aiCollectionRoutes = Object.values(aiRouteConfigs).flatMap((config) => [
-    {
-      url: `${BASE_URL}${config.baseHref}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    },
-    ...getContentCategories(config.kind).map((category) => ({
-      url: `${BASE_URL}${config.baseHref}/${category}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.6,
-    })),
-  ]);
-
-  const aiDetailRoutes = Object.values(aiRouteConfigs).flatMap((config) =>
-    getContentByKind(config.kind).map((item) => ({
-      url: `${BASE_URL}${config.baseHref}/${item.slug}`,
-      lastModified: new Date(item.publishedAt),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
-  );
+  const aiDetailRoutes = chatGptPrompts.map((item) => ({
+    url: `${BASE_URL}/ai/prompts/${item.slug}`,
+    lastModified: new Date("2026-11-27"),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
 
   const fontRoutes = fonts.map((font) => ({
     url: `${BASE_URL}/assets/fonts/${font.slug}`,
@@ -123,7 +105,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...assetRoutes,
     ...toolCategoryRoutes,
     ...toolRoutes,
-    ...aiCollectionRoutes,
     ...aiDetailRoutes,
   ];
 }

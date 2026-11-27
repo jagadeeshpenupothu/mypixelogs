@@ -116,7 +116,7 @@ export default function Home() {
               <IconBadge icon="Wand2" tone="bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-300" />
               <span>
                 <span className="block text-base font-semibold text-foreground">AI prompts</span>
-                <span className="block text-sm text-muted-foreground">Ideas to copy</span>
+                <span className="block text-sm text-muted-foreground">ChatGPT prompts for emails</span>
               </span>
             </Link>
           </div>
