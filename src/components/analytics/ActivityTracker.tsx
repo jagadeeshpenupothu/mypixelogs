@@ -71,6 +71,40 @@ export function ActivityTracker() {
     };
   }, [pathname]);
 
+  // Page speed as visitors really experience it (Core Web Vitals): measured once per full page load.
+  useEffect(() => {
+    let lcp = 0;
+    let cls = 0;
+    let inp = 0;
+    let sent = false;
+    const observers: PerformanceObserver[] = [];
+    const watch = (type: string, cb: (entries: PerformanceEntryList) => void, extra: Record<string, unknown> = {}) => {
+      try {
+        const o = new PerformanceObserver((list) => cb(list.getEntries()));
+        o.observe({ type, buffered: true, ...extra } as PerformanceObserverInit);
+        observers.push(o);
+      } catch {}
+    };
+    watch("largest-contentful-paint", (es) => (lcp = es.at(-1)?.startTime ?? lcp));
+    watch("layout-shift", (es) => {
+      for (const e of es as (PerformanceEntry & { value: number; hadRecentInput: boolean })[]) if (!e.hadRecentInput) cls += e.value;
+    });
+    watch("event", (es) => {
+      for (const e of es) inp = Math.max(inp, e.duration);
+    }, { durationThreshold: 40 });
+    const send = () => {
+      if (sent || document.visibilityState !== "hidden" || !lcp) return;
+      sent = true;
+      track("vitals", { lcp: Math.round(lcp), cls: Math.round(cls * 1000) / 1000, inp: Math.round(inp) });
+      flush();
+    };
+    document.addEventListener("visibilitychange", send);
+    return () => {
+      document.removeEventListener("visibilitychange", send);
+      observers.forEach((o) => o.disconnect());
+    };
+  }, []);
+
   // Send what's queued when the visitor leaves or switches tabs.
   useEffect(() => {
     const onHide = () => document.visibilityState === "hidden" && flush();

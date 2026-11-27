@@ -52,7 +52,7 @@ export function SiteSearch({ large = false }: { large?: boolean }) {
   }, []);
 
   function go(href: string) {
-    if (typed) track("search", { search_term: typed, result: href });
+    if (typed) track("search", { search_term: typed, result: href, results: results.length });
     setOpen(false);
     setMarked(-1);
     setQuery("");
