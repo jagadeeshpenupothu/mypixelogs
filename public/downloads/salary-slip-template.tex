@@ -1,0 +1,73 @@
+% Salary Slip Template - MyPixelogs (https://mypixelogs.netlify.app/templates/salary-slip-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1F4E3D}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\color{accent}\fontsize{30}{34}\selectfont\bfseries SALARY SLIP}\par\vspace{3pt}
+
+{\fontsize{13.5}{16}\selectfont Pay period: \textbf{[November 2026]}   \textbar{}   Pay date: \textbf{[30/11/2026]}}\par\vspace{4pt}
+
+{\fontsize{8.8}{11}\selectfont [Company Name Pvt. Ltd.] \enspace\textbar\enspace [Office address, City, State, PIN] \enspace\textbar\enspace GSTIN: [29ABCDE1234F1Z5]}\par
+
+\vspace{5pt}{\color{accent}\rule{\linewidth}{1.8pt}}\par
+
+\section{EMPLOYEE DETAILS}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Employee name} & [Full name] & \textbf{Employee ID} & [EMP-001] \\
+\textbf{Designation} & [Job title] & \textbf{Department} & [Department] \\
+\textbf{Date of joining} & [DD/MM/YYYY] & \textbf{PAN} & [ABCDE1234F] \\
+\textbf{UAN} & [100123456789] & \textbf{ESI no.} & [1234567890] \\
+\textbf{Bank / A/c no.} & [Bank name, XXXX1234] & \textbf{Days paid / LOP} & [30] / [0] \\
+\end{tabularx}\par\vspace{2pt}
+
+\section{EARNINGS AND DEDUCTIONS}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\raggedright\arraybackslash}p{0.288\linewidth}|>{\raggedleft\arraybackslash}p{0.192\linewidth}|>{\raggedright\arraybackslash}p{0.288\linewidth}|>{\raggedleft\arraybackslash}p{0.192\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{Earnings}} & \textcolor{white}{\textbf{Amount (Rs.\,)}} & \textcolor{white}{\textbf{Deductions}} & \textcolor{white}{\textbf{Amount (Rs.\,)}} \\ \hline
+Basic salary & [25,000.00] & Provident Fund (PF) & [1,800.00] \\ \hline
+House Rent Allowance (HRA) & [10,000.00] & ESI & [0.00] \\ \hline
+Conveyance allowance & [1,600.00] & Professional Tax (PT) & [200.00] \\ \hline
+Special allowance & [8,400.00] & TDS (Income Tax) & [1,500.00] \\ \hline
+Bonus / Overtime & [0.00] & Other deductions & [0.00] \\ \hline
+\textbf{Gross earnings} & \textbf{[45,000.00]} & \textbf{Total deductions} & \textbf{[3,500.00]} \\ \hline
+\end{tabular}}\par
+
+\vspace{2pt}{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}\hfill\begin{tabular}{|p{0.22\linewidth}|>{\raggedleft\arraybackslash}p{0.14\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{Net pay (Gross − Deductions)}} & \textcolor{white}{\textbf{[41,500.00]}} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+Net pay in words: \textbf{[Rupees Forty-One Thousand Five Hundred Only]}\par\vspace{4pt}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Payment mode} & [Bank transfer / Cheque] & \textbf{Transaction ref.} & [UTR or cheque no.] \\
+\end{tabularx}\par\vspace{2pt}
+
+This is a computer-generated salary slip. Please report any discrepancy to HR within 7 days.\par\vspace{4pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Employee signature}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Authorised signatory}\par
+\end{document}

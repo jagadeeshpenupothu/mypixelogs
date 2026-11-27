@@ -16,7 +16,8 @@
     "keyword": "salary slip format",
     "score": 94,
     "notes": "Earnings (basic, HRA, allowances) vs deductions (PF, ESI, PT, TDS) table, net pay in words, employee/bank/PAN/UAN fields",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-27"
   },
   {
     "slug": "leave-application-template",
