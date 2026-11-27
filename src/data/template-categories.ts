@@ -92,6 +92,20 @@ export const templateCategories: TemplateCategoryMeta[] = [
       "Download certificate templates for participation, internship completion, appreciation, and training programs.",
   },
   {
+    slug: "letter",
+    title: "Free Letter Templates",
+    label: "Letter Templates",
+    description:
+      "Download ready-to-use letter formats for leave, resignation, offer, experience, NOC and other everyday needs.",
+  },
+  {
+    slug: "business",
+    title: "Free Business Document Templates",
+    label: "Business Documents",
+    description:
+      "Download salary slips, quotations, purchase orders, delivery challans and other everyday business documents.",
+  },
+  {
     slug: "flyer",
     title: "Free Flyer Templates",
     label: "Flyer Templates",
