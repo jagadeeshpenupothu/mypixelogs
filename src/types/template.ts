@@ -34,9 +34,23 @@ export type Template = {
   editor?: "gst" | "freelancer" | "wedding-video" | "resume";
   /** A short silent clip of a video template. */
   previewVideo?: string;
+  /** Other places the same template can be opened or downloaded. */
+  platforms?: TemplatePlatforms;
   previewImage: string;
   downloadPath: string;
   formats: string[];
   features: string[];
   useCases: string[];
+};
+
+/** Where else a template is available. Google ids make a private copy for each visitor. */
+export type TemplatePlatforms = {
+  googleDocsId?: string;
+  googleSheetsId?: string;
+  /** Canva "template link": each visitor gets their own copy. */
+  canvaUrl?: string;
+  /** Files in /public/downloads. */
+  excelPath?: string;
+  latexPath?: string;
+  pdfPath?: string;
 };

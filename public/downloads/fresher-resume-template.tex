@@ -1,0 +1,132 @@
+% Fresher Resume Template (#001) - MyPixelogs
+% Free to use. Replace the sample text with your own, then click Recompile.
+% Compiles with pdfLaTeX (Overleaf's default).
+
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}               % clean serif, close to Cambria
+\usepackage{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\definecolor{navy}{HTML}{1B2F5B}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\linespread{1.0}
+\setlength{\tabcolsep}{0pt}
+
+% Section heading: navy capitals with a thin line running to the right margin.
+\titleformat{\section}{\color{navy}\fontsize{13}{15}\bfseries}{}{0pt}
+  {#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+% Bullet lists
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+
+% \entry{Bold title}{Dates on the right}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+% \skillgroup{Heading}{items separated by \item}
+\newcommand{\skillgroup}[2]{%
+  \begin{minipage}[t]{\linewidth}
+  {\color{navy}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}
+  \begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}
+  \end{minipage}}
+
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+
+% ---------------------------------------------------------------- Header
+{\color{navy}\fontsize{32}{36}\selectfont\bfseries AARAV SHARMA}\par\vspace{3pt}
+{\fontsize{14}{17}\selectfont Graduate Engineer \textbar{} Entry-Level Professional}\par\vspace{4pt}
+{\fontsize{8.8}{11}\selectfont
+[+91 98765 43210] \enspace\textbar\enspace [aarav.sharma@email.com] \enspace\textbar\enspace [Hyderabad, India]
+\enspace\textbar\enspace [linkedin.com/in/aaravsharma] \enspace\textbar\enspace [portfolio.com/aarav]}\par
+\vspace{5pt}{\color{navy}\rule{\linewidth}{1.8pt}}\par
+
+% ---------------------------------------------------------------- Summary
+\section{PROFESSIONAL SUMMARY}
+Motivated Mechanical Engineering graduate with a strong foundation in design, analysis, and problem-solving.
+Hands-on experience with CAD tools, data analysis, and project execution, seeking an entry-level role to contribute and grow.
+
+% ---------------------------------------------------------------- Education
+\section{EDUCATION}
+\entry{B.Tech in Mechanical Engineering}{2022 -- 2026}
+Vishwakarma Institute of Technology, Pune\par
+\textbf{CGPA:} 8.32/10\par\vspace{5pt}
+
+\entry{Class XII (Intermediate -- MPC)}{2020 -- 2022}
+Sri Chaitanya Junior College, Hyderabad \enspace\textbar\enspace \textbf{Percentage:} 92.4\%\par\vspace{5pt}
+
+\entry{Class X (SSC)}{2019 -- 2020}
+Narayana High School, Hyderabad \enspace\textbar\enspace \textbf{Percentage:} 95.2\%\par
+
+% ---------------------------------------------------------------- Skills
+\section{TECHNICAL SKILLS}
+\begin{tabularx}{\linewidth}{@{\hspace{6pt}}X@{\hspace{10pt}}!{\color{divider}\vrule}@{\hspace{12pt}}X@{\hspace{10pt}}!{\color{divider}\vrule}@{\hspace{12pt}}X@{}}
+\skillgroup{Engineering}{
+  \item CAD: SolidWorks, AutoCAD
+  \item Design \& Modeling
+  \item GD\&T, Machine Design Basics} &
+\skillgroup{Software}{
+  \item Python (Basic)
+  \item MS Excel, Word, PowerPoint
+  \item MATLAB (Basic)} &
+\skillgroup{Core Skills}{
+  \item Problem Solving
+  \item Analytical Thinking
+  \item Team Collaboration
+  \item Communication} \\
+\end{tabularx}
+
+% ---------------------------------------------------------------- Projects
+\section{PROJECTS}
+\entry{Automated Material Sorting System}{Jan 2026 -- Mar 2026}
+\textbf{Tools:} SolidWorks, Arduino, C++
+\begin{itemize}
+  \item Designed and built a prototype sorting system to classify materials based on sensor input.
+  \item Improved sorting accuracy by $\sim$30\% compared to manual segregation.
+\end{itemize}
+\vspace{5pt}
+
+\entry{Heat Exchanger Design and Analysis}{Aug 2025 -- Oct 2025}
+\textbf{Tools:} ANSYS, SolidWorks
+\begin{itemize}
+  \item Modeled and analyzed a heat exchanger to evaluate thermal performance.
+  \item Achieved $\sim$12\% higher heat transfer efficiency through design optimization.
+\end{itemize}
+
+% ---------------------------------------------------------------- Experience (optional)
+\section{INTERNSHIP / EXPERIENCE}
+\entry{Mechanical Engineering Intern \enspace{\normalfont\textbar\enspace ABC Engineering Pvt.\ Ltd. (Optional)}}{Jun 2025 -- Jul 2025}
+\begin{itemize}
+  \item Assisted the design team in creating 3D models and technical drawings using SolidWorks.
+  \item Participated in design review meetings and supported documentation and BOM preparation.
+\end{itemize}
+
+% ---------------------------------------------------------------- Certifications
+\section{CERTIFICATIONS}
+\begin{itemize}
+  \item SolidWorks Essential Training -- Dassault Systèmes (2025)
+  \item Python for Beginners -- Coursera (2024)
+\end{itemize}
+
+% ---------------------------------------------------------------- Achievements
+\section{ACHIEVEMENTS \& ACTIVITIES}
+\begin{itemize}
+  \item Secured 2nd place in the college-level CAD Design Challenge (2025).
+  \item Active member of the Mechanical Engineering Club, organized workshops on CAD and design tools.
+\end{itemize}
+
+% ---------------------------------------------------------------- Languages
+\section{LANGUAGES}
+English (Fluent) \enspace\textbar\enspace Hindi (Fluent) \enspace\textbar\enspace Telugu (Native)
+
+\end{document}

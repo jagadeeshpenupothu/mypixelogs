@@ -142,7 +142,17 @@ export const allTemplates: Template[] = [
   makeTemplate("event-receipt", "Event Receipt Template", "event-receipt-template", "Event Receipt Template: Create a clear payment receipt with editable fields for amount, date, payer and purpose.", "receipt", 22560, receiptFeatures, ["Payment confirmation","Office records","Customer documentation"]),
   makeTemplate("parking-receipt", "Parking Receipt Template", "parking-receipt-template", "Parking Receipt Template: Create a clear payment receipt with editable fields for amount, date, payer and purpose.", "receipt", 23291, receiptFeatures, ["Payment confirmation","Office records","Customer documentation"]),
   makeTemplate("consultation-receipt", "Consultation Receipt Template", "consultation-receipt-template", "Consultation Receipt Template: Create a clear payment receipt with editable fields for amount, date, payer and purpose.", "receipt", 24022, receiptFeatures, ["Payment confirmation","Office records","Customer documentation"]),
-  makeWordTemplate("resume", "fresher-resume", "Fresher Resume Template", "fresher-resume-template", "Free one-page resume template for freshers and graduates, in Microsoft Word. Clean A4 layout with education, skills, projects and internship sections that applicant tracking systems can read.", "resume", 0, ["One A4 page with education, skills, projects and internship", "Plain, selectable text that applicant tracking systems (ATS) can read", "Built with Word styles, so fonts and colours change in one place"], ["Campus placements", "First job applications", "Internship applications"]),
+  {
+    ...makeWordTemplate("resume", "fresher-resume", "Fresher Resume Template", "fresher-resume-template", "Free one-page resume template for freshers and graduates. Edit it online, or use it in Word, Google Docs, Google Sheets, Excel or Overleaf. Clean A4 layout with education, skills, projects and internship sections that applicant tracking systems can read.", "resume", 0, ["One A4 page with education, skills, projects and internship", "Plain, selectable text that applicant tracking systems (ATS) can read", "Built with Word styles, so fonts and colours change in one place"], ["Campus placements", "First job applications", "Internship applications"]),
+    formats: ["Word", "Google Docs", "Google Sheets", "Excel", "Overleaf (LaTeX)", "PDF"],
+    platforms: {
+      googleDocsId: "1vyRdcIUnlK5aGLrhh5b_YyW0c3KGmMViOgN_5vkrSso",
+      googleSheetsId: "12E6V99R4CEK_gXm-zJtAtJIN_eiR6DWOV151Ti3Vwc4",
+      excelPath: "/downloads/fresher-resume-template.xlsx",
+      latexPath: "/downloads/fresher-resume-template.tex",
+      pdfPath: "/downloads/fresher-resume-template.pdf",
+    },
+  },
   makeTemplate("banking-resume", "Banking Resume Template", "banking-resume-template", "Banking Resume Template: Build a polished resume with clean sections for skills, education and professional experience.", "resume", 10445, resumeFeatures, ["Job applications","Career profiles","Interview preparation"]),
   makeTemplate("teacher-resume", "Teacher Resume Template", "teacher-resume-template", "Teacher Resume Template: Build a polished resume with clean sections for skills, education and professional experience.", "resume", 11176, resumeFeatures, ["Job applications","Career profiles","Interview preparation"]),
   makeTemplate("software-engineer-resume", "Software Engineer Resume Template", "software-engineer-resume-template", "Software Engineer Resume Template: Build a polished resume with clean sections for skills, education and professional experience.", "resume", 11907, resumeFeatures, ["Job applications","Career profiles","Interview preparation"]),
