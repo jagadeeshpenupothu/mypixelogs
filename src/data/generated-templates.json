@@ -66,6 +66,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "offer-letter",
+    "title": "Offer Letter Template",
+    "slug": "offer-letter-template",
+    "description": "Free offer letter format for India with designation, joining date, work location, CTC breakup, probation, notice period and acceptance section. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Annual CTC breakup with Basic, HRA, PF and gratuity",
+      "Joining date, location, probation and notice period",
+      "Candidate acceptance and HR signatory lines"
+    ],
+    "useCases": [
+      "Hiring full-time employees",
+      "Startup and SME recruitment",
+      "Campus and lateral hiring offers"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1pXTrFRX-M4kaU8IwbgafmgPsIGR7UT8ZsoQf3cGQHdQ",
+      "googleSheetsId": "1M7oz8JUsGQUQhi_eV4YsV1iFw9R3-Aewj3a90VIuzpA",
+      "excelPath": "/downloads/offer-letter-template.xlsx",
+      "latexPath": "/downloads/offer-letter-template.tex",
+      "pdfPath": "/downloads/offer-letter-template.pdf"
+    },
+    "published": "2026-11-27"
+  },
+  {
     "id": "quotation",
     "title": "Quotation Template",
     "slug": "quotation-template",
