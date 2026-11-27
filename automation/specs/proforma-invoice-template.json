@@ -1,0 +1,27 @@
+{
+  "slug": "proforma-invoice-template",
+  "title": "Proforma Invoice Template",
+  "category": "invoice",
+  "accent": "1F4E5F",
+  "titleSize": 20,
+  "description": "Free proforma invoice format for India with PI number, validity, buyer GSTIN, HSN codes, CGST/SGST, advance terms and bank details. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Itemised table with HSN, quantity, rate and GST split", "Validity, advance payment and delivery terms", "Clear 'not a tax invoice' declaration and bank details"],
+  "useCases": ["Advance payment requests before dispatch", "Import, export and LC documentation", "Buyer budget approvals and purchase orders"],
+  "keywords": ["proforma invoice format", "proforma invoice format in word", "gst proforma invoice format"],
+  "references": ["https://cleartax.in/s/proforma-invoice-format", "https://busy.in/business-accounting-format/proforma-invoice-format/", "https://vyaparapp.in/blog/what-is-pro-forma-invoice-format-2026/", "https://tallysolutions.com/business-tools-templates/proforma-invoice-generator/", "https://www.template.net/invoices/proforma"],
+  "research": "All references show PI number, date and validity, seller and buyer GSTIN, place of supply, items with HSN, quantity, rate and estimated GST, payment and delivery terms, bank details, and a clear note that a proforma is not a tax invoice and creates no GST liability.",
+  "published": "2026-11-27",
+  "platforms": {"googleDocsId": "1qXHaJC9Mu6jdr2J2_2NwOQ0aUJDr-PPwaAe8Owt-ssk", "googleSheetsId": "1NYyM3LEOYYsWD62ovpG3qETVHvzrj7RtNkm8YHbxb2M"},
+  "blocks": [
+    {"type": "header", "org": "[Deccan Process Equipment Pvt. Ltd.]", "lines": ["[Unit 7, MIDC Chakan, Pune, Maharashtra 410501]", "GSTIN: [27AAFCD4521K1Z8]  |  PAN: [AAFCD4521K]", "[+91 98230 45678]  |  [sales@deccanprocess.in]", "[www.deccanprocess.in]"], "title": "PROFORMA INVOICE", "meta": [["PI No.", "[PI/2026-27/0087]"], ["Date", "[27/11/2026]"], ["Valid until", "[12/12/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "Bill to", "lines": ["[Shree Ganesh Dairy Foods LLP]", "Attn: [Ms. Priya Deshmukh, Purchase Head]", "[Gat No. 214, Shirwal, Satara, Maharashtra 412801]", "GSTIN: [27AAKFS7788P1Z3]"]}, {"heading": "Ship to", "lines": ["[Shree Ganesh Dairy Foods LLP, Plant 2]", "[Gat No. 216, Shirwal, Satara 412801]", "Buyer PO / ref.: [Enquiry dated 21/11/2026]", "Place of supply: [Maharashtra (27)]"]}]},
+    {"type": "table", "columns": [{"label": "#", "width": 0.5, "align": "center"}, {"label": "Description", "width": 3.9}, {"label": "HSN", "width": 1.1, "align": "center"}, {"label": "Qty", "width": 0.8, "align": "right"}, {"label": "Rate (₹)", "width": 1.6, "align": "right"}, {"label": "GST", "width": 1.0, "align": "right"}, {"label": "Amount (₹)", "width": 1.7, "align": "right"}],
+      "rows": [["1", "**[SS 304 storage tank, 1,000 litres, jacketed]**", "[7309]", "[2]", "[1,45,000.00]", "[18%]", "[2,90,000.00]"], ["2", "**[Centrifugal sanitary pump, 5 HP]**", "[8413]", "[2]", "[38,500.00]", "[18%]", "[77,000.00]"], ["3", "[Control panel with VFD and level sensors]", "[8537]", "[1]", "[64,000.00]", "[18%]", "[64,000.00]"], ["4", "[Spare mechanical seal kit]", "[8484]", "[4]", "[3,250.00]", "[18%]", "[13,000.00]"]],
+      "totals": [["Taxable value", "[4,44,000.00]"], ["CGST @ 9%", "[39,960.00]"], ["SGST @ 9%", "[39,960.00]"], ["Total (estimated)", "[5,23,920.00]"]]},
+    {"type": "text", "text": "Amount in words: **[Rupees Five Lakh Twenty-Three Thousand Nine Hundred Twenty Only]**"},
+    {"type": "note", "heading": "Terms", "text": ["1. **Advance:** 50% ([₹2,61,960.00]) to confirm the order; balance before dispatch.", "2. **Delivery:** within [4 weeks] of receiving the advance, ex-works Chakan. Freight and transit insurance extra at actuals.", "3. **Validity:** prices hold until the date above. GST will be charged at the rate in force on the date of the tax invoice.", "4. **Warranty:** [12 months] from dispatch against manufacturing defects."]},
+    {"type": "note", "heading": "Declaration", "text": "This is a proforma invoice issued for quotation and advance payment only. It is **not a tax invoice**, creates no GST liability and cannot be used to claim input tax credit. A GST tax invoice will be issued at the time of supply."},
+    {"type": "fields", "items": [["Bank", "[ICICI Bank, Chakan Branch]"], ["Account no.", "[123405006789]"], ["IFSC", "[ICIC0001234]"], ["UPI", "[deccanprocess@icici]"]]},
+    {"type": "signature", "items": ["Buyer acceptance (sign & stamp)", "For [Deccan Process Equipment Pvt. Ltd.]"]}
+  ]
+}
