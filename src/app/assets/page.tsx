@@ -27,7 +27,7 @@ export default function AssetsPage() {
           { href: "/assets/music", Icon: Music, title: "Background music", note: `${music.length} tracks for YouTube and reels · happy, calm, epic, suspense` },
           { href: "/assets/sound-effects", Icon: Volume2, title: "Sound effects", note: `${sfx.length} SFX · clicks, swooshes, impacts, sci-fi, jingles` },
         ].map(({ href, Icon, title: label, note }) => (
-          <Link key={href} href={href} className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/60">
+          <Link prefetch={false} key={href} href={href} className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/60">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               <Icon className="h-5 w-5" aria-hidden="true" />
             </span>
@@ -44,7 +44,7 @@ export default function AssetsPage() {
         <h2 className="text-xl font-bold text-foreground">
           Fonts <span className="text-base font-medium text-muted-foreground">· {fonts.length} free</span>
         </h2>
-        <Link href="/assets/fonts" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+        <Link prefetch={false} href="/assets/fonts" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
           See all fonts <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>
@@ -58,7 +58,7 @@ export default function AssetsPage() {
         <h2 className="text-xl font-bold text-foreground">
           Telugu fonts <span className="text-base font-medium text-muted-foreground">· {telugu.length} free</span>
         </h2>
-        <Link href="/assets/fonts/telugu" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+        <Link prefetch={false} href="/assets/fonts/telugu" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
           See all Telugu fonts <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>
@@ -73,7 +73,7 @@ export default function AssetsPage() {
           <h2 className="text-xl font-bold text-foreground">Design files</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {others.map((g) => (
-              <Link key={g.href} href={g.href} className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-primary/60">
+              <Link prefetch={false} key={g.href} href={g.href} className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-primary/60">
                 {g.label}
               </Link>
             ))}

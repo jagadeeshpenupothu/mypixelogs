@@ -109,14 +109,14 @@ export function AiPromptDetailPage({ item, relatedItems }: AiPromptDetailPagePro
         <section className="mt-6">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-lg font-bold text-foreground">Related Prompts</h2>
-            <Link href="/ai/prompts" className="text-sm font-semibold text-primary hover:underline">
+            <Link prefetch={false} href="/ai/prompts" className="text-sm font-semibold text-primary hover:underline">
               Browse all
             </Link>
           </div>
           {relatedPrompts.length > 0 ? (
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {relatedPrompts.map((related) => (
-                <Link
+                <Link prefetch={false}
                   key={related.slug}
                   href={`/ai/prompts/${related.slug}`}
                   className="group overflow-hidden rounded-lg border border-border bg-card transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/40"

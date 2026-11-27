@@ -37,7 +37,7 @@ export default function NotFound() {
 
               return (
                 <Button key={link.href} asChild variant={link.variant} className="w-full">
-                  <Link href={link.href}>
+                  <Link prefetch={false} href={link.href}>
                     <Icon className="h-4 w-4" aria-hidden="true" />
                     {link.label}
                   </Link>
@@ -56,7 +56,7 @@ export default function NotFound() {
                 <p className="mt-1 text-sm leading-6 text-muted-foreground">
                   Try searching for templates, tools, or assets.
                 </p>
-                <Link
+                <Link prefetch={false}
                   href="/search"
                   className="mt-3 inline-flex rounded-md text-sm font-semibold text-primary transition-colors duration-200 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >

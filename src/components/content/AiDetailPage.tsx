@@ -133,7 +133,7 @@ export function AiDetailPage({
           <section className="mt-12 border-t border-border pt-10">
             <div className="flex items-center justify-between gap-4">
               <h2 className="text-2xl font-bold text-foreground">Related {sectionLabel}</h2>
-              <Link href={baseHref} className="text-sm font-semibold text-primary hover:text-primary/80">
+              <Link prefetch={false} href={baseHref} className="text-sm font-semibold text-primary hover:text-primary/80">
                 View all →
               </Link>
             </div>

@@ -66,7 +66,7 @@ export default function Home() {
 
         {video ? (
           <section aria-labelledby="video-title" className="grid overflow-hidden rounded-2xl border border-border bg-card lg:grid-cols-[1.35fr_1fr]">
-            <Link href={`/templates/${video.slug}`} className="block" tabIndex={-1} aria-hidden="true">
+            <Link prefetch={false} href={`/templates/${video.slug}`} className="block" tabIndex={-1} aria-hidden="true">
               <Image src={video.previewImage} alt="" width={1600} height={676} className="h-full min-h-40 w-full object-cover" priority />
             </Link>
             <div className="flex flex-col justify-center p-6 sm:p-8">
@@ -77,7 +77,7 @@ export default function Home() {
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 <Button asChild size="lg">
-                  <Link href={`/templates/${video.slug}/edit`}>Start editing</Link>
+                  <Link prefetch={false} href={`/templates/${video.slug}/edit`}>Start editing</Link>
                 </Button>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
         <section aria-labelledby="kinds-title">
           <div className="flex items-end justify-between gap-4">
             <h2 id="kinds-title" className={heading}>All tools by type</h2>
-            <Link href="/tools" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-base font-semibold text-primary hover:underline">
+            <Link prefetch={false} href="/tools" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-base font-semibold text-primary hover:underline">
               See all {tools.length}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
@@ -96,7 +96,7 @@ export default function Home() {
             {categories.map((category) => {
               const look = categoryLooks[category.name];
               return (
-                <Link
+                <Link prefetch={false}
                   key={category.slug}
                   href={`/tools/${category.slug}`}
                   className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 transition-[border-color,box-shadow] duration-200 hover:border-primary/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 sm:flex-row sm:items-center"
@@ -109,7 +109,7 @@ export default function Home() {
                 </Link>
               );
             })}
-            <Link
+            <Link prefetch={false}
               href="/ai"
               className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 transition-[border-color,box-shadow] duration-200 hover:border-primary/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 sm:flex-row sm:items-center"
             >
@@ -125,7 +125,7 @@ export default function Home() {
         <section aria-labelledby="templates-title">
           <div className="flex items-end justify-between gap-4">
             <h2 id="templates-title" className={heading}>Ready-made templates</h2>
-            <Link href="/templates" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-base font-semibold text-primary hover:underline">
+            <Link prefetch={false} href="/templates" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-base font-semibold text-primary hover:underline">
               See all {templates.length}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>

@@ -6,7 +6,7 @@ import { styleCount, type FontFamily } from "@/lib/fonts";
 /** A font shown by its own name, written in itself. No box: the picture is the card. */
 export function FontCard({ font }: { font: FontFamily }) {
   return (
-    <Link
+    <Link prefetch={false}
       href={`/assets/fonts/${font.slug}`}
       className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
@@ -16,6 +16,8 @@ export function FontCard({ font }: { font: FontFamily }) {
           alt={`${font.name} font preview`}
           width={720}
           height={240}
+          unoptimized
+          loading="lazy"
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 33vw, 22vw"
           className="h-auto w-full px-3 transition-transform duration-300 group-hover:scale-[1.03] dark:invert"
         />

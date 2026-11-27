@@ -48,7 +48,7 @@ export default function AiHubPage() {
               <section key={config.baseHref}>
                 <div className="mb-4 flex items-center justify-between gap-4">
                   <h2 className="text-xl font-bold text-foreground">{config.title}</h2>
-                  <Link href={config.baseHref} className="text-sm font-semibold text-primary hover:text-primary/80">
+                  <Link prefetch={false} href={config.baseHref} className="text-sm font-semibold text-primary hover:text-primary/80">
                     See all
                   </Link>
                 </div>

@@ -9,7 +9,7 @@ type AssetCardProps = {
 
 export function AssetCard({ asset }: AssetCardProps) {
   return (
-    <Link
+    <Link prefetch={false}
       href={`/assets/${asset.slug}`}
       className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-[border-color,box-shadow,transform] duration-200 hover:scale-[1.02] hover:border-primary/45 hover:shadow-md dark:hover:border-primary/50 dark:hover:shadow-soft"
     >
