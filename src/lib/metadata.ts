@@ -57,3 +57,11 @@ export function createSocialMetadata({
     },
   };
 }
+
+/** Search engines show about 155 characters; cut longer text at a word and add an ellipsis. */
+export function metaDescription(text: string, max = 155) {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:.\-–—]+$/, "")}…`;
+}

@@ -7,7 +7,7 @@ import { FontTester } from "@/components/assets/FontTester";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { fonts, formatSize, getFontBySlug, relatedFonts, SCRIPT_LABELS, styleCount } from "@/lib/fonts";
-import { createSocialMetadata } from "@/lib/metadata";
+import { createSocialMetadata, metaDescription } from "@/lib/metadata";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const font = getFontBySlug((await params).slug);
   if (!font) return {};
   const title = `${font.name} Font Free Download`;
-  const description = `Download the ${font.name} font free (${font.category.toLowerCase()}, ${styleCount(font)} styles, ${font.license}). Free for personal and commercial use in Photoshop, Illustrator, Word and Canva.`;
+  const description = metaDescription(`Download the ${font.name} font free (${font.category.toLowerCase()}, ${styleCount(font)} styles, ${font.license}). Free for personal and commercial use in Photoshop, Illustrator, Word and Canva.`);
   return { title, description, ...createSocialMetadata({ title, description, path: `/assets/fonts/${font.slug}`, image: `/previews/fonts/${font.slug}.png` }) };
 }
 

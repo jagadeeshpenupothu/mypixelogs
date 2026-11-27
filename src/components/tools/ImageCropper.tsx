@@ -612,6 +612,7 @@ export function ImageCropper() {
             <div className="mt-3 grid grid-cols-2 gap-3">
               <Input
                 type="number"
+                aria-label="Ratio width"
                 min={1}
                 value={customRatioWidth}
                 onChange={(event) => {
@@ -622,6 +623,7 @@ export function ImageCropper() {
               />
               <Input
                 type="number"
+                aria-label="Ratio height"
                 min={1}
                 value={customRatioHeight}
                 onChange={(event) => {

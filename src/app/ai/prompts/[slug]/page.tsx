@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { PromptBuilder } from "@/components/prompts/PromptBuilder";
 import { Breadcrumbs } from "@/components/templates/Breadcrumbs";
 import { chatGptPrompts, getPromptBySlug, relatedPrompts } from "@/lib/prompts";
-import { createSocialMetadata } from "@/lib/metadata";
+import { createSocialMetadata, metaDescription } from "@/lib/metadata";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -18,8 +18,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const p = getPromptBySlug((await params).slug);
   if (!p) return {};
-  const title = `ChatGPT Prompt: ${p.title}`;
-  const description = `${p.summary} A ready ChatGPT prompt for a ${p.title.toLowerCase()}: fill in your details, then copy it or open it in ChatGPT. Free.`;
+  const title = `${p.title}: ChatGPT Prompt`;
+  const description = metaDescription(`${p.summary} A ready ChatGPT prompt for a ${p.title.toLowerCase()}: fill in your details, then copy it or open it in ChatGPT. Free.`);
   return { title, description, ...createSocialMetadata({ title, description, path: `/ai/prompts/${p.slug}` }) };
 }
 

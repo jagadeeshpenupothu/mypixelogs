@@ -220,7 +220,7 @@ export const chatGptPrompts: ChatGptPrompt[] = [
       "Professor: [Professor name: Prof. Anuradha]", "What it's for: [Purpose: MS in Computer Science, USA]", "Deadline: [Deadline: 15 January]",
       "How they know me: [Connection: her Machine Learning course (A grade) and my final-year project under her]", "What I'll send: [Attachments: resume, SOP draft, list of universities]", "My name: [Your name and roll number: Sai Charan, 21IT032]",
     ], { tone: "respectful and grateful", words: 170 })),
-  p("project-guidance-request", "Ask a professor to guide your project", "College & students", "Request a guide for a final-year project.",
+  p("project-guidance-request", "Ask a professor to guide a project", "College & students", "Request a guide for a final-year project.",
     email("Write an email asking a professor to guide my final-year project.", [
       "Professor: [Professor name: Dr. Ramya]", "Project idea: [Idea: crop disease detection from leaf photos using deep learning]", "Team: [Team: 3 students, ECE final year]",
       "Why them: [Reason: her research in image processing]", "Ask: [Ask: a 15-minute meeting this week]", "My name: [Your name and roll number: Gopi, 21EC018]",

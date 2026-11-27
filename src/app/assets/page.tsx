@@ -27,11 +27,11 @@ export default function AssetsPage() {
           { href: "/assets/music", Icon: Music, title: "Background music", note: `${music.length} tracks for YouTube and reels · happy, calm, epic, suspense` },
           { href: "/assets/sound-effects", Icon: Volume2, title: "Sound effects", note: `${sfx.length} SFX · clicks, swooshes, impacts, sci-fi, jingles` },
         ].map(({ href, Icon, title: label, note }) => (
-          <Link prefetch={false} key={href} href={href} className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/60">
+          <Link prefetch={false} key={href} href={href} className="group flex min-w-0 items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/60">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               <Icon className="h-5 w-5" aria-hidden="true" />
             </span>
-            <span className="min-w-0">
+            <span className="min-w-0 flex-1">
               <span className="block font-semibold text-foreground group-hover:underline">{label}</span>
               <span className="block truncate text-sm text-muted-foreground">{note}</span>
             </span>

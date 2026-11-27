@@ -6,7 +6,7 @@ import { createSocialMetadata } from "@/lib/metadata";
 
 const telugu = fonts.filter((f) => f.scripts.includes("telugu"));
 const title = "Telugu Fonts Free Download";
-const description = `Download ${telugu.length} free Unicode Telugu fonts for Photoshop, Word, Canva and video editing: NTR, Mandali, Ramabhadra, Gurajada, Suranna and more. Free for personal and commercial use.`;
+const description = `Download ${telugu.length} free Unicode Telugu fonts for Photoshop, Word, Canva and video editing: NTR, Mandali, Ramabhadra, Gurajada and more.`;
 
 export const metadata: Metadata = { title, description, ...createSocialMetadata({ title, description, path: "/assets/fonts/telugu" }) };
 

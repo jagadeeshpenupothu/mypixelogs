@@ -43,7 +43,7 @@ export function ResumePaper({ resume }: { resume: Resume }) {
   return (
     <article className="rp">
       <header className="rp-head">
-        {resume.name.trim() ? <h1 className="rp-name">{resume.name.trim().toUpperCase()}</h1> : null}
+        {resume.name.trim() ? <p className="rp-name">{resume.name.trim().toUpperCase()}</p> : null}
         {resume.headline.trim() ? <p className="rp-tagline">{resume.headline.trim()}</p> : null}
         <p className="rp-contact">
           {contact.map((part, i) => (
