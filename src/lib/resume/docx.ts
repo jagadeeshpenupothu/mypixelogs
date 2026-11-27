@@ -4,7 +4,7 @@
  * each heading, dates on the right, and skills in up to three columns.
  */
 import {
-  AlignmentType, BorderStyle, Document, LeaderType, LevelFormat, Packer, Paragraph, Table, TableCell,
+  AlignmentType, BorderStyle, Document, LeaderType, Tab, LevelFormat, Packer, Paragraph, Table, TableCell,
   TableLayoutType, TableRow, TabStopType, TextRun, VerticalAlign, WidthType,
 } from "docx";
 
@@ -28,7 +28,7 @@ function heading(text: string) {
   return new Paragraph({
     style: "Heading1",
     tabStops: [{ type: TabStopType.RIGHT, position: TEXT_W, leader: LeaderType.UNDERSCORE }],
-    children: [new TextRun(text), new TextRun({ text: "  \t", color: RULE, bold: false })],
+    children: [new TextRun(text), new TextRun({ children: ["  ", new Tab()], color: RULE, bold: false })],
   });
 }
 
@@ -36,7 +36,7 @@ function entry(title: string, dates: string, extra: TextRun[] = []) {
   return new Paragraph({
     style: "EntryTitle",
     tabStops: rightTab,
-    children: [new TextRun({ text: title, bold: true }), ...extra, ...(dates ? [new TextRun({ text: `\t${dates}`, bold: false })] : [])],
+    children: [new TextRun({ text: title, bold: true }), ...extra, ...(dates ? [new TextRun({ children: [new Tab(), dates], bold: false })] : [])],
   });
 }
 
