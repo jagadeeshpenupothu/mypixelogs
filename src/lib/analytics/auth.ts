@@ -17,6 +17,18 @@ export const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID ?? "";
 /** The only email allowed in. It lives in Netlify's environment variables (ADMIN_EMAIL), not in the code. */
 export const adminEmail = () => (process.env.ADMIN_EMAIL ?? "").trim().toLowerCase();
 
+/** Optional password sign-in (ADMIN_PASSWORD in Netlify). */
+export const adminPassword = () => process.env.ADMIN_PASSWORD ?? "";
+
+/** Constant-time check of a typed password. */
+export function passwordMatches(given: string) {
+  const pw = adminPassword();
+  if (!pw || !given) return false;
+  const a = createHmac("sha256", "pw").update(given).digest();
+  const b = createHmac("sha256", "pw").update(pw).digest();
+  return timingSafeEqual(a, b);
+}
+
 /** A random signing key made on first use and kept in the site's private storage. */
 async function secret() {
   const store = await analyticsStore();
@@ -37,9 +49,9 @@ export async function sessionCookie(email: string) {
 }
 
 export async function isAdmin() {
-  const allowed = adminEmail();
+  const allowed = adminEmail() || "owner";
   const raw = (await cookies()).get(ADMIN_COOKIE)?.value;
-  if (!allowed || !raw) return false;
+  if (!raw || (!adminEmail() && !adminPassword())) return false;
   const [b64, exp, sig] = raw.split(".");
   if (!b64 || !exp || !sig || Number(exp) < Date.now()) return false;
   const expected = await sign(`${b64}.${exp}`);
