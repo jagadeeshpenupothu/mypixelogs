@@ -1,0 +1,28 @@
+{
+  "slug": "authority-letter-template",
+  "title": "Authority Letter Template",
+  "category": "letter",
+  "titleSize": 22,
+  "design": {"palette": "emerald", "font": "elegant", "header": "topbar", "table": "tint", "heading": "caps"},
+  "description": "Free authorization letter format for India to let a person collect documents or act for your company, with ID details, scope, validity and signatures. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Details of the authorised person with ID proof and specimen signature", "Clear list of what is authorised, with validity dates", "Signatory, company seal and attested signature lines"],
+  "useCases": ["Collecting documents or parcels for a company", "Submitting applications at banks and offices", "Representing a business at a government department"],
+  "keywords": ["authorization letter format", "authority letter format", "authorisation letter to collect documents"],
+  "references": ["https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/Authorization%20Letter%20Format%20(General).docx", "https://www.vfsglobal.com/india/uk/pdf/Authority_Letter_270215.pdf", "https://www.greythr.com/downloadable-resource/authorisation-letter/", "https://byjus.com/english/authorisation-letter-to-collect-documents/", "https://www.adobe.com/uk/acrobat/resources/letter-of-authorisation-template.html"],
+  "research": "References put the letter on letterhead with date and addressee, name the authorised person with designation and an ID such as Aadhaar or PAN (copy attached), list the exact acts allowed, state a validity period, and end with the signatory's name, designation, seal and the authorised person's attested signature.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1WkzkDcyL-shjLXezxO6YrODjjKZq3nUMuvgeUMJFc5s", "googleSheetsId": "1grOaBoFaMeGLuTIngRkmGAyS8_rOyf-Q7VMtJU038nU"},
+  "blocks": [
+    {"type": "header", "style": "plain", "org": "[Mehta Exports Pvt. Ltd.]", "lines": ["[B-204, Andheri Kurla Road, Andheri East]", "[Mumbai, Maharashtra 400069]", "GSTIN: [27AAFCM4521K1Z8]  |  [+91 22 4012 5566]", "[admin@mehtaexports.in]"], "title": "AUTHORITY LETTER", "meta": [["Ref. No.", "[MEPL/ADM/2026-27/087]"], ["Date", "[28/11/2026]"]]},
+    {"type": "text", "text": ["To,", "**[The Branch Manager]**", "[State Bank of India, Andheri East Branch]", "[Mumbai, Maharashtra 400069]"]},
+    {"type": "text", "text": "**Subject: Authorisation to collect documents and submit papers on behalf of [Mehta Exports Pvt. Ltd.]**"},
+    {"type": "text", "text": ["Dear Sir/Madam,", "We, [Mehta Exports Pvt. Ltd.], holding current account no. [3845 1029 7713] with your branch, hereby authorise the person named below to act on behalf of the company for the purposes listed in this letter."]},
+    {"type": "heading", "text": "Details of authorised person"},
+    {"type": "fields", "columns": 2, "items": [["Name", "[Mr. Rahul Deshpande]"], ["Designation", "[Accounts Executive]"], ["Employee ID", "[MEPL-0142]"], ["ID proof", "[Aadhaar XXXX XXXX 5821]"], ["PAN", "[BKRPD4417L]"], ["Mobile", "[+91 98201 44732]"]]},
+    {"type": "note", "heading": "Scope of authority", "text": ["1. Collect the company's cheque book, account statements and debit advices.", "2. Submit signed forms, KYC documents and deposit slips on our behalf.", "3. Receive acknowledgements and sign the delivery register for the above."]},
+    {"type": "text", "text": ["This authority is valid from **[01/12/2026]** to **[31/03/2027]**, unless withdrawn earlier in writing. It does not permit the authorised person to withdraw funds, issue cheques or change account mandates. A self-attested copy of the ID proof is attached, and the specimen signature below is attested by us.", "We take full responsibility for all acts done by the authorised person within this scope. Kindly extend your cooperation."]},
+    {"type": "text", "text": "Yours faithfully,"},
+    {"type": "signature", "items": ["Specimen signature of [Rahul Deshpande]", "[Anil Mehta], Director, for [Mehta Exports Pvt. Ltd.] (sign & seal)"]},
+    {"type": "text", "text": "Enclosure: [Self-attested copy of Aadhaar card of Mr. Rahul Deshpande]"}
+  ]
+}
