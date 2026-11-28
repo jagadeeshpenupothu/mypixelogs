@@ -56,5 +56,26 @@
         "source": "ChatGPT"
       }
     ]
+  },
+  {
+    "slug": "jewellery-business-card",
+    "title": "Luxury Jewellery Business Card Template",
+    "description": "Emerald and gold business card for jewellers and luxury brands, front and back, print-ready with bleed. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "business-card",
+    "size": "business-card",
+    "back": true,
+    "published": "2026-11-28",
+    "features": [
+      "Front and back, 90 x 54 mm with 3 mm bleed for printing",
+      "Name, title and contact details are live, editable text",
+      "Matching emerald and gold logo from our free logo library"
+    ],
+    "useCases": [
+      "Jewellery and gold shops",
+      "Luxury boutiques and showrooms",
+      "Wedding and bridal businesses"
+    ],
+    "credits": [],
+    "logo": "suvarna-mahal-jewellery-lettermark-logo"
   }
 ]

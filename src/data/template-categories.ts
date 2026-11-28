@@ -85,6 +85,24 @@ export const templateCategories: TemplateCategoryMeta[] = [
       "Use professional letterhead templates for companies, schools, hospitals, and construction businesses.",
   },
   {
+    slug: "business-card",
+    title: "Free Business Card Templates",
+    label: "Business Card Templates",
+    description: "Download print-ready business card templates (front and back) as editable PSD, AI, SVG, CorelDRAW and PDF.",
+  },
+  {
+    slug: "id-card",
+    title: "Free ID Card Templates",
+    label: "ID Card Templates",
+    description: "Download editable employee, student and event ID card templates in standard PVC card size, front and back.",
+  },
+  {
+    slug: "envelope",
+    title: "Free Envelope Templates",
+    label: "Envelope Templates",
+    description: "Download branded C4 envelope cover templates that fit A4 documents, ready to print.",
+  },
+  {
     slug: "certificate",
     title: "Free Certificate Templates",
     label: "Certificate Templates",

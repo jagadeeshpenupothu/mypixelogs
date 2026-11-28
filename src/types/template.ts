@@ -13,6 +13,9 @@ export type TemplateCategory =
   | "letter"
   | "business"
   | "letterhead"
+  | "business-card"
+  | "id-card"
+  | "envelope"
   | "certificate"
   | "flyer"
   | "poster"
@@ -72,4 +75,7 @@ export type TemplatePlatforms = {
   epsPath?: string;
   pngPath?: string;
   zipPath?: string;
+  /** Back side of two-sided designs (cards, envelopes). */
+  backPsdPath?: string;
+  backPngPath?: string;
 };
