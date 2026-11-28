@@ -24,10 +24,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const FORMATS = [
-  { ext: ".ai", label: "Illustrator (AI)", note: "Editable vector" },
-  { ext: ".svg", label: "SVG", note: "Inkscape, Figma, Canva, web" },
-  { ext: ".psd", label: "Photoshop (PSD)", note: "One layer per part" },
-  { ext: ".eps", label: "CorelDRAW (EPS)", note: "File › Import in CorelDRAW" },
+  { ext: ".ai", label: "Illustrator (AI)", note: "Editable text and vectors" },
+  { ext: ".svg", label: "SVG", note: "Editable text, also curved" },
+  { ext: ".psd", label: "Photoshop (PSD)", note: "Live text layers" },
+  { ext: ".eps", label: "CorelDRAW (EPS)", note: "File › Import; or import the SVG" },
   { ext: ".pdf", label: "PDF", note: "Vector, for print" },
   { ext: ".png", label: "PNG", note: "2000 px, transparent" },
 ];
@@ -108,7 +108,7 @@ export default async function LogoPage({ params }: PageProps) {
                 {f.weight}
               </span>
             ))}{" "}
-            (free). Text is already converted to outlines, so the logo looks right without them.
+            (free, included in the ZIP). Install them and every word in the logo is editable: click the text and type your business name.
           </p>
         </div>
       </div>
@@ -116,9 +116,12 @@ export default async function LogoPage({ params }: PageProps) {
       <section className="mt-12 max-w-3xl">
         <h2 className="text-xl font-bold text-foreground">How to put your business name on it</h2>
         <ol className="mt-3 list-decimal space-y-2 pl-5 text-foreground/90">
-          <li><strong>Illustrator or CorelDRAW:</strong> open the AI (CorelDRAW: File › Import the EPS or AI), delete the sample name, and type yours with {fontsLine || "the fonts listed above"}.</li>
-          <li><strong>Photopea or Photoshop:</strong> open the PSD, hide the name layer, and add a text layer with your name in the same font and colour.</li>
-          <li><strong>Canva or Figma:</strong> upload the SVG, ungroup it, and replace the name with a text box.</li>
+          <li>Download the ZIP and install the fonts from its <em>fonts</em> folder ({fontsLine || "listed above"}): double-click each file › Install.</li>
+          <li><strong>Illustrator:</strong> open the AI or the SVG and click the text to type your name. Curved names stay on their curve when you open the SVG.</li>
+          <li><strong>CorelDRAW:</strong> File › Import the SVG (editable text) or the EPS, then retype the name.</li>
+          <li><strong>Photopea or Photoshop:</strong> open the PSD and double-click a text layer to change it.</li>
+          <li><strong>Inkscape, Figma or Canva:</strong> open or upload the SVG and edit the text.</li>
+          <li>For printing, signboards or cutting machines, send the <em>outlined</em> SVG from the ZIP: its text is converted to shapes, so it prints exactly.</li>
           <li>Change colours by selecting a shape and picking a new fill; keep good contrast so it reads at small sizes.</li>
         </ol>
         <p className="mt-4 text-sm text-muted-foreground">
