@@ -1,29 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754">
  <defs>
-  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3EDFF"/><stop offset=".22" stop-color="#E4DAFC"/><stop offset=".4" stop-color="#C3B3F3"/><stop offset="1" stop-color="#C3B3F3"/></linearGradient>
-  <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C3B3F3"/><stop offset="1" stop-color="#C3B3F3" stop-opacity="0"/></linearGradient>
-  <linearGradient id="fadeBottom" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A0D5E" stop-opacity="0"/><stop offset="1" stop-color="#2A0D5E" stop-opacity=".55"/></linearGradient>
-  <linearGradient id="cta" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6D28D9"/><stop offset="1" stop-color="#A21CAF"/></linearGradient>
-  <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".7"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
-  <linearGradient id="barFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F5F0FF"/></linearGradient>
+  <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3E1C72" stop-opacity="0"/><stop offset=".55" stop-color="#3E1C72" stop-opacity=".55"/><stop offset="1" stop-color="#2A0F55" stop-opacity=".92"/></linearGradient>
+  <linearGradient id="barShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A0F55" stop-opacity=".22"/><stop offset="1" stop-color="#2A0F55" stop-opacity="0"/></linearGradient>
+  <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#4C1D95"/></linearGradient>
  </defs>
- <g data-name="Background"><rect width="1240" height="1754" fill="url(#sky)"/><path d="M0 0 H560 L0 700Z" fill="url(#beam)"/></g>
- <g data-name="Photo"><image href="/flyers/seo-agency-flyer-1.webp" x="0" y="480" width="1240" height="1653" preserveAspectRatio="xMidYMin slice"/></g>
- <g data-name="Photo blend"><rect x="0" y="1560" width="1240" height="194" fill="url(#fadeBottom)"/></g>
- <g data-name="Logo mark"><rect x="80" y="76" width="60" height="60" rx="16" fill="url(#cta)"/><path d="M97 120 L110 92 L123 112 L131 99" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
- <g data-name="Brand name"><text x="156" y="120" font-family="Poppins" font-weight="700" font-size="38" fill="#2E0A63">ClickNest Digital</text></g>
- <g data-name="Tag frame"><rect x="890" y="80" width="270" height="52" rx="26" fill="#FFFFFF" fill-opacity=".6" stroke="#6D28D9" stroke-width="2"/></g>
- <g data-name="Tag"><text x="1025" y="114" font-family="Poppins" font-weight="600" font-size="20" letter-spacing="3" text-anchor="middle" fill="#4C1D95">SEO · ADS · SOCIAL</text></g>
- <g data-name="Headline 1"><text x="620" y="300" font-family="Poppins" font-weight="400" font-size="74" text-anchor="middle" fill="#3B0F78">Thousands of visitors?</text></g>
- <g data-name="Headline 2"><text x="620" y="418" font-family="Poppins" font-weight="800" font-size="110" letter-spacing="-2" text-anchor="middle" fill="#2E0A63">Get the right ones.</text></g>
- <g data-name="Sub line"><text x="620" y="490" font-family="Poppins" font-weight="500" font-size="32" text-anchor="middle" fill="#4C1D95">We bring buyers, not just clicks.</text></g>
- <g data-name="Search bar shadow"><rect x="262" y="1146" width="716" height="104" rx="52" fill="#2E0A63" fill-opacity=".12"/></g>
- <g data-name="Search bar"><rect x="252" y="1128" width="736" height="104" rx="52" fill="url(#barFill)" stroke="#D8CCF5" stroke-width="3"/><circle cx="314" cy="1176" r="20" fill="none" stroke="#7C3AED" stroke-width="7"/><path d="M329 1191 L345 1207" stroke="#7C3AED" stroke-width="8" stroke-linecap="round"/><rect x="904" y="1148" width="64" height="64" rx="32" fill="url(#cta)"/><path d="M924 1180 h22 M936 1170 l10 10 -10 10" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
- <g data-name="Search text"><text x="368" y="1194" font-family="Poppins" font-weight="400" font-size="36" fill="#4B3A66">best bakery near me</text></g>
- <g data-name="Board headline"><text x="620" y="1340" font-family="Poppins" font-weight="800" font-size="62" text-anchor="middle" fill="#2E0A63">Be the first they find.</text></g>
- <g data-name="Board line"><text x="620" y="1392" font-family="Poppins" font-weight="500" font-size="28" text-anchor="middle" fill="#6B5A8E">Local SEO · Google Business Profile · Ads</text></g>
- <g data-name="Button"><rect x="430" y="1430" width="380" height="84" rx="42" fill="url(#cta)"/></g>
- <g data-name="Button text"><text x="620" y="1484" font-family="Poppins" font-weight="700" font-size="30" text-anchor="middle" fill="#FFFFFF">Get a free SEO audit</text></g>
- <g data-name="Contact bar"><rect x="300" y="1650" width="640" height="70" rx="35" fill="#2E0A63"/></g>
- <g data-name="Contact"><text x="620" y="1696" font-family="Poppins" font-weight="600" font-size="28" text-anchor="middle" fill="#FFFFFF">www.clicknest.in  ·  +91 98765 43210</text></g>
+ <g data-name="Background photo"><image href="/flyers/seo-agency-flyer-bg.jpg" x="0" y="0" width="1240" height="1754" preserveAspectRatio="xMidYMid slice"/></g>
+ <g data-name="Person"><image href="/flyers/seo-agency-flyer-1.webp" x="270" y="869" width="700" height="885" preserveAspectRatio="xMidYMin meet"/></g>
+ <g data-name="Crowd front"><image href="/flyers/seo-agency-flyer-crowd.webp" x="0" y="0" width="1240" height="1754" preserveAspectRatio="xMidYMid slice"/></g>
+ <g data-name="Bottom shade 2"><rect x="0" y="1500" width="1240" height="254" fill="url(#bottomFade)"/></g>
+ <g data-name="Bottom shade"><rect x="0" y="1380" width="1240" height="374" fill="url(#bottomFade)"/></g>
+ <g data-name="Search bar shadow"><rect x="214" y="1172" width="812" height="40" rx="20" fill="url(#barShade)"/></g>
+ <g data-name="Search bar"><rect x="200" y="1088" width="840" height="96" rx="48" fill="#FFFFFF"/><circle cx="252" cy="1130" r="14" fill="none" stroke="#6D28D9" stroke-width="5"/><path d="M263 1141 L275 1153" stroke="#6D28D9" stroke-width="6" stroke-linecap="round"/><rect x="980" y="1117" width="12" height="22" rx="6" fill="#8B5CF6"/><path d="M974 1131 a12 12 0 0 0 24 0 M986 1143 v8" fill="none" stroke="#8B5CF6" stroke-width="3.5" stroke-linecap="round"/></g>
+ <g data-name="Search text"><text x="620" y="1146" font-family="Poppins" font-weight="400" font-size="29" text-anchor="middle" fill="#5B5670">best bakery near me</text></g>
+ <g data-name="Hands"><image href="/flyers/seo-agency-flyer-hands.webp" x="270" y="869" width="700" height="885" preserveAspectRatio="xMidYMin meet"/></g>
+ <g data-name="Logo mark"><rect x="80" y="84" width="50" height="50" rx="13" fill="url(#mark)"/><path d="M94 121 L105 97 L116 114 L123 103" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <g data-name="Brand name"><text x="144" y="121" font-family="Poppins" font-weight="600" font-size="36" fill="#4C1D95">ClickNest</text></g>
+ <g data-name="Headline 1"><text x="620" y="500" font-family="Open Sans" font-weight="400" font-size="78" text-anchor="middle" fill="#3B1278">Stop chasing every click.</text></g>
+ <g data-name="Headline 2"><text x="620" y="625" font-family="Open Sans" font-weight="800" font-size="118" letter-spacing="-2" text-anchor="middle" fill="#3B1278">Win the right ones!</text></g>
+ <g data-name="Website"><text x="80" y="1688" font-family="Poppins" font-weight="400" font-size="28" fill="#FFFFFF">www.clicknest.in</text></g>
+ <g data-name="Footer line"><path d="M345 1678 H1160" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1.5"/></g>
 </svg>
