@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF4C2"/>
+      <stop offset="0.25" stop-color="#E9B949"/>
+      <stop offset="0.5" stop-color="#9C6A16"/>
+      <stop offset="0.72" stop-color="#F6D77A"/>
+      <stop offset="1" stop-color="#7E520F"/>
+    </linearGradient>
+    <linearGradient id="goldV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF6CF"/>
+      <stop offset="0.35" stop-color="#F0C75A"/>
+      <stop offset="0.6" stop-color="#A8741A"/>
+      <stop offset="0.8" stop-color="#F3D27A"/>
+      <stop offset="1" stop-color="#8A5A12"/>
+    </linearGradient>
+    <linearGradient id="goldDark" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#5C3A08"/>
+      <stop offset="0.5" stop-color="#A8741A"/>
+      <stop offset="1" stop-color="#6B450B"/>
+    </linearGradient>
+    <radialGradient id="emerald" cx="0.4" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#1F7A62"/>
+      <stop offset="0.55" stop-color="#0F4A3C"/>
+      <stop offset="1" stop-color="#062820"/>
+    </radialGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1C6B55"/>
+      <stop offset="0.5" stop-color="#0F4A3C"/>
+      <stop offset="1" stop-color="#07302A"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ground" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#1A1208" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1A1208" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <g data-name="Ground shadow">
+    <ellipse cx="500" cy="930" rx="330" ry="34" fill="url(#ground)"/>
+  </g>
+
+  <g data-name="Cast shadow">
+    <polygon points="512,104 874,466 512,828 150,466" fill="#1A1208" opacity="0.22"/>
+  </g>
+
+  <g data-name="Outer frame">
+    <polygon points="500,80 870,450 500,820 130,450" fill="url(#gold)"/>
+    <polygon points="500,80 870,450 500,820 130,450" fill="none" stroke="#FFF4C2" stroke-width="3" opacity="0.8"/>
+    <polygon points="500,112 838,450 500,788 162,450" fill="url(#goldDark)"/>
+    <polygon points="500,124 826,450 500,776 174,450" fill="url(#goldV)"/>
+  </g>
+
+  <g data-name="Gem field">
+    <polygon points="500,146 804,450 500,754 196,450" fill="url(#emerald)"/>
+    <polygon points="500,146 500,450 652,298" fill="#FFFFFF" opacity="0.08"/>
+    <polygon points="804,450 500,450 652,602" fill="#000000" opacity="0.14"/>
+    <polygon points="500,754 500,450 348,602" fill="#000000" opacity="0.2"/>
+    <polygon points="196,450 500,450 348,298" fill="#FFFFFF" opacity="0.1"/>
+    <polygon points="500,146 500,450 348,298" fill="#FFFFFF" opacity="0.04"/>
+    <polygon points="804,450 500,450 652,298" fill="#000000" opacity="0.06"/>
+  </g>
+
+  <g data-name="Inner ring">
+    <polygon points="500,176 774,450 500,724 226,450" fill="none" stroke="url(#gold)" stroke-width="4"/>
+    <polygon points="500,186 764,450 500,714 236,450" fill="none" stroke="#062820" stroke-width="2" opacity="0.7"/>
+  </g>
+
+  <g data-name="Gloss">
+    <polygon points="500,146 760,406 640,380 500,370 360,380 240,406" fill="url(#gloss)"/>
+  </g>
+
+  <g data-name="Crown gem">
+    <polygon points="500,222 530,258 500,300 470,258" fill="url(#goldV)" stroke="#5C3A08" stroke-width="2"/>
+    <polygon points="500,222 530,258 500,258" fill="#FFF6CF" opacity="0.7"/>
+    <polygon points="500,258 500,300 470,258" fill="#5C3A08" opacity="0.4"/>
+    <path d="M440 262 L462 262 M538 262 L560 262" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="430" cy="262" r="4" fill="#F0C75A"/>
+    <circle cx="570" cy="262" r="4" fill="#F0C75A"/>
+  </g>
+
+  <g data-name="Sparkles">
+    <path d="M640 230 L646 248 L664 254 L646 260 L640 278 L634 260 L616 254 L634 248 Z" fill="#FFF4C2"/>
+    <path d="M352 600 L356 612 L368 616 L356 620 L352 632 L348 620 L336 616 L348 612 Z" fill="#FFF4C2" opacity="0.8"/>
+  </g>
+
+  <g data-name="Monogram shadow">
+    <text x="506" y="528" font-family="Cinzel" font-size="200" font-weight="700" text-anchor="middle" letter-spacing="-4" fill="#031A14" opacity="0.85">SM</text>
+  </g>
+
+  <g data-name="Monogram">
+    <text x="500" y="520" font-family="Cinzel" font-size="200" font-weight="700" text-anchor="middle" letter-spacing="-4" fill="url(#goldV)" stroke="#5C3A08" stroke-width="2">SM</text>
+  </g>
+
+  <g data-name="Divider">
+    <path d="M410 562 L480 562 M520 562 L590 562" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="500,552 510,562 500,572 490,562" fill="#F0C75A"/>
+  </g>
+
+  <g data-name="Ribbon">
+    <polygon points="150,690 210,690 210,770 150,770 176,730" fill="#07302A"/>
+    <polygon points="850,690 790,690 790,770 850,770 824,730" fill="#07302A"/>
+    <polygon points="210,770 240,792 240,770" fill="#031A14"/>
+    <polygon points="790,770 760,792 760,770" fill="#031A14"/>
+    <rect x="210" y="672" width="580" height="98" fill="url(#ribbon)"/>
+    <rect x="210" y="672" width="580" height="98" fill="none" stroke="url(#gold)" stroke-width="5"/>
+    <rect x="222" y="684" width="556" height="74" fill="none" stroke="#F0C75A" stroke-width="1.5" opacity="0.6"/>
+    <rect x="212" y="674" width="576" height="30" fill="#FFFFFF" opacity="0.07"/>
+  </g>
+
+  <g data-name="Name">
+    <text x="500" y="738" font-family="Cinzel" font-size="46" font-weight="700" text-anchor="middle" letter-spacing="7" fill="url(#goldV)">SUVARNA MAHAL</text>
+  </g>
+
+  <g data-name="Tagline">
+    <text x="500" y="878" font-family="Cormorant Garamond" font-size="40" font-weight="600" text-anchor="middle" letter-spacing="10" fill="#0F4A3C">FINE GOLD JEWELLERS</text>
+  </g>
+</svg>
