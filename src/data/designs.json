@@ -122,5 +122,26 @@
         "source": "OpenAI"
       }
     ]
+  },
+  {
+    "slug": "sona-bakery-id-card",
+    "title": "Navy and Gold Bakery ID Card Template",
+    "description": "Premium navy and gold employee ID card for bakeries, patisseries and cafes, with photo frame, staff details and QR back. Print-ready. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "id-card",
+    "size": "id-card",
+    "back": true,
+    "logo": "sona-bakery-badge-logo",
+    "published": "2026-11-28",
+    "features": [
+      "CR80 portrait card (54 x 85.6 mm) with 3 mm bleed, front and back",
+      "Name, designation, employee ID, department and blood group are live text",
+      "Gold gradient accents, lanyard slot, QR code and signature line"
+    ],
+    "useCases": [
+      "Bakery and patisserie staff",
+      "Cafe and cloud kitchen teams",
+      "Food production and catering units"
+    ],
+    "credits": []
   }
 ]
