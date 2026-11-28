@@ -167,5 +167,29 @@
         "source": "OpenAI"
       }
     ]
+  },
+  {
+    "slug": "new-year-eve-rooftop-dinner-flyer",
+    "title": "New Year's Eve Rooftop Dinner Flyer Template",
+    "description": "Elegant New Year's Eve rooftop dinner flyer with a toasting couple, fireworks skyline and gold type for restaurants and hotels. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "flyer",
+    "published": "2026-11-28",
+    "features": [
+      "AI-generated photorealistic couple and rooftop scene",
+      "Every text line is a separate editable layer",
+      "A4 print-ready layout with contact bar"
+    ],
+    "useCases": [
+      "Restaurant New Year's Eve dinner promotion",
+      "Hotel rooftop party or gala buffet",
+      "Instagram and WhatsApp event announcement"
+    ],
+    "credits": [
+      {
+        "creator": "Generated with OpenAI image models for MyPixelogs",
+        "license": "Free to use",
+        "source": "OpenAI"
+      }
+    ]
   }
 ]
