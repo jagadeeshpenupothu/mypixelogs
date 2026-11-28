@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754">
+ <defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FCE7A8"/><stop offset=".4" stop-color="#E2B04A"/><stop offset=".7" stop-color="#F7D98A"/><stop offset="1" stop-color="#B07D22"/></linearGradient>
+  <linearGradient id="topShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A0A2A" stop-opacity=".55"/><stop offset=".35" stop-color="#0A0A2A" stop-opacity=".25"/><stop offset=".55" stop-color="#0A0A2A" stop-opacity="0"/><stop offset=".85" stop-color="#1A0606" stop-opacity="0"/><stop offset="1" stop-color="#1A0606" stop-opacity=".7"/></linearGradient>
+  <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFC45A" stop-opacity=".35"/><stop offset="1" stop-color="#FFC45A" stop-opacity="0"/></radialGradient>
+  <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A0A10"/><stop offset=".5" stop-color="#7E1420"/><stop offset="1" stop-color="#4A0A10"/></linearGradient>
+  <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E2B04A" stop-opacity="0"/><stop offset=".5" stop-color="#E2B04A"/><stop offset="1" stop-color="#E2B04A" stop-opacity="0"/></linearGradient>
+  <radialGradient id="lampShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+ </defs>
+ <g data-name="Background photo"><image href="/flyers/vaikunta-ekadasi-temple-flyer-1.jpg" x="0" y="0" width="1240" height="1754" preserveAspectRatio="xMidYMax slice"/></g>
+ <g data-name="Shade"><rect width="1240" height="1754" fill="url(#topShade)"/></g>
+ <g data-name="Gate glow"><ellipse cx="620" cy="1250" rx="420" ry="300" fill="url(#glow)"/></g>
+ <g data-name="Garland"><image href="/flyers/vaikunta-ekadasi-temple-flyer-3.webp" x="-20" y="-40" width="1280" height="323" preserveAspectRatio="xMidYMin meet"/></g>
+ <g data-name="Brand"><text x="620" y="322" font-family="Montserrat" font-weight="600" font-size="22" letter-spacing="8" text-anchor="middle" fill="url(#gold)">SRI VENKATESWARA SWAMY DEVASTHANAM</text></g>
+ <g data-name="Kicker"><text x="620" y="412" font-family="Great Vibes" font-weight="400" font-size="66" text-anchor="middle" fill="url(#gold)">Om Namo Venkatesaya</text></g>
+ <g data-name="Headline 1"><text x="620" y="542" font-family="Playfair Display" font-weight="800" font-size="128" text-anchor="middle" fill="#FFFFFF">Vaikunta</text></g>
+ <g data-name="Headline 2"><text x="620" y="666" font-family="Playfair Display" font-weight="800" font-size="128" text-anchor="middle" fill="url(#gold)">Ekadasi</text></g>
+ <g data-name="Sub line"><text x="620" y="726" font-family="Montserrat" font-weight="500" font-size="28" letter-spacing="6" text-anchor="middle" fill="#F8EEE0">UTTARA DWARA DARSHANAM</text></g>
+ <g data-name="Date frame"><rect x="370" y="760" width="500" height="62" rx="31" fill="#0A0A2A" fill-opacity=".45" stroke="url(#gold)" stroke-width="2.5"/></g>
+ <g data-name="Date"><text x="620" y="801" font-family="Montserrat" font-weight="700" font-size="24" letter-spacing="2" text-anchor="middle" fill="#FFFFFF">SUNDAY · 20 DECEMBER 2026</text></g>
+ <g data-name="Rule"><rect x="270" y="850" width="700" height="2" fill="url(#rule)"/></g>
+ <g data-name="Detail 1 time"><text x="330" y="896" font-family="Playfair Display" font-weight="700" font-size="32" text-anchor="middle" fill="url(#gold)">4:00 AM</text></g>
+ <g data-name="Detail 1 text"><text x="330" y="930" font-family="Montserrat" font-weight="500" font-size="21" text-anchor="middle" fill="#FFFFFF">North gate opens</text></g>
+ <g data-name="Detail 2 time"><text x="620" y="896" font-family="Playfair Display" font-weight="700" font-size="32" text-anchor="middle" fill="url(#gold)">7:00 AM</text></g>
+ <g data-name="Detail 2 text"><text x="620" y="930" font-family="Montserrat" font-weight="500" font-size="21" text-anchor="middle" fill="#FFFFFF">Swarna Ratham utsavam</text></g>
+ <g data-name="Detail 3 time"><text x="910" y="896" font-family="Playfair Display" font-weight="700" font-size="32" text-anchor="middle" fill="url(#gold)">12:30 PM</text></g>
+ <g data-name="Detail 3 text"><text x="910" y="930" font-family="Montserrat" font-weight="500" font-size="21" text-anchor="middle" fill="#FFFFFF">Annadanam for all</text></g>
+ <g data-name="Lamp shadow"><ellipse cx="1050" cy="1600" rx="190" ry="20" fill="url(#lampShadow)"/></g>
+ <g data-name="Lamps"><image href="/flyers/vaikunta-ekadasi-temple-flyer-2.webp" x="850" y="1290" width="400" height="327" preserveAspectRatio="xMidYMax meet"/></g>
+ <g data-name="Bottom bar"><rect x="0" y="1612" width="1240" height="142" fill="url(#bar)"/><rect x="0" y="1612" width="1240" height="4" fill="url(#gold)"/></g>
+ <g data-name="Address 1"><text x="80" y="1672" font-family="Montserrat" font-weight="600" font-size="24" fill="#FFFFFF">Sri Venkateswara Swamy Temple</text></g>
+ <g data-name="Address 2"><text x="80" y="1708" font-family="Montserrat" font-weight="500" font-size="22" fill="#F4E9D8">Gunadala, Vijayawada · Free darshan for all devotees</text></g>
+ <g data-name="Phone icon"><circle cx="862" cy="1683" r="30" fill="url(#gold)"/><path d="M851 1670 q-4 4 0 12 q6 11 17 17 q8 4 12 0 l-6 -7 q-3 2 -6 0 q-6 -4 -10 -10 q-2 -3 0 -6 z" fill="#5E0B12"/></g>
+ <g data-name="Phone"><text x="906" y="1695" font-family="Montserrat" font-weight="700" font-size="32" fill="#FFFFFF">98765 43210</text></g>
+</svg>
