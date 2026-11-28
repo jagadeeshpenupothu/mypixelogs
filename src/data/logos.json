@@ -1,1 +1,120 @@
-[]
+[
+  {
+    "slug": "kaapi-kona-cafe-emblem-logo",
+    "title": "Kaapi Kona Cafe Emblem Logo",
+    "name": "Kaapi Kona",
+    "style": "emblem",
+    "industry": "Cafe",
+    "description": "A round cafe emblem with a South Indian filter coffee tumbler and davara, rising steam and curved lettering. Suits cafes and coffee houses. Editable AI, SVG, PSD, EPS and PNG.",
+    "colors": [
+      {
+        "name": "Espresso",
+        "hex": "#3B2416"
+      },
+      {
+        "name": "Cream",
+        "hex": "#F4E9D8"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#C8623A"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Playfair Display",
+        "weight": 700
+      },
+      {
+        "family": "Montserrat",
+        "weight": 600
+      }
+    ],
+    "previewBg": "#EADCC6",
+    "published": "2026-11-27",
+    "keywords": [
+      "cafe emblem logo",
+      "filter coffee logo",
+      "coffee shop badge logo",
+      "south indian cafe logo"
+    ]
+  },
+  {
+    "slug": "sona-bakery-badge-logo",
+    "title": "Sona Bakery Badge Logo",
+    "name": "Sona Bakehouse",
+    "style": "badge",
+    "industry": "Bakery",
+    "description": "Vintage circular badge with a scored bread loaf, rising steam and arched lettering. Suits bakeries, bake shops and home bakers. Editable AI, SVG, PSD, EPS and PNG.",
+    "colors": [
+      {
+        "name": "Midnight Navy",
+        "hex": "#1F2A44"
+      },
+      {
+        "name": "Flour Cream",
+        "hex": "#FBF3E4"
+      },
+      {
+        "name": "Mustard Gold",
+        "hex": "#E0A526"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Oswald",
+        "weight": "700"
+      },
+      {
+        "family": "Oswald",
+        "weight": "500"
+      }
+    ],
+    "previewBg": "#F3E6CC",
+    "published": "2026-11-27",
+    "keywords": [
+      "bakery logo",
+      "vintage bakery badge",
+      "bread logo",
+      "bake shop logo",
+      "retro bakery emblem"
+    ]
+  },
+  {
+    "slug": "ravya-salon-wordmark-logo",
+    "title": "Ravya Salon Wordmark Logo",
+    "name": "Ravya",
+    "style": "wordmark",
+    "industry": "Salon",
+    "description": "An elegant serif wordmark spelling RAVYA with a rose-gold sparkle and a spaced Hair & Beauty tagline. Suits salons, spas and beauty studios. Editable AI, SVG, PSD, EPS and PNG.",
+    "colors": [
+      {
+        "name": "Deep Plum",
+        "hex": "#3A1F3D"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#C98B6B"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Cormorant Garamond",
+        "weight": "600"
+      },
+      {
+        "family": "Montserrat",
+        "weight": "500"
+      }
+    ],
+    "previewBg": "#F7EDE8",
+    "published": "2026-11-27",
+    "keywords": [
+      "salon logo",
+      "beauty salon wordmark",
+      "hair salon logo",
+      "elegant serif logo",
+      "beauty parlour logo"
+    ]
+  }
+]
