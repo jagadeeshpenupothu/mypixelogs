@@ -71,6 +71,18 @@ don't explore the repo, keep replies short.
      line is one `<text>` in its own group (it becomes a live Photoshop text layer) with `x`, `y`, `font-family`,
      `font-size`, `font-weight`, optional `letter-spacing`, `text-anchor`, `fill`. No filters, no CSS classes.
 
+   Design sense (lessons from the owner's review; a design that breaks these is rejected):
+   - Tell ONE visual story that matches the headline (e.g. "the right one" = one person standing out of a blurred crowd).
+   - Put the hero IN A SCENE: medium size with breathing room, not a giant cropped face; add depth with a blurred,
+     tinted background and blurred foreground elements at the edges (generate them, or blur and tint free photos in
+     Pillow and bake them into a background plate and a separate front layer).
+   - Hide every hard photo edge: soft alpha ramps, foreground elements or shade gradients. No straight cut lines.
+   - Props are slim and real-looking (a search bar the person holds, with the fingers in front of it: a skin-only
+     hands layer above the prop), never a big white board full of text.
+   - Restraint: a logo, a 2-line headline (light + bold), 1 prop with a few words, and a footer. No extra cards,
+     chips, buttons or paragraphs unless the reference has them. Lots of whitespace.
+   - Before publishing, compare with the pin at the same size: same level of polish, lighting and depth, or try again.
+
 7. Add an entry to `src/data/designs.json` (keep the array valid; newest last):
    `{"slug", "title": "<Topic> <Flyer|Poster> Template", "description": "<140–200 chars, what it is, who it suits,
    'Editable PSD, AI, SVG, CorelDRAW and PDF.'>", "category": "flyer"|"poster", "published": "<today>",
