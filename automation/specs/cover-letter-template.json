@@ -1,0 +1,23 @@
+{
+  "slug": "cover-letter-template",
+  "title": "Cover Letter Template",
+  "category": "letter",
+  "accent": "1F3A5F",
+  "titleSize": 22,
+  "description": "Free cover letter for job applications in India with contact header, hiring manager details, job reference, three focused paragraphs and sign-off. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Professional contact header with LinkedIn and portfolio links", "Hiring manager, company and job reference block", "Opening, achievements and closing paragraphs with a clear call to action"],
+  "useCases": ["Applying for jobs on Naukri, LinkedIn or company sites", "Email body or PDF attachment with your resume", "Freshers and experienced professionals"],
+  "keywords": ["cover letter for job", "cover letter format", "cover letter for job application"],
+  "references": ["https://www.naukri.com/career-advice/cover-letter-for-job", "https://internshala.com/blog/how-to-write-a-cover-letter-for-a-job/", "https://www.grammarly.com/blog/the-essentials-of-cover-letter-format/", "https://zety.com/uk/blog/cover-letter-structure", "https://www.monster.com/career-advice/article/sample-cover-letter"],
+  "research": "All references use a contact header, date, the hiring manager's name and company, a salutation by name, a role-specific opening, one or two achievement-led body paragraphs, a closing that asks for an interview, and a formal sign-off on one page of about 300-400 words.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1C9eEviTuQowWhTbMnT-ShUt4a5gSwtAWFGKBJKL7XTk", "googleSheetsId": "16aRBoLmw_A_EDmv3hw7_At1gUjtKgMKDsWuPPnrNYOA"},
+  "blocks": [
+    {"type": "header", "style": "plain", "logo": false, "org": "[Priya Menon]", "lines": ["[Flat 304, Green Glen Layout, Bellandur, Bengaluru, Karnataka 560103]", "[+91 98450 67890]  |  [priya.menon@email.com]", "[linkedin.com/in/priyamenon]  |  [github.com/priyamenon]"], "title": "Cover Letter", "meta": [["Date", "[28/11/2026]"]]},
+    {"type": "text", "text": ["**[Ms. Anjali Rao]**", "[Talent Acquisition Manager]", "[Infinity Retail Pvt. Ltd.]", "[Prestige Tech Park, Outer Ring Road, Bengaluru, Karnataka 560103]"]},
+    {"type": "fields", "columns": 2, "items": [["Position applied for", "[Senior Data Analyst]"], ["Job reference", "[IR/DA/2026/118]"], ["Source", "[Naukri.com]"], ["Notice period", "[30 days]"]]},
+    {"type": "text", "text": "**Subject: Application for the post of [Senior Data Analyst] (Ref. [IR/DA/2026/118])**"},
+    {"type": "text", "text": ["Dear [Ms. Rao],", "I am writing to apply for the [Senior Data Analyst] role at [Infinity Retail]. With [5 years] of experience turning sales and customer data into decisions for retail and e-commerce teams, I was excited to see that you are building a central analytics function to support your store expansion across South India.", "In my current role at [Brightcart Commerce Pvt. Ltd.], I lead reporting for a [₹220 crore] annual sales portfolio. I built a demand-forecasting model in [Python] that cut stock-outs by [18%] in two quarters, and I replaced [40] manual Excel reports with automated [Power BI] dashboards that regional managers now use every morning. I also work closely with finance and supply-chain teams, so I am comfortable explaining numbers to people who are not analysts.", "What draws me to [Infinity Retail] is your focus on data-led merchandising and your commitment to serving customers in tier-2 cities. I would bring strong [SQL], [Python] and [Power BI] skills, a habit of checking data quality before drawing conclusions, and experience mentoring two junior analysts. My resume is attached with further details of my projects and certifications.", "Thank you for considering my application. I would welcome the chance to discuss how I can help your team, and I am available for an interview at your convenience. I can be reached at [+91 98450 67890] or [priya.menon@email.com]."]},
+    {"type": "text", "text": ["Yours sincerely,", "", "", "**[Priya Menon]**", "Enclosure: [Resume (2 pages)]"]}
+  ]
+}
