@@ -143,5 +143,29 @@
       "Food production and catering units"
     ],
     "credits": []
+  },
+  {
+    "slug": "vaikunta-ekadasi-temple-flyer",
+    "title": "Vaikunta Ekadasi Temple Event Flyer Template",
+    "description": "Mukkoti Ekadasi temple flyer: a glowing golden north gate at dawn with brass lamps and marigold toran, darshan timings and contact. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "flyer",
+    "published": "2026-11-28",
+    "features": [
+      "AI photos: glowing temple gate at dawn, brass lamps and marigold toran",
+      "Headline, date, darshan timings and contact are live, editable text",
+      "A4 at 300 dpi; also fits Instagram and WhatsApp"
+    ],
+    "useCases": [
+      "Temples and devasthanams",
+      "Bhajan mandalis and spiritual trusts",
+      "Vaikunta Ekadasi and Dhanurmasam events"
+    ],
+    "credits": [
+      {
+        "creator": "Generated with OpenAI image models for MyPixelogs",
+        "license": "Free to use",
+        "source": "OpenAI"
+      }
+    ]
   }
 ]
