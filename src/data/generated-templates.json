@@ -522,5 +522,38 @@
       "pdfPath": "/downloads/software-engineer-resume-template.pdf"
     },
     "published": "2026-11-27"
+  },
+  {
+    "id": "teacher-resume",
+    "title": "Teacher Resume Template",
+    "slug": "teacher-resume-template",
+    "description": "Free teacher resume format for Indian schools with B.Ed, CTET/TET scores, subjects and classes taught, teaching experience and results. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "resume",
+    "features": [
+      "Eligibility first: B.Ed and CTET/TET with year, paper and score",
+      "Experience with board, subjects, classes taught and measurable results",
+      "One clean single-column page that ATS and principals can scan fast"
+    ],
+    "useCases": [
+      "TGT and PGT applications to CBSE, ICSE and state board schools",
+      "PRT and primary teacher jobs",
+      "KVS, NVS and private school recruitment drives"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "14vlnx8WBnTw2ySErNOJevj-z_vnjDAdCzW-nPZBEdvE",
+      "googleSheetsId": "1jzB5KXtymtW8nOmn5HTnpAWkxw39QmDtlIEn1XbRVng",
+      "excelPath": "/downloads/teacher-resume-template.xlsx",
+      "latexPath": "/downloads/teacher-resume-template.tex",
+      "pdfPath": "/downloads/teacher-resume-template.pdf"
+    },
+    "published": "2026-11-28"
   }
 ]
