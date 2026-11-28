@@ -1,11 +1,13 @@
 // Renders a spec as a one-page A4 HTML document (794 x 1123 px), used to import the template into Canva.
+import { resolveDesign } from "./design.mjs";
 import { parts, plain } from "./spec.mjs";
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const rich = (text) => parts(text).map(([t, b]) => (b ? `<span class="b">${esc(t)}</span>` : esc(t))).join("");
 
 export function renderHtml(spec) {
-  const A = `#${spec.accent}`;
+  const T = resolveDesign(spec);
+  const A = `#${T.accent}`;
   const out = [];
   for (const block of spec.blocks) {
     const center = block.align === "center" ? ' style="text-align:center"' : "";
@@ -80,8 +82,9 @@ export function renderHtml(spec) {
 <title>${esc(spec.title)} – MyPixelogs (for Canva import)</title>
 <style>
 body{margin:0;background:#fff}
-.page{width:794px;height:1123px;box-sizing:border-box;padding:48px 51px 40px;background:#fff;font-family:Cambria,Georgia,"Times New Roman",serif;font-size:14px;line-height:1.32;color:#1a1a1a;overflow:hidden}
+.page{width:794px;height:1123px;box-sizing:border-box;padding:48px 51px 40px;background:#fff;font-family:"${T.body}",Cambria,Georgia,serif;font-size:14px;line-height:1.32;color:#1a1a1a;overflow:hidden}
 p{margin:0}.b{font-weight:700}
+.title,.h,.orgname,.doctitle,.gh{font-family:"${T.head}",Georgia,serif}
 .title{font-size:${Math.round((spec.titleSize ?? 30) * 1.333)}px;font-weight:700;color:${A};line-height:1.05;margin-bottom:4px}
 .subtitle{font-size:18px;margin-bottom:6px}
 .contact{font-size:12.5px;padding-bottom:9px;border-bottom:3px solid ${A}}.contact.norule{border:0}

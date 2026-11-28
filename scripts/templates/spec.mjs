@@ -2,6 +2,8 @@
 // A spec describes one document as a list of blocks; every output format is drawn from it.
 import { readFileSync } from "node:fs";
 
+import { FONTS, PALETTES } from "./design.mjs";
+
 export const CATEGORIES = ["resume", "invoice", "receipt", "letter", "certificate", "business", "letterhead"];
 const BLOCKS = ["header", "title", "contact", "heading", "text", "entry", "bullets", "fields", "table", "columns", "parties", "note", "signature", "spacer"];
 
@@ -31,7 +33,9 @@ export function loadSpec(path) {
   });
   if (problems.length) throw new Error(`Spec ${path} has problems:\n- ${problems.join("\n- ")}`);
 
-  spec.accent = (spec.accent ?? "1B2F5B").replace("#", "").toUpperCase();
+  // A chosen palette sets the accent used by every format (Word, Google Docs, Excel, LaTeX, Canva).
+  spec.accent = (PALETTES[spec.design?.palette]?.accent ?? spec.accent ?? "1B2F5B").replace("#", "").toUpperCase();
+  spec.bodyFont = FONTS[spec.design?.font]?.body ?? "Cambria";
   spec.platforms ??= {};
   return spec;
 }
