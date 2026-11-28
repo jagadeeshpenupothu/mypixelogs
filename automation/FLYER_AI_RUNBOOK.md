@@ -14,38 +14,63 @@ Budget: at most 4 images per flyer plus 2 retries. Never copy a design from Pint
    in `src/data/designs.json` for the same occasion this year. Pick a business that uses it (shop offer, restaurant
    event, school or temple event, greeting from a business). Verify the date.
 
-3. Concept: write 3 lines for yourself: the visual story (one idea, e.g. "a woman walking out of a glowing shop
-   window with gifts"), the layout (where the hero, headline, offer, details and contact bar go), and the palette.
-   Rotate layouts across days (hero right / hero centre / full-bleed photo with text panel / split).
+3. Style (REQUIRED, so flyers never look alike): run `node scripts/flyers/next-style.mjs`. It gives today's
+   `layout` (an archetype: editorial full-bleed, split screen, arch window, magazine cover, photo collage,
+   typographic poster, circle frame, diagonal, minimal luxury, retail burst, polaroid scrapbook, event ticket),
+   a `type` pairing (exact Google Fonts) and a colour `mood`. Use all three. Then do 1 web search such as
+   "<layout> poster design <occasion>" or "graphic design trends <year> flyer" for ideas (never copy).
+   Write 3 lines for yourself: the visual story (one idea), how today's layout tells it, and the exact palette
+   (4 hex colours from the mood). Each flyer must look like a different designer made it. Do NOT reuse the previous
+   flyers' signature: no default dark background with gold, no script line above every headline (only when the
+   type pairing has a script), no identical bottom contact bar (vary it: inline row, side column, ticket stub,
+   sticker, footer on a colour block), different background treatment (photo, paper texture, solid colour, gradient).
 
 4. Images: 2–4 images, each made with
    `NODE_USE_ENV_PROXY=1 node --no-warnings scripts/flyers/gen-image.mjs automation/in/<slug>-<n>.<png|jpg> --size portrait|landscape|square [--transparent] --prompt "<prompt>"`
-   - People, products, food, objects and overlays (confetti, kites, garlands): `--transparent` and a `.png` file.
-     The prompt ends with "Transparent background: only the <subject>, clean sharp edges, no backdrop, no floor,
-     no shadow."
-   - Backgrounds and scenes: no `--transparent`, a `.jpg` file, and "Fill the entire frame edge to edge"; say where
-     the calm area for text is (e.g. "the left half is darker and calmer for text").
-   - Write prompts like an art director: subject, Indian context for people, clothing, pose, lighting, lens, mood,
-     palette, and always "photorealistic", "No text, no logos, no watermark". Hands: "realistic hands with five fingers".
-   - Read every image. Reject warped hands or faces, extra fingers, text or logos, or a non-transparent cut-out, and
-     generate again (at most 2 retries in total).
+   - Photos must look like REAL, unedited photographs, never "AI art". Write each prompt as a brief to a documentary
+     or lifestyle photographer:
+     - a real situation, not a pose: "candid lifestyle photo of ... while ...", a real Indian place ("a small saree
+       shop in Vijayawada", "a South Indian home kitchen", "a temple street at dawn"), everyday people (not models),
+       everyday clothes and props;
+     - real details: "natural skin texture with pores and small imperfections, slight asymmetry, flyaway hair,
+       realistic hands with five fingers, creased fabric, lived-in background";
+     - real light and camera: "natural available light (window light / overcast daylight / golden hour / warm shop
+       lighting)", "shot on a full-frame camera with a 35mm or 50mm lens at f/2, shallow depth of field, true-to-life
+       colours, unretouched";
+     - always end with: "No retouching, no airbrushed or plastic skin, no glamour lighting, no HDR, no oversaturated
+       colours, no CGI or 3D look. No text, no logos, no watermark."
+     - never use the words perfect, flawless, stunning, gorgeous, ultra-detailed, hyperrealistic, 8k, cinematic or
+       magazine.
+   - Prefer people photographed IN their scene (no `--transparent`, a `.jpg`; this uses the most natural model) and
+     design around the photo (full-bleed, split, arch or collage). Use `--transparent` (a `.png`) mainly for
+     products, food, objects and decorations; use a person cut-out only when the layout needs one (typographic
+     poster, diagonal, retail), and then add "Transparent background: only the <subject>, clean edges, no backdrop,
+     no floor, no shadow."
+   - For a background or scene, say where the calm area for text is (e.g. "the left third is plain wall").
+   - Read every image. Reject anything that looks AI-made (waxy skin, too-perfect symmetry, odd hands or eyes,
+     glowing edges, warped text-like marks) and generate again (at most 2 retries in total).
    - Prepare each: `python3 scripts/flyers/prep_ai.py automation/in/<file> public/flyers/<slug>-<n>.<jpg|webp>`
-     (backgrounds to .jpg, cut-outs to .webp). Note the printed aspect ratio for placing it.
+     (photos and backgrounds to .jpg, cut-outs to .webp). It adds a natural camera finish (soft contrast, grain);
+     add `--no-finish` only for flat graphics. Note the printed aspect ratio for placing it.
 
-5. Design `designs/<slug>.svg` by hand, A4 `viewBox="0 0 1240 1754"` (copy the structure of
-   `designs/christmas-gift-sale-flyer.svg`). Follow the design-sense rules in `automation/DESIGN_RUNBOOK.md` step 6:
-   one story, hero in a scene with depth, soft shades so text is readable, no hard photo edges (hide a cut-out's
-   straight bottom edge behind the contact bar or a shade), slim props, restraint, every part in its own
-   `<g data-name>`, every text line its own `<text>` in its own group, no filters, no CSS classes.
-   Realistic Indian details: an invented business name, a future date, a +91 98765 43210-style number, an Indian city.
+5. Design `designs/<slug>.svg` by hand, A4 `viewBox="0 0 1240 1754"`, built from today's layout, type pairing and
+   palette (don't copy an earlier flyer's structure). Work like an experienced graphic designer: a strong grid and
+   margins (at least 70), one clear focal point, a 3-level type hierarchy (headline, key line, details), real
+   typographic craft (tight tracking on big headlines, letter-spaced small caps, no more than 2 font families),
+   deliberate negative space, and 1–2 decorative devices that suit the layout (arches, thin rules, tape, perforations,
+   sticker badges, colour blocks, paper grain). Follow the design-sense rules in `automation/DESIGN_RUNBOOK.md`
+   step 6 (one story, depth, readable text, no hard photo edges, restraint). Every part in its own `<g data-name>`,
+   every text line its own `<text>` in its own group, no filters, no CSS classes. Realistic Indian details: an
+   invented business name, a future date, a +91 98765 43210-style number, an Indian city.
 
 6. Entry in `src/data/designs.json` (newest last): `{"slug", "title": "<Occasion> <Use> Flyer Template", "description":
    "<140–200 chars, 'Editable PSD, AI, SVG, CorelDRAW and PDF.'>", "category": "flyer", "published": "<today>",
-   "features": [3], "useCases": [3], "credits": [{"creator": "Generated with OpenAI image models for MyPixelogs",
+   "style": <the object from next-style.mjs>, "features": [3], "useCases": [3], "credits": [{"creator": "Generated with OpenAI image models for MyPixelogs",
    "license": "Free to use", "source": "OpenAI"}]}`
 
 7. Build: `NODE_USE_ENV_PROXY=1 node --no-warnings scripts/designs/build.mjs <slug>`. Read `public/previews/<slug>.png`
-   and judge it like a senior designer: would a real business print this? Text readable everywhere, nothing cut
+   next to the previews of the last 3 flyers in `src/data/designs.json` and judge it like a senior designer: does it
+   look clearly different from them, and would a real business print this? Text readable everywhere, nothing cut
    off, no empty dead areas, the hero blends into the scene, good hierarchy. Improve and rebuild (at most 3 tries).
    If it still isn't professional, delete its files and entry and reply "skipped: <reason>".
 
