@@ -30,7 +30,7 @@ function platformLinks(template: Template): PlatformLink[] {
   if (p.epsPath) links.push({ label: "CorelDRAW", note: "Download .eps (File › Import)", href: p.epsPath, Icon: PenTool, download: true });
   if (p.pngPath) links.push({ label: "PNG", note: "300 dpi, print-ready", href: p.pngPath, Icon: FileImage, download: true });
   if (p.backPsdPath) links.push({ label: "Back side", note: "Download back .psd", href: p.backPsdPath, Icon: FileImage, download: true });
-  if (p.zipPath) links.push({ label: "All formats", note: "ZIP with fonts", href: p.zipPath, Icon: Download, download: true });
+  if (p.zipPath) links.push({ label: "Vector files + fonts", note: "ZIP: AI, SVG, EPS, PDF and fonts", href: p.zipPath, Icon: Download, download: true });
   if (p.latexPath) {
     links.push({
       label: "Overleaf",

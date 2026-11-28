@@ -98,5 +98,29 @@
       "Bridal makeup artists and quotations"
     ],
     "credits": []
+  },
+  {
+    "slug": "christmas-gift-sale-flyer",
+    "title": "Christmas Gift Sale Flyer Template",
+    "description": "Festive Christmas sale flyer for boutiques and clothing stores: a model with gift boxes in front of a glowing shop window. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "flyer",
+    "published": "2026-11-28",
+    "features": [
+      "AI studio photos: model with gifts, glowing shop window and gift stack",
+      "Headline, offer, dates and contact are live, editable text",
+      "A4 at 300 dpi; also fits Instagram and WhatsApp"
+    ],
+    "useCases": [
+      "Clothing stores and boutiques",
+      "Saree and ethnic wear shops",
+      "Christmas and year-end sales"
+    ],
+    "credits": [
+      {
+        "creator": "Generated with OpenAI image models for MyPixelogs",
+        "license": "Free to use",
+        "source": "OpenAI"
+      }
+    ]
   }
 ]
