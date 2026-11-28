@@ -264,6 +264,39 @@
     "published": "2026-11-28"
   },
   {
+    "id": "internship-resume",
+    "title": "Internship Resume Template",
+    "slug": "internship-resume-template",
+    "description": "Free resume for internship format for Indian students: education with CGPA first, skills, academic projects, coursework and achievements. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "resume",
+    "features": [
+      "Education-first layout with CGPA and class X/XII marks",
+      "Academic projects with tools used and measurable results",
+      "One clean, ATS-friendly page for campus and online applications"
+    ],
+    "useCases": [
+      "Summer and winter internship applications",
+      "Campus placement cell submissions",
+      "Internship portals and LinkedIn applications"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1gEcANzsDSQ7ot6GxFfIknHAmR_WSzbZPOoVukMa1fao",
+      "googleSheetsId": "1uwlpuy8n8DzA3D8M0ct_Vr9fQHm1Vf6YW9Q66ugX424",
+      "excelPath": "/downloads/internship-resume-template.xlsx",
+      "latexPath": "/downloads/internship-resume-template.tex",
+      "pdfPath": "/downloads/internship-resume-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "leave-application",
     "title": "Leave Application Template",
     "slug": "leave-application-template",

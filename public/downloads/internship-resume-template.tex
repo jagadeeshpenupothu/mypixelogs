@@ -1,0 +1,89 @@
+% Internship Resume Template - MyPixelogs (https://mypixelogs.netlify.app/templates/internship-resume-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{7A1F2B}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent\colorbox{accent}{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}X>{\raggedleft\arraybackslash}p{0.42\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}\begin{tabular}[t]{@{}l@{}}{\color{white}\fontsize{14}{17}\selectfont\bfseries [Ananya Reddy]}\\ {\color{white}\footnotesize [B.Tech, Computer Science and Engineering, 3rd year]}\\ {\color{white}\footnotesize [+91 98480 23456]  \textbar{}  [ananya.reddy@email.com]  \textbar{}  [Hyderabad, Telangana]}\\ {\color{white}\footnotesize [linkedin.com/in/ananyareddy]  \textbar{}  [github.com/ananyareddy]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{white}\fontsize{24}{28}\selectfont\bfseries RESUME}\\[3pt] {\color{white}\footnotesize Applying for~\textbf{[Software Development Intern]}}\\ {\color{white}\footnotesize Availability~\textbf{[May-July 2027]}}\\ {\color{white}\footnotesize CGPA~\textbf{[8.7 / 10]}}\end{tabular}\\[6pt]\end{tabularx}}}\par\vspace{8pt}
+
+\section{Career Objective}
+
+[Third-year CSE student with hands-on experience in Python, Java and web development, looking for a summer internship where I can build production features, learn from experienced engineers and contribute to a product team from the first week.]\par\vspace{4pt}
+
+\section{Education}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\raggedright\arraybackslash}p{0.271\linewidth}|>{\raggedright\arraybackslash}p{0.397\linewidth}|>{\centering\arraybackslash}p{0.136\linewidth}|>{\raggedleft\arraybackslash}p{0.157\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{Qualification}} & \textcolor{white}{\textbf{Institution / Board}} & \textcolor{white}{\textbf{Year}} & \textcolor{white}{\textbf{Score}} \\ \hline
+\textbf{[B.Tech, CSE]} & [Vasavi College of Engineering, Hyderabad (Osmania University)] & [2024-2028] & [8.7 CGPA] \\ \hline
+[Class XII (MPC)] & [Sri Chaitanya Junior College, TSBIE] & [2024] & [96.4\%] \\ \hline
+[Class X] & [Delhi Public School, CBSE] & [2022] & [94.2\%] \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+\section{Technical Skills}
+
+\begin{tabularx}{\linewidth}{@{}p{0.3\linewidth}X@{}}
+\textbf{Languages} & [Python, Java, C, JavaScript, SQL] \\
+\textbf{Web and tools} & [React, Node.js, Flask, Git, GitHub, VS Code, Postman] \\
+\textbf{Databases and cloud} & [MySQL, MongoDB, AWS EC2 and S3 basics] \\
+\textbf{Soft skills} & [Teamwork, presentation, time management] \\
+\end{tabularx}\par\vspace{2pt}
+
+\section{Academic Projects}
+
+\entry{\textbf{[Campus Canteen Ordering App]}  \textbar{}  [React, Flask, MySQL]}{[Jan-Apr 2026]}
+
+\begin{itemize}
+  \item [Built a web app for pre-ordering meals; used by 400+ students in the first month and cut queue time by about 30\%.]
+  \item [Designed the REST API and database schema; added UPI payment status tracking.]
+\end{itemize}
+
+\vspace{4pt}
+
+\entry{\textbf{[Hostel Complaint Tracker]}  \textbar{}  [Java, Spring Boot, MongoDB]}{[Aug-Nov 2025]}
+
+\begin{itemize}
+  \item [Team of 3; built ticket creation, warden dashboard and email alerts, reducing average resolution time from 5 to 2 days.]
+\end{itemize}
+
+\vspace{4pt}
+
+\section{Relevant Coursework}
+
+[Data Structures and Algorithms, Database Management Systems, Object-Oriented Programming, Operating Systems, Computer Networks, Web Technologies]\par\vspace{4pt}
+
+\section{Certifications and Achievements}
+
+\begin{itemize}
+  \item [NPTEL: Programming in Java (Elite, 2025); AWS Cloud Practitioner Essentials (2026)]
+  \item [Top 50 of 1,200 teams, Smart India Hackathon internal round, 2025]
+  \item [Technical lead, college coding club: organised 6 workshops for 300+ juniors]
+\end{itemize}
+
+I hereby declare that the information given above is true to the best of my knowledge.\par\vspace{4pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Place: [Hyderabad]   Date: [28/11/2026]}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ [Ananya Reddy]}\par
+\end{document}
