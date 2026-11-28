@@ -186,7 +186,8 @@
     "keyword": "bonafide certificate format",
     "score": 78,
     "notes": "Issued by school/college: student, class/course, roll no, academic year, purpose, principal signature",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "authority-letter-template",

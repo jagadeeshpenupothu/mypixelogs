@@ -1,0 +1,50 @@
+{
+  "slug": "bonafide-certificate-template",
+  "title": "Bonafide Certificate Template",
+  "category": "certificate",
+  "accent": "1B2F5B",
+  "titleSize": 24,
+  "description": "Free bonafide certificate format for schools and colleges in India with student name, roll and admission no., course, academic year, purpose and principal's seal. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": [
+    "Institution letterhead with affiliation code and certificate number",
+    "Student, course, roll no. and academic year details",
+    "Purpose line, principal's signature and office seal area"
+  ],
+  "useCases": [
+    "Scholarship and education loan applications",
+    "Bus or railway concession passes",
+    "Visa, bank account and internship verification"
+  ],
+  "keywords": [
+    "bonafide certificate format",
+    "bonafide certificate for school",
+    "bonafide certificate format for college"
+  ],
+  "references": [
+    "https://cleartax.in/s/bonafide-certificate-format-download",
+    "https://studyabroad.careers360.com/articles/sample-bonafide-certificate",
+    "https://www.exwel.tn.gov.in/index/manual/Bonafide - Format.pdf",
+    "https://www.bajajfinserv.in/what-is-bonafide-certificate",
+    "https://www.admissify.com/blog/bonafide-certificate-format-samples-and-application-letters"
+  ],
+  "research": "References agree on an official letterhead, certificate no. and date, the student's name with parent's name, class/course, roll or admission no., academic year and period of study, the purpose of issue, and the principal's or registrar's signature with the office seal.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1DSAQS7tEB0Eqkpx-BB1SwaqeHL7mZ8mTIZvA3cGTFrw", "googleSheetsId": "1ijwfcUrK0rxY8Lerr0S8juYZ6hneL9Ni7AOvy5GEaqU"},
+  "blocks": [
+    {"type": "header", "org": "[Sri Vidya Niketan Sr. Sec. School]", "lines": ["[12 Gandhi Road, Kilpauk, Chennai, Tamil Nadu 600010]", "CBSE Affiliation No. [1930456]  |  School Code [55123]", "[+91 44 2641 7788]  |  [office@srividyaniketan.edu.in]"], "title": "BONAFIDE", "meta": [["Cert. No.", "[SVN/BC/2026-27/0318]"], ["Date", "[28/11/2026]"]]},
+    {"type": "spacer", "size": 10},
+    {"type": "title", "text": "BONAFIDE CERTIFICATE", "subtitle": "To whomsoever it may concern", "align": "center"},
+    {"type": "spacer", "size": 8},
+    {"type": "text", "text": ["This is to certify that **[Aditi Ramesh]**, daughter of **[Mr. K. Ramesh]**, is a bonafide student of this school, studying in **[Class XI, Science (PCMB)]**, Section **[B]**, during the academic year **[2026-27]**.", "As per our admission register, she was admitted on **[03/06/2022]** under Admission No. **[SVN/2022/1147]**. Her date of birth as recorded in the school register is **[14/08/2010]**.", "To the best of our knowledge, she bears a good moral character and her conduct in school has been **[good]**.", "This certificate is issued at the request of the student's parent for the purpose of **[applying for the State Merit Scholarship 2026-27]** and is not valid for any other purpose."], "align": "justify"},
+    {"type": "heading", "text": "Particulars as per school records"},
+    {"type": "fields", "columns": 2, "items": [["Student name", "[Aditi Ramesh]"], ["Parent/Guardian", "[Mr. K. Ramesh]"], ["Class & section", "[XI - B, Science]"], ["Roll No.", "[11B-23]"], ["Admission No.", "[SVN/2022/1147]"], ["Academic year", "[2026-27]"], ["Date of birth", "[14/08/2010]"], ["Purpose", "[Scholarship application]"], ["Board / Medium", "[CBSE / English]"], ["Period of study", "[06/2022 to date]"]]},
+    {"type": "fields", "columns": 2, "items": [["Place", "[Chennai]"], ["Date of issue", "[28/11/2026]"]]},
+    {"type": "note", "heading": "Note", "text": ["This certificate is valid only with the school seal and the original signature of the Principal. It confirms enrolment for the period stated and is valid for [6 months] from the date of issue. Verification: [office@srividyaniketan.edu.in]."]},
+    {"type": "heading", "text": "For office use"},
+    {"type": "fields", "columns": 2, "items": [["Prepared by", "[Office Assistant]"], ["Checked by", "[Office Superintendent]"], ["Register entry", "[BC Register, Page 64]"], ["Application date", "[25/11/2026]"]]},
+    {"type": "spacer", "size": 36},
+    {"type": "signature", "items": ["Class Teacher\n[Mrs. S. Lakshmi]", "Office Seal", "Principal\n[Dr. R. Venkatesan]"]},
+    {"type": "spacer", "size": 14},
+    {"type": "text", "text": "Issued under the authority of the Principal. Any alteration or overwriting makes this certificate invalid.", "align": "center"}
+  ]
+}
