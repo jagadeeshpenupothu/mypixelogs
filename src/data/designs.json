@@ -206,5 +206,34 @@
       "type": "playfair-montserrat",
       "mood": "deep-night"
     }
+  },
+  {
+    "slug": "dhanurmasam-muggulu-contest-flyer",
+    "title": "Dhanurmasam Muggulu Contest Flyer Template",
+    "description": "Pastel circle-frame flyer for a Dhanurmasa muggulu (rangoli) contest by a saree store, with doorstep photo, prize sticker and dates. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "flyer",
+    "published": "2026-11-28",
+    "style": {
+      "layout": "circle-frame",
+      "type": "anton-poppins",
+      "mood": "pastel-soft"
+    },
+    "features": [
+      "Circular photo frame with muggu dot rings",
+      "Rotated prize sticker and scalloped contact footer",
+      "Pastel palette with Anton and Poppins type"
+    ],
+    "useCases": [
+      "Sankranti and Dhanurmasam rangoli contests",
+      "Saree and jewellery store festive promotions",
+      "Community, school or apartment muggulu events"
+    ],
+    "credits": [
+      {
+        "creator": "Generated with OpenAI image models for MyPixelogs",
+        "license": "Free to use",
+        "source": "OpenAI"
+      }
+    ]
   }
 ]
