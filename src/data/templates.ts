@@ -1,3 +1,4 @@
+import designs from "@/data/designs.json";
 import flyerComposites from "@/data/flyer-composites.json";
 import flyerSpecs from "@/data/flyer-specs.json";
 import generated from "@/data/generated-templates.json";
@@ -315,7 +316,40 @@ const posterFlyers: Template[] = [
   useCases: spec.useCases,
 }));
 
+/** Hand-designed flyers and posters from the daily Pinterest-inspired run (src/data/designs.json, scripts/designs/build.mjs). */
+type DesignEntry = {
+  slug: string;
+  title: string;
+  description: string;
+  category: "flyer" | "poster";
+  published: string;
+  features: string[];
+  useCases: string[];
+  credits?: { creator?: string; license: string; source: string; page?: string }[];
+};
+const designTemplates: Template[] = (designs as unknown as DesignEntry[]).map((d) => {
+  const file = (ext: string) => `/downloads/${d.slug}${ext}`;
+  return {
+    id: d.slug,
+    title: d.title,
+    slug: d.slug,
+    description: d.description,
+    category: d.category,
+    thumbnail: `/previews/${d.slug}.png`,
+    previewImage: `/previews/${d.slug}.png`,
+    downloadPath: file(".psd"),
+    downloads: 0,
+    ready: true,
+    published: d.published,
+    formats: ["PSD", "Photopea", "Illustrator", "CorelDRAW", "SVG", "PDF", "PNG"],
+    platforms: { psdPath: file(".psd"), aiPath: file(".ai"), svgPath: file(".svg"), pdfPath: file(".pdf"), epsPath: file(".eps"), pngPath: file(".png"), zipPath: file("-all-formats.zip") },
+    photoCredits: d.credits,
+    features: d.features,
+    useCases: d.useCases,
+  };
+});
+
 const generatedSlugs = new Set(generatedTemplates.map((template) => template.slug));
-const merged = [...allTemplates.filter((template) => !generatedSlugs.has(template.slug)), ...generatedTemplates, ...posterFlyers];
+const merged = [...allTemplates.filter((template) => !generatedSlugs.has(template.slug)), ...generatedTemplates, ...posterFlyers, ...designTemplates];
 
 export const templates: Template[] = merged.filter((template) => template.ready);

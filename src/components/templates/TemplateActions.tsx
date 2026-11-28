@@ -27,6 +27,9 @@ function platformLinks(template: Template): PlatformLink[] {
   }
   if (p.aiPath) links.push({ label: "Illustrator", note: "Download .ai", href: p.aiPath, Icon: PenTool, download: true });
   if (p.svgPath) links.push({ label: "SVG", note: "For Inkscape or Figma", href: p.svgPath, Icon: FileCode2, download: true });
+  if (p.epsPath) links.push({ label: "CorelDRAW", note: "Download .eps (File › Import)", href: p.epsPath, Icon: PenTool, download: true });
+  if (p.pngPath) links.push({ label: "PNG", note: "A4, 300 dpi", href: p.pngPath, Icon: FileImage, download: true });
+  if (p.zipPath) links.push({ label: "All formats", note: "ZIP with fonts", href: p.zipPath, Icon: Download, download: true });
   if (p.latexPath) {
     links.push({
       label: "Overleaf",
@@ -100,6 +103,25 @@ export function TemplateActions({ template }: TemplateActionsProps) {
             {g.title.replace(/ \(.*\)$/, "")}
           </Link>
         ))}
+
+      {template.photoCredits?.length ? (
+        <p className="mt-4 text-xs leading-5 text-muted-foreground">
+          Photos:{" "}
+          {template.photoCredits.map((c, i) => (
+            <span key={i}>
+              {i ? "; " : ""}
+              {c.page ? (
+                <a href={c.page} target="_blank" rel="noopener" className="underline hover:text-foreground">
+                  {c.creator || "source"}
+                </a>
+              ) : (
+                c.creator || "unknown"
+              )}{" "}
+              ({c.license}, {c.source})
+            </span>
+          ))}
+        </p>
+      ) : null}
 
       {template.photoCredit ? (
         <p className="mt-4 text-xs leading-5 text-muted-foreground">
