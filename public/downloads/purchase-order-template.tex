@@ -1,0 +1,58 @@
+% Purchase Order Template - MyPixelogs (https://mypixelogs.netlify.app/templates/purchase-order-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1E4D3A}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent\colorbox{accent}{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\color{white}\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{white}\fontsize{14}{17}\selectfont\bfseries [Patel Engineering Works Pvt. Ltd.]}\\ {\color{white}\footnotesize [Plot 118, GIDC Estate, Vatva, Ahmedabad, Gujarat 382445]}\\ {\color{white}\footnotesize GSTIN: [24AACCP4821K1Z7]  \textbar{}  PAN: [AACCP4821K]  \textbar{}  [+91 79 2583 4410]}\\ {\color{white}\footnotesize [purchase@patelengg.in]  \textbar{}  [www.patelengg.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{white}\fontsize{24}{28}\selectfont\bfseries PURCHASE ORDER}\\[3pt] {\color{white}\footnotesize PO No.~\textbf{[PO/2026-27/0387]}}\\ {\color{white}\footnotesize PO Date~\textbf{[28/11/2026]}}\\ {\color{white}\footnotesize Delivery by~\textbf{[12/12/2026]}}\end{tabular}\\[6pt]\end{tabularx}}}\par\vspace{8pt}
+
+{\arrayrulecolor{rulegray}\renewcommand{\arraystretch}{1.3}\noindent\begin{tabularx}{\linewidth}{|X|X|X|}\hline
+{\color{accent}\footnotesize\bfseries VENDOR}\newline \textbf{[Shree Ganesh Steel Traders]}\newline Attn: [Mr. Mahesh Shah, Sales]\newline [22 Naroda Road, Ahmedabad, Gujarat 380025]\newline GSTIN: [24ABKFS3390L1Z4] & {\color{accent}\footnotesize\bfseries SHIP TO}\newline \textbf{[Patel Engineering Works, Unit 2]}\newline Attn: [Stores In-charge, Gate No. 3]\newline [Plot 121, GIDC Estate, Vatva, Ahmedabad 382445]\newline Place of supply: [Gujarat (24)] & {\color{accent}\footnotesize\bfseries ORDER DETAILS}\newline \textbf{Quotation ref.: [SGST/Q/1145 dt. 24/11/2026]}\newline Requisition: [PR/0912, Production]\newline Freight: [Included, FOR our stores]\newline Payment: [30 days from receipt] \\ \hline
+\end{tabularx}}\par\vspace{6pt}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\centering\arraybackslash}p{0.047\linewidth}|>{\raggedright\arraybackslash}p{0.354\linewidth}|>{\centering\arraybackslash}p{0.093\linewidth}|>{\raggedleft\arraybackslash}p{0.112\linewidth}|>{\raggedleft\arraybackslash}p{0.121\linewidth}|>{\raggedleft\arraybackslash}p{0.084\linewidth}|>{\raggedleft\arraybackslash}p{0.149\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{\#}} & \textcolor{white}{\textbf{Item description}} & \textcolor{white}{\textbf{HSN}} & \textcolor{white}{\textbf{Qty}} & \textcolor{white}{\textbf{Rate (Rs.\,)}} & \textcolor{white}{\textbf{GST}} & \textcolor{white}{\textbf{Amount (Rs.\,)}} \\ \hline
+1 & \textbf{[MS round bar, 12 mm, IS 2062]} & [7214] & [500 kg] & [68.00] & [18\%] & [34,000.00] \\ \hline
+2 & \textbf{[MS plate, 6 mm, IS 2062 E250]} & [7208] & [800 kg] & [72.50] & [18\%] & [58,000.00] \\ \hline
+3 & [Hex bolt with nut, M12 x 50, Gr. 8.8] & [7318] & [2,000 pcs] & [6.25] & [18\%] & [12,500.00] \\ \hline
+4 & [Welding electrode, 3.15 mm, E6013] & [8311] & [40 pkt] & [450.00] & [18\%] & [18,000.00] \\ \hline
+5 & [Grinding disc, 4 inch, depressed centre] & [6804] & [200 pcs] & [35.00] & [18\%] & [7,000.00] \\ \hline
+\end{tabular}}\par
+
+\vspace{2pt}{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}\hfill\begin{tabular}{|p{0.22\linewidth}|>{\raggedleft\arraybackslash}p{0.14\linewidth}|}\hline
+Subtotal & [1,29,500.00] \\ \hline
+CGST @ 9\% & [11,655.00] \\ \hline
+SGST @ 9\% & [11,655.00] \\ \hline
+\rowcolor{accent}\textcolor{white}{\textbf{PO total}} & \textcolor{white}{\textbf{[1,52,810.00]}} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+Amount in words: \textbf{[Rupees One Lakh Fifty-Two Thousand Eight Hundred Ten Only]}\par\vspace{4pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Terms and conditions}\\ 1. \textbf{PO number:} quote this PO number on your tax invoice, delivery challan and every packing list.\\ 2. \textbf{Delivery:} deliver to the ship-to address by the date above, Monday to Saturday, 9:00 am to 5:00 pm.\\ 3. \textbf{Quality:} material must carry mill test certificates. Rejected items will be returned at your cost.\\ 4. \textbf{Payment:} within [30 days] of receipt of material and a correct GST invoice, by NEFT.\\ 5. \textbf{Changes:} prices are fixed for this order. Short or late supply may lead to cancellation of the balance.}}\par\vspace{6pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Prepared by: [Neha Desai, Purchase]}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ For [Patel Engineering Works Pvt. Ltd.] (Authorised Signatory)}\par
+\end{document}

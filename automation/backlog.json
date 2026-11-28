@@ -156,7 +156,8 @@
     "keyword": "purchase order format",
     "score": 80,
     "notes": "PO no, vendor, ship-to, items table, taxes, delivery date, terms, authorised signatory",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "teacher-resume-template",

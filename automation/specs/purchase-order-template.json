@@ -1,0 +1,25 @@
+{
+  "slug": "purchase-order-template",
+  "title": "Purchase Order Template",
+  "category": "business",
+  "accent": "1E4D3A",
+  "titleSize": 24,
+  "description": "Free purchase order format for India with PO number, vendor GSTIN, ship-to address, HSN codes, CGST/SGST, delivery date and terms. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Vendor, bill-to and ship-to blocks with GSTIN", "Itemised table with HSN, unit, rate and CGST/SGST split", "Delivery, payment and inspection terms with authorised signatory"],
+  "useCases": ["Ordering raw material from suppliers", "Office and IT purchases", "Recurring orders from approved vendors"],
+  "keywords": ["purchase order format", "po format", "purchase order format in excel"],
+  "references": ["https://www.mastersindia.co/blog/purchase-order-po/", "https://www.captainbiz.com/blogs/gst-purchase-order-format-in-india/", "https://mybillbook.in/s/purchase-order-format", "https://www.hubspot.com/business-templates/purchase-order", "https://www.procuredesk.com/purchase-order-template-guide/"],
+  "research": "All references show a PO number and date, buyer and vendor details with GSTIN, separate ship-to address, line items with HSN, quantity, rate and tax, a required delivery date, payment and freight terms, and an authorised signature.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1INZMFxRh_fvkKKZ2rrJ7c9w5T3O2rh5QXcn2kck1vDA", "googleSheetsId": "1NQ7RVXUId1GQeufjGxhBKfbVBamcxGUWTOJQjScLkCQ"},
+  "blocks": [
+    {"type": "header", "org": "[Patel Engineering Works Pvt. Ltd.]", "lines": ["[Plot 118, GIDC Estate, Vatva, Ahmedabad, Gujarat 382445]", "GSTIN: [24AACCP4821K1Z7]  |  PAN: [AACCP4821K]  |  [+91 79 2583 4410]", "[purchase@patelengg.in]  |  [www.patelengg.in]"], "title": "PURCHASE ORDER", "meta": [["PO No.", "[PO/2026-27/0387]"], ["PO Date", "[28/11/2026]"], ["Delivery by", "[12/12/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "Vendor", "lines": ["[Shree Ganesh Steel Traders]", "Attn: [Mr. Mahesh Shah, Sales]", "[22 Naroda Road, Ahmedabad, Gujarat 380025]", "GSTIN: [24ABKFS3390L1Z4]"]}, {"heading": "Ship to", "lines": ["[Patel Engineering Works, Unit 2]", "Attn: [Stores In-charge, Gate No. 3]", "[Plot 121, GIDC Estate, Vatva, Ahmedabad 382445]", "Place of supply: [Gujarat (24)]"]}, {"heading": "Order details", "lines": ["Quotation ref.: [SGST/Q/1145 dt. 24/11/2026]", "Requisition: [PR/0912, Production]", "Freight: [Included, FOR our stores]", "Payment: [30 days from receipt]"]}]},
+    {"type": "table", "columns": [{"label": "#", "width": 0.5, "align": "center"}, {"label": "Item description", "width": 3.8}, {"label": "HSN", "width": 1.0, "align": "center"}, {"label": "Qty", "width": 1.2, "align": "right"}, {"label": "Rate (₹)", "width": 1.3, "align": "right"}, {"label": "GST", "width": 0.9, "align": "right"}, {"label": "Amount (₹)", "width": 1.6, "align": "right"}],
+      "rows": [["1", "**[MS round bar, 12 mm, IS 2062]**", "[7214]", "[500 kg]", "[68.00]", "[18%]", "[34,000.00]"], ["2", "**[MS plate, 6 mm, IS 2062 E250]**", "[7208]", "[800 kg]", "[72.50]", "[18%]", "[58,000.00]"], ["3", "[Hex bolt with nut, M12 x 50, Gr. 8.8]", "[7318]", "[2,000 pcs]", "[6.25]", "[18%]", "[12,500.00]"], ["4", "[Welding electrode, 3.15 mm, E6013]", "[8311]", "[40 pkt]", "[450.00]", "[18%]", "[18,000.00]"], ["5", "[Grinding disc, 4 inch, depressed centre]", "[6804]", "[200 pcs]", "[35.00]", "[18%]", "[7,000.00]"]],
+      "totals": [["Subtotal", "[1,29,500.00]"], ["CGST @ 9%", "[11,655.00]"], ["SGST @ 9%", "[11,655.00]"], ["PO total", "[1,52,810.00]"]]},
+    {"type": "text", "text": "Amount in words: **[Rupees One Lakh Fifty-Two Thousand Eight Hundred Ten Only]**"},
+    {"type": "note", "heading": "Terms and conditions", "text": ["1. **PO number:** quote this PO number on your tax invoice, delivery challan and every packing list.", "2. **Delivery:** deliver to the ship-to address by the date above, Monday to Saturday, 9:00 am to 5:00 pm.", "3. **Quality:** material must carry mill test certificates. Rejected items will be returned at your cost.", "4. **Payment:** within [30 days] of receipt of material and a correct GST invoice, by NEFT.", "5. **Changes:** prices are fixed for this order. Short or late supply may lead to cancellation of the balance."]},
+    {"type": "signature", "items": ["Prepared by: [Neha Desai, Purchase]", "For [Patel Engineering Works Pvt. Ltd.] (Authorised Signatory)"]}
+  ]
+}
