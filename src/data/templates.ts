@@ -321,7 +321,9 @@ type DesignEntry = {
   slug: string;
   title: string;
   description: string;
-  category: "flyer" | "poster";
+  category: "flyer" | "poster" | "business-card" | "id-card" | "letterhead" | "envelope";
+  size?: string;
+  back?: boolean;
   published: string;
   features: string[];
   useCases: string[];
@@ -342,7 +344,10 @@ const designTemplates: Template[] = (designs as unknown as DesignEntry[]).map((d
     ready: true,
     published: d.published,
     formats: ["PSD", "Photopea", "Illustrator", "CorelDRAW", "SVG", "PDF", "PNG"],
-    platforms: { psdPath: file(".psd"), aiPath: file(".ai"), svgPath: file(".svg"), pdfPath: file(".pdf"), epsPath: file(".eps"), pngPath: file(".png"), zipPath: file("-all-formats.zip") },
+    platforms: {
+      psdPath: file(".psd"), aiPath: file(".ai"), svgPath: file(".svg"), pdfPath: file(".pdf"), epsPath: file(".eps"), pngPath: file(".png"), zipPath: file("-all-formats.zip"),
+      ...(d.back ? { backPsdPath: file("-back.psd"), backPngPath: file("-back.png") } : {}),
+    },
     photoCredits: d.credits,
     features: d.features,
     useCases: d.useCases,
