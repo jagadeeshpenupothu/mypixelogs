@@ -2,7 +2,7 @@
 // Run with NODE_USE_ENV_PROXY=1 where traffic goes through a proxy (cloud sessions); npm run flyer:image does this.
 // Finds free-licence photos for a flyer, shows the best ones, and saves the chosen photo with its licence.
 //
-//   node scripts/flyers/find-image.mjs search "diwali diya lamps" [--slug diwali-offer]
+//   node scripts/flyers/find-image.mjs search "diwali diya lamps" [--slug diwali-offer] [--sources stocksnap,wordpress,rawpixel]
 //       → lists candidates and writes automation/out/<slug>-candidates.jpg (a numbered contact sheet to look at)
 //   node scripts/flyers/find-image.mjs pick <slug> <number> [--focus top|center|bottom]
 //       → downloads that candidate, crops it to A4 (2480 x 3508) into public/flyers/<slug>.jpg
@@ -33,7 +33,9 @@ const getJson = async (url) => {
 };
 
 async function openverse(q) {
-  const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(q)}&license=cc0,pdm,by&size=large&page_size=20&mature=false`;
+  // --sources stocksnap,wordpress,rawpixel keeps to modern stock photos (people, products, food) and skips museum scans.
+  const sources = arg("sources", "");
+  const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(q)}&license=cc0,pdm,by&size=large&page_size=20&mature=false${sources ? `&source=${encodeURIComponent(sources)}` : ""}`;
   const d = await getJson(url).catch((e) => (console.error("Openverse:", e.message), { results: [] }));
   return d.results.map((r) => ({
     source: `Openverse · ${r.source}`,
@@ -100,7 +102,7 @@ mkdirSync(outDir, { recursive: true });
 if (mode === "search") {
   const q = a;
   const slug = arg("slug", slugify(q));
-  const list = rank([...(await openverse(q)), ...(await wikimedia(q))]);
+  const list = rank([...(await openverse(q)), ...(arg("sources", "") ? [] : await wikimedia(q))]);
   writeFileSync(path.join(outDir, `${slug}-candidates.json`), JSON.stringify({ query: q, candidates: list }, null, 2));
   if (!list.length) {
     console.log(`No free-licence photos large enough for "${q}". Try other words, or use the ChatGPT prompt route.`);

@@ -38,6 +38,8 @@ export type Template = {
   flyerDesign?: string;
   /** Credit for a photo used in the template (required by CC BY photos). */
   photoCredit?: { creator?: string; license: string; source: string; page?: string };
+  /** Several photos, each credited. */
+  photoCredits?: { creator?: string; license: string; source: string; page?: string }[];
   /** A short silent clip of a video template. */
   previewVideo?: string;
   /** Date added to the site (YYYY-MM-DD), when known. */
@@ -66,4 +68,8 @@ export type TemplatePlatforms = {
   /** Illustrator file and plain SVG. */
   aiPath?: string;
   svgPath?: string;
+  /** EPS for CorelDRAW, a print-ready PNG, and a ZIP with every format and the fonts. */
+  epsPath?: string;
+  pngPath?: string;
+  zipPath?: string;
 };
