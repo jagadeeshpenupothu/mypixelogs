@@ -32,5 +32,29 @@
         "source": "StockSnap via Openverse"
       }
     ]
+  },
+  {
+    "slug": "gadget-store-flyer",
+    "title": "Mobile & Electronics Store Flyer Template",
+    "description": "Blue and lime gadget shop flyer with a real model photo, product line-up, check-list and contact bar with QR code. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "flyer",
+    "published": "2026-11-28",
+    "features": [
+      "Real studio photos: a model on gadget boxes and a product line-up",
+      "Every word is live, editable text, including the check-list",
+      "Contact bar with WhatsApp, phone and a QR code you can replace"
+    ],
+    "useCases": [
+      "Mobile phone and electronics shops",
+      "Laptop and accessories stores",
+      "Gadget offers, EMI and home-delivery promotions"
+    ],
+    "credits": [
+      {
+        "creator": "Generated with ChatGPT for MyPixelogs",
+        "license": "Free to use",
+        "source": "ChatGPT"
+      }
+    ]
   }
 ]

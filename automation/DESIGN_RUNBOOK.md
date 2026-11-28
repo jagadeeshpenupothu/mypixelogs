@@ -50,6 +50,12 @@ don't explore the repo, keep replies short.
       soft fade into the photo instead (an alpha ramp over the top/side 15%) and save it as `.webp`; SVG masks don't
       survive in the AI/PDF. For a cut-out: `python3 scripts/flyers/cutout.py <png> public/flyers/<slug>-<n>.webp`
       and Read the `-check.jpg`.
+   d2. Owner-made ChatGPT images: if the image-prompts Doc has a block for this pin whose files are in the Drive folder
+      `199MFCpdMPzvtQHu6uCSInFvPE_Wk_jLc`, download those and use them (credit "Generated with ChatGPT for MyPixelogs").
+      For a person sitting on or holding light objects (white boxes, silver laptops) on a plain studio background, the
+      AI cut-out drops those objects: combine the rembg mask with a mask of everything that differs from a fitted
+      background-brightness model (a quadratic fit of the border pixels), limited to the objects' area, then fill holes.
+      Never reuse any photo from the Pinterest pin itself (it belongs to someone else).
    e. Credit each image as `{"creator": "Generated with Canva AI for MyPixelogs", "license": "Free to use", "source": "Canva"}`.
    If Canva is unavailable or its monthly AI limit is used up, use free photos instead:
    `NODE_USE_ENV_PROXY=1 node --no-warnings scripts/flyers/find-image.mjs search "<2–4 words>" --slug <slug>-1
