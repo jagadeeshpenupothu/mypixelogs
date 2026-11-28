@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2100 2970" width="2100" height="2970">
+  <defs>
+    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A86A4E"/><stop offset="0.5" stop-color="#E7B596"/><stop offset="1" stop-color="#A86A4E"/>
+    </linearGradient>
+    <linearGradient id="plum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4A2850"/><stop offset="1" stop-color="#2C1630"/>
+    </linearGradient>
+  </defs>
+  <g data-name="Background"><rect x="0" y="0" width="2100" height="2970" fill="#FCF8F4"/></g>
+  <g data-name="Top Accent"><rect x="0" y="0" width="2100" height="22" fill="url(#plum)"/><rect x="0" y="22" width="2100" height="6" fill="url(#rg)"/></g>
+  <g data-name="Corner Pattern" fill="none" stroke="#C98B6B" stroke-width="2" opacity="0.35">
+    <path d="M2100 28 A320 320 0 0 0 1780 348"/><path d="M2100 28 A250 250 0 0 0 1850 278"/><path d="M2100 28 A180 180 0 0 0 1920 208"/>
+    <path d="M0 2758 A320 320 0 0 1 320 2438"/><path d="M0 2758 A250 250 0 0 1 250 2508"/><path d="M0 2758 A180 180 0 0 1 180 2578"/>
+  </g>
+  <g data-name="Logo"><image href="/flyers/ravya-salon-letterhead-logo.webp" x="150" y="140" width="540" height="170"/></g>
+  <g data-name="Address"><text x="1950" y="176" font-family="Montserrat" font-size="30" font-weight="500" text-anchor="end" fill="#3A1F3D">14, Jubilee Hills Road No. 36, Hyderabad 500033</text></g>
+  <g data-name="Phone"><text x="1950" y="226" font-family="Montserrat" font-size="30" font-weight="500" text-anchor="end" fill="#3A1F3D">+91 98765 43210</text></g>
+  <g data-name="Email"><text x="1950" y="276" font-family="Montserrat" font-size="30" font-weight="500" text-anchor="end" fill="#3A1F3D">hello@ravyasalon.in</text></g>
+  <g data-name="Website"><text x="1950" y="326" font-family="Montserrat" font-size="30" font-weight="600" text-anchor="end" fill="#A86A4E">www.ravyasalon.in</text></g>
+  <g data-name="Divider"><rect x="150" y="400" width="1800" height="4" fill="url(#rg)"/><path d="M1050 384 L1070 402 L1050 420 L1030 402 Z" fill="#C98B6B"/></g>
+  <g data-name="GSTIN"><text x="150" y="460" font-family="Montserrat" font-size="26" font-weight="500" letter-spacing="3" fill="#8A6A82">GSTIN: 36ABCDE1234F1Z5</text></g>
+  <g data-name="Date"><text x="1950" y="560" font-family="Montserrat" font-size="30" font-weight="500" text-anchor="end" fill="#9A8496">Date: ____________________</text></g>
+  <g data-name="Ref"><text x="150" y="560" font-family="Montserrat" font-size="30" font-weight="500" fill="#9A8496">Ref: ____________________</text></g>
+  <g data-name="Watermark" opacity="0.07" fill="none" stroke="#3A1F3D" stroke-width="6">
+    <circle cx="1050" cy="1620" r="440"/><circle cx="1050" cy="1620" r="410" stroke-width="2"/>
+    <path d="M1050 1300 C1150 1420 1150 1560 1050 1700 C950 1560 950 1420 1050 1300 Z"/>
+    <path d="M1050 1700 C1180 1640 1300 1520 1330 1400 C1210 1420 1100 1520 1050 1700 Z"/>
+    <path d="M1050 1700 C920 1640 800 1520 770 1400 C890 1420 1000 1520 1050 1700 Z"/>
+    <path d="M1050 1700 C1200 1720 1340 1680 1420 1600 C1300 1560 1160 1600 1050 1700 Z"/>
+    <path d="M1050 1700 C900 1720 760 1680 680 1600 C800 1560 940 1600 1050 1700 Z"/>
+    <text x="1050" y="1900" font-family="Cormorant Garamond" font-size="150" font-weight="600" text-anchor="middle" fill="#3A1F3D" stroke="none" letter-spacing="30">RAVYA</text>
+  </g>
+  <g data-name="Footer Band"><rect x="0" y="2758" width="2100" height="6" fill="url(#rg)"/><rect x="0" y="2764" width="2100" height="206" fill="url(#plum)"/></g>
+  <g data-name="Tagline"><text x="1050" y="2846" font-family="Cormorant Garamond" font-size="48" font-weight="600" font-style="italic" text-anchor="middle" fill="#E7B596">Hair · Skin · Bridal Artistry</text></g>
+  <g data-name="Footer Contact"><text x="1050" y="2906" font-family="Montserrat" font-size="26" font-weight="500" letter-spacing="2" text-anchor="middle" fill="#F3E4DA">+91 98765 43210   •   hello@ravyasalon.in   •   www.ravyasalon.in</text></g>
+</svg>
