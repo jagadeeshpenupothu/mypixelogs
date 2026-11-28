@@ -66,6 +66,39 @@
     "published": "2026-11-28"
   },
   {
+    "id": "delivery-challan",
+    "title": "Delivery Challan Template",
+    "slug": "delivery-challan-template",
+    "description": "Free GST delivery challan format under Rule 55 with challan no., consignor and consignee GSTIN, HSN, quantity, purpose, e-way bill and transport details. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "business",
+    "features": [
+      "Rule 55 fields: challan no., date, consignor and consignee GSTIN",
+      "Item table with HSN, quantity, unit and value of goods",
+      "Purpose, transport, e-way bill and triplicate copy marking"
+    ],
+    "useCases": [
+      "Sending goods for job work",
+      "Supply on approval or branch transfer",
+      "Goods moved without an invoice"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1N0x8_6qfJDIaUZWB3Vc1m9wsym2ND2CGawUQdKEwvKw",
+      "googleSheetsId": "16BUPWkDxb7oGmP5zTfnA-XaMGrWW_6ryeJs-BBqSRMU",
+      "excelPath": "/downloads/delivery-challan-template.xlsx",
+      "latexPath": "/downloads/delivery-challan-template.tex",
+      "pdfPath": "/downloads/delivery-challan-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "experience-certificate",
     "title": "Experience Certificate Template",
     "slug": "experience-certificate-template",
