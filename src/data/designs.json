@@ -121,7 +121,12 @@
         "license": "Free to use",
         "source": "OpenAI"
       }
-    ]
+    ],
+    "style": {
+      "layout": "editorial-fullbleed",
+      "type": "playfair-montserrat",
+      "mood": "deep-night"
+    }
   },
   {
     "slug": "sona-bakery-id-card",
@@ -166,7 +171,12 @@
         "license": "Free to use",
         "source": "OpenAI"
       }
-    ]
+    ],
+    "style": {
+      "layout": "editorial-fullbleed",
+      "type": "playfair-montserrat",
+      "mood": "deep-night"
+    }
   },
   {
     "slug": "new-year-eve-rooftop-dinner-flyer",
@@ -190,6 +200,11 @@
         "license": "Free to use",
         "source": "OpenAI"
       }
-    ]
+    ],
+    "style": {
+      "layout": "editorial-fullbleed",
+      "type": "playfair-montserrat",
+      "mood": "deep-night"
+    }
   }
 ]
