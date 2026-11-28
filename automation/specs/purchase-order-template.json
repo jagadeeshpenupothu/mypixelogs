@@ -1,0 +1,26 @@
+{
+  "slug": "purchase-order-template",
+  "title": "Purchase Order Template",
+  "category": "business",
+  "accent": "1F4E3D",
+  "titleSize": 24,
+  "description": "Free GST purchase order format for India with PO number, vendor and ship-to details, HSN codes, CGST/SGST, delivery date and terms. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Vendor, bill-to and ship-to blocks with GSTIN", "Itemised table with HSN, quantity, rate and GST split", "Delivery schedule, payment terms and authorised signatory"],
+  "useCases": ["Ordering raw material or packaging from suppliers", "Purchase approvals in small and mid-size businesses", "Matching supplier invoices to orders"],
+  "keywords": ["purchase order format", "gst purchase order format", "purchase order format in excel"],
+  "references": ["https://www.mastersindia.co/blog/purchase-order-po/", "https://awsstgqa.tallysolutions.com/inventory/purchase-order", "https://www.captainbiz.com/blogs/gst-purchase-order-format-in-india/", "https://www.hubspot.com/business-templates/purchase-order", "https://tipalti.com/resources/learn/purchase-order-form/"],
+  "research": "All references show PO no. and date, buyer and vendor details with GSTIN, ship-to address, item lines with HSN, quantity, rate and tax, total, delivery date, payment and freight terms, and an authorised approval signature.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1y4zCbvH0p55om3PGIKtLDmrRTujYQ_7Z8heko9r3Gqw", "googleSheetsId": "1sCUK9wafvdUsSy-fLEUKsXl9WW1vheQJIHqm_W0S_ic"},
+  "blocks": [
+    {"type": "header", "org": "[Patil Agro Foods Pvt. Ltd.]", "lines": ["[Gat No. 118, MIDC Chakan, Pune, Maharashtra 410501]", "GSTIN: [27AAHCP4521K1Z8]  |  PAN: [AAHCP4521K]  |  [+91 98230 45678]", "[purchase@patilagro.in]  |  [www.patilagro.in]"], "title": "PURCHASE ORDER", "meta": [["PO No.", "[PO/2026-27/0318]"], ["PO Date", "[28/11/2026]"], ["Delivery by", "[12/12/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "Vendor", "lines": ["[Shree Ganesh Packaging Industries]", "Attn: [Mr. Sunil Jadhav, Sales]", "[Plot B-27, Bhosari MIDC, Pune 411026]", "GSTIN: [27ABEFS7890L1Z3]"]}, {"heading": "Ship to", "lines": ["[Patil Agro Foods Pvt. Ltd. - Warehouse 2]", "Contact: [Mr. Amit Shinde, Stores]", "[Gat No. 120, MIDC Chakan, Pune 410501]", "Quotation ref.: [SGP/Q/2026/774 dated 21/11/2026]"]}]},
+    {"type": "table", "columns": [{"label": "#", "width": 0.5, "align": "center"}, {"label": "Item description", "width": 3.9}, {"label": "HSN", "width": 1.0, "align": "center"}, {"label": "Qty", "width": 1.1, "align": "right"}, {"label": "Rate (₹)", "width": 1.5, "align": "right"}, {"label": "GST", "width": 0.9, "align": "right"}, {"label": "Amount (₹)", "width": 1.7, "align": "right"}],
+      "rows": [["1", "**[3-ply corrugated box, 18 x 12 x 12 in]**", "[4819]", "[2,000 pcs]", "[28.50]", "[18%]", "[57,000.00]"], ["2", "**[BOPP tape, 48 mm x 65 m, brown]**", "[3919]", "[500 rolls]", "[42.00]", "[18%]", "[21,000.00]"], ["3", "[Stretch film roll, 23 micron, 500 mm]", "[3920]", "[120 rolls]", "[385.00]", "[18%]", "[46,200.00]"], ["4", "[Air bubble wrap roll, 1 m x 100 m]", "[3921]", "[40 rolls]", "[1,150.00]", "[18%]", "[46,000.00]"], ["5", "[Wooden pallet, 1200 x 1000 mm, heat treated]", "[4415]", "[50 pcs]", "[640.00]", "[18%]", "[32,000.00]"]],
+      "totals": [["Subtotal", "[2,02,200.00]"], ["CGST @ 9%", "[18,198.00]"], ["SGST @ 9%", "[18,198.00]"], ["PO total", "[2,38,596.00]"]]},
+    {"type": "text", "text": "Amount in words: **[Rupees Two Lakh Thirty-Eight Thousand Five Hundred Ninety-Six Only]**"},
+    {"type": "note", "heading": "Terms and conditions", "text": ["1. **Delivery:** deliver to the ship-to address by the date above, Monday to Saturday, 9 am to 5 pm. Partial deliveries only with prior approval.", "2. **Freight:** door delivery, freight and unloading included in the rates above.", "3. **Payment:** within [30 days] of receipt of goods and a correct GST tax invoice, by NEFT.", "4. **Invoice:** quote this PO number, our GSTIN and HSN codes on every invoice and delivery challan.", "5. **Quality:** goods not matching the agreed specification will be returned at the vendor's cost."]},
+    {"type": "fields", "items": [["Prepared by", "[Neha Kulkarni, Purchase Executive]"], ["Department", "[Packaging - Plant 1]"], ["Payment terms", "[Net 30 days]"], ["Budget code", "[PKG-2026-11]"]]},
+    {"type": "signature", "items": ["Vendor acceptance (sign & stamp)", "For [Patil Agro Foods Pvt. Ltd.], Authorised Signatory"]}
+  ]
+}

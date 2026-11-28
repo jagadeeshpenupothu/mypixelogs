@@ -297,6 +297,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "purchase-order",
+    "title": "Purchase Order Template",
+    "slug": "purchase-order-template",
+    "description": "Free GST purchase order format for India with PO number, vendor and ship-to details, HSN codes, CGST/SGST, delivery date and terms. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "business",
+    "features": [
+      "Vendor, bill-to and ship-to blocks with GSTIN",
+      "Itemised table with HSN, quantity, rate and GST split",
+      "Delivery schedule, payment terms and authorised signatory"
+    ],
+    "useCases": [
+      "Ordering raw material or packaging from suppliers",
+      "Purchase approvals in small and mid-size businesses",
+      "Matching supplier invoices to orders"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1y4zCbvH0p55om3PGIKtLDmrRTujYQ_7Z8heko9r3Gqw",
+      "googleSheetsId": "1sCUK9wafvdUsSy-fLEUKsXl9WW1vheQJIHqm_W0S_ic",
+      "excelPath": "/downloads/purchase-order-template.xlsx",
+      "latexPath": "/downloads/purchase-order-template.tex",
+      "pdfPath": "/downloads/purchase-order-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "quotation",
     "title": "Quotation Template",
     "slug": "quotation-template",
