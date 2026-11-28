@@ -1,0 +1,26 @@
+{
+  "slug": "purchase-order-template",
+  "title": "Purchase Order Template",
+  "category": "business",
+  "accent": "1F4E3D",
+  "titleSize": 24,
+  "description": "Free GST purchase order format for India with PO number, vendor and ship-to details, HSN codes, CGST/SGST, delivery date and terms. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Itemised table with HSN, rate and CGST/SGST split", "Vendor, bill-to and ship-to blocks with GSTIN", "Delivery, payment and invoicing terms with authorised signatory"],
+  "useCases": ["Ordering office furniture and equipment", "Raw material and stock purchases", "Approving vendor orders before invoicing"],
+  "keywords": ["purchase order format", "gst purchase order format", "purchase order template in word"],
+  "references": ["https://mybillbook.in/s/purchase-order-format", "https://www.mastersindia.co/blog/purchase-order-po/", "https://www.captainbiz.com/blogs/gst-purchase-order-format-in-india/", "https://www.simplybusiness.co.uk/?p=973", "https://www.xero.com/my/templates/purchase-order-template/"],
+  "research": "All references show a unique PO number and date, buyer and vendor details with GSTIN, ship-to address, itemised lines with HSN, quantity, rate and GST, a delivery date, payment terms and an authorised signature; once the vendor accepts it the PO binds both sides.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1ahA79_7zgPdSzRmEJQ0-k7murM8MOXIEvbzYoA8ITw0", "googleSheetsId": "1aC2p3bl5I0uqAv4cv7f68PIWz-a4ygNv-KxZlrQieP4"},
+  "blocks": [
+    {"type": "header", "org": "[Nair Engineering Pvt. Ltd.]", "lines": ["[No. 18, 2nd Cross, Peenya Industrial Area, Bengaluru, Karnataka 560058]", "GSTIN: [29AAECN4521K1Z8]  |  PAN: [AAECN4521K]  |  [+91 80 4123 5678]", "[purchase@nairengg.in]  |  [www.nairengg.in]"], "title": "PURCHASE ORDER", "meta": [["PO No.", "[PO/2026-27/0318]"], ["PO Date", "[28/11/2026]"], ["Delivery by", "[12/12/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "Vendor", "lines": ["[Shree Balaji Office Supplies]", "Attn: [Mr. Suresh Reddy, Sales]", "[45 Avenue Road, Chickpet, Bengaluru 560053]", "GSTIN: [29ABDFS7788Q1Z3]"]}, {"heading": "Ship to", "lines": ["[Nair Engineering Pvt. Ltd., Admin Block]", "Contact: [Ms. Anjali Menon, +91 98450 22113]", "[Plot 7, KIADB Bommasandra, Bengaluru 560099]", "Place of supply: [Karnataka (29)]"]}, {"heading": "Order details", "lines": ["Quotation ref.: [SBO/Q/1129, 22/11/2026]", "Requisition: [PR/ADM/0457]", "Payment: [30 days from invoice]", "Delivery: [Door delivery, freight paid]"]}]},
+    {"type": "table", "columns": [{"label": "#", "width": 0.5, "align": "center"}, {"label": "Item description", "width": 3.9}, {"label": "HSN", "width": 1.1, "align": "center"}, {"label": "Qty", "width": 0.9, "align": "right"}, {"label": "Rate (₹)", "width": 1.6, "align": "right"}, {"label": "GST", "width": 1.0, "align": "right"}, {"label": "Amount (₹)", "width": 1.7, "align": "right"}],
+      "rows": [["1", "**[Ergonomic office chair, mesh back, adjustable arms]**", "[9401]", "[10]", "[8,450.00]", "[18%]", "[84,500.00]"], ["2", "**[Steel filing cabinet, 4 drawers]**", "[9403]", "[4]", "[12,750.00]", "[18%]", "[51,000.00]"], ["3", "[Mono laser printer, duplex, network]", "[8443]", "[2]", "[18,900.00]", "[18%]", "[37,800.00]"], ["4", "[Toner cartridge for item 3]", "[8443]", "[6]", "[3,250.00]", "[18%]", "[19,500.00]"], ["5", "[Magnetic whiteboard, 6 x 4 ft]", "[9610]", "[3]", "[4,600.00]", "[18%]", "[13,800.00]"]],
+      "totals": [["Subtotal", "[2,06,600.00]"], ["CGST @ 9%", "[18,594.00]"], ["SGST @ 9%", "[18,594.00]"], ["Total order value", "[2,43,788.00]"]]},
+    {"type": "text", "text": "Amount in words: **[Rupees Two Lakh Forty-Three Thousand Seven Hundred Eighty-Eight Only]**"},
+    {"type": "note", "heading": "Terms and conditions", "text": ["1. **Delivery:** deliver all items to the ship-to address by the date above, between 10:00 and 17:00 on working days.", "2. **Quality:** goods must match the quotation and specifications; damaged or wrong items will be returned at your cost.", "3. **Invoice:** raise a GST tax invoice quoting this PO number, our GSTIN and HSN codes; send it with the delivery challan.", "4. **Payment:** by bank transfer within [30 days] of receiving goods and a correct invoice.", "5. Please confirm acceptance of this order within [2 working days]. Changes are valid only in writing."]},
+    {"type": "fields", "items": [["Prepared by", "[Rahul Shetty, Purchase Executive]"], ["Approved by", "[Kavitha Rao, Purchase Manager]"], ["Cost centre", "[ADM-BLR-02]"], ["Budget code", "[CAPEX/26-27/014]"]]},
+    {"type": "signature", "items": ["Vendor acceptance (sign & stamp)", "For [Nair Engineering Pvt. Ltd.], Authorised Signatory"]}
+  ]
+}
