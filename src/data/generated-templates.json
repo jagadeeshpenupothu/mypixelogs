@@ -33,6 +33,39 @@
     "published": "2026-11-28"
   },
   {
+    "id": "authority-letter",
+    "title": "Authority Letter Template",
+    "slug": "authority-letter-template",
+    "description": "Free authorization letter format for India to let a person collect documents or act for your company, with ID details, scope, validity and signatures. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Details of the authorised person with ID proof and specimen signature",
+      "Clear list of what is authorised, with validity dates",
+      "Signatory, company seal and attested signature lines"
+    ],
+    "useCases": [
+      "Collecting documents or parcels for a company",
+      "Submitting applications at banks and offices",
+      "Representing a business at a government department"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1WkzkDcyL-shjLXezxO6YrODjjKZq3nUMuvgeUMJFc5s",
+      "googleSheetsId": "1grOaBoFaMeGLuTIngRkmGAyS8_rOyf-Q7VMtJU038nU",
+      "excelPath": "/downloads/authority-letter-template.xlsx",
+      "latexPath": "/downloads/authority-letter-template.tex",
+      "pdfPath": "/downloads/authority-letter-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "bonafide-certificate",
     "title": "Bonafide Certificate Template",
     "slug": "bonafide-certificate-template",

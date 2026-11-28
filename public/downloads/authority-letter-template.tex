@@ -1,0 +1,63 @@
+% Authority Letter Template - MyPixelogs (https://mypixelogs.netlify.app/templates/authority-letter-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{0F6E56}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{accent}\fontsize{14}{17}\selectfont\bfseries [Mehta Exports Pvt. Ltd.]}\\ {\footnotesize [B-204, Andheri Kurla Road, Andheri East]}\\ {\footnotesize [Mumbai, Maharashtra 400069]}\\ {\footnotesize GSTIN: [27AAFCM4521K1Z8]  \textbar{}  [+91 22 4012 5566]}\\ {\footnotesize [admin@mehtaexports.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{accent}\fontsize{22}{26}\selectfont\bfseries AUTHORITY LETTER}\\[3pt] {\footnotesize Ref. No.~\textbf{[MEPL/ADM/2026-27/087]}}\\ {\footnotesize Date~\textbf{[28/11/2026]}}\end{tabular}\\[6pt]\end{tabularx}}}\par{\color{accent}\rule{\linewidth}{1.8pt}}\par\vspace{8pt}
+
+To,\par\vspace{4pt}
+
+\textbf{[The Branch Manager]}\par\vspace{4pt}
+
+[State Bank of India, Andheri East Branch]\par\vspace{4pt}
+
+[Mumbai, Maharashtra 400069]\par\vspace{4pt}
+
+\textbf{Subject: Authorisation to collect documents and submit papers on behalf of [Mehta Exports Pvt. Ltd.]}\par\vspace{4pt}
+
+Dear Sir/Madam,\par\vspace{4pt}
+
+We, [Mehta Exports Pvt. Ltd.], holding current account no. [3845 1029 7713] with your branch, hereby authorise the person named below to act on behalf of the company for the purposes listed in this letter.\par\vspace{4pt}
+
+\section{Details of authorised person}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Name} & [Mr. Rahul Deshpande] & \textbf{Designation} & [Accounts Executive] \\
+\textbf{Employee ID} & [MEPL-0142] & \textbf{ID proof} & [Aadhaar XXXX XXXX 5821] \\
+\textbf{PAN} & [BKRPD4417L] & \textbf{Mobile} & [+91 98201 44732] \\
+\end{tabularx}\par\vspace{2pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Scope of authority}\\ 1. Collect the company's cheque book, account statements and debit advices.\\ 2. Submit signed forms, KYC documents and deposit slips on our behalf.\\ 3. Receive acknowledgements and sign the delivery register for the above.}}\par\vspace{6pt}
+
+This authority is valid from \textbf{[01/12/2026]} to \textbf{[31/03/2027]}, unless withdrawn earlier in writing. It does not permit the authorised person to withdraw funds, issue cheques or change account mandates. A self-attested copy of the ID proof is attached, and the specimen signature below is attested by us.\par\vspace{4pt}
+
+We take full responsibility for all acts done by the authorised person within this scope. Kindly extend your cooperation.\par\vspace{4pt}
+
+Yours faithfully,\par\vspace{4pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Specimen signature of [Rahul Deshpande]}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ [Anil Mehta], Director, for [Mehta Exports Pvt. Ltd.] (sign \& seal)}\par
+
+Enclosure: [Self-attested copy of Aadhaar card of Mr. Rahul Deshpande]\par\vspace{4pt}
+\end{document}
