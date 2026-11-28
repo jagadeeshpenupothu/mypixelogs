@@ -66,6 +66,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "internship-certificate",
+    "title": "Internship Certificate Template",
+    "slug": "internship-certificate-template",
+    "description": "Free internship certificate format for India with intern name, college, department, project, duration, performance remarks and authorised signatures. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "certificate",
+    "features": [
+      "Certificate no., issue date and verification line",
+      "Intern, college, department, project and duration details",
+      "Performance remarks with mentor and HR signatures"
+    ],
+    "useCases": [
+      "Internship completion for college students",
+      "Summer and winter training programmes",
+      "Proof of experience for jobs and higher studies"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1yCObJMYljuqEKJu9TN0Mb2AeVHKIHS6Zx3Ch217-oX4",
+      "googleSheetsId": "1k7Xq1u9_aowUMoc0X5uMXy_Q9Opw_3WTa-4GgWQ-IIU",
+      "excelPath": "/downloads/internship-certificate-template.xlsx",
+      "latexPath": "/downloads/internship-certificate-template.tex",
+      "pdfPath": "/downloads/internship-certificate-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "leave-application",
     "title": "Leave Application Template",
     "slug": "leave-application-template",
