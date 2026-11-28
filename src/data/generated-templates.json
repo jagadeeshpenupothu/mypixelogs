@@ -1,5 +1,38 @@
 [
   {
+    "id": "appointment-letter",
+    "title": "Appointment Letter Template",
+    "slug": "appointment-letter-template",
+    "description": "Free appointment letter format for India with designation, CTC break-up, probation, working hours, notice period, terms and employee acceptance. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Designation, joining date, location and reporting manager",
+      "Monthly and annual CTC break-up with employer PF",
+      "Probation, notice, leave and confidentiality terms with acceptance"
+    ],
+    "useCases": [
+      "Confirming a new hire after the offer letter",
+      "Startups and SMEs formalising employment terms",
+      "HR teams standardising joining documents"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1BLZ0OcTvndezyYHWD9K_tmuqim14_iIqxf283Jt3xnk",
+      "googleSheetsId": "1zehMTXfqdMxEUZvHakpFhaTfi-Gw9mppHdT743J4MCA",
+      "excelPath": "/downloads/appointment-letter-template.xlsx",
+      "latexPath": "/downloads/appointment-letter-template.tex",
+      "pdfPath": "/downloads/appointment-letter-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "cover-letter",
     "title": "Cover Letter Template",
     "slug": "cover-letter-template",
