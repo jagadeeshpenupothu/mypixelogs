@@ -221,7 +221,8 @@ const readme = [
 const readmeFile = path.join(root, "automation/out", `${slug}-README.txt`);
 mkdirSync(path.dirname(readmeFile), { recursive: true });
 writeFileSync(readmeFile, readme + "\n");
-const zipped = [".psd", ".ai", ".svg", ".eps", ".pdf", ".png"].flatMap((e) => [`${slug}${e}`, ...(back && e !== ".ai" && e !== ".pdf" ? [`${slug}-back${e}`] : [])]);
+// The PSD and PNG have their own download buttons; the ZIP holds the vector files and the fonts, to keep files small.
+const zipped = [".ai", ".svg", ".eps", ".pdf"].flatMap((e) => [`${slug}${e}`, ...(back && e !== ".ai" && e !== ".pdf" ? [`${slug}-back${e}`] : [])]);
 execFileSync("python3", [
   "-c",
   `import sys,zipfile,os,json
