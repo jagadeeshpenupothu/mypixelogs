@@ -1,5 +1,38 @@
 [
   {
+    "id": "cover-letter",
+    "title": "Cover Letter Template",
+    "slug": "cover-letter-template",
+    "description": "Free cover letter for job applications in India with contact header, hiring manager details, job reference, three focused paragraphs and sign-off. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Professional contact header with LinkedIn and portfolio links",
+      "Hiring manager, company and job reference block",
+      "Opening, achievements and closing paragraphs with a clear call to action"
+    ],
+    "useCases": [
+      "Applying for jobs on Naukri, LinkedIn or company sites",
+      "Email body or PDF attachment with your resume",
+      "Freshers and experienced professionals"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1C9eEviTuQowWhTbMnT-ShUt4a5gSwtAWFGKBJKL7XTk",
+      "googleSheetsId": "16aRBoLmw_A_EDmv3hw7_At1gUjtKgMKDsWuPPnrNYOA",
+      "excelPath": "/downloads/cover-letter-template.xlsx",
+      "latexPath": "/downloads/cover-letter-template.tex",
+      "pdfPath": "/downloads/cover-letter-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "experience-certificate",
     "title": "Experience Certificate Template",
     "slug": "experience-certificate-template",

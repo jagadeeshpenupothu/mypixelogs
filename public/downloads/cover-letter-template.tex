@@ -1,0 +1,64 @@
+% Cover Letter Template - MyPixelogs (https://mypixelogs.netlify.app/templates/cover-letter-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1F3A5F}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}X>{\raggedleft\arraybackslash}p{0.42\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}\begin{tabular}[t]{@{}l@{}}{\color{accent}\fontsize{14}{17}\selectfont\bfseries [Priya Menon]}\\ {\footnotesize [Flat 304, Green Glen Layout, Bellandur, Bengaluru, Karnataka 560103]}\\ {\footnotesize [+91 98450 67890]  \textbar{}  [priya.menon@email.com]}\\ {\footnotesize [linkedin.com/in/priyamenon]  \textbar{}  [github.com/priyamenon]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{accent}\fontsize{22}{26}\selectfont\bfseries Cover Letter}\\[3pt] {\footnotesize Date~\textbf{[28/11/2026]}}\end{tabular}\\[6pt]\end{tabularx}}}\par{\color{accent}\rule{\linewidth}{1.8pt}}\par\vspace{8pt}
+
+\textbf{[Ms. Anjali Rao]}\par\vspace{4pt}
+
+[Talent Acquisition Manager]\par\vspace{4pt}
+
+[Infinity Retail Pvt. Ltd.]\par\vspace{4pt}
+
+[Prestige Tech Park, Outer Ring Road, Bengaluru, Karnataka 560103]\par\vspace{4pt}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Position applied for} & [Senior Data Analyst] & \textbf{Job reference} & [IR/DA/2026/118] \\
+\textbf{Source} & [Naukri.com] & \textbf{Notice period} & [30 days] \\
+\end{tabularx}\par\vspace{2pt}
+
+\textbf{Subject: Application for the post of [Senior Data Analyst] (Ref. [IR/DA/2026/118])}\par\vspace{4pt}
+
+Dear [Ms. Rao],\par\vspace{4pt}
+
+I am writing to apply for the [Senior Data Analyst] role at [Infinity Retail]. With [5 years] of experience turning sales and customer data into decisions for retail and e-commerce teams, I was excited to see that you are building a central analytics function to support your store expansion across South India.\par\vspace{4pt}
+
+In my current role at [Brightcart Commerce Pvt. Ltd.], I lead reporting for a [Rs.\,220 crore] annual sales portfolio. I built a demand-forecasting model in [Python] that cut stock-outs by [18\%] in two quarters, and I replaced [40] manual Excel reports with automated [Power BI] dashboards that regional managers now use every morning. I also work closely with finance and supply-chain teams, so I am comfortable explaining numbers to people who are not analysts.\par\vspace{4pt}
+
+What draws me to [Infinity Retail] is your focus on data-led merchandising and your commitment to serving customers in tier-2 cities. I would bring strong [SQL], [Python] and [Power BI] skills, a habit of checking data quality before drawing conclusions, and experience mentoring two junior analysts. My resume is attached with further details of my projects and certifications.\par\vspace{4pt}
+
+Thank you for considering my application. I would welcome the chance to discuss how I can help your team, and I am available for an interview at your convenience. I can be reached at [+91 98450 67890] or [priya.menon@email.com].\par\vspace{4pt}
+
+Yours sincerely,\par\vspace{4pt}
+
+\par\vspace{4pt}
+
+\par\vspace{4pt}
+
+\textbf{[Priya Menon]}\par\vspace{4pt}
+
+Enclosure: [Resume (2 pages)]\par\vspace{4pt}
+\end{document}
