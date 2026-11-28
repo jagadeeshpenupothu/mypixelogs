@@ -116,7 +116,8 @@
     "keyword": "internship certificate format",
     "score": 84,
     "notes": "Intern name, college, duration, project/department, performance line, signatures",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "noc-letter-template",
@@ -125,7 +126,8 @@
     "keyword": "noc letter format",
     "score": 83,
     "notes": "No objection certificate from employer/landlord: purpose, details, validity, signature",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "appointment-letter-template",
@@ -134,7 +136,8 @@
     "keyword": "appointment letter format",
     "score": 82,
     "notes": "Designation, CTC, probation, working hours, terms list, acceptance",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "delivery-challan-template",
@@ -143,7 +146,8 @@
     "keyword": "delivery challan format",
     "score": 81,
     "notes": "Challan no, consignor/consignee with GSTIN, items with qty/HSN, purpose (job work/supply on approval), signatures",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "purchase-order-template",
@@ -152,7 +156,8 @@
     "keyword": "purchase order format",
     "score": 80,
     "notes": "PO no, vendor, ship-to, items table, taxes, delivery date, terms, authorised signatory",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "teacher-resume-template",
@@ -161,7 +166,8 @@
     "keyword": "teacher resume format",
     "score": 80,
     "notes": "B.Ed/qualifications, subjects, classes taught, teaching experience, certifications (CTET/TET)",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "cash-receipt-template",
@@ -170,7 +176,8 @@
     "keyword": "cash receipt format",
     "score": 79,
     "notes": "Receipt no, received from, amount in figures/words, purpose, revenue stamp above Rs 5000",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "bonafide-certificate-template",
@@ -179,7 +186,8 @@
     "keyword": "bonafide certificate format",
     "score": 78,
     "notes": "Issued by school/college: student, class/course, roll no, academic year, purpose, principal signature",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "authority-letter-template",

@@ -1,0 +1,90 @@
+% Teacher Resume Template - MyPixelogs (https://mypixelogs.netlify.app/templates/teacher-resume-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1F4E5F}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}X>{\raggedleft\arraybackslash}p{0.42\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}\begin{tabular}[t]{@{}l@{}}{\color{accent}\fontsize{14}{17}\selectfont\bfseries [Priya Nair]}\\ {\footnotesize [TGT Mathematics  \textbar{}  B.Sc., B.Ed.  \textbar{}  CTET Paper II Qualified]}\\ {\footnotesize [Sector 21, Dwarka, New Delhi 110075]  \textbar{}  [+91 98110 45678]  \textbar{}  [priya.nair.teach@gmail.com]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{accent}\fontsize{24}{28}\selectfont\bfseries RESUME}\\[3pt] {\footnotesize Applying for~\textbf{[TGT Mathematics]}}\\ {\footnotesize Experience~\textbf{[6 years]}}\end{tabular}\\[6pt]\end{tabularx}}}\par{\color{accent}\rule{\linewidth}{1.8pt}}\par\vspace{8pt}
+
+\section{Profile}
+
+[CBSE-trained Mathematics teacher with 6 years of experience teaching Classes 6-10. Known for activity-based lessons, clear board-exam preparation and steady improvement in class averages. Comfortable teaching in English and Hindi, using smart boards and Google Classroom.]\par\vspace{4pt}
+
+\section{Teaching eligibility}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{CTET} & [Paper II (Maths \& Science), Jan 2020, 112/150] & \textbf{State TET} & [Kerala K-TET Category III, 2019] \\
+\textbf{B.Ed.} & [Maths \& Physical Science methods] & \textbf{Medium} & [English, Hindi] \\
+\end{tabularx}\par\vspace{2pt}
+
+\section{Teaching experience}
+
+\entry{\textbf{[TGT Mathematics]}, [Green Valley Public School (CBSE)], [New Delhi]}{[04/2022 - Present]}
+
+\begin{itemize}
+  \item Teach Mathematics to [Classes 8-10, 5 sections, about 190 students]; class teacher of [Class 9-B].
+  \item Raised the Class 10 board average from [71\%] to [83\%] in two sessions; [14] students scored 95+.
+  \item Run weekly remedial periods and the Maths Olympiad club; [9] students cleared the second level in [2025].
+\end{itemize}
+
+\vspace{4pt}
+
+\entry{\textbf{[Mathematics Teacher]}, [St. Thomas Higher Secondary School (State Board)], [Kochi]}{[06/2020 - 03/2022]}
+
+\begin{itemize}
+  \item Taught [Classes 6-8] Mathematics and [Class 6] Science; prepared unit tests and answer keys.
+  \item Built a set of [40] worksheets and lab-style activities used by the whole department.
+\end{itemize}
+
+\vspace{4pt}
+
+\section{Education}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\raggedright\arraybackslash}p{0.240\linewidth}|>{\raggedright\arraybackslash}p{0.480\linewidth}|>{\centering\arraybackslash}p{0.109\linewidth}|>{\raggedleft\arraybackslash}p{0.131\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{Qualification}} & \textcolor{white}{\textbf{Institution / Board}} & \textcolor{white}{\textbf{Year}} & \textcolor{white}{\textbf{Score}} \\ \hline
+[B.Ed.] & [Mar Theophilus Training College, University of Kerala] & [2019] & [78\%] \\ \hline
+[B.Sc. Mathematics] & [St. Teresa's College, Mahatma Gandhi University] & [2018] & [8.1 CGPA] \\ \hline
+[Class XII (Science)] & [Kendriya Vidyalaya, CBSE] & [2015] & [89\%] \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+\begin{tabularx}{\linewidth}{@{\hspace{6pt}}X!{\color{divider}\vrule}@{\hspace{10pt}}X!{\color{divider}\vrule}@{\hspace{10pt}}X@{}}
+\group{Skills}{\item Lesson and unit planning (NCERT, NEP 2020) \item Activity-based and remedial teaching \item CCE, competency-based assessment} &
+\group{Digital tools}{\item Smart board and GeoGebra \item Google Classroom, Forms \item MS Excel for marks records} &
+\group{Training}{\item [CBSE Capacity Building: Maths, 2024] \item [DIKSHA NISHTHA modules, 2023] \item [First aid for schools, 2022]} \\
+\end{tabularx}
+
+\section{Personal details}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Date of birth} & [14/08/1996] & \textbf{Languages} & [English, Hindi, Malayalam] \\
+\textbf{Notice period} & [30 days] & \textbf{Hobbies} & [Puzzles, school quiz coaching] \\
+\end{tabularx}\par\vspace{2pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Declaration}\\ I confirm that the details above are true to the best of my knowledge.}}\par\vspace{6pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Place: [New Delhi]   Date: [28/11/2026]}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ [Priya Nair]}\par
+\end{document}

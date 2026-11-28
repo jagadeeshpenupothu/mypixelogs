@@ -1,0 +1,33 @@
+{
+  "slug": "teacher-resume-template",
+  "title": "Teacher Resume Template",
+  "category": "resume",
+  "accent": "1F4E5F",
+  "titleSize": 24,
+  "description": "Free teacher resume format for Indian schools with B.Ed, CTET/TET scores, subjects and classes taught, teaching experience and results. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Eligibility first: B.Ed and CTET/TET with year, paper and score", "Experience with board, subjects, classes taught and measurable results", "One clean single-column page that ATS and principals can scan fast"],
+  "useCases": ["TGT and PGT applications to CBSE, ICSE and state board schools", "PRT and primary teacher jobs", "KVS, NVS and private school recruitment drives"],
+  "keywords": ["teacher resume format", "teacher resume format in word", "tgt teacher resume", "resume for teacher job"],
+  "references": ["https://www.naukri.com/career-advice/teacher-resume-sample-ffid", "https://goodspace.ai/resume-examples/tgt-teacher", "https://resumevera.com/in/blogs/teacher-resume-examples-2026", "https://www.jainuniversity.ac.in/blogs/how-to-write-a-teacher-resume", "https://www.cvowl.com/resume-format/pgt-teacher"],
+  "research": "Indian references put the target post and subject in the headline and list B.Ed and CTET/TET (year, paper, score) on page one, followed by reverse-chronological experience with board, classes and subjects, skills, and medium of instruction in a single-column layout.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "14vlnx8WBnTw2ySErNOJevj-z_vnjDAdCzW-nPZBEdvE", "googleSheetsId": "1jzB5KXtymtW8nOmn5HTnpAWkxw39QmDtlIEn1XbRVng"},
+  "blocks": [
+    {"type": "header", "style": "plain", "logo": false, "org": "[Priya Nair]", "lines": ["[TGT Mathematics  |  B.Sc., B.Ed.  |  CTET Paper II Qualified]", "[Sector 21, Dwarka, New Delhi 110075]  |  [+91 98110 45678]  |  [priya.nair.teach@gmail.com]"], "title": "RESUME", "meta": [["Applying for", "[TGT Mathematics]"], ["Experience", "[6 years]"]]},
+    {"type": "heading", "text": "Profile"},
+    {"type": "text", "text": "[CBSE-trained Mathematics teacher with 6 years of experience teaching Classes 6-10. Known for activity-based lessons, clear board-exam preparation and steady improvement in class averages. Comfortable teaching in English and Hindi, using smart boards and Google Classroom.]"},
+    {"type": "heading", "text": "Teaching eligibility"},
+    {"type": "fields", "columns": 2, "items": [["CTET", "[Paper II (Maths & Science), Jan 2020, 112/150]"], ["State TET", "[Kerala K-TET Category III, 2019]"], ["B.Ed.", "[Maths & Physical Science methods]"], ["Medium", "[English, Hindi]"]]},
+    {"type": "heading", "text": "Teaching experience"},
+    {"type": "entry", "title": "**[TGT Mathematics]**, [Green Valley Public School (CBSE)], [New Delhi]", "right": "[04/2022 - Present]", "bullets": ["Teach Mathematics to [Classes 8-10, 5 sections, about 190 students]; class teacher of [Class 9-B].", "Raised the Class 10 board average from [71%] to [83%] in two sessions; [14] students scored 95+.", "Run weekly remedial periods and the Maths Olympiad club; [9] students cleared the second level in [2025]."]},
+    {"type": "entry", "title": "**[Mathematics Teacher]**, [St. Thomas Higher Secondary School (State Board)], [Kochi]", "right": "[06/2020 - 03/2022]", "bullets": ["Taught [Classes 6-8] Mathematics and [Class 6] Science; prepared unit tests and answer keys.", "Built a set of [40] worksheets and lab-style activities used by the whole department."]},
+    {"type": "heading", "text": "Education"},
+    {"type": "table", "columns": [{"label": "Qualification", "width": 2.2}, {"label": "Institution / Board", "width": 4.4}, {"label": "Year", "width": 1.0, "align": "center"}, {"label": "Score", "width": 1.2, "align": "right"}],
+      "rows": [["[B.Ed.]", "[Mar Theophilus Training College, University of Kerala]", "[2019]", "[78%]"], ["[B.Sc. Mathematics]", "[St. Teresa's College, Mahatma Gandhi University]", "[2018]", "[8.1 CGPA]"], ["[Class XII (Science)]", "[Kendriya Vidyalaya, CBSE]", "[2015]", "[89%]"]]},
+    {"type": "columns", "groups": [{"heading": "Skills", "items": ["Lesson and unit planning (NCERT, NEP 2020)", "Activity-based and remedial teaching", "CCE, competency-based assessment"]}, {"heading": "Digital tools", "items": ["Smart board and GeoGebra", "Google Classroom, Forms", "MS Excel for marks records"]}, {"heading": "Training", "items": ["[CBSE Capacity Building: Maths, 2024]", "[DIKSHA NISHTHA modules, 2023]", "[First aid for schools, 2022]"]}]},
+    {"type": "heading", "text": "Personal details"},
+    {"type": "fields", "columns": 2, "items": [["Date of birth", "[14/08/1996]"], ["Languages", "[English, Hindi, Malayalam]"], ["Notice period", "[30 days]"], ["Hobbies", "[Puzzles, school quiz coaching]"]]},
+    {"type": "note", "heading": "Declaration", "text": "I confirm that the details above are true to the best of my knowledge."},
+    {"type": "signature", "items": ["Place: [New Delhi]   Date: [28/11/2026]", "[Priya Nair]"]}
+  ]
+}

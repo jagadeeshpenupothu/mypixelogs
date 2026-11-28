@@ -1,0 +1,65 @@
+% Cash Receipt Template - MyPixelogs (https://mypixelogs.netlify.app/templates/cash-receipt-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1F5A44}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent\colorbox{accent}{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\color{white}\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{white}\fontsize{14}{17}\selectfont\bfseries [Agarwal Electricals \& Hardware]}\\ {\color{white}\footnotesize [Shop 7, Station Road, Nagpur, Maharashtra 440001]}\\ {\color{white}\footnotesize GSTIN: [27ABCPA4321K1Z8]  \textbar{}  PAN: [ABCPA4321K]}\\ {\color{white}\footnotesize [+91 98230 45678]  \textbar{}  [accounts@agarwalelectricals.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{white}\fontsize{24}{28}\selectfont\bfseries CASH RECEIPT}\\[3pt] {\color{white}\footnotesize Receipt No.~\textbf{[CR/2026-27/0218]}}\\ {\color{white}\footnotesize Date~\textbf{[28/11/2026]}}\\ {\color{white}\footnotesize Mode~\textbf{[Cash]}}\end{tabular}\\[6pt]\end{tabularx}}}\par\vspace{8pt}
+
+{\arrayrulecolor{rulegray}\renewcommand{\arraystretch}{1.3}\noindent\begin{tabularx}{\linewidth}{|X|X|}\hline
+{\color{accent}\footnotesize\bfseries RECEIVED FROM}\newline \textbf{[Deshmukh Builders Pvt. Ltd.]}\newline Paid by: [Mr. Suresh Patil, Site Supervisor]\newline [22 Wardha Road, Nagpur, Maharashtra 440015]\newline Phone: [+91 98901 23456] & {\color{accent}\footnotesize\bfseries RECEIPT DETAILS}\newline \textbf{Customer code: [DB-0047]}\newline Purpose: [Payment against invoices]\newline Received at: [Station Road counter]\newline Received by: [Neha Agarwal, Accounts] \\ \hline
+\end{tabularx}}\par\vspace{6pt}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\centering\arraybackslash}p{0.051\linewidth}|>{\raggedright\arraybackslash}p{0.225\linewidth}|>{\centering\arraybackslash}p{0.143\linewidth}|>{\raggedleft\arraybackslash}p{0.184\linewidth}|>{\raggedleft\arraybackslash}p{0.194\linewidth}|>{\raggedleft\arraybackslash}p{0.163\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{\#}} & \textcolor{white}{\textbf{Invoice No.}} & \textcolor{white}{\textbf{Inv. date}} & \textcolor{white}{\textbf{Invoice amt (Rs.\,)}} & \textcolor{white}{\textbf{Received now (Rs.\,)}} & \textcolor{white}{\textbf{Balance (Rs.\,)}} \\ \hline
+1 & [INV/2026-27/0311] & [02/11/2026] & [18,500.00] & [18,500.00] & [0.00] \\ \hline
+2 & [INV/2026-27/0327] & [09/11/2026] & [12,980.00] & [12,980.00] & [0.00] \\ \hline
+3 & [INV/2026-27/0345] & [16/11/2026] & [23,600.00] & [10,000.00] & [13,600.00] \\ \hline
+\end{tabular}}\par
+
+\vspace{2pt}{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}\hfill\begin{tabular}{|p{0.22\linewidth}|>{\raggedleft\arraybackslash}p{0.14\linewidth}|}\hline
+Total invoiced & [55,080.00] \\ \hline
+Balance outstanding & [13,600.00] \\ \hline
+\rowcolor{accent}\textcolor{white}{\textbf{Total received in cash}} & \textcolor{white}{\textbf{[41,480.00]}} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+Received with thanks from \textbf{[Deshmukh Builders Pvt. Ltd.]} the sum of \textbf{Rs.\,[41,480.00]} in cash towards full settlement of invoices [0311] and [0327] and part settlement of invoice [0345], as detailed above.\par\vspace{4pt}
+
+Amount received in words: \textbf{[Rupees Forty-One Thousand Four Hundred Eighty Only]}\par\vspace{4pt}
+
+\section{Cash denominations received}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Rs.\,500 × [80]} & [40,000.00] & \textbf{Rs.\,200 × [5]} & [1,000.00] \\
+\textbf{Rs.\,100 × [4]} & [400.00] & \textbf{Rs.\,50 × [1]} & [50.00] \\
+\textbf{Rs.\,20 × [1]} & [20.00] & \textbf{Rs.\,10 × [1]} & [10.00] \\
+\end{tabularx}\par\vspace{2pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Notes}\\ 1. Cash counted and received in the presence of the payer. Please check the amount before leaving the counter.\\ 2. Invoice [INV/2026-27/0345] is part-paid; Rs.\,[13,600.00] remains due by [15/12/2026].\\ 3. This receipt is valid only with the receiver's signature. A Rs.\,1 revenue stamp is affixed for cash receipts above Rs.\,5,000.\\ 4. Cash receipts are subject to the limits under Section 269ST of the Income-tax Act, 1961.}}\par\vspace{6pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Paid by (signature)}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Revenue stamp Rs.\,1 (sign across)}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ For [Agarwal Electricals \& Hardware]}\par
+\end{document}

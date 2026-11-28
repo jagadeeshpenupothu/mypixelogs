@@ -1,0 +1,62 @@
+% Purchase Order Template - MyPixelogs (https://mypixelogs.netlify.app/templates/purchase-order-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1F4E46}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent\colorbox{accent}{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\color{white}\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{white}\fontsize{14}{17}\selectfont\bfseries [Kaveri Foods Pvt. Ltd.]}\\ {\color{white}\footnotesize [No. 18, KIADB Industrial Area, Bommasandra, Bengaluru, Karnataka 560099]}\\ {\color{white}\footnotesize GSTIN: [29AAFCK4821L1Z7]  \textbar{}  PAN: [AAFCK4821L]  \textbar{}  [+91 80 4123 5678]}\\ {\color{white}\footnotesize [purchase@kaverifoods.in]  \textbar{}  [www.kaverifoods.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{white}\fontsize{24}{28}\selectfont\bfseries PURCHASE ORDER}\\[3pt] {\color{white}\footnotesize PO No.~\textbf{[PO/2026-27/0318]}}\\ {\color{white}\footnotesize PO Date~\textbf{[28/11/2026]}}\\ {\color{white}\footnotesize Delivery by~\textbf{[12/12/2026]}}\end{tabular}\\[6pt]\end{tabularx}}}\par\vspace{8pt}
+
+{\arrayrulecolor{rulegray}\renewcommand{\arraystretch}{1.3}\noindent\begin{tabularx}{\linewidth}{|X|X|X|}\hline
+{\color{accent}\footnotesize\bfseries VENDOR}\newline \textbf{[Shree Packaging Industries]}\newline Attn: [Mr. Senthil Kumar, Sales]\newline [SIPCOT Phase I, Hosur, Tamil Nadu 635126]\newline GSTIN: [33ABCFS7314K1Z9] & {\color{accent}\footnotesize\bfseries SHIP TO}\newline \textbf{[Kaveri Foods Pvt. Ltd., Warehouse 2]}\newline Contact: [Ms. Deepa Rao, Stores]\newline [Plot 7A, Jigani Link Road, Bengaluru 560105]\newline Place of supply: [Karnataka (29)] & {\color{accent}\footnotesize\bfseries ORDER DETAILS}\newline \textbf{Vendor quote: [SPI/Q/2026/112]}\newline Quote date: [21/11/2026]\newline Shipping: [Road freight, door delivery]\newline Freight: [Paid by vendor] \\ \hline
+\end{tabularx}}\par\vspace{6pt}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\centering\arraybackslash}p{0.045\linewidth}|>{\raggedright\arraybackslash}p{0.359\linewidth}|>{\centering\arraybackslash}p{0.090\linewidth}|>{\raggedleft\arraybackslash}p{0.108\linewidth}|>{\raggedleft\arraybackslash}p{0.126\linewidth}|>{\raggedleft\arraybackslash}p{0.081\linewidth}|>{\raggedleft\arraybackslash}p{0.153\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{\#}} & \textcolor{white}{\textbf{Item description}} & \textcolor{white}{\textbf{HSN}} & \textcolor{white}{\textbf{Qty}} & \textcolor{white}{\textbf{Rate (Rs.\,)}} & \textcolor{white}{\textbf{GST}} & \textcolor{white}{\textbf{Amount (Rs.\,)}} \\ \hline
+1 & \textbf{[5-ply corrugated box, 18 x 12 x 10 in]} & [4819] & [2,000 nos] & [28.50] & [18\%] & [57,000.00] \\ \hline
+2 & \textbf{[Printed laminated pouch, 500 g, zip lock]} & [3923] & [10,000 nos] & [3.20] & [18\%] & [32,000.00] \\ \hline
+3 & [BOPP tape, 48 mm x 65 m, brown] & [3919] & [200 rolls] & [42.00] & [18\%] & [8,400.00] \\ \hline
+4 & [Stretch wrap film, 23 micron, 500 mm] & [3920] & [50 rolls] & [640.00] & [18\%] & [32,000.00] \\ \hline
+5 & [Thermal shipping labels, 100 x 150 mm] & [4821] & [20 rolls] & [260.00] & [18\%] & [5,200.00] \\ \hline
+\end{tabular}}\par
+
+\vspace{2pt}{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}\hfill\begin{tabular}{|p{0.22\linewidth}|>{\raggedleft\arraybackslash}p{0.14\linewidth}|}\hline
+Subtotal & [1,34,600.00] \\ \hline
+IGST @ 18\% & [24,228.00] \\ \hline
+\rowcolor{accent}\textcolor{white}{\textbf{Order total}} & \textcolor{white}{\textbf{[1,58,828.00]}} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+Amount in words: \textbf{[Rupees One Lakh Fifty-Eight Thousand Eight Hundred Twenty-Eight Only]}\par\vspace{4pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Terms and conditions}\\ 1. \textbf{Delivery:} supply the full quantity at the ship-to address by the date above, between 9 am and 5 pm on working days.\\ 2. \textbf{Payment:} [45 days] from receipt of goods and a correct GST tax invoice quoting this PO number.\\ 3. \textbf{Quality:} goods must match the approved sample and quote; rejected items will be returned at the vendor's cost.\\ 4. \textbf{Documents:} send the tax invoice, e-way bill and delivery challan with the consignment.\\ 5. Any change in price, quantity or delivery date needs written approval from our purchase team.}}\par\vspace{6pt}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Prepared by} & [Arjun Menon, Purchase Executive] & \textbf{Department} & [Stores and Packaging] \\
+\textbf{Budget code} & [PKG-2026-Q3] & \textbf{Contact} & [+91 98450 22113] \\
+\end{tabularx}\par\vspace{2pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Vendor acceptance (sign \& stamp)}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Authorised signatory, [Kaveri Foods Pvt. Ltd.]}\par
+\end{document}

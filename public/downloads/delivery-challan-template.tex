@@ -1,0 +1,61 @@
+% Delivery Challan Template - MyPixelogs (https://mypixelogs.netlify.app/templates/delivery-challan-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1F4E46}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent\colorbox{accent}{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\color{white}\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{white}\fontsize{14}{17}\selectfont\bfseries [Patil Precision Engineering Pvt. Ltd.]}\\ {\color{white}\footnotesize [Gat No. 118, MIDC Bhosari, Pune, Maharashtra 411026]}\\ {\color{white}\footnotesize GSTIN: [27AADCP4521K1Z8]  \textbar{}  [+91 98230 45612]}\\ {\color{white}\footnotesize [dispatch@patilprecision.in]  \textbar{}  [www.patilprecision.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{white}\fontsize{18}{22}\selectfont\bfseries DELIVERY CHALLAN}\\[3pt] {\color{white}\footnotesize Challan No.~\textbf{[DC/2026-27/0087]}}\\ {\color{white}\footnotesize Date~\textbf{[28/11/2026]}}\\ {\color{white}\footnotesize Copy~\textbf{[Original for consignee]}}\end{tabular}\\[6pt]\end{tabularx}}}\par\vspace{8pt}
+
+{\arrayrulecolor{rulegray}\renewcommand{\arraystretch}{1.3}\noindent\begin{tabularx}{\linewidth}{|X|X|X|}\hline
+{\color{accent}\footnotesize\bfseries CONSIGNOR}\newline \textbf{[Patil Precision Engineering Pvt. Ltd.]}\newline [Gat No. 118, MIDC Bhosari, Pune 411026]\newline GSTIN: [27AADCP4521K1Z8]\newline State: [Maharashtra (27)] & {\color{accent}\footnotesize\bfseries CONSIGNEE (JOB WORKER)}\newline \textbf{[Shree Ganesh Machining Works]}\newline [Plot C-24, Chakan MIDC, Pune 410501]\newline GSTIN: [27ABJPG7834L1Z3]\newline State: [Maharashtra (27)] & {\color{accent}\footnotesize\bfseries TRANSPORT DETAILS}\newline \textbf{Mode: [Road]  \textbar{}  Vehicle: [MH 14 KQ 6281]}\newline Transporter: [Om Sai Logistics]\newline E-way bill: [3412 5678 9012]\newline Place of supply: [Maharashtra (27)] \\ \hline
+\end{tabularx}}\par\vspace{6pt}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Purpose} & [Job work: CNC machining and turning] & \textbf{Expected return} & [On or before 15/01/2027] \\
+\textbf{Order / PO ref.} & [JW/PPE/2026/031 dated 25/11/2026] & \textbf{Reverse charge} & [No] \\
+\end{tabularx}\par\vspace{2pt}
+
+{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}
+\noindent\begin{tabular}{|>{\centering\arraybackslash}p{0.046\linewidth}|>{\raggedright\arraybackslash}p{0.366\linewidth}|>{\centering\arraybackslash}p{0.101\linewidth}|>{\raggedleft\arraybackslash}p{0.082\linewidth}|>{\centering\arraybackslash}p{0.082\linewidth}|>{\raggedleft\arraybackslash}p{0.128\linewidth}|>{\raggedleft\arraybackslash}p{0.155\linewidth}|}\hline
+\rowcolor{accent}\textcolor{white}{\textbf{\#}} & \textcolor{white}{\textbf{Description of goods}} & \textcolor{white}{\textbf{HSN}} & \textcolor{white}{\textbf{Qty}} & \textcolor{white}{\textbf{Unit}} & \textcolor{white}{\textbf{Rate (Rs.\,)}} & \textcolor{white}{\textbf{Value (Rs.\,)}} \\ \hline
+1 & \textbf{[MS round bar EN8, 40 mm dia]} & [7214] & [500] & [kg] & [72.00] & [36,000.00] \\ \hline
+2 & \textbf{[MS plate, 10 mm thick, cut to size]} & [7208] & [320] & [kg] & [68.50] & [21,920.00] \\ \hline
+3 & [Forged gear blanks, 120 mm OD] & [7326] & [120] & [nos] & [145.00] & [17,400.00] \\ \hline
+4 & [Grey iron bearing housing castings] & [7325] & [60] & [nos] & [410.00] & [24,600.00] \\ \hline
+\end{tabular}}\par
+
+\vspace{2pt}{\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}\arrayrulecolor{rulegray}\hfill\begin{tabular}{|p{0.22\linewidth}|>{\raggedleft\arraybackslash}p{0.14\linewidth}|}\hline
+Total quantity & [820 kg + 180 nos] \\ \hline
+Taxable value of goods & [99,920.00] \\ \hline
+\rowcolor{accent}\textcolor{white}{\textbf{GST charged}} & \textcolor{white}{\textbf{[Nil (job work)]}} \\ \hline
+\end{tabular}}\par
+
+\vspace{4pt}
+
+Value in words: \textbf{[Rupees Ninety-Nine Thousand Nine Hundred Twenty Only]}\par\vspace{4pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Declaration}\\ 1. These goods are sent for \textbf{job work under Section 143 of the CGST Act, 2017} and are not a sale. No GST is charged on this challan.\\ 2. Processed goods and scrap are to be returned to the consignor within the period allowed by law, with a return challan quoting this number.\\ 3. Issued in triplicate: \textbf{Original} for consignee, \textbf{Duplicate} for transporter, \textbf{Triplicate} for consignor.\\ 4. Please check quantities on receipt and report any shortage or damage within [24 hours].}}\par\vspace{6pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Received in good condition (consignee)}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Driver / transporter}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ For [Patil Precision Engineering Pvt. Ltd.]}\par
+\end{document}

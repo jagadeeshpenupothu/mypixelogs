@@ -1,5 +1,104 @@
 [
   {
+    "id": "appointment-letter",
+    "title": "Appointment Letter Template",
+    "slug": "appointment-letter-template",
+    "description": "Free appointment letter format for India with designation, CTC break-up, probation, working hours, notice period, terms and employee acceptance. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Designation, joining date, location and reporting manager",
+      "Monthly and annual CTC break-up with employer PF",
+      "Probation, notice, leave and confidentiality terms with acceptance"
+    ],
+    "useCases": [
+      "Confirming a new hire after the offer letter",
+      "Startups and SMEs formalising employment terms",
+      "HR teams standardising joining documents"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1BLZ0OcTvndezyYHWD9K_tmuqim14_iIqxf283Jt3xnk",
+      "googleSheetsId": "1zehMTXfqdMxEUZvHakpFhaTfi-Gw9mppHdT743J4MCA",
+      "excelPath": "/downloads/appointment-letter-template.xlsx",
+      "latexPath": "/downloads/appointment-letter-template.tex",
+      "pdfPath": "/downloads/appointment-letter-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
+    "id": "bonafide-certificate",
+    "title": "Bonafide Certificate Template",
+    "slug": "bonafide-certificate-template",
+    "description": "Free bonafide certificate format for schools and colleges in India with student name, roll and admission no., course, academic year, purpose and principal's seal. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "certificate",
+    "features": [
+      "Institution letterhead with affiliation code and certificate number",
+      "Student, course, roll no. and academic year details",
+      "Purpose line, principal's signature and office seal area"
+    ],
+    "useCases": [
+      "Scholarship and education loan applications",
+      "Bus or railway concession passes",
+      "Visa, bank account and internship verification"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1DSAQS7tEB0Eqkpx-BB1SwaqeHL7mZ8mTIZvA3cGTFrw",
+      "googleSheetsId": "1ijwfcUrK0rxY8Lerr0S8juYZ6hneL9Ni7AOvy5GEaqU",
+      "excelPath": "/downloads/bonafide-certificate-template.xlsx",
+      "latexPath": "/downloads/bonafide-certificate-template.tex",
+      "pdfPath": "/downloads/bonafide-certificate-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
+    "id": "cash-receipt",
+    "title": "Cash Receipt Template",
+    "slug": "cash-receipt-template",
+    "description": "Free cash receipt format for India with receipt no., received from, amount in figures and words, invoices settled, note denominations and revenue stamp box. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "receipt",
+    "features": [
+      "Amount in figures and words with invoice-wise settlement",
+      "Cash denomination breakdown and balance outstanding",
+      "Revenue stamp box for cash receipts above ₹5,000"
+    ],
+    "useCases": [
+      "Cash collected from customers against invoices",
+      "Advance or part payments received in cash",
+      "Shops, distributors and service businesses"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1vQCVJtYDyw-0kSO5DPO8f18gqFZXPHtNNVKiNa5lwQ0",
+      "googleSheetsId": "1jp5LR9IwzWfsle8Z0qb4x9XpLi82iG9KW18jvp3idjw",
+      "excelPath": "/downloads/cash-receipt-template.xlsx",
+      "latexPath": "/downloads/cash-receipt-template.tex",
+      "pdfPath": "/downloads/cash-receipt-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "cover-letter",
     "title": "Cover Letter Template",
     "slug": "cover-letter-template",
@@ -29,6 +128,39 @@
       "excelPath": "/downloads/cover-letter-template.xlsx",
       "latexPath": "/downloads/cover-letter-template.tex",
       "pdfPath": "/downloads/cover-letter-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
+    "id": "delivery-challan",
+    "title": "Delivery Challan Template",
+    "slug": "delivery-challan-template",
+    "description": "Free GST delivery challan format under Rule 55 with challan no., consignor and consignee GSTIN, HSN, quantity, purpose, e-way bill and transport details. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "business",
+    "features": [
+      "Rule 55 fields: challan no., date, consignor and consignee GSTIN",
+      "Item table with HSN, quantity, unit and value of goods",
+      "Purpose, transport, e-way bill and triplicate copy marking"
+    ],
+    "useCases": [
+      "Sending goods for job work",
+      "Supply on approval or branch transfer",
+      "Goods moved without an invoice"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1N0x8_6qfJDIaUZWB3Vc1m9wsym2ND2CGawUQdKEwvKw",
+      "googleSheetsId": "16BUPWkDxb7oGmP5zTfnA-XaMGrWW_6ryeJs-BBqSRMU",
+      "excelPath": "/downloads/delivery-challan-template.xlsx",
+      "latexPath": "/downloads/delivery-challan-template.tex",
+      "pdfPath": "/downloads/delivery-challan-template.pdf"
     },
     "published": "2026-11-28"
   },
@@ -66,6 +198,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "internship-certificate",
+    "title": "Internship Certificate Template",
+    "slug": "internship-certificate-template",
+    "description": "Free internship certificate format for India with intern name, college, department, project, duration, performance remarks and authorised signatures. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "certificate",
+    "features": [
+      "Certificate no., issue date and verification line",
+      "Intern, college, department, project and duration details",
+      "Performance remarks with mentor and HR signatures"
+    ],
+    "useCases": [
+      "Internship completion for college students",
+      "Summer and winter training programmes",
+      "Proof of experience for jobs and higher studies"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1yCObJMYljuqEKJu9TN0Mb2AeVHKIHS6Zx3Ch217-oX4",
+      "googleSheetsId": "1k7Xq1u9_aowUMoc0X5uMXy_Q9Opw_3WTa-4GgWQ-IIU",
+      "excelPath": "/downloads/internship-certificate-template.xlsx",
+      "latexPath": "/downloads/internship-certificate-template.tex",
+      "pdfPath": "/downloads/internship-certificate-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "leave-application",
     "title": "Leave Application Template",
     "slug": "leave-application-template",
@@ -97,6 +262,39 @@
       "pdfPath": "/downloads/leave-application-template.pdf"
     },
     "published": "2026-11-27"
+  },
+  {
+    "id": "noc-letter",
+    "title": "NOC Letter Template",
+    "slug": "noc-letter-template",
+    "description": "Free NOC letter format from an employer in India with ref. no., employee details, purpose, leave dates, validity and authorised signatory. Edit it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Company letterhead with reference number and date",
+      "Employee details table: ID, designation, joining date, PAN",
+      "Purpose, leave period, validity and verification contact"
+    ],
+    "useCases": [
+      "Passport and visa applications",
+      "Higher studies or part-time courses",
+      "Bank loans and rental agreements"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "125pPcYGyc8_Wp--I8A3uq7gGwre8AmX95n3uace6vAY",
+      "googleSheetsId": "13beVGFAWS4NdZGECCTxO6NosK9KEbhSPB71tlLnT4C0",
+      "excelPath": "/downloads/noc-letter-template.xlsx",
+      "latexPath": "/downloads/noc-letter-template.tex",
+      "pdfPath": "/downloads/noc-letter-template.pdf"
+    },
+    "published": "2026-11-28"
   },
   {
     "id": "offer-letter",
@@ -163,6 +361,39 @@
       "pdfPath": "/downloads/proforma-invoice-template.pdf"
     },
     "published": "2026-11-27"
+  },
+  {
+    "id": "purchase-order",
+    "title": "Purchase Order Template",
+    "slug": "purchase-order-template",
+    "description": "Free GST purchase order format for India with PO number, vendor GSTIN, ship-to address, HSN codes, IGST, delivery date and terms. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "business",
+    "features": [
+      "Vendor, bill-to and ship-to blocks with GSTIN",
+      "Itemised table with HSN, unit, rate and IGST total",
+      "Delivery, payment and quality terms with authorised signatory"
+    ],
+    "useCases": [
+      "Ordering raw material and packaging from suppliers",
+      "Purchase approvals for SMEs and factories",
+      "Matching POs against deliveries and GST invoices"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1b_q099iW0RqZ_Sx9ltG6I_gdgkHMl2PjcEy1VLN8ZJ0",
+      "googleSheetsId": "1kq5n7gCfABdwin1GRF5bhwwevfMClzU4YulfFYBPzkE",
+      "excelPath": "/downloads/purchase-order-template.xlsx",
+      "latexPath": "/downloads/purchase-order-template.tex",
+      "pdfPath": "/downloads/purchase-order-template.pdf"
+    },
+    "published": "2026-11-28"
   },
   {
     "id": "quotation",
@@ -357,5 +588,38 @@
       "pdfPath": "/downloads/software-engineer-resume-template.pdf"
     },
     "published": "2026-11-27"
+  },
+  {
+    "id": "teacher-resume",
+    "title": "Teacher Resume Template",
+    "slug": "teacher-resume-template",
+    "description": "Free teacher resume format for Indian schools with B.Ed, CTET/TET scores, subjects and classes taught, teaching experience and results. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "resume",
+    "features": [
+      "Eligibility first: B.Ed and CTET/TET with year, paper and score",
+      "Experience with board, subjects, classes taught and measurable results",
+      "One clean single-column page that ATS and principals can scan fast"
+    ],
+    "useCases": [
+      "TGT and PGT applications to CBSE, ICSE and state board schools",
+      "PRT and primary teacher jobs",
+      "KVS, NVS and private school recruitment drives"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "14vlnx8WBnTw2ySErNOJevj-z_vnjDAdCzW-nPZBEdvE",
+      "googleSheetsId": "1jzB5KXtymtW8nOmn5HTnpAWkxw39QmDtlIEn1XbRVng",
+      "excelPath": "/downloads/teacher-resume-template.xlsx",
+      "latexPath": "/downloads/teacher-resume-template.tex",
+      "pdfPath": "/downloads/teacher-resume-template.pdf"
+    },
+    "published": "2026-11-28"
   }
 ]

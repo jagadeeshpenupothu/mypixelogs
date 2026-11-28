@@ -1,0 +1,29 @@
+{
+  "slug": "appointment-letter-template",
+  "title": "Appointment Letter Template",
+  "category": "letter",
+  "accent": "1F3A5F",
+  "titleSize": 15,
+  "description": "Free appointment letter format for India with designation, CTC break-up, probation, working hours, notice period, terms and employee acceptance. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Designation, joining date, location and reporting manager", "Monthly and annual CTC break-up with employer PF", "Probation, notice, leave and confidentiality terms with acceptance"],
+  "useCases": ["Confirming a new hire after the offer letter", "Startups and SMEs formalising employment terms", "HR teams standardising joining documents"],
+  "keywords": ["appointment letter format", "appointment letter format in word", "employee appointment letter"],
+  "references": ["https://www.keka.com/appointment-letter-formats", "https://kredily.com/hr-templates/appointment-letter-format/", "https://www.naukri.com/career-advice/appointment-letter-format", "https://www.cake.me/resources/people-operations/appointment-letter", "https://salarybox.in/blog/appointment-letter-format-india-templates-legal-requirements-free-downloads/"],
+  "research": "References agree on a reference number and date, designation, joining date, place of posting, annual CTC with a salary break-up annexure, probation (usually 3-6 months), working hours, leave, notice period, confidentiality, company policies and a signed employee acceptance.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1BLZ0OcTvndezyYHWD9K_tmuqim14_iIqxf283Jt3xnk", "googleSheetsId": "1zehMTXfqdMxEUZvHakpFhaTfi-Gw9mppHdT743J4MCA"},
+  "blocks": [
+    {"type": "header", "style": "plain", "org": "[Sharma IT Solutions Pvt. Ltd.]", "lines": ["[Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]", "CIN: [U72200MH2015PTC123456]  |  [+91 98220 12345]  |  [hr@sharmait.in]"], "title": "APPOINTMENT LETTER", "meta": [["Ref. No.", "[SIT/HR/APT/2026-27/0087]"], ["Date", "[28/11/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "To", "lines": ["[Ms. Priya Deshmukh]", "[Flat 7B, Shanti Residency, Kothrud]", "[Pune, Maharashtra 411038]"]}, {"heading": "Employee details", "lines": ["Employee ID: [SIT-0412]", "PAN: [ABCPD1234K]", "Offer letter dated: [14/11/2026]"]}]},
+    {"type": "text", "text": "**Subject: Appointment as [Senior Software Engineer]**"},
+    {"type": "text", "text": ["Dear [Ms. Deshmukh],", "Further to our offer letter and your acceptance, we are pleased to appoint you as **[Senior Software Engineer]** in the **[Product Engineering]** department of [Sharma IT Solutions Pvt. Ltd.], on the terms set out below. Your appointment is effective from your date of joining."]},
+    {"type": "fields", "columns": 2, "items": [["Date of joining", "[01/12/2026]"], ["Place of posting", "[Pune head office]"], ["Reports to", "[Mr. Arjun Rao, Engineering Manager]"], ["Annual CTC", "[₹9,60,000]"], ["Probation", "[6 months]"], ["Working hours", "[9:30 am - 6:30 pm, Mon-Fri]"]]},
+    {"type": "spacer", "size": 4},
+    {"type": "table", "columns": [{"label": "Salary component", "width": 4}, {"label": "Monthly (₹)", "width": 2, "align": "right"}, {"label": "Annual (₹)", "width": 2, "align": "right"}],
+      "rows": [["Basic salary", "[32,000]", "[3,84,000]"], ["House rent allowance (HRA)", "[16,000]", "[1,92,000]"], ["Special allowance", "[30,200]", "[3,62,400]"], ["Employer PF contribution", "[1,800]", "[21,600]"]],
+      "totals": [["Total cost to company (CTC)", "[80,000]  |  [9,60,000]"]]},
+    {"type": "note", "heading": "Terms and conditions", "text": ["1. **Probation:** you will be on probation for [6 months]. On satisfactory performance you will receive a written confirmation; the probation may be extended once by up to [3 months].", "2. **Notice period:** [15 days] during probation and [60 days] after confirmation, from either side, or salary in lieu of notice.", "3. **Leave:** you are entitled to [18 days] of earned leave, [7 days] of casual/sick leave and declared holidays each year, as per the leave policy.", "4. **Deductions:** salary is paid monthly after PF, professional tax and income tax (TDS) as applicable by law.", "5. **Confidentiality:** you will keep all company and client information confidential during and after your employment and follow the company's code of conduct and policies.", "6. **Documents:** this appointment is subject to verification of your educational, identity and previous employment documents."]},
+    {"type": "text", "text": ["Please sign and return a copy of this letter as your acceptance. We welcome you to the team and wish you a rewarding career with us.", "Yours sincerely,"]},
+    {"type": "signature", "items": ["[Neha Kulkarni], Head - HR, for [Sharma IT Solutions Pvt. Ltd.]", "Accepted by [Priya Deshmukh] (signature and date)"]}
+  ]
+}
