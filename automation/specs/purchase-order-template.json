@@ -1,0 +1,26 @@
+{
+  "slug": "purchase-order-template",
+  "title": "Purchase Order Template",
+  "category": "business",
+  "accent": "1F4E46",
+  "titleSize": 24,
+  "description": "Free GST purchase order format for India with PO number, vendor GSTIN, ship-to address, HSN codes, IGST, delivery date and terms. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Vendor, bill-to and ship-to blocks with GSTIN", "Itemised table with HSN, unit, rate and IGST total", "Delivery, payment and quality terms with authorised signatory"],
+  "useCases": ["Ordering raw material and packaging from suppliers", "Purchase approvals for SMEs and factories", "Matching POs against deliveries and GST invoices"],
+  "keywords": ["purchase order format", "gst purchase order format", "purchase order format in excel"],
+  "references": ["https://www.mastersindia.co/blog/purchase-order-po/", "https://salarybox.in/download-purchase-order-format/gst/", "https://tallysolutions.com/inventory/purchase-order/", "https://www.hubspot.com/resources/templates/purchase-order", "https://www.procuredesk.com/purchase-order-template-guide/"],
+  "research": "References agree on PO number and date, buyer and vendor details with GSTIN, separate ship-to address, line items with HSN, quantity, rate and tax, delivery date and shipping terms, payment terms and an authorised approval signature.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1b_q099iW0RqZ_Sx9ltG6I_gdgkHMl2PjcEy1VLN8ZJ0", "googleSheetsId": "1kq5n7gCfABdwin1GRF5bhwwevfMClzU4YulfFYBPzkE"},
+  "blocks": [
+    {"type": "header", "org": "[Kaveri Foods Pvt. Ltd.]", "lines": ["[No. 18, KIADB Industrial Area, Bommasandra, Bengaluru, Karnataka 560099]", "GSTIN: [29AAFCK4821L1Z7]  |  PAN: [AAFCK4821L]  |  [+91 80 4123 5678]", "[purchase@kaverifoods.in]  |  [www.kaverifoods.in]"], "title": "PURCHASE ORDER", "meta": [["PO No.", "[PO/2026-27/0318]"], ["PO Date", "[28/11/2026]"], ["Delivery by", "[12/12/2026]"]]},
+    {"type": "parties", "groups": [{"heading": "Vendor", "lines": ["[Shree Packaging Industries]", "Attn: [Mr. Senthil Kumar, Sales]", "[SIPCOT Phase I, Hosur, Tamil Nadu 635126]", "GSTIN: [33ABCFS7314K1Z9]"]}, {"heading": "Ship to", "lines": ["[Kaveri Foods Pvt. Ltd., Warehouse 2]", "Contact: [Ms. Deepa Rao, Stores]", "[Plot 7A, Jigani Link Road, Bengaluru 560105]", "Place of supply: [Karnataka (29)]"]}, {"heading": "Order details", "lines": ["Vendor quote: [SPI/Q/2026/112]", "Quote date: [21/11/2026]", "Shipping: [Road freight, door delivery]", "Freight: [Paid by vendor]"]}]},
+    {"type": "table", "columns": [{"label": "#", "width": 0.5, "align": "center"}, {"label": "Item description", "width": 4.0}, {"label": "HSN", "width": 1.0, "align": "center"}, {"label": "Qty", "width": 1.2, "align": "right"}, {"label": "Rate (₹)", "width": 1.4, "align": "right"}, {"label": "GST", "width": 0.9, "align": "right"}, {"label": "Amount (₹)", "width": 1.7, "align": "right"}],
+      "rows": [["1", "**[5-ply corrugated box, 18 x 12 x 10 in]**", "[4819]", "[2,000 nos]", "[28.50]", "[18%]", "[57,000.00]"], ["2", "**[Printed laminated pouch, 500 g, zip lock]**", "[3923]", "[10,000 nos]", "[3.20]", "[18%]", "[32,000.00]"], ["3", "[BOPP tape, 48 mm x 65 m, brown]", "[3919]", "[200 rolls]", "[42.00]", "[18%]", "[8,400.00]"], ["4", "[Stretch wrap film, 23 micron, 500 mm]", "[3920]", "[50 rolls]", "[640.00]", "[18%]", "[32,000.00]"], ["5", "[Thermal shipping labels, 100 x 150 mm]", "[4821]", "[20 rolls]", "[260.00]", "[18%]", "[5,200.00]"]],
+      "totals": [["Subtotal", "[1,34,600.00]"], ["IGST @ 18%", "[24,228.00]"], ["Order total", "[1,58,828.00]"]]},
+    {"type": "text", "text": "Amount in words: **[Rupees One Lakh Fifty-Eight Thousand Eight Hundred Twenty-Eight Only]**"},
+    {"type": "note", "heading": "Terms and conditions", "text": ["1. **Delivery:** supply the full quantity at the ship-to address by the date above, between 9 am and 5 pm on working days.", "2. **Payment:** [45 days] from receipt of goods and a correct GST tax invoice quoting this PO number.", "3. **Quality:** goods must match the approved sample and quote; rejected items will be returned at the vendor's cost.", "4. **Documents:** send the tax invoice, e-way bill and delivery challan with the consignment.", "5. Any change in price, quantity or delivery date needs written approval from our purchase team."]},
+    {"type": "fields", "items": [["Prepared by", "[Arjun Menon, Purchase Executive]"], ["Department", "[Stores and Packaging]"], ["Budget code", "[PKG-2026-Q3]"], ["Contact", "[+91 98450 22113]"]]},
+    {"type": "signature", "items": ["Vendor acceptance (sign & stamp)", "Authorised signatory, [Kaveri Foods Pvt. Ltd.]"]}
+  ]
+}
