@@ -1,0 +1,28 @@
+{
+  "slug": "internship-certificate-template",
+  "title": "Internship Certificate Template",
+  "category": "certificate",
+  "accent": "1B2F5B",
+  "titleSize": 24,
+  "description": "Free internship certificate format for India with intern name, college, department, project, duration, performance remarks and authorised signatures. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Certificate no., issue date and verification line", "Intern, college, department, project and duration details", "Performance remarks with mentor and HR signatures"],
+  "useCases": ["Internship completion for college students", "Summer and winter training programmes", "Proof of experience for jobs and higher studies"],
+  "keywords": ["internship certificate format", "internship completion certificate", "internship certificate format in word"],
+  "references": ["https://kredily.com/hr-templates/internship-certificate-format/", "https://internshala.com/blog/employer-internship-certificate-format/", "https://leverageedu.com/blog/internship-certificates", "https://www.template.net/editable/44238/internship-completion-certificate", "https://testbook.com/amp/internship/internship-certificate"],
+  "research": "References share company letterhead, issue date and certificate number, a 'To whomsoever it may concern' style statement naming the intern, role/department and exact duration, a short performance remark, and signature with name, designation and company seal.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1yCObJMYljuqEKJu9TN0Mb2AeVHKIHS6Zx3Ch217-oX4", "googleSheetsId": "1k7Xq1u9_aowUMoc0X5uMXy_Q9Opw_3WTa-4GgWQ-IIU"},
+  "blocks": [
+    {"type": "header", "org": "[Sharma IT Solutions Pvt. Ltd.]", "lines": ["[Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]", "CIN: [U72200MH2015PTC261234]  |  [+91 98220 12345]", "[hr@sharmait.in]  |  [www.sharmait.in]"], "title": "CERTIFICATE", "meta": [["Certificate No.", "[SIS/INT/2026-27/0087]"], ["Date of issue", "[28/11/2026]"]]},
+    {"type": "spacer", "size": 10},
+    {"type": "title", "text": "Certificate of Internship", "subtitle": "To whomsoever it may concern", "align": "center"},
+    {"type": "text", "text": ["This is to certify that **[Ms. Priya Deshmukh]**, a student of **[B.Tech. Computer Engineering, Final Year]** at **[College of Engineering, Pune (COEP)]**, Roll No. [CE21B045], has successfully completed an internship with **[Sharma IT Solutions Pvt. Ltd.]** in the **[Software Development]** department from **[01/06/2026]** to **[31/07/2026]** ([8 weeks]).", "During this period she worked on the project **[Customer Support Ticketing Portal]** under the guidance of [Mr. Anil Joshi, Senior Software Engineer]. Her work included [building REST APIs in Node.js, designing the PostgreSQL schema and writing automated tests], which were reviewed and merged into the project."]},
+    {"type": "fields", "columns": 2, "items": [["Intern name", "[Priya Deshmukh]"], ["Intern ID", "[INT-2026-087]"], ["Role", "[Software Development Intern]"], ["Department", "[Software Development]"], ["Duration", "[01/06/2026 to 31/07/2026]"], ["Mode", "[On-site, Pune]"], ["Stipend", "[₹15,000 per month]"], ["Overall rating", "[Excellent]"]]},
+    {"type": "note", "heading": "Performance remarks", "text": "[Priya was punctual, eager to learn and worked well with the team. She picked up new tools quickly, met her deadlines and communicated clearly with her mentor. Her conduct throughout the internship was very good.]"},
+    {"type": "heading", "text": "Key contributions and skills"},
+    {"type": "bullets", "items": ["Built [12] REST API endpoints for ticket creation, assignment and status tracking", "Designed the database schema and wrote [80+] automated tests with [Jest]", "Took part in daily stand-ups, code reviews and weekly client demos", "Skills gained: [Node.js, PostgreSQL, Git, Agile/Scrum, technical documentation]"]},
+    {"type": "text", "text": ["We thank her for her contribution and wish her every success in her future career.", "This certificate is issued on request for academic and professional purposes. It can be verified by writing to [hr@sharmait.in] with the certificate number above."]},
+    {"type": "spacer", "size": 24},
+    {"type": "signature", "items": ["[Anil Joshi], Project Mentor", "[Meera Kulkarni], HR Manager", "Company seal"]}
+  ]
+}
