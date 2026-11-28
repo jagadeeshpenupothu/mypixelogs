@@ -33,6 +33,39 @@
     "published": "2026-11-28"
   },
   {
+    "id": "cash-receipt",
+    "title": "Cash Receipt Template",
+    "slug": "cash-receipt-template",
+    "description": "Free cash receipt format for India with receipt no., received from, amount in figures and words, invoices settled, note denominations and revenue stamp box. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "receipt",
+    "features": [
+      "Amount in figures and words with invoice-wise settlement",
+      "Cash denomination breakdown and balance outstanding",
+      "Revenue stamp box for cash receipts above ₹5,000"
+    ],
+    "useCases": [
+      "Cash collected from customers against invoices",
+      "Advance or part payments received in cash",
+      "Shops, distributors and service businesses"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1vQCVJtYDyw-0kSO5DPO8f18gqFZXPHtNNVKiNa5lwQ0",
+      "googleSheetsId": "1jp5LR9IwzWfsle8Z0qb4x9XpLi82iG9KW18jvp3idjw",
+      "excelPath": "/downloads/cash-receipt-template.xlsx",
+      "latexPath": "/downloads/cash-receipt-template.tex",
+      "pdfPath": "/downloads/cash-receipt-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "cover-letter",
     "title": "Cover Letter Template",
     "slug": "cover-letter-template",

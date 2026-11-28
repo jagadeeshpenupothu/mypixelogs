@@ -176,7 +176,8 @@
     "keyword": "cash receipt format",
     "score": 79,
     "notes": "Receipt no, received from, amount in figures/words, purpose, revenue stamp above Rs 5000",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "bonafide-certificate-template",
