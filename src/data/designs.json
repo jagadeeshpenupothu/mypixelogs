@@ -122,5 +122,74 @@
         "source": "OpenAI"
       }
     ]
+  },
+  {
+    "slug": "sona-bakery-id-card",
+    "title": "Navy and Gold Bakery ID Card Template",
+    "description": "Premium navy and gold employee ID card for bakeries, patisseries and cafes, with photo frame, staff details and QR back. Print-ready. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "id-card",
+    "size": "id-card",
+    "back": true,
+    "logo": "sona-bakery-badge-logo",
+    "published": "2026-11-28",
+    "features": [
+      "CR80 portrait card (54 x 85.6 mm) with 3 mm bleed, front and back",
+      "Name, designation, employee ID, department and blood group are live text",
+      "Gold gradient accents, lanyard slot, QR code and signature line"
+    ],
+    "useCases": [
+      "Bakery and patisserie staff",
+      "Cafe and cloud kitchen teams",
+      "Food production and catering units"
+    ],
+    "credits": []
+  },
+  {
+    "slug": "vaikunta-ekadasi-temple-flyer",
+    "title": "Vaikunta Ekadasi Temple Event Flyer Template",
+    "description": "Mukkoti Ekadasi temple flyer: a glowing golden north gate at dawn with brass lamps and marigold toran, darshan timings and contact. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "flyer",
+    "published": "2026-11-28",
+    "features": [
+      "AI photos: glowing temple gate at dawn, brass lamps and marigold toran",
+      "Headline, date, darshan timings and contact are live, editable text",
+      "A4 at 300 dpi; also fits Instagram and WhatsApp"
+    ],
+    "useCases": [
+      "Temples and devasthanams",
+      "Bhajan mandalis and spiritual trusts",
+      "Vaikunta Ekadasi and Dhanurmasam events"
+    ],
+    "credits": [
+      {
+        "creator": "Generated with OpenAI image models for MyPixelogs",
+        "license": "Free to use",
+        "source": "OpenAI"
+      }
+    ]
+  },
+  {
+    "slug": "new-year-eve-rooftop-dinner-flyer",
+    "title": "New Year's Eve Rooftop Dinner Flyer Template",
+    "description": "Elegant New Year's Eve rooftop dinner flyer with a toasting couple, fireworks skyline and gold type for restaurants and hotels. Editable PSD, AI, SVG, CorelDRAW and PDF.",
+    "category": "flyer",
+    "published": "2026-11-28",
+    "features": [
+      "AI-generated photorealistic couple and rooftop scene",
+      "Every text line is a separate editable layer",
+      "A4 print-ready layout with contact bar"
+    ],
+    "useCases": [
+      "Restaurant New Year's Eve dinner promotion",
+      "Hotel rooftop party or gala buffet",
+      "Instagram and WhatsApp event announcement"
+    ],
+    "credits": [
+      {
+        "creator": "Generated with OpenAI image models for MyPixelogs",
+        "license": "Free to use",
+        "source": "OpenAI"
+      }
+    ]
   }
 ]
