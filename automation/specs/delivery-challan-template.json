@@ -1,0 +1,26 @@
+{
+  "slug": "delivery-challan-template",
+  "title": "Delivery Challan Template",
+  "category": "business",
+  "accent": "1F4E46",
+  "titleSize": 18,
+  "description": "Free GST delivery challan format under Rule 55 with challan no., consignor and consignee GSTIN, HSN, quantity, purpose, e-way bill and transport details. Use it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Rule 55 fields: challan no., date, consignor and consignee GSTIN", "Item table with HSN, quantity, unit and value of goods", "Purpose, transport, e-way bill and triplicate copy marking"],
+  "useCases": ["Sending goods for job work", "Supply on approval or branch transfer", "Goods moved without an invoice"],
+  "keywords": ["delivery challan format", "gst delivery challan format", "job work challan format"],
+  "references": ["https://cleartax.in/s/delivery-challan-format", "https://www.zoho.com/in/books/gst/delivery-challan.html", "https://khatabook.com/blog/delivery-challan-format-in-excel-and-word-for-job-work", "https://www.kanakkupillai.com/learn/delivery-challan-format/", "https://vyaparapp.in/delivery-challan-format"],
+  "research": "All references carry a serial challan no. and date, consignor and consignee name, address and GSTIN, items with HSN, quantity and value, the purpose of movement, vehicle/e-way bill details and signatures; Rule 55 asks for triplicate copies.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "1N0x8_6qfJDIaUZWB3Vc1m9wsym2ND2CGawUQdKEwvKw", "googleSheetsId": "16BUPWkDxb7oGmP5zTfnA-XaMGrWW_6ryeJs-BBqSRMU"},
+  "blocks": [
+    {"type": "header", "org": "[Patil Precision Engineering Pvt. Ltd.]", "lines": ["[Gat No. 118, MIDC Bhosari, Pune, Maharashtra 411026]", "GSTIN: [27AADCP4521K1Z8]  |  [+91 98230 45612]", "[dispatch@patilprecision.in]  |  [www.patilprecision.in]"], "title": "DELIVERY CHALLAN", "meta": [["Challan No.", "[DC/2026-27/0087]"], ["Date", "[28/11/2026]"], ["Copy", "[Original for consignee]"]]},
+    {"type": "parties", "groups": [{"heading": "Consignor", "lines": ["[Patil Precision Engineering Pvt. Ltd.]", "[Gat No. 118, MIDC Bhosari, Pune 411026]", "GSTIN: [27AADCP4521K1Z8]", "State: [Maharashtra (27)]"]}, {"heading": "Consignee (job worker)", "lines": ["[Shree Ganesh Machining Works]", "[Plot C-24, Chakan MIDC, Pune 410501]", "GSTIN: [27ABJPG7834L1Z3]", "State: [Maharashtra (27)]"]}, {"heading": "Transport details", "lines": ["Mode: [Road]  |  Vehicle: [MH 14 KQ 6281]", "Transporter: [Om Sai Logistics]", "E-way bill: [3412 5678 9012]", "Place of supply: [Maharashtra (27)]"]}]},
+    {"type": "fields", "columns": 2, "items": [["Purpose", "[Job work: CNC machining and turning]"], ["Expected return", "[On or before 15/01/2027]"], ["Order / PO ref.", "[JW/PPE/2026/031 dated 25/11/2026]"], ["Reverse charge", "[No]"]]},
+    {"type": "table", "columns": [{"label": "#", "width": 0.5, "align": "center"}, {"label": "Description of goods", "width": 4.0}, {"label": "HSN", "width": 1.1, "align": "center"}, {"label": "Qty", "width": 0.9, "align": "right"}, {"label": "Unit", "width": 0.9, "align": "center"}, {"label": "Rate (₹)", "width": 1.4, "align": "right"}, {"label": "Value (₹)", "width": 1.7, "align": "right"}],
+      "rows": [["1", "**[MS round bar EN8, 40 mm dia]**", "[7214]", "[500]", "[kg]", "[72.00]", "[36,000.00]"], ["2", "**[MS plate, 10 mm thick, cut to size]**", "[7208]", "[320]", "[kg]", "[68.50]", "[21,920.00]"], ["3", "[Forged gear blanks, 120 mm OD]", "[7326]", "[120]", "[nos]", "[145.00]", "[17,400.00]"], ["4", "[Grey iron bearing housing castings]", "[7325]", "[60]", "[nos]", "[410.00]", "[24,600.00]"]],
+      "totals": [["Total quantity", "[820 kg + 180 nos]"], ["Taxable value of goods", "[99,920.00]"], ["GST charged", "[Nil (job work)]"]]},
+    {"type": "text", "text": "Value in words: **[Rupees Ninety-Nine Thousand Nine Hundred Twenty Only]**"},
+    {"type": "note", "heading": "Declaration", "text": ["1. These goods are sent for **job work under Section 143 of the CGST Act, 2017** and are not a sale. No GST is charged on this challan.", "2. Processed goods and scrap are to be returned to the consignor within the period allowed by law, with a return challan quoting this number.", "3. Issued in triplicate: **Original** for consignee, **Duplicate** for transporter, **Triplicate** for consignor.", "4. Please check quantities on receipt and report any shortage or damage within [24 hours]."]},
+    {"type": "signature", "items": ["Received in good condition (consignee)", "Driver / transporter", "For [Patil Precision Engineering Pvt. Ltd.]"]}
+  ]
+}

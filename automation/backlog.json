@@ -146,7 +146,8 @@
     "keyword": "delivery challan format",
     "score": 81,
     "notes": "Challan no, consignor/consignee with GSTIN, items with qty/HSN, purpose (job work/supply on approval), signatures",
-    "status": "pending"
+    "status": "done",
+    "date": "2026-11-28"
   },
   {
     "slug": "purchase-order-template",
