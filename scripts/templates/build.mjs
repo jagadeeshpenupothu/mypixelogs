@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 
 import { renderDocx } from "./docx.mjs";
 import { renderHtml } from "./html.mjs";
+import { checkDesign } from "./design.mjs";
 import { loadSpec, plain } from "./spec.mjs";
 import { renderTex } from "./tex.mjs";
 
@@ -25,6 +26,24 @@ const registryFile = path.join(root, "src/data/generated-templates.json");
 
 const run = (cmd, args) => execFileSync(cmd, args, { stdio: ["ignore", "pipe", "pipe"] }).toString();
 const sha = (file) => createHash("sha256").update(readFileSync(file)).digest("hex");
+
+// Georgia isn't on Linux: install Gelasio (same letter widths) and tell fontconfig to use it for Georgia,
+// so previews and the one-page check match what people see in Word and Google Docs.
+async function ensureFonts() {
+  const home = process.env.HOME ?? "/root";
+  const fontDir = path.join(home, ".local/share/fonts");
+  const conf = path.join(home, ".config/fontconfig/fonts.conf");
+  if (existsSync(path.join(fontDir, "Gelasio-Regular.ttf")) && existsSync(conf)) return;
+  mkdirSync(fontDir, { recursive: true });
+  for (const [w, name] of [[400, "Regular"], [700, "Bold"]]) {
+    const css = await (await fetch(`https://fonts.googleapis.com/css2?family=Gelasio:wght@${w}`, { headers: { "User-Agent": "Mozilla/4.0" } })).text();
+    const url = /url\((https:[^)]+\.ttf)\)/.exec(css)?.[1];
+    if (url) writeFileSync(path.join(fontDir, `Gelasio-${name}.ttf`), Buffer.from(await (await fetch(url)).arrayBuffer()));
+  }
+  mkdirSync(path.dirname(conf), { recursive: true });
+  writeFileSync(conf, `<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd"><fontconfig><dir>${fontDir}</dir><alias binding="same"><family>Georgia</family><prefer><family>Gelasio</family></prefer></alias></fontconfig>\n`);
+  run("fc-cache", ["-f"]);
+}
 
 function toPdf(file, dir) {
   run("soffice", ["--headless", "-env:UserInstallation=file:///tmp/lo-mypixelogs", "--convert-to", "pdf", "--outdir", dir, file]);
@@ -63,6 +82,7 @@ function register() {
 }
 
 async function build(slug) {
+  await ensureFonts();
   const specFile = path.join(specsDir, `${slug.replace(/\.json$/, "")}.json`);
   const spec = loadSpec(specFile);
   if (spec.slug !== path.basename(specFile, ".json")) throw new Error(`File name must match slug "${spec.slug}"`);
@@ -95,6 +115,8 @@ async function build(slug) {
   check(text.includes(plain(titleBlock?.title ?? titleBlock?.text ?? spec.title).slice(0, 12)), "Title text missing from the PDF.");
   for (const bad of ["undefined", "NaN", "[object Object]", "**"]) check(!text.includes(bad), `Output contains "${bad}".`);
   // Quality bar: researched against real examples, and a full, usable page rather than a starter file.
+  // New templates must pick a design, so they don't all look alike (see scripts/templates/next-design.mjs).
+  if (spec.design || (spec.published ?? "") >= "2026-11-29") checkDesign(spec.design, problems);
   const refs = (spec.references ?? []).filter((u) => /^https:\/\/\S+$/.test(u));
   check(refs.length >= 3, `Add "references": at least 3 https links to real examples you studied (found ${refs.length}).`);
   check(typeof spec.research === "string" && spec.research.length >= 60, 'Add "research": 1-2 sentences on what the references have in common.');

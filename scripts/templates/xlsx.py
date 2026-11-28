@@ -18,7 +18,12 @@ from openpyxl.worksheet.page import PageMargins
 spec = json.load(open(sys.argv[1], encoding="utf-8"))
 OUT = sys.argv[2]
 FONT, TEXT, MUTED = "Cambria", "1A1A1A", "8496B0"
-A = spec.get("accent", "1B2F5B").replace("#", "").upper()
+PALETTES = {"navy": "1B2F5B", "emerald": "0F6E56", "maroon": "7A1F2B", "charcoal": "2B2D33", "teal": "0E7C86", "purple": "5B2A86",
+            "royal": "1F5FBF", "olive": "4F5D2F", "rust": "A44A1F", "slate": "334155", "crimson": "B4232C", "forest": "1E5631"}  # keep in sync with design.mjs
+BODY = {"classic": "Cambria", "modern": "Calibri", "corporate": "Arial", "elegant": "Calibri", "editorial": "Georgia", "formal": "Times New Roman", "mixed": "Arial"}
+design = spec.get("design") or {}
+A = PALETTES.get(design.get("palette"), spec.get("accent", "1B2F5B")).replace("#", "").upper()
+FONT = BODY.get(design.get("font"), FONT)
 COLS, COL_W = 12, 8.0  # 12 columns x 8 chars ~ A4 width at 10.5pt
 CHARS = COLS * COL_W * 1.12
 

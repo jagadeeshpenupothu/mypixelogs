@@ -15,6 +15,13 @@ Be brief: don't read files this runbook doesn't name, don't explore the repo, ke
    - Write down which fields and sections MOST references share, plus anything Indian rules require. That consensus is your field list.
    - Take ideas only. Never copy another site's wording, layout or logo; write your own text.
 4. Write `automation/specs/<slug>.json`. Read only `automation/specs/quotation-template.json` and match its quality and shape. Rules:
+   - DESIGN (required, so templates don't all look alike): run `node scripts/templates/next-design.mjs <category>` and copy
+     its `"design"` object into the spec (palette, font, header, table, heading). You may change a value to suit the
+     document (e.g. a centred header and an elegant font for a certificate, a split or band header for an invoice), but
+     never repeat the previous template's palette or header. Don't set `accent`; the palette sets it.
+     Options: palette navy|emerald|maroon|charcoal|teal|purple|royal|olive|rust|slate|crimson|forest;
+     font classic|modern|corporate|elegant|editorial|formal|mixed; header band|plain|split|centered|topbar;
+     table solid|tint|minimal; heading rule|bar|caps|shade.
    - Write it compactly: one block per line, like the example.
    - Add `"references": [3-5 https links you studied]` and `"research": "<1-2 sentences: what the references have in common>"`.
    - Look like a real corporate document: start with a `header` block (logo area, organisation, address/GSTIN/contact lines,
