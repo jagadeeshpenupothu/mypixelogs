@@ -1,0 +1,32 @@
+{
+  "slug": "noc-letter-template",
+  "title": "NOC Letter Template",
+  "category": "letter",
+  "accent": "1B2F5B",
+  "titleSize": 22,
+  "description": "Free NOC letter format from an employer in India with ref. no., employee details, purpose, leave dates, validity and authorised signatory. Edit it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+  "features": ["Company letterhead with reference number and date", "Employee details table: ID, designation, joining date, PAN", "Purpose, leave period, validity and verification contact"],
+  "useCases": ["Passport and visa applications", "Higher studies or part-time courses", "Bank loans and rental agreements"],
+  "keywords": ["noc letter format", "noc letter from employer", "no objection certificate format"],
+  "references": ["https://factohr.com/letter/no-objection-certificate-format/", "https://leverageedu.com/blog/noc-format/", "https://www.template.net/editable/no-objection-certificate", "https://hyring.com/free-hr-toolkit/hr-glossary/no-objection-certificate-noc-india-uae", "https://vakilsearch.com/documents/no-objection-certificate-noc-format-download"],
+  "research": "All references use company letterhead, a reference no. and date, a 'To whomsoever it may concern' address, a subject naming the employee, service period and purpose, a clear no-objection statement, and a signature with name, designation and company seal.",
+  "published": "2026-11-28",
+  "platforms": {"googleDocsId": "125pPcYGyc8_Wp--I8A3uq7gGwre8AmX95n3uace6vAY", "googleSheetsId": "13beVGFAWS4NdZGECCTxO6NosK9KEbhSPB71tlLnT4C0"},
+  "blocks": [
+    {"type": "header", "style": "plain", "org": "[Sharma IT Solutions Pvt. Ltd.]", "lines": ["[Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]", "CIN: [U72200MH2015PTC123456]", "GSTIN: [27AAKCS1234R1Z5]", "[+91 98220 12345]  |  [hr@sharmait.in]  |  [www.sharmait.in]"], "title": "NO OBJECTION CERTIFICATE", "meta": [["Ref. No.", "[SIT/HR/NOC/2026-27/0087]"], ["Date", "[28/11/2026]"]]},
+    {"type": "text", "text": "**To Whomsoever It May Concern**"},
+    {"type": "text", "text": "**Subject: No Objection Certificate for [Mr. Rohan Mehta] for visa application and overseas travel**"},
+    {"type": "spacer"},
+    {"type": "heading", "text": "Employee details"},
+    {"type": "fields", "columns": 2, "items": [["Employee name", "[Mr. Rohan Mehta]"], ["Employee ID", "[SIT-1042]"], ["Designation", "[Senior Software Engineer]"], ["Department", "[Product Engineering]"], ["Date of joining", "[01/07/2021]"], ["PAN", "[ABCPM1234K]"], ["Passport No.", "[V1234567]"], ["Travel period", "[20/12/2026 to 05/01/2027]"]]},
+    {"type": "spacer"},
+    {"type": "text", "text": ["This is to certify that [Mr. Rohan Mehta], son of [Mr. Suresh Mehta], is a permanent, full-time employee of [Sharma IT Solutions Pvt. Ltd.] and has been working with us since [01/07/2021]. He currently holds the position of [Senior Software Engineer] in our [Product Engineering] department, drawing an annual gross salary of [₹18,60,000]. His conduct and performance during his service have been good.", "[Mr. Mehta] has applied for a [tourist visa to the United Kingdom] to travel with his family for a holiday. His leave from [20/12/2026] to [05/01/2027] has been approved by the company, and he is expected to resume duty on [06/01/2027]. His position will be kept open for him during this period.", "The company has **no objection** to his applying for the visa and travelling abroad for the purpose stated above. The company does not take any financial responsibility for his travel; all expenses will be borne by the employee.", "This certificate is issued at the request of the employee and is valid for [six months] from the date of issue, for the purpose mentioned above only. For any verification, please contact our HR department at [+91 98220 12345] or [hr@sharmait.in]."]},
+    {"type": "spacer"},
+    {"type": "text", "text": ["Yours faithfully,", "For **[Sharma IT Solutions Pvt. Ltd.]**"]},
+    {"type": "spacer", "size": 2},
+    {"type": "signature", "items": ["[Priya Nair], [Head – Human Resources] (sign & seal)", "Employee: [Rohan Mehta] (acknowledged)"]},
+    {"type": "spacer"},
+    {"type": "note", "heading": "Enclosures", "text": ["1. Copy of employee ID card  2. Last three months' salary slips  3. Approved leave letter"]},
+    {"type": "note", "text": "This letter is valid only with the company seal and the signature of an authorised signatory. Any alteration makes it void."}
+  ]
+}

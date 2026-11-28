@@ -132,6 +132,39 @@
     "published": "2026-11-27"
   },
   {
+    "id": "noc-letter",
+    "title": "NOC Letter Template",
+    "slug": "noc-letter-template",
+    "description": "Free NOC letter format from an employer in India with ref. no., employee details, purpose, leave dates, validity and authorised signatory. Edit it in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "letter",
+    "features": [
+      "Company letterhead with reference number and date",
+      "Employee details table: ID, designation, joining date, PAN",
+      "Purpose, leave period, validity and verification contact"
+    ],
+    "useCases": [
+      "Passport and visa applications",
+      "Higher studies or part-time courses",
+      "Bank loans and rental agreements"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "125pPcYGyc8_Wp--I8A3uq7gGwre8AmX95n3uace6vAY",
+      "googleSheetsId": "13beVGFAWS4NdZGECCTxO6NosK9KEbhSPB71tlLnT4C0",
+      "excelPath": "/downloads/noc-letter-template.xlsx",
+      "latexPath": "/downloads/noc-letter-template.tex",
+      "pdfPath": "/downloads/noc-letter-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "offer-letter",
     "title": "Offer Letter Template",
     "slug": "offer-letter-template",
