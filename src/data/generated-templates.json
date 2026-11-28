@@ -33,6 +33,39 @@
     "published": "2026-11-28"
   },
   {
+    "id": "bonafide-certificate",
+    "title": "Bonafide Certificate Template",
+    "slug": "bonafide-certificate-template",
+    "description": "Free bonafide certificate format for schools and colleges in India with student name, roll and admission no., course, academic year, purpose and principal's seal. Edit in Word, Google Docs, Google Sheets, Excel or Overleaf.",
+    "category": "certificate",
+    "features": [
+      "Institution letterhead with affiliation code and certificate number",
+      "Student, course, roll no. and academic year details",
+      "Purpose line, principal's signature and office seal area"
+    ],
+    "useCases": [
+      "Scholarship and education loan applications",
+      "Bus or railway concession passes",
+      "Visa, bank account and internship verification"
+    ],
+    "formats": [
+      "Word",
+      "Google Docs",
+      "Google Sheets",
+      "Excel",
+      "Overleaf (LaTeX)",
+      "PDF"
+    ],
+    "platforms": {
+      "googleDocsId": "1DSAQS7tEB0Eqkpx-BB1SwaqeHL7mZ8mTIZvA3cGTFrw",
+      "googleSheetsId": "1ijwfcUrK0rxY8Lerr0S8juYZ6hneL9Ni7AOvy5GEaqU",
+      "excelPath": "/downloads/bonafide-certificate-template.xlsx",
+      "latexPath": "/downloads/bonafide-certificate-template.tex",
+      "pdfPath": "/downloads/bonafide-certificate-template.pdf"
+    },
+    "published": "2026-11-28"
+  },
+  {
     "id": "cash-receipt",
     "title": "Cash Receipt Template",
     "slug": "cash-receipt-template",
