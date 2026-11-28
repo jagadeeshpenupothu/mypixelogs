@@ -116,5 +116,54 @@
       "elegant serif logo",
       "beauty parlour logo"
     ]
+  },
+  {
+    "slug": "suvarna-mahal-jewellery-lettermark-logo",
+    "title": "Suvarna Mahal Jewellery Lettermark Logo",
+    "name": "Suvarna Mahal",
+    "style": "lettermark",
+    "industry": "Jewellery",
+    "description": "A gold SM monogram set in a faceted emerald diamond frame with a ribbon banner, for jewellers and gold showrooms. Editable AI, SVG, PSD, EPS and PNG.",
+    "colors": [
+      {
+        "name": "Emerald",
+        "hex": "#0F4A3C"
+      },
+      {
+        "name": "Antique Gold",
+        "hex": "#A8741A"
+      },
+      {
+        "name": "Bright Gold",
+        "hex": "#F0C75A"
+      },
+      {
+        "name": "Champagne",
+        "hex": "#FFF4C2"
+      },
+      {
+        "name": "Deep Green",
+        "hex": "#062820"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Cinzel",
+        "weight": "700"
+      },
+      {
+        "family": "Cormorant Garamond",
+        "weight": "600"
+      }
+    ],
+    "previewBg": "#F5EFE2",
+    "published": "2026-11-28",
+    "keywords": [
+      "jewellery lettermark logo",
+      "gold monogram logo",
+      "jewellers logo India",
+      "SM monogram logo",
+      "luxury jewellery logo"
+    ]
   }
 ]
