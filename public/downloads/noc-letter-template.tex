@@ -1,0 +1,70 @@
+% NOC Letter Template - MyPixelogs (https://mypixelogs.netlify.app/templates/noc-letter-template)
+% Free to use. Replace the sample text with your own, then click Recompile. Compiles with pdfLaTeX.
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=12.7mm, bottom=10.5mm, left=13.4mm, right=13.4mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\definecolor{accent}{HTML}{1B2F5B}
+\definecolor{rulegray}{HTML}{8496B0}
+\definecolor{divider}{HTML}{A6A6A6}
+\definecolor{notebg}{HTML}{F2F4F8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\color{accent}\fontsize{13}{15}\bfseries}{}{0pt}{#1\hspace{8pt}{\color{rulegray}\leaders\hrule height 0.6pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\setlist[itemize]{leftmargin=18pt, label=\textbullet, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\group}[2]{\begin{minipage}[t]{\linewidth}{\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par\vspace{1pt}\begin{itemize}[leftmargin=12pt, topsep=0pt, partopsep=0pt]#2\end{itemize}\end{minipage}}
+\begin{document}
+\fontsize{10.5}{13.2}\selectfont
+{\setlength{\fboxrule}{0.4pt}\renewcommand{\arraystretch}{1.1}\noindent{\begin{tabularx}{\dimexpr\linewidth-2\fboxsep}{@{\hspace{8pt}}l@{\hspace{10pt}}X>{\raggedleft\arraybackslash}p{0.4\linewidth}@{\hspace{8pt}}}\rule{0pt}{14pt}{\fbox{\parbox[c][1.1cm][c]{1.7cm}{\centering\scriptsize [LOGO]}}} & \begin{tabular}[t]{@{}l@{}}{\color{accent}\fontsize{14}{17}\selectfont\bfseries [Sharma IT Solutions Pvt. Ltd.]}\\ {\footnotesize [Plot 42, Industrial Area Phase II, Pune, Maharashtra 411019]}\\ {\footnotesize CIN: [U72200MH2015PTC123456]}\\ {\footnotesize GSTIN: [27AAKCS1234R1Z5]}\\ {\footnotesize [+91 98220 12345]  \textbar{}  [hr@sharmait.in]  \textbar{}  [www.sharmait.in]}\end{tabular} & \begin{tabular}[t]{@{}r@{}}{\color{accent}\fontsize{22}{26}\selectfont\bfseries NO OBJECTION CERTIFICATE}\\[3pt] {\footnotesize Ref. No.~\textbf{[SIT/HR/NOC/2026-27/0087]}}\\ {\footnotesize Date~\textbf{[28/11/2026]}}\end{tabular}\\[6pt]\end{tabularx}}}\par{\color{accent}\rule{\linewidth}{1.8pt}}\par\vspace{8pt}
+
+\textbf{To Whomsoever It May Concern}\par\vspace{4pt}
+
+\textbf{Subject: No Objection Certificate for [Mr. Rohan Mehta] for visa application and overseas travel}\par\vspace{4pt}
+
+\vspace{12pt}
+
+\section{Employee details}
+
+\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X p{0.2\linewidth}X@{}}
+\textbf{Employee name} & [Mr. Rohan Mehta] & \textbf{Employee ID} & [SIT-1042] \\
+\textbf{Designation} & [Senior Software Engineer] & \textbf{Department} & [Product Engineering] \\
+\textbf{Date of joining} & [01/07/2021] & \textbf{PAN} & [ABCPM1234K] \\
+\textbf{Passport No.} & [V1234567] & \textbf{Travel period} & [20/12/2026 to 05/01/2027] \\
+\end{tabularx}\par\vspace{2pt}
+
+\vspace{12pt}
+
+This is to certify that [Mr. Rohan Mehta], son of [Mr. Suresh Mehta], is a permanent, full-time employee of [Sharma IT Solutions Pvt. Ltd.] and has been working with us since [01/07/2021]. He currently holds the position of [Senior Software Engineer] in our [Product Engineering] department, drawing an annual gross salary of [Rs.\,18,60,000]. His conduct and performance during his service have been good.\par\vspace{4pt}
+
+[Mr. Mehta] has applied for a [tourist visa to the United Kingdom] to travel with his family for a holiday. His leave from [20/12/2026] to [05/01/2027] has been approved by the company, and he is expected to resume duty on [06/01/2027]. His position will be kept open for him during this period.\par\vspace{4pt}
+
+The company has \textbf{no objection} to his applying for the visa and travelling abroad for the purpose stated above. The company does not take any financial responsibility for his travel; all expenses will be borne by the employee.\par\vspace{4pt}
+
+This certificate is issued at the request of the employee and is valid for [six months] from the date of issue, for the purpose mentioned above only. For any verification, please contact our HR department at [+91 98220 12345] or [hr@sharmait.in].\par\vspace{4pt}
+
+\vspace{12pt}
+
+Yours faithfully,\par\vspace{4pt}
+
+For \textbf{[Sharma IT Solutions Pvt. Ltd.]}\par\vspace{4pt}
+
+\vspace{2pt}
+
+\vspace{32pt}\noindent\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ [Priya Nair], [Head -- Human Resources] (sign \& seal)}\hfill\parbox[t]{0.3\linewidth}{\centering\rule{\linewidth}{0.5pt}\\ Employee: [Rohan Mehta] (acknowledged)}\par
+
+\vspace{12pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize {\color{accent}\bfseries Enclosures}\\ 1. Copy of employee ID card  2. Last three months' salary slips  3. Approved leave letter}}\par\vspace{6pt}
+
+\noindent\colorbox{notebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize This letter is valid only with the company seal and the signature of an authorised signatory. Any alteration makes it void.}}\par\vspace{6pt}
+\end{document}
